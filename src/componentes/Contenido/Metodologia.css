@@ -1,0 +1,372 @@
+/* Padding para el título principal de metodología */
+.metodologia-title-metodologia {
+  padding-left: 3em;
+  display: block;
+}
+/* Card principal que agrupa todos los acordeones */
+.metodologia-pasos-card {
+  width: 100%;
+  min-width: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.metodologia-acordeon-desc-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(243,234,255,0.95) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(120,72,232,0.06);
+  border: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+  transition: max-height 0.45s cubic-bezier(.4,0,.2,1), opacity 0.35s cubic-bezier(.4,0,.2,1), padding 0.3s, visibility 0.3s, height 0.3s;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.metodologia-acordeon-desc-glass.open {
+  max-height: 600px;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  padding-top: 0.3rem;
+  padding-bottom: 0.6rem;
+}
+/* Acordeón estilo SobreNosotros */
+.metodologia-acordeon-titulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Source Code Pro', monospace;
+  background: var(--acordeon-color, #7a3cff);
+  box-shadow: 0 4px 18px rgba(120,72,232,0.10);
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.metodologia-acordeon-titulo:active,
+.metodologia-acordeon-titulo:focus {
+  box-shadow: 0 8px 32px rgba(120,72,232,0.13);
+}
+.metodologia-acordeon.open .metodologia-acordeon-titulo {
+  background: var(--acordeon-color, #7a3cff);
+}
+.metodologia-acordeon-icon {
+  font-size: 1.2rem;
+  margin-left: 12px;
+}
+.metodologia-acordeon-desc {
+  background: #fff;
+  color: #4a5568;
+  font-size: 1.01rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-top: 0.7rem;
+  line-height: 1.5;
+  padding: 0.8rem 1.5rem 1.2rem 1.5rem;
+  border-radius: 0 0 16px 16px;
+  animation: fadeInAcordeon 0.3s;
+}
+@keyframes fadeInAcordeon {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Sección principal */
+/* Layout principal: dos columnas en desktop */
+.metodologia-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.metodologia-intro {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 24px;
+  background: linear-gradient(135deg, #f7f7fa00 80%, #e3e6f700 100%);
+  border-radius: 22px;
+  box-shadow: 0 6px 32px 0 rgba(120, 72, 232, 0), 0 2px 8px 0 rgba(120, 72, 232, 0);
+  border: 2px solid #e3e6f700;
+  padding: 32px 32px 24px 32px;
+  position: relative;
+}
+
+/* Responsive para la card principal dividida en dos columnas */
+.metodologia-pasos-card-izq {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 32px;
+  gap: 0.5rem;
+  min-height: 0;
+  height: auto;
+}
+.metodologia-imagen-card {
+  width: 200px;
+  height: 200px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px auto 0 auto;
+}
+/* Card cuadrada y centrada para la imagen */
+.metodologia-imagen-card {
+  width: 180px;
+  height: 180px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px auto 0 auto;
+}
+.metodologia-pasos-card-der {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+/* Card invisible para cada acordeón */
+.metodologia-acordeon-card {
+  background: rgba(255,255,255,0.01);
+  border-radius: 18px;
+  box-shadow: none;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 0;
+  transition: box-shadow 0.18s;
+}
+.metodologia-acordeon-card.open {
+  box-shadow: 0 4px 24px 0 rgba(120,72,232,0.08), 0 2px 8px 0 rgba(120,72,232,0.10);
+}
+@media (max-width: 900px) {
+  .metodologia-pasos-card {
+    flex-direction: column;
+    gap: 18px;
+    min-width: 180px;
+    max-width: 100vw;
+  }
+  .metodologia-pasos-card-izq {
+    padding-right: 0;
+    margin-bottom: 18px;
+    align-items: flex-start;
+    padding: 18px 8px 12px 8px;
+  }
+  .metodologia-pasos-card-der {
+    gap: 8px;
+  }
+}
+.metodologia-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #7a3cff;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  font-family: 'Source Code Pro', monospace;
+  text-shadow: 0 2px 12px #e3e6f7;
+}
+.metodologia-title-metodologia {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #f37aa6;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+  font-family: 'Source Code Pro', monospace;
+}
+.metodologia-subtitulo {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #4e2a8e;
+  margin-bottom: 1.1rem;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+}
+.metodologia-cierre {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #f37aa6;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.metodologia-desc-unificada, .metodologia-desc-unificada p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #4A4A4A;
+  background: none;
+  box-shadow: none;
+  padding: 0.5rem 1rem 0.7rem 1rem;
+  margin-bottom: 0.7em;
+  text-align: left;
+  line-height: 1.7;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-top: 0.3rem;
+}
+.metodologia-imagen {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 24px #f3d8eb);
+  border-radius: 24px;
+  background: none;
+  position: relative;
+}
+
+.metodologia-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+.metodologia-titulo {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #222c36;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  font-family: 'Source Code Pro', monospace;
+}
+.metodologia-subtitulo {
+  font-size: 1.25rem;
+  color: #444;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-bottom: 0;
+}
+
+.metodologia-pasos {
+  flex: 2 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  width: 100%;
+}
+
+.metodologia-paso {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(120,72,232,0.08), 0 2px 8px 0 rgba(120,72,232,0.10);
+  padding: 24px 32px;
+  gap: 32px;
+  transition: box-shadow 0.22s;
+}
+.metodologia-paso:hover {
+  box-shadow: 0 8px 32px 0 rgba(120,72,232,0.13), 0 4px 16px 0 rgba(120,72,232,0.13);
+}
+
+.metodologia-icono {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(120,72,232,0.10);
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.metodologia-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.metodologia-paso-titulo {
+  font-size: 1.32rem;
+  font-weight: 900;
+  color: #222c36;
+  margin-bottom: 8px;
+  font-family: 'Source Code Pro', monospace;
+}
+.metodologia-paso-desc {
+  font-size: 1.08rem;
+  color: #444;
+  margin-bottom: 2.5rem;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .metodologia-title-metodologia {
+    padding-left: 0;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  .metodologia-section {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 4vw;
+    align-items: stretch;
+  }
+  .metodologia-intro {
+    padding-right: 0;
+    margin-bottom: 18px;
+    align-items: flex-start;
+    padding: 24px 12px 18px 12px;
+  }
+  .metodologia-imagen {
+    width: 80px;
+    margin-top: 12px;
+  }
+  .metodologia-title {
+    font-size: 2.1rem;
+  }
+  .metodologia-desc {
+    font-size: 1.08rem;
+  }
+}
+@media (max-width: 700px) {
+  .metodologia-section {
+    padding: 0 2vw;
+  }
+  .metodologia-paso {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 12px;
+  }
+  .metodologia-icono {
+    margin-bottom: 0;
+    margin-right: 0;
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,46 @@
+/* Separación automática antes del footer */
+section:last-of-type {
+  margin-bottom: 64px;
+}
+/* Fondo con grainy gradient diagonal */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #e0cada;
+  background-image:
+    radial-gradient(ellipse 60% 60% at 0% 0%, #fee0d6 0%, rgba(254, 224, 214, 0.7) 60%, transparent 100%),
+    radial-gradient(ellipse 60% 60% at 100% 0%, #dbc9c9 0%, rgba(219, 201, 201, 0.7) 60%, transparent 100%),
+    radial-gradient(ellipse 60% 60% at 0% 100%, #c9def9 0%, rgba(201, 222, 249, 0.7) 60%, transparent 100%),
+    radial-gradient(ellipse 60% 60% at 100% 100%, #e0a6d8 0%, rgba(224, 166, 216, 0.7) 60%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegurar que el fondo se vea correctamente */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos adicionales removidos - ya no son necesarios */

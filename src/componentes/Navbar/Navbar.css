@@ -1,0 +1,135 @@
+/* Navbar vertical estático a la izquierda */
+.navbar-container {
+  position: fixed;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999 !important;
+  height: 70vh;
+  width: 40px;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.45s cubic-bezier(.4,0,.2,1);
+  overflow: visible;
+}
+
+.navbar-container.navbar-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Línea vertical */
+.navbar-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(74, 74, 74, 0) 0%,
+    #4a4a4a 15%,
+    #4a4a4a 85%,
+    rgba(74, 74, 74, 0) 100%
+  );
+  border-radius: 2px;
+  z-index: 9999;
+}
+
+/* Contenedor de botones */
+.navbar-buttons {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60%;
+  z-index: 10000;
+  overflow: visible;
+}
+
+/* Botones circulares */
+.navbar-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #666;
+  cursor: pointer;
+  position: relative;
+  background-color: #4a4a4a;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  overflow: visible;
+}
+
+.navbar-button:hover {
+  background-color: #e5e5e5 !important;
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+.navbar-button.active {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip */
+.navbar-tooltip {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 99999 !important;
+  min-width: 80px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-tooltip::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 4px solid transparent;
+  border-right-color: #333;
+  z-index: 99999;
+}
+
+.navbar-tooltip.visible {
+  opacity: 1 !important;
+  pointer-events: auto;
+  display: block !important;
+}
+
+/* Tooltip para sección activa */
+.navbar-tooltip.active-section {
+  background: #f37aa6 !important;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(243, 122, 166, 0.5) !important;
+}
+
+.navbar-tooltip.active-section::before {
+  border-right-color: #f37aa6 !important;
+}

@@ -1,0 +1,417 @@
+.sobre-nosotros-col-izq .porque-elegirnos-titulo {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1.3rem;
+}
+/* Layout principal de Sobre Nosotros */
+.sobre-nosotros-main-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+  align-items: stretch;
+}
+.sobre-nosotros-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.sobre-nosotros-col-izq {
+  flex: 2;
+  min-width: 260px;
+  max-width: 700px;
+}
+.sobre-nosotros-col-der {
+  flex: 1;
+  min-width: 180px;
+  max-width: 340px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.sobre-nosotros-img-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(243,234,255,0.95) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(120,72,232,0.10);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 340px;
+  min-width: 180px;
+  margin: 0 auto;
+}
+.sobre-nosotros-img-card img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(120,72,232,0.08);
+}
+
+@media (max-width: 900px) {
+  .sobre-nosotros-main-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .sobre-nosotros-col-izq, .sobre-nosotros-col-der {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  .sobre-nosotros-img-card {
+    margin: 0 auto 1.2rem auto;
+    max-width: 320px;
+    padding: 1rem;
+  }
+}
+/* Descripción de los acordeones: Roboto explícito */
+.acordeon-descripcion {
+  font-family: 'Roboto', Arial, sans-serif !important;
+  font-size: 1.01rem;
+  color: #4a5568;
+  margin-top: 0.7rem;
+  line-height: 1.5;
+}
+/* Tipografía global para Sobre Nosotros */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Source+Code+Pro:wght@700;800;900&display=swap');
+
+/* Regla global: todo texto usa Roboto por defecto */
+body, html, .sobre-nosotros-section, .section-glass-card, .porque-elegirnos-section, .porque-elegirnos-content, .porque-elegirnos-descripcion, .porque-elegirnos-menus, .porque-menu-content, .porque-menu p, .metrica-card, .metrica-titulo {
+  font-family: 'Roboto', Arial, sans-serif !important;
+}
+
+/* Separación del navbar para todas las secciones principales */
+.sobre-nosotros-section,
+
+
+/* Títulos y botones usan Source Code Pro */
+.porque-elegirnos-titulo, .metrica-numero, .metrica-titulo.titulo, .porque-menu summary, h1, h2, h3, h4, h5, h6, button, .acordeon-summary {
+  font-family: 'Source Code Pro', monospace !important;
+}
+/* Sección motivacional debajo de las métricas */
+.porque-elegirnos-section {
+  width: 100%;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+  .porque-elegirnos-menus {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .porque-menu {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+/* Los siguientes estilos solo deben aplicarse en mobile para evitar sobrescribir el layout de desktop */
+
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .porque-elegirnos-text {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden !important;
+    box-sizing: border-box;
+  }
+  .porque-elegirnos-descripcion {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .porque-elegirnos-titulo {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .porque-elegirnos-imagen {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .porque-elegirnos-imagen img {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+.metricas-grid {
+  margin-top: 2.8rem;
+  margin-bottom: 0.5rem;
+  /* ya tiene gap, pero agregamos separación extra arriba */
+}
+
+@media (max-width: 900px) {
+  .porque-elegirnos-imagen {
+    overflow: hidden !important;
+    max-width: 100%;
+    margin: 24px auto 24px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+  }
+  .porque-elegirnos-imagen img {
+    width: 90%;
+    max-width: 320px;
+    aspect-ratio: 4/3;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(120,72,232,0.07);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .metricas-grid {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .porque-elegirnos-imagen {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 18px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+  }
+  .porque-elegirnos-imagen img {
+    width: 96%;
+    max-width: 260px;
+    aspect-ratio: 1/1;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(120,72,232,0.06);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .metricas-grid {
+    margin-top: 1.2rem;
+  }
+}
+
+
+.porque-elegirnos-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  max-width: 1100px;
+  width: 100%;
+  align-items: flex-start;
+  background: none;
+  justify-content: space-between;
+}
+
+.porque-elegirnos-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.porque-elegirnos-titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4A4A4A;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.porque-elegirnos-descripcion {
+  font-size: 1.15rem;
+  color: #4A4A4A;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.porque-elegirnos-menus {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.porque-elegirnos-text {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  min-width: 280px;
+  max-width: 800px;
+}
+.porque-elegirnos-imagen {
+  flex: 0 1 220px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 30%;
+  min-width: 140px;
+  max-width: 320px;
+}
+.porque-menu {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(120,72,232,0.07);
+  border: 1px solid #f3eaff;
+  padding: 0.8rem 1.2rem;
+  overflow: visible;
+}
+.porque-menu[open] .porque-menu-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.porque-menu summary {
+  font-weight: 700;
+  color: #f37aa6;
+  cursor: pointer;
+  font-size: 1.08rem;
+  outline: none;
+}
+.porque-menu p {
+  margin-top: 0.7rem;
+  color: #4a5568;
+  font-size: 0.98rem;
+}
+
+.porque-elegirnos-imagen {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: sticky;
+  top: 0.5rem;
+  height: fit-content;
+  align-self: flex-start;
+}
+.porque-elegirnos-imagen img {
+  width: 100%;
+  max-width: 340px;
+  min-width: 220px;
+  height: 380px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(120,72,232,0.10);
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .porque-elegirnos-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .porque-elegirnos-imagen {
+    margin-top: 1.2rem;
+    justify-content: center;
+  }
+}
+
+/* Card principal glass para la sección */
+
+
+.metricas-grid {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;
+}
+
+.metrica-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(120, 72, 232, 0.08), 0 1.5px 8px rgba(0,0,0,0.04);
+  padding: 1.2rem 1.2rem 1rem 1.2rem;
+  min-width: 220px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+  border: 1.5px solid #f3eaff;
+  position: relative;
+}
+.metrica-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 40px rgba(120, 72, 232, 0.13), 0 4px 12px rgba(0,0,0,0.08);
+  border-color: #c3b6f7;
+}
+
+.metrica-numero {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.7rem;
+  letter-spacing: -1px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(243, 122, 166, 0.12));
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  transition: color 0.3s;
+}
+.metrica-numero.morado {
+  color: #7b4ae8;
+}
+.metrica-numero.rosa {
+  color: #f37aa6;
+}
+.metrica-numero.azul {
+  color: #1da1f2;
+}
+
+.metrica-titulo {
+  font-size: 1.08rem;
+  color: #2d3748;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+
+
+@media (max-width: 900px) {
+  .metricas-grid {
+    gap: 1.2rem;
+    max-width: 100vw;
+  }
+  .metrica-card {
+    min-width: 180px;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre-nosotros-metricas {
+    padding: 2rem 0 1.5rem 0;
+    border-radius: 24px 24px 0 0;
+  }
+  .metricas-grid {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .metrica-card {
+    min-width: 0;
+    width: 90vw;
+    max-width: 350px;
+    padding: 1.2rem 0.8rem 1rem 0.8rem;
+  }
+}
