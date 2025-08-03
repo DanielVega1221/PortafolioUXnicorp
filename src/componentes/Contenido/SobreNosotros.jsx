@@ -2,6 +2,7 @@
 import React from "react";
 import AcordeonAnimado from "./AcordeonAnimado";
 import "./SobreNosotros.css";
+import card1Image from "../../assets/card1.png";
 
 function SobreNosotros() {
   return (
@@ -27,8 +28,8 @@ function SobreNosotros() {
         <div className="sobre-nosotros-col sobre-nosotros-col-der">
           <div className="sobre-nosotros-img-card">
             <img
-              src="/src/assets/card1.png"
-              alt="Two people collaborating at a desk with a laptop and documents, both smiling and engaged in discussion. The background is a bright, modern workspace. Text in the image reads Acompañamiento y crecimiento. The atmosphere is positive and supportive."
+              src={card1Image}
+              alt="Imagen representativa de nuestros servicios"
             />
           </div>
         </div>
