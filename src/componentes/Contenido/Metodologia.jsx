@@ -170,7 +170,7 @@ function Metodologia() {
         <div className="metodologia-pasos-card-izq">
           <h2 className="metodologia-title metodologia-title-metodologia">Nuestra Metodología</h2>
           <div className="metodologia-desc-unificada">
-            En UXNicorn no seguimos fórmulas.<br />
+            En UXNicorp no seguimos fórmulas.<br />
             Seguimos personas, ideas, propósitos.<br /><br />
             Creemos que cada proyecto es único y merece un proceso que lo acompañe desde el primer boceto hasta su mejor versión.<br />
             Nuestra metodología es clara, flexible y humana.<br />
