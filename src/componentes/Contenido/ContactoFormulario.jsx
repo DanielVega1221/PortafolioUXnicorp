@@ -260,7 +260,7 @@ Saludos cordiales.`;
     }
 
     const message = generateFormattedMessage();
-    const whatsappNumber = '5491123504530'; // Buenos Aires
+    const whatsappNumber = '5493834368748'; // Catamarca
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank', 'noopener,noreferrer');
   };
