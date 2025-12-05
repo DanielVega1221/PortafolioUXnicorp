@@ -134,17 +134,23 @@ function ContactoFormulario() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    // Sanitizar el valor inmediatamente
-    const sanitizedValue = SecurityUtils.sanitizeText(value);
+    // No sanitizar durante la escritura, solo validar caracteres peligrosos
+    // El trim se hará solo al enviar el formulario
+    const cleanValue = value
+      .replace(/[<>]/g, '') // Remover < y >
+      .replace(/javascript:/gi, '') // Remover javascript:
+      .replace(/on\w+=/gi, '') // Remover event handlers
+      .replace(/script/gi, '') // Remover palabra script
+      .replace(/eval\(/gi, ''); // Remover eval
     
     setFormData(prev => ({
       ...prev,
-      [name]: sanitizedValue
+      [name]: cleanValue
     }));
 
     // Validar en tiempo real si el campo ya fue tocado
     if (touched[name]) {
-      const error = validateField(name, sanitizedValue);
+      const error = validateField(name, cleanValue);
       setErrors(prev => ({
         ...prev,
         [name]: error
