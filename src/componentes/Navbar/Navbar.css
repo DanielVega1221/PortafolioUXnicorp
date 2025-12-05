@@ -100,7 +100,7 @@
 /* Tooltip */
 .navbar-tooltip {
   position: absolute;
-  left: 50px;
+  left: 18px;
   top: 50%;
   transform: translateY(-50%);
   background: #333;

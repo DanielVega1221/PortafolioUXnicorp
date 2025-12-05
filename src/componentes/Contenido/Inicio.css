@@ -137,7 +137,7 @@ body, html, .inicio-container-modern {
   font-size: clamp(40px, 5.5vw, 68px);
   font-weight: 900;
   line-height: 1.05;
-  color: #2d3748;
+  color: #2b2b2b;
   margin: 0;
   letter-spacing: -0.04em;
 }
@@ -179,7 +179,7 @@ body, html, .inicio-container-modern {
 
 .modern-description strong {
   font-weight: 700;
-  color: #2d3748;
+  color: #2b2b2b;
 }
 
 .modern-cta {

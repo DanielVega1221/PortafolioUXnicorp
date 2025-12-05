@@ -14,7 +14,7 @@
   font-family: 'Source Code Pro', monospace;
   font-size: 2.8rem;
   font-weight: 900;
-  color: #2d3748;
+  color: #2b2b2b;
   text-align: center;
   margin-bottom: 1rem;
   letter-spacing: -1px;
@@ -71,7 +71,7 @@
   font-family: 'Source Code Pro', monospace;
   font-size: 1rem;
   font-weight: 700;
-  color: #2d3748;
+  color: #2b2b2b;
 }
 
 .form-group input,
@@ -247,7 +247,7 @@
   font-family: 'Source Code Pro', monospace;
   font-size: 1.5rem;
   font-weight: 900;
-  color: #2d3748;
+  color: #2b2b2b;
   margin: 0 0 1rem 0;
   text-align: center;
 }
@@ -310,7 +310,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 1.05rem;
   font-weight: 500;
-  color: #2d3748;
+  color: #2b2b2b;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -366,7 +366,7 @@
   font-family: 'Source Code Pro', monospace;
   font-weight: 700;
   font-size: 1rem;
-  color: #2d3748;
+  color: #2b2b2b;
   margin-bottom: 0.8rem;
 }
 
@@ -401,7 +401,7 @@
 }
 
 .garantia-text {
-  color: #2d3748;
+  color: #2b2b2b;
   flex: 1;
 }
 

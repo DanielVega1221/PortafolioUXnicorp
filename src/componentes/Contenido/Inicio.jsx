@@ -8,12 +8,11 @@ function Inicio() {
   const containerRef = useRef(null);
 
   const scrollToSobreNosotros = () => {
-    const sobreNosotrosElement = document.getElementById('about');
+    const sobreNosotrosElement = document.getElementById('sobre-nosotros');
     if (sobreNosotrosElement) {
-      sobreNosotrosElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      const yOffset = 0;
+      const y = sobreNosotrosElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 

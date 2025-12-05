@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import App from './App';
 import ComoTrabajamos from './pages/ComoTrabajamos';
+import NotFound from './pages/NotFound';
 import './index.css';
 import './responsive-utils.css';
 
@@ -19,6 +20,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<App />} />
         <Route path="/como-trabajamos" element={<ComoTrabajamosLazy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
