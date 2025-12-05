@@ -13,34 +13,10 @@ function AcordeonAnimado({ titulo, children }) {
         className="acordeon-summary"
         onClick={toggle}
         aria-expanded={abierto}
-        style={{
-          background: "none",
-          border: "none",
-          width: "100%",
-          textAlign: "left",
-          padding: 0,
-          fontWeight: 700,
-          color: "#f37aa6",
-          fontSize: "1.08rem",
-          cursor: "pointer",
-          outline: "none",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between"
-        }}
       >
-        <span>{titulo}</span>
-        <span
-          className="acordeon-flecha"
-          style={{
-            display: "inline-block",
-            marginLeft: 12,
-            transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
-            transform: abierto ? "rotate(90deg)" : "rotate(0deg)",
-            fontSize: "1.2em"
-          }}
-        >
-          ▶
+        <span className="acordeon-titulo-wrapper">{titulo}</span>
+        <span className="acordeon-toggle-icon">
+          {abierto ? '−' : '+'}
         </span>
       </button>
       <div

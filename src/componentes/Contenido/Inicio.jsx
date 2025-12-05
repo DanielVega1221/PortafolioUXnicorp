@@ -1,27 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Inicio.css";
 import Logo1 from "../../assets/Logo1.png";
+import OptimizedImage from "../OptimizedImage";
 
 function Inicio() {
-  const [isVisible, setIsVisible] = useState(true); // Empezar con animaciones activas
+  const [isVisible, setIsVisible] = useState(true);
   const containerRef = useRef(null);
 
   const scrollToSobreNosotros = () => {
-    const sobreNosotrosElement = document.getElementById('sobre-nosotros');
+    const sobreNosotrosElement = document.getElementById('about');
     if (sobreNosotrosElement) {
       sobreNosotrosElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
-    } else {
-      // Fallback: buscar por clase si no encuentra por ID
-      const sobreNosotrosSection = document.querySelector('.sobre-nosotros-section');
-      if (sobreNosotrosSection) {
-        sobreNosotrosSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
     }
   };
 
@@ -29,27 +21,32 @@ function Inicio() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
-        console.log('Sección Inicio visible:', entry.isIntersecting); // Para debug
       },
       {
-        threshold: 0.3, // Se activa cuando 30% del componente es visible
-        rootMargin: '0px' // Sin margen adicional para mayor precisión
+        threshold: 0.3,
+        rootMargin: '0px'
       }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
+
   return (
-    <div id="inicio" className={`inicio-container-modern section-spacing ${isVisible ? 'animations-active' : 'animations-paused'}`} ref={containerRef}>
-      {/* Elementos decorativos reposicionados */}
+    <div 
+      id="main" 
+      className={`inicio-container-modern section-spacing ${isVisible ? 'animations-active' : 'animations-paused'}`} 
+      ref={containerRef}
+    >
+      {/* Elementos decorativos */}
       <div className="sparkle sparkle-1">✦</div>
       <div className="sparkle sparkle-2">✦</div>
       <div className="sparkle sparkle-3">✧</div>
@@ -63,20 +60,52 @@ function Inicio() {
       <div className="sparkle sparkle-8">✦</div>
       <div className="sparkle sparkle-9">✧</div>
       <div className="sparkle sparkle-10">✦</div>
+
       {/* Contenido principal */}
       <div className="content-wrapper">
-        {/* Sección izquierda - Texto */}
+        {/* Sección izquierda - Texto optimizado para SEO */}
         <div className="text-section">
           <div className="main-content">
             <h1 className="modern-title">
-              Impulsamos tu
+              Transformamos ideas en
               <br />
-              primer gran
+              <span className="seo-hidden">páginas web y </span>
+              experiencias digitales
               <br />
-              <span className="highlight-word">salto digital</span>
+              <span className="highlight-word">extraordinarias</span>
             </h1>
-            <button className="modern-cta"
+
+            {/* Logo insertado aquí para responsive - se muestra solo en mobile */}
+            <div className="visual-section mobile-logo">
+              <OptimizedImage 
+                src={Logo1} 
+                alt="UXnicorp - Agencia de Desarrollo Web en Argentina"
+                loading="eager" 
+                fetchpriority="high"
+                className="logo-modern"
+                width="153"
+                height="153"
+              />
+            </div>
+            
+            <p className="modern-description">
+              Somos <strong>UXnicorp</strong>, tu <strong>agencia de desarrollo web en Argentina</strong> que convierte proyectos en productos digitales funcionales, escalables y conectados con tu audiencia. Especializados en <strong>diseño web profesional</strong>, <strong>sistemas de gestión empresarial</strong> y <strong>aplicaciones web de alto rendimiento</strong>.
+            </p>
+
+            {/* Keywords ocultas para SEO */}
+            <div className="seo-keywords" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
+              <span>desarrollo web argentina</span>
+              <span>diseño de páginas web</span>
+              <span>agencia web profesional</span>
+              <span>sistemas de gestión web</span>
+              <span>desarrollo web latinoamérica</span>
+              <span>programación web argentina</span>
+            </div>
+
+            <button 
+              className="modern-cta"
               onClick={scrollToSobreNosotros}
+              aria-label="Descubre cómo podemos ayudarte con tu proyecto web"
               style={{
                 background: '#f37aa6',
                 boxShadow: '0 8px 32px rgba(179,229,252,0.22), 0 2px 8px rgba(243,122,166,0.15)',
@@ -110,7 +139,7 @@ function Inicio() {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              <span className="button-text">Comenzar mi viaje digital</span>
+              <span className="button-text">Descubre cómo podemos ayudarte</span>
               <div className="button-icon-container">
                 <div className="button-sphere">●</div>
                 <div className="button-rocket">🚀</div>
@@ -118,9 +147,18 @@ function Inicio() {
             </button>
           </div>
         </div>
-        {/* Sección derecha - Elementos visuales */}
-        <div className="visual-section">
-          <img src={Logo1} alt="Logo" className="logo-modern" />
+
+        {/* Sección derecha - Logo (visible solo en desktop) */}
+        <div className="visual-section desktop-logo">
+          <OptimizedImage 
+            src={Logo1} 
+            alt="UXnicorp - Agencia de Desarrollo Web en Argentina" 
+            className="logo-modern"
+            loading="eager"
+            fetchpriority="high"
+            width="250"
+            height="250"
+          />
         </div>
       </div>
     </div>

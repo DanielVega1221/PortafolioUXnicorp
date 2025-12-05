@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./Navbar.css";
 
 const navItems = [
-  { id: "home", color: "#dbc9c9", label: "Inicio" },
-  { id: "about", color: "#e1d1ec", label: "Sobre Nosotros" },
-  { id: "projects", color: "#c9def9", label: "Proyectos" },
-  { id: "methodology", color: "#f7d6f2", label: "Metodología" },
-  { id: "services", color: "#f37aa6", label: "Servicios" }
+  { id: "main", color: "#dbc9c9", label: "Inicio" },
+  { id: "sobre-nosotros", color: "#e1d1ec", label: "Sobre Nosotros" },
+  { id: "servicios", color: "#f37aa6", label: "Servicios" },
+  { id: "proyectos", color: "#c9def9", label: "Proyectos" },
+  { id: "tecnologias", color: "#e0a6d8", label: "Tecnologías" },
+  { id: "contact", color: "#f0e68c", label: "Contacto" }
 ];
-
 
 function Navbar({ activeSection, onNavClick, hidden }) {
   const [hoveredItem, setHoveredItem] = useState(null);

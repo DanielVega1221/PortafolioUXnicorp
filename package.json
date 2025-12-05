@@ -6,13 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:optimized": "node optimize-images.mjs && vite build",
+    "optimize:images": "node optimize-images.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.468.0",
+    "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0"
+    "react-helmet-async": "^2.0.5-next",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.10.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
@@ -22,7 +29,11 @@
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "fs-extra": "^11.3.2",
     "globals": "^16.3.0",
+    "p-limit": "^7.2.0",
+    "sharp": "^0.34.5",
+    "terser": "^5.44.1",
     "vite": "^7.0.4"
   }
 }

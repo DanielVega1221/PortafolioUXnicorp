@@ -1,10 +1,274 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/Logo1.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UXnicorp</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="theme-color" content="#f37aa6" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Preconnect a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuentes optimizadas con font-display swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Source+Code+Pro:wght@700;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Source+Code+Pro:wght@700;900&display=swap"></noscript>
+    
+    <!-- SEO Optimizado -->
+    <title>Desarrollo Web Argentina 🚀 Programadores & Agencia Web | UXnicorp</title>
+    <meta name="description" content="⭐ Agencia #1 de desarrollo web en Argentina. Programadores expertos en React, Node.js, Next.js. Creamos páginas web, e-commerce, sistemas ERP/CRM a medida. +50 proyectos exitosos. Presupuesto GRATIS ✅" />
+    <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, devs argentina, programación web, desarrolladores web, agencia desarrollo software, programadores react, programadores node.js, empresa desarrollo web, crear página web, diseño web profesional, e-commerce argentina, tienda online argentina, landing page, sistemas de gestión, ERP argentina, CRM personalizado, aplicaciones web, desarrollo frontend, desarrollo backend, full stack developers argentina, agencia digital, diseño ux ui, desarrollo next.js, páginas web responsive, sitios web profesionales, cotización web gratis, presupuesto desarrollo web, agencia programación buenos aires, devs freelance argentina" />
+    
+    <!-- ⚠️ MEJORA: Author y Copyright -->
+    <meta name="author" content="UXnicorp - Agencia de Desarrollo Web" />
+    <meta name="copyright" content="UXnicorp © 2025" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="AR" />
+    <meta name="geo.placename" content="Argentina" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Open Graph optimizado -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://uxnicorp.com/" />
+    <meta property="og:site_name" content="UXnicorp - Desarrollo Web Argentina" />
+    <meta property="og:title" content="Desarrollo Web Argentina | Programadores & Agencia Web Profesional" />
+    <meta property="og:description" content="⭐ Agencia de desarrollo web profesional. Programadores expertos en React, Node.js. Creamos tu página web, e-commerce o sistema a medida. Presupuesto gratis 🚀" />
+    <meta property="og:image" content="https://uxnicorp.com/og-image.jpg" />
+    <meta property="og:image:alt" content="UXnicorp - Agencia de Desarrollo Web en Argentina" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    <meta property="og:locale:alternate" content="es_CO" />
+    <meta property="og:locale:alternate" content="es_CL" />
+    
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://uxnicorp.com/" />
+    <meta property="twitter:title" content="Desarrollo Web Argentina | Programadores & Agencia Web" />
+    <meta property="twitter:description" content="Agencia de desarrollo web y programación. Programadores expertos en React, Node.js. Creamos páginas web, e-commerce y sistemas profesionales" />
+    <meta property="twitter:image" content="https://uxnicorp.com/twitter-image.jpg" />
+    <meta property="twitter:image:alt" content="UXnicorp - Desarrollo Web" />
+    <meta property="twitter:creator" content="@uxnicorp" />
+    <meta property="twitter:site" content="@uxnicorp" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://uxnicorp.com/" />
+    
+    <!-- ⚠️ MEJORA: Preconnect y DNS-Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    
+    <!-- Schema.org - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://uxnicorp.com/#organization",
+      "name": "UXnicorp",
+      "legalName": "UXnicorp Desarrollo Web",
+      "alternateName": ["UXnicorp Agency", "UXnicorp Argentina"],
+      "description": "Agencia líder de desarrollo web en Argentina. Programadores expertos especializados en crear páginas web profesionales, e-commerce, sistemas de gestión empresarial y aplicaciones web a medida con React, Node.js y tecnologías modernas.",
+      "url": "https://uxnicorp.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://uxnicorp.com/logo.png",
+        "width": 250,
+        "height": 250,
+        "caption": "Logo UXnicorp"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://uxnicorp.com/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "telephone": ["+54-9-3855-797282", "+54-9-3834-368748"],
+      "email": "uxnicorp@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR",
+        "addressLocality": "Argentina",
+        "addressRegion": "Argentina"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-34.6037",
+        "longitude": "-58.3816"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Place",
+          "name": "América Latina"
+        }
+      ],
+      "priceRange": "$$-$$$",
+      "currenciesAccepted": "ARS, USD",
+      "paymentAccepted": ["Transferencia bancaria", "Tarjeta de crédito", "Tarjeta de débito", "PayPal", "Mercado Pago"],
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": [
+        "https://www.instagram.com/uxnicorp/",
+        "https://www.linkedin.com/company/uxnicorp/",
+        "https://www.facebook.com/profile.php?id=61578796932025"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "47",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "UXnicorp Team"
+      },
+      "foundingDate": "2023",
+      "foundingLocation": "Argentina",
+      "knowsAbout": ["Desarrollo Web", "Programación", "React", "Node.js", "Next.js", "E-commerce", "Diseño UX/UI", "SEO", "Aplicaciones Web"],
+      "slogan": "Transformamos ideas en experiencias digitales excepcionales",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Desarrollo Web",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desarrollo de Landing Pages",
+              "description": "Páginas web profesionales optimizadas para conversión y SEO"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desarrollo E-commerce",
+              "description": "Tiendas online completas con carrito, pasarela de pagos y panel administrativo"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sistemas de Gestión (ERP/CRM)",
+              "description": "Software empresarial personalizado para optimizar procesos de negocio"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Aplicaciones Web a Medida",
+              "description": "Desarrollo de aplicaciones web personalizadas con tecnologías modernas"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Schema.org - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://uxnicorp.com/#website",
+      "url": "https://uxnicorp.com",
+      "name": "UXnicorp - Desarrollo Web Argentina",
+      "description": "Agencia de desarrollo web y programación profesional en Argentina",
+      "publisher": {
+        "@id": "https://uxnicorp.com/#organization"
+      },
+      "inLanguage": "es-AR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://uxnicorp.com/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://uxnicorp.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Servicios",
+          "item": "https://uxnicorp.com/#servicios"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Proyectos",
+          "item": "https://uxnicorp.com/#proyectos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Sobre Nosotros",
+          "item": "https://uxnicorp.com/#sobre-nosotros"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Contacto",
+          "item": "https://uxnicorp.com/#contacto"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ⚠️ NUEVO: FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo lleva desarrollar un proyecto web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la complejidad. Una landing page puede estar lista en 2-3 semanas. Un e-commerce completo toma entre 6-10 semanas. Un sistema personalizado (ERP, CRM) puede llevar 12-16 semanas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la inversión inicial aproximada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestros proyectos comienzan desde USD 800 para landing pages simples, e-commerce desde USD 2,500 y sistemas personalizados desde USD 5,000. Ofrecemos planes de pago flexibles."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,242 @@
+/* ============================================
+   UTILIDADES RESPONSIVE GLOBALES
+   Breakpoints estandarizados para todo el proyecto
+   ============================================ */
+
+:root {
+  /* Breakpoints estandarizados */
+  --breakpoint-sm: 480px;   /* Small Mobile */
+  --breakpoint-md: 768px;   /* Tablets */
+  --breakpoint-lg: 1024px;  /* Desktop */
+  --breakpoint-xl: 1280px;  /* Large Desktop */
+  
+  /* Touch targets */
+  --touch-target-min: 44px;
+  --touch-target-mobile: 48px;
+  
+  /* Spacing responsive */
+  --spacing-mobile: 1rem;
+  --spacing-tablet: 1.5rem;
+  --spacing-desktop: 2rem;
+}
+
+/* ============================================
+   CLASES UTILITARIAS RESPONSIVE
+   ============================================ */
+
+/* Visibilidad por dispositivo */
+.hide-on-mobile {
+  display: none !important;
+}
+
+.hide-on-tablet {
+  display: inherit;
+}
+
+.hide-on-desktop {
+  display: inherit;
+}
+
+.show-on-mobile {
+  display: inherit !important;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .hide-on-mobile {
+    display: inherit !important;
+  }
+  
+  .hide-on-tablet {
+    display: none !important;
+  }
+  
+  .show-on-mobile {
+    display: none !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hide-on-tablet {
+    display: inherit !important;
+  }
+  
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   CONTENEDORES RESPONSIVE
+   ============================================ */
+
+.container-responsive {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ============================================
+   GRID RESPONSIVE
+   ============================================ */
+
+.grid-responsive {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   TIPOGRAFÍA RESPONSIVE
+   ============================================ */
+
+.text-responsive-xl {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.text-responsive-lg {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.3;
+}
+
+.text-responsive-md {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1.4;
+}
+
+.text-responsive-sm {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.5;
+}
+
+/* ============================================
+   SPACING RESPONSIVE
+   ============================================ */
+
+.spacing-section {
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .spacing-section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .spacing-section {
+    padding: 5rem 3rem;
+  }
+}
+
+/* ============================================
+   BOTONES RESPONSIVE
+   ============================================ */
+
+.btn-responsive {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .btn-responsive {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    min-height: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-responsive {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================
+   IMÁGENES RESPONSIVE
+   ============================================ */
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.img-responsive-contain {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ============================================
+   OPTIMIZACIONES DE PERFORMANCE
+   ============================================ */
+
+/* Reducir motion para usuarios con preferencias */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimizar renderizado en mobile */
+@media (max-width: 767px) {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Mejorar scroll en iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}

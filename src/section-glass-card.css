@@ -1,38 +1,77 @@
 /* Card glass global para secciones principales */
 .section-glass-card {
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
-  background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(243,234,255,0.8) 100%);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 36px;
-  box-shadow: 0 12px 40px rgba(120,72,232,0.08), 0 4px 12px rgba(0,0,0,0.08);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  padding: 2.2rem 3rem 3rem 3rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,245,255,0.98) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 48px;
+  box-shadow: 
+    0 24px 80px rgba(120,72,232,0.12), 
+    0 12px 32px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border: 3px solid rgba(255,255,255,0.4);
+  padding: 4rem 4rem 4.5rem 4rem;
   max-width: 1200px;
-  margin: 5rem auto 0 auto;
+  margin: 8rem auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.9s ease-out;
+}
+
+.section-glass-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(243,122,166,0.6), rgba(224,166,216,0.6), transparent);
+  border-radius: 2px;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; transform: scaleX(0.8); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+.section-glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 32px 96px rgba(120,72,232,0.18), 
+    0 16px 40px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
 @media (max-width: 900px) {
   .section-glass-card {
-    padding: 2rem 5vw 2rem 5vw;
-    border-radius: 24px;
-    align-items: center;
-    font-size: 1.13rem;
-    overflow: visible !important;
+    padding: 3rem 2rem;
+    border-radius: 32px;
+    margin: 5rem auto 0 auto;
+    border: 2px solid rgba(255,255,255,0.3);
   }
 }
 
 @media (max-width: 600px) {
   .section-glass-card {
-    padding: 1.2rem 3vw 1.2rem 3vw;
-    border-radius: 16px;
-    align-items: center;
-    font-size: 1.08rem;
-    overflow: visible !important;
+    padding: 2.5rem 1.5rem;
+    border-radius: 24px;
+    margin: 4rem auto 0 auto;
   }
 }

@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   z-index: 9999 !important;
-  height: 70vh;
+  height: 85vh;
   width: 40px;
   opacity: 1;
   pointer-events: auto;
@@ -28,7 +28,7 @@
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  width: 4px;
+  width: 2px;
   height: 100%;
   background: linear-gradient(
     to bottom,
@@ -37,7 +37,7 @@
     #4a4a4a 85%,
     rgba(74, 74, 74, 0) 100%
   );
-  border-radius: 2px;
+  border-radius: 1px;
   z-index: 9999;
 }
 
@@ -51,17 +51,21 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 60%;
+  height: 75%;
   z-index: 10000;
   overflow: visible;
 }
 
 /* Botones circulares */
 .navbar-button {
-  width: 28px;
-  height: 28px;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
   border-radius: 50%;
-  border: 2px solid #666;
+  border: 2px solid #666 !important;
   cursor: pointer;
   position: relative;
   background-color: #4a4a4a;
@@ -72,17 +76,25 @@
   box-sizing: border-box;
   transition: all 0.2s ease;
   overflow: visible;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .navbar-button:hover {
   background-color: #e5e5e5 !important;
-  border-color: #999;
-  transform: scale(1.05);
+  border-color: #999 !important;
+  transform: scale(1.1);
 }
 
 .navbar-button.active {
-  border: 3px solid #fff;
+  border: 2px solid #fff !important;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
 }
 
 /* Tooltip */
@@ -132,4 +144,60 @@
 
 .navbar-tooltip.active-section::before {
   border-right-color: #f37aa6 !important;
+}
+
+/* ============================================
+   RESPONSIVE - Mobile First
+   ============================================ */
+
+/* Ocultar navbar completamente en mobile y tablets */
+@media (max-width: 1023px) {
+  .navbar-container {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Ajustes para tablets en landscape */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar-container {
+    display: none !important;
+  }
+}
+
+/* Desktop: Mostrar y optimizar */
+@media (min-width: 1024px) {
+  .navbar-container {
+    display: flex;
+    opacity: 1;
+  }
+  
+  .navbar-button {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .navbar-tooltip {
+    left: 55px;
+  }
+}
+
+/* Large Desktop: Aumentar tamaño */
+@media (min-width: 1280px) {
+  .navbar-container {
+    left: 40px;
+  }
+  
+  .navbar-button {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .navbar-tooltip {
+    left: 60px;
+    font-size: 15px;
+    padding: 9px 14px;
+  }
 }

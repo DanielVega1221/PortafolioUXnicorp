@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@700;900&display=swap');
+
+.tecnologias-section {
+  width: 100%;
+  padding: 0;
+}
+
+.tecnologias-titulo {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #2d3748;
+  letter-spacing: -1px;
+}
+
+.tecnologias-highlight {
+  color: #f37aa6;
+}
+
+.tecnologias-subtitulo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  color: #4a5568;
+  text-align: left;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+.tecnologias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .tecnologias-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tecnologias-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tech-card {
+  background: linear-gradient(135deg, #fff 0%, #fafbff 100%);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(120,72,232,0.1);
+  border: 2px solid rgba(243,234,255,0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  animation: fadeInUp 0.6s ease-out backwards;
+  min-height: 320px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 48px rgba(120,72,232,0.18);
+  border-color: rgba(243,122,166,0.6);
+}
+
+.tech-icono {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.tech-icono svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.tech-svg {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-card:hover .tech-svg {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.tech-nombre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tech-descripcion {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #4a5568;
+  text-align: center;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0;
+}
+
+.tech-descripcion.visible {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 1rem;
+}
+
+.tech-ver-mas {
+  margin-top: auto;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #f37aa6, #ff8cc8);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateY(10px);
+  box-shadow: 0 4px 12px rgba(243,122,166,0.3);
+}
+
+.tech-card:hover .tech-ver-mas {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-ver-mas:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(243,122,166,0.5);
+}
+
+.tecnologias-cta {
+  background: linear-gradient(135deg, #f9f6ff 0%, #fff 100%);
+  border-radius: 24px;
+  padding: 2.5rem 3rem;
+  text-align: center;
+  border: 2px solid rgba(243,122,166,0.2);
+  box-shadow: 0 8px 24px rgba(120,72,232,0.08);
+}
+
+.tecnologias-cta-texto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tecnologias-cta-texto strong {
+  color: #f37aa6;
+  font-weight: 700;
+}
+
+/* Modal de tecnología */
+.tech-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tech-modal {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 32px;
+  max-width: 650px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 32px 96px rgba(0,0,0,0.3);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tech-modal-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: #666;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tech-modal-close:hover {
+  background: #f37aa6;
+  color: #fff;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.tech-modal-header {
+  padding: 3.5rem 3rem 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 3px solid rgba(243,122,166,0.1);
+  text-align: center;
+}
+
+.tech-modal-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-modal-icon svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+.tech-modal-title {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.tech-modal-body {
+  padding: 3rem 3rem 3.5rem 3rem;
+}
+
+.tech-modal-descripcion {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.tech-modal-detalles {
+  background: linear-gradient(135deg, #f9f6ff 0%, #fff 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(243,122,166,0.1);
+}
+
+.tech-modal-detalles h4 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+}
+
+.tech-modal-detalles p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.tech-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .tecnologias-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .tech-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* En tablet/móvil, siempre mostrar la descripción */
+  .tech-descripcion {
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 1rem;
+  }
+
+  /* Ocultar el botón "Ver más" en móvil ya que la descripción siempre está visible */
+  .tech-ver-mas {
+    margin-top: 0.5rem;
+  }
+
+  .tech-icono {
+    font-size: 3.5rem;
+    min-height: 70px;
+  }
+
+  .tech-icono svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .tech-modal-icon {
+    font-size: 4rem;
+  }
+
+  .tech-modal-icon svg {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tecnologias-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .tech-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  /* En móvil, descripción siempre visible y más compacta */
+  .tech-descripcion {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 1;
+    max-height: none;
+    margin-top: 0.8rem;
+  }
+
+  .tech-nombre {
+    font-size: 1.3rem;
+  }
+
+  .tech-icono {
+    font-size: 3rem;
+    min-height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .tech-icono svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .tech-modal {
+    width: 95%;
+    max-width: 95%;
+    margin: 1rem;
+  }
+
+  .tech-modal-icon {
+    font-size: 3.5rem;
+  }
+
+  .tech-modal-icon svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .tech-modal-body {
+    padding: 2rem 1.5rem;
+  }
+}

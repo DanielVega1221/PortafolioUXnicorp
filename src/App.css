@@ -2,7 +2,7 @@
 .main-cards-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem 0 3rem;
+  padding: 0 3rem;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -10,10 +10,10 @@
 
 @media (max-width: 900px) {
   .main-cards-wrapper {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0 auto;
   }
 }
 /* App.css - Estilos personalizados */
@@ -48,5 +48,24 @@
 .section-subtitle {
   font-size: 1.25rem; /* text-xl */
   color: #4a4a4a;
+}
+
+/* Skip to content link para accesibilidad */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f37aa6;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  font-weight: 700;
+  z-index: 100000;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 0;
 }
 

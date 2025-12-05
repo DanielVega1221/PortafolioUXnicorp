@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@700;900&display=swap');
+
+.testimonios-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.testimonios-titulo {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #4A4A4A;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.testimonios-highlight {
+  color: #f37aa6;
+}
+
+.testimonios-subtitulo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  color: #4A4A4A;
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonios-carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.testimonio-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 32px;
+  padding: 0;
+  box-shadow: 0 16px 48px rgba(120,72,232,0.15);
+  border: 3px solid rgba(243,234,255,0.6);
+  position: relative;
+  min-height: 420px;
+  flex: 1;
+  overflow: visible;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 64px rgba(120,72,232,0.22);
+}
+
+.testimonio-contenido {
+  padding: 4rem 3.5rem 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonio-comillas {
+  position: absolute;
+  top: 2.5rem;
+  left: 3rem;
+  font-size: 7rem;
+  color: rgba(243,122,166,0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testimonio-texto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #2d3748;
+  line-height: 1.8;
+  margin: 0 0 2rem 0;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.testimonio-rating {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.estrella {
+  font-size: 1.6rem;
+  color: #ffc107;
+  filter: drop-shadow(0 2px 4px rgba(255,193,7,0.3));
+}
+
+.testimonio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(243,122,166,0.1);
+}
+
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.testimonio-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  box-shadow: 0 8px 20px rgba(243,122,166,0.3);
+  flex-shrink: 0;
+}
+
+.testimonio-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.testimonio-nombre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.testimonio-cargo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #718096;
+}
+
+.testimonio-leer-mas {
+  background: linear-gradient(135deg, #f37aa6, #ff8cc8);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.9rem 2rem;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 16px rgba(243,122,166,0.3);
+  white-space: nowrap;
+}
+
+.testimonio-leer-mas:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(243,122,166,0.5);
+}
+
+.testimonio-nav {
+  background: linear-gradient(135deg, #f37aa6, #ff8cc8);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 8px 20px rgba(243,122,166,0.3);
+  flex-shrink: 0;
+}
+
+.testimonio-nav:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 32px rgba(243,122,166,0.5);
+}
+
+/* Modal */
+.testimonio-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.testimonio-modal {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 32px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 32px 96px rgba(0,0,0,0.3);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.testimonio-modal-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: #666;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.testimonio-modal-close:hover {
+  background: #f37aa6;
+  color: #fff;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.testimonio-modal-header {
+  padding: 3.5rem 3rem 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 3px solid rgba(243,122,166,0.15);
+}
+
+.testimonio-modal-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: 0 12px 32px rgba(243,122,166,0.3);
+  flex-shrink: 0;
+}
+
+.testimonio-modal-info {
+  flex: 1;
+}
+
+.testimonio-modal-nombre {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.testimonio-modal-cargo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #718096;
+  margin: 0 0 1rem 0;
+}
+
+.testimonio-modal-rating {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.estrella-grande {
+  font-size: 1.8rem;
+  color: #ffc107;
+  filter: drop-shadow(0 2px 6px rgba(255,193,7,0.4));
+}
+
+.testimonio-modal-body {
+  padding: 3rem 3rem 3.5rem 3rem;
+  position: relative;
+}
+
+.testimonio-modal-comillas {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  font-size: 6rem;
+  color: rgba(243,122,166,0.08);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.testimonio-modal-texto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  color: #2d3748;
+  line-height: 1.9;
+  margin: 0;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonios-indicadores {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.indicador {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(243,122,166,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.indicador.activo {
+  background: #f37aa6;
+  transform: scale(1.5);
+  box-shadow: 0 3px 10px rgba(243,122,166,0.5);
+}
+
+.indicador:hover:not(.activo) {
+  background: rgba(243,122,166,0.6);
+  transform: scale(1.3);
+}
+
+/* Animaciones de transición */
+.fade-in {
+  animation: fadeInCard 0.4s ease-out;
+}
+
+.fade-out {
+  animation: fadeOutCard 0.3s ease-out;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutCard {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .testimonios-carrusel {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .testimonio-nav {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    font-size: 1.8rem;
+  }
+  
+  .testimonio-nav-izq {
+    left: -26px;
+  }
+  
+  .testimonio-nav-der {
+    right: -26px;
+  }
+  
+  .testimonio-card {
+    min-height: 380px;
+  }
+  
+  .testimonio-contenido {
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+  }
+  
+  .testimonio-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .testimonio-leer-mas {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .testimonio-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .testimonio-modal-header {
+    padding: 3rem 2rem 2rem 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .testimonio-modal-body {
+    padding: 2.5rem 2rem 3rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonio-texto {
+    font-size: 1.05rem;
+  }
+  
+  .testimonio-modal-texto {
+    font-size: 1.05rem;
+  }
+  
+  .testimonio-avatar {
+    width: 65px;
+    height: 65px;
+    font-size: 2.3rem;
+  }
+}
