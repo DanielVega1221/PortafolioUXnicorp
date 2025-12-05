@@ -134,14 +134,25 @@ function ContactoFormulario() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    // No sanitizar durante la escritura, solo validar caracteres peligrosos
-    // El trim se hará solo al enviar el formulario
-    const cleanValue = value
-      .replace(/[<>]/g, '') // Remover < y >
-      .replace(/javascript:/gi, '') // Remover javascript:
-      .replace(/on\w+=/gi, '') // Remover event handlers
-      .replace(/script/gi, '') // Remover palabra script
-      .replace(/eval\(/gi, ''); // Remover eval
+    // Para campos de texto que permiten espacios, solo remover caracteres peligrosos
+    // Para email/telefono, remover también espacios
+    let cleanValue = value;
+    
+    if (name === 'email') {
+      // Email: sin espacios
+      cleanValue = value.replace(/\s/g, '').replace(/[<>]/g, '');
+    } else if (name === 'telefono') {
+      // Teléfono: permitir solo números, espacios, +, -, () 
+      cleanValue = value.replace(/[^0-9\s+()-]/g, '');
+    } else {
+      // Nombre, apellido, empresa, consulta: permitir espacios
+      cleanValue = value
+        .replace(/[<>]/g, '') // Remover < y >
+        .replace(/javascript:/gi, '') // Remover javascript:
+        .replace(/on\w+=/gi, '') // Remover event handlers
+        .replace(/script/gi, '') // Remover palabra script
+        .replace(/eval\(/gi, ''); // Remover eval
+    }
     
     setFormData(prev => ({
       ...prev,
