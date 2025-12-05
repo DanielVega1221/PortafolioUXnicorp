@@ -152,9 +152,9 @@
 .contacto-submit-btn {
   border: none;
   border-radius: 50px;
-  padding: 1.2rem 2rem;
+  padding: 1.4rem 2.5rem;
   font-family: 'Source Code Pro', monospace;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
