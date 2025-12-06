@@ -615,7 +615,7 @@ function SobreNosotros() {
                 <TeamMemberCard 
                   delay={0}
                   member={{
-                    name: "Daniel",
+                    name: "Gonzalo",
                     role: "Full Stack Developer",
                     title: "Backend & Arquitectura",
                     bio: "Todo lo que no ves pero funciona perfecto, lo arma él. Infraestructura, lógica de negocio y soluciones sólidas. Daniel es quien se asegura de que todo esté estable, rápido y bien pensado desde adentro.",
