@@ -225,6 +225,15 @@ function App() {
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>
           <CTASection 
+            titulo="¿Querés conocer quiénes somos?"
+            descripcion="Conocé nuestra historia, filosofía y al equipo detrás de UXnicorp"
+            textoBoton="Sobre nosotros"
+            linkTo="/sobre-nosotros"
+            variant="secondary"
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <CTASection 
             titulo="¿Querés saber cómo trabajamos?"
             descripcion="Conocé nuestra metodología, cultura y proceso de trabajo"
             textoBoton="Descubrí cómo lo hacemos"

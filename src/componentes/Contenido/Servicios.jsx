@@ -1,8 +1,89 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Search, Zap, Package, CheckCircle, Sparkles, Rocket, TrendingUp, FileText, Code, Palette, ShoppingCart, Settings, ArrowRight } from "lucide-react";
+import { Search, Zap, Package, CheckCircle, Sparkles, Rocket, TrendingUp, FileText, Code, Palette, ShoppingCart, Settings, ArrowRight, HelpCircle, X } from "lucide-react";
 import "./Servicios.css";
 import "../../section-glass-card.css";
+
+const explicacionesCriollas = {
+  "Auditoría UX/UI Profesional": {
+    que: "Es una revisión completa de tu página web para ver qué anda bien y qué se puede mejorar, sin tocar el código.",
+    paraque: "Sirve para saber si tu página es fácil de usar, si se ve bien, si carga rápido y si funciona en todos los dispositivos. Te da un diagnóstico claro de qué arreglar.",
+    como: "Navegamos tu sitio como lo haría un usuario real, tomamos nota de todo lo que se puede mejorar y te entregamos un informe detallado con soluciones priorizadas.",
+    cuando: "Es ideal cuando tenés una web funcionando pero sentís que algo no está bien, que la gente no la entiende o que querés mejorarla pero no sabés por dónde empezar."
+  },
+  "Optimización de Conversión (CRO)": {
+    que: "Es un análisis enfocado en descubrir por qué la gente entra a tu web pero no compra, no se contacta o no hace lo que vos querés que haga.",
+    paraque: "Sirve para aumentar las ventas o contactos sin necesidad de traer más visitas. Te dice qué cambiar en textos, botones y formularios para que más gente se anime a dar el paso.",
+    como: "Revisamos toda la estrategia de tu página: mensajes, llamados a la acción, formularios, diseño. Te mostramos qué está frenando a tus clientes y cómo solucionarlo.",
+    cuando: "Es perfecto cuando tenés tráfico (gente que visita tu web) pero no se concretan ventas o contactos. También si querés vender más sin gastar más en publicidad."
+  },
+  "Revisión Técnica + Mini-Refactor": {
+    que: "Es una auditoría técnica del código de tu sitio más una limpieza express de 1 o 2 módulos que estén mal hechos o desactualizados.",
+    paraque: "Sirve para que tu web funcione más rápido, sea más fácil de mantener y esté preparada para crecer sin problemas técnicos.",
+    como: "Revisamos el código completo, identificamos qué está mal y arreglamos las partes más críticas. Te entregamos todo documentado y mejorado.",
+    cuando: "Es necesario cuando tu web anda lenta, tiene errores raros o fue hecha hace tiempo y necesita una actualización técnica urgente."
+  },
+  "Landing Express Basic": {
+    que: "Es una página web de una sola página (landing page) lista en 72 horas. Tiene lo esencial: un encabezado con tu mensaje principal y 2-3 secciones más.",
+    paraque: "Sirve para tener presencia online rápido, mostrar tu negocio de forma profesional y dar una línea directa de contacto a WhatsApp o formulario.",
+    como: "Vos nos das tu contenido (textos e imágenes), nosotros lo armamos en un diseño limpio y funcional, y en 3 días está online y listo para usar.",
+    cuando: "Son recomendadas para emprendedores, profesionales o negocios que necesitan presencia digital urgente. Por ejemplo: plomeros, electricistas, coaches, diseñadores freelance que quieren que los contacten."
+  },
+  "Landing Express Intermedia": {
+    que: "Es una landing page más completa y moderna con hasta 5 secciones y animaciones profesionales que se activan cuando scrolleas.",
+    paraque: "Sirve para causar una mejor primera impresión, transmitir profesionalismo y dar más información sobre tu negocio o servicio de forma atractiva.",
+    como: "Diseñamos una página con más contenido organizado, agregamos efectos visuales copados y optimizamos todo para que se vea increíble en cualquier dispositivo.",
+    cuando: "Es ideal para negocios que quieren destacarse de la competencia, estudios profesionales, agencias, consultores o empresas que buscan generar confianza antes del contacto."
+  },
+  "Landing Express Full": {
+    que: "Es la versión completa: una landing de 6 secciones + 1 página adicional (como 'Sobre nosotros' o 'Portfolio'). Todo optimizado para Google y velocidad.",
+    paraque: "Sirve para tener una presencia digital profesional y completa, aparecer bien posicionado en Google y convertir visitas en clientes de forma efectiva.",
+    como: "Creamos una web robusta con SEO técnico implementado, imágenes optimizadas, textos estratégicos y diseño pensado para que la gente te contacte.",
+    cuando: "Es para negocios que van en serio: empresas de servicios, estudios jurídicos, clínicas, constructoras, agencias que necesitan una web que genere resultados reales."
+  },
+  "Landing Flyer Promo": {
+    que: "Es un anuncio digital en formato web. Una página super simple con tu oferta, mensaje principal y un botón directo a WhatsApp.",
+    paraque: "Sirve para promociones puntuales, lanzamientos o campañas específicas. La idea es que la gente vea tu oferta y te contacte al toque.",
+    como: "Vos nos das tu promo, nosotros armamos un diseño tipo flyer digital profesional con un PDF incluido, y lo subimos para que lo compartas por redes.",
+    cuando: "Es perfecto para campañas de descuentos, black friday, lanzamientos de productos o servicios temporales. También para eventos o promociones con fecha límite."
+  },
+  "Landing Premium a Medida": {
+    que: "Es una landing diseñada desde cero, 100% personalizada para tu marca. Sin plantillas, todo hecho específicamente según tu identidad y necesidades.",
+    paraque: "Sirve para proyectos donde la imagen de marca es fundamental y querés algo único que te diferencie por completo de la competencia.",
+    como: "Hacemos sesiones de briefing, diseñamos todo desde cero (colores, tipografías, animaciones, estructura) y desarrollamos una página única e irrepetible.",
+    cuando: "Es para marcas premium, lanzamientos importantes, estudios de arquitectura/diseño, marcas de moda, productos exclusivos o negocios donde la estética es clave."
+  },
+  "E-commerce": {
+    que: "Es una tienda online completa donde podés vender tus productos por internet. Incluye carrito de compras, pasarela de pagos y panel de administración.",
+    paraque: "Sirve para vender 24/7 sin depender de redes sociales, automatizar ventas, gestionar stock y cobrar por Mercado Pago u otras plataformas.",
+    como: "Desarrollamos toda la tienda con sistema de productos, categorías, carrito, checkout y te enseñamos a administrarla. Vos cargás productos y empezás a vender.",
+    cuando: "Es para negocios que venden productos físicos o digitales y quieren profesionalizar sus ventas: tiendas de ropa, accesorios, tecnología, alimentos, cursos online, etc."
+  },
+  "Sistemas de Gestión": {
+    que: "Es un software personalizado hecho a medida para automatizar y organizar procesos específicos de tu negocio.",
+    paraque: "Sirve para dejar de usar mil planillas de Excel, automatizar tareas repetitivas y tener todo centralizado en un solo lugar. Ahorrás tiempo y evitás errores.",
+    como: "Analizamos cómo funciona tu negocio, diseñamos el sistema que necesitás (clientes, ventas, inventario, turnos, lo que sea) y lo desarrollamos desde cero.",
+    cuando: "Es para negocios que ya crecieron y necesitan orden: talleres mecánicos, clínicas, estudios contables, empresas de logística, cualquier negocio con procesos complejos."
+  },
+  "Paquete Emprendedor": {
+    que: "Es un combo para arrancar rápido: landing básica en 72hs + colores y tipografías definidas para tu marca (microbranding).",
+    paraque: "Sirve para tener presencia online profesional desde el día uno sin gastar una fortuna. Ideal para emprendedores que recién arrancan.",
+    como: "Te armamos la landing express básica y además te damos una paleta de colores y tipografías para que uses en redes, flyers y todo lo que hagas.",
+    cuando: "Es perfecto para nuevos emprendimientos, freelancers que recién empiezan, profesionales independientes o cualquiera que necesite presencia digital rápida y económica."
+  },
+  "Paquete Auditoría Integral": {
+    que: "Es el combo completo de auditorías: revisión UX/UI + análisis de conversión (CRO) para saber exactamente qué está fallando en tu web.",
+    paraque: "Sirve para tener un diagnóstico 360° de tu sitio: qué se puede mejorar en diseño, usabilidad y estrategia de ventas/contacto.",
+    como: "Hacemos ambas auditorías en paralelo y te entregamos un informe integral con todas las mejoras priorizadas por impacto y urgencia.",
+    cuando: "Es ideal cuando tenés una web funcionando pero no está dando los resultados esperados y querés saber exactamente qué cambiar para que funcione mejor."
+  },
+  "Plan Evolución": {
+    que: "Es un plan que te permite empezar con una landing básica y después mejorarla a intermedia o full pagando solo el 50% de la diferencia.",
+    paraque: "Sirve para empezar con una inversión baja y después ir escalando sin tener que pagar el precio completo de la versión mejorada.",
+    como: "Arrancás con la Basic, y cuando quieras mejorar, solo pagás la mitad de la diferencia de precio. El resto lo absorbemos nosotros.",
+    cuando: "Es perfecto para startups o negocios que quieren empezar ya pero saben que van a necesitar algo más robusto en unos meses. Vas creciendo a tu ritmo."
+  }
+};
 
 const serviciosData = {
   auditorias: [
@@ -191,6 +272,8 @@ const serviciosData = {
 
 function Servicios() {
   const [activeTab, setActiveTab] = useState('auditorias');
+  const [modalAbierto, setModalAbierto] = useState(false);
+  const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -201,6 +284,16 @@ function Servicios() {
   ];
 
   const currentServices = serviciosData[activeTab];
+
+  const abrirModal = (titulo) => {
+    setServicioSeleccionado(titulo);
+    setModalAbierto(true);
+  };
+
+  const cerrarModal = () => {
+    setModalAbierto(false);
+    setServicioSeleccionado(null);
+  };
 
   const handleConsultarClick = (servicioTitulo) => {
     if (location.pathname === '/') {
@@ -311,18 +404,65 @@ function Servicios() {
                   </div>
                 )}
                 
-                <button 
-                  className="servicio-btn-consultar"
-                  onClick={() => handleConsultarClick(servicio.titulo)}
-                >
-                  Consultar servicio
-                  <ArrowRight size={18} />
-                </button>
+                <div className="servicio-botones">
+                  <button 
+                    className="servicio-btn-ayuda"
+                    onClick={() => abrirModal(servicio.titulo)}
+                    title="¿Qué es esto?"
+                  >
+                    <HelpCircle size={18} />
+                  </button>
+                  <button 
+                    className="servicio-btn-consultar"
+                    onClick={() => handleConsultarClick(servicio.titulo)}
+                  >
+                    Consultar servicio
+                    <ArrowRight size={18} />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal de explicación */}
+      {modalAbierto && servicioSeleccionado && explicacionesCriollas[servicioSeleccionado] && (
+        <div className="servicio-modal-overlay" onClick={cerrarModal}>
+          <div className="servicio-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="servicio-modal-cerrar" onClick={cerrarModal}>
+              <X size={24} />
+            </button>
+            <div className="servicio-modal-header">
+              <HelpCircle size={32} color="#81ade7" />
+              <h3>{servicioSeleccionado}</h3>
+            </div>
+            <div className="servicio-modal-contenido">
+              <div className="servicio-modal-seccion">
+                <h4>¿Qué es?</h4>
+                <p>{explicacionesCriollas[servicioSeleccionado].que}</p>
+              </div>
+              <div className="servicio-modal-seccion">
+                <h4>¿Para qué sirve?</h4>
+                <p>{explicacionesCriollas[servicioSeleccionado].paraque}</p>
+              </div>
+              <div className="servicio-modal-seccion">
+                <h4>¿Cómo funciona?</h4>
+                <p>{explicacionesCriollas[servicioSeleccionado].como}</p>
+              </div>
+              <div className="servicio-modal-seccion">
+                <h4>¿Cuándo es recomendado?</h4>
+                <p>{explicacionesCriollas[servicioSeleccionado].cuando}</p>
+              </div>
+            </div>
+            <div className="servicio-modal-footer">
+              <button className="servicio-modal-btn-entendido" onClick={cerrarModal}>
+                Entendido
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

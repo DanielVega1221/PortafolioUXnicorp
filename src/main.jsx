@@ -11,6 +11,7 @@ import './responsive-utils.css';
 
 // ⚠️ MEJORA: Lazy loading para rutas
 const ComoTrabajamosLazy = React.lazy(() => import('./pages/ComoTrabajamos'));
+const SobreNosotrosLazy = React.lazy(() => import('./pages/SobreNosotros'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<App />} />
         <Route path="/como-trabajamos" element={<ComoTrabajamosLazy />} />
+        <Route path="/sobre-nosotros" element={<SobreNosotrosLazy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

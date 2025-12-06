@@ -5,16 +5,12 @@ import '../../section-glass-card.css';
 
 const faqs = [
   {
-    pregunta: "¿Cuánto tiempo lleva desarrollar un proyecto web?",
-    respuesta: "Depende de la complejidad. Una landing page puede estar lista en 2-3 semanas. Un e-commerce completo toma entre 6-10 semanas. Un sistema personalizado (ERP, CRM) puede llevar 12-16 semanas. Siempre trabajamos con entregas parciales para que veas el progreso constantemente."
-  },
-  {
-    pregunta: "¿Cuál es la inversión inicial aproximada?",
-    respuesta: "Nuestros proyectos comienzan desde USD 800 para landing pages simples, e-commerce desde USD 2,500 y sistemas personalizados desde USD 5,000. Ofrecemos planes de pago flexibles adaptados a tu presupuesto. Solicita una cotización personalizada sin compromiso."
+    pregunta: "¿Cómo funciona el proceso de cotización?",
+    respuesta: "Nos contactas contando tu proyecto, agendamos una videollamada o chat para entender tus necesidades, y en 48 horas te enviamos una propuesta personalizada con costos, tiempos y alcance detallado. Todo sin compromiso y completamente transparente."
   },
   {
     pregunta: "¿Ofrecen mantenimiento después del lanzamiento?",
-    respuesta: "Sí, ofrecemos planes de mantenimiento mensuales que incluyen: actualizaciones de seguridad, backups automáticos, soporte técnico prioritario, optimización de rendimiento y ajustes menores. También ofrecemos soporte puntual si lo prefieres."
+    respuesta: "Sí, ofrecemos planes de mantenimiento mensuales que incluyen: actualizaciones de seguridad, backups automáticos, soporte técnico prioritario, optimización de rendimiento y una ronda de cambios mensuales para ajustes menores que necesites."
   },
   {
     pregunta: "¿Trabajan con clientes de otros países?",
@@ -22,15 +18,15 @@ const faqs = [
   },
   {
     pregunta: "¿Qué pasa si necesito cambios después del lanzamiento?",
-    respuesta: "Los primeros 30 días después del lanzamiento incluyen ajustes menores sin costo. Para cambios mayores o nuevas funcionalidades, podemos trabajar bajo un esquema de horas o en un nuevo proyecto. Siempre con transparencia en costos."
+    respuesta: "Si contratas nuestro plan de mantenimiento, incluye una ronda de cambios mensuales para modificaciones menores. Los primeros 30 días después del lanzamiento también incluyen ajustes sin costo. Para cambios mayores, trabajamos con total transparencia en costos."
   },
   {
     pregunta: "¿Puedo administrar el contenido de mi sitio yo mismo?",
-    respuesta: "¡Por supuesto! Todos nuestros proyectos incluyen paneles administrativos intuitivos para que puedas actualizar contenidos, imágenes, productos, etc. sin necesidad de conocimientos técnicos. También brindamos capacitación personalizada."
+    respuesta: "Depende del tipo de proyecto. Los sistemas de gestión y e-commerce incluyen paneles administrativos completos e intuitivos. Las landing pages son más estáticas y optimizadas para conversión."
   },
   {
     pregunta: "¿Qué diferencia a UXnicorp de otras agencias?",
-    respuesta: "No solo programamos, te asesoramos estratégicamente. Somos tu aliado tecnológico, no un proveedor más. Usamos las últimas tecnologías, nos comunicamos en lenguaje claro, cumplimos plazos y estamos disponibles cuando nos necesitas. Nuestros clientes nos recomiendan activamente."
+    respuesta: "No solo te vendemos un sitio web, nos convertimos en tu aliado tecnológico. Nos preocupamos genuinamente por el crecimiento de tu negocio y te acompañamos en cada paso. No usamos plantillas genéricas, cada proyecto es hecho a medida. Hablamos sin tecnicismos, cumplimos lo que prometemos y estamos disponibles cuando nos necesitas. Queremos que tu negocio crezca tanto como el nuestro."
   },
   {
     pregunta: "¿Necesito tener todo definido antes de empezar?",
