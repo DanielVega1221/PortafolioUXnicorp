@@ -45,7 +45,7 @@ function TeamMemberCard({ member, delay = 0 }) {
         {member.foto ? (
           <div className="founder-photo">
             <img 
-              src={`/src/assets/${member.foto}`} 
+              src={`/${member.foto}`} 
               alt={`${member.name} - ${member.role}`}
               loading="lazy"
             />
