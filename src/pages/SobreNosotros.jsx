@@ -618,7 +618,7 @@ function SobreNosotros() {
                     name: "Gonzalo",
                     role: "Full Stack Developer",
                     title: "Backend & Arquitectura",
-                    bio: "Todo lo que no ves pero funciona perfecto, lo arma él. Infraestructura, lógica de negocio y soluciones sólidas. Daniel es quien se asegura de que todo esté estable, rápido y bien pensado desde adentro.",
+                    bio: "Todo lo que no ves pero funciona perfecto, lo arma él. Infraestructura, lógica de negocio y soluciones sólidas. Gonzalo es quien se asegura de que todo esté estable, rápido y bien pensado desde adentro.",
                     icon: <Code size={48} />,
                     gradient: "linear-gradient(135deg, #f37aa6, #ff8cc8)",
                     foto: "daniel.webp",
