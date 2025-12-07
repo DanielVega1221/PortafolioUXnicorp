@@ -109,7 +109,7 @@ function ComoTrabajamos() {
               >
                 <div className="key-point">
                   <CheckCircle size={20} />
-                  <span>Código revisado y testeado en cada commit</span>
+                  <span>Código revisado y testeado en cada etapa</span>
                 </div>
                 <div className="key-point">
                   <CheckCircle size={20} />

@@ -137,7 +137,7 @@ function PorQueAccordion() {
     { 
       title: 'Compromiso real', 
       preview: 'Tu crecimiento es el nuestro',
-      fullText: 'No entregamos el sitio y desaparecemos. Te damos garantía de 3 meses post-lanzamiento y te enseñamos a gestionar tu web. Tu éxito nos importa porque construimos relaciones, no solo proyectos.',
+      fullText: 'No entregamos el sitio y desaparecemos. Te damos garantía de 1 mes post-lanzamiento y te enseñamos a gestionar tu web. Tu éxito nos importa porque construimos relaciones, no solo proyectos.',
       icon: <Zap size={32} />
     }
   ];

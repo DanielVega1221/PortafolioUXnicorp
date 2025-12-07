@@ -153,6 +153,7 @@
   transition: all 0.3s;
   text-align: left;
   outline: none;
+  text-decoration: none;
 }
 
 .footer-nav-item:hover {
@@ -165,7 +166,7 @@
 .footer-nav-icon {
   font-size: 1.3rem;
   transition: transform 0.3s;
-  color: #ec4899;
+  color: #f37aa6;
 }
 
 .footer-nav-item:hover .footer-nav-icon {

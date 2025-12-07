@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     pregunta: "¿Puedo administrar el contenido de mi sitio yo mismo?",
-    respuesta: "Depende del tipo de proyecto. Los sistemas de gestión y e-commerce incluyen paneles administrativos completos e intuitivos. Las landing pages son más estáticas y optimizadas para conversión."
+    respuesta: "Depende del tipo de proyecto. Los sistemas de gestión y e-commerce incluyen paneles administrativos completos e intuitivos. "
   },
   {
     pregunta: "¿Qué diferencia a UXnicorp de otras agencias?",

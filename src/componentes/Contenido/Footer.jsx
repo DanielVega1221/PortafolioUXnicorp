@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../../assets/Logo1.png';
 import OptimizedImage from '../OptimizedImage';
-import { FaInstagram, FaLinkedin, FaFacebook, FaEnvelope, FaWhatsapp, FaHome, FaUsers, FaBriefcase, FaLaptopCode, FaBullseye } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaFacebook, FaEnvelope, FaWhatsapp, FaHome, FaUsers, FaBriefcase, FaLaptopCode, FaBullseye, FaHandshake, FaInfoCircle } from 'react-icons/fa';
 
 const redes = [
   { nombre: 'Instagram', url: 'https://www.instagram.com/uxnicorp/', icono: <FaInstagram />, color: '#f37aa6' },
@@ -11,12 +12,13 @@ const redes = [
 ];
 
 const secciones = [
-  { nombre: 'Inicio', id: 'main', icon: <FaHome /> },
-  { nombre: 'Sobre Nosotros', id: 'sobre-nosotros', icon: <FaUsers /> },
-  { nombre: 'Servicios', id: 'servicios', icon: <FaBullseye /> },
-  { nombre: 'Proyectos', id: 'proyectos', icon: <FaBriefcase /> },
-  { nombre: 'Tecnologías', id: 'tecnologias', icon: <FaLaptopCode /> },
-  { nombre: 'Contacto', id: 'contact', icon: <FaEnvelope /> }
+  { nombre: 'Inicio', id: 'main', icon: <FaHome />, type: 'scroll' },
+  { nombre: 'Servicios', id: 'servicios', icon: <FaBullseye />, type: 'scroll' },
+  { nombre: 'Proyectos', id: 'proyectos', icon: <FaBriefcase />, type: 'scroll' },
+  { nombre: 'Tecnologías', id: 'tecnologias', icon: <FaLaptopCode />, type: 'scroll' },
+  { nombre: 'Sobre Nosotros', to: '/sobre-nosotros', icon: <FaInfoCircle />, type: 'link' },
+  { nombre: 'Cómo Trabajamos', to: '/como-trabajamos', icon: <FaHandshake />, type: 'link' },
+  { nombre: 'Contacto', id: 'contact', icon: <FaEnvelope />, type: 'scroll' }
 ];
 
 function Footer() {
@@ -91,17 +93,29 @@ function Footer() {
         <div className="footer-section footer-nav-section">
           <h4 className="footer-section-title">Navegación</h4>
           <nav className="footer-nav-modern" aria-label="Navegación del sitio">
-            {secciones.map((item) => (
-              <button 
-                key={item.id} 
-                onClick={() => scrollToSection(item.id)} 
-                className="footer-nav-item"
-                type="button"
-                aria-label={`Ir a ${item.nombre}`}
-              >
-                <span className="footer-nav-icon">{item.icon}</span>
-                <span>{item.nombre}</span>
-              </button>
+            {secciones.map((item, index) => (
+              item.type === 'link' ? (
+                <Link
+                  key={index}
+                  to={item.to}
+                  className="footer-nav-item"
+                  aria-label={`Ir a ${item.nombre}`}
+                >
+                  <span className="footer-nav-icon">{item.icon}</span>
+                  <span>{item.nombre}</span>
+                </Link>
+              ) : (
+                <button 
+                  key={item.id} 
+                  onClick={() => scrollToSection(item.id)} 
+                  className="footer-nav-item"
+                  type="button"
+                  aria-label={`Ir a ${item.nombre}`}
+                >
+                  <span className="footer-nav-icon">{item.icon}</span>
+                  <span>{item.nombre}</span>
+                </button>
+              )
             ))}
           </nav>
         </div>
