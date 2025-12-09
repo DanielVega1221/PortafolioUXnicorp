@@ -130,7 +130,7 @@ function App() {
     >
       <Helmet>
         <title>Desarrollo Web Argentina | Agencia de Programación Web Profesional - UXnicorp</title>
-        <meta name="description" content="⭐ Agencia de desarrollo web y programación en Argentina. Programadores expertos en React, Node.js y Next.js. Creamos páginas web, e-commerce y sistemas a medida. +50 proyectos exitosos 🚀" />
+        <meta name="description" content="⭐ Agencia de desarrollo web y programación en Argentina. Programadores expertos en React, Node.js y Next.js. Creamos páginas web, e-commerce y sistemas a medida. varios  exitosos 🚀" />
         
         <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web, agencia de programación, desarrollo páginas web, devs argentina, programación web, desarrolladores web, agencia desarrollo software, agencia digital argentina, react developers, programadores freelance, empresa desarrollo web, servicios programación, desarrollo frontend backend, crear página web, diseño web profesional, e-commerce argentina" />
         

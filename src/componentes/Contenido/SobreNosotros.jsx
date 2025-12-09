@@ -74,7 +74,7 @@ function SobreNosotros() {
       </div>
       <div className="metricas-grid" role="region" aria-label="Métricas de desempeño">
         <div className="metrica-card">
-          <span className="metrica-numero rosa">+15</span>
+          <span className="metrica-numero rosa">+10</span>
           <div className="metrica-titulo">Proyectos exitosos lanzados y funcionando</div>
         </div>
         <div className="metrica-card">
