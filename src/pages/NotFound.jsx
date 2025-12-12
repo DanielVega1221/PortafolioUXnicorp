@@ -1,3 +1,15 @@
+/**
+ * PÁGINA: 404 Not Found
+ * 
+ * Se muestra cuando:
+ * - El usuario intenta acceder a una ruta que no existe
+ * - Configurado en main.jsx con Route path="*"
+ * 
+ * Funcionalidad:
+ * - Botón para volver al home
+ * - Diseño simple y amigable (emoji 🔍 + mensaje claro)
+ */
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NotFound.css';

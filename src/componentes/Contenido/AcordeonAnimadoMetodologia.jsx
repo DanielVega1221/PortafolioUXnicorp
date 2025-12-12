@@ -1,3 +1,18 @@
+/**
+ * COMPONENTE: Acordeón controlado para pasos de metodología
+ * 
+ * Diferencia con AcordeonAnimado:
+ * - Este es CONTROLADO (estado manejado por componente padre)
+ * - Usado exclusivamente en Metodologia.jsx para pasos del proceso
+ * - Tiene lógica de "solo uno abierto a la vez" en el padre
+ * 
+ * Props:
+ * - titulo: String - Nombre del paso
+ * - children: ReactNode - Detalles del paso
+ * - abierto: Boolean - Estado controlado desde padre
+ * - onClick: Function - Callback para cambiar paso activo
+ */
+
 import React, { useState, useRef } from "react";
 import "./Metodologia.css";
 

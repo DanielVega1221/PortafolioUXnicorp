@@ -1,3 +1,20 @@
+/**
+ * COMPONENTE: Sección de metodología con pasos expandibles
+ * 
+ * Usado en:
+ * - ComoTrabajamos.jsx (página completa)
+ * 
+ * Funcionalidad:
+ * - 10 pasos del proceso de desarrollo
+ * - Acordeones controlados (solo uno abierto a la vez)
+ * - Cada paso muestra: número, título, descripción, lista de detalles
+ * - Iconos custom de SVGIcons.jsx
+ * 
+ * Data:
+ * - Array 'pasos' con toda la info de cada etapa
+ * - Cada paso tiene: numero, titulo, icono, descripcion, detalles[], color
+ */
+
 import React, { useState } from "react";
 import "./Metodologia.css";
 import "../../section-glass-card.css";

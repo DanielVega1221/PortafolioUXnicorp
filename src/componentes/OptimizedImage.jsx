@@ -1,7 +1,22 @@
 /**
- * OptimizedImage - Componente para cargar imágenes optimizadas con lazy loading
- * Las imágenes ya fueron optimizadas por el script optimize-images.mjs
+ * COMPONENTE: Wrapper para imágenes optimizadas
+ * 
+ * Props:
+ * - src: String - Ruta de la imagen (ya debe estar optimizada)
+ * - alt: String - Texto alternativo (IMPORTANTE para accesibilidad y SEO)
+ * - loading: 'lazy' | 'eager' - Lazy loading (default: 'lazy')
+ * - fetchpriority: 'high' | 'low' | 'auto' - Prioridad de carga
+ * - width, height: Number - Dimensiones (evita layout shift)
+ * - className: String - Clases CSS adicionales
+ * 
+ * NOTA:
+ * Las imágenes deben estar previamente optimizadas con:
+ * npm run optimize:images (genera versiones WebP)
+ * 
+ * Uso:
+ * <OptimizedImage src="/logo.png" alt="Logo UXnicorp" width={80} height={80} />
  */
+
 import PropTypes from 'prop-types';
 
 const OptimizedImage = ({ 

@@ -1,3 +1,19 @@
+/**
+ * ENTRY POINT - Router y configuración principal
+ * 
+ * Este archivo maneja:
+ * - Router de React Router v7 (todas las rutas del sitio)
+ * - Lazy loading de páginas completas para mejor performance
+ * - Animaciones de transición entre páginas (Framer Motion)
+ * - SEO (React Helmet Provider para meta tags dinámicos)
+ * 
+ * RUTAS:
+ * / → App.jsx (home con todas las secciones)
+ * /sobre-nosotros → Página completa del equipo
+ * /como-trabajamos → Metodología y cultura
+ * * → 404 Not Found
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
@@ -9,7 +25,7 @@ import NotFound from './pages/NotFound';
 import './index.css';
 import './responsive-utils.css';
 
-// ⚠️ MEJORA: Lazy loading para rutas
+// Lazy loading para páginas completas (mejora tiempo de carga inicial)
 const ComoTrabajamosLazy = React.lazy(() => import('./pages/ComoTrabajamos'));
 const SobreNosotrosLazy = React.lazy(() => import('./pages/SobreNosotros'));
 

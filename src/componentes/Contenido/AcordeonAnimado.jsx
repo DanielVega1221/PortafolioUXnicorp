@@ -1,3 +1,19 @@
+/**
+ * COMPONENTE: Acordeón reutilizable con animación suave
+ * 
+ * Usado en:
+ * - SobreNosotros.jsx (sección "Nuestra Historia")
+ * - SobreNosotros.jsx (sección "Por Qué Elegirnos")
+ * 
+ * Props:
+ * - titulo: String - Título visible del acordeón
+ * - children: ReactNode - Contenido que se expande/colapsa
+ * 
+ * Animación:
+ * - maxHeight dinámica basada en scrollHeight del contenido
+ * - Transiciones suaves con cubic-bezier
+ */
+
 import React, { useState, useRef } from "react";
 import "./SobreNosotros.css";
 

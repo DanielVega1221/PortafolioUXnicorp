@@ -1,3 +1,24 @@
+/**
+ * COMPONENTE: Call To Action reutilizable
+ * 
+ * Usado en:
+ * - App.jsx (2 veces: invita a /sobre-nosotros y /como-trabajamos)
+ * - Páginas completas para redirigir a otras secciones
+ * 
+ * Props:
+ * - titulo: String - Título del CTA
+ * - descripcion: String - Texto descriptivo
+ * - textoBoton: String - Texto del botón
+ * - variant: 'primary' | 'secondary' - Estilo visual
+ * - linkTo: String | null - Ruta a navegar (ej: '/sobre-nosotros' o '/#contact')
+ *   Si es null, scrollea a la sección de contacto
+ * 
+ * Comportamiento:
+ * - Si linkTo tiene '#', navega y scrollea al ID
+ * - Si es ruta normal, navega y scrollea al top
+ * - Si es null, busca #contact en la página actual
+ */
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CTASection.css';

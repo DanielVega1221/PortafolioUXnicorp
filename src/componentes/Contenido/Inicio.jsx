@@ -1,3 +1,19 @@
+/**
+ * COMPONENTE: Hero / Sección de inicio (primera vista del sitio)
+ * 
+ * Usado en:
+ * - App.jsx (primera sección de la home)
+ * 
+ * Funcionalidad:
+ * - Hero con logo, título principal y CTA
+ * - Animaciones con IntersectionObserver
+ * - Botón que scrollea suavemente a #sobre-nosotros
+ * - Frases rotativas destacando servicios
+ * 
+ * Estado:
+ * - isVisible: Controla animaciones de entrada basado en scroll
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import "./Inicio.css";
 import Logo1 from "../../assets/Logo1.png";

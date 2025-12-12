@@ -1,3 +1,22 @@
+/**
+ * COMPONENTE: Preview de Sobre Nosotros en la home
+ * 
+ * IMPORTANTE: Este es el PREVIEW en la home, NO confundir con:
+ * - src/pages/SobreNosotros.jsx (página completa con equipo)
+ * 
+ * Usado en:
+ * - App.jsx (sección #sobre-nosotros de la home)
+ * 
+ * Contenido:
+ * - "Por qué elegirnos" con 4 acordeones:
+ *   1. Enfoque en resultados medibles
+ *   2. Acompañamiento real
+ *   3. Flexibilidad y adaptabilidad
+ *   4. Innovación constante
+ * - Imagen decorativa (card1.png)
+ * - Acordeones con iconos custom de SVGIcons
+ */
+
 import React from "react";
 import AcordeonAnimado from "./AcordeonAnimado";
 import "./SobreNosotros.css";
