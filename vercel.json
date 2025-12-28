@@ -4,10 +4,6 @@
   "installCommand": "npm install --legacy-peer-deps",
   "framework": null,
   "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
