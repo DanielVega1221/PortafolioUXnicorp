@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 import "./Proyectos.css";
 import "../../section-glass-card.css";
 import OptimizedImage from "../OptimizedImage";
@@ -12,6 +13,7 @@ import Modal2Img from "../../assets/modal2.png";
 import Modal3Img from "../../assets/modal3.png";
 import Modal4Img from "../../assets/modal4.png";
 import { StarIcon, ArrowRightIcon } from "../SVGIcons";
+import { ExternalLink } from "lucide-react";
 
 const proyectos = [
   {
@@ -243,6 +245,37 @@ const Proyectos = () => {
               }}
             />
           ))}
+        </div>
+
+        {/* Botón de ver todos los casos */}
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <Link 
+            to="/casos-reales" 
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              padding: '1rem 2rem',
+              background: 'linear-gradient(135deg, #81ade7, #f37aa6)',
+              color: 'white',
+              fontWeight: 600,
+              fontSize: '1rem',
+              borderRadius: '12px',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(129, 173, 231, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <ExternalLink size={20} />
+            Ver todos nuestros casos de éxito
+          </Link>
         </div>
         </div>
       </section>

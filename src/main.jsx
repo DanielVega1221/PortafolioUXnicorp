@@ -28,6 +28,14 @@ import './responsive-utils.css';
 // Lazy loading para páginas completas (mejora tiempo de carga inicial)
 const ComoTrabajamosLazy = React.lazy(() => import('./pages/ComoTrabajamos'));
 const SobreNosotrosLazy = React.lazy(() => import('./pages/SobreNosotros'));
+const CasosRealesLazy = React.lazy(() => import('./pages/CasosReales'));
+const LandingPagesLazy = React.lazy(() => import('./pages/LandingPages'));
+const ServiciosLazy = React.lazy(() => import('./pages/Servicios'));
+const AuditoriasLazy = React.lazy(() => import('./pages/Auditorias'));
+const LandingPagesServiciosLazy = React.lazy(() => import('./pages/LandingPagesServicios'));
+const EcommerceLazy = React.lazy(() => import('./pages/Ecommerce'));
+const SistemasGestionLazy = React.lazy(() => import('./pages/SistemasGestion'));
+const PaquetesServiciosLazy = React.lazy(() => import('./pages/PaquetesServicios'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -38,6 +46,14 @@ function AnimatedRoutes() {
         <Route path="/" element={<App />} />
         <Route path="/como-trabajamos" element={<ComoTrabajamosLazy />} />
         <Route path="/sobre-nosotros" element={<SobreNosotrosLazy />} />
+        <Route path="/servicios" element={<ServiciosLazy />} />
+        <Route path="/servicios/auditorias" element={<AuditoriasLazy />} />
+        <Route path="/servicios/landing-pages" element={<LandingPagesServiciosLazy />} />
+        <Route path="/servicios/ecommerce" element={<EcommerceLazy />} />
+        <Route path="/servicios/sistemas-gestion" element={<SistemasGestionLazy />} />
+        <Route path="/servicios/paquetes" element={<PaquetesServiciosLazy />} />
+        <Route path="/casos-reales" element={<CasosRealesLazy />} />
+        <Route path="/landing-pages" element={<LandingPagesLazy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

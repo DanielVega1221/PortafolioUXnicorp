@@ -1,39 +1,13 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 import Navbar from './componentes/Navbar/Navbar';
 import Inicio from './componentes/Contenido/Inicio';
 import SobreNosotros from './componentes/Contenido/SobreNosotros';
 import './App.css';
 import './section-glass-card.css';
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    x: -20
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeOut'
-    }
-  },
-  exit: {
-    opacity: 0,
-    x: 20,
-    transition: {
-      duration: 0.3,
-      ease: 'easeIn'
-    }
-  }
-};
-
 // ⚠️ MEJORA: Lazy loading para componentes pesados
 const Culture = lazy(() => import('./componentes/Contenido/Culture'));
-const Servicios = lazy(() => import('./componentes/Contenido/Servicios'));
-const Proyectos = lazy(() => import('./componentes/Contenido/Proyectos'));
 const Tecnologias = lazy(() => import('./componentes/Contenido/Tecnologias'));
 const FAQ = lazy(() => import('./componentes/Contenido/FAQ'));
 const CTASection = lazy(() => import('./componentes/Contenido/CTASection'));
@@ -122,24 +96,22 @@ function App() {
   }, []);
 
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
+    <div>
       <Helmet>
         <title>Desarrollo Web Argentina | Agencia de Programación Web Profesional - UXnicorp</title>
-        <meta name="description" content="⭐ Agencia de desarrollo web y programación en Argentina. Programadores expertos en React, Node.js y Next.js. Creamos páginas web, e-commerce y sistemas a medida. varios  exitosos 🚀" />
+        <meta name="description" content="⭐ Agencia de desarrollo web en Argentina. Creamos landing pages, e-commerce, sistemas de gestión y ERPs. Programadores expertos en React y Node.js. Proyectos en todo LATAM 🚀" />
         
-        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web, agencia de programación, desarrollo páginas web, devs argentina, programación web, desarrolladores web, agencia desarrollo software, agencia digital argentina, react developers, programadores freelance, empresa desarrollo web, servicios programación, desarrollo frontend backend, crear página web, diseño web profesional, e-commerce argentina" />
+        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, programadores react argentina, agencia digital argentina, desarrollo web latam, programación web profesional, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina" />
         
         <meta property="og:title" content="Desarrollo Web Argentina | Agencia de Programación Web - UXnicorp" />
-        <meta property="og:description" content="Agencia de desarrollo web profesional. Programadores expertos en React, Node.js. Creamos tu página web, e-commerce o sistema a medida. Presupuesto gratis" />
+        <meta property="og:description" content="Agencia de desarrollo web en Argentina. Landing pages, e-commerce, sistemas de gestión y ERPs. Atendemos todo LATAM. Presupuesto gratis" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://uxnicorp.com" />
         <meta property="og:image" content="https://uxnicorp.com/og-image.jpg" />
         <meta property="og:locale" content="es_AR" />
+        <meta property="og:locale:alternate" content="es_MX" />
+        <meta property="og:locale:alternate" content="es_CO" />
+        <meta property="og:locale:alternate" content="es_CL" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Desarrollo Web Argentina | Agencia de Programación Web" />
@@ -158,14 +130,23 @@ function App() {
             "url": "https://uxnicorp.com",
             "logo": "https://uxnicorp.com/logo.png",
             "image": "https://uxnicorp.com/og-image.jpg",
-            "description": "Agencia de desarrollo web y programación en Argentina. Especialistas en React, Node.js, Next.js. Desarrollo de páginas web, e-commerce y sistemas a medida.",
-            "priceRange": "$$",
+            "description": "Agencia de desarrollo web en Argentina especializada en landing pages, e-commerce, sistemas ERP/CRM y auditorías UX. Atendemos clientes en toda Latinoamérica.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "AR",
-              "addressRegion": "Catamarca",
-              "addressLocality": "San Fernando del Valle de Catamarca"
+              "addressRegion": "Buenos Aires"
             },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Argentina"
+              },
+              {
+                "@type": "Place",
+                "name": "Latinoamérica"
+              }
+            ],
+            "priceRange": "$$",
             "geo": {
               "@type": "GeoCoordinates",
               "latitude": "-28.4696",
@@ -201,11 +182,7 @@ function App() {
               "Sistemas de Gestión",
               "Desarrollo React",
               "Desarrollo Next.js"
-            ],
-            "areaServed": {
-              "@type": "Country",
-              "name": "Argentina"
-            }
+            ]
           })}
         </script>
       </Helmet>
@@ -215,10 +192,26 @@ function App() {
         <Inicio />
         <SobreNosotros />
         <Suspense fallback={<LoadingFallback />}>
-          <Servicios />
+          <div id="servicios">
+            <CTASection 
+              titulo="¿Qué podemos hacer por tu negocio?"
+              descripcion="Explorá nuestros servicios: auditorías, landing pages, e-commerce, sistemas de gestión y paquetes a medida"
+              textoBoton="Ver todos los servicios"
+              variant="primary"
+              linkTo="/servicios"
+            />
+          </div>
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>
-          <Proyectos />
+          <div id="proyectos">
+            <CTASection 
+              titulo="¿Querés ver nuestro trabajo en acción?"
+              descripcion="Descubrí proyectos reales con resultados medibles: landing pages, sistemas de gestión y plataformas completas"
+              textoBoton="Ver casos de éxito"
+              variant="secondary"
+              linkTo="/casos-reales"
+            />
+          </div>
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>
           <Tecnologias />
@@ -247,7 +240,7 @@ function App() {
       <Suspense fallback={<LoadingFallback />}>
         <Footer />
       </Suspense>
-    </motion.div>
+    </div>
   );
 }
 

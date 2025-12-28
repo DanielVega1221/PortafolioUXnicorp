@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './ContactoFormulario.css';
 import '../../section-glass-card.css';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
@@ -59,6 +60,7 @@ const SecurityUtils = {
 };
 
 function ContactoFormulario() {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     nombre: '',
     apellido: '',
@@ -71,6 +73,16 @@ function ContactoFormulario() {
 
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
+
+  // Pre-llenar el servicio si viene desde navegación
+  useEffect(() => {
+    if (location.state?.servicioInteres) {
+      setFormData(prev => ({
+        ...prev,
+        servicio: location.state.servicioInteres
+      }));
+    }
+  }, [location.state]);
 
   const validateField = (name, value) => {
     let error = '';

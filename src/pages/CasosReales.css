@@ -1,0 +1,433 @@
+/* ===========================
+   CASOS REALES PAGE - CLEAN DESIGN
+   =========================== */
+
+.casos-reales-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+
+.casos-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  background: linear-gradient(135deg, rgba(129, 173, 231, 0.03) 0%, rgba(243, 122, 166, 0.03) 100%);
+}
+
+.casos-hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.casos-back-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 173, 231, 0.2);
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.casos-back-link:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(129, 173, 231, 0.4);
+  transform: translateX(-4px);
+}
+
+.casos-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 173, 231, 0.3);
+  border-radius: 50px;
+  color: #81ade7;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.casos-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.casos-hero-description {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   CASOS GRID
+   =========================== */
+
+.casos-section {
+  padding: 4rem 2rem;
+}
+
+.casos-section .section-glass-card {
+  padding: 3rem;
+}
+
+.casos-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+/* ===========================
+   CASO CARD
+   =========================== */
+
+.caso-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 173, 231, 0.15);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.caso-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(129, 173, 231, 0.2);
+  border-color: rgba(129, 173, 231, 0.3);
+}
+
+.caso-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #81ade7, #f37aa6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.caso-card:hover::before {
+  opacity: 1;
+}
+
+/* ===========================
+   CASO IMAGE
+   =========================== */
+
+.caso-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(129, 173, 231, 0.1), rgba(243, 122, 166, 0.1));
+}
+
+.caso-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.caso-card:hover .caso-image {
+  transform: scale(1.05);
+}
+
+.caso-badge-overlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+/* ===========================
+   CASO CONTENT
+   =========================== */
+
+.caso-content {
+  padding: 2.5rem;
+}
+
+.caso-header {
+  margin-bottom: 1.5rem;
+}
+
+.caso-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.caso-subtitle {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.caso-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================
+   CASO TAGS
+   =========================== */
+
+.caso-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.caso-tag {
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1.5px solid;
+  transition: all 0.3s ease;
+}
+
+.caso-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   CASO STATS
+   =========================== */
+
+.caso-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.caso-stat {
+  padding: 1rem;
+  background: rgba(129, 173, 231, 0.05);
+  border: 1px solid rgba(129, 173, 231, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.caso-stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.caso-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #81ade7;
+}
+
+/* ===========================
+   CASO DETAILS
+   =========================== */
+
+.caso-details-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(129, 173, 231, 0.15);
+}
+
+.caso-details-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.caso-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.caso-details-list li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.caso-details-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #81ade7;
+  font-weight: 700;
+}
+
+/* ===========================
+   CTA SECTION
+   =========================== */
+
+.casos-cta-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(129, 173, 231, 0.05) 0%, rgba(243, 122, 166, 0.05) 100%);
+}
+
+.casos-cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 173, 231, 0.2);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+}
+
+.casos-cta-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.casos-cta-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+.casos-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, #81ade7, #f37aa6);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.casos-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129, 173, 231, 0.4);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1024px) {
+  .casos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .casos-hero {
+    min-height: auto;
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .casos-back-link {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .casos-hero-title {
+    font-size: 2rem;
+  }
+
+  .casos-hero-description {
+    font-size: 1rem;
+  }
+
+  .casos-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .caso-image-wrapper {
+    height: 220px;
+  }
+
+  .caso-content {
+    padding: 1.5rem;
+  }
+
+  .caso-title {
+    font-size: 1.5rem;
+  }
+
+  .caso-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .casos-cta-container {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .casos-cta-title {
+    font-size: 1.75rem;
+  }
+
+  .casos-cta-description {
+    font-size: 1rem;
+  }
+}

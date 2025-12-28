@@ -1,0 +1,111 @@
+/* ===========================
+   GLOSARIO SECTION
+   =========================== */
+
+.glosario-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(129, 173, 231, 0.03) 0%, rgba(243, 122, 166, 0.03) 100%);
+}
+
+.glosario-section .section-glass-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.glosario-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.glosario-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.glosario-title svg {
+  color: #81ade7;
+}
+
+.glosario-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.glosario-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .glosario-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.glosario-item {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 173, 231, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glosario-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(129, 173, 231, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(129, 173, 231, 0.15);
+}
+
+.glosario-item.active {
+  background: rgba(129, 173, 231, 0.1);
+  border-color: #81ade7;
+}
+
+.glosario-termino {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.glosario-termino svg {
+  color: #81ade7;
+  flex-shrink: 0;
+}
+
+.glosario-definicion {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+  .glosario-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glosario-title {
+    font-size: 2rem;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { Search, Zap, Package, CheckCircle, Sparkles, Rocket, TrendingUp, FileText, Code, Palette, ShoppingCart, Settings, ArrowRight, HelpCircle, X } from "lucide-react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { Search, Zap, Package, CheckCircle, Sparkles, Rocket, TrendingUp, FileText, Code, Palette, ShoppingCart, Settings, ArrowRight, HelpCircle, X, ExternalLink } from "lucide-react";
 import "./Servicios.css";
 import "../../section-glass-card.css";
 
@@ -424,6 +424,73 @@ function Servicios() {
             </div>
           ))}
         </div>
+
+        {/* Botones de navegación a páginas específicas */}
+        {activeTab === 'paginas' && (
+          <div className="servicios-cta-extra" style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <Link 
+              to="/landing-pages" 
+              className="servicios-link-pagina"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '1rem 2rem',
+                background: 'linear-gradient(135deg, #f37aa6, #ff8cc8)',
+                color: 'white',
+                fontWeight: 600,
+                fontSize: '1rem',
+                borderRadius: '12px',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(243, 122, 166, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <ExternalLink size={20} />
+              Ver todos los servicios de Landing Pages
+            </Link>
+          </div>
+        )}
+
+        {activeTab === 'paquetes' && (
+          <div className="servicios-cta-extra" style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <Link 
+              to="/casos-reales" 
+              className="servicios-link-pagina"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '1rem 2rem',
+                background: 'linear-gradient(135deg, #81ade7, #f37aa6)',
+                color: 'white',
+                fontWeight: 600,
+                fontSize: '1rem',
+                borderRadius: '12px',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(129, 173, 231, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <ExternalLink size={20} />
+              Ver casos reales de éxito
+            </Link>
+          </div>
+        )}
       </div>
 
       {/* Modal de explicación */}
