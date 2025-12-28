@@ -1,75 +1,30 @@
-# Robots.txt - UXnicorp
-# Optimizado para SEO 2025 - Estrategia Argentina > LATAM > Global
-
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
-Disallow: /*?*utm_
-Disallow: /*?*fbclid
-Disallow: /*?*gclid
-Crawl-delay: 0
 
-# Sitemap principal
 Sitemap: https://uxnicorp.com/sitemap.xml
 
-# Googlebot - Máxima prioridad (Argentina y LATAM)
+# Google
 User-agent: Googlebot
 Allow: /
-Allow: /*.css
-Allow: /*.js
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.webp
-Allow: /*.svg
-Crawl-delay: 0
 
-# Google Images - Permitir todas las imágenes
+# Images
 User-agent: Googlebot-Image
 Allow: /
-Allow: /assets/
-Allow: /src/assets/
 
-# Bingbot - Segunda prioridad
+# Bing
 User-agent: Bingbot
 Allow: /
-Allow: /*.css
-Allow: /*.js
-Crawl-delay: 1
 
-# Yahoo - Mercado LATAM
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-# DuckDuckGo
-User-agent: DuckDuckBot
-Allow: /
-
-# Baidu (China) - Baja prioridad pero permitido
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 3
-
-# Yandex (Rusia/Europa del Este)
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 2
-
-# SEO Tools - PERMITIDOS para auditorías y análisis
+# SEO tools (auditoría)
 User-agent: AhrefsBot
 Allow: /
-Crawl-delay: 2
 
 User-agent: SemrushBot
 Allow: /
-Crawl-delay: 2
 
-User-agent: Screaming Frog SEO Spider
-Allow: /
-
-# Social Media Bots - Importante para OG tags
+# Social previews
 User-agent: facebookexternalhit
 Allow: /
 
@@ -79,21 +34,9 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: WhatsApp
-Allow: /
-
-# Bots maliciosos - BLOQUEADOS
+# Bad bots
 User-agent: MJ12bot
 Disallow: /
 
 User-agent: DotBot
-Disallow: /
-
-User-agent: SeznamBot
-Disallow: /
-
-User-agent: AhrefsBot/7.0
-Disallow: /
-
-User-agent: DataForSeoBot
 Disallow: /
