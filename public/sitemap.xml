@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Home - Máxima prioridad -->
   <url>
@@ -9,8 +8,6 @@
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es-ar" href="https://uxnicorp.com/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://uxnicorp.com/" />
   </url>
 
   <!-- Sobre Nosotros -->
@@ -27,7 +24,6 @@
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-ar" href="https://uxnicorp.com/servicios" />
   </url>
 
   <!-- Auditorías -->
@@ -76,7 +72,6 @@
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-ar" href="https://uxnicorp.com/casos-reales" />
   </url>
 
   <!-- Cómo Trabajamos -->

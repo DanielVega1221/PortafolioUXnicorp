@@ -8,10 +8,6 @@ import Demo1Img from "../../assets/demo1.png";
 import Demo2Img from "../../assets/demo2.png";
 import Demo3Img from "../../assets/demo3.png";
 import Demo4Img from "../../assets/demo4.png";
-import Modal1Img from "../../assets/modal1.png";
-import Modal2Img from "../../assets/modal2.png";
-import Modal3Img from "../../assets/modal3.png";
-import Modal4Img from "../../assets/modal4.png";
 import { StarIcon, ArrowRightIcon } from "../SVGIcons";
 import { ExternalLink } from "lucide-react";
 
@@ -43,7 +39,7 @@ Stack tecnológico: React, Node.js, EmailJS, CSS3 Animations, Vercel hosting.
 Resultado: 40% de aumento en solicitudes de información en los primeros 3 meses.`,
     color: "#81ade7",
     imagen: Demo1Img,
-    modalImagen: Modal1Img
+    modalImagen: "/modal1.webp"
   },
   {
     idea: "Sistema de Gestión Empresarial",
@@ -73,7 +69,7 @@ Stack tecnológico: React, Node.js, Express, MongoDB, JWT Auth, Chart.js, AWS S3
 Resultado: Reducción de 60% en tiempo de gestión administrativa y eliminación de errores de stock.`,
     color: "#f37aa6",
     imagen: Demo2Img,
-    modalImagen: Modal2Img
+    modalImagen: "/modal2.webp"
   },
   {
     idea: "Plataforma Fintech MVP",
@@ -104,7 +100,7 @@ Stack tecnológico: React, TypeScript, Node.js, PostgreSQL, Redis, Docker, AWS E
 Resultado: MVP lanzado exitosamente, captó primeros 500 usuarios en 2 meses y atrajo inversión seed.`,
     color: "#e0a6d8",
     imagen: Demo3Img,
-    modalImagen: Modal3Img
+    modalImagen: "/modal3.webp"
   },
   {
     idea: "Landing Profesional para Instalaciones Eléctricas",
@@ -132,7 +128,7 @@ Stack tecnológico: React, Node.js, Google Maps API, WhatsApp Business API, Clou
 Resultado: Incremento del 65% en solicitudes de presupuesto en los primeros 2 meses y mejor posicionamiento en búsquedas locales.`,
     color: "#ffc107",
     imagen: Demo4Img,
-    modalImagen: Modal4Img
+    modalImagen: "/modal4.webp"
   }
 ];
 

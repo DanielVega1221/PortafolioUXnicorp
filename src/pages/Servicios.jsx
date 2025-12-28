@@ -575,7 +575,7 @@ function Servicios() {
           titulo="¿No estás seguro qué servicio necesitás?"
           descripcion="Contactanos y te asesoramos gratis para encontrar la mejor solución para tu negocio"
           textoBoton="Consultar ahora"
-          linkTo="/contacto"
+          linkTo="/#contact"
         />
       </Suspense>
 
