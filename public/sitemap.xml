@@ -1,85 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Home - Máxima prioridad -->
-  <url>
-    <loc>https://uxnicorp.com/</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Sobre Nosotros -->
-  <url>
-    <loc>https://uxnicorp.com/sobre-nosotros</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Servicios Hub - Alta prioridad -->
-  <url>
-    <loc>https://uxnicorp.com/servicios</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Auditorías -->
-  <url>
-    <loc>https://uxnicorp.com/servicios/auditorias</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Landing Pages -->
-  <url>
-    <loc>https://uxnicorp.com/servicios/landing-pages</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- E-commerce -->
-  <url>
-    <loc>https://uxnicorp.com/servicios/ecommerce</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Sistemas de Gestión -->
-  <url>
-    <loc>https://uxnicorp.com/servicios/sistemas-gestion</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Paquetes -->
-  <url>
-    <loc>https://uxnicorp.com/servicios/paquetes</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Casos Reales - Alta prioridad -->
-  <url>
-    <loc>https://uxnicorp.com/casos-reales</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Cómo Trabajamos -->
-  <url>
-    <loc>https://uxnicorp.com/como-trabajamos</loc>
-    <lastmod>2025-12-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://uxnicorp.com/</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/sobre-nosotros</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/servicios</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/servicios/auditorias</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/servicios/landing-pages</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/servicios/ecommerce</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/servicios/sistemas-gestion</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/servicios/paquetes</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/casos-reales</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://uxnicorp.com/como-trabajamos</loc>
+<lastmod>2025-12-27</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
 </urlset>
