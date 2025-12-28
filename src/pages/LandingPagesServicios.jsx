@@ -298,7 +298,7 @@ function LandingPagesServicios() {
           titulo="¿No sabés qué tipo de landing necesitás?"
           descripcion="Contactanos y te ayudamos a elegir el paquete perfecto según tu presupuesto y objetivos"
           textoBoton="Consultar ahora"
-          linkTo="/contacto"
+          linkTo="/#contact"
         />
       </Suspense>
 

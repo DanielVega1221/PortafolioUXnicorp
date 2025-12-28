@@ -224,7 +224,7 @@ function Ecommerce() {
           titulo="¿Querés empezar a vender online?"
           descripcion="Te asesoramos gratis sobre qué funcionalidades necesitás según tu tipo de productos y volumen de ventas"
           textoBoton="Consultar ahora"
-          linkTo="/contacto"
+          linkTo="/#contact"
         />
       </Suspense>
 

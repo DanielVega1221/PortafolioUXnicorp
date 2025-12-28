@@ -240,7 +240,7 @@ function Auditorias() {
           titulo="¿No estás seguro cuál auditoría necesitás?"
           descripcion="Contactanos y te asesoramos gratis para identificar qué tipo de análisis es mejor para tu proyecto"
           textoBoton="Consultar ahora"
-          linkTo="/contacto"
+          linkTo="/#contact"
         />
       </Suspense>
 

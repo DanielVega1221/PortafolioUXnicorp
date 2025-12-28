@@ -249,7 +249,7 @@ function PaquetesServicios() {
           titulo="¿Necesitás una combinación personalizada?"
           descripcion="Podemos armar un paquete a tu medida combinando los servicios que realmente necesitás"
           textoBoton="Consultar ahora"
-          linkTo="/contacto"
+          linkTo="/#contact"
         />
       </Suspense>
 

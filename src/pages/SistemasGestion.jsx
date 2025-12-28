@@ -210,7 +210,7 @@ function SistemasGestion() {
           titulo="¿Necesitás un sistema personalizado?"
           descripcion="Contanos qué procesos querés automatizar y te armamos una propuesta con precio ajustado a tu presupuesto y alcance específico"
           textoBoton="Consultar precio"
-          linkTo="/contacto"
+          linkTo="/#contact"
         />
       </Suspense>
 
