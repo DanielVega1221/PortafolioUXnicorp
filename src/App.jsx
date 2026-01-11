@@ -119,7 +119,7 @@ function App() {
         
         <meta name="robots" content="index, follow" />
         <meta name="author" content="UXnicorp" />
-        <link rel="canonical" href="https://uxnicorp.com" />
+        <link rel="canonical" href="https://www.uxnicorp.com.ar" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -127,9 +127,9 @@ function App() {
             "@type": "ProfessionalService",
             "name": "UXnicorp - Agencia de Desarrollo Web",
             "alternateName": "UXnicorp Programadores",
-            "url": "https://uxnicorp.com",
-            "logo": "https://uxnicorp.com/logo.png",
-            "image": "https://uxnicorp.com/og-image.jpg",
+            "url": "https://www.uxnicorp.com.ar",
+            "logo": "https://www.uxnicorp.com.ar/logo.png",
+            "image": "https://www.uxnicorp.com.ar/og-image.jpg",
             "description": "Agencia de desarrollo web en Argentina especializada en landing pages, e-commerce, sistemas ERP/CRM y auditorías UX. Atendemos clientes en toda Latinoamérica.",
             "address": {
               "@type": "PostalAddress",
