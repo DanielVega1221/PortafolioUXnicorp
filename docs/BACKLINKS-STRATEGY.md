@@ -50,9 +50,7 @@
 - [x] Instagram: https://www.instagram.com/uxnicorp/
 - [x] LinkedIn: https://www.linkedin.com/company/uxnicorp/
 - [x] Facebook: https://www.facebook.com/profile.php?id=61578796932025
-- [ ] Twitter/X: Crear perfil @uxnicorp
-- [ ] YouTube: Canal de tutoriales/portfolio
-- [ ] TikTok: Contenido tech corto
+
 
 ### Portfolios
 10. **Behance**

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const navItems = [
@@ -13,6 +14,8 @@ const navItems = [
 function Navbar({ activeSection, onNavClick, hidden }) {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 900);
@@ -25,9 +28,27 @@ function Navbar({ activeSection, onNavClick, hidden }) {
   const containerClass = `navbar-container${isMobile || hidden ? ' navbar-hidden' : ''}`;
 
   const handleItemClick = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Si el id es "sobre-nosotros", navegar a esa página
+    if (id === "sobre-nosotros") {
+      navigate("/sobre-nosotros");
+    } else {
+      // Para las secciones de main, ir a home primero si no estamos allí
+      if (location.pathname !== '/') {
+        navigate('/', { replace: false });
+        // Esperar a que la página se cargue y luego hacer scroll
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 500);
+      } else {
+        // Si ya estamos en home, hacer scroll directo
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
     if (onNavClick) {
       onNavClick(id);

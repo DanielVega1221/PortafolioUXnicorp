@@ -106,8 +106,8 @@ function App() {
         <meta property="og:title" content="Desarrollo Web Argentina | Agencia de Programación Web - UXnicorp" />
         <meta property="og:description" content="Agencia de desarrollo web en Argentina. Landing pages, e-commerce, sistemas de gestión y ERPs. Atendemos todo LATAM. Presupuesto gratis" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://uxnicorp.com" />
-        <meta property="og:image" content="https://uxnicorp.com/og-image.jpg" />
+        <meta property="og:url" content="https://www.uxnicorp.com.ar" />
+        <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         <meta property="og:locale" content="es_AR" />
         <meta property="og:locale:alternate" content="es_MX" />
         <meta property="og:locale:alternate" content="es_CO" />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Footer.css';
 import logo from '../../assets/Logo1.png';
 import OptimizedImage from '../OptimizedImage';
@@ -22,10 +22,27 @@ const secciones = [
 ];
 
 function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleSectionClick = (sectionId) => {
+    // Si no estamos en home, navegar primero
+    if (location.pathname !== '/') {
+      navigate('/', { replace: false });
+      // Esperar a que la página se cargue y luego hacer scroll
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 500);
+    } else {
+      // Si ya estamos en home, hacer scroll directo
+      scrollToSection(sectionId);
     }
   };
 
@@ -107,7 +124,7 @@ function Footer() {
               ) : (
                 <button 
                   key={item.id} 
-                  onClick={() => scrollToSection(item.id)} 
+                  onClick={() => handleSectionClick(item.id)} 
                   className="footer-nav-item"
                   type="button"
                   aria-label={`Ir a ${item.nombre}`}
@@ -147,7 +164,7 @@ function Footer() {
           <div className="footer-cta-box">
             <h5>¿Tenés un proyecto en mente?</h5>
             <button 
-              onClick={() => scrollToSection('contact')} 
+              onClick={() => handleSectionClick('contact')} 
               className="footer-cta-button"
               type="button"
             >
