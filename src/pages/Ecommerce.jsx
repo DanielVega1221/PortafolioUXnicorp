@@ -6,6 +6,7 @@ import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
+import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -98,13 +99,20 @@ function Ecommerce() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>E-commerce Argentina | Tienda Online desde $540.000 - UXnicorp</title>
-        <meta name="description" content="Desarrollo de e-commerce profesional en Argentina desde $540k. Carrito, pagos Mercado Pago, envíos, panel admin. Simple o Robusto. Entrega 3 meses. Atendemos todo LATAM." />
-        <meta name="keywords" content="ecommerce argentina, tienda online argentina, crear tienda online, desarrollo ecommerce argentina, tienda virtual argentina, ecommerce mercadopago, ecommerce profesional" />
-        <link rel="canonical" href="https://uxnicorp.com/servicios/ecommerce" />
-        <meta property="og:title" content="E-commerce Argentina desde $540k - UXnicorp" />
-        <meta property="og:description" content="Tu tienda online completa con carrito, pagos y envíos. Desarrollo profesional en 3 meses." />
+        <title>{seoConfig.ecommerce.title}</title>
+        <meta name="description" content={seoConfig.ecommerce.description} />
+        <meta name="keywords" content={seoConfig.ecommerce.keywords} />
+        <link rel="canonical" href={seoConfig.ecommerce.canonical} />
+        <meta property="og:title" content={seoConfig.ecommerce.ogTitle} />
+        <meta property="og:description" content={seoConfig.ecommerce.ogDescription} />
         <meta property="og:locale" content="es_AR" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(seoConfig.ecommerce.schema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.ecommerce.breadcrumb))}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -121,7 +129,7 @@ function Ecommerce() {
               Tiendas Online Completas
             </span>
             <h1 className="servicio-hero-title">
-              E-commerce <span style={{background: 'linear-gradient(135deg, #f37aa6 0%, #e0a6d8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Profesional</span>
+              {seoConfig.ecommerce.h1}
             </h1>
             <p className="servicio-hero-description">
               Tiendas online completas con carrito, pasarela de pagos, gestión de productos y envíos. Todo lo que necesitás para vender por internet de forma profesional.

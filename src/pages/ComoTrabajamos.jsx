@@ -1,8 +1,7 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Sparkles, Zap, Heart, CheckCircle, ArrowDown } from 'lucide-react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Navbar from '../componentes/Navbar/Navbar';
 import './ComoTrabajamos.css';
 import '../App.css';
@@ -52,11 +51,11 @@ function ComoTrabajamos() {
         <title>Proceso de Desarrollo Web | Metodología Ágil - UXnicorp</title>
         <meta name="description" content="Conocé cómo trabajamos: metodología ágil, código limpio, testing exhaustivo y comunicación constante. Proceso transparente de desarrollo web profesional paso a paso." />
         <meta name="keywords" content="metodología desarrollo web, proceso desarrollo software, metodología ágil, clean code, testing software, agile development, scrum, desarrollo profesional, arquitectura software" />
-        <link rel="canonical" href="https://uxnicorp.com/como-trabajamos" />
+        <link rel="canonical" href="https://www.uxnicorp.com.ar/como-trabajamos" />
         
         <meta property="og:title" content="Proceso de Desarrollo Web | Metodología Ágil - UXnicorp" />
         <meta property="og:description" content="Conocé nuestra metodología de desarrollo: código limpio, testing exhaustivo y entregas continuas. Transparencia total en cada fase del proyecto." />
-        <meta property="og:url" content="https://uxnicorp.com/como-trabajamos" />
+        <meta property="og:url" content="https://www.uxnicorp.com.ar/como-trabajamos" />
         <meta property="og:type" content="article" />
       </Helmet>
       

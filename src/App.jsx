@@ -101,7 +101,7 @@ function App() {
         <title>Desarrollo Web Argentina | Agencia de Programación Web Profesional - UXnicorp</title>
         <meta name="description" content="⭐ Agencia de desarrollo web en Argentina. Creamos landing pages, e-commerce, sistemas de gestión y ERPs. Programadores expertos en React y Node.js. Proyectos en todo LATAM 🚀" />
         
-        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, programadores react argentina, agencia digital argentina, desarrollo web latam, programación web profesional, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina" />
+        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, desarrollo web caba, desarrollo web córdoba, desarrollo web santa fe, desarrollo web mendoza, desarrollo web tucumán, desarrollo web rosario, desarrollo web la plata, desarrollo web salta, desarrollo web misiones, desarrollo web entre ríos, desarrollo web chaco, desarrollo web corrientes, desarrollo web santiago del estero, desarrollo web san juan, desarrollo web jujuy, desarrollo web neuquén, desarrollo web formosa, desarrollo web chubut, desarrollo web río negro, desarrollo web santa cruz, desarrollo web tierra del fuego, desarrollo web la pampa, desarrollo web la rioja, desarrollo web catamarca, desarrollo web san luis, programadores react argentina, agencia digital argentina, desarrollo web latam, programación web profesional, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina, agencia web córdoba, agencia web mendoza, agencia web rosario, programadores buenos aires, programadores córdoba" />
         
         <meta property="og:title" content="Desarrollo Web Argentina | Agencia de Programación Web - UXnicorp" />
         <meta property="og:description" content="Agencia de desarrollo web en Argentina. Landing pages, e-commerce, sistemas de gestión y ERPs. Atendemos todo LATAM. Presupuesto gratis" />
@@ -182,6 +182,89 @@ function App() {
               "Sistemas de Gestión",
               "Desarrollo React",
               "Desarrollo Next.js"
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "UXnicorp",
+            "legalName": "UXnicorp - Agencia de Desarrollo Web",
+            "url": "https://www.uxnicorp.com.ar",
+            "logo": "https://www.uxnicorp.com.ar/logo.png",
+            "foundingDate": "2023",
+            "founders": [
+              {
+                "@type": "Person",
+                "name": "Equipo UXnicorp"
+              }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "AR",
+              "addressRegion": "Buenos Aires"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+54-383-436-8748",
+              "contactType": "customer service",
+              "email": "uxnicorp@gmail.com",
+              "areaServed": ["AR", "LATAM"],
+              "availableLanguage": ["Spanish", "English"]
+            },
+            "sameAs": [
+              "https://instagram.com/uxnicorp",
+              "https://linkedin.com/company/uxnicorp",
+              "https://facebook.com/uxnicorp"
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cómo funciona el proceso de cotización?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nos contactas contando tu proyecto, agendamos una videollamada o chat para entender tus necesidades, y en 48 horas te enviamos una propuesta personalizada con costos, tiempos y alcance detallado. Todo sin compromiso y completamente transparente."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Ofrecen mantenimiento después del lanzamiento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, ofrecemos planes de mantenimiento mensuales que incluyen: actualizaciones de seguridad, backups automáticos, soporte técnico prioritario, optimización de rendimiento y una ronda de cambios mensuales para ajustes menores que necesites."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajan con clientes de otros países?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "¡Absolutamente! Trabajamos con clientes de toda Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué pasa si necesito cambios después del lanzamiento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Si contratas nuestro plan de mantenimiento, incluye una ronda de cambios mensuales para modificaciones menores. Los primeros 30 días después del lanzamiento también incluyen ajustes sin costo. Para cambios mayores, trabajamos con total transparencia en costos."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué diferencia a UXnicorp de otras agencias?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No solo te vendemos un sitio web, nos convertimos en tu aliado tecnológico. Nos preocupamos genuinamente por el crecimiento de tu negocio y te acompañamos en cada paso. No usamos plantillas genéricas, cada proyecto es hecho a medida. Hablamos sin tecnicismos, cumplimos lo que prometemos y estamos disponibles cuando nos necesitas."
+                }
+              }
             ]
           })}
         </script>

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Search, 
@@ -29,7 +29,7 @@ const LoadingFallback = () => (
 );
 
 // Datos de servicios por categoría
-const serviciosData = {
+const SERVICIOS_DATA = {
   auditorias: [
     {
       id: 'auditoria-ux-ui',
@@ -349,7 +349,7 @@ const serviciosData = {
 };
 
 // Glosario técnico
-const glosarioData = [
+const GLOSARIO_DATA = [
   {
     termino: 'Responsive',
     definicion: 'Diseño que se adapta automáticamente a cualquier tamaño de pantalla (celular, tablet, computadora) para que tu web se vea bien en todos los dispositivos.'
@@ -477,7 +477,7 @@ function Servicios() {
         <title>Servicios de Desarrollo Web Argentina | Landing Pages, E-commerce, ERP - UXnicorp</title>
         <meta name="description" content="Servicios web en Argentina: Auditorías UX/UI desde $120k, Landing Pages desde $180k, E-commerce desde $540k, Sistemas ERP personalizados. Atendemos todo LATAM." />
         <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina precio, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, desarrollo web latam" />
-        <link rel="canonical" href="https://uxnicorp.com/servicios" />
+        <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios" />
         <meta property="og:title" content="Servicios de Desarrollo Web Argentina - UXnicorp" />
         <meta property="og:description" content="Landing pages, E-commerce, Sistemas ERP y Auditorías UX en Argentina. Precios claros desde $120k." />
         <meta property="og:locale" content="es_AR" />
@@ -491,7 +491,7 @@ function Servicios() {
             Volver al inicio
           </Link>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -506,7 +506,7 @@ function Servicios() {
             <p className="servicios-hero-description">
               Elegí la categoría que mejor se adapte a tu proyecto. Cada una tiene opciones específicas con precios y detalles completos.
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
@@ -516,7 +516,7 @@ function Servicios() {
           {categorias.map((categoria, index) => {
             const IconComponent = categoria.icon;
             return (
-              <motion.article
+              <Motion.article
                 key={categoria.id}
                 className="categoria-card"
                 initial={{ opacity: 0, y: 30 }}
@@ -558,7 +558,7 @@ function Servicios() {
                   Ver todos los detalles
                   <ArrowLeft size={18} style={{ transform: 'rotate(180deg)' }} />
                 </Link>
-              </motion.article>
+              </Motion.article>
             );
           })}
         </div>

@@ -6,6 +6,7 @@ import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
+import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -81,13 +82,20 @@ function SistemasGestion() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>Sistemas de Gestión Argentina | ERP y CRM Personalizados - UXnicorp</title>
-        <meta name="description" content="Desarrollo de sistemas ERP y CRM personalizados en Argentina. Gestión de inventario, ventas, clientes, facturación AFIP. A medida según tu negocio. Todo LATAM." />
-        <meta name="keywords" content="sistema gestión argentina, erp argentina, crm argentina, sistema inventario argentina, software gestión empresarial, sistema ventas argentina, facturación electrónica afip" />
-        <link rel="canonical" href="https://uxnicorp.com/servicios/sistemas-gestion" />
-        <meta property="og:title" content="Sistemas ERP/CRM Argentina - UXnicorp" />
-        <meta property="og:description" content="Sistema de gestión a medida para tu empresa. CRM, inventario, ventas y más." />
+        <title>{seoConfig.sistemasGestion.title}</title>
+        <meta name="description" content={seoConfig.sistemasGestion.description} />
+        <meta name="keywords" content={seoConfig.sistemasGestion.keywords} />
+        <link rel="canonical" href={seoConfig.sistemasGestion.canonical} />
+        <meta property="og:title" content={seoConfig.sistemasGestion.ogTitle} />
+        <meta property="og:description" content={seoConfig.sistemasGestion.ogDescription} />
         <meta property="og:locale" content="es_AR" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(seoConfig.sistemasGestion.schema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.sistemasGestion.breadcrumb))}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -104,7 +112,7 @@ function SistemasGestion() {
               Sistemas de Gestión Empresarial
             </span>
             <h1 className="servicio-hero-title">
-              CRM y ERP <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>a Medida</span>
+              {seoConfig.sistemasGestion.h1}
             </h1>
             <p className="servicio-hero-description">
               Sistemas personalizados para administrar clientes, ventas, inventario y toda tu operación. Desarrollamos desde CRM básico hasta ERP completo con múltiples módulos integrados. <strong>El precio se define según el alcance y complejidad de tu proyecto.</strong>

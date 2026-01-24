@@ -3,7 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://uxnicorp.com/sitemap.xml
+Sitemap: https://www.uxnicorp.com.ar/sitemap.xml
 
 # Google
 User-agent: Googlebot

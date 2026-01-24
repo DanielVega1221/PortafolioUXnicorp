@@ -59,7 +59,6 @@ function AnimatedRoutes() {
     </AnimatePresence>
   );
 }
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
@@ -71,3 +70,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </HelmetProvider>
   </React.StrictMode>
 );
+
+// Export to satisfy React Fast Refresh requirement
+export { AnimatedRoutes };

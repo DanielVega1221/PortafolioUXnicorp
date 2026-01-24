@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { HelpCircle, Info } from 'lucide-react';
 import './GlosarioTecnico.css';
 
@@ -84,7 +84,7 @@ function GlosarioTecnico() {
 
         <div className="glosario-grid">
           {glosarioData.map((item, idx) => (
-            <motion.div
+            <Motion.div
               key={idx}
               className={`glosario-item ${terminoActivo === idx ? 'active' : ''}`}
               onClick={() => setTerminoActivo(terminoActivo === idx ? null : idx)}
@@ -97,16 +97,16 @@ function GlosarioTecnico() {
                 <Info size={18} />
               </div>
               {terminoActivo === idx && (
-                <motion.p
+                <Motion.p
                   className="glosario-definicion"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   transition={{ duration: 0.3 }}
                 >
                   {item.definicion}
-                </motion.p>
+                </Motion.p>
               )}
-            </motion.div>
+            </Motion.div>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { motion as Motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { 
   ArrowLeft, 
@@ -8,7 +8,8 @@ import {
   CheckCircle, 
   Layers,
   Building2,
-  Zap
+  Zap,
+  ExternalLink
 } from 'lucide-react';
 import './CasosReales.css';
 import '../../src/section-glass-card.css';
@@ -178,16 +179,21 @@ function CasosReales() {
         <meta property="og:title" content="Casos de Éxito Argentina | Proyectos Web Reales - UXnicorp" />
         <meta property="og:description" content="Proyectos reales de desarrollo web: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados." />
         <meta property="og:locale" content="es_AR" />
-        <link rel="canonical" href="https://uxnicorp.com/casos-reales" />
+        <link rel="canonical" href="https://www.uxnicorp.com.ar/casos-reales" />
       </Helmet>
 
       {/* Hero Section */}
       <section className="casos-hero">
         <div className="casos-hero-container">
-          <Link to="/" className="casos-back-link">
+          <button 
+            onClick={() => navigate('/')}
+            className="casos-back-link"
+            type="button"
+            aria-label="Volver al inicio"
+          >
             <ArrowLeft size={20} />
             Volver al inicio
-          </Link>
+          </button>
           
           <div className="casos-badge">
             <Briefcase size={18} />
@@ -209,7 +215,7 @@ function CasosReales() {
         <div className="section-glass-card">
           <div className="casos-grid">
             {casosData.map((caso, index) => (
-              <motion.article
+              <Motion.article
                 key={caso.id}
                 className="caso-card"
                 initial="hidden"
@@ -288,16 +294,132 @@ function CasosReales() {
                       ))}
                     </ul>
                   </div>
+                  {/* Link solo para sitios reales */}
+                  {caso.id === 'landing-educativa' && (
+                    <a 
+                      href="https://www.isdep.com.ar/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="caso-link"
+                      style={{ 
+                        borderColor: caso.color,
+                        backgroundColor: `${caso.color}15`,
+                        color: caso.color 
+                      }}
+                    >
+                      <ExternalLink size={18} />
+                      Ver sitio real →
+                    </a>
+                  )}
+                  {caso.id === 'landing-electricista' && (
+                    <a 
+                      href="https://www.electropowerok.com.ar/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="caso-link"
+                      style={{ 
+                        borderColor: caso.color,
+                        backgroundColor: `${caso.color}15`,
+                        color: caso.color 
+                      }}
+                    >
+                      <ExternalLink size={18} />
+                      Ver sitio real →
+                    </a>
+                  )}
                 </div>
-              </motion.article>
+              </Motion.article>
             ))}
           </div>
         </div>
       </section>
 
+{/* Sección Demos */}
+      <section className="demos-section">
+        <div className="section-glass-card">
+          <div className="demos-header">
+            <h2 className="demos-title">
+              <span style={{ background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                Demo
+              </span> Conceptual
+            </h2>
+            <p className="demos-subtitle">
+              Proyecto demostrativo ficticio creado para mostrar nuestra metodología de trabajo y capacidades de diseño.
+            </p>
+          </div>
+
+          <div className="demos-grid">
+            {/* BRÜNN STUDIO */}
+            <Motion.div
+              className="demo-card"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={cardVariants}
+              style={{ borderColor: 'rgba(44, 44, 44, 0.2)', backgroundColor: 'rgba(44, 44, 44, 0.05)' }}
+            >
+              <div className="demo-header-card">
+                <div className="demo-color-badge" style={{ backgroundColor: '#2c2c2c' }} />
+                <h3 className="demo-nombre">BRÜNN STUDIO</h3>
+              </div>
+
+              <p className="demo-tagline" style={{ color: '#2c2c2c' }}>
+                Landing page conceptual para rubro arquitectura
+              </p>
+
+              <p className="demo-descripcion">
+                <strong>Esta es una demo ficticia</strong> creada como ejemplo para mostrar nuestra metodología de trabajo en proyectos del sector arquitectura y diseño. Incluye estructura completa, animaciones y diseño profesional.
+              </p>
+
+              <div className="demo-categorias">
+                <span className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
+                  Arquitectura
+                </span>
+                <span className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
+                  Demo Ficticia
+                </span>
+                <span className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
+                  Portfolio
+                </span>
+              </div>
+
+              <div className="demo-caracteristicas">
+                <h4>Características destacadas:</h4>
+                <ul>
+                  <li>Diseño limpio y profesional</li>
+                  <li>Animaciones y transiciones elegantes</li>
+                  <li>Estructura clara de contenido</li>
+                  <li>CTA estratégicos para contacto</li>
+                  <li>Optimizado para conversión</li>
+                </ul>
+              </div>
+
+              <div className="demo-tech">
+                <strong>Stack:</strong> React, Framer Motion, Responsive Design
+              </div>
+
+              <a 
+                href="https://brnn-demoarq.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="demo-link"
+                style={{ 
+                  backgroundColor: 'rgba(44, 44, 44, 0.15)',
+                  borderColor: '#2c2c2c',
+                  color: '#2c2c2c'
+                }}
+              >
+                <ExternalLink size={18} />
+                Ver demo en vivo
+              </a>
+            </Motion.div>
+          </div>
+        </div>
+</section>
+
       {/* CTA Section */}
       <section className="casos-cta-section">
-        <motion.div 
+        <Motion.div 
           className="casos-cta-container"
           initial="hidden"
           whileInView="visible"
@@ -314,8 +436,11 @@ function CasosReales() {
             <Zap size={20} />
             Empezar mi proyecto
           </button>
-        </motion.div>
+        </Motion.div>
       </section>
+
+      
+      
 
       {/* Footer */}
       <Suspense fallback={<LoadingFallback />}>

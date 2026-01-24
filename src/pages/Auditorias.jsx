@@ -6,6 +6,7 @@ import ServicioModal from '../componentes/ServicioModal';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
+import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -114,13 +115,20 @@ function Auditorias() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>Auditorías UX/UI y CRO Argentina | Desde $120.000 ARS - UXnicorp</title>
-        <meta name="description" content="Auditorías profesionales UX/UI y CRO en Argentina. Análisis de usabilidad, conversión y performance desde $120k. Entrega en 5-15 días. Clientes en todo LATAM." />
-        <meta name="keywords" content="auditoría ux argentina, auditoría ui argentina, cro argentina, optimización conversión argentina, auditoría web argentina, revisión técnica web, usabilidad web argentina" />
-        <link rel="canonical" href="https://uxnicorp.com/servicios/auditorias" />
-        <meta property="og:title" content="Auditorías UX/UI y CRO Argentina - UXnicorp" />
-        <meta property="og:description" content="Análisis profesional de usabilidad y conversión desde $120.000. Mejoramos tu sitio con datos reales." />
+        <title>{seoConfig.auditorias.title}</title>
+        <meta name="description" content={seoConfig.auditorias.description} />
+        <meta name="keywords" content={seoConfig.auditorias.keywords} />
+        <link rel="canonical" href={seoConfig.auditorias.canonical} />
+        <meta property="og:title" content={seoConfig.auditorias.ogTitle} />
+        <meta property="og:description" content={seoConfig.auditorias.ogDescription} />
         <meta property="og:locale" content="es_AR" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(seoConfig.auditorias.schema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.auditorias.breadcrumb))}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -137,7 +145,7 @@ function Auditorias() {
               Auditorías Profesionales
             </span>
             <h1 className="servicio-hero-title">
-              Auditorías <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>UX/UI y CRO</span>
+              {seoConfig.auditorias.h1}
             </h1>
             <p className="servicio-hero-description">
               Analizamos tu sitio actual para identificar problemas de usabilidad, performance y conversión. Recibís un informe completo con mejoras priorizadas y accionables.

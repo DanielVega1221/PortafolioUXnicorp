@@ -126,7 +126,7 @@ function PaquetesServicios() {
         <title>Paquetes de Desarrollo Web Argentina | Soluciones Completas desde $180k - UXnicorp</title>
         <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding $250k), Auditoría Integral ($190k), Plan Evolución escalable. Ahorra tiempo y dinero. LATAM." />
         <meta name="keywords" content="paquete desarrollo web argentina, landing mas branding, auditoría completa, plan desarrollo web, combo web argentina, paquete emprendedor argentina" />
-        <link rel="canonical" href="https://uxnicorp.com/servicios/paquetes" />
+        <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/paquetes" />
         <meta property="og:title" content="Paquetes Web Argentina desde $180k - UXnicorp" />
         <meta property="og:description" content="Soluciones completas para emprendedores y empresas. Landing + Branding, Auditorías y planes escalables." />
         <meta property="og:locale" content="es_AR" />

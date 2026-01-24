@@ -313,6 +313,24 @@
 }
 
 /* ===========================
+  .caso-link {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .caso-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ===========================
    CTA SECTION
    =========================== */
 
@@ -429,5 +447,235 @@
 
   .casos-cta-description {
     font-size: 1rem;
+  }
+}
+
+/* ===========================
+   SECCIÓN DEMOS - ESTILO CONSISTENTE CON CASOS
+   =========================== */
+
+.demos-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(129, 173, 231, 0.03) 0%, rgba(243, 122, 166, 0.03) 100%);
+}
+
+.demos-section .section-glass-card {
+  padding: 3rem;
+}
+
+.demos-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.demos-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.demos-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.demos-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+}
+
+.demo-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(129, 173, 231, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.demo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(129, 173, 231, 0.2);
+  border-color: rgba(129, 173, 231, 0.3);
+}
+
+.demo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #81ade7, #f37aa6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 24px 24px 0 0;
+}
+
+.demo-card:hover::before {
+  opacity: 1;
+}
+
+.demo-header-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(129, 173, 231, 0.15);
+}
+
+.demo-color-badge {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.demo-nombre {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.demo-tagline {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #666;
+}
+
+.demo-descripcion {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.demo-descripcion strong {
+  color: #81ade7;
+  font-weight: 700;
+}
+
+.demo-categorias {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.demo-categoria {
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.demo-categoria:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.demo-caracteristicas {
+  margin-top: 0.5rem;
+}
+
+.demo-caracteristicas h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.demo-caracteristicas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.demo-caracteristicas li {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.demo-caracteristicas li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #81ade7;
+  font-weight: 700;
+}
+
+.demo-tech {
+  color: #666;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(129, 173, 231, 0.15);
+}
+
+.demo-tech strong {
+  color: #1a1a1a;
+}
+
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  border: 2px solid;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.demo-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .demos-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .demos-section .section-glass-card {
+    padding: 2rem;
+  }
+
+  .demos-header {
+    margin-bottom: 2rem;
+  }
+
+  .demos-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .demo-card {
+    padding: 1.5rem;
+  }
+
+  .demo-nombre {
+    font-size: 1.3rem;
   }
 }

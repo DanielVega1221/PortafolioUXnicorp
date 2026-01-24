@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Zap, 
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import './LandingPages.css';
 import '../../src/section-glass-card.css';
+import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
 
 // Lazy load
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -152,14 +153,23 @@ function LandingPages() {
   return (
     <div className="landing-pages-page">
       <Helmet>
-        <title>Landing Pages Argentina | Desde 72hs | Express, Premium y a Medida - UXnicorp</title>
+        <title>{seoConfig.landingPages.title}</title>
         <meta 
           name="description" 
-          content="Landing pages profesionales en Argentina. Express en 72hs, Intermedia con animaciones, Full con SEO avanzado, y Premium 100% personalizada. Presupuesto gratis." 
+          content={seoConfig.landingPages.description}
         />
-        <meta property="og:title" content="Landing Pages Profesionales | 72hs a 3 semanas - UXnicorp" />
-        <meta property="og:description" content="Landing Express desde 72hs, Premium a medida, diseño responsive y SEO. Elegí el paquete ideal para tu negocio." />
-        <link rel="canonical" href="https://uxnicorp.com/landing-pages" />
+        <meta name="keywords" content={seoConfig.landingPages.keywords} />
+        <meta property="og:title" content={seoConfig.landingPages.ogTitle} />
+        <meta property="og:description" content={seoConfig.landingPages.ogDescription} />
+        <link rel="canonical" href={seoConfig.landingPages.canonical} />
+        <meta property="og:locale" content="es_AR" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(seoConfig.landingPages.schema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.landingPages.breadcrumb))}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -176,7 +186,7 @@ function LandingPages() {
           </div>
           
           <h1 className="landing-hero-title">
-            Tu presencia digital, lista en tiempo récord
+            {seoConfig.landingPages.h1}
           </h1>
           
           <p className="landing-hero-description">
@@ -212,7 +222,7 @@ function LandingPages() {
 
           <div className="landing-servicios-grid">
             {serviciosLanding.map((servicio, index) => (
-            <motion.article
+            <Motion.article
               key={servicio.id}
               className={`servicio-card ${servicio.destacado ? 'destacado' : ''}`}
               initial="hidden"
@@ -261,7 +271,7 @@ function LandingPages() {
                   Consultar
                 </Link>
               </div>
-            </motion.article>
+            </Motion.article>
           ))}
         </div>
         </div>
@@ -275,7 +285,7 @@ function LandingPages() {
             <p>Encontrá rápido cuál se adapta mejor a tus necesidades</p>
           </div>
 
-          <motion.div 
+          <Motion.div 
             className="comparador-table-wrapper"
             initial="hidden"
             whileInView="visible"
@@ -304,7 +314,7 @@ function LandingPages() {
                 ))}
               </tbody>
             </table>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
@@ -317,7 +327,7 @@ function LandingPages() {
 
           <div className="faq-list">
             {faqsData.map((faq, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 className={`faq-item ${activeFAQ === index ? 'active' : ''}`}
                 initial="hidden"
@@ -336,7 +346,7 @@ function LandingPages() {
                 <div className="faq-answer">
                   <p>{faq.respuesta}</p>
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -344,7 +354,7 @@ function LandingPages() {
 
       {/* CTA Final */}
       <section className="landing-cta-final">
-        <motion.div 
+        <Motion.div 
           className="landing-cta-container"
           initial="hidden"
           whileInView="visible"
@@ -361,7 +371,7 @@ function LandingPages() {
             <MessageCircle size={20} />
             Solicitar presupuesto gratis
           </Link>
-        </motion.div>
+        </Motion.div>
       </section>
 
       {/* Footer */}

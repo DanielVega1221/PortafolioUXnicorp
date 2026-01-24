@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Footer.css';
 import logo from '../../assets/Logo1.png';
 import OptimizedImage from '../OptimizedImage';
-import { FaInstagram, FaLinkedin, FaFacebook, FaEnvelope, FaWhatsapp, FaHome, FaUsers, FaBriefcase, FaLaptopCode, FaBullseye, FaHandshake, FaInfoCircle } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaFacebook, FaEnvelope, FaWhatsapp, FaHome, FaUsers, FaBriefcase, FaLaptopCode, FaBullseye, FaHandshake, FaInfoCircle, FaPlay } from 'react-icons/fa';
 
 const redes = [
   { nombre: 'Instagram', url: 'https://www.instagram.com/uxnicorp/', icono: <FaInstagram />, color: '#f37aa6' },

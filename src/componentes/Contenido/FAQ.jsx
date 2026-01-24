@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     pregunta: "¿Puedo administrar el contenido de mi sitio yo mismo?",
-    respuesta: "Depende del tipo de proyecto. Los sistemas de gestión y e-commerce incluyen paneles administrativos completos e intuitivos. "
+    respuesta: "Depende del tipo de proyecto. Los sistemas de gestión y e-commerce incluyen paneles administrativos completos e intuitivos."
   },
   {
     pregunta: "¿Qué diferencia a UXnicorp de otras agencias?",
@@ -82,7 +82,6 @@ function FAQ() {
       ref={sectionRef}
     >
       <div className="section-glass-card">
-        <div className="faq-header">
           <h2 className="faq-titulo">
             Preguntas <span className="faq-highlight">frecuentes</span>
           </h2>
@@ -96,7 +95,6 @@ function FAQ() {
         </div>
 
         <CTASection />
-      </div>
     </section>
   );
 }
