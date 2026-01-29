@@ -26,6 +26,68 @@ const LoadingFallback = () => (
 // Datos de casos reales (extraídos de Proyectos.jsx)
 const casosData = [
   {
+    id: 'landing-electricista',
+    titulo: 'Landing Profesional para Instalaciones Eléctricas',
+    subtitulo: 'Web Corporativa Premium',
+    descripcion: 'Sitio web corporativo moderno para empresa de instalaciones eléctricas con portafolio de proyectos y sistema de cotización.',
+    imagen: '/modal4.webp',
+    imagenDetalle: '/modal4.webp',
+    color: '#ffc107',
+    tags: ['React', 'Node.js', 'Maps API', 'SEO Local'],
+    tipo: 'Web Corporativa',
+    industria: 'Servicios',
+    link: 'https://www.electropowerok.com.ar/',
+    metricas: {
+      tipo: 'Web Corporativa',
+      industria: 'Servicios'
+    },
+    detalles: [
+      'Diseño profesional que transmite confianza',
+      'Galería de proyectos con antes/después',
+      'Formulario inteligente de cotización',
+      'Integración con Google Maps para cobertura',
+      'Sección de servicios detallada',
+      'Testimonios de clientes verificados',
+      'Certificaciones y habilitaciones destacadas',
+      'WhatsApp Business integrado',
+      'Optimización SEO local',
+      'Velocidad optimizada para móviles'
+    ],
+    stack: 'React, Node.js, Google Maps API, WhatsApp Business API, Cloudflare CDN',
+    impacto: 'Incremento del 65% en solicitudes de presupuesto en 2 meses y mejor posicionamiento local.'
+  },
+  {
+    id: 'glam-at-nails',
+    titulo: 'Landing Profesional de Belleza y Estética',
+    subtitulo: 'Landing Page Premium',
+    descripcion: 'Sitio web moderno para estudio de uñas profesional con galería de trabajos reales, sistema de reservas y diseño enfocado en conversión.',
+    imagen: '/glam-at-nails-sitio-completo.webp',
+    imagenDetalle: '/glam-at-nails-sitio-completo.webp',
+    color: '#f37aa6',
+    tags: ['React', 'Bootstrap', 'SEO Local', 'WhatsApp API'],
+    tipo: 'Landing Page',
+    industria: 'Belleza',
+    link: 'https://glamatnails.com.ar/',
+    metricas: {
+      tipo: 'Landing Page',
+      industria: 'Belleza'
+    },
+    detalles: [
+      'Diseño visual alineado a identidad de marca',
+      'Galería de trabajos reales optimizada',
+      'Sección de servicios clara y detallada',
+      'Optimización SEO local (Boedo, CABA)',
+      'Integración WhatsApp Business para reservas',
+      'Diseño responsive mobile-first',
+      'Copy persuasivo orientado a conversión',
+      'Testimonios de clientas reales',
+      'Velocidad de carga optimizada',
+      'Lazy loading de imágenes'
+    ],
+    stack: 'React, Bootstrap, WhatsApp Business API, SEO Local optimizado',
+    impacto: 'Incremento del 75% en reservas mensuales y posicionamiento #1 en búsquedas locales de "manicura Boedo".'
+  },
+  {
     id: 'sistema-gestion',
     titulo: 'Sistema de Gestión Empresarial',
     subtitulo: 'ERP Cloud-Based Personalizado',
@@ -83,36 +145,6 @@ const casosData = [
     ],
     stack: 'React, TypeScript, Node.js, PostgreSQL, Redis, Docker, AWS EC2',
     impacto: 'MVP lanzado exitosamente, captó primeros 500 usuarios en 2 meses y atrajo inversión seed.'
-  },
-  {
-    id: 'landing-electricista',
-    titulo: 'Landing Profesional para Instalaciones Eléctricas',
-    subtitulo: 'Web Corporativa Premium',
-    descripcion: 'Sitio web corporativo moderno para empresa de instalaciones eléctricas con portafolio de proyectos y sistema de cotización.',
-    imagen: '/modal4.webp',
-    imagenDetalle: '/modal4.webp',
-    color: '#ffc107',
-    tags: ['React', 'Node.js', 'Maps API', 'SEO Local'],
-    tipo: 'Web Corporativa',
-    industria: 'Servicios',
-    metricas: {
-      tipo: 'Web Corporativa',
-      industria: 'Servicios'
-    },
-    detalles: [
-      'Diseño profesional que transmite confianza',
-      'Galería de proyectos con antes/después',
-      'Formulario inteligente de cotización',
-      'Integración con Google Maps para cobertura',
-      'Sección de servicios detallada',
-      'Testimonios de clientes verificados',
-      'Certificaciones y habilitaciones destacadas',
-      'WhatsApp Business integrado',
-      'Optimización SEO local',
-      'Velocidad optimizada para móviles'
-    ],
-    stack: 'React, Node.js, Google Maps API, WhatsApp Business API, Cloudflare CDN',
-    impacto: 'Incremento del 65% en solicitudes de presupuesto en 2 meses y mejor posicionamiento local.'
   }
 ];
 
@@ -267,9 +299,9 @@ function CasosReales() {
                     </ul>
                   </div>
                   {/* Link solo para sitios reales */}
-                  {caso.id === 'landing-electricista' && (
+                  {caso.link && (
                     <a 
-                      href="https://www.electropowerok.com.ar/"
+                      href={caso.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="caso-link"
@@ -280,7 +312,7 @@ function CasosReales() {
                       }}
                     >
                       <ExternalLink size={18} />
-                      Ver sitio real →
+                      Ver sitio →
                     </a>
                   )}
                 </div>

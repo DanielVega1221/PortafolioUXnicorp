@@ -4,42 +4,73 @@ import { Link } from "react-router-dom";
 import "./Proyectos.css";
 import "../../section-glass-card.css";
 import OptimizedImage from "../OptimizedImage";
-import Demo1Img from "../../assets/demo1.png";
 import Demo2Img from "../../assets/demo2.png";
 import Demo3Img from "../../assets/demo3.png";
 import Demo4Img from "../../assets/demo4.png";
+import GlamDemoImg from "../../assets/glam-at-nails-landing-preview.png";
 import { StarIcon, ArrowRightIcon } from "../SVGIcons";
 import { ExternalLink } from "lucide-react";
 
 const proyectos = [
   {
-    idea: "Landing Educativa de Alto Impacto",
-    ideaDesc:
-      "Sitio web institucional moderno para instituto educativo con diseño responsive, animaciones interactivas y sistema de inscripciones online.",
-    solucion: "Plataforma Web Institucional",
-    solucionDesc:
-      "Landing page profesional con arquitectura optimizada para conversión, diseño UX/UI moderno y formularios inteligentes de contacto.",
-    tags: ["React", "Node.js", "EmailJS", "SEO"],
-    resultado: "+40% consultas",
-    tiempo: "3 semanas",
-    modalContent:
-      `Desarrollamos una landing page completa para un instituto educativo aplicando las últimas tendencias en diseño web y UX/UI.
+    idea: "Landing Profesional para Instalaciones Eléctricas",
+    ideaDesc: "Sitio web corporativo moderno para empresa de instalaciones eléctricas con portafolio de proyectos, formulario de cotización y diseño responsive.",
+    solucion: "Web Corporativa Premium",
+    solucionDesc: "Landing page profesional con galería de trabajos realizados, sistema de cotización online y optimización SEO local para captar clientes en la zona.",
+    tags: ["React", "Node.js", "Maps API", "SEO Local"],
+    resultado: "+65% consultas",
+    tiempo: "4 semanas",
+    modalContent: `Desarrollamos una landing page profesional para una empresa de instalaciones eléctricas enfocada en generar confianza y conversiones.
 
 El proyecto incluye:
-• Diseño responsive optimizado para mobile-first
-• Animaciones CSS y JavaScript para mejorar la experiencia de usuario
-• Sistema de formularios con validación en tiempo real y envío automático por email
-• Sección de presentación de carreras con filtros dinámicos
-• Galería de imágenes optimizada con lazy loading
-• Integración con Google Analytics para seguimiento de conversiones
-• Optimización SEO completa (meta tags, schema markup, sitemap XML)
-• Velocidad de carga <2 segundos con técnicas de optimización avanzadas
+• Diseño profesional que transmite confianza y experiencia técnica
+• Galería de proyectos con antes/después y casos de éxito
+• Formulario inteligente de cotización con campos específicos del rubro
+• Integración con Google Maps para mostrar zona de cobertura
+• Sección de servicios con descripción detallada de cada especialidad
+• Testimonios de clientes verificados con fotos reales
+• Certificaciones y habilitaciones destacadas
+• WhatsApp Business integrado para consultas rápidas
+• Optimización SEO local para aparecer en búsquedas geográficas
+• Velocidad de carga optimizada para móviles (usuarios en obra)
 
-Stack tecnológico: React, Node.js, EmailJS, CSS3 Animations, Vercel hosting.
-Resultado: 40% de aumento en solicitudes de información en los primeros 3 meses.`,
-    color: "#81ade7",
-    imagen: Demo1Img,
-    modalImagen: "/modal1.webp"
+Stack tecnológico: React, Node.js, Google Maps API, WhatsApp Business API, Cloudflare CDN.
+Resultado: Incremento del 65% en solicitudes de presupuesto en los primeros 2 meses y mejor posicionamiento en búsquedas locales.`,
+    color: "#ffc107",
+    imagen: Demo4Img,
+    modalImagen: "/modal4.webp",
+    link: "https://www.electropowerok.com.ar/"
+  },
+  {
+    idea: "Landing Profesional de Belleza y Estética",
+    ideaDesc: "Sitio web moderno para estudio de uñas profesional con galería de trabajos reales, sistema de reservas y diseño enfocado en conversión.",
+    solucion: "Landing Page Premium",
+    solucionDesc: "Plataforma web profesional con galería visual impactante, optimización SEO local para Boedo (CABA) y contacto directo vía WhatsApp para maximizar reservas.",
+    tags: ["React", "Bootstrap", "SEO Local", "WhatsApp API"],
+    resultado: "+75% reservas",
+    tiempo: "3 semanas",
+    modalContent: `Desarrollamos una landing page profesional para Glam at Nails, estudio de uñas en Boedo, enfocada en generar confianza y convertir visitantes en clientas.
+
+El proyecto incluye:
+• Diseño visual moderno alineado a la identidad de marca del estudio
+• Galería de trabajos reales optimizada para mostrar técnicas y resultados
+• Sección de servicios clara y detallada con precios y duración
+• Optimización SEO local para búsquedas en Boedo y CABA
+• Integración con WhatsApp Business para reservas instantáneas
+• Diseño responsive mobile-first (mayoría de búsquedas desde móviles)
+• Copy persuasivo orientado a generar acción y reservas
+• Sección de beneficios destacando turnos personalizados
+• Testimonios de clientas reales con fotos de resultados
+• Velocidad de carga optimizada con lazy loading de imágenes
+
+Stack tecnológico: React, Bootstrap, WhatsApp Business API, SEO Local optimizado.
+Resultado: Incremento del 75% en reservas mensuales y posicionamiento #1 en búsquedas locales de "manicura Boedo".
+
+🔗 Sitio web: https://glamatnails.com.ar/`,
+    color: "#f37aa6",
+    imagen: GlamDemoImg,
+    modalImagen: "/glam-at-nails-sitio-completo.webp",
+    link: "https://glamatnails.com.ar/"
   },
   {
     idea: "Sistema de Gestión Empresarial",
@@ -101,34 +132,6 @@ Resultado: MVP lanzado exitosamente, captó primeros 500 usuarios en 2 meses y a
     color: "#e0a6d8",
     imagen: Demo3Img,
     modalImagen: "/modal3.webp"
-  },
-  {
-    idea: "Landing Profesional para Instalaciones Eléctricas",
-    ideaDesc: "Sitio web corporativo moderno para empresa de instalaciones eléctricas con portafolio de proyectos, formulario de cotización y diseño responsive.",
-    solucion: "Web Corporativa Premium",
-    solucionDesc: "Landing page profesional con galería de trabajos realizados, sistema de cotización online y optimización SEO local para captar clientes en la zona.",
-    tags: ["React", "Node.js", "Maps API", "SEO Local"],
-    resultado: "+65% consultas",
-    tiempo: "4 semanas",
-    modalContent: `Desarrollamos una landing page profesional para una empresa de instalaciones eléctricas enfocada en generar confianza y conversiones.
-
-El proyecto incluye:
-• Diseño profesional que transmite confianza y experiencia técnica
-• Galería de proyectos con antes/después y casos de éxito
-• Formulario inteligente de cotización con campos específicos del rubro
-• Integración con Google Maps para mostrar zona de cobertura
-• Sección de servicios con descripción detallada de cada especialidad
-• Testimonios de clientes verificados con fotos reales
-• Certificaciones y habilitaciones destacadas
-• WhatsApp Business integrado para consultas rápidas
-• Optimización SEO local para aparecer en búsquedas geográficas
-• Velocidad de carga optimizada para móviles (usuarios en obra)
-
-Stack tecnológico: React, Node.js, Google Maps API, WhatsApp Business API, Cloudflare CDN.
-Resultado: Incremento del 65% en solicitudes de presupuesto en los primeros 2 meses y mejor posicionamiento en búsquedas locales.`,
-    color: "#ffc107",
-    imagen: Demo4Img,
-    modalImagen: "/modal4.webp"
   }
 ];
 
