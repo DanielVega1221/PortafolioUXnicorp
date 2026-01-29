@@ -20,7 +20,6 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import App from './App';
-import ComoTrabajamos from './pages/ComoTrabajamos';
 import NotFound from './pages/NotFound';
 import './index.css';
 import './responsive-utils.css';
