@@ -26,34 +26,6 @@ const LoadingFallback = () => (
 // Datos de casos reales (extraídos de Proyectos.jsx)
 const casosData = [
   {
-    id: 'landing-educativa',
-    titulo: 'Landing Educativa de Alto Impacto',
-    subtitulo: 'Plataforma Web Institucional',
-    descripcion: 'Sitio web institucional moderno para instituto educativo con diseño responsive, animaciones interactivas y sistema de inscripciones online.',
-    imagen: '/modal1.webp',
-    imagenDetalle: '/modal1.webp',
-    color: '#81ade7',
-    tags: ['React', 'Node.js', 'EmailJS', 'SEO'],
-    tipo: 'Landing Page',
-    industria: 'Educación',
-    metricas: {
-      tipo: 'Landing Page',
-      industria: 'Educación'
-    },
-    detalles: [
-      'Diseño responsive optimizado para mobile-first',
-      'Animaciones CSS y JavaScript para mejorar la experiencia de usuario',
-      'Sistema de formularios con validación en tiempo real',
-      'Sección de carreras con filtros dinámicos',
-      'Galería de imágenes optimizada con lazy loading',
-      'Integración con Google Analytics',
-      'Optimización SEO completa (meta tags, schema markup)',
-      'Velocidad de carga <2 segundos'
-    ],
-    stack: 'React, Node.js, EmailJS, CSS3 Animations, Vercel hosting',
-    impacto: '40% de aumento en solicitudes de información en los primeros 3 meses.'
-  },
-  {
     id: 'sistema-gestion',
     titulo: 'Sistema de Gestión Empresarial',
     subtitulo: 'ERP Cloud-Based Personalizado',
@@ -295,22 +267,6 @@ function CasosReales() {
                     </ul>
                   </div>
                   {/* Link solo para sitios reales */}
-                  {caso.id === 'landing-educativa' && (
-                    <a 
-                      href="https://www.isdep.com.ar/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="caso-link"
-                      style={{ 
-                        borderColor: caso.color,
-                        backgroundColor: `${caso.color}15`,
-                        color: caso.color 
-                      }}
-                    >
-                      <ExternalLink size={18} />
-                      Ver sitio real →
-                    </a>
-                  )}
                   {caso.id === 'landing-electricista' && (
                     <a 
                       href="https://www.electropowerok.com.ar/"
