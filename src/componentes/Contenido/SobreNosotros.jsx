@@ -45,13 +45,13 @@ function SobreNosotros() {
               </span>
             }>
               <p className="acordeon-descripcion">
-                No solo entregamos un sitio web bonito. Desarrollamos soluciones pensadas para convertir visitantes en clientes, con análisis de métricas, optimización constante y feedback continuo para maximizar tu ROI.
+                No solo entregamos un sitio web bonito. Desarrollamos soluciones pensadas para convertir visitantes en clientes, con análisis de métricas, optimización constante y feedback continuo para que convierta más.
               </p>
             </AcordeonAnimado>
             <AcordeonAnimado titulo={
               <span className="acordeon-titulo-con-icono">
                 <BoltIcon size={20} className="acordeon-icono" />
-                Tecnología de vanguardia y escalable
+                Tecnología moderna y escalable
               </span>
             }>
               <p className="acordeon-descripcion">
@@ -71,11 +71,11 @@ function SobreNosotros() {
             <AcordeonAnimado titulo={
               <span className="acordeon-titulo-con-icono">
                 <DiamondIcon size={20} className="acordeon-icono" />
-                Precios justos con planes flexibles
+                Propuestas transparentes y flexibles
               </span>
             }>
               <p className="acordeon-descripcion">
-                Ofrecemos desarrollo profesional a precios competitivos, con opciones de pago adaptadas a tu presupuesto. Calidad premium sin comprometer tus finanzas, porque creemos que toda empresa merece tecnología de primer nivel.
+                Ofrecemos desarrollo profesional con propuestas claras y opciones flexibles adaptadas a cada proyecto. Calidad profesional para empresas que buscan tecnología de primer nivel.
               </p>
             </AcordeonAnimado>
           </div>

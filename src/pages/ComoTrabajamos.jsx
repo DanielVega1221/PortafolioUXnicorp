@@ -50,15 +50,17 @@ function ComoTrabajamos() {
         variants={pageVariants}
       >
       <Helmet>
-        <title>Proceso de Desarrollo Web | Metodología Ágil - UXnicorp</title>
-        <meta name="description" content="Conocé cómo trabajamos: metodología ágil, código limpio, testing exhaustivo y comunicación constante. Proceso transparente de desarrollo web profesional paso a paso." />
-        <meta name="keywords" content="metodología desarrollo web, proceso desarrollo software, metodología ágil, clean code, testing software, agile development, scrum, desarrollo profesional, arquitectura software" />
+        <title>Cómo Trabajamos | Proceso de Desarrollo Web Transparente | UXnicorp</title>
+        <meta name="description" content="Proceso de desarrollo web transparente: Reunión inicial, Propuesta clara, Desarrollo ágil, Entregas semanales, Soporte incluido. Metodología probada en Argentina." />
+        <meta name="keywords" content="metodología desarrollo web, proceso desarrollo software, metodología ágil argentina, clean code, testing software, agile development, scrum, desarrollo profesional argentina, arquitectura software, como trabajamos" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/como-trabajamos" />
+        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/como-trabajamos" />
         
         <meta property="og:title" content="Proceso de Desarrollo Web | Metodología Ágil - UXnicorp" />
-        <meta property="og:description" content="Conocé nuestra metodología de desarrollo: código limpio, testing exhaustivo y entregas continuas. Transparencia total en cada fase del proyecto." />
+        <meta property="og:description" content="Metodología de desarrollo ágil: código limpio, testing exhaustivo y entregas continuas. Transparencia total." />
         <meta property="og:url" content="https://www.uxnicorp.com.ar/como-trabajamos" />
         <meta property="og:type" content="article" />
+        <meta property="og:locale" content="es_AR" />
       </Helmet>
       
       <main className="main-cards-wrapper">

@@ -242,7 +242,7 @@ function Auditorias() {
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
           titulo="¿No estás seguro cuál auditoría necesitás?"
-          descripcion="Contactanos y te asesoramos gratis para identificar qué tipo de análisis es mejor para tu proyecto"
+          descripcion="Contactanos y te asesoramos para identificar qué tipo de análisis es mejor para tu proyecto"
           textoBoton="Consultar ahora"
           linkTo="/#contact"
         />

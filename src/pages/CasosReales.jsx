@@ -179,13 +179,14 @@ function CasosReales() {
         <title>Casos de Éxito Argentina | Proyectos Web Reales con Resultados - UXnicorp</title>
         <meta 
           name="description" 
-          content="Casos de éxito de desarrollo web en Argentina: Landing pages, E-commerce, ERPs y Fintech. Proyectos reales + demos conceptuales de arquitectura y gastronomía. Resultados medibles en Argentina y LATAM." 
+          content="Casos de éxito de desarrollo web en Argentina: Landing pages, E-commerce, ERPs y Fintech. Proyectos reales con resultados medibles." 
         />
         <meta name="keywords" content="casos éxito desarrollo web argentina, proyectos web argentina, portfolio web argentina, landing pages casos éxito, ecommerce argentina casos, ejemplos desarrollo web" />
+        <link rel="canonical" href="https://www.uxnicorp.com.ar/casos-reales" />
+        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/casos-reales" />
         <meta property="og:title" content="Casos de Éxito Argentina | Proyectos Web Reales - UXnicorp" />
         <meta property="og:description" content="Proyectos reales de desarrollo web: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados." />
         <meta property="og:locale" content="es_AR" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar/casos-reales" />
       </Helmet>
 
       {/* Hero Section */}

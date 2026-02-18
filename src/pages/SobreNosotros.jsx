@@ -262,15 +262,17 @@ function SobreNosotros() {
   return (
     <>
       <Helmet>
-        <title>Sobre Nosotros | Equipo de Desarrollo Web - UXnicorp</title>
-        <meta name="description" content="Conocé al equipo detrás de UXnicorp: desarrolladores apasionados que creen en las relaciones reales, la transparencia y en que tu éxito también es el nuestro." />
-        <meta name="keywords" content="equipo desarrollo web, sobre nosotros, equipo UXnicorp, desarrolladores argentina, filosofía desarrollo web, valores empresa tecnología" />
+        <title>Sobre UXnicorp | Agencia Desarrollo Web Argentina</title>
+        <meta name="description" content="Equipo de desarrollo web en Argentina especializado en Landing Pages, E-commerce y Sistemas ERP. Transparencia, entregas rápidas y metodología ágil." />
+        <meta name="keywords" content="equipo desarrollo web, agencia desarrollo argentina, sobre nosotros, equipo UXnicorp, desarrolladores argentina, filosofía desarrollo web, valores empresa tecnología, agencia web buenos aires" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/sobre-nosotros" />
+        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/sobre-nosotros" />
         
         <meta property="og:title" content="Sobre Nosotros | Equipo de Desarrollo Web - UXnicorp" />
-        <meta property="og:description" content="Somos un equipo que cree en crear tecnología con alma. Conocé nuestra historia, valores y filosofía de trabajo." />
+        <meta property="og:description" content="Equipo especializado en desarrollo web. Transparencia, metodología ágil y entregas rápidas en Argentina." />
         <meta property="og:url" content="https://www.uxnicorp.com.ar/sobre-nosotros" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_AR" />
       </Helmet>
       
       <main className="sobre-nosotros-page">

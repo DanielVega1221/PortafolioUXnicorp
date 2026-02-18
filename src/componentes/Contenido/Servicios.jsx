@@ -67,9 +67,9 @@ const explicacionesCriollas = {
   },
   "Paquete Emprendedor": {
     que: "Es un combo para arrancar rápido: landing básica en 72hs + colores y tipografías definidas para tu marca (microbranding).",
-    paraque: "Sirve para tener presencia online profesional desde el día uno sin gastar una fortuna. Ideal para emprendedores que recién arrancan.",
+    paraque: "Sirve para tener presencia online profesional desde el día uno. Ideal para emprendedores que recién arrancan.",
     como: "Te armamos la landing express básica y además te damos una paleta de colores y tipografías para que uses en redes, flyers y todo lo que hagas.",
-    cuando: "Es perfecto para nuevos emprendimientos, freelancers que recién empiezan, profesionales independientes o cualquiera que necesite presencia digital rápida y económica."
+    cuando: "Es perfecto para nuevos emprendimientos, freelancers que recién empiezan, profesionales independientes o cualquiera que necesite presencia digital rápida."
   },
   "Paquete Auditoría Integral": {
     que: "Es el combo completo de auditorías: revisión UX/UI + análisis de conversión (CRO) para saber exactamente qué está fallando en tu web.",
@@ -78,9 +78,9 @@ const explicacionesCriollas = {
     cuando: "Es ideal cuando tenés una web funcionando pero no está dando los resultados esperados y querés saber exactamente qué cambiar para que funcione mejor."
   },
   "Plan Evolución": {
-    que: "Es un plan que te permite empezar con una landing básica y después mejorarla a intermedia o full pagando solo el 50% de la diferencia.",
-    paraque: "Sirve para empezar con una inversión baja y después ir escalando sin tener que pagar el precio completo de la versión mejorada.",
-    como: "Arrancás con la Basic, y cuando quieras mejorar, solo pagás la mitad de la diferencia de precio. El resto lo absorbemos nosotros.",
+    que: "Es un plan que te permite empezar con una landing básica y después mejorarla a intermedia o full con un beneficio en el upgrade.",
+    paraque: "Sirve para empezar de forma ágil y después ir escalando sin tener que rehacer todo desde cero.",
+    como: "Arrancas con la Basic, y cuando quieras mejorar, tenemos un plan de upgrade simplificado. Consultanos para conocer las opciones.",
     cuando: "Es perfecto para startups o negocios que quieren empezar ya pero saben que van a necesitar algo más robusto en unos meses. Vas creciendo a tu ritmo."
   }
 };

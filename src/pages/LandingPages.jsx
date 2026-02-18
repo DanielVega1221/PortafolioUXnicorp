@@ -117,7 +117,7 @@ const comparadorData = [
 const faqsData = [
   {
     pregunta: '¿Qué tipo de landing page necesito?',
-    respuesta: 'Depende de tu objetivo y presupuesto. Si necesitás presencia rápida: Express Basic. Si querés destacarte con animaciones: Intermedia. Si buscás una solución completa: Full. Y si tu marca necesita algo único: Premium a Medida.'
+    respuesta: 'Depende de tu objetivo y necesidades. Si necesitás presencia rápida: Express Basic. Si querés destacarte con animaciones: Intermedia. Si buscás una solución completa: Full. Y si tu marca necesita algo único: Premium a Medida.'
   },
   {
     pregunta: '¿Qué incluye cada landing page?',
@@ -190,7 +190,7 @@ function LandingPages() {
           </h1>
           
           <p className="landing-hero-description">
-            Desde una landing express en 72 horas hasta un diseño premium 100% personalizado. Elegí el paquete que mejor se adapte a tu negocio y presupuesto.
+            Desde una landing express en 72 horas hasta un diseño premium 100% personalizado. Elegí el paquete que mejor se adapte a tus necesidades.
           </p>
 
           <div className="landing-hero-highlights">
@@ -216,7 +216,7 @@ function LandingPages() {
           <div className="landing-servicios-header">
             <h2>Nuestros paquetes de Landing Pages</h2>
             <p>
-              Cada paquete está diseñado para diferentes necesidades y presupuestos. Todos incluyen diseño profesional, hosting y soporte post-lanzamiento.
+              Cada paquete está diseñado para diferentes necesidades y etapas de negocio. Todos incluyen diseño profesional, hosting y soporte post-lanzamiento.
             </p>
           </div>
 
@@ -369,7 +369,7 @@ function LandingPages() {
           </p>
           <Link to="/#contacto" className="landing-cta-button-large">
             <MessageCircle size={20} />
-            Solicitar presupuesto gratis
+            Solicitar consulta
           </Link>
         </Motion.div>
       </section>

@@ -38,7 +38,7 @@ const servicios = [
     queEs: 'Es un combo de Landing Express Basic + Microbranding Web: tu página funcionando + identidad visual básica lista en 72 horas.',
     paraque: 'Sirve para arrancar rápido con presencia digital profesional y coherente, sin tener que contratar diseñadores y desarrolladores por separado.',
     comoFunciona: 'Te armamos la landing en 72 horas y te entregamos paleta de colores, tipografías y estilos base para que todo se vea consistente.',
-    cuando: 'Es ideal cuando arrancas tu negocio, cuando necesitás presencia digital rápida o cuando tenés poco presupuesto pero querés algo profesional.'
+    cuando: 'Es ideal cuando arrancas tu negocio, cuando necesitás presencia digital rápida o cuando querés empezar de forma ágil con algo profesional.'
   },
   {
     id: 'paquete-crecimiento',
@@ -79,16 +79,16 @@ const servicios = [
       '6 secciones + 1 página extra (Full)',
       'Animaciones premium progresivas',
       'SEO avanzado en versión Full',
-      'Pagás solo la mitad de la diferencia',
+      'Plan de upgrade simplificado',
       'Ideal para startups que crecen',
-      'Sin costo de migración'
+      'Migración incluida'
     ],
-    ideal: 'Startups o negocios que quieren empezar simple y crecer profesionalmente, pagando solo lo necesario según su momento',
+    ideal: 'Startups o negocios que quieren empezar simple y crecer profesionalmente según su momento',
     color: '#e0a6d8',
-    queEs: 'Es un modelo de escalamiento progresivo: empezás con lo básico y vas evolucionando tu web pagando solo la diferencia.',
-    paraque: 'Sirve para no gastar de más al principio y poder ir mejorando tu web a medida que tu negocio crece, sin tener que rehacer todo.',
-    comoFunciona: 'Arrancas con Landing Express Basic, y si después querés más secciones o funciones, pagás solo la mitad de la diferencia para evolucionar.',
-    cuando: 'Es perfecto para startups, negocios nuevos o cuando no estás seguro de cuánto necesitás invertir al principio pero sabés que vas a crecer.'
+    queEs: 'Es un modelo de escalamiento progresivo: empezás con lo básico y vas evolucionando tu web a medida que creces.',
+    paraque: 'Sirve para no tener que rehacer todo cuando necesites más funcionalidades. Tu web crece con vos.',
+    comoFunciona: 'Arrancas con Landing Express Basic, y si después querés más secciones o funciones, tenemos un plan de evolución simplificado.',
+    cuando: 'Es perfecto para startups, negocios nuevos o cuando sabés que vas a crecer y necesitarás más funcionalidades.'
   }
 ];
 
@@ -121,7 +121,7 @@ function PaquetesServicios() {
     <div className="servicio-categoria-page">
       <Helmet>
         <title>Paquetes de Desarrollo Web Argentina | Soluciones Completas - UXnicorp</title>
-        <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding), Auditoría Integral, Plan Evolución escalable. Ahorra tiempo y dinero. LATAM." />
+        <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding), Auditoría Integral, Plan Evolución escalable. Ahorra tiempo." />
         <meta name="keywords" content="paquete desarrollo web argentina, landing mas branding, auditoría completa, plan desarrollo web, combo web argentina, paquete emprendedor argentina" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/paquetes" />
         <meta property="og:title" content="Paquetes Web Argentina - UXnicorp" />

@@ -432,12 +432,12 @@ function Servicios() {
     {
       id: 'sistemas-gestion',
       titulo: 'Sistemas de Gestión',
-      descripcion: 'CRM y ERP personalizados para administrar clientes, ventas, inventario y toda tu operación. Desde básico hasta avanzado según tu presupuesto.',
+      descripcion: 'CRM y ERP personalizados para administrar clientes, ventas, inventario y toda tu operación. Desde básico hasta avanzado según tus necesidades.',
       icon: Settings,
       color: '#ffc107',
       serviciosCount: 'A medida',
       link: '/servicios/sistemas-gestion',
-      highlights: ['Dashboard personalizado', 'Módulos escalables', 'Consulta por presupuesto']
+      highlights: ['Dashboard personalizado', 'Módulos escalables', 'Propuesta a medida']
     },
     {
       id: 'paquetes',
@@ -454,12 +454,13 @@ function Servicios() {
   return (
     <div className="servicios-page">
       <Helmet>
-        <title>Servicios de Desarrollo Web Argentina | Landing Pages, E-commerce, ERP - UXnicorp</title>
-        <meta name="description" content="Servicios web en Argentina: Auditorías UX/UI, Landing Pages, E-commerce, Sistemas ERP personalizados. Consulta por presupuesto. Atendemos todo LATAM." />
-        <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina precio, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, desarrollo web latam" />
+        <title>Servicios Desarrollo Web Argentina ⚡ Landing Pages en 72h, E-commerce y ERP | UXnicorp</title>
+        <meta name="description" content="Desarrollo web completo: Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Soluciones integrales en Argentina." />
+        <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, agencia programacion argentina, desarrollo web buenos aires" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios" />
+        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/servicios" />
         <meta property="og:title" content="Servicios de Desarrollo Web Argentina - UXnicorp" />
-        <meta property="og:description" content="Landing pages, E-commerce, Sistemas ERP y Auditorías UX en Argentina. Consulta por presupuesto." />
+        <meta property="og:description" content="Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
 
@@ -552,7 +553,7 @@ function Servicios() {
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
           titulo="¿No estás seguro qué servicio necesitás?"
-          descripcion="Contactanos y te asesoramos gratis para encontrar la mejor solución para tu negocio"
+          descripcion="Contactanos y te asesoramos para encontrar la mejor solución para tu negocio"
           textoBoton="Consultar ahora"
           linkTo="/#contact"
         />

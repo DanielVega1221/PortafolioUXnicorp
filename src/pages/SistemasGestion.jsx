@@ -114,7 +114,7 @@ function SistemasGestion() {
               {seoConfig.sistemasGestion.h1}
             </h1>
             <p className="servicio-hero-description">
-              Sistemas personalizados para administrar clientes, ventas, inventario y toda tu operación. Desarrollamos desde CRM básico hasta ERP completo con múltiples módulos integrados. <strong>El precio se define según el alcance y complejidad de tu proyecto.</strong>
+              Sistemas personalizados para administrar clientes, ventas, inventario y toda tu operación. Desarrollamos desde CRM básico hasta ERP completo con múltiples módulos integrados. <strong>Cada proyecto se diseña según tus necesidades específicas.</strong>
             </p>
           </div>
         </div>

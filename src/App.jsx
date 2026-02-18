@@ -99,19 +99,16 @@ function App() {
     <div>
       <Helmet>
         <title>Desarrollo Web Argentina | Agencia de Programación Web Profesional - UXnicorp</title>
-        <meta name="description" content="⭐ Agencia de desarrollo web en Argentina. Creamos landing pages, e-commerce, sistemas de gestión y ERPs. Programadores expertos en React y Node.js. Proyectos en todo LATAM 🚀" />
+        <meta name="description" content="Agencia de desarrollo web en Argentina. Creamos landing pages, e-commerce, sistemas de gestión y ERPs. Programadores expertos en React y Node.js." />
         
-        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, desarrollo web caba, desarrollo web córdoba, desarrollo web santa fe, desarrollo web mendoza, desarrollo web tucumán, desarrollo web rosario, desarrollo web la plata, desarrollo web salta, desarrollo web misiones, desarrollo web entre ríos, desarrollo web chaco, desarrollo web corrientes, desarrollo web santiago del estero, desarrollo web san juan, desarrollo web jujuy, desarrollo web neuquén, desarrollo web formosa, desarrollo web chubut, desarrollo web río negro, desarrollo web santa cruz, desarrollo web tierra del fuego, desarrollo web la pampa, desarrollo web la rioja, desarrollo web catamarca, desarrollo web san luis, programadores react argentina, agencia digital argentina, desarrollo web latam, programación web profesional, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina, agencia web córdoba, agencia web mendoza, agencia web rosario, programadores buenos aires, programadores córdoba" />
+        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, desarrollo web caba, desarrollo web córdoba, desarrollo web santa fe, desarrollo web mendoza, desarrollo web tucumán, desarrollo web rosario, desarrollo web la plata, desarrollo web salta, desarrollo web misiones, desarrollo web entre ríos, desarrollo web chaco, desarrollo web corrientes, desarrollo web santiago del estero, desarrollo web san juan, desarrollo web jujuy, desarrollo web neuquén, desarrollo web formosa, desarrollo web chubut, desarrollo web río negro, desarrollo web santa cruz, desarrollo web tierra del fuego, desarrollo web la pampa, desarrollo web la rioja, desarrollo web catamarca, desarrollo web san luis, programadores react argentina, agencia digital argentina, programación web profesional, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina, agencia web córdoba, agencia web mendoza, agencia web rosario, programadores buenos aires, programadores córdoba" />
         
         <meta property="og:title" content="Desarrollo Web Argentina | Agencia de Programación Web - UXnicorp" />
-        <meta property="og:description" content="Agencia de desarrollo web en Argentina. Landing pages, e-commerce, sistemas de gestión y ERPs. Atendemos todo LATAM. Presupuesto gratis" />
+        <meta property="og:description" content="Agencia de desarrollo web en Argentina. Landing pages, e-commerce, sistemas de gestión y ERPs." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.uxnicorp.com.ar" />
         <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         <meta property="og:locale" content="es_AR" />
-        <meta property="og:locale:alternate" content="es_MX" />
-        <meta property="og:locale:alternate" content="es_CO" />
-        <meta property="og:locale:alternate" content="es_CL" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Desarrollo Web Argentina | Agencia de Programación Web" />
@@ -130,22 +127,16 @@ function App() {
             "url": "https://www.uxnicorp.com.ar",
             "logo": "https://www.uxnicorp.com.ar/logo.png",
             "image": "https://www.uxnicorp.com.ar/og-image.jpg",
-            "description": "Agencia de desarrollo web en Argentina especializada en landing pages, e-commerce, sistemas ERP/CRM y auditorías UX. Atendemos clientes en toda Latinoamérica.",
+            "description": "Agencia de desarrollo web en Argentina especializada en landing pages, e-commerce, sistemas ERP/CRM y auditorías UX. Trabajo remoto en toda Argentina.",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "AR",
               "addressRegion": "Buenos Aires"
             },
-            "areaServed": [
-              {
-                "@type": "Country",
-                "name": "Argentina"
-              },
-              {
-                "@type": "Place",
-                "name": "Latinoamérica"
-              }
-            ],
+            "areaServed": {
+              "@type": "Country",
+              "name": "Argentina"
+            },
             "priceRange": "$$",
             "geo": {
               "@type": "GeoCoordinates",
@@ -159,7 +150,7 @@ function App() {
                 "@type": "ContactPoint",
                 "telephone": "+54-383-436-8748",
                 "contactType": "customer service",
-                "areaServed": ["AR", "LATAM"],
+                "areaServed": "AR",
                 "availableLanguage": ["Spanish", "English"]
               }
             ],
@@ -195,7 +186,7 @@ function App() {
                 "name": "¿Cuánto cuesta hacer una página web en Argentina 2025?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Los costos varían según el tipo de proyecto: landing pages profesionales, páginas web institucionales, e-commerce completos y sistemas personalizados (ERP/CRM). Contactanos para un presupuesto personalizado sin cargo en 24hs."
+                  "text": "Los costos varían según el tipo de proyecto: landing pages profesionales, páginas web institucionales, e-commerce completos y sistemas personalizados (ERP/CRM). Contactanos para recibir una propuesta personalizada."
                 }
               },
               {

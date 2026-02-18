@@ -6,7 +6,7 @@ import '../../section-glass-card.css';
 const faqs = [
   {
     pregunta: "¿Cómo funciona el proceso de cotización?",
-    respuesta: "Nos contactas contando tu proyecto, agendamos una videollamada o chat para entender tus necesidades, y en 48 horas te enviamos una propuesta personalizada con costos, tiempos y alcance detallado. Todo sin compromiso y completamente transparente."
+    respuesta: "Nos contactas contando tu proyecto, agendamos una videollamada o chat para entender tus necesidades, y en 48 horas te enviamos una propuesta personalizada con alcance, tiempos y detalles. Todo sin compromiso y completamente transparente."
   },
   {
     pregunta: "¿Ofrecen mantenimiento después del lanzamiento?",
@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     pregunta: "¿Trabajan con clientes de otros países?",
-    respuesta: "¡Absolutamente! Trabajamos con clientes de toda Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
+    respuesta: "Sí, totalmente. Trabajamos con clientes de toda Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
   },
   {
     pregunta: "¿Qué pasa si necesito cambios después del lanzamiento?",
-    respuesta: "Si contratas nuestro plan de mantenimiento, incluye una ronda de cambios mensuales para modificaciones menores. Los primeros 30 días después del lanzamiento también incluyen ajustes sin costo. Para cambios mayores, trabajamos con total transparencia en costos."
+    respuesta: "Si contratas nuestro plan de mantenimiento, incluye una ronda de cambios mensuales para modificaciones menores. Los primeros 30 días después del lanzamiento también incluyen ajustes. Para cambios mayores, trabajamos con total transparencia."
   },
   {
     pregunta: "¿Puedo administrar el contenido de mi sitio yo mismo?",

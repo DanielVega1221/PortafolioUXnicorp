@@ -135,7 +135,7 @@ const servicios = [
     queEs: 'Es una landing 100% personalizada, sin plantillas, diseñada específicamente para tu marca, tu estilo y tus objetivos de negocio.',
     paraque: 'Sirve cuando querés algo único que refleje tu identidad, con funcionalidades específicas como integraciones, paneles admin o características avanzadas.',
     comoFunciona: 'Diseñamos desde cero según tu brief, desarrollamos funcionalidades personalizadas, integramos con tus sistemas y te entregamos algo único en 2-3 semanas.',
-    cuando: 'Es ideal cuando tenés un presupuesto más alto, cuando necesitás algo que no existe en templates o cuando querés diferenciarte completamente de tu competencia.'
+    cuando: 'Es ideal cuando necesitás algo que no existe en templates, cuando querés diferenciarte completamente de tu competencia o cuando tu marca requiere una experiencia única.'
   }
 ];
 
@@ -168,7 +168,7 @@ function LandingPagesServicios() {
     <div className="servicio-categoria-page">
       <Helmet>
         <title>Landing Pages Argentina | Diseño Web Profesional - UXnicorp</title>
-        <meta name="description" content="Creamos landing pages profesionales en Argentina. Entrega en 72hs. Responsive, SEO optimizado, integración formularios. 5 opciones disponibles. Todo LATAM." />
+        <meta name="description" content="Creamos landing pages profesionales en Argentina. Entrega en 72hs. Responsive, SEO optimizado, integración formularios. 5 opciones disponibles." />
         <meta name="keywords" content="landing page argentina, landing page precio argentina, diseño landing argentina, crear landing page, landing page express argentina, landing profesional, página web rápida" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/landing-pages" />
         <meta property="og:title" content="Landing Pages Argentina - UXnicorp" />
@@ -290,7 +290,7 @@ function LandingPagesServicios() {
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
           titulo="¿No sabés qué tipo de landing necesitás?"
-          descripcion="Contactanos y te ayudamos a elegir el paquete perfecto según tu presupuesto y objetivos"
+          descripcion="Contactanos y te ayudamos a elegir el paquete perfecto según tus objetivos y necesidades"
           textoBoton="Consultar ahora"
           linkTo="/#contact"
         />

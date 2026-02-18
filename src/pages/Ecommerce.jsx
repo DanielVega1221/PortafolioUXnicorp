@@ -227,7 +227,7 @@ function Ecommerce() {
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
           titulo="¿Querés empezar a vender online?"
-          descripcion="Te asesoramos gratis sobre qué funcionalidades necesitás según tu tipo de productos y volumen de ventas"
+          descripcion="Te asesoramos sobre qué funcionalidades necesitás según tu tipo de productos y volumen de ventas"
           textoBoton="Consultar ahora"
           linkTo="/#contact"
         />

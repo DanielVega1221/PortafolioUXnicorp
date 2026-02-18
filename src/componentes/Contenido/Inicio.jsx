@@ -113,7 +113,7 @@ function Inicio() {
               <span>diseño de páginas web</span>
               <span>agencia web profesional</span>
               <span>sistemas de gestión web</span>
-              <span>desarrollo web latinoamérica</span>
+              <span>desarrollo web profesional</span>
               <span>programación web argentina</span>
             </div>
 
