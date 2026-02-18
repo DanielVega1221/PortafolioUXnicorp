@@ -20,7 +20,6 @@ const servicios = [
     titulo: 'Landing Express Basic',
     descripcion: 'Página web de una sola página lista en 72 horas con lo esencial para arrancar.',
     icon: Zap,
-    precio: '$180.000 ARS',
     duracion: '72 horas',
     incluye: [
       '1 página de aterrizaje (3-4 secciones)',
@@ -44,7 +43,6 @@ const servicios = [
     titulo: 'Landing Express Intermedia',
     descripcion: 'Landing más completa y moderna con hasta 5 secciones y animaciones profesionales.',
     icon: Zap,
-    precio: '$250.000 ARS',
     duracion: '5-10 días',
     incluye: [
       '1 página de aterrizaje (5-6 secciones)',
@@ -69,7 +67,6 @@ const servicios = [
     titulo: 'Landing Express Full',
     descripcion: 'Versión completa: landing de 6 secciones + 1 página adicional, optimizada para Google.',
     icon: Package,
-    precio: '$300.000 ARS',
     duracion: '1-2 semanas',
     incluye: [
       'Landing principal (6-7 secciones)',
@@ -96,7 +93,6 @@ const servicios = [
     titulo: 'Landing Flyer Promo',
     descripcion: 'Anuncio digital en formato web para promociones puntuales y campañas específicas.',
     icon: Zap,
-    precio: '$120.000 ARS',
     duracion: '3-5 días',
     incluye: [
       'Página simple estilo flyer digital',
@@ -120,7 +116,6 @@ const servicios = [
     titulo: 'Landing Premium a Medida',
     descripcion: 'Desarrollo 100% personalizado con funcionalidades específicas según tu negocio.',
     icon: Package,
-    precio: '$360.000 ARS',
     duracion: '2-3 semanas',
     incluye: [
       'Diseño 100% personalizado',
@@ -172,11 +167,11 @@ function LandingPagesServicios() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>Landing Pages Argentina | Desde $180.000 - Diseño Web Profesional - UXnicorp</title>
-        <meta name="description" content="Creamos landing pages profesionales en Argentina desde $180k. Entrega en 72hs. Responsive, SEO optimizado, integración formularios. 5 opciones disponibles. Todo LATAM." />
+        <title>Landing Pages Argentina | Diseño Web Profesional - UXnicorp</title>
+        <meta name="description" content="Creamos landing pages profesionales en Argentina. Entrega en 72hs. Responsive, SEO optimizado, integración formularios. 5 opciones disponibles. Todo LATAM." />
         <meta name="keywords" content="landing page argentina, landing page precio argentina, diseño landing argentina, crear landing page, landing page express argentina, landing profesional, página web rápida" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/landing-pages" />
-        <meta property="og:title" content="Landing Pages Argentina desde $180k - UXnicorp" />
+        <meta property="og:title" content="Landing Pages Argentina - UXnicorp" />
         <meta property="og:description" content="Diseñamos tu landing page profesional en 72hs. Responsive y optimizada para conversiones." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
@@ -254,7 +249,6 @@ function LandingPagesServicios() {
                 </div>
 
                 <div className="servicio-detalle-meta">
-                  <div className="servicio-detalle-precio">{servicio.precio}</div>
                   <div className="servicio-detalle-duracion">
                     <Clock size={16} />
                     {servicio.duracion}

@@ -21,7 +21,6 @@ const servicios = [
     titulo: 'Auditoría UX/UI Profesional',
     descripcion: 'Revisión completa de tu página web para identificar qué funciona y qué se puede mejorar, sin tocar código.',
     icon: Search,
-    precio: '$120.000 ARS',
     duracion: '5-7 días',
     incluye: [
       'Análisis heurístico completo',
@@ -44,7 +43,6 @@ const servicios = [
     titulo: 'Informe de Optimización de Conversión (CRO)',
     descripcion: 'Análisis enfocado en descubrir por qué los visitantes no convierten en clientes y cómo solucionarlo.',
     icon: TrendingUp,
-    precio: '$120.000 ARS',
     duracion: '7-15 días',
     incluye: [
       'Análisis de embudos de conversión',
@@ -67,7 +65,6 @@ const servicios = [
     titulo: 'Revisión Técnica + Mini-Refactor',
     descripcion: 'Auditoría técnica del código más limpieza express de 1-2 módulos críticos.',
     icon: Code,
-    precio: '$150.000 ARS',
     duracion: '7-15 días',
     incluye: [
       'Code review completo',
@@ -204,7 +201,6 @@ function Auditorias() {
                 </div>
 
                 <div className="servicio-detalle-meta">
-                  <div className="servicio-detalle-precio">{servicio.precio}</div>
                   <div className="servicio-detalle-duracion">
                     <Clock size={16} />
                     {servicio.duracion}

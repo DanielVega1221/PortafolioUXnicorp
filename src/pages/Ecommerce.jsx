@@ -21,7 +21,6 @@ const servicios = [
     titulo: 'E-commerce Simple',
     descripcion: 'Tienda online funcional con carrito, pasarela de pagos y gestión de productos. La tienda ideal para emprendedores.',
     icon: ShoppingCart,
-    precio: '$590.000 en 6 cuotas | $540.000 contado',
     duracion: '3 meses',
     incluye: [
       'Catálogo de productos ilimitado',
@@ -47,7 +46,6 @@ const servicios = [
     titulo: 'E-commerce Robusto',
     descripcion: 'Tienda completa con funcionalidades avanzadas: cupones, seguimiento, filtros y emails automatizados. Para negocios con categorías y filtros avanzados.',
     icon: ShoppingCart,
-    precio: 'Desde $980.000 en 6 cuotas | Desde $890.000 contado',
     duracion: '3 meses',
     incluye: [
       'Todo lo de E-commerce Básico',
@@ -188,7 +186,6 @@ function Ecommerce() {
                 </div>
 
                 <div className="servicio-detalle-meta">
-                  <div className="servicio-detalle-precio">{servicio.precio}</div>
                   <div className="servicio-detalle-duracion">
                     <Clock size={16} />
                     {servicio.duracion}

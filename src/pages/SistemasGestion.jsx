@@ -21,7 +21,6 @@ const servicios = [
     titulo: 'Sistema de Gestión a Medida',
     descripcion: 'CRM, ERP o sistema personalizado según las necesidades específicas de tu empresa. Desde soluciones básicas hasta plataformas complejas con múltiples módulos integrados.',
     icon: Settings,
-    precio: 'A consultar según proyecto',
     duracion: 'Entre 6 y 24 semanas',
     incluye: [
       'Dashboard con métricas personalizadas',
@@ -171,7 +170,6 @@ function SistemasGestion() {
                 </div>
 
                 <div className="servicio-detalle-meta">
-                  <div className="servicio-detalle-precio">{servicio.precio}</div>
                   <div className="servicio-detalle-duracion">
                     <Clock size={16} />
                     {servicio.duracion}

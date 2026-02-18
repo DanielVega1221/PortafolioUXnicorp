@@ -195,7 +195,7 @@ function App() {
                 "name": "¿Cuánto cuesta hacer una página web en Argentina 2025?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Una landing page profesional desde USD 800, página web institucional desde USD 1,500, e-commerce completo desde USD 2,500, y sistemas personalizados (ERP/CRM) desde USD 5,000. Presupuesto sin cargo en 24hs."
+                  "text": "Los costos varían según el tipo de proyecto: landing pages profesionales, páginas web institucionales, e-commerce completos y sistemas personalizados (ERP/CRM). Contactanos para un presupuesto personalizado sin cargo en 24hs."
                 }
               },
               {

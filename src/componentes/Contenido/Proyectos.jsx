@@ -54,7 +54,7 @@ Resultado: Incremento del 65% en solicitudes de presupuesto en los primeros 2 me
 El proyecto incluye:
 • Diseño visual moderno alineado a la identidad de marca del estudio
 • Galería de trabajos reales optimizada para mostrar técnicas y resultados
-• Sección de servicios clara y detallada con precios y duración
+• Sección de servicios clara y detallada con información completa
 • Optimización SEO local para búsquedas en Boedo y CABA
 • Integración con WhatsApp Business para reservas instantáneas
 • Diseño responsive mobile-first (mayoría de búsquedas desde móviles)

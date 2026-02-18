@@ -20,7 +20,6 @@ const servicios = [
     titulo: 'Paquete Emprendedor / Presencia Rápida',
     descripcion: 'Landing Express Basic + Microbranding Web. Para negocios que quieren arrancar rápido con presencia profesional.',
     icon: Package,
-    precio: '$250.000 ARS',
     duracion: '72 horas luego de recibir material',
     incluye: [
       'Landing Express Basic (3 secciones)',
@@ -46,7 +45,6 @@ const servicios = [
     titulo: 'Paquete Auditoría Integral / Revisión Estratégica',
     descripcion: 'Auditoría UX/UI + Informe CRO. Para negocios que quieren saber qué falla en su web (UX, estrategia, conversión).',
     icon: TrendingUp,
-    precio: '$190.000 ARS',
     duracion: '7-15 días',
     incluye: [
       'Auditoría UX/UI Profesional completa',
@@ -72,12 +70,11 @@ const servicios = [
     titulo: 'Paquete Plan Evolución / Escalá tu Web',
     descripcion: 'Empezá con Landing Express Basic y escalá a Intermedia o Full pagando solo la diferencia.',
     icon: Package,
-    precio: 'Inicial $180.000 + evolución',
     duracion: 'Variable según nivel',
     incluye: [
-      'Landing Express Basic como base ($180k)',
-      'Evolución a Intermedia: +$40.000',
-      'Evolución a Full: +$60.000',
+      'Landing Express Basic como base',
+      'Evolución a Intermedia disponible',
+      'Evolución a Full disponible',
       'Agregado de secciones y animaciones',
       '6 secciones + 1 página extra (Full)',
       'Animaciones premium progresivas',
@@ -90,7 +87,7 @@ const servicios = [
     color: '#e0a6d8',
     queEs: 'Es un modelo de escalamiento progresivo: empezás con lo básico y vas evolucionando tu web pagando solo la diferencia.',
     paraque: 'Sirve para no gastar de más al principio y poder ir mejorando tu web a medida que tu negocio crece, sin tener que rehacer todo.',
-    comoFunciona: 'Arrancas con Landing Express Basic por $180k, y si después querés más secciones o funciones, pagás solo la mitad de la diferencia para evolucionar.',
+    comoFunciona: 'Arrancas con Landing Express Basic, y si después querés más secciones o funciones, pagás solo la mitad de la diferencia para evolucionar.',
     cuando: 'Es perfecto para startups, negocios nuevos o cuando no estás seguro de cuánto necesitás invertir al principio pero sabés que vas a crecer.'
   }
 ];
@@ -123,11 +120,11 @@ function PaquetesServicios() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>Paquetes de Desarrollo Web Argentina | Soluciones Completas desde $180k - UXnicorp</title>
-        <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding $250k), Auditoría Integral ($190k), Plan Evolución escalable. Ahorra tiempo y dinero. LATAM." />
+        <title>Paquetes de Desarrollo Web Argentina | Soluciones Completas - UXnicorp</title>
+        <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding), Auditoría Integral, Plan Evolución escalable. Ahorra tiempo y dinero. LATAM." />
         <meta name="keywords" content="paquete desarrollo web argentina, landing mas branding, auditoría completa, plan desarrollo web, combo web argentina, paquete emprendedor argentina" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/paquetes" />
-        <meta property="og:title" content="Paquetes Web Argentina desde $180k - UXnicorp" />
+        <meta property="og:title" content="Paquetes Web Argentina - UXnicorp" />
         <meta property="og:description" content="Soluciones completas para emprendedores y empresas. Landing + Branding, Auditorías y planes escalables." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
@@ -205,7 +202,6 @@ function PaquetesServicios() {
                 </div>
 
                 <div className="servicio-detalle-meta">
-                  <div className="servicio-detalle-precio">{servicio.precio}</div>
                   <div className="servicio-detalle-duracion">
                     <Clock size={16} />
                     {servicio.duracion}

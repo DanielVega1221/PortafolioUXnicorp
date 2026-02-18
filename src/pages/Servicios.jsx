@@ -36,7 +36,6 @@ const SERVICIOS_DATA = {
       titulo: 'Auditoría UX/UI Profesional',
       descripcion: 'Revisión completa de tu página web para identificar qué funciona y qué se puede mejorar, sin tocar código.',
       icon: Search,
-      precio: 'Desde $50.000 ARS',
       duracion: '1-2 semanas',
       incluye: [
         'Análisis heurístico completo',
@@ -54,7 +53,6 @@ const SERVICIOS_DATA = {
       titulo: 'Optimización de Conversión (CRO)',
       descripcion: 'Análisis enfocado en descubrir por qué los visitantes no convierten en clientes y cómo solucionarlo.',
       icon: TrendingUp,
-      precio: 'Desde $70.000 ARS',
       duracion: '2-3 semanas',
       incluye: [
         'Análisis de embudos de conversión',
@@ -72,7 +70,6 @@ const SERVICIOS_DATA = {
       titulo: 'Revisión Técnica + Mini-Refactor',
       descripcion: 'Auditoría técnica del código más limpieza express de 1-2 módulos críticos.',
       icon: Code,
-      precio: 'Desde $90.000 ARS',
       duracion: '2-4 semanas',
       incluye: [
         'Code review completo',
@@ -92,7 +89,6 @@ const SERVICIOS_DATA = {
       titulo: 'Landing Express Basic',
       descripcion: 'Página web de una sola página lista en 72 horas con lo esencial para arrancar.',
       icon: Zap,
-      precio: '$80.000 ARS',
       duracion: '72 horas',
       incluye: [
         '1 página de aterrizaje (3-4 secciones)',
@@ -112,7 +108,6 @@ const SERVICIOS_DATA = {
       titulo: 'Landing Express Intermedia',
       descripcion: 'Landing más completa y moderna con hasta 5 secciones y animaciones profesionales.',
       icon: Zap,
-      precio: '$140.000 ARS',
       duracion: '1-2 semanas',
       incluye: [
         '1 página de aterrizaje (5-6 secciones)',
@@ -133,7 +128,6 @@ const SERVICIOS_DATA = {
       titulo: 'Landing Express Full',
       descripcion: 'Versión completa: landing de 6 secciones + 1 página adicional, optimizada para Google.',
       icon: Package,
-      precio: '$220.000 ARS',
       duracion: '3-4 semanas',
       incluye: [
         'Landing principal (6-7 secciones)',
@@ -156,7 +150,6 @@ const SERVICIOS_DATA = {
       titulo: 'Landing Flyer Promo',
       descripcion: 'Anuncio digital en formato web para promociones puntuales y campañas específicas.',
       icon: Zap,
-      precio: '$50.000 ARS',
       duracion: '48-72 horas',
       incluye: [
         'Página simple estilo flyer digital',
@@ -176,7 +169,6 @@ const SERVICIOS_DATA = {
       titulo: 'Landing Premium a Medida',
       descripcion: 'Desarrollo 100% personalizado con funcionalidades específicas según tu negocio.',
       icon: Package,
-      precio: 'Desde $300.000 ARS',
       duracion: '4-8 semanas',
       incluye: [
         'Diseño 100% personalizado',
@@ -201,7 +193,6 @@ const SERVICIOS_DATA = {
       titulo: 'E-commerce Básico',
       descripcion: 'Tienda online funcional con carrito, pasarela de pagos y gestión de productos.',
       icon: ShoppingCart,
-      precio: 'Desde $280.000 ARS',
       duracion: '4-6 semanas',
       incluye: [
         'Catálogo de productos ilimitado',
@@ -222,7 +213,6 @@ const SERVICIOS_DATA = {
       titulo: 'E-commerce Premium',
       descripcion: 'Tienda completa con funcionalidades avanzadas: cupones, seguimiento, emails automatizados.',
       icon: ShoppingCart,
-      precio: 'Desde $450.000 ARS',
       duracion: '8-12 semanas',
       incluye: [
         'Todo lo de E-commerce Básico',
@@ -246,7 +236,6 @@ const SERVICIOS_DATA = {
       titulo: 'Sistema de Gestión Básico',
       descripcion: 'CRM o ERP simple para administrar clientes, ventas o inventario.',
       icon: Settings,
-      precio: 'Desde $320.000 ARS',
       duracion: '6-10 semanas',
       incluye: [
         'Dashboard con métricas clave',
@@ -267,7 +256,6 @@ const SERVICIOS_DATA = {
       titulo: 'Sistema de Gestión Avanzado',
       descripcion: 'ERP completo con módulos integrados para toda tu operación empresarial.',
       icon: Settings,
-      precio: 'Desde $600.000 ARS',
       duracion: '12-20 semanas',
       incluye: [
         'Todo lo de Sistema Básico',
@@ -292,7 +280,6 @@ const SERVICIOS_DATA = {
       titulo: 'Paquete Emprendedor',
       descripcion: 'Landing + Branding básico + Social media templates.',
       icon: Package,
-      precio: '$180.000 ARS',
       duracion: '3-4 semanas',
       incluye: [
         'Landing Express Intermedia',
@@ -310,7 +297,6 @@ const SERVICIOS_DATA = {
       titulo: 'Paquete Crecimiento',
       descripcion: 'Sitio web completo + SEO + Marketing inicial.',
       icon: TrendingUp,
-      precio: '$350.000 ARS',
       duracion: '6-8 semanas',
       incluye: [
         'Landing Express Full',
@@ -329,7 +315,6 @@ const SERVICIOS_DATA = {
       titulo: 'Paquete Enterprise',
       descripcion: 'Solución completa: Web + Sistema + Branding + Marketing.',
       icon: Package,
-      precio: 'Consultar',
       duracion: '12-24 semanas',
       incluye: [
         'Sitio web corporativo completo',
@@ -421,7 +406,6 @@ function Servicios() {
       icon: Search,
       color: '#81ade7',
       serviciosCount: '3 tipos de auditoría',
-      precioDesde: 'Desde $120.000',
       link: '/servicios/auditorias',
       highlights: ['Análisis completo', 'Informe detallado', 'Recomendaciones accionables']
     },
@@ -432,7 +416,6 @@ function Servicios() {
       icon: Zap,
       color: '#f37aa6',
       serviciosCount: '5 paquetes disponibles',
-      precioDesde: 'Desde $120.000',
       link: '/servicios/landing-pages',
       highlights: ['Listas en 72-96hs', 'Diseño responsive', 'SEO incluido']
     },
@@ -443,7 +426,6 @@ function Servicios() {
       icon: ShoppingCart,
       color: '#e0a6d8',
       serviciosCount: '2 opciones',
-      precioDesde: 'Desde $540.000',
       link: '/servicios/ecommerce',
       highlights: ['Mercado Pago integrado', 'Panel admin', 'Control de stock']
     },
@@ -454,9 +436,8 @@ function Servicios() {
       icon: Settings,
       color: '#ffc107',
       serviciosCount: 'A medida',
-      precioDesde: 'A consultar',
       link: '/servicios/sistemas-gestion',
-      highlights: ['Dashboard personalizado', 'Módulos escalables', 'Precio según alcance']
+      highlights: ['Dashboard personalizado', 'Módulos escalables', 'Consulta por presupuesto']
     },
     {
       id: 'paquetes',
@@ -465,9 +446,8 @@ function Servicios() {
       icon: Package,
       color: '#81ade7',
       serviciosCount: '3 paquetes',
-      precioDesde: 'Desde $180.000',
       link: '/servicios/paquetes',
-      highlights: ['Ahorrás tiempo', 'Solución integral', 'Mejor precio']
+      highlights: ['Ahorrás tiempo', 'Solución integral', 'Paquete completo']
     }
   ];
 
@@ -475,11 +455,11 @@ function Servicios() {
     <div className="servicios-page">
       <Helmet>
         <title>Servicios de Desarrollo Web Argentina | Landing Pages, E-commerce, ERP - UXnicorp</title>
-        <meta name="description" content="Servicios web en Argentina: Auditorías UX/UI desde $120k, Landing Pages desde $180k, E-commerce desde $540k, Sistemas ERP personalizados. Atendemos todo LATAM." />
+        <meta name="description" content="Servicios web en Argentina: Auditorías UX/UI, Landing Pages, E-commerce, Sistemas ERP personalizados. Consulta por presupuesto. Atendemos todo LATAM." />
         <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina precio, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, desarrollo web latam" />
         <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios" />
         <meta property="og:title" content="Servicios de Desarrollo Web Argentina - UXnicorp" />
-        <meta property="og:description" content="Landing pages, E-commerce, Sistemas ERP y Auditorías UX en Argentina. Precios claros desde $120k." />
+        <meta property="og:description" content="Landing pages, E-commerce, Sistemas ERP y Auditorías UX en Argentina. Consulta por presupuesto." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
 
@@ -504,7 +484,7 @@ function Servicios() {
               ¿Qué necesita <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>tu negocio</span>?
             </h1>
             <p className="servicios-hero-description">
-              Elegí la categoría que mejor se adapte a tu proyecto. Cada una tiene opciones específicas con precios y detalles completos.
+              Elegí la categoría que mejor se adapte a tu proyecto. Cada una tiene opciones específicas con detalles completos.
             </p>
           </Motion.div>
         </div>
@@ -543,7 +523,6 @@ function Servicios() {
 
                   <div className="categoria-meta">
                     <span className="categoria-count">{categoria.serviciosCount}</span>
-                    <span className="categoria-precio">{categoria.precioDesde}</span>
                   </div>
                 </div>
 
