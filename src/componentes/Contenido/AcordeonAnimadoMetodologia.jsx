@@ -13,7 +13,7 @@
  * - onClick: Function - Callback para cambiar paso activo
  */
 
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import "./Metodologia.css";
 
 function AcordeonAnimadoMetodologia({ titulo, children, abierto, onClick }) {

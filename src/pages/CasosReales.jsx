@@ -14,6 +14,8 @@ import {
 import './CasosReales.css';
 import '../../src/section-glass-card.css';
 import OptimizedImage from '../componentes/OptimizedImage';
+import brunnDemoImg from '../assets/BRUNNdemo.png';
+import mareaDemoImg from '../assets/demomarea.png';
 
 // Lazy load de componentes pesados
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
@@ -177,7 +179,7 @@ function CasosReales() {
         <title>Casos de Éxito Argentina | Proyectos Web Reales con Resultados - UXnicorp</title>
         <meta 
           name="description" 
-          content="Casos de éxito de desarrollo web en Argentina: Landing pages educativas, E-commerce, ERPs y Fintech. Proyectos reales para clientes en Argentina y LATAM con impacto medible." 
+          content="Casos de éxito de desarrollo web en Argentina: Landing pages, E-commerce, ERPs y Fintech. Proyectos reales + demos conceptuales de arquitectura y gastronomía. Resultados medibles en Argentina y LATAM." 
         />
         <meta name="keywords" content="casos éxito desarrollo web argentina, proyectos web argentina, portfolio web argentina, landing pages casos éxito, ecommerce argentina casos, ejemplos desarrollo web" />
         <meta property="og:title" content="Casos de Éxito Argentina | Proyectos Web Reales - UXnicorp" />
@@ -332,7 +334,7 @@ function CasosReales() {
               </span> Conceptual
             </h2>
             <p className="demos-subtitle">
-              Proyecto demostrativo ficticio creado para mostrar nuestra metodología de trabajo y capacidades de diseño.
+              Proyectos demostrativos ficticios creados para mostrar nuestra metodología de trabajo y capacidades de diseño.
             </p>
           </div>
 
@@ -349,6 +351,10 @@ function CasosReales() {
               <div className="demo-header-card">
                 <div className="demo-color-badge" style={{ backgroundColor: '#2c2c2c' }} />
                 <h3 className="demo-nombre">BRÜNN STUDIO</h3>
+              </div>
+
+              <div className="demo-image-preview">
+                <img src={brunnDemoImg} alt="Preview de BRÜNN STUDIO - Demo de arquitectura" className="demo-preview-img" />
               </div>
 
               <p className="demo-tagline" style={{ color: '#2c2c2c' }}>
@@ -395,6 +401,74 @@ function CasosReales() {
                   backgroundColor: 'rgba(44, 44, 44, 0.15)',
                   borderColor: '#2c2c2c',
                   color: '#2c2c2c'
+                }}
+              >
+                <ExternalLink size={18} />
+                Ver demo en vivo
+              </a>
+            </Motion.div>
+
+            {/* MAREA - Café, Cocina y Bar */}
+            <Motion.div
+              className="demo-card"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={cardVariants}
+              style={{ borderColor: 'rgba(193, 154, 107, 0.2)', backgroundColor: 'rgba(193, 154, 107, 0.05)' }}
+            >
+              <div className="demo-header-card">
+                <div className="demo-color-badge" style={{ backgroundColor: '#c19a6b' }} />
+                <h3 className="demo-nombre">MAREA</h3>
+              </div>
+
+              <div className="demo-image-preview">
+                <img src={mareaDemoImg} alt="Preview de MAREA - Demo de gastronomía" className="demo-preview-img" />
+              </div>
+
+              <p className="demo-tagline" style={{ color: '#8b7355' }}>
+                Café, cocina y bar en un solo lugar
+              </p>
+
+              <p className="demo-descripcion">
+                <strong>Esta es una demo ficticia</strong> creada como ejemplo para mostrar nuestra metodología de trabajo en proyectos del sector gastronómico. Diseño premium con tres experiencias integradas: cafetería, cocina y bar.
+              </p>
+
+              <div className="demo-categorias">
+                <span className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
+                  Gastronomía
+                </span>
+                <span className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
+                  Demo Ficticia
+                </span>
+                <span className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
+                  Restaurante
+                </span>
+              </div>
+
+              <div className="demo-caracteristicas">
+                <h4>Características destacadas:</h4>
+                <ul>
+                  <li>Menú digital interactivo completo</li>
+                  <li>Calendario de eventos y experiencias</li>
+                  <li>Galería visual del espacio y platillos</li>
+                  <li>Diseño elegante adaptado a horarios (café, cocina, bar)</li>
+                </ul>
+              </div>
+
+              <div className="demo-tech">
+                <strong>Stack:</strong> React, Framer Motion, Responsive Design
+              </div>
+
+              <a 
+                href="https://marea-nine.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="demo-link"
+                style={{ 
+                  backgroundColor: 'rgba(193, 154, 107, 0.15)',
+                  borderColor: '#c19a6b',
+                  color: '#8b7355'
                 }}
               >
                 <ExternalLink size={18} />

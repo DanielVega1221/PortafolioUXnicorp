@@ -23,7 +23,7 @@ function App() {
   const [hideNavbar, setHideNavbar] = useState(false);
 
   useEffect(() => {
-    const sections = ['main', 'sobre-nosotros', 'servicios', 'proyectos', 'tecnologias', 'contact'];
+    const sections = ['main', 'sobre-nosotros', 'servicios', 'proyectos', 'tecnologias', 'nosotros', 'metodologia', 'contact'];
     let observerInstance = null;
     let footerObserver = null;
     
@@ -188,43 +188,32 @@ function App() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "UXnicorp",
-            "legalName": "UXnicorp - Agencia de Desarrollo Web",
-            "url": "https://www.uxnicorp.com.ar",
-            "logo": "https://www.uxnicorp.com.ar/logo.png",
-            "foundingDate": "2023",
-            "founders": [
-              {
-                "@type": "Person",
-                "name": "Equipo UXnicorp"
-              }
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "AR",
-              "addressRegion": "Buenos Aires"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+54-383-436-8748",
-              "contactType": "customer service",
-              "email": "uxnicorp@gmail.com",
-              "areaServed": ["AR", "LATAM"],
-              "availableLanguage": ["Spanish", "English"]
-            },
-            "sameAs": [
-              "https://instagram.com/uxnicorp",
-              "https://linkedin.com/company/uxnicorp",
-              "https://facebook.com/uxnicorp"
-            ]
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta hacer una página web en Argentina 2025?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Una landing page profesional desde USD 800, página web institucional desde USD 1,500, e-commerce completo desde USD 2,500, y sistemas personalizados (ERP/CRM) desde USD 5,000. Presupuesto sin cargo en 24hs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué incluye el desarrollo de una página web?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Incluye diseño responsivo, optimización SEO, certificado SSL, hosting por 1 año, formulario de contacto, integración con redes sociales, y capacitación. Desarrollamos con React, Node.js y Next.js para máximo rendimiento."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo tarda en estar lista una web?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Landing page: 2-3 semanas. Web institucional: 3-4 semanas. E-commerce: 6-10 semanas. Sistema personalizado: 12-16 semanas. Tiempos desde aprobación de diseño y contenidos."
+                }
+              },
               {
                 "@type": "Question",
                 "name": "¿Cómo funciona el proceso de cotización?",
@@ -243,10 +232,10 @@ function App() {
               },
               {
                 "@type": "Question",
-                "name": "¿Trabajan con clientes de otros países?",
+                "name": "¿Trabajan con empresas de toda Argentina y otros países?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "¡Absolutamente! Trabajamos con clientes de toda Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
+                  "text": "Sí, trabajamos 100% remoto con empresas de Buenos Aires, Córdoba, Rosario, Mendoza y toda Argentina. También atendemos clientes de Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
                 }
               },
               {
@@ -300,21 +289,25 @@ function App() {
           <Tecnologias />
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>
-          <CTASection 
-            titulo="¿Querés conocer quiénes somos?"
-            descripcion="Conocé nuestra historia, filosofía y al equipo detrás de UXnicorp"
-            textoBoton="Sobre nosotros"
-            linkTo="/sobre-nosotros"
-            variant="secondary"
-          />
+          <div id="nosotros">
+            <CTASection 
+              titulo="¿Querés conocer quiénes somos?"
+              descripcion="Conocé nuestra historia, filosofía y al equipo detrás de UXnicorp"
+              textoBoton="Sobre nosotros"
+              linkTo="/sobre-nosotros"
+              variant="secondary"
+            />
+          </div>
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>
-          <CTASection 
-            titulo="¿Querés saber cómo trabajamos?"
-            descripcion="Conocé nuestra metodología, cultura y proceso de trabajo"
-            textoBoton="Descubrí cómo lo hacemos"
-            linkTo="/como-trabajamos"
-          />
+          <div id="metodologia">
+            <CTASection 
+              titulo="¿Querés saber cómo trabajamos?"
+              descripcion="Conocé nuestra metodología, cultura y proceso de trabajo"
+              textoBoton="Descubrí cómo lo hacemos"
+              linkTo="/como-trabajamos"
+            />
+          </div>
         </Suspense>
       <Suspense fallback={<LoadingFallback />}>
         <ContactoFormulario />

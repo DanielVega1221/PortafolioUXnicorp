@@ -1,16 +1,17 @@
 import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowLeft, Sparkles, Zap, Heart, CheckCircle, ArrowDown } from 'lucide-react';
-import Navbar from '../componentes/Navbar/Navbar';
 import './ComoTrabajamos.css';
-import '../App.css';
-import '../section-glass-card.css';
+import '../../src/App.css';
+import '../../src/section-glass-card.css';
 
 const Culture = lazy(() => import('../componentes/Contenido/Culture'));
 const Metodologia = lazy(() => import('../componentes/Contenido/Metodologia'));
 const FAQ = lazy(() => import('../componentes/Contenido/FAQ'));
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
+const Footer = lazy(() => import('../componentes/Contenido/Footer'));
 
 const pageVariants = {
   initial: {
@@ -41,12 +42,13 @@ const LoadingFallback = () => (
 
 function ComoTrabajamos() {
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
+    <div>
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+      >
       <Helmet>
         <title>Proceso de Desarrollo Web | Metodología Ágil - UXnicorp</title>
         <meta name="description" content="Conocé cómo trabajamos: metodología ágil, código limpio, testing exhaustivo y comunicación constante. Proceso transparente de desarrollo web profesional paso a paso." />
@@ -148,7 +150,13 @@ function ComoTrabajamos() {
           />
         </Suspense>
       </main>
-    </motion.div>
+      
+      {/* Footer */}
+      <Suspense fallback={<LoadingFallback />}>
+        <Footer />
+      </Suspense>
+      </motion.div>
+    </div>
   );
 }
 

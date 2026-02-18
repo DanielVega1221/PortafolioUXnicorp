@@ -480,13 +480,22 @@
   .contacto-buttons-wrapper {
     grid-template-columns: 1fr;
     gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contacto-submit-btn,
+  .contacto-whatsapp-btn {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
   .contacto-section {
-    padding: 0 0.75rem;
+    padding: 0 1rem;
+    max-width: 100%;
   }
 
   .contacto-titulo {
@@ -500,16 +509,25 @@
     padding: 0 0.5rem;
   }
 
-  .contacto-form-wrapper {
-    padding: 1.5rem 1rem;
+  .contacto-container {
     width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contacto-form-wrapper {
+    padding: 1.25rem;
+    width: 100%;
+    max-width: 100%;
     border-radius: 16px;
+    box-sizing: border-box;
   }
 
   .contacto-info-card {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem;
     width: 100%;
     border-radius: 16px;
+    box-sizing: border-box;
   }
 
   .contacto-info-card h3 {
@@ -549,6 +567,16 @@
     min-height: 60px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .contacto-info-content {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .contacto-info-value {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .contacto-info-item-icon {

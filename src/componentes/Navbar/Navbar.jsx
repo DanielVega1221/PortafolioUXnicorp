@@ -4,10 +4,12 @@ import "./Navbar.css";
 
 const navItems = [
   { id: "main", color: "#dbc9c9", label: "Inicio" },
-  { id: "sobre-nosotros", color: "#e1d1ec", label: "Sobre Nosotros" },
+  { id: "sobre-nosotros", color: "#e1d1ec", label: "¿Por qué elegirnos?" },
   { id: "servicios", color: "#f37aa6", label: "Servicios" },
   { id: "proyectos", color: "#c9def9", label: "Proyectos" },
   { id: "tecnologias", color: "#e0a6d8", label: "Tecnologías" },
+  { id: "nosotros", color: "#ffd4a3", label: "Nosotros" },
+  { id: "metodologia", color: "#b8e6d5", label: "Cómo trabajamos" },
   { id: "contact", color: "#f0e68c", label: "Contacto" }
 ];
 
@@ -28,26 +30,21 @@ function Navbar({ activeSection, onNavClick, hidden }) {
   const containerClass = `navbar-container${isMobile || hidden ? ' navbar-hidden' : ''}`;
 
   const handleItemClick = (id) => {
-    // Si el id es "sobre-nosotros", navegar a esa página
-    if (id === "sobre-nosotros") {
-      navigate("/sobre-nosotros");
-    } else {
-      // Para las secciones de main, ir a home primero si no estamos allí
-      if (location.pathname !== '/') {
-        navigate('/', { replace: false });
-        // Esperar a que la página se cargue y luego hacer scroll
-        setTimeout(() => {
-          const el = document.getElementById(id);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 500);
-      } else {
-        // Si ya estamos en home, hacer scroll directo
+    // Siempre navegar a home primero si no estamos allí, luego hacer scroll
+    if (location.pathname !== '/') {
+      navigate('/', { replace: false });
+      // Esperar a que la página se cargue y luego hacer scroll
+      setTimeout(() => {
         const el = document.getElementById(id);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      }, 500);
+    } else {
+      // Si ya estamos en home, hacer scroll directo
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
     if (onNavClick) {
