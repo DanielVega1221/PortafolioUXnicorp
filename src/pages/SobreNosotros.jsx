@@ -294,15 +294,16 @@ function SobreNosotros() {
               <span>Nosotros</span>
             </motion.div>
 
-            <motion.h1
-              className="hero-title"
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Creamos tecnología <br />
-              <span className="gradient-text">con alma</span>
-            </motion.h1>
+              <h1 className="hero-title">
+                Creamos tecnología <br />
+                <span className="gradient-text">con alma</span>
+              </h1>
+            </motion.div>
 
             <motion.p
               className="hero-description"

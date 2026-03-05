@@ -43,8 +43,9 @@
 }
 
 .faq-container {
+  width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
   gap: 20px;

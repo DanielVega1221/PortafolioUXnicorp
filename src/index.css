@@ -29,9 +29,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Separación automática antes del footer */
+/* Separación automática antes del footer - desactivado globalmente */
 section:last-of-type {
-  margin-bottom: 64px;
+  margin-bottom: 0;
 }
 /* Fondo con grainy gradient diagonal */
 body {

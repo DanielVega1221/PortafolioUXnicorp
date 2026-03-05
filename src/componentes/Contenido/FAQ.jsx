@@ -88,10 +88,10 @@ function FAQ() {
           <p className="faq-subtitulo">
             Resolvemos las dudas más comunes de nuestros clientes
           </p>
-        </div>
 
-        <div className="faq-container">
-          {faqItems}
+          <div className="faq-container">
+            {faqItems}
+          </div>
         </div>
 
         <CTASection />

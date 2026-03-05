@@ -386,6 +386,9 @@ Saludos cordiales.`;
                 onBlur={handleBlur}
               >
                 <option value="">Seleccionar servicio...</option>
+                <optgroup label="Diagnósticos">
+                  <option value="Diagnóstico para estudio de Arquitectura">Diagnóstico para estudio de Arquitectura</option>
+                </optgroup>
                 <optgroup label="Auditorías">
                   <option value="Auditoría UX/UI Profesional">Auditoría UX/UI Profesional</option>
                   <option value="Optimización de Conversión (CRO)">Optimización de Conversión (CRO)</option>

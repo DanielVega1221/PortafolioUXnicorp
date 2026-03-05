@@ -274,6 +274,101 @@ export const seoConfig = {
       { name: 'Inicio', url: '/' },
       { name: 'Casos Reales', url: '/casos-reales' }
     ]
+  },
+
+  arquitectura: {
+    title: 'Sitio Web para Estudios de Arquitectura | Portfolio Digital Profesional | UXnicorp',
+    description: '¿Arquitecto sin presencia digital a la altura de tu trabajo? Creamos portfolios web para estudios de arquitectura que comunican proyectos con claridad y criterio. Diagnóstico sin costo.',
+    keywords: 'sitio web estudio arquitectura, portfolio digital arquitectos, desarrollo web arquitectos argentina, web para architects, pagina web estudio arquitectura, portfolio arquitectonico online, presencia digital arquitectos, web arquitectos buenos aires, web arquitectos cordoba, web arquitectos rosario, web arquitectos mendoza, web arquitectos argentina, diseño web arquitectura, plataforma digital estudios arquitectura, crear portfolio arquitecto, web profesional arquitectura argentina, identidad digital arquitectos, portfolio proyectos arquitectura',
+    canonical: 'https://www.uxnicorp.com.ar/arquitectura',
+    ogTitle: 'Sitio Web para Estudios de Arquitectura — UXnicorp',
+    ogDescription: '¿Tu estudio merece una presencia digital a su altura? Portfolios web especializados para arquitectos. Diagnóstico sin costo.',
+    ogImage: 'https://www.uxnicorp.com.ar/og-arquitectura.jpg',
+    h1: 'Desarrollo digital estratégico para estudios de arquitectura',
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Para Arquitectos', url: '/arquitectura' }
+    ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      'name': 'Portfolio Web para Estudios de Arquitectura',
+      'description': 'Diseño y desarrollo de plataformas digitales especializadas para estudios de arquitectura. Portfolios autogestionables que comunican proyectos con claridad profesional.',
+      'provider': {
+        '@type': 'LocalBusiness',
+        'name': 'UXnicorp',
+        'url': 'https://www.uxnicorp.com.ar',
+        'telephone': '+54-383-436-8748',
+        'email': 'uxnicorp@gmail.com',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'AR'
+        }
+      },
+      'areaServed': [
+        { '@type': 'City', 'name': 'Buenos Aires' },
+        { '@type': 'City', 'name': 'Córdoba' },
+        { '@type': 'City', 'name': 'Rosario' },
+        { '@type': 'City', 'name': 'Mendoza' },
+        { '@type': 'City', 'name': 'La Plata' },
+        { '@type': 'City', 'name': 'Tucumán' },
+        { '@type': 'City', 'name': 'Salta' },
+        { '@type': 'Country', 'name': 'Argentina' }
+      ],
+      'serviceType': 'Diseño Web, Portfolio Digital, Identidad Digital',
+      'audience': {
+        '@type': 'Audience',
+        'audienceType': 'Estudios de Arquitectura, Arquitectos Independientes'
+      },
+      'offers': {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'ARS',
+        'description': 'Diagnóstico digital sin costo para estudios de arquitectura'
+      },
+      'availableChannel': {
+        '@type': 'ServiceChannel',
+        'serviceUrl': 'https://www.uxnicorp.com.ar/arquitectura'
+      }
+    },
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': '¿Por qué un estudio de arquitectura necesita un sitio web profesional?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Un sitio web profesional permite comunicar proyectos con narrativa y contexto, no solo imágenes. Permite atraer el tipo de cliente correcto, pre-educar al prospecto antes del primer contacto y construir una presencia digital independiente de algoritmos de redes sociales.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Qué diferencia a un portfolio para arquitectos de un sitio web genérico?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Un portfolio especializado para arquitectura incluye estructura narrativa de proyectos (proceso, materialidad, decisiones de diseño), tipografía técnica, jerarquía visual adaptada al sector, y un sistema de pre-calificación de clientes integrado. No es una galería de imágenes, es una plataforma de comunicación proyectual.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Cuánto tiempo lleva desarrollar el sitio web de un estudio de arquitectura?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'El proceso completo toma entre 3 y 4 semanas: diagnóstico estratégico (2 días), definición de estructura (2 días), diseño visual (3 días), desarrollo técnico (3 días) y lanzamiento con acompañamiento. Comenzamos con una consulta de diagnóstico sin costo.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Trabajan con estudios de arquitectura en toda Argentina?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Sí, trabajamos de forma remota con estudios de arquitectura en todo el país: Buenos Aires, Córdoba, Rosario, Mendoza, La Plata, Tucumán, Salta y otras ciudades. El proceso es 100% digital y no requiere reuniones presenciales.'
+          }
+        }
+      ]
+    }
   }
 };
 

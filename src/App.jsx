@@ -11,6 +11,7 @@ const Culture = lazy(() => import('./componentes/Contenido/Culture'));
 const Tecnologias = lazy(() => import('./componentes/Contenido/Tecnologias'));
 const FAQ = lazy(() => import('./componentes/Contenido/FAQ'));
 const CTASection = lazy(() => import('./componentes/Contenido/CTASection'));
+const SolucionesSector = lazy(() => import('./componentes/Contenido/SolucionesSector'));
 const ContactoFormulario = lazy(() => import('./componentes/Contenido/ContactoFormulario'));
 const Footer = lazy(() => import('./componentes/Contenido/Footer'));
 
@@ -275,6 +276,9 @@ function App() {
               linkTo="/casos-reales"
             />
           </div>
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <SolucionesSector />
         </Suspense>
         <Suspense fallback={<LoadingFallback />}>
           <Tecnologias />
