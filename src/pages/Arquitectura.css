@@ -420,7 +420,7 @@
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 6vw;
   min-height: 60vh;
   overflow: hidden;
@@ -446,6 +446,7 @@
   line-height: 1.1;
   overflow-wrap: break-word;
   word-break: break-word;
+  text-align: center;
 }
 
 .validacion-col-right {
@@ -549,7 +550,7 @@
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 6vw;
   min-height: 60vh;
   overflow: hidden;
@@ -575,6 +576,7 @@
   line-height: 1.1;
   overflow-wrap: break-word;
   word-break: break-word;
+  text-align: center;
 }
 
 .metodo-list-item {
