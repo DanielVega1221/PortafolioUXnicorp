@@ -423,6 +423,7 @@
   justify-content: flex-start;
   padding: 6vw;
   min-height: 60vh;
+  overflow: hidden;
 }
 
 .validacion-overlay {
@@ -439,13 +440,12 @@
   position: relative;
   z-index: 2;
   color: white;
-  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.05;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .validacion-col-right {
@@ -552,6 +552,7 @@
   justify-content: flex-start;
   padding: 6vw;
   min-height: 60vh;
+  overflow: hidden;
 }
 
 .metodo-overlay {
@@ -568,11 +569,12 @@
   position: relative;
   z-index: 2;
   color: white;
-  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.05;
-  white-space: pre-line;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .metodo-list-item {
