@@ -495,7 +495,7 @@ function Arquitectura() {
                     <span className="demo-trust-desc">Primera consulta para entender tu estudio y qué necesitás comunicar.</span>
                   </div>
                   <div className="demo-trust-row">
-                    <span className="demo-trust-label">Entrega en 3–4 semanas</span>
+                    <span className="demo-trust-label">Entrega en 1-2 semanas</span>
                     <span className="demo-trust-desc">Proceso con etapas claras. Sabés en todo momento dónde estamos.</span>
                   </div>
                   <div className="demo-trust-row">
