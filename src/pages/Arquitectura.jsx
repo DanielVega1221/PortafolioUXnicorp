@@ -205,7 +205,7 @@ function Arquitectura() {
 
             <div className="validacion-col validacion-col-right">
               <div className="metodo-col-header">
-                <span className="metodo-col-label">Por qué nos eligen</span>
+                <span className="metodo-col-label">Por qué elegirnos</span>
                 <p className="metodo-col-intro">Conocemos las tensiones reales que vive un estudio de arquitectura al buscar presencia digital.</p>
               </div>
             <div className="validacion-block">
