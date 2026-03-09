@@ -252,7 +252,7 @@
 }
 
 /* Overlay sutil sobre la imagen de fondo */
-.hero-overlay {
+.arquitectura-page .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -284,14 +284,14 @@
   pointer-events: none;
 }
 
-.hero-content {
+.arquitectura-page .hero-content {
   max-width: 900px;
   position: relative;
   z-index: 2;
 }
 
 /* Línea decorativa sutil al lado del título */
-.hero-content::before {
+.arquitectura-page .hero-content::before {
   content: '';
   position: absolute;
   left: -3rem;
@@ -319,7 +319,7 @@
   }
 }
 
-.hero-title {
+.arquitectura-page .hero-title {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.15;
@@ -340,14 +340,14 @@
 
 /* Fallback para navegadores sin soporte */
 @supports not (background-clip: text) {
-  .hero-title {
+  .arquitectura-page .hero-title {
     color: var(--color-negro-soft);
     background: none;
     -webkit-text-fill-color: initial;
   }
 }
 
-.hero-subtitle {
+.arquitectura-page .hero-subtitle {
   font-size: clamp(1.125rem, 1.6vw, 1.5rem);
   line-height: 1.75;
   color: var(--color-gris-medio);
@@ -356,7 +356,7 @@
   font-weight: 400;
 }
 
-.hero-divider {
+.arquitectura-page .hero-divider {
   width: 120px;
   height: 2px;
   background: linear-gradient(
@@ -379,7 +379,7 @@
   }
 }
 
-.hero-ctas {
+.arquitectura-page .hero-ctas {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;

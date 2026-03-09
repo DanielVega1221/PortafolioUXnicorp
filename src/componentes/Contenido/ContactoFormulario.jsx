@@ -388,6 +388,7 @@ Saludos cordiales.`;
                 <option value="">Seleccionar servicio...</option>
                 <optgroup label="Diagnósticos">
                   <option value="Diagnóstico para estudio de Arquitectura">Diagnóstico para estudio de Arquitectura</option>
+                  <option value="Diagnóstico para restaurante / gastronomía">Diagnóstico para restaurante / gastronomía</option>
                 </optgroup>
                 <optgroup label="Auditorías">
                   <option value="Auditoría UX/UI Profesional">Auditoría UX/UI Profesional</option>

@@ -11,7 +11,7 @@
    HERO SECTION
    =========================== */
 
-.hero-section {
+.sobre-nosotros-page .hero-section {
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
   background: linear-gradient(135deg, rgba(243, 122, 166, 0.03) 0%, rgba(129, 173, 231, 0.03) 100%);
 }
 
-.hero-container {
+.sobre-nosotros-page .hero-container {
   max-width: 1200px;
   width: 100%;
   display: flex;
@@ -31,7 +31,7 @@
   position: relative;
 }
 
-.back-link {
+.sobre-nosotros-page .back-link {
   position: absolute;
   top: 0;
   left: 0;
@@ -50,13 +50,13 @@
   transition: all 0.3s ease;
 }
 
-.back-link:hover {
+.sobre-nosotros-page .back-link:hover {
   background: rgba(255, 255, 255, 0.9);
   border-color: rgba(243, 122, 166, 0.4);
   transform: translateX(-4px);
 }
 
-.hero-badge {
+.sobre-nosotros-page .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -71,7 +71,7 @@
   margin-bottom: 2rem;
 }
 
-.hero-title {
+.sobre-nosotros-page .hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
   line-height: 1.15;
@@ -79,7 +79,7 @@
   color: #1a1a1a;
 }
 
-.hero-description {
+.sobre-nosotros-page .hero-description {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   line-height: 1.7;
   color: #555;
@@ -1388,11 +1388,11 @@
    =========================== */
 
 @media (max-width: 768px) {
-  .hero-section {
+  .sobre-nosotros-page .hero-section {
     padding: 6rem 1.5rem 4rem;
   }
 
-  .back-link {
+  .sobre-nosotros-page .back-link {
     position: static;
     margin-bottom: 2rem;
   }

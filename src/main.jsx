@@ -36,6 +36,7 @@ const EcommerceLazy = React.lazy(() => import('./pages/Ecommerce'));
 const SistemasGestionLazy = React.lazy(() => import('./pages/SistemasGestion'));
 const PaquetesServiciosLazy = React.lazy(() => import('./pages/PaquetesServicios'));
 const ArquitecturaLazy = React.lazy(() => import('./pages/Arquitectura'));
+const GastronomiaLazy = React.lazy(() => import('./pages/Gastronomia'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -55,6 +56,7 @@ function AnimatedRoutes() {
         <Route path="/casos-reales" element={<CasosRealesLazy />} />
         <Route path="/landing-pages" element={<LandingPagesLazy />} />
         <Route path="/arquitectura" element={<ArquitecturaLazy />} />
+        <Route path="/gastronomia" element={<GastronomiaLazy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

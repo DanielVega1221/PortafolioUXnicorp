@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Heart, Users, Target, Sparkles, Code, Zap, Coffee, Lightbulb } from 'lucide-react';
 import './SobreNosotros.css';
-import '../../src/App.css';
-import '../../src/section-glass-card.css';
+import '../App.css';
+import '../section-glass-card.css';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));

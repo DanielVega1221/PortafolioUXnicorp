@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2 } from 'lucide-react';
+import { ArrowRight, Building2, Utensils } from 'lucide-react';
 import './SolucionesSector.css';
 import '../../section-glass-card.css';
 import fondoArq from '../../assets/fondoServiciosEspecificosARQ.webp';
+import fondoGastro from '../../assets/Gastronomia/fondocard.webp';
 
 const sectores = [
   {
@@ -16,7 +17,16 @@ const sectores = [
     link: '/arquitectura',
     textoBoton: 'Ver enfoque completo',
   },
-  // Próximos sectores...
+  {
+    id: 'gastronomia',
+    label: 'Para restaurantes y bares',
+    descripcion: 'La experiencia que vivís adentro tiene que llegar antes que el cliente. Desarrollamos presencia digital para gastronomía: carta, eventos, identidad y SEO local integrados en un solo lugar.',
+    tag: 'Presencia digital + SEO local',
+    icon: Utensils,
+    fondo: fondoGastro,
+    link: '/gastronomia',
+    textoBoton: 'Ver enfoque completo',
+  },
 ];
 
 function SolucionesSector() {

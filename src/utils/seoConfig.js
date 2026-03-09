@@ -369,6 +369,101 @@ export const seoConfig = {
         }
       ]
     }
+  },
+
+  gastronomia: {
+    title: 'Sitio Web para Restaurantes, Bares y Cafés | Presencia Digital Gastronómica | UXnicorp',
+    description: '¿Tu restaurante no refleja online lo que vive dentro? Creamos presencias digitales para gastronomía que comunican la experiencia real: carta, eventos, ambiente e identidad en una sola plataforma. Diagnóstico sin costo.',
+    keywords: 'sitio web restaurante argentina, web bar argentina, presencia digital gastronomía, carta digital restaurante, seo local gastronomia, web cafetería argentina, desarrollo web bares, agenda eventos restaurante, reservas online restaurante, identidad digital gastronómica, web para restaurantes buenos aires, web para bares córdoba, web para cafés argentina',
+    canonical: 'https://www.uxnicorp.com.ar/gastronomia',
+    ogTitle: 'Presencia Digital para Restaurantes y Gastronomía — UXnicorp',
+    ogDescription: 'Traducimos la experiencia gastronómica al entorno digital. Carta, eventos, reservas y SEO local para restaurantes, bares y cafés.',
+    ogImage: 'https://www.uxnicorp.com.ar/og-gastronomia.jpg',
+    h1: 'Tu restaurante tiene un alma. La pregunta es si tu presencia digital la transmite.',
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Para Gastronomía', url: '/gastronomia' }
+    ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      'name': 'Presencia Digital para Restaurantes y Gastronomía',
+      'description': 'Diseño y desarrollo de plataformas digitales especializadas para restaurantes, bares y cafés. Cartas digitales, agenda de eventos, SEO local e integración con reservas.',
+      'provider': {
+        '@type': 'LocalBusiness',
+        'name': 'UXnicorp',
+        'url': 'https://www.uxnicorp.com.ar',
+        'telephone': '+54-383-436-8748',
+        'email': 'uxnicorp@gmail.com',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'AR'
+        }
+      },
+      'areaServed': [
+        { '@type': 'City', 'name': 'Buenos Aires' },
+        { '@type': 'City', 'name': 'Córdoba' },
+        { '@type': 'City', 'name': 'Rosario' },
+        { '@type': 'City', 'name': 'Mendoza' },
+        { '@type': 'City', 'name': 'La Plata' },
+        { '@type': 'City', 'name': 'Tucumán' },
+        { '@type': 'City', 'name': 'Salta' },
+        { '@type': 'Country', 'name': 'Argentina' }
+      ],
+      'serviceType': 'Diseño Web para Restaurantes, Carta Digital, SEO Local, Agenda de Eventos',
+      'audience': {
+        '@type': 'Audience',
+        'audienceType': 'Restaurantes, Bares, Cafeterías, Espacios Gastronómicos'
+      },
+      'offers': {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'ARS',
+        'description': 'Diagnóstico digital sin costo para restaurantes y bares'
+      },
+      'availableChannel': {
+        '@type': 'ServiceChannel',
+        'serviceUrl': 'https://www.uxnicorp.com.ar/gastronomia'
+      }
+    },
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': '¿Por qué un restaurante necesita un sitio web propio si ya tiene Instagram?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Instagram no reemplaza a un sitio web. Las publicaciones desaparecen, la información se pierde y la carta, los horarios y los eventos quedan dispersos. Un sitio web propio centraliza todo, no depende de algoritmos y funciona como base digital estable que representa al restaurante en todo momento.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Qué incluye el diagnóstico sin costo para restaurantes?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'El diagnóstico es una primera conversación para entender el concepto gastronómico, cómo se comunica hoy online y qué oportunidades hay para mejorar. No tiene costo y no genera ningún compromiso. Sirve para que ambas partes entiendan si hay un camino a trabajar juntos.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Desarrollan cartas digitales para restaurantes?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Sí, desarrollamos cartas digitales estructuradas por categorías, con imágenes, descripciones y precios. Son actualizables sin depender de un técnico y están optimizadas para verse perfectamente en celular, que es desde donde accede la mayoría de los clientes.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Trabajan con restaurantes en toda Argentina?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Sí, trabajamos de forma remota con restaurantes, bares y cafés en todo el país: Buenos Aires, Córdoba, Rosario, Mendoza, La Plata, Tucumán, Salta y otras ciudades. El proceso es 100% digital y no requiere reuniones presenciales.'
+          }
+        }
+      ]
+    }
   }
 };
 
