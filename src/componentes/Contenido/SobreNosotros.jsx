@@ -18,6 +18,7 @@
  */
 
 import React from "react";
+import { useTranslation } from "react-i18next";
 import AcordeonAnimado from "./AcordeonAnimado";
 import "./SobreNosotros.css";
 import "../../section-glass-card.css";
@@ -26,57 +27,50 @@ import OptimizedImage from "../OptimizedImage";
 import { TargetIcon, BoltIcon, HandshakeIcon, DiamondIcon } from "../SVGIcons";
 
 function SobreNosotros() {
+  const { t } = useTranslation();
   return (
     <section id="sobre-nosotros" className="sobre-nosotros-section section-spacing" aria-labelledby="about-title">
       <div className="section-glass-card">
       <div className="sobre-nosotros-main-layout">
         <div className="sobre-nosotros-col sobre-nosotros-col-izq">
           <h2 id="about-title" className="porque-elegirnos-titulo">
-            ¿Por qué <span className="highlight-word">elegirnos</span>?
+            {t('sobreNosotros.titulo')} <span className="highlight-word">{t('sobreNosotros.tituloDestacado')}</span>{t('sobreNosotros.tituloFin')}
           </h2>
           <p className="porque-elegirnos-descripcion">
-            Más que código y diseño, ofrecemos soluciones completas. Entendemos los desafíos de emprender en el mundo digital y te acompañamos con tecnología, estrategia y compromiso real desde el primer contacto.
+            {t('sobreNosotros.descripcion')}
           </p>
           <div className="porque-elegirnos-menus">
             <AcordeonAnimado titulo={
               <span className="acordeon-titulo-con-icono">
                 <TargetIcon size={20} className="acordeon-icono" />
-                Enfoque en resultados medibles
+                {t('sobreNosotros.acordeon1Titulo')}
               </span>
             }>
-              <p className="acordeon-descripcion">
-                No solo entregamos un sitio web bonito. Desarrollamos soluciones pensadas para convertir visitantes en clientes, con análisis de métricas, optimización constante y feedback continuo para que convierta más.
-              </p>
+              <p className="acordeon-descripcion">{t('sobreNosotros.acordeon1Desc')}</p>
             </AcordeonAnimado>
             <AcordeonAnimado titulo={
               <span className="acordeon-titulo-con-icono">
                 <BoltIcon size={20} className="acordeon-icono" />
-                Tecnología moderna y escalable
+                {t('sobreNosotros.acordeon2Titulo')}
               </span>
             }>
-              <p className="acordeon-descripcion">
-                Utilizamos las últimas tecnologías y frameworks modernos (React, Node.js, bases de datos optimizadas) para crear plataformas rápidas, seguras y preparadas para crecer junto a tu negocio. Tu proyecto está construido pensando en el futuro.
-              </p>
+              <p className="acordeon-descripcion">{t('sobreNosotros.acordeon2Desc')}</p>
             </AcordeonAnimado>
             <AcordeonAnimado titulo={
               <span className="acordeon-titulo-con-icono">
                 <HandshakeIcon size={20} className="acordeon-icono" />
-                Acompañamiento integral y transparente
+                {t('sobreNosotros.acordeon3Titulo')}
               </span>
             }>
-              <p className="acordeon-descripcion">
-                Te explicamos cada paso del proceso en lenguaje claro. Nuestro equipo está disponible para asesorarte, ajustar estrategias y garantizar que tu inversión genere el impacto que buscas. Trabajamos como tu aliado, no como un proveedor más.
-              </p>
+              <p className="acordeon-descripcion">{t('sobreNosotros.acordeon3Desc')}</p>
             </AcordeonAnimado>
             <AcordeonAnimado titulo={
               <span className="acordeon-titulo-con-icono">
                 <DiamondIcon size={20} className="acordeon-icono" />
-                Propuestas transparentes y flexibles
+                {t('sobreNosotros.acordeon4Titulo')}
               </span>
             }>
-              <p className="acordeon-descripcion">
-                Ofrecemos desarrollo profesional con propuestas claras y opciones flexibles adaptadas a cada proyecto. Calidad profesional para empresas que buscan tecnología de primer nivel.
-              </p>
+              <p className="acordeon-descripcion">{t('sobreNosotros.acordeon4Desc')}</p>
             </AcordeonAnimado>
           </div>
         </div>
@@ -84,7 +78,7 @@ function SobreNosotros() {
           <div className="sobre-nosotros-img-card">
             <OptimizedImage
               src={card1Image}
-              alt="Imagen representativa de nuestros servicios"
+              alt={t('sobreNosotros.altImg')}
               width="600"
               height="400"
             />
@@ -93,12 +87,12 @@ function SobreNosotros() {
       </div>
       <div className="metricas-grid" role="region" aria-label="Métricas de desempeño">
         <div className="metrica-card">
-          <span className="metrica-numero rosa">100%</span>
-          <div className="metrica-titulo">De clientes satisfechos recomiendan nuestros servicios</div>
+          <span className="metrica-numero rosa">{t('sobreNosotros.metrica1Numero')}</span>
+          <div className="metrica-titulo">{t('sobreNosotros.metrica1Titulo')}</div>
         </div>
         <div className="metrica-card">
-          <span className="metrica-numero rosa">&lt;24h</span>
-          <div className="metrica-titulo">Tiempo promedio de respuesta a consultas y soporte</div>
+          <span className="metrica-numero rosa">{t('sobreNosotros.metrica2Numero')}</span>
+          <div className="metrica-titulo">{t('sobreNosotros.metrica2Titulo')}</div>
         </div>
       </div>
       </div>

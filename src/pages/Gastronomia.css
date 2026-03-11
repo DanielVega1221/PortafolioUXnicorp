@@ -353,6 +353,7 @@
 .hero-gastro-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: var(--g-content);
   padding: 0 var(--g-gap);
 }
@@ -380,6 +381,10 @@
   letter-spacing: -0.03em;
   word-spacing: -0.04em;
   text-shadow: 0 2px 24px rgba(6, 3, 1, 0.4);
+}
+
+.hero-gastro-title--en {
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
 }
 
 .hero-gastro-sub {

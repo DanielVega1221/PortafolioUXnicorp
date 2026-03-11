@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './ContactoFormulario.css';
 import '../../section-glass-card.css';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
@@ -60,6 +61,7 @@ const SecurityUtils = {
 };
 
 function ContactoFormulario() {
+  const { t } = useTranslation();
   const location = useLocation();
   const [formData, setFormData] = useState({
     nombre: '',
@@ -87,52 +89,50 @@ function ContactoFormulario() {
   const validateField = (name, value) => {
     let error = '';
 
-    // Detectar patrones sospechosos primero
     if (SecurityUtils.containsSuspiciousPatterns(value)) {
-      return 'Contenido no permitido detectado';
+      return t('contacto.errores.contenidoNoPermitido');
     }
 
     switch (name) {
       case 'nombre':
       case 'apellido':
         if (!value.trim()) {
-          error = 'Este campo es requerido';
+          error = t('contacto.errores.requerido');
         } else if (!SecurityUtils.isValidName(value)) {
-          error = 'Solo se permiten letras y espacios (2-50 caracteres)';
+          error = t('contacto.errores.nombreInvalido');
         }
         break;
 
       case 'empresa':
         if (value && !SecurityUtils.isValidLength(value, 2, 100)) {
-          error = 'Debe tener entre 2 y 100 caracteres';
+          error = t('contacto.errores.empresaLongitud');
         }
         break;
 
       case 'servicio':
-        // Campo opcional, no requiere validación
         break;
 
       case 'telefono':
         if (!value.trim()) {
-          error = 'Este campo es requerido';
+          error = t('contacto.errores.requerido');
         } else if (!SecurityUtils.isValidPhone(value)) {
-          error = 'Formato de teléfono inválido';
+          error = t('contacto.errores.telefonoInvalido');
         }
         break;
 
       case 'email':
         if (!value.trim()) {
-          error = 'Este campo es requerido';
+          error = t('contacto.errores.requerido');
         } else if (!SecurityUtils.isValidEmail(value)) {
-          error = 'Email inválido';
+          error = t('contacto.errores.emailInvalido');
         }
         break;
 
       case 'consulta':
         if (!value.trim()) {
-          error = 'Este campo es requerido';
+          error = t('contacto.errores.requerido');
         } else if (!SecurityUtils.isValidLength(value, 10, 1000)) {
-          error = 'Debe tener entre 10 y 1000 caracteres';
+          error = t('contacto.errores.consultaLongitud');
         }
         break;
 
@@ -226,27 +226,17 @@ function ContactoFormulario() {
       consulta: SecurityUtils.sanitizeText(formData.consulta)
     };
 
-    const empresaText = safeData.empresa ? `\nEmpresa: ${safeData.empresa}` : '';
-    const servicioText = safeData.servicio ? `\nServicio de interés: ${safeData.servicio}` : '';
+    const empresaText = safeData.empresa ? t('contacto.mensaje.empresa', { empresa: safeData.empresa }) : '';
+    const servicioText = safeData.servicio ? t('contacto.mensaje.servicio', { servicio: safeData.servicio }) : '';
     
-    return `Hola, mi nombre es ${safeData.nombre} ${safeData.apellido}.${empresaText}${servicioText}
-
-Datos de contacto:
- Email: ${safeData.email}
- Teléfono: ${safeData.telefono}
-
-Consulta:
-${safeData.consulta}
-
-Quedamos a la espera de su respuesta.
-Saludos cordiales.`;
+    return `${t('contacto.mensaje.saludo', { nombre: safeData.nombre, apellido: safeData.apellido })}${empresaText}${servicioText}${t('contacto.mensaje.datosContacto', { email: safeData.email, telefono: safeData.telefono, consulta: safeData.consulta })}`;
   };
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
     
     if (!validateForm()) {
-      alert('Por favor, corrige los errores en el formulario');
+      alert(t('contacto.corregirErrores'));
       return;
     }
 
@@ -260,21 +250,11 @@ Saludos cordiales.`;
       consulta: SecurityUtils.sanitizeText(formData.consulta)
     };
 
-    const empresaText = safeData.empresa ? `\nEmpresa: ${safeData.empresa}` : '';
-    const servicioText = safeData.servicio ? `\nServicio de interés: ${safeData.servicio}` : '';
+    const empresaText = safeData.empresa ? t('contacto.mensaje.empresa', { empresa: safeData.empresa }) : '';
+    const servicioText = safeData.servicio ? t('contacto.mensaje.servicio', { servicio: safeData.servicio }) : '';
     
-    const subject = `Consulta de ${safeData.nombre} ${safeData.apellido}`;
-    const body = `Hola, mi nombre es ${safeData.nombre} ${safeData.apellido}.${empresaText}${servicioText}
-
-Datos de contacto:
-Email: ${safeData.email}
-Teléfono: ${safeData.telefono}
-
-Consulta:
-${safeData.consulta}
-
-Quedamos a la espera de su respuesta.
-Saludos cordiales.`;
+    const subject = t('contacto.mensaje.asunto', { nombre: safeData.nombre, apellido: safeData.apellido });
+    const body = `${t('contacto.mensaje.saludo', { nombre: safeData.nombre, apellido: safeData.apellido })}${empresaText}${servicioText}${t('contacto.mensaje.datosContacto', { email: safeData.email, telefono: safeData.telefono, consulta: safeData.consulta })}`;
 
     const mailtoLink = `mailto:uxnicorp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -284,12 +264,12 @@ Saludos cordiales.`;
     e.preventDefault();
     
     if (!validateForm()) {
-      alert('Por favor, corrige los errores en el formulario');
+      alert(t('contacto.corregirErrores'));
       return;
     }
 
     const message = generateFormattedMessage();
-    const whatsappNumber = '5493834368748'; // Catamarca
+    const whatsappNumber = '5493834368748';
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank', 'noopener,noreferrer');
   };
@@ -309,10 +289,10 @@ Saludos cordiales.`;
     <section id="contact" className="contacto-section">
       <div className="section-glass-card">
         <h2 className="contacto-titulo">
-          ¿Tenés un proyecto en mente? <span className="contacto-highlight">Hablemos</span>
+          {t('contacto.titulo')} <span className="contacto-highlight">{t('contacto.tituloDestacado')}</span>
         </h2>
       <p className="contacto-subtitulo">
-        Completá el formulario y elegí cómo contactarnos: por email o WhatsApp
+        {t('contacto.subtitulo')}
       </p>
 
       <div className="contacto-container">
@@ -320,7 +300,7 @@ Saludos cordiales.`;
         <div className="contacto-form-wrapper">
           <form className="contacto-form" onSubmit={(e) => e.preventDefault()}>
             <div className="form-group">
-              <label htmlFor="nombre">Nombre *</label>
+              <label htmlFor="nombre">{t('contacto.nombre')} *</label>
               <input
                 type="text"
                 id="nombre"
@@ -328,7 +308,7 @@ Saludos cordiales.`;
                 value={formData.nombre}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Juan"
+                placeholder={t('contacto.nombrePlaceholder')}
                 maxLength="50"
                 autoComplete="given-name"
                 className={errors.nombre && touched.nombre ? 'input-error' : ''}
@@ -339,7 +319,7 @@ Saludos cordiales.`;
             </div>
 
             <div className="form-group">
-              <label htmlFor="apellido">Apellido *</label>
+              <label htmlFor="apellido">{t('contacto.apellido')} *</label>
               <input
                 type="text"
                 id="apellido"
@@ -347,7 +327,7 @@ Saludos cordiales.`;
                 value={formData.apellido}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Pérez"
+                placeholder={t('contacto.apellidoPlaceholder')}
                 maxLength="50"
                 autoComplete="family-name"
                 className={errors.apellido && touched.apellido ? 'input-error' : ''}
@@ -358,7 +338,7 @@ Saludos cordiales.`;
             </div>
 
             <div className="form-group">
-              <label htmlFor="empresa">Empresa (opcional)</label>
+              <label htmlFor="empresa">{t('contacto.empresa')}</label>
               <input
                 type="text"
                 id="empresa"
@@ -366,7 +346,7 @@ Saludos cordiales.`;
                 value={formData.empresa}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Mi Empresa S.A."
+                placeholder={t('contacto.empresaPlaceholder')}
                 maxLength="100"
                 autoComplete="organization"
                 className={errors.empresa && touched.empresa ? 'input-error' : ''}
@@ -377,7 +357,7 @@ Saludos cordiales.`;
             </div>
 
             <div className="form-group">
-              <label htmlFor="servicio">Servicio de interés (opcional)</label>
+              <label htmlFor="servicio">{t('contacto.servicio')}</label>
               <select
                 id="servicio"
                 name="servicio"
@@ -385,36 +365,36 @@ Saludos cordiales.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
               >
-                <option value="">Seleccionar servicio...</option>
-                <optgroup label="Diagnósticos">
-                  <option value="Diagnóstico para estudio de Arquitectura">Diagnóstico para estudio de Arquitectura</option>
-                  <option value="Diagnóstico para restaurante / gastronomía">Diagnóstico para restaurante / gastronomía</option>
+                <option value="">{t('contacto.servicioDefault')}</option>
+                <optgroup label={t('contacto.grupos.diagnosticos')}>
+                  <option value="Diagnóstico para estudio de Arquitectura">{t('contacto.opciones.diagArq')}</option>
+                  <option value="Diagnóstico para restaurante / gastronomía">{t('contacto.opciones.diagGastro')}</option>
                 </optgroup>
-                <optgroup label="Auditorías">
-                  <option value="Auditoría UX/UI Profesional">Auditoría UX/UI Profesional</option>
-                  <option value="Optimización de Conversión (CRO)">Optimización de Conversión (CRO)</option>
-                  <option value="Revisión Técnica + Mini-Refactor">Revisión Técnica + Mini-Refactor</option>
+                <optgroup label={t('contacto.grupos.auditorias')}>
+                  <option value="Auditoría UX/UI Profesional">{t('contacto.opciones.audUxUi')}</option>
+                  <option value="Optimización de Conversión (CRO)">{t('contacto.opciones.audCro')}</option>
+                  <option value="Revisión Técnica + Mini-Refactor">{t('contacto.opciones.audTecnica')}</option>
                 </optgroup>
-                <optgroup label="Páginas Web">
-                  <option value="Landing Express Basic">Landing Express Basic (72hs)</option>
-                  <option value="Landing Express Intermedia">Landing Express Intermedia</option>
-                  <option value="Landing Express Full">Landing Express Full</option>
-                  <option value="Landing Flyer Promo">Landing Flyer Promo</option>
-                  <option value="Landing Premium a Medida">Landing Premium a Medida</option>
-                  <option value="E-commerce">E-commerce</option>
-                  <option value="Sistemas de Gestión">Sistemas de Gestión a Medida</option>
+                <optgroup label={t('contacto.grupos.paginasWeb')}>
+                  <option value="Landing Express Basic">{t('contacto.opciones.landingBasic')}</option>
+                  <option value="Landing Express Intermedia">{t('contacto.opciones.landingMedia')}</option>
+                  <option value="Landing Express Full">{t('contacto.opciones.landingFull')}</option>
+                  <option value="Landing Flyer Promo">{t('contacto.opciones.landingFlyer')}</option>
+                  <option value="Landing Premium a Medida">{t('contacto.opciones.landingPremium')}</option>
+                  <option value="E-commerce">{t('contacto.opciones.ecommerce')}</option>
+                  <option value="Sistemas de Gestión">{t('contacto.opciones.sistemas')}</option>
                 </optgroup>
-                <optgroup label="Paquetes">
-                  <option value="Paquete Emprendedor">Paquete Emprendedor - Presencia Rápida</option>
-                  <option value="Paquete Auditoría Integral">Paquete Auditoría Integral</option>
-                  <option value="Plan Evolución">Plan Evolución - Escalá tu Web</option>
+                <optgroup label={t('contacto.grupos.paquetes')}>
+                  <option value="Paquete Emprendedor">{t('contacto.opciones.paqEmprendedor')}</option>
+                  <option value="Paquete Auditoría Integral">{t('contacto.opciones.paqAuditoria')}</option>
+                  <option value="Plan Evolución">{t('contacto.opciones.planEvolucion')}</option>
                 </optgroup>
-                <option value="Otra consulta">Otra consulta</option>
+                <option value="Otra consulta">{t('contacto.opciones.otra')}</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label htmlFor="telefono">Teléfono *</label>
+              <label htmlFor="telefono">{t('contacto.telefono')} *</label>
               <input
                 type="tel"
                 id="telefono"
@@ -422,7 +402,7 @@ Saludos cordiales.`;
                 value={formData.telefono}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="+54 9 11 1234-5678"
+                placeholder={t('contacto.telefonoPlaceholder')}
                 maxLength="20"
                 autoComplete="tel"
                 className={errors.telefono && touched.telefono ? 'input-error' : ''}
@@ -433,7 +413,7 @@ Saludos cordiales.`;
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email *</label>
+              <label htmlFor="email">{t('contacto.email')} *</label>
               <input
                 type="email"
                 id="email"
@@ -441,7 +421,7 @@ Saludos cordiales.`;
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="tu@email.com"
+                placeholder={t('contacto.emailPlaceholder')}
                 maxLength="100"
                 autoComplete="email"
                 className={errors.email && touched.email ? 'input-error' : ''}
@@ -452,7 +432,7 @@ Saludos cordiales.`;
             </div>
 
             <div className="form-group">
-              <label htmlFor="consulta">Contanos sobre tu proyecto *</label>
+              <label htmlFor="consulta">{t('contacto.consulta')} *</label>
               <textarea
                 id="consulta"
                 name="consulta"
@@ -460,12 +440,12 @@ Saludos cordiales.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
                 rows="6"
-                placeholder="Describí brevemente tu idea, necesidades o consulta..."
+                placeholder={t('contacto.consultaPlaceholder')}
                 maxLength="1000"
                 className={errors.consulta && touched.consulta ? 'input-error' : ''}
               />
               <div className="char-count">
-                {formData.consulta.length}/1000 caracteres
+                {t('contacto.caracteres', { count: formData.consulta.length })}
               </div>
               {errors.consulta && touched.consulta && (
                 <span className="error-message">{errors.consulta}</span>
@@ -478,10 +458,10 @@ Saludos cordiales.`;
                 className="contacto-submit-btn email-btn"
                 onClick={handleEmailSubmit}
                 disabled={!isFormValid()}
-                title={!isFormValid() ? 'Completa todos los campos correctamente' : 'Enviar por Email'}
+                title={!isFormValid() ? t('contacto.completarCampos') : t('contacto.enviarEmail')}
               >
                 <FaEnvelope />
-                <span>Enviar por Email</span>
+                <span>{t('contacto.enviarEmail')}</span>
               </button>
 
               <button 
@@ -489,10 +469,10 @@ Saludos cordiales.`;
                 className="contacto-submit-btn whatsapp-btn"
                 onClick={handleWhatsAppSubmit}
                 disabled={!isFormValid()}
-                title={!isFormValid() ? 'Completa todos los campos correctamente' : 'Enviar por WhatsApp'}
+                title={!isFormValid() ? t('contacto.completarCampos') : t('contacto.enviarWhatsapp')}
               >
                 <FaWhatsapp />
-                <span>Enviar por WhatsApp</span>
+                <span>{t('contacto.enviarWhatsapp')}</span>
               </button>
             </div>
           </form>
@@ -501,7 +481,7 @@ Saludos cordiales.`;
         {/* Columna Derecha - Info de Contacto */}
         <div className="contacto-info-wrapper">
           <div className="contacto-info-card">
-            <h3>También podés contactarnos por:</h3>
+            <h3>{t('contacto.infoTitulo')}</h3>
             
             <div className="contacto-info-item">
               <div className="contacto-info-icon email-icon">
@@ -516,7 +496,7 @@ Saludos cordiales.`;
             </div>
 
             <div className="contacto-info-divider">
-              <span>WhatsApp por región</span>
+              <span>{t('contacto.whatsappPorRegion')}</span>
             </div>
 
             <div className="contacto-info-item">
@@ -544,9 +524,9 @@ Saludos cordiales.`;
             </div>
 
             <div className="contacto-horario">
-              <p>⏰ Horario de atención</p>
-              <p>Lunes a Viernes: 9:00 - 18:00</p>
-              <p>Sábados: 9:00 - 13:00</p>
+              <p>⏰ {t('contacto.horario')}</p>
+              <p>{t('contacto.horarioL5')}</p>
+              <p>{t('contacto.horarioSab')}</p>
             </div>
           </div>
 
@@ -554,8 +534,8 @@ Saludos cordiales.`;
           <div className="contacto-garantia">
             <div className="garantia-icon">✓</div>
             <div className="garantia-text">
-              <strong>Respuesta garantizada</strong>
-              <p>Te contactamos en menos de 24 horas</p>
+              <strong>{t('contacto.garantiaTitulo')}</strong>
+              <p>{t('contacto.garantiaDesc')}</p>
             </div>
           </div>
         </div>

@@ -1,9 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import LangLink from '../componentes/LangLink';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Sparkles, Zap, Heart, CheckCircle, ArrowDown } from 'lucide-react';
 import './ComoTrabajamos.css';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 import '../../src/App.css';
 import '../../src/section-glass-card.css';
 
@@ -41,6 +44,7 @@ const LoadingFallback = () => (
 );
 
 function ComoTrabajamos() {
+  const { t } = useTranslation();
   return (
     <div>
       <motion.div
@@ -62,15 +66,16 @@ function ComoTrabajamos() {
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
+      <LanguageToggle />
       
       <main className="main-cards-wrapper">
         {/* Hero Section */}
         <section className="hero-clean">
           <div className="section-glass-card">
-            <Link to="/#main" className="back-button">
+            <LangLink to="/" className="back-button">
               <ArrowLeft size={20} />
-              Volver al inicio
-            </Link>
+              {t('paginas.comun.volverInicio')}
+            </LangLink>
 
             <div className="hero-content-centered">
               <motion.div
@@ -80,7 +85,7 @@ function ComoTrabajamos() {
                 transition={{ duration: 0.6 }}
               >
                 <Sparkles size={16} />
-                <span>Nuestro enfoque</span>
+                <span>{t('paginas.comoTrabajamos.badge')}</span>
               </motion.div>
 
               <motion.h1
@@ -89,8 +94,7 @@ function ComoTrabajamos() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Desarrollo web con{' '}
-                <span className="highlight-word">código que habla por sí mismo</span>
+                {t('paginas.comoTrabajamos.h1')}
               </motion.h1>
 
               <motion.p
@@ -99,9 +103,7 @@ function ComoTrabajamos() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                No creemos en magia ni en promesas vacías. Creemos en arquitecturas sólidas, 
-                testing exhaustivo y comunicación honesta. Cada línea de código es una decisión 
-                consciente pensada para el presente y el futuro de tu producto.
+                {t('paginas.comoTrabajamos.descripcion')}
               </motion.p>
 
               <motion.div
@@ -112,15 +114,15 @@ function ComoTrabajamos() {
               >
                 <div className="key-point">
                   <CheckCircle size={20} />
-                  <span>Código revisado y testeado en cada etapa</span>
+                  <span>{t('paginas.comoTrabajamos.punto1')}</span>
                 </div>
                 <div className="key-point">
                   <CheckCircle size={20} />
-                  <span>Documentación clara para que no dependas de nosotros</span>
+                  <span>{t('paginas.comoTrabajamos.punto2')}</span>
                 </div>
                 <div className="key-point">
                   <CheckCircle size={20} />
-                  <span>Actualizaciones constantes sin necesidad de perseguirnos</span>
+                  <span>{t('paginas.comoTrabajamos.punto3')}</span>
                 </div>
               </motion.div>
             </div>
@@ -145,9 +147,9 @@ function ComoTrabajamos() {
         {/* CTA Final */}
         <Suspense fallback={<LoadingFallback />}>
           <CTASection 
-            titulo="¿Listo para empezar tu proyecto?"
-            descripcion="Conversemos sin compromiso sobre cómo podemos ayudarte"
-            textoBoton="Hablemos de tu proyecto"
+            titulo={t('paginas.comoTrabajamos.ctaTitulo')}
+            descripcion={t('paginas.comoTrabajamos.ctaDesc')}
+            textoBoton={t('paginas.comoTrabajamos.ctaBoton')}
             linkTo="/#contact"
           />
         </Suspense>

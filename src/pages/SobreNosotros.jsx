@@ -1,9 +1,12 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import LangLink from '../componentes/LangLink';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Heart, Users, Target, Sparkles, Code, Zap, Coffee, Lightbulb } from 'lucide-react';
 import './SobreNosotros.css';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 import '../App.css';
 import '../section-glass-card.css';
 
@@ -98,49 +101,24 @@ function TeamMemberCard({ member, delay = 0 }) {
 // Componente de acordeón para Por Qué Elegirnos
 function PorQueAccordion() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const { t } = useTranslation();
 
   const toggleItem = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const porqueData = [
-    { 
-      title: 'Transparencia total', 
-      preview: 'Sin letra chica ni sorpresas',
-      fullText: 'Desde el primer contacto te explicamos todo: costos, tiempos, alcance. No hay "extras" ocultos. Si algo cambia durante el proyecto, lo hablamos, lo ajustamos y seguimos adelante juntos. La confianza es lo primero.',
-      icon: <Sparkles size={32} />
-    },
-    { 
-      title: 'Comunicación constante', 
-      preview: 'Actualizaciones claras y frecuentes',
-      fullText: 'No te dejamos en el aire. Te mantenemos al tanto del avance con reuniones regulares, capturas de progreso y acceso a un repositorio donde podés ver el trabajo en tiempo real. Siempre disponibles para responder dudas.',
-      icon: <Heart size={32} />
-    },
-    { 
-      title: 'Trato cercano', 
-      preview: 'Abiertos al diálogo y dispuestos a escuchar',
-      fullText: 'Hablás directamente con quienes están desarrollando tu proyecto. No hay intermediarios ni capas de burocracia. Escuchamos tus ideas, te guiamos si es necesario, y te involucramos en cada decisión importante.',
-      icon: <Users size={32} />
-    },
-    { 
-      title: 'Calidad profesional', 
-      preview: 'Código limpio y soluciones escalables',
-      fullText: 'Escribimos código pensando en el futuro: ordenado, documentado y fácil de mantener. Usamos las mejores prácticas de la industria y tecnologías modernas para que tu sitio sea rápido, seguro y preparado para crecer.',
-      icon: <Target size={32} />
-    },
-    { 
-      title: 'Atención humana', 
-      preview: 'Atentos, pacientes y con buena onda',
-      fullText: 'Sabemos que no todos hablan "en código". Te explicamos todo con paciencia y claridad, sin tecnicismos innecesarios. Si algo no te gusta, lo cambiamos. Si tenés dudas, las resolvemos con buena onda.',
-      icon: <Coffee size={32} />
-    },
-    { 
-      title: 'Compromiso real', 
-      preview: 'Tu crecimiento es el nuestro',
-      fullText: 'No entregamos el sitio y desaparecemos. Te damos garantía de 1 mes post-lanzamiento y te enseñamos a gestionar tu web. Tu éxito nos importa porque construimos relaciones, no solo proyectos.',
-      icon: <Zap size={32} />
-    }
-  ];
+  const porqueIcons = [<Sparkles size={32} />, <Heart size={32} />, <Users size={32} />, <Target size={32} />, <Coffee size={32} />, <Zap size={32} />];
+  const porqueItemsT = t('paginas.sobreNosotros.porqueItems', { returnObjects: true });
+  const porqueData = Array.isArray(porqueItemsT)
+    ? porqueItemsT.map((item, i) => ({ ...item, icon: porqueIcons[i] }))
+    : [
+      { title: 'Transparencia total', preview: 'Sin letra chica ni sorpresas', fullText: 'La confianza es lo primero.', icon: <Sparkles size={32} /> },
+      { title: 'Comunicación constante', preview: 'Actualizaciones claras y frecuentes', fullText: 'Siempre disponibles para responder dudas.', icon: <Heart size={32} /> },
+      { title: 'Trato cercano', preview: 'Abiertos al diálogo y dispuestos a escuchar', fullText: 'Sin intermediarios ni burocracia.', icon: <Users size={32} /> },
+      { title: 'Calidad profesional', preview: 'Código limpio y soluciones escalables', fullText: 'Usamos las mejores prácticas de la industria.', icon: <Target size={32} /> },
+      { title: 'Atención humana', preview: 'Atentos, pacientes y con buena onda', fullText: 'Sin tecnicismos innecesarios.', icon: <Coffee size={32} /> },
+      { title: 'Compromiso real', preview: 'Tu crecimiento es el nuestro', fullText: 'Construimos relaciones, no solo proyectos.', icon: <Zap size={32} /> }
+    ];
 
   return (
     <div className="porque-wrapper">
@@ -181,27 +159,17 @@ function PorQueAccordion() {
 // Componente de acordeón para la historia
 function HistoriaAccordion() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const { t } = useTranslation();
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const historiaData = [
-    {
-      title: "Los primeros pasos",
-      preview: "Éramos dos amigos con ganas de crear algo propio...",
-      fullText: "Todo empezó entre charlas y mates. Éramos dos amigos con ganas de hacer algo juntos, de crear proyectos propios y ayudar a emprendedores que, como nosotros en ese momento, necesitaban una web pero no querían algo genérico sacado de una plantilla. Queríamos hacer sitios a medida, con personalidad, que realmente representaran a las personas detrás de cada negocio. Sin oficina, sin inversión inicial, solo ganas y una notebook."
-    },
-    {
-      title: "El impulso",
-      preview: "Los primeros clientes confiaron en nosotros...",
-      fullText: "Los primeros proyectos fueron un desafío hermoso. Cada cliente que confiaba en nosotros nos daba más motivación para seguir. Aprendimos un montón: desde cómo comunicar ideas técnicas de forma simple hasta cómo manejar tiempos, expectativas y entregar algo que realmente funcione. Nos dimos cuenta de que no solo hacíamos webs, estábamos construyendo relaciones. Y eso nos encantó."
-    },
-    {
-      title: "Crecimiento y evolución",
-      preview: "Con el tiempo, se sumó más gente...",
-      fullText: "A medida que crecíamos, se fue sumando más gente: colaboradores, diseñadores, otros devs. Hoy somos un equipo más grande, pero mantenemos esa esencia de \"che, ¿y si hacemos algo copado?\". Nos especializamos más, mejoramos procesos, pero nunca perdimos la idea de que detrás de cada proyecto hay una persona con una historia, un sueño o una necesidad real."
-    }
+  const historiaItemsT = t('paginas.sobreNosotros.historiaItems', { returnObjects: true });
+  const historiaData = Array.isArray(historiaItemsT) ? historiaItemsT : [
+    { titulo: 'Los primeros pasos', preview: 'Éramos dos amigos con ganas de crear algo propio...', fullText: 'Todo empezó entre charlas y mates.' },
+    { titulo: 'El impulso', preview: 'Los primeros clientes confiaron en nosotros...', fullText: 'Los primeros proyectos fueron un desafío hermoso.' },
+    { titulo: 'Crecimiento y evolución', preview: 'Con el tiempo, se sumó más gente...', fullText: 'Hoy somos un equipo más grande.' }
   ];
 
   return (
@@ -209,10 +177,7 @@ function HistoriaAccordion() {
       {/* Intro antes de las etapas */}
       <div className="historia-intro">
         <p>
-          <strong>Antes de ser UXnicorp</strong>, éramos dos personas con ganas de crear. 
-          No teníamos un plan maestro ni una estrategia corporativa. Solo teníamos una idea: 
-          ayudar a emprendedores y negocios a tener presencia digital <em>de verdad</em>, 
-          sin plantillas genéricas ni frialdad empresarial.
+          {t('paginas.sobreNosotros.historiaIntro')}
         </p>
       </div>
 
@@ -229,7 +194,7 @@ function HistoriaAccordion() {
             >
               <div className="accordion-number">{String(idx + 1).padStart(2, '0')}</div>
               <div className="accordion-title-wrapper">
-                <h4>{item.title}</h4>
+                <h4>{item.titulo}</h4>
                 <p className="accordion-preview">{item.preview}</p>
               </div>
               <div className="accordion-icon">
@@ -245,19 +210,15 @@ function HistoriaAccordion() {
 
       {/* Conclusión después de las etapas */}
       <div className="historia-conclusion">
-        <h4>¿Dónde estamos hoy?</h4>
-        <p>
-          Hoy UXnicorp es un equipo consolidado que sigue trabajando con esa misma energía 
-          del principio. Seguimos escuchando, aprendiendo, mejorando. No somos una agencia 
-          gigante ni queremos serlo. Somos un equipo humano, accesible, comprometido con cada 
-          proyecto como si fuera propio. Y lo mejor: <strong>seguimos disfrutándolo</strong>.
-        </p>
+        <h4>{t('paginas.sobreNosotros.historiaConclusion')}</h4>
+        <p>{t('paginas.sobreNosotros.historiaConclusionTexto')}</p>
       </div>
     </div>
   );
 }
 
 function SobreNosotros() {
+  const { t } = useTranslation();
 
   return (
     <>
@@ -274,15 +235,16 @@ function SobreNosotros() {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
+      <LanguageToggle />
       
       <main className="sobre-nosotros-page">
         {/* Hero Section */}
         <section className="hero-section">
           <div className="hero-container">
-            <Link to="/#main" className="back-link">
+            <LangLink to="/" className="back-link">
               <ArrowLeft size={18} />
-              <span>Volver al inicio</span>
-            </Link>
+              <span>{t('paginas.comun.volverInicio')}</span>
+            </LangLink>
 
             <motion.div
               className="hero-badge"
@@ -291,7 +253,7 @@ function SobreNosotros() {
               transition={{ duration: 0.6 }}
             >
               <Heart size={16} />
-              <span>Nosotros</span>
+              <span>{t('paginas.sobreNosotros.badge')}</span>
             </motion.div>
 
             <motion.div
@@ -300,8 +262,8 @@ function SobreNosotros() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="hero-title">
-                Creamos tecnología <br />
-                <span className="gradient-text">con alma</span>
+                {t('paginas.sobreNosotros.h1Pre')} <br />
+                <span className="gradient-text">{t('paginas.sobreNosotros.h1Highlight')}</span>
               </h1>
             </motion.div>
 
@@ -311,8 +273,7 @@ function SobreNosotros() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              No vendemos plantillas genéricas. Construimos soluciones a medida hechas por personas 
-              que realmente quieren ver crecer a otras personas.
+              {t('paginas.sobreNosotros.descripcion')}
             </motion.p>
           </div>
         </section>
@@ -323,15 +284,13 @@ function SobreNosotros() {
             <div className="section-header centered">
               <span className="section-badge">
                 <Lightbulb size={16} />
-                Quiénes somos
+                {t('paginas.sobreNosotros.quienesBadge')}
               </span>
               <h2 className="section-title">
-                La tecnología no debería <br />
-                sentirse <span className="gradient-text">fría</span>
+                {t('paginas.sobreNosotros.quienesH2')}
               </h2>
               <p className="section-description">
-                Somos un equipo de desarrollo web que cree en crear soluciones con alma. 
-                No vendemos plantillas, construimos relaciones.
+                {t('paginas.sobreNosotros.quienesDesc')}
               </p>
             </div>
 
@@ -343,29 +302,23 @@ function SobreNosotros() {
                   </div>
                 </div>
                 <div className="intro-text">
-                  <p>
-                    En UXnicorp ayudamos a todo tipo de negocios: desde emprendedores que recién dan sus primeros 
-                    pasos digitales hasta empresas consolidadas que buscan renovar su presencia online.
-                  </p>
-                  <p>
-                    No buscamos "cerrar ventas". Buscamos crear relaciones que sumen, donde el cliente se sienta 
-                    acompañado, valorado y escuchado en cada etapa del camino.
-                  </p>
+                  <p>{t('paginas.sobreNosotros.quienesIntro1')}</p>
+                  <p>{t('paginas.sobreNosotros.quienesIntro2')}</p>
                 </div>
               </div>
 
               <div className="quienes-highlights centered-highlights">
                 <div className="highlight-item">
                   <Zap size={20} />
-                  <span>De idea a realidad</span>
+                  <span>{t('paginas.sobreNosotros.highlight1')}</span>
                 </div>
                 <div className="highlight-item">
                   <Users size={20} />
-                  <span>Relaciones genuinas</span>
+                  <span>{t('paginas.sobreNosotros.highlight2')}</span>
                 </div>
                 <div className="highlight-item">
                   <Lightbulb size={20} />
-                  <span>Soluciones a medida</span>
+                  <span>{t('paginas.sobreNosotros.highlight3')}</span>
                 </div>
               </div>
             </div>
@@ -378,14 +331,13 @@ function SobreNosotros() {
             <div className="section-header centered">
               <span className="section-badge">
                 <Target size={16} />
-                Nuestra filosofía
+                {t('paginas.sobreNosotros.valoresBadge')}
               </span>
               <h2 className="section-title">
-                UXnicorp es <span className="gradient-text">apoyo</span>
+                {t('paginas.sobreNosotros.valoresH2')}
               </h2>
               <p className="section-description">
-                Más que desarrollar software, acompañamos personas. Estos son los valores que guían 
-                cada decisión que tomamos.
+                {t('paginas.sobreNosotros.valoresDesc')}
               </p>
             </div>
 
@@ -395,8 +347,7 @@ function SobreNosotros() {
                   <Heart size={40} />
                 </div>
                 <p className="valores-intro">
-                  Apoyo para negocios, emprendedores y profesionales que quieren dar el paso 
-                  al mundo digital sin sentirse solos
+                  {t('paginas.sobreNosotros.valoresIntro')}
                 </p>
               </div>
 
@@ -411,11 +362,8 @@ function SobreNosotros() {
                   <div className="valor-icon passion">
                     <Heart />
                   </div>
-                  <h3>Pasión genuina</h3>
-                  <p>
-                    Nos mueve la alegría y satisfacción de saber que lo que construimos ayuda a alguien 
-                    a crecer, mejorar su negocio y sentirse acompañado.
-                  </p>
+                  <h3>{t('paginas.sobreNosotros.valor1Titulo')}</h3>
+                  <p>{t('paginas.sobreNosotros.valor1Desc')}</p>
                 </motion.div>
 
                 <motion.div
@@ -429,11 +377,8 @@ function SobreNosotros() {
                   <div className="valor-icon commitment">
                     <Zap />
                   </div>
-                  <h3>Compromiso real</h3>
-                  <p>
-                    No queremos "entregar una web y listo". Queremos que funcione, impacte y potencie. 
-                    Tu crecimiento también es el nuestro.
-                  </p>
+                  <h3>{t('paginas.sobreNosotros.valor2Titulo')}</h3>
+                  <p>{t('paginas.sobreNosotros.valor2Desc')}</p>
                 </motion.div>
 
                 <motion.div
@@ -447,11 +392,8 @@ function SobreNosotros() {
                   <div className="valor-icon human">
                     <Coffee />
                   </div>
-                  <h3>Trato humano</h3>
-                  <p>
-                    No trabajamos con frialdad empresarial. Escuchamos, preguntamos y nos tomamos el tiempo 
-                    de entender. Explicamos con paciencia y buena onda.
-                  </p>
+                  <h3>{t('paginas.sobreNosotros.valor3Titulo')}</h3>
+                  <p>{t('paginas.sobreNosotros.valor3Desc')}</p>
                 </motion.div>
               </div>
 
@@ -460,10 +402,9 @@ function SobreNosotros() {
                   <Heart size={32} />
                 </div>
                 <blockquote>
-                  "Para nosotros, cada proyecto es una relación humana. 
-                  La página web no es el producto, <strong>la solución es el producto</strong>."
+                  "{t('paginas.sobreNosotros.quote')}"
                 </blockquote>
-                <div className="quote-author">— El equipo de UXnicorp</div>
+                <div className="quote-author">{t('paginas.sobreNosotros.quoteAuthor')}</div>
               </div>
             </div>
           </div>
@@ -475,15 +416,13 @@ function SobreNosotros() {
             <div className="section-header centered">
               <span className="section-badge">
                 <Sparkles size={16} />
-                Nuestra historia
+                {t('paginas.sobreNosotros.historiaBadge')}
               </span>
               <h2 className="section-title">
-                Todo empezó con una <br />
-                <span className="gradient-text">idea entre amigos</span>
+                {t('paginas.sobreNosotros.historiaH2')}
               </h2>
               <p className="section-description">
-                No fue un plan maestro. Fue ganas de crear algo propio y ayudar a otros a tener 
-                presencia digital real, sin plantillas genéricas.
+                {t('paginas.sobreNosotros.historiaDesc')}
               </p>
             </div>
 
@@ -497,14 +436,13 @@ function SobreNosotros() {
             <div className="section-header centered">
               <span className="section-badge">
                 <Users size={16} />
-                Nuestro equipo
+                {t('paginas.sobreNosotros.equipoBadge')}
               </span>
               <h2 className="section-title">
-                Personas <span className="gradient-text">reales</span> detrás del código
+                {t('paginas.sobreNosotros.equipoH2')}
               </h2>
               <p className="section-description">
-                No somos una corporación fría. Somos un equipo donde cada persona aporta su visión, 
-                experiencia y personalidad al proyecto.
+                {t('paginas.sobreNosotros.equipoDesc')}
               </p>
             </div>
 
@@ -514,12 +452,8 @@ function SobreNosotros() {
                   <Users size={40} />
                 </div>
                 <div className="team-intro-text">
-                  <h3>Un equipo multidisciplinario</h3>
-                  <p>
-                    Contamos con desarrolladores full-stack, especialistas en frontend, diseñadores UX/UI 
-                    y expertos en SEO. Cada proyecto se arma con el equipo ideal según las necesidades 
-                    específicas del cliente.
-                  </p>
+                  <h3>{t('paginas.sobreNosotros.equipoIntroH3')}</h3>
+                  <p>{t('paginas.sobreNosotros.equipoIntroP')}</p>
                 </div>
               </div>
 
@@ -534,8 +468,8 @@ function SobreNosotros() {
                   <div className="team-value-icon">
                     <Code size={28} />
                   </div>
-                  <h4>Desarrollo profesional</h4>
-                  <p>Código limpio, buenas prácticas y tecnologías actualizadas</p>
+                  <h4>{t('paginas.sobreNosotros.equipoVal1Titulo')}</h4>
+                  <p>{t('paginas.sobreNosotros.equipoVal1Desc')}</p>
                 </motion.div>
 
                 <motion.div
@@ -549,8 +483,8 @@ function SobreNosotros() {
                   <div className="team-value-icon">
                     <Sparkles size={28} />
                   </div>
-                  <h4>Creatividad sin límites</h4>
-                  <p>Diseños únicos y soluciones innovadoras para cada proyecto</p>
+                  <h4>{t('paginas.sobreNosotros.equipoVal2Titulo')}</h4>
+                  <p>{t('paginas.sobreNosotros.equipoVal2Desc')}</p>
                 </motion.div>
 
                 <motion.div
@@ -564,8 +498,8 @@ function SobreNosotros() {
                   <div className="team-value-icon">
                     <Heart size={28} />
                   </div>
-                  <h4>Trato cercano</h4>
-                  <p>Comunicación directa, sin intermediarios ni burocracia</p>
+                  <h4>{t('paginas.sobreNosotros.equipoVal3Titulo')}</h4>
+                  <p>{t('paginas.sobreNosotros.equipoVal3Desc')}</p>
                 </motion.div>
 
                 <motion.div
@@ -579,8 +513,8 @@ function SobreNosotros() {
                   <div className="team-value-icon">
                     <Target size={28} />
                   </div>
-                  <h4>Enfoque en resultados</h4>
-                  <p>Tu éxito es nuestra prioridad, cada línea de código tiene propósito</p>
+                  <h4>{t('paginas.sobreNosotros.equipoVal4Titulo')}</h4>
+                  <p>{t('paginas.sobreNosotros.equipoVal4Desc')}</p>
                 </motion.div>
               </div>
             </div>
@@ -593,144 +527,52 @@ function SobreNosotros() {
             <div className="section-header centered">
               <span className="section-badge">
                 <Heart size={16} />
-                Las caras del proyecto
+                {t('paginas.sobreNosotros.equipoCoreBadge')}
               </span>
               <h2 className="section-title">
-                Quienes <span className="gradient-text">lideran</span> tu proyecto
+                {t('paginas.sobreNosotros.equipoCoreH2')}
               </h2>
               <p className="section-description">
-                Detrás de cada línea de código hay personas reales con historias, pasiones y el compromiso 
-                de hacer que tu proyecto funcione. Conocé al equipo principal de UXnicorp.
+                {t('paginas.sobreNosotros.equipoCoreDesc')}
               </p>
             </div>
 
             <div className="team-core-content">
               <div className="team-core-intro">
-                <p>
-                  <strong>¿Por qué mostramos nuestras caras?</strong> Porque creemos en la transparencia y en 
-                  las relaciones humanas. Cuando trabajás con nosotros, sabés exactamente con quién estás hablando. 
-                  Sin intermediarios, sin corporativismo frío. Somos el equipo principal que lidera cada proyecto 
-                  junto a nuestros colaboradores especializados.
-                </p>
+                <p>{t('paginas.sobreNosotros.equipoCoreIntro')}</p>
               </div>
 
               <div className="founders-grid">
-                <TeamMemberCard 
-                  delay={0}
-                  member={{
-                    name: "Gonzalo",
-                    role: "Full Stack Developer",
-                    title: "Backend & Arquitectura",
-                    bio: "Todo lo que no ves pero funciona perfecto, lo arma él. Infraestructura, lógica de negocio y soluciones sólidas. Gonzalo es quien se asegura de que todo esté estable, rápido y bien pensado desde adentro.",
-                    icon: <Code size={48} />,
-                    gradient: "linear-gradient(135deg, #f37aa6, #ff8cc8)",
-                    foto: "daniel.webp",
-                    badges: [
-                      {
-                        type: "professional",
-                        label: "Arquitectura",
-                        icon: <Target size={16} />,
-                        detail: "Piensa en grande y diseña sistemas que escalan. Tu app puede crecer tranquila porque la base está sólida."
-                      },
-                      {
-                        type: "professional",
-                        label: "Backend",
-                        icon: <Code size={16} />,
-                        detail: "El cerebro detrás de todo lo que no ves: APIs que vuelan, bases de datos organizadas, lógica que simplemente funciona."
-                      },
-                      {
-                        type: "personal",
-                        label: "Música",
-                        icon: <Heart size={16} />,
-                        detail: "Le encanta la música en todos sus géneros. Entiende que el ritmo, la armonía y la estructura también importan en el código."
-                      },
-                      {
-                        type: "personal",
-                        label: "Arte & Diseño",
-                        icon: <Sparkles size={16} />,
-                        detail: "Le encanta el arte visual y el diseño gráfico. Entiende que el código también puede ser elegante y hermoso."
-                      }
-                    ]
-                  }}
-                />
-
-                <TeamMemberCard 
-                  delay={0.15}
-                  member={{
-                    name: "Ailín",
-                    role: "Front End Developer",
-                    title: "UI, UX e Interacción",
-                    bio: "Diseño, experiencia e interacción. Lo que ves, sentís y usás, lo crea ella. Ailín combina estética y usabilidad para que cada proyecto se sienta intuitivo, moderno y con personalidad.",
-                    icon: <Sparkles size={48} />,
-                    gradient: "linear-gradient(135deg, #e0a6d8, #81ade7)",
-                    foto: "ailin.webp",
-                    badges: [
-                      {
-                        type: "professional",
-                        label: "UI/UX Design",
-                        icon: <Sparkles size={16} />,
-                        detail: "Hace que todo se vea hermoso y funcione intuitivo. Si no sabés dónde clickear, algo está mal diseñado."
-                      },
-                      {
-                        type: "professional",
-                        label: "Frontend Dev",
-                        icon: <Code size={16} />,
-                        detail: "React, CSS mágico y animaciones fluidas. Escribe código que funciona perfecto en tu celu, tablet o lo que sea."
-                      },
-                      {
-                        type: "personal",
-                        label: "Taylor Swift Fan",
-                        icon: <Heart size={16} />,
-                        detail: "Swiftie confesa. Si Taylor cuida cada detalle de su música, ella cuida cada pixel de tus pantallas. 💜"
-                      },
-                      {
-                        type: "personal",
-                        label: "Nail Artist",
-                        icon: <Sparkles size={16} />,
-                        detail: "Tiene su propio emprendimiento de nail art. La misma precisión que usa en las uñas, la aplica al frontend."
-                      }
-                    ]
-                  }}
-                />
-
-                <TeamMemberCard 
-                  delay={0.3}
-                  member={{
-                    name: "Sol",
-                    role: "Full Stack Developer",
-                    title: "Frontend + Backend + Optimización",
-                    bio: "Del diseño al código, Sol une ambos mundos. Se enfoca en optimización, eficiencia y detalles que marcan la diferencia. Le gusta ver los resultados que logra y cómo cada proyecto mejora la experiencia de quienes lo usan.",
-                    icon: <Lightbulb size={48} />,
-                    gradient: "linear-gradient(135deg, #ff8cc8, #e0a6d8)",
-                    foto: "sol.webp",
-                    badges: [
-                      {
-                        type: "professional",
-                        label: "Full Stack",
-                        icon: <Target size={16} />,
-                        detail: "Maneja el paquete completo: frontend bonito + backend sólido. Un producto de punta a punta, sin intermediarios."
-                      },
-                      {
-                        type: "professional",
-                        label: "Optimización",
-                        icon: <Sparkles size={16} />,
-                        detail: "Experta en performance y buenas prácticas. Se asegura de que cada proyecto sea rápido, eficiente y con resultados medibles."
-                      },
-                      {
-                        type: "personal",
-                        label: "Viajera",
-                        icon: <Lightbulb size={16} />,
-                        detail: "Le encanta viajar y conocer lugares nuevos. Cada viaje le da nuevas perspectivas que aplica en su trabajo creativo."
-                      },
-                      {
-                        type: "personal",
-                        label: "Deportista",
-                        icon: <Heart size={16} />,
-                        detail: "Hace deporte y le gusta estar en contacto con la naturaleza. La disciplina del deporte se refleja en su enfoque profesional."
-                      }
-                    ]
-                  }}
-                />
+                {(() => {
+                  const miembrosT = t('paginas.sobreNosotros.miembros', { returnObjects: true });
+                  const staticData = [
+                    { name: "Gonzalo", foto: "daniel.webp", icon: <Code size={48} />, gradient: "linear-gradient(135deg, #f37aa6, #ff8cc8)", badgeIcons: [<Target size={16} />, <Code size={16} />, <Heart size={16} />, <Sparkles size={16} />] },
+                    { name: "Ailín",   foto: "ailin.webp",  icon: <Sparkles size={48} />, gradient: "linear-gradient(135deg, #e0a6d8, #81ade7)", badgeIcons: [<Sparkles size={16} />, <Code size={16} />, <Heart size={16} />, <Sparkles size={16} />] },
+                    { name: "Sol",     foto: "sol.webp",    icon: <Lightbulb size={48} />, gradient: "linear-gradient(135deg, #ff8cc8, #e0a6d8)", badgeIcons: [<Target size={16} />, <Sparkles size={16} />, <Lightbulb size={16} />, <Heart size={16} />] }
+                  ];
+                  const badgeTypes = [
+                    ["professional","professional","personal","personal"],
+                    ["professional","professional","personal","personal"],
+                    ["professional","professional","personal","personal"]
+                  ];
+                  const members = Array.isArray(miembrosT)
+                    ? staticData.map((s, i) => ({
+                        ...s,
+                        role:  miembrosT[i]?.role  || s.name,
+                        title: miembrosT[i]?.title || '',
+                        bio:   miembrosT[i]?.bio   || '',
+                        badges: (miembrosT[i]?.badges || []).map((b, bi) => ({
+                          type:   badgeTypes[i][bi],
+                          label:  b.label,
+                          icon:   s.badgeIcons[bi],
+                          detail: b.detail
+                        }))
+                      }))
+                    : staticData;
+                  return members.map((member, i) => (
+                    <TeamMemberCard key={member.name} delay={i * 0.15} member={member} />
+                  ));
+                })()}
               </div>
 
               <div className="team-core-note">
@@ -738,12 +580,8 @@ function SobreNosotros() {
                   <Users size={32} />
                 </div>
                 <div className="note-content">
-                  <h4>Un equipo que crece con cada proyecto</h4>
-                  <p>
-                    Estamos en cada proyecto desde el día uno, liderando el desarrollo y asegurando la calidad. 
-                    Pero no trabajamos solos: según las necesidades, sumamos diseñadores, especialistas en SEO, 
-                    desarrolladores backend o frontend adicionales. El equipo se adapta a tu proyecto, no al revés.
-                  </p>
+                  <h4>{t('paginas.sobreNosotros.equipoCoreNotaH4')}</h4>
+                  <p>{t('paginas.sobreNosotros.equipoCoreNotaP')}</p>
                 </div>
               </div>
             </div>
@@ -756,15 +594,13 @@ function SobreNosotros() {
             <div className="section-header centered">
               <span className="section-badge">
                 <Sparkles size={16} />
-                Por qué elegirnos
+                {t('paginas.sobreNosotros.porqueBadge')}
               </span>
               <h2 className="section-title">
-                No queremos ser tu proveedor. <br />
-                Queremos ser tu <span className="gradient-text">equipo</span>.
+                {t('paginas.sobreNosotros.porqueH2')}
               </h2>
               <p className="section-description">
-                Trabajar con nosotros no es solo contratar un servicio. Es sumar un equipo que se 
-                compromete con tu proyecto como si fuera propio.
+                {t('paginas.sobreNosotros.porqueDesc')}
               </p>
             </div>
 
@@ -779,22 +615,22 @@ function SobreNosotros() {
               <div className="mensaje-icon-top">
                 <Sparkles size={48} strokeWidth={1.5} />
               </div>
-              <h2>Vos traés la <span className="gradient-text">idea</span></h2>
+              <h2>{t('paginas.sobreNosotros.mensajeH2')}</h2>
               <p className="mensaje-lead">
-                Nosotros te acompañamos a convertirla en algo real, funcional y visualmente hermoso.
+                {t('paginas.sobreNosotros.mensajeLead')}
               </p>
               <div className="mensaje-features">
                 <div className="mensaje-feature">
                   <Heart size={20} />
-                  <span>Te escuchamos</span>
+                  <span>{t('paginas.sobreNosotros.mensajeF1')}</span>
                 </div>
                 <div className="mensaje-feature">
                   <Target size={20} />
-                  <span>Te guiamos</span>
+                  <span>{t('paginas.sobreNosotros.mensajeF2')}</span>
                 </div>
                 <div className="mensaje-feature">
                   <Code size={20} />
-                  <span>Construimos juntos</span>
+                  <span>{t('paginas.sobreNosotros.mensajeF3')}</span>
                 </div>
               </div>
             </div>
@@ -804,9 +640,9 @@ function SobreNosotros() {
         {/* CTA Final */}
         <Suspense fallback={<LoadingFallback />}>
           <CTASection 
-            titulo="¿Tenés un proyecto en mente?"
-            descripcion="Conversemos sin compromiso sobre cómo podemos ayudarte"
-            textoBoton="Hablemos de tu proyecto"
+            titulo={t('paginas.sobreNosotros.ctaTitulo')}
+            descripcion={t('paginas.sobreNosotros.ctaDesc')}
+            textoBoton={t('paginas.sobreNosotros.ctaBoton')}
             linkTo="/#contact"
           />
         </Suspense>

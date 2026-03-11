@@ -37,6 +37,13 @@ export const seoConfig = {
     description: 'Auditoría UX/UI en 5-15 días. Detectamos errores que pierden ventas. Reporte completo + plan de acción concreto. Mejora conversión en Argentina.',
     keywords: 'auditoría ux argentina, auditoría ui argentina, cro argentina, optimización conversión argentina, auditoría web argentina, auditoría ux buenos aires, auditoría caba, auditoría córdoba, auditoría santa fe, auditoría mendoza, auditoría tucumán, auditoría entre ríos, auditoría salta, auditoría misiones, auditoría chaco, auditoría corrientes, auditoría santiago del estero, auditoría san juan, auditoría jujuy, auditoría formosa, auditoría neuquén, auditoría chubut, auditoría río negro, auditoría santa cruz, auditoría tierra del fuego, auditoría la pampa, auditoría la rioja, auditoría catamarca, auditoría san luis, auditoría rosario, auditoría la plata, revisión técnica web argentina, usabilidad web argentina, auditoría web latam, auditoría de usabilidad',
     canonical: 'https://www.uxnicorp.com.ar/servicios/auditorias',
+    slug: 'servicios/auditorias',
+    en: {
+      title: 'UX/UI Audit | Find the Errors Losing You Sales | UXnicorp',
+      description: 'Professional UX/UI audit in 5-15 days. We detect errors costing you sales. Complete report + concrete action plan. Improve your conversion rate.',
+      ogTitle: "UX/UI Audit — Discover Why You're Losing Sales",
+      ogDescription: 'Complete usability and conversion analysis. Detailed report with concrete actions to sell more.',
+    },
     ogTitle: 'Auditoría UX/UI - Descubre Por Qué Pierdes Ventas',
     ogDescription: 'Análisis completo de usabilidad y conversión. Reporte detallado con acciones concretas para vender más.',
     h1: 'Auditorías Profesionales: Mejora tu Web desde la Raíz',
@@ -281,6 +288,13 @@ export const seoConfig = {
     description: '¿Arquitecto sin presencia digital a la altura de tu trabajo? Creamos portfolios web para estudios de arquitectura que comunican proyectos con claridad y criterio. Diagnóstico sin costo.',
     keywords: 'sitio web estudio arquitectura, portfolio digital arquitectos, desarrollo web arquitectos argentina, web para architects, pagina web estudio arquitectura, portfolio arquitectonico online, presencia digital arquitectos, web arquitectos buenos aires, web arquitectos cordoba, web arquitectos rosario, web arquitectos mendoza, web arquitectos argentina, diseño web arquitectura, plataforma digital estudios arquitectura, crear portfolio arquitecto, web profesional arquitectura argentina, identidad digital arquitectos, portfolio proyectos arquitectura',
     canonical: 'https://www.uxnicorp.com.ar/arquitectura',
+    slug: 'arquitectura',
+    en: {
+      title: 'Website for Architecture Studios | Professional Digital Portfolio | UXnicorp',
+      description: "Architecture studio without a digital presence matching your work? We build digital portfolios for architects that communicate projects with clarity and professional criteria. Free diagnosis.",
+      ogTitle: 'Website for Architecture Studios — UXnicorp',
+      ogDescription: 'Does your studio deserve a digital presence at its level? Specialized web portfolios for architects. Free diagnosis.',
+    },
     ogTitle: 'Sitio Web para Estudios de Arquitectura — UXnicorp',
     ogDescription: '¿Tu estudio merece una presencia digital a su altura? Portfolios web especializados para arquitectos. Diagnóstico sin costo.',
     ogImage: 'https://www.uxnicorp.com.ar/og-arquitectura.jpg',
@@ -376,6 +390,13 @@ export const seoConfig = {
     description: '¿Tu restaurante no refleja online lo que vive dentro? Creamos presencias digitales para gastronomía que comunican la experiencia real: carta, eventos, ambiente e identidad en una sola plataforma. Diagnóstico sin costo.',
     keywords: 'sitio web restaurante argentina, web bar argentina, presencia digital gastronomía, carta digital restaurante, seo local gastronomia, web cafetería argentina, desarrollo web bares, agenda eventos restaurante, reservas online restaurante, identidad digital gastronómica, web para restaurantes buenos aires, web para bares córdoba, web para cafés argentina',
     canonical: 'https://www.uxnicorp.com.ar/gastronomia',
+    slug: 'gastronomia',
+    en: {
+      title: 'Website for Restaurants, Bars & Cafes | Digital Gastronomy Presence | UXnicorp',
+      description: "Does your restaurant fail to reflect online what happens inside? We create digital presences for gastronomy that communicate the real experience: menu, events, atmosphere and identity. Free diagnosis.",
+      ogTitle: 'Digital Presence for Restaurants and Gastronomy — UXnicorp',
+      ogDescription: 'We translate the gastronomic experience to the digital environment. Menu, events, reservations and local SEO for restaurants, bars and cafes.',
+    },
     ogTitle: 'Presencia Digital para Restaurantes y Gastronomía — UXnicorp',
     ogDescription: 'Traducimos la experiencia gastronómica al entorno digital. Carta, eventos, reservas y SEO local para restaurantes, bares y cafés.',
     ogImage: 'https://www.uxnicorp.com.ar/og-gastronomia.jpg',
@@ -492,5 +513,37 @@ export const createFAQSchema = (faqs) => {
         'text': faq.answer
       }
     }))
+  };
+};
+
+const BASE_URL = 'https://www.uxnicorp.com.ar';
+
+/**
+ * Devuelve los datos SEO para una página y un idioma dados.
+ * Genera canonical correcto (/es/ o /en/), hreflang y title/description en el idioma apropiado.
+ */
+export const getSeoData = (pageKey, lang = 'es') => {
+  const cfg = seoConfig[pageKey];
+  if (!cfg) return null;
+
+  const slug = cfg.slug || '';
+  const path = slug ? `/${slug}` : '';
+  const canonical = `${BASE_URL}/${lang}${path}`;
+  const isEn = lang === 'en';
+
+  return {
+    title: (isEn && cfg.en?.title) ? cfg.en.title : cfg.title,
+    description: (isEn && cfg.en?.description) ? cfg.en.description : cfg.description,
+    keywords: cfg.keywords || '',
+    ogTitle: (isEn && cfg.en?.ogTitle) ? cfg.en.ogTitle : (cfg.ogTitle || cfg.title),
+    ogDescription: (isEn && cfg.en?.ogDescription) ? cfg.en.ogDescription : (cfg.ogDescription || cfg.description),
+    ogImage: cfg.ogImage || `${BASE_URL}/og-image.jpg`,
+    ogLocale: isEn ? 'en_US' : 'es_AR',
+    canonical,
+    hreflangEs: `${BASE_URL}/es${path}`,
+    hreflangEn: `${BASE_URL}/en${path}`,
+    schema: cfg.schema,
+    faqSchema: cfg.faqSchema,
+    breadcrumb: cfg.breadcrumb,
   };
 };

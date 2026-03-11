@@ -20,7 +20,7 @@
  */
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../../hooks/useLangNavigate';
 import './CTASection.css';
 import '../../section-glass-card.css';
 
@@ -31,7 +31,7 @@ function CTASection({
   variant = "primary",
   linkTo = null
 }) {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
   
   const handleClick = () => {
     if (linkTo) {

@@ -1,12 +1,16 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../hooks/useLangNavigate';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Search, TrendingUp, Code, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import ServicioModal from '../componentes/ServicioModal';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
-import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import { seoConfig, createBreadcrumbSchema, getSeoData } from '../utils/seoConfig';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -85,7 +89,13 @@ const servicios = [
 ];
 
 function Auditorias() {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
+  const { t, i18n } = useTranslation();
+  const seoData = getSeoData('auditorias', i18n.language);
+  const serviciosItems = t('paginas.auditorias.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : servicios;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -112,40 +122,44 @@ function Auditorias() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>{seoConfig.auditorias.title}</title>
-        <meta name="description" content={seoConfig.auditorias.description} />
-        <meta name="keywords" content={seoConfig.auditorias.keywords} />
-        <link rel="canonical" href={seoConfig.auditorias.canonical} />
-        <meta property="og:title" content={seoConfig.auditorias.ogTitle} />
-        <meta property="og:description" content={seoConfig.auditorias.ogDescription} />
-        <meta property="og:locale" content="es_AR" />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords} />
+        <link rel="canonical" href={seoData.canonical} />
+        <link rel="alternate" hreflang="es" href={seoData.hreflangEs} />
+        <link rel="alternate" hreflang="en" href={seoData.hreflangEn} />
+        <link rel="alternate" hreflang="x-default" href={seoData.hreflangEs} />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
+        <meta property="og:locale" content={seoData.ogLocale} />
         
         <script type="application/ld+json">
-          {JSON.stringify(seoConfig.auditorias.schema)}
+          {JSON.stringify(seoData.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoConfig.auditorias.breadcrumb))}
+          {JSON.stringify(createBreadcrumbSchema(seoData.breadcrumb))}
         </script>
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="servicio-hero">
         <div className="servicio-hero-container">
-          <Link to="/servicios" className="servicio-back-link">
+          <LangLink to="/servicios" className="servicio-back-link">
             <ArrowLeft size={18} />
-            Ver todas las categorías
-          </Link>
+            {t('paginas.comun.verCategorias')}
+          </LangLink>
 
           <div>
             <span className="servicio-badge">
               <Search size={16} />
-              Auditorías Profesionales
+              {t('paginas.auditorias.heroBadge')}
             </span>
             <h1 className="servicio-hero-title">
-              {seoConfig.auditorias.h1}
+              {t('paginas.auditorias.heroTitulo')}
             </h1>
             <p className="servicio-hero-description">
-              Analizamos tu sitio actual para identificar problemas de usabilidad, performance y conversión. Recibís un informe completo con mejoras priorizadas y accionables.
+              {t('paginas.auditorias.heroDesc')}
             </p>
           </div>
         </div>
@@ -154,7 +168,7 @@ function Auditorias() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {servicios.map((servicio) => {
+          {serviciosT.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
               <article
@@ -195,7 +209,7 @@ function Auditorias() {
                       }}
                     >
                       <HelpCircle size={18} />
-                      ¿Qué es esto?
+                      {t('paginas.comun.queEsto')}
                     </button>
                   </div>
                 </div>
@@ -209,11 +223,11 @@ function Auditorias() {
 
                 <div className="servicio-detalle-ideal">
                   <Info size={16} />
-                  <span><strong>Ideal para:</strong> {servicio.ideal}</span>
+                  <span><strong>{t('paginas.comun.idealPara')}</strong> {servicio.ideal}</span>
                 </div>
 
                 <div className="servicio-detalle-incluye">
-                  <h3>¿Qué incluye?</h3>
+                  <h3>{t('paginas.comun.queIncluye')}</h3>
                   <ul>
                     {servicio.incluye.map((item, idx) => (
                       <li key={idx}>
@@ -225,7 +239,7 @@ function Auditorias() {
                 </div>
 
                 <button onClick={() => handleConsultar(servicio)} className="servicio-detalle-cta" style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}>
-                  Solicitar presupuesto
+                  {t('paginas.comun.solicitar')}
                 </button>
               </article>
             );
@@ -241,9 +255,9 @@ function Auditorias() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
-          titulo="¿No estás seguro cuál auditoría necesitás?"
-          descripcion="Contactanos y te asesoramos para identificar qué tipo de análisis es mejor para tu proyecto"
-          textoBoton="Consultar ahora"
+          titulo={t('paginas.auditorias.ctaTitulo')}
+          descripcion={t('paginas.auditorias.ctaDesc')}
+          textoBoton={t('paginas.auditorias.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

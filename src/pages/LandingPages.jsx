@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { motion as Motion } from 'framer-motion';
 import { 
@@ -16,6 +17,8 @@ import {
 import './LandingPages.css';
 import '../../src/section-glass-card.css';
 import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 // Lazy load
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -145,6 +148,18 @@ const cardVariants = {
 
 function LandingPages() {
   const [activeFAQ, setActiveFAQ] = useState(null);
+  const { t } = useTranslation();
+
+  const serviciosItems = t('paginas.landingPages.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? serviciosLanding.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : serviciosLanding;
+
+  const comparadorItems = t('paginas.landingPages.comparador', { returnObjects: true });
+  const comparadorT = Array.isArray(comparadorItems) ? comparadorItems : comparadorData;
+
+  const faqsItems = t('paginas.landingPages.faqs', { returnObjects: true });
+  const faqsT = Array.isArray(faqsItems) ? faqsItems : faqsData;
 
   const toggleFAQ = (index) => {
     setActiveFAQ(activeFAQ === index ? null : index);
@@ -171,40 +186,41 @@ function LandingPages() {
           {JSON.stringify(createBreadcrumbSchema(seoConfig.landingPages.breadcrumb))}
         </script>
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="landing-hero">
         <div className="landing-hero-container">
-          <Link to="/" className="landing-back-link">
+          <LangLink to="/" className="landing-back-link">
             <ArrowLeft size={20} />
-            Volver al inicio
-          </Link>
+            {t('paginas.comun.volverInicio')}
+          </LangLink>
           
           <div className="landing-badge">
             <Zap size={18} />
-            Landing Pages
+            {t('paginas.landingPages.badge')}
           </div>
           
           <h1 className="landing-hero-title">
-            {seoConfig.landingPages.h1}
+            {t('paginas.landingPages.heroTitulo')}
           </h1>
           
           <p className="landing-hero-description">
-            Desde una landing express en 72 horas hasta un diseño premium 100% personalizado. Elegí el paquete que mejor se adapte a tus necesidades.
+            {t('paginas.landingPages.heroDesc')}
           </p>
 
           <div className="landing-hero-highlights">
             <div className="hero-highlight">
               <Clock size={20} />
-              <span>Desde 72 horas</span>
+              <span>{t('paginas.landingPages.highlight1')}</span>
             </div>
             <div className="hero-highlight">
               <CheckCircle size={20} />
-              <span>Diseño responsive</span>
+              <span>{t('paginas.landingPages.highlight2')}</span>
             </div>
             <div className="hero-highlight">
               <Rocket size={20} />
-              <span>SEO optimizado</span>
+              <span>{t('paginas.landingPages.highlight3')}</span>
             </div>
           </div>
         </div>
@@ -214,14 +230,12 @@ function LandingPages() {
       <section className="landing-servicios-section">
         <div className="section-glass-card">
           <div className="landing-servicios-header">
-            <h2>Nuestros paquetes de Landing Pages</h2>
-            <p>
-              Cada paquete está diseñado para diferentes necesidades y etapas de negocio. Todos incluyen diseño profesional, hosting y soporte post-lanzamiento.
-            </p>
+            <h2>{t('paginas.landingPages.packagesH2')}</h2>
+            <p>{t('paginas.landingPages.packagesDesc')}</p>
           </div>
 
           <div className="landing-servicios-grid">
-            {serviciosLanding.map((servicio, index) => (
+            {serviciosT.map((servicio, index) => (
             <Motion.article
               key={servicio.id}
               className={`servicio-card ${servicio.destacado ? 'destacado' : ''}`}
@@ -232,7 +246,7 @@ function LandingPages() {
               transition={{ delay: index * 0.1 }}
             >
               {servicio.destacado && (
-                <div className="servicio-destacado-badge">Más elegido</div>
+                <div className="servicio-destacado-badge">{t('paginas.landingPages.masElegido')}</div>
               )}
 
               <div 
@@ -252,7 +266,7 @@ function LandingPages() {
               <div className="servicio-incluye">
                 <h4 className="servicio-incluye-titulo">
                   <CheckCircle size={18} />
-                  Incluye:
+                  {t('paginas.landingPages.incluyeLabel')}
                 </h4>
                 <ul className="servicio-incluye-list">
                   {servicio.incluye.map((item, idx) => (
@@ -266,10 +280,10 @@ function LandingPages() {
                   <Clock size={18} />
                   <span>{servicio.entrega}</span>
                 </div>
-                <Link to="/#contacto" className="servicio-cta-button">
+                <LangLink to="/#contacto" className="servicio-cta-button">
                   <MessageCircle size={18} />
-                  Consultar
-                </Link>
+                  {t('paginas.landingPages.consultarLabel')}
+                </LangLink>
               </div>
             </Motion.article>
           ))}
@@ -281,8 +295,8 @@ function LandingPages() {
       <section className="landing-comparador-section">
         <div className="section-glass-card">
           <div className="comparador-header">
-            <h2>Comparador de paquetes</h2>
-            <p>Encontrá rápido cuál se adapta mejor a tus necesidades</p>
+            <h2>{t('paginas.landingPages.comparadorH2')}</h2>
+            <p>{t('paginas.landingPages.comparadorDesc')}</p>
           </div>
 
           <Motion.div 
@@ -295,7 +309,7 @@ function LandingPages() {
             <table className="comparador-table">
               <thead>
                 <tr>
-                  <th>Característica</th>
+                  <th>{t('paginas.landingPages.thCaracteristica')}</th>
                   <th>Basic</th>
                   <th>Intermedia</th>
                   <th>Full</th>
@@ -303,7 +317,7 @@ function LandingPages() {
                 </tr>
               </thead>
               <tbody>
-                {comparadorData.map((row, idx) => (
+                {comparadorT.map((row, idx) => (
                   <tr key={idx}>
                     <td><strong>{row.feature}</strong></td>
                     <td>{row.basic}</td>
@@ -322,11 +336,11 @@ function LandingPages() {
       <section className="landing-faq-section">
         <div className="section-glass-card">
           <div className="faq-header">
-            <h2>Preguntas frecuentes</h2>
+            <h2>{t('paginas.landingPages.faqH2')}</h2>
           </div>
 
           <div className="faq-list">
-            {faqsData.map((faq, index) => (
+            {faqsT.map((faq, index) => (
               <Motion.div
                 key={index}
                 className={`faq-item ${activeFAQ === index ? 'active' : ''}`}
@@ -362,15 +376,15 @@ function LandingPages() {
           variants={cardVariants}
         >
           <h2 className="landing-cta-title">
-            ¿Listo para tener tu landing page?
+            {t('paginas.landingPages.ctaTitulo')}
           </h2>
           <p className="landing-cta-description">
-            Hablemos de tu proyecto. Te armamos un presupuesto sin compromiso en menos de 24 horas.
+            {t('paginas.landingPages.ctaDesc')}
           </p>
-          <Link to="/#contacto" className="landing-cta-button-large">
+          <LangLink to="/#contacto" className="landing-cta-button-large">
             <MessageCircle size={20} />
-            Solicitar consulta
-          </Link>
+            {t('paginas.landingPages.ctaBoton')}
+          </LangLink>
         </Motion.div>
       </section>
 

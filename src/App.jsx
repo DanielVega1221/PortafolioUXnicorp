@@ -1,8 +1,10 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Navbar from './componentes/Navbar/Navbar';
 import Inicio from './componentes/Contenido/Inicio';
 import SobreNosotros from './componentes/Contenido/SobreNosotros';
+import LanguageToggle from './componentes/LanguageToggle';
 import './App.css';
 import './section-glass-card.css';
 
@@ -20,6 +22,8 @@ const LoadingFallback = () => (
 );
 
 function App() {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   const [activeSection, setActiveSection] = useState('main');
   const [hideNavbar, setHideNavbar] = useState(false);
 
@@ -43,7 +47,6 @@ function App() {
           });
           
           if (mostVisibleSection) {
-            console.log('Sección activa detectada:', mostVisibleSection);
             setActiveSection(mostVisibleSection);
           }
         },
@@ -56,10 +59,7 @@ function App() {
       sections.forEach((sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
-          console.log('Observando sección:', sectionId);
           observerInstance.observe(element);
-        } else {
-          console.warn('Sección no encontrada:', sectionId);
         }
       });
 
@@ -99,26 +99,24 @@ function App() {
   return (
     <div>
       <Helmet>
-        <title>Desarrollo Web Argentina | Agencia de Programación Web Profesional - UXnicorp</title>
-        <meta name="description" content="Agencia de desarrollo web en Argentina. Creamos landing pages, e-commerce, sistemas de gestión y ERPs. Programadores expertos en React y Node.js." />
-        
-        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, desarrollo web caba, desarrollo web córdoba, desarrollo web santa fe, desarrollo web mendoza, desarrollo web tucumán, desarrollo web rosario, desarrollo web la plata, desarrollo web salta, desarrollo web misiones, desarrollo web entre ríos, desarrollo web chaco, desarrollo web corrientes, desarrollo web santiago del estero, desarrollo web san juan, desarrollo web jujuy, desarrollo web neuquén, desarrollo web formosa, desarrollo web chubut, desarrollo web río negro, desarrollo web santa cruz, desarrollo web tierra del fuego, desarrollo web la pampa, desarrollo web la rioja, desarrollo web catamarca, desarrollo web san luis, programadores react argentina, agencia digital argentina, programación web profesional, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina, agencia web córdoba, agencia web mendoza, agencia web rosario, programadores buenos aires, programadores córdoba" />
-        
-        <meta property="og:title" content="Desarrollo Web Argentina | Agencia de Programación Web - UXnicorp" />
-        <meta property="og:description" content="Agencia de desarrollo web en Argentina. Landing pages, e-commerce, sistemas de gestión y ERPs." />
+        <title>{t('seo.home.title')}</title>
+        <meta name="description" content={t('seo.home.description')} />
+        <meta name="keywords" content="desarrollo web argentina, programadores argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, desarrollo web buenos aires, desarrollo web córdoba, desarrollo web rosario, desarrollo web mendoza, programadores react argentina, agencia digital argentina, crear página web argentina, diseño web argentina, erp argentina, crm argentina, auditoría ux argentina" />
+        <meta property="og:title" content={t('seo.home.ogTitle')} />
+        <meta property="og:description" content={t('seo.home.ogDescription')} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.uxnicorp.com.ar" />
+        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}`} />
         <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
-        <meta property="og:locale" content="es_AR" />
-        
+        <meta property="og:locale" content={lang === 'es' ? 'es_AR' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Desarrollo Web Argentina | Agencia de Programación Web" />
-        <meta name="twitter:description" content="Agencia de desarrollo web profesional. Programadores expertos creando soluciones web exitosas" />
-        
+        <meta name="twitter:title" content={t('seo.home.twitterTitle')} />
+        <meta name="twitter:description" content={t('seo.home.twitterDesc')} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="UXnicorp" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar" />
-        
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -134,123 +132,27 @@ function App() {
               "addressCountry": "AR",
               "addressRegion": "Buenos Aires"
             },
-            "areaServed": {
-              "@type": "Country",
-              "name": "Argentina"
-            },
+            "areaServed": { "@type": "Country", "name": "Argentina" },
             "priceRange": "$$",
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "-28.4696",
-              "longitude": "-65.7852"
-            },
             "email": "uxnicorp@gmail.com",
             "telephone": "+54-383-436-8748",
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+54-383-436-8748",
-                "contactType": "customer service",
-                "areaServed": "AR",
-                "availableLanguage": ["Spanish", "English"]
-              }
-            ],
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+54-383-436-8748",
+              "contactType": "customer service",
+              "areaServed": "AR",
+              "availableLanguage": ["Spanish", "English"]
+            }],
             "sameAs": [
               "https://instagram.com/uxnicorp",
               "https://linkedin.com/company/uxnicorp",
               "https://facebook.com/uxnicorp"
-            ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5",
-              "reviewCount": "50"
-            },
-            "serviceType": [
-              "Desarrollo Web",
-              "Programación",
-              "Desarrollo Frontend",
-              "Desarrollo Backend",
-              "E-commerce",
-              "Sistemas de Gestión",
-              "Desarrollo React",
-              "Desarrollo Next.js"
-            ]
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿Cuánto cuesta hacer una página web en Argentina 2025?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Los costos varían según el tipo de proyecto: landing pages profesionales, páginas web institucionales, e-commerce completos y sistemas personalizados (ERP/CRM). Contactanos para recibir una propuesta personalizada."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué incluye el desarrollo de una página web?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Incluye diseño responsivo, optimización SEO, certificado SSL, hosting por 1 año, formulario de contacto, integración con redes sociales, y capacitación. Desarrollamos con React, Node.js y Next.js para máximo rendimiento."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuánto tiempo tarda en estar lista una web?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Landing page: 2-3 semanas. Web institucional: 3-4 semanas. E-commerce: 6-10 semanas. Sistema personalizado: 12-16 semanas. Tiempos desde aprobación de diseño y contenidos."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cómo funciona el proceso de cotización?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Nos contactas contando tu proyecto, agendamos una videollamada o chat para entender tus necesidades, y en 48 horas te enviamos una propuesta personalizada con costos, tiempos y alcance detallado. Todo sin compromiso y completamente transparente."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Ofrecen mantenimiento después del lanzamiento?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sí, ofrecemos planes de mantenimiento mensuales que incluyen: actualizaciones de seguridad, backups automáticos, soporte técnico prioritario, optimización de rendimiento y una ronda de cambios mensuales para ajustes menores que necesites."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Trabajan con empresas de toda Argentina y otros países?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sí, trabajamos 100% remoto con empresas de Buenos Aires, Córdoba, Rosario, Mendoza y toda Argentina. También atendemos clientes de Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué pasa si necesito cambios después del lanzamiento?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Si contratas nuestro plan de mantenimiento, incluye una ronda de cambios mensuales para modificaciones menores. Los primeros 30 días después del lanzamiento también incluyen ajustes sin costo. Para cambios mayores, trabajamos con total transparencia en costos."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué diferencia a UXnicorp de otras agencias?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No solo te vendemos un sitio web, nos convertimos en tu aliado tecnológico. Nos preocupamos genuinamente por el crecimiento de tu negocio y te acompañamos en cada paso. No usamos plantillas genéricas, cada proyecto es hecho a medida. Hablamos sin tecnicismos, cumplimos lo que prometemos y estamos disponibles cuando nos necesitas."
-                }
-              }
             ]
           })}
         </script>
       </Helmet>
       
+      <LanguageToggle />
       <Navbar activeSection={activeSection} hidden={hideNavbar} />
       <main className="main-cards-wrapper">
         <Inicio />
@@ -258,9 +160,9 @@ function App() {
         <Suspense fallback={<LoadingFallback />}>
           <div id="servicios">
             <CTASection 
-              titulo="¿Qué podemos hacer por tu negocio?"
-              descripcion="Explorá nuestros servicios: auditorías, landing pages, e-commerce, sistemas de gestión y paquetes a medida"
-              textoBoton="Ver todos los servicios"
+              titulo={t('cta.serviciosTitulo')}
+              descripcion={t('cta.serviciosDesc')}
+              textoBoton={t('cta.serviciosBoton')}
               variant="primary"
               linkTo="/servicios"
             />
@@ -269,9 +171,9 @@ function App() {
         <Suspense fallback={<LoadingFallback />}>
           <div id="proyectos">
             <CTASection 
-              titulo="¿Querés ver nuestro trabajo en acción?"
-              descripcion="Descubrí proyectos reales con resultados medibles: landing pages, sistemas de gestión y plataformas completas"
-              textoBoton="Ver casos de éxito"
+              titulo={t('cta.proyectosTitulo')}
+              descripcion={t('cta.proyectosDesc')}
+              textoBoton={t('cta.proyectosBoton')}
               variant="secondary"
               linkTo="/casos-reales"
             />
@@ -286,9 +188,9 @@ function App() {
         <Suspense fallback={<LoadingFallback />}>
           <div id="nosotros">
             <CTASection 
-              titulo="¿Querés conocer quiénes somos?"
-              descripcion="Conocé nuestra historia, filosofía y al equipo detrás de UXnicorp"
-              textoBoton="Sobre nosotros"
+              titulo={t('cta.nosotrosTitulo')}
+              descripcion={t('cta.nosotrosDesc')}
+              textoBoton={t('cta.nosotrosBoton')}
               linkTo="/sobre-nosotros"
               variant="secondary"
             />
@@ -297,9 +199,9 @@ function App() {
         <Suspense fallback={<LoadingFallback />}>
           <div id="metodologia">
             <CTASection 
-              titulo="¿Querés saber cómo trabajamos?"
-              descripcion="Conocé nuestra metodología, cultura y proceso de trabajo"
-              textoBoton="Descubrí cómo lo hacemos"
+              titulo={t('cta.metodologiaTitulo')}
+              descripcion={t('cta.metodologiaDesc')}
+              textoBoton={t('cta.metodologiaBoton')}
               linkTo="/como-trabajamos"
             />
           </div>

@@ -1,5 +1,7 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../hooks/useLangNavigate';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Settings, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import './ServicioCategoria.css';
@@ -7,6 +9,8 @@ import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
 import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -54,7 +58,12 @@ const servicios = [
 ];
 
 function SistemasGestion() {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
+  const { t } = useTranslation();
+  const serviciosItems = t('paginas.sistemasGestion.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : servicios;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -96,25 +105,26 @@ function SistemasGestion() {
           {JSON.stringify(createBreadcrumbSchema(seoConfig.sistemasGestion.breadcrumb))}
         </script>
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="servicio-hero">
         <div className="servicio-hero-container">
-          <Link to="/servicios" className="servicio-back-link">
+          <LangLink to="/servicios" className="servicio-back-link">
             <ArrowLeft size={18} />
-            Ver todas las categorías
-          </Link>
+            {t('paginas.comun.verCategorias')}
+          </LangLink>
 
           <div>
             <span className="servicio-badge">
               <Settings size={16} />
-              Sistemas de Gestión Empresarial
+              {t('paginas.sistemasGestion.heroBadge')}
             </span>
             <h1 className="servicio-hero-title">
-              {seoConfig.sistemasGestion.h1}
+              {t('paginas.sistemasGestion.heroTitulo')}
             </h1>
             <p className="servicio-hero-description">
-              Sistemas personalizados para administrar clientes, ventas, inventario y toda tu operación. Desarrollamos desde CRM básico hasta ERP completo con múltiples módulos integrados. <strong>Cada proyecto se diseña según tus necesidades específicas.</strong>
+              {t('paginas.sistemasGestion.heroDesc')}
             </p>
           </div>
         </div>
@@ -123,7 +133,7 @@ function SistemasGestion() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {servicios.map((servicio) => {
+          {serviciosT.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
               <article
@@ -164,7 +174,7 @@ function SistemasGestion() {
                       }}
                     >
                       <HelpCircle size={18} />
-                      ¿Qué es esto?
+                      {t('paginas.comun.queEsto')}
                     </button>
                   </div>
                 </div>
@@ -178,14 +188,12 @@ function SistemasGestion() {
 
                 <div className="servicio-detalle-ideal">
                   <Info size={16} />
-                  <span><strong>Ideal para:</strong> {servicio.ideal}</span>
+                  <span><strong>{t('paginas.comun.idealPara')}</strong> {servicio.ideal}</span>
                 </div>
 
                 <div className="servicio-detalle-incluye">
-                  <h3>Alcance del servicio (desde básico hasta avanzado)</h3>
-                  <p style={{ fontSize: '0.95rem', opacity: 0.9, marginBottom: '1.5rem', fontStyle: 'italic' }}>
-                    Los módulos y funcionalidades se adaptan según tu presupuesto y necesidades:
-                  </p>
+                  <h3>{t('paginas.comun.queIncluye')}</h3>
+
                   <ul>
                     {servicio.incluye.map((item, idx) => (
                       <li key={idx}>
@@ -197,7 +205,7 @@ function SistemasGestion() {
                 </div>
 
                 <button onClick={() => handleConsultar(servicio)} className="servicio-detalle-cta" style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}>
-                  Consultar precio según proyecto
+                  {t('paginas.comun.solicitar')}
                 </button>
               </article>
             );
@@ -213,9 +221,9 @@ function SistemasGestion() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
-          titulo="¿Necesitás un sistema personalizado?"
-          descripcion="Contanos qué procesos querés automatizar y te armamos una propuesta con precio ajustado a tu presupuesto y alcance específico"
-          textoBoton="Consultar precio"
+          titulo={t('paginas.sistemasGestion.ctaTitulo')}
+          descripcion={t('paginas.sistemasGestion.ctaDesc')}
+          textoBoton={t('paginas.sistemasGestion.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

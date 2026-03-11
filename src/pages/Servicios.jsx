@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { motion as Motion } from 'framer-motion';
 import { 
@@ -19,6 +20,8 @@ import {
 import './Servicios.css';
 import '../../src/section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 // Lazy load de componentes pesados
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
@@ -398,56 +401,68 @@ const GLOSARIO_DATA = [
 ];
 
 function Servicios() {
+  const { t } = useTranslation();
+  const categoriasTexto = t('paginas.servicios.categorias', { returnObjects: true });
   const categorias = [
     {
       id: 'auditorias',
-      titulo: 'Auditorías UX/UI y CRO',
-      descripcion: 'Analizamos tu sitio actual para identificar problemas de usabilidad, performance y conversión. Recibís un informe completo con mejoras priorizadas.',
       icon: Search,
       color: '#81ade7',
-      serviciosCount: '3 tipos de auditoría',
       link: '/servicios/auditorias',
-      highlights: ['Análisis completo', 'Informe detallado', 'Recomendaciones accionables']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[0] : {
+        titulo: 'Auditorías UX/UI y CRO',
+        descripcion: 'Analizamos tu sitio actual para identificar problemas de usabilidad, performance y conversión. Recibís un informe completo con mejoras priorizadas.',
+        serviciosCount: '3 tipos de auditoría',
+        highlights: ['Análisis completo', 'Informe detallado', 'Recomendaciones accionables']
+      })
     },
     {
       id: 'landing-pages',
-      titulo: 'Landing Pages',
-      descripcion: 'Páginas de aterrizaje diseñadas para convertir. Desde landing express en 72hs hasta soluciones premium a medida.',
       icon: Zap,
       color: '#f37aa6',
-      serviciosCount: '5 paquetes disponibles',
       link: '/servicios/landing-pages',
-      highlights: ['Listas en 72-96hs', 'Diseño responsive', 'SEO incluido']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[1] : {
+        titulo: 'Landing Pages',
+        descripcion: 'Páginas de aterrizaje diseñadas para convertir. Desde landing express en 72hs hasta soluciones premium a medida.',
+        serviciosCount: '5 paquetes disponibles',
+        highlights: ['Listas en 72-96hs', 'Diseño responsive', 'SEO incluido']
+      })
     },
     {
       id: 'ecommerce',
-      titulo: 'E-commerce',
-      descripcion: 'Tiendas online completas con carrito, pasarela de pagos, gestión de productos y envíos. Todo lo que necesitás para vender online.',
       icon: ShoppingCart,
       color: '#e0a6d8',
-      serviciosCount: '2 opciones',
       link: '/servicios/ecommerce',
-      highlights: ['Mercado Pago integrado', 'Panel admin', 'Control de stock']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[2] : {
+        titulo: 'E-commerce',
+        descripcion: 'Tiendas online completas con carrito, pasarela de pagos, gestión de productos y envíos. Todo lo que necesitás para vender online.',
+        serviciosCount: '2 opciones',
+        highlights: ['Mercado Pago integrado', 'Panel admin', 'Control de stock']
+      })
     },
     {
       id: 'sistemas-gestion',
-      titulo: 'Sistemas de Gestión',
-      descripcion: 'CRM y ERP personalizados para administrar clientes, ventas, inventario y toda tu operación. Desde básico hasta avanzado según tus necesidades.',
       icon: Settings,
       color: '#ffc107',
-      serviciosCount: 'A medida',
       link: '/servicios/sistemas-gestion',
-      highlights: ['Dashboard personalizado', 'Módulos escalables', 'Propuesta a medida']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[3] : {
+        titulo: 'Sistemas de Gestión',
+        descripcion: 'CRM y ERP personalizados para administrar clientes, ventas, inventario y toda tu operación.',
+        serviciosCount: 'A medida',
+        highlights: ['Dashboard personalizado', 'Módulos escalables', 'Propuesta a medida']
+      })
     },
     {
       id: 'paquetes',
-      titulo: 'Paquetes Completos',
-      descripcion: 'Combinaciones de servicios: web + branding, web + SEO, soluciones enterprise completas. Todo en uno.',
       icon: Package,
       color: '#81ade7',
-      serviciosCount: '3 paquetes',
       link: '/servicios/paquetes',
-      highlights: ['Ahorrás tiempo', 'Solución integral', 'Paquete completo']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[4] : {
+        titulo: 'Paquetes Completos',
+        descripcion: 'Combinaciones de servicios: web + branding, web + SEO, soluciones enterprise completas. Todo en uno.',
+        serviciosCount: '3 paquetes',
+        highlights: ['Ahorrás tiempo', 'Solución integral', 'Paquete completo']
+      })
     }
   ];
 
@@ -463,14 +478,15 @@ function Servicios() {
         <meta property="og:description" content="Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="servicios-hero">
         <div className="servicios-hero-container">
-          <Link to="/" className="servicios-back-link">
+          <LangLink to="/" className="servicios-back-link">
             <ArrowLeft size={18} />
-            Volver al inicio
-          </Link>
+            {t('paginas.comun.volverInicio')}
+          </LangLink>
 
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -479,13 +495,13 @@ function Servicios() {
           >
             <span className="servicios-badge">
               <Package size={16} />
-              5 Categorías de Servicios
+              {t('paginas.servicios.badge')}
             </span>
             <h1 className="servicios-hero-title">
-              ¿Qué necesita <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>tu negocio</span>?
+              {t('paginas.servicios.h1')}
             </h1>
             <p className="servicios-hero-description">
-              Elegí la categoría que mejor se adapte a tu proyecto. Cada una tiene opciones específicas con detalles completos.
+              {t('paginas.servicios.descripcion')}
             </p>
           </Motion.div>
         </div>
@@ -527,7 +543,7 @@ function Servicios() {
                   </div>
                 </div>
 
-                <Link 
+                <LangLink 
                   to={categoria.link} 
                   className="categoria-cta"
                   style={{ 
@@ -535,9 +551,9 @@ function Servicios() {
                     boxShadow: `0 10px 30px ${categoria.color}40`
                   }}
                 >
-                  Ver todos los detalles
+                  {t('paginas.servicios.verDetalles')}
                   <ArrowLeft size={18} style={{ transform: 'rotate(180deg)' }} />
-                </Link>
+                </LangLink>
               </Motion.article>
             );
           })}
@@ -552,9 +568,9 @@ function Servicios() {
       {/* CTA Final */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
-          titulo="¿No estás seguro qué servicio necesitás?"
-          descripcion="Contactanos y te asesoramos para encontrar la mejor solución para tu negocio"
-          textoBoton="Consultar ahora"
+          titulo={t('paginas.servicios.ctaTitulo')}
+          descripcion={t('paginas.servicios.ctaDesc')}
+          textoBoton={t('paginas.servicios.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

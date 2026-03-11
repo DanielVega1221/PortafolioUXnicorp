@@ -1,5 +1,7 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../hooks/useLangNavigate';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ShoppingCart, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import './ServicioCategoria.css';
@@ -7,6 +9,8 @@ import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
 import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -70,7 +74,12 @@ const servicios = [
 ];
 
 function Ecommerce() {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
+  const { t } = useTranslation();
+  const serviciosItems = t('paginas.ecommerce.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : servicios;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -112,25 +121,26 @@ function Ecommerce() {
           {JSON.stringify(createBreadcrumbSchema(seoConfig.ecommerce.breadcrumb))}
         </script>
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="servicio-hero">
         <div className="servicio-hero-container">
-          <Link to="/servicios" className="servicio-back-link">
+          <LangLink to="/servicios" className="servicio-back-link">
             <ArrowLeft size={18} />
-            Ver todas las categorías
-          </Link>
+            {t('paginas.comun.verCategorias')}
+          </LangLink>
 
           <div>
             <span className="servicio-badge">
               <ShoppingCart size={16} />
-              Tiendas Online Completas
+              {t('paginas.ecommerce.heroBadge')}
             </span>
             <h1 className="servicio-hero-title">
-              {seoConfig.ecommerce.h1}
+              {t('paginas.ecommerce.heroTitulo')}
             </h1>
             <p className="servicio-hero-description">
-              Tiendas online completas con carrito, pasarela de pagos, gestión de productos y envíos. Todo lo que necesitás para vender por internet de forma profesional.
+              {t('paginas.ecommerce.heroDesc')}
             </p>
           </div>
         </div>
@@ -139,7 +149,7 @@ function Ecommerce() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {servicios.map((servicio) => {
+          {serviciosT.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
               <article
@@ -180,7 +190,7 @@ function Ecommerce() {
                       }}
                     >
                       <HelpCircle size={18} />
-                      ¿Qué es esto?
+                      {t('paginas.comun.queEsto')}
                     </button>
                   </div>
                 </div>
@@ -194,11 +204,11 @@ function Ecommerce() {
 
                 <div className="servicio-detalle-ideal">
                   <Info size={16} />
-                  <span><strong>Ideal para:</strong> {servicio.ideal}</span>
+                  <span><strong>{t('paginas.comun.idealPara')}</strong> {servicio.ideal}</span>
                 </div>
 
                 <div className="servicio-detalle-incluye">
-                  <h3>¿Qué incluye?</h3>
+                  <h3>{t('paginas.comun.queIncluye')}</h3>
                   <ul>
                     {servicio.incluye.map((item, idx) => (
                       <li key={idx}>
@@ -210,7 +220,7 @@ function Ecommerce() {
                 </div>
 
                 <button onClick={() => handleConsultar(servicio)} className="servicio-detalle-cta" style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}>
-                  Solicitar presupuesto
+                  {t('paginas.comun.solicitar')}
                 </button>
               </article>
             );
@@ -226,9 +236,9 @@ function Ecommerce() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
-          titulo="¿Querés empezar a vender online?"
-          descripcion="Te asesoramos sobre qué funcionalidades necesitás según tu tipo de productos y volumen de ventas"
-          textoBoton="Consultar ahora"
+          titulo={t('paginas.ecommerce.ctaTitulo')}
+          descripcion={t('paginas.ecommerce.ctaDesc')}
+          textoBoton={t('paginas.ecommerce.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

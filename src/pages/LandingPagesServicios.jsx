@@ -1,11 +1,15 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../hooks/useLangNavigate';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Zap, Package, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -140,9 +144,10 @@ const servicios = [
 ];
 
 function LandingPagesServicios() {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
+  const { t } = useTranslation();
 
   const abrirModal = (servicio) => {
     setServicioSeleccionado(servicio);
@@ -175,25 +180,26 @@ function LandingPagesServicios() {
         <meta property="og:description" content="Diseñamos tu landing page profesional en 72hs. Responsive y optimizada para conversiones." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="servicio-hero">
         <div className="servicio-hero-container">
-          <Link to="/servicios" className="servicio-back-link">
+          <LangLink to="/servicios" className="servicio-back-link">
             <ArrowLeft size={18} />
-            Ver todas las categorías
-          </Link>
+            {t('paginas.comun.verCategorias')}
+          </LangLink>
 
           <div>
             <span className="servicio-badge">
               <Zap size={16} />
-              Landing Pages Profesionales
+              {t('paginas.serviciosLanding.badge')}
             </span>
             <h1 className="servicio-hero-title">
-              Landing Pages <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>en 72 Horas</span>
+              {t('paginas.serviciosLanding.heroTitulo')} <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t('paginas.serviciosLanding.heroTituloSpan')}</span>
             </h1>
             <p className="servicio-hero-description">
-              Páginas de aterrizaje diseñadas para convertir visitantes en clientes. Desde landing express lista en 3 días hasta soluciones premium 100% personalizadas.
+              {t('paginas.serviciosLanding.heroDesc')}
             </p>
           </div>
         </div>
@@ -243,7 +249,7 @@ function LandingPagesServicios() {
                       }}
                     >
                       <HelpCircle size={18} />
-                      ¿Qué es esto?
+                      {t('paginas.comun.queEsto')}
                     </button>
                   </div>
                 </div>
@@ -257,11 +263,11 @@ function LandingPagesServicios() {
 
                 <div className="servicio-detalle-ideal">
                   <Info size={16} />
-                  <span><strong>Ideal para:</strong> {servicio.ideal}</span>
+                  <span><strong>{t('paginas.comun.idealPara')}</strong> {servicio.ideal}</span>
                 </div>
 
                 <div className="servicio-detalle-incluye">
-                  <h3>¿Qué incluye?</h3>
+                  <h3>{t('paginas.comun.queIncluye')}</h3>
                   <ul>
                     {servicio.incluye.map((item, idx) => (
                       <li key={idx}>
@@ -273,7 +279,7 @@ function LandingPagesServicios() {
                 </div>
 
                 <button onClick={() => handleConsultar(servicio)} className="servicio-detalle-cta" style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}>
-                  Solicitar presupuesto
+                  {t('paginas.comun.solicitar')}
                 </button>
               </article>
             );
@@ -289,9 +295,9 @@ function LandingPagesServicios() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
-          titulo="¿No sabés qué tipo de landing necesitás?"
-          descripcion="Contactanos y te ayudamos a elegir el paquete perfecto según tus objetivos y necesidades"
-          textoBoton="Consultar ahora"
+          titulo={t('paginas.serviciosLanding.ctaTitulo')}
+          descripcion={t('paginas.serviciosLanding.ctaDesc')}
+          textoBoton={t('paginas.serviciosLanding.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

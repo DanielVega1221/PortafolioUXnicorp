@@ -15,11 +15,13 @@
  */
 
 import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./Inicio.css";
 import Logo1 from "../../assets/Logo1.png";
 import OptimizedImage from "../OptimizedImage";
 
 function Inicio() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(true);
   const containerRef = useRef(null);
 
@@ -82,19 +84,19 @@ function Inicio() {
         <div className="text-section">
           <div className="main-content">
             <h1 className="modern-title">
-              Transformamos ideas en
+              {t('inicio.titulo1')}
               <br />
-              <span className="seo-hidden">páginas web y </span>
-              experiencias digitales
+              <span className="seo-hidden">{t('inicio.seoHidden')}</span>
+              {t('inicio.titulo2')}
               <br />
-              <span className="highlight-word">extraordinarias</span>
+              <span className="highlight-word">{t('inicio.titulo3')}</span>
             </h1>
 
             {/* Logo insertado aquí para responsive - se muestra solo en mobile */}
             <div className="visual-section mobile-logo">
               <OptimizedImage 
                 src={Logo1} 
-                alt="UXnicorp - Agencia de Desarrollo Web en Argentina"
+                alt={t('inicio.altLogo')}
                 loading="eager" 
                 fetchpriority="high"
                 className="logo-modern"
@@ -103,9 +105,9 @@ function Inicio() {
               />
             </div>
             
-            <p className="modern-description">
-              Somos <strong>UXnicorp</strong>, tu <strong>agencia de desarrollo web en Argentina</strong> que convierte proyectos en productos digitales funcionales, escalables y conectados con tu audiencia. Especializados en <strong>diseño web profesional</strong>, <strong>sistemas de gestión empresarial</strong> y <strong>aplicaciones web de alto rendimiento</strong>.
-            </p>
+            <p className="modern-description"
+              dangerouslySetInnerHTML={{ __html: t('inicio.descripcion') }}
+            />
 
             {/* Keywords ocultas para SEO */}
             <div className="seo-keywords" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
@@ -120,7 +122,7 @@ function Inicio() {
             <button 
               className="modern-cta"
               onClick={scrollToSobreNosotros}
-              aria-label="Descubre cómo podemos ayudarte con tu proyecto web"
+              aria-label={t('inicio.cta')}
               style={{
                 background: '#f37aa6',
                 boxShadow: '0 8px 32px rgba(179,229,252,0.22), 0 2px 8px rgba(243,122,166,0.15)',
@@ -154,7 +156,7 @@ function Inicio() {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              <span className="button-text">Descubre cómo podemos ayudarte</span>
+              <span className="button-text">{t('inicio.cta')}</span>
               <div className="button-icon-container">
                 <div className="button-sphere">●</div>
                 <div className="button-rocket">🚀</div>
@@ -167,7 +169,7 @@ function Inicio() {
         <div className="visual-section desktop-logo">
           <OptimizedImage 
             src={Logo1} 
-            alt="UXnicorp - Agencia de Desarrollo Web en Argentina" 
+            alt={t('inicio.altLogo')}
             className="logo-modern"
             loading="eager"
             fetchpriority="high"

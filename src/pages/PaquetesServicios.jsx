@@ -1,10 +1,14 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../hooks/useLangNavigate';
+import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Package, TrendingUp, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 import ServicioModal from '../componentes/ServicioModal';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
@@ -93,7 +97,12 @@ const servicios = [
 ];
 
 function PaquetesServicios() {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
+  const { t } = useTranslation();
+  const serviciosItems = t('paginas.paquetes.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : servicios;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -128,25 +137,26 @@ function PaquetesServicios() {
         <meta property="og:description" content="Soluciones completas para emprendedores y empresas. Landing + Branding, Auditorías y planes escalables." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="servicio-hero">
         <div className="servicio-hero-container">
-          <Link to="/servicios" className="servicio-back-link">
+          <LangLink to="/servicios" className="servicio-back-link">
             <ArrowLeft size={18} />
-            Ver todas las categorías
-          </Link>
+            {t('paginas.comun.verCategorias')}
+          </LangLink>
 
           <div>
             <span className="servicio-badge">
               <Package size={16} />
-              Paquetes Completos
+              {t('paginas.paquetes.heroBadge')}
             </span>
             <h1 className="servicio-hero-title">
-              Soluciones <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Todo en Uno</span>
+              {t('paginas.paquetes.heroTitulo')}
             </h1>
             <p className="servicio-hero-description">
-              Combinaciones inteligentes de servicios: web + branding, web + SEO, o soluciones enterprise completas. Ahorrá tiempo, dinero y obtené resultados consistentes.
+              {t('paginas.paquetes.heroDesc')}
             </p>
           </div>
         </div>
@@ -155,7 +165,7 @@ function PaquetesServicios() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {servicios.map((servicio) => {
+          {serviciosT.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
               <article
@@ -196,7 +206,7 @@ function PaquetesServicios() {
                       }}
                     >
                       <HelpCircle size={18} />
-                      ¿Qué es esto?
+                      {t('paginas.comun.queEsto')}
                     </button>
                   </div>
                 </div>
@@ -210,11 +220,11 @@ function PaquetesServicios() {
 
                 <div className="servicio-detalle-ideal">
                   <Info size={16} />
-                  <span><strong>Ideal para:</strong> {servicio.ideal}</span>
+                  <span><strong>{t('paginas.comun.idealPara')}</strong> {servicio.ideal}</span>
                 </div>
 
                 <div className="servicio-detalle-incluye">
-                  <h3>¿Qué incluye?</h3>
+                  <h3>{t('paginas.comun.queIncluye')}</h3>
                   <ul>
                     {servicio.incluye.map((item, idx) => (
                       <li key={idx}>
@@ -226,7 +236,7 @@ function PaquetesServicios() {
                 </div>
 
                 <button onClick={() => handleConsultar(servicio)} className="servicio-detalle-cta" style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}>
-                  Solicitar presupuesto
+                  {t('paginas.comun.solicitar')}
                 </button>
               </article>
             );
@@ -242,9 +252,9 @@ function PaquetesServicios() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection 
-          titulo="¿Necesitás una combinación personalizada?"
-          descripcion="Podemos armar un paquete a tu medida combinando los servicios que realmente necesitás"
-          textoBoton="Consultar ahora"
+          titulo={t('paginas.paquetes.ctaTitulo')}
+          descripcion={t('paginas.paquetes.ctaDesc')}
+          textoBoton={t('paginas.paquetes.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

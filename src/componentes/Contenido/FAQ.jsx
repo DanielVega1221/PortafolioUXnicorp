@@ -1,44 +1,21 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useLangNavigate } from '../../hooks/useLangNavigate';
 import './FAQ.css';
 import '../../section-glass-card.css';
-
-const faqs = [
-  {
-    pregunta: "¿Cómo funciona el proceso de cotización?",
-    respuesta: "Nos contactas contando tu proyecto, agendamos una videollamada o chat para entender tus necesidades, y en 48 horas te enviamos una propuesta personalizada con alcance, tiempos y detalles. Todo sin compromiso y completamente transparente."
-  },
-  {
-    pregunta: "¿Ofrecen mantenimiento después del lanzamiento?",
-    respuesta: "Sí, ofrecemos planes de mantenimiento mensuales que incluyen: actualizaciones de seguridad, backups automáticos, soporte técnico prioritario, optimización de rendimiento y una ronda de cambios mensuales para ajustes menores que necesites."
-  },
-  {
-    pregunta: "¿Trabajan con clientes de otros países?",
-    respuesta: "Sí, totalmente. Trabajamos con clientes de toda Latinoamérica, España y Estados Unidos. Utilizamos herramientas de comunicación modernas (Zoom, Slack, Trello) y nos adaptamos a tu zona horaria para reuniones."
-  },
-  {
-    pregunta: "¿Qué pasa si necesito cambios después del lanzamiento?",
-    respuesta: "Si contratas nuestro plan de mantenimiento, incluye una ronda de cambios mensuales para modificaciones menores. Los primeros 30 días después del lanzamiento también incluyen ajustes. Para cambios mayores, trabajamos con total transparencia."
-  },
-  {
-    pregunta: "¿Puedo administrar el contenido de mi sitio yo mismo?",
-    respuesta: "Depende del tipo de proyecto. Los sistemas de gestión y e-commerce incluyen paneles administrativos completos e intuitivos."
-  },
-  {
-    pregunta: "¿Qué diferencia a UXnicorp de otras agencias?",
-    respuesta: "No solo te vendemos un sitio web, nos convertimos en tu aliado tecnológico. Nos preocupamos genuinamente por el crecimiento de tu negocio y te acompañamos en cada paso. No usamos plantillas genéricas, cada proyecto es hecho a medida. Hablamos sin tecnicismos, cumplimos lo que prometemos y estamos disponibles cuando nos necesitas. Queremos que tu negocio crezca tanto como el nuestro."
-  },
-  {
-    pregunta: "¿Necesito tener todo definido antes de empezar?",
-    respuesta: "¡No! Muchos de nuestros clientes llegaron con ideas vagas. Parte de nuestro servicio es ayudarte a estructurar y dar forma a tu proyecto. Te guiamos en cada decisión técnica y estratégica. Empezamos desde donde estés, sin importar cuán desarrollada esté tu idea."
-  }
-];
 
 function FAQ() {
   const [openIdx, setOpenIdx] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const observerRef = useRef(null);
+  const { t } = useTranslation();
+
+  const faqsData = useMemo(() => {
+    const items = t('faq.items', { returnObjects: true });
+    return Array.isArray(items) ? items : [];
+  }, [t]);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -65,7 +42,7 @@ function FAQ() {
     setOpenIdx(prev => prev === idx ? null : idx);
   }, []);
 
-  const faqItems = useMemo(() => faqs.map((faq, idx) => (
+  const faqItems = useMemo(() => faqsData.map((faq, idx) => (
     <FAQItem
       key={idx}
       faq={faq}
@@ -73,7 +50,7 @@ function FAQ() {
       isOpen={openIdx === idx}
       onToggle={toggle}
     />
-  )), [openIdx, toggle]);
+  )), [openIdx, toggle, faqsData]);
 
   return (
     <section 
@@ -83,10 +60,10 @@ function FAQ() {
     >
       <div className="section-glass-card">
           <h2 className="faq-titulo">
-            Preguntas <span className="faq-highlight">frecuentes</span>
+            {t('faq.titulo')} <span className="faq-highlight">{t('faq.tituloDestacado')}</span>
           </h2>
           <p className="faq-subtitulo">
-            Resolvemos las dudas más comunes de nuestros clientes
+            {t('faq.subtitulo')}
           </p>
 
           <div className="faq-container">
@@ -159,14 +136,17 @@ ToggleIcon.displayName = 'ToggleIcon';
 
 // CTA Section memoizada
 const CTASection = React.memo(() => {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const handleContactClick = (e) => {
     e.preventDefault();
     
-    if (location.pathname === '/') {
-      // Si ya estamos en home, solo scroll
+    const langMatch = location.pathname.match(/^\/(es|en)/);
+    const isHome = langMatch && location.pathname === `/${langMatch[1]}`;
+
+    if (isHome) {
       setTimeout(() => {
         const contactElement = document.getElementById('contact');
         if (contactElement) {
@@ -174,7 +154,6 @@ const CTASection = React.memo(() => {
         }
       }, 500);
     } else {
-      // Si estamos en otra página, navegar y luego scroll
       navigate('/');
       setTimeout(() => {
         const contactElement = document.getElementById('contact');
@@ -204,12 +183,12 @@ const CTASection = React.memo(() => {
             </defs>
           </svg>
         </div>
-        <h3 className="faq-cta-titulo">¿No encontraste tu respuesta?</h3>
+        <h3 className="faq-cta-titulo">{t('faq.ctaTitulo')}</h3>
         <p className="faq-cta-desc">
-          Estamos aquí para ayudarte. Contáctanos y te responderemos en menos de 24 horas.
+          {t('faq.ctaDesc')}
         </p>
         <button onClick={handleContactClick} className="faq-cta-btn">
-          <span>Contactanos ahora</span>
+          <span>{t('faq.ctaBoton')}</span>
           <span className="faq-cta-arrow" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M4 10h12m-5-5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

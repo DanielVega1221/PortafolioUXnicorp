@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useLangNavigate } from '../hooks/useLangNavigate';
 import { Helmet } from 'react-helmet-async';
 import { 
   ArrowLeft, 
@@ -14,6 +15,8 @@ import {
 import './CasosReales.css';
 import '../../src/section-glass-card.css';
 import OptimizedImage from '../componentes/OptimizedImage';
+import LanguageToggle from '../componentes/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 import brunnDemoImg from '../assets/BRUNNdemo.png';
 import mareaDemoImg from '../assets/demomarea.png';
 
@@ -161,7 +164,14 @@ const cardVariants = {
 };
 
 function CasosReales() {
-  const navigate = useNavigate();
+  const navigate = useLangNavigate();
+  const { t } = useTranslation();
+  const casosT = t('paginas.casosReales.casos', { returnObjects: true });
+  const casosDataT = Array.isArray(casosT)
+    ? casosData.map((c, i) => ({ ...c, ...casosT[i] }))
+    : casosData;
+  const demosT = t('paginas.casosReales.demos', { returnObjects: true });
+  const demosArr = Array.isArray(demosT) ? demosT : [];
 
   const handleEmpezarProyecto = () => {
     navigate('/');
@@ -188,6 +198,7 @@ function CasosReales() {
         <meta property="og:description" content="Proyectos reales de desarrollo web: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados." />
         <meta property="og:locale" content="es_AR" />
       </Helmet>
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="casos-hero">
@@ -196,23 +207,23 @@ function CasosReales() {
             onClick={() => navigate('/')}
             className="casos-back-link"
             type="button"
-            aria-label="Volver al inicio"
+            aria-label={t('paginas.comun.volverInicio')}
           >
             <ArrowLeft size={20} />
-            Volver al inicio
+            {t('paginas.comun.volverInicio')}
           </button>
           
           <div className="casos-badge">
             <Briefcase size={18} />
-            Casos de Éxito
+            {t('paginas.casosReales.badge')}
           </div>
           
           <h1 className="casos-hero-title">
-            Proyectos <span style={{background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>reales</span>, resultados <span style={{background: 'linear-gradient(135deg, #f37aa6 0%, #e0a6d8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>comprobados</span>
+            {t('paginas.casosReales.h1')}
           </h1>
           
           <p className="casos-hero-description">
-            Algunos de nuestros proyectos más destacados. Cada uno con una historia única y un impacto real en los negocios de nuestros clientes.
+            {t('paginas.casosReales.descripcion')}
           </p>
         </div>
       </section>
@@ -221,7 +232,7 @@ function CasosReales() {
       <section className="casos-section">
         <div className="section-glass-card">
           <div className="casos-grid">
-            {casosData.map((caso, index) => (
+            {casosDataT.map((caso, index) => (
               <Motion.article
                 key={caso.id}
                 className="caso-card"
@@ -276,14 +287,14 @@ function CasosReales() {
                     <div className="caso-stat">
                       <span className="caso-stat-label">
                         <Layers size={16} style={{ display: 'inline', marginRight: '4px' }} />
-                        Tipo
+                        {t('paginas.casosReales.tipo')}
                       </span>
                       <span className="caso-stat-value">{caso.tipo}</span>
                     </div>
                     <div className="caso-stat">
                       <span className="caso-stat-label">
                         <Building2 size={16} style={{ display: 'inline', marginRight: '4px' }} />
-                        Industria
+                        {t('paginas.casosReales.industria')}
                       </span>
                       <span className="caso-stat-value">{caso.industria}</span>
                     </div>
@@ -293,7 +304,7 @@ function CasosReales() {
                   <div className="caso-details-section">
                     <h3 className="caso-details-title">
                       <CheckCircle size={20} />
-                      Lo que incluye
+                      {t('paginas.casosReales.loQueIncluye')}
                     </h3>
                     <ul className="caso-details-list">
                       {caso.detalles.slice(0, 5).map((detalle, idx) => (
@@ -315,7 +326,7 @@ function CasosReales() {
                       }}
                     >
                       <ExternalLink size={18} />
-                      Ver sitio →
+                      {t('paginas.casosReales.verSitio')}
                     </a>
                   )}
                 </div>
@@ -331,11 +342,11 @@ function CasosReales() {
           <div className="demos-header">
             <h2 className="demos-title">
               <span style={{ background: 'linear-gradient(135deg, #81ade7 0%, #f37aa6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Demo
-              </span> Conceptual
+                {t('paginas.casosReales.demosH2').split(' ')[0]}
+              </span>{' '}{t('paginas.casosReales.demosH2').split(' ').slice(1).join(' ')}
             </h2>
             <p className="demos-subtitle">
-              Proyectos demostrativos ficticios creados para mostrar nuestra metodología de trabajo y capacidades de diseño.
+              {t('paginas.casosReales.demosSubtitulo')}
             </p>
           </div>
 
@@ -359,38 +370,32 @@ function CasosReales() {
               </div>
 
               <p className="demo-tagline" style={{ color: '#2c2c2c' }}>
-                Landing page conceptual para rubro arquitectura
+                {demosArr[0]?.tagline ?? 'Landing page conceptual para rubro arquitectura'}
               </p>
 
               <p className="demo-descripcion">
-                <strong>Esta es una demo ficticia</strong> creada como ejemplo para mostrar nuestra metodología de trabajo en proyectos del sector arquitectura y diseño. Incluye estructura completa, animaciones y diseño profesional.
+                <strong>{demosArr[0]?.descripcionPart1 ?? 'Esta es una demo ficticia'}</strong> {demosArr[0]?.descripcionPart2 ?? 'creada como ejemplo para mostrar nuestra metodología de trabajo en proyectos del sector arquitectura y diseño.'}
               </p>
 
               <div className="demo-categorias">
-                <span className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
-                  Arquitectura
-                </span>
-                <span className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
-                  Demo Ficticia
-                </span>
-                <span className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
-                  Portfolio
-                </span>
+                {(demosArr[0]?.categorias ?? ['Arquitectura','Demo Ficticia','Portfolio']).map((cat, i) => (
+                  <span key={i} className="demo-categoria" style={{ backgroundColor: 'rgba(44, 44, 44, 0.15)', color: '#2c2c2c' }}>
+                    {cat}
+                  </span>
+                ))}
               </div>
 
               <div className="demo-caracteristicas">
-                <h4>Características destacadas:</h4>
+                <h4>{t('paginas.comun.caracDestacadas')}</h4>
                 <ul>
-                  <li>Diseño limpio y profesional</li>
-                  <li>Animaciones y transiciones elegantes</li>
-                  <li>Estructura clara de contenido</li>
-                  <li>CTA estratégicos para contacto</li>
-                  <li>Optimizado para conversión</li>
+                  {(demosArr[0]?.caracteristicas ?? ['Diseño limpio y profesional','Animaciones y transiciones elegantes','Estructura clara de contenido','CTA estratégicos para contacto','Optimizado para conversión']).map((c, i) => (
+                    <li key={i}>{c}</li>
+                  ))}
                 </ul>
               </div>
 
               <div className="demo-tech">
-                <strong>Stack:</strong> React, Framer Motion, Responsive Design
+                <strong>{t('paginas.comun.stack')}</strong> React, Framer Motion, Responsive Design
               </div>
 
               <a 
@@ -405,7 +410,7 @@ function CasosReales() {
                 }}
               >
                 <ExternalLink size={18} />
-                Ver demo en vivo
+                {t('paginas.comun.verDemoVivo')}
               </a>
             </Motion.div>
 
@@ -428,37 +433,32 @@ function CasosReales() {
               </div>
 
               <p className="demo-tagline" style={{ color: '#8b7355' }}>
-                Café, cocina y bar en un solo lugar
+                {demosArr[1]?.tagline ?? 'Café, cocina y bar en un solo lugar'}
               </p>
 
               <p className="demo-descripcion">
-                <strong>Esta es una demo ficticia</strong> creada como ejemplo para mostrar nuestra metodología de trabajo en proyectos del sector gastronómico. Diseño premium con tres experiencias integradas: cafetería, cocina y bar.
+                <strong>{demosArr[1]?.descripcionPart1 ?? 'Esta es una demo ficticia'}</strong> {demosArr[1]?.descripcionPart2 ?? 'creada como ejemplo para mostrar nuestra metodología de trabajo en proyectos del sector gastronómico.'}
               </p>
 
               <div className="demo-categorias">
-                <span className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
-                  Gastronomía
-                </span>
-                <span className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
-                  Demo Ficticia
-                </span>
-                <span className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
-                  Restaurante
-                </span>
+                {(demosArr[1]?.categorias ?? ['Gastronomía','Demo Ficticia','Restaurante']).map((cat, i) => (
+                  <span key={i} className="demo-categoria" style={{ backgroundColor: 'rgba(193, 154, 107, 0.15)', color: '#8b7355' }}>
+                    {cat}
+                  </span>
+                ))}
               </div>
 
               <div className="demo-caracteristicas">
-                <h4>Características destacadas:</h4>
+                <h4>{t('paginas.comun.caracDestacadas')}</h4>
                 <ul>
-                  <li>Menú digital interactivo completo</li>
-                  <li>Calendario de eventos y experiencias</li>
-                  <li>Galería visual del espacio y platillos</li>
-                  <li>Diseño elegante adaptado a horarios (café, cocina, bar)</li>
+                  {(demosArr[1]?.caracteristicas ?? ['Menú digital interactivo completo','Calendario de eventos y experiencias','Galería visual del espacio y platillos','Diseño elegante adaptado a horarios (café, cocina, bar)']).map((c, i) => (
+                    <li key={i}>{c}</li>
+                  ))}
                 </ul>
               </div>
 
               <div className="demo-tech">
-                <strong>Stack:</strong> React, Framer Motion, Responsive Design
+                <strong>{t('paginas.comun.stack')}</strong> React, Framer Motion, Responsive Design
               </div>
 
               <a 
@@ -473,7 +473,7 @@ function CasosReales() {
                 }}
               >
                 <ExternalLink size={18} />
-                Ver demo en vivo
+                {t('paginas.comun.verDemoVivo')}
               </a>
             </Motion.div>
           </div>
@@ -490,14 +490,14 @@ function CasosReales() {
           variants={cardVariants}
         >
           <h2 className="casos-cta-title">
-            ¿Tu proyecto puede ser el próximo?
+            {t('paginas.casosReales.ctaH2')}
           </h2>
           <p className="casos-cta-description">
-            Cada uno de estos proyectos empezó con una idea y una conversación. Hablemos de la tuya.
+            {t('paginas.casosReales.ctaDesc')}
           </p>
           <button onClick={handleEmpezarProyecto} className="casos-cta-button" style={{ cursor: 'pointer' }}>
             <Zap size={20} />
-            Empezar mi proyecto
+            {t('paginas.casosReales.ctaBoton')}
           </button>
         </Motion.div>
       </section>

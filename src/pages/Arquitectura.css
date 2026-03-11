@@ -1448,7 +1448,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
-  align-items: start;
+  align-items: center;
 }
 
 .cta-final .metodo-col-label {
