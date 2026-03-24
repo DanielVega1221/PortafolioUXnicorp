@@ -8,18 +8,34 @@ const __dirname = path.dirname(__filename);
 const distDir = path.resolve(__dirname, '../dist');
 const indexHtml = path.join(distDir, 'index.html');
 
-// Todas las rutas que necesitan HTML estático
+// Todas las rutas que necesitan HTML estático (con prefijo de idioma)
 const routes = [
-  '/sobre-nosotros',
-  '/como-trabajamos',
-  '/servicios',
-  '/servicios/auditorias',
-  '/servicios/landing-pages',
-  '/servicios/ecommerce',
-  '/servicios/sistemas-gestion',
-  '/servicios/paquetes',
-  '/casos-reales',
-  '/landing-pages'
+  '/es',
+  '/en',
+  '/es/sobre-nosotros',
+  '/en/sobre-nosotros',
+  '/es/como-trabajamos',
+  '/en/como-trabajamos',
+  '/es/servicios',
+  '/en/servicios',
+  '/es/servicios/auditorias',
+  '/en/servicios/auditorias',
+  '/es/servicios/landing-pages',
+  '/en/servicios/landing-pages',
+  '/es/servicios/ecommerce',
+  '/en/servicios/ecommerce',
+  '/es/servicios/sistemas-gestion',
+  '/en/servicios/sistemas-gestion',
+  '/es/servicios/paquetes',
+  '/en/servicios/paquetes',
+  '/es/casos-reales',
+  '/en/casos-reales',
+  '/es/landing-pages',
+  '/en/landing-pages',
+  '/es/arquitectura',
+  '/en/arquitectura',
+  '/es/gastronomia',
+  '/en/gastronomia',
 ];
 
 async function generateStaticPages() {

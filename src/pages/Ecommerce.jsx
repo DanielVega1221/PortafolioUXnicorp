@@ -75,7 +75,8 @@ const servicios = [
 
 function Ecommerce() {
   const navigate = useLangNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   const serviciosItems = t('paginas.ecommerce.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
     ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
@@ -109,7 +110,10 @@ function Ecommerce() {
         <title>{seoConfig.ecommerce.title}</title>
         <meta name="description" content={seoConfig.ecommerce.description} />
         <meta name="keywords" content={seoConfig.ecommerce.keywords} />
-        <link rel="canonical" href={seoConfig.ecommerce.canonical} />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/ecommerce`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/ecommerce" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce" />
         <meta property="og:title" content={seoConfig.ecommerce.ogTitle} />
         <meta property="og:description" content={seoConfig.ecommerce.ogDescription} />
         <meta property="og:locale" content="es_AR" />

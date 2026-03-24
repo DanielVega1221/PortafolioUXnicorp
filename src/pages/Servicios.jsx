@@ -401,7 +401,8 @@ const GLOSARIO_DATA = [
 ];
 
 function Servicios() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   const categoriasTexto = t('paginas.servicios.categorias', { returnObjects: true });
   const categorias = [
     {
@@ -472,8 +473,10 @@ function Servicios() {
         <title>Servicios Desarrollo Web Argentina ⚡ Landing Pages en 72h, E-commerce y ERP | UXnicorp</title>
         <meta name="description" content="Desarrollo web completo: Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Soluciones integrales en Argentina." />
         <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, agencia programacion argentina, desarrollo web buenos aires" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios" />
-        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/servicios" />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios" />
         <meta property="og:title" content="Servicios de Desarrollo Web Argentina - UXnicorp" />
         <meta property="og:description" content="Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo." />
         <meta property="og:locale" content="es_AR" />

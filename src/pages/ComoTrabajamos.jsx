@@ -44,7 +44,8 @@ const LoadingFallback = () => (
 );
 
 function ComoTrabajamos() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   return (
     <div>
       <motion.div
@@ -57,12 +58,14 @@ function ComoTrabajamos() {
         <title>Cómo Trabajamos | Proceso de Desarrollo Web Transparente | UXnicorp</title>
         <meta name="description" content="Proceso de desarrollo web transparente: Reunión inicial, Propuesta clara, Desarrollo ágil, Entregas semanales, Soporte incluido. Metodología probada en Argentina." />
         <meta name="keywords" content="metodología desarrollo web, proceso desarrollo software, metodología ágil argentina, clean code, testing software, agile development, scrum, desarrollo profesional argentina, arquitectura software, como trabajamos" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar/como-trabajamos" />
-        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/como-trabajamos" />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/como-trabajamos`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/como-trabajamos" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/como-trabajamos" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/como-trabajamos" />
         
         <meta property="og:title" content="Proceso de Desarrollo Web | Metodología Ágil - UXnicorp" />
         <meta property="og:description" content="Metodología de desarrollo ágil: código limpio, testing exhaustivo y entregas continuas. Transparencia total." />
-        <meta property="og:url" content="https://www.uxnicorp.com.ar/como-trabajamos" />
+        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/como-trabajamos`} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_AR" />
       </Helmet>

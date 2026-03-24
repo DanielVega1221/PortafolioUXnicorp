@@ -1,6 +1,8 @@
 /**
  * Script para generar sitemap.xml dinámicamente
  * Se puede ejecutar con: node scripts/generate-sitemap.mjs
+ *
+ * Genera URLs con prefijo de idioma (/es/ y /en/) y etiquetas hreflang correctas.
  */
 
 import fs from 'fs';
@@ -9,86 +11,56 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
+const BASE = 'https://www.uxnicorp.com.ar';
+const today = new Date().toISOString().split('T')[0];
 
-// Todas las rutas del sitio
+// Rutas sin prefijo de idioma. Se generan versiones /es/ y /en/ para cada una.
 const routes = [
-  {
-    loc: 'https://www.uxnicorp.com.ar/',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '1.0'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/sobre-nosotros',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: '0.8'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/como-trabajamos',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: '0.7'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/servicios',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.9'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/servicios/auditorias',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.85'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/servicios/landing-pages',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.85'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/servicios/ecommerce',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.85'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/servicios/sistemas-gestion',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.85'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/servicios/paquetes',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.85'
-  },
-  {
-    loc: 'https://www.uxnicorp.com.ar/casos-reales',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: '0.9'
-  }
+  { path: '',                         changefreq: 'weekly',  priority: '1.0' },
+  { path: '/sobre-nosotros',          changefreq: 'monthly', priority: '0.8' },
+  { path: '/como-trabajamos',         changefreq: 'monthly', priority: '0.7' },
+  { path: '/servicios',               changefreq: 'weekly',  priority: '0.9' },
+  { path: '/servicios/auditorias',    changefreq: 'weekly',  priority: '0.85' },
+  { path: '/servicios/landing-pages', changefreq: 'weekly',  priority: '0.85' },
+  { path: '/servicios/ecommerce',     changefreq: 'weekly',  priority: '0.85' },
+  { path: '/servicios/sistemas-gestion', changefreq: 'weekly', priority: '0.85' },
+  { path: '/servicios/paquetes',      changefreq: 'weekly',  priority: '0.85' },
+  { path: '/casos-reales',            changefreq: 'weekly',  priority: '0.9' },
+  { path: '/landing-pages',           changefreq: 'weekly',  priority: '0.8' },
+  { path: '/arquitectura',            changefreq: 'monthly', priority: '0.75' },
+  { path: '/gastronomia',             changefreq: 'monthly', priority: '0.75' },
 ];
 
-// Generar XML
-let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+function urlEntry({ path: p, changefreq, priority }) {
+  const esUrl = `${BASE}/es${p}`;
+  const enUrl = `${BASE}/en${p}`;
+  return `
+  <url>
+    <loc>${esUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="${esUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${esUrl}"/>
+    <lastmod>${today}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>
+  <url>
+    <loc>${enUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="${esUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${esUrl}"/>
+    <lastmod>${today}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+}
 
-routes.forEach(route => {
-  xml += '  <url>\n';
-  xml += `    <loc>${route.loc}</loc>\n`;
-  xml += `    <lastmod>${route.lastmod}</lastmod>\n`;
-  xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
-  xml += `    <priority>${route.priority}</priority>\n`;
-  xml += '  </url>\n';
-});
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${routes.map(urlEntry).join('')}
+</urlset>
+`;
 
-xml += '</urlset>\n';
-
-// Escribir archivo
 fs.writeFileSync(sitemapPath, xml);
 console.log('✅ Sitemap generado exitosamente:', sitemapPath);

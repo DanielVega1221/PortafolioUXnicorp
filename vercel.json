@@ -4,8 +4,23 @@
   "installCommand": "npm install --legacy-peer-deps",
   "framework": null,
   "outputDirectory": "dist",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "redirects": [
+    { "source": "/es/", "destination": "/es", "permanent": true },
+    { "source": "/en/", "destination": "/en", "permanent": true },
+    { "source": "/sobre-nosotros", "destination": "/es/sobre-nosotros", "permanent": true },
+    { "source": "/como-trabajamos", "destination": "/es/como-trabajamos", "permanent": true },
+    { "source": "/servicios", "destination": "/es/servicios", "permanent": true },
+    { "source": "/servicios/auditorias", "destination": "/es/servicios/auditorias", "permanent": true },
+    { "source": "/servicios/landing-pages", "destination": "/es/servicios/landing-pages", "permanent": true },
+    { "source": "/servicios/ecommerce", "destination": "/es/servicios/ecommerce", "permanent": true },
+    { "source": "/servicios/sistemas-gestion", "destination": "/es/servicios/sistemas-gestion", "permanent": true },
+    { "source": "/servicios/paquetes", "destination": "/es/servicios/paquetes", "permanent": true },
+    { "source": "/casos-reales", "destination": "/es/casos-reales", "permanent": true },
+    { "source": "/landing-pages", "destination": "/es/landing-pages", "permanent": true },
+    { "source": "/arquitectura", "destination": "/es/arquitectura", "permanent": true },
+    { "source": "/gastronomia", "destination": "/es/gastronomia", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

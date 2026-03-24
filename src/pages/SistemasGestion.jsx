@@ -59,7 +59,8 @@ const servicios = [
 
 function SistemasGestion() {
   const navigate = useLangNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   const serviciosItems = t('paginas.sistemasGestion.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
     ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
@@ -93,7 +94,10 @@ function SistemasGestion() {
         <title>{seoConfig.sistemasGestion.title}</title>
         <meta name="description" content={seoConfig.sistemasGestion.description} />
         <meta name="keywords" content={seoConfig.sistemasGestion.keywords} />
-        <link rel="canonical" href={seoConfig.sistemasGestion.canonical} />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/sistemas-gestion`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/sistemas-gestion" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion" />
         <meta property="og:title" content={seoConfig.sistemasGestion.ogTitle} />
         <meta property="og:description" content={seoConfig.sistemasGestion.ogDescription} />
         <meta property="og:locale" content="es_AR" />

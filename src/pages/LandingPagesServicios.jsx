@@ -147,7 +147,8 @@ function LandingPagesServicios() {
   const navigate = useLangNavigate();
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
 
   const abrirModal = (servicio) => {
     setServicioSeleccionado(servicio);
@@ -175,7 +176,10 @@ function LandingPagesServicios() {
         <title>Landing Pages Argentina | Diseño Web Profesional - UXnicorp</title>
         <meta name="description" content="Creamos landing pages profesionales en Argentina. Entrega en 72hs. Responsive, SEO optimizado, integración formularios. 5 opciones disponibles." />
         <meta name="keywords" content="landing page argentina, landing page precio argentina, diseño landing argentina, crear landing page, landing page express argentina, landing profesional, página web rápida" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/landing-pages" />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/landing-pages`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/landing-pages" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages" />
         <meta property="og:title" content="Landing Pages Argentina - UXnicorp" />
         <meta property="og:description" content="Diseñamos tu landing page profesional en 72hs. Responsive y optimizada para conversiones." />
         <meta property="og:locale" content="es_AR" />

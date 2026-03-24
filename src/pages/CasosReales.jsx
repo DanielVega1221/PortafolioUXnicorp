@@ -165,7 +165,8 @@ const cardVariants = {
 
 function CasosReales() {
   const navigate = useLangNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   const casosT = t('paginas.casosReales.casos', { returnObjects: true });
   const casosDataT = Array.isArray(casosT)
     ? casosData.map((c, i) => ({ ...c, ...casosT[i] }))
@@ -192,8 +193,10 @@ function CasosReales() {
           content="Casos de éxito de desarrollo web en Argentina: Landing pages, E-commerce, ERPs y Fintech. Proyectos reales con resultados medibles." 
         />
         <meta name="keywords" content="casos éxito desarrollo web argentina, proyectos web argentina, portfolio web argentina, landing pages casos éxito, ecommerce argentina casos, ejemplos desarrollo web" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar/casos-reales" />
-        <link rel="alternate" hrefLang="es-AR" href="https://www.uxnicorp.com.ar/casos-reales" />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/casos-reales`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/casos-reales" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/casos-reales" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/casos-reales" />
         <meta property="og:title" content="Casos de Éxito Argentina | Proyectos Web Reales - UXnicorp" />
         <meta property="og:description" content="Proyectos reales de desarrollo web: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados." />
         <meta property="og:locale" content="es_AR" />

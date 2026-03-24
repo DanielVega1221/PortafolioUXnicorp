@@ -2,23 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Root redirect -->
-  <url>
-    <loc>https://www.uxnicorp.com.ar/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/"/>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
   <!-- Home ES -->
   <url>
-    <loc>https://www.uxnicorp.com.ar/es/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/"/>
+    <loc>https://www.uxnicorp.com.ar/es</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -26,10 +15,10 @@
 
   <!-- Home EN -->
   <url>
-    <loc>https://www.uxnicorp.com.ar/en/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/"/>
+    <loc>https://www.uxnicorp.com.ar/en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -95,7 +84,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Landing Pages -->
+  <!-- Landing Pages (página informativa) -->
   <url>
     <loc>https://www.uxnicorp.com.ar/es/landing-pages</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/landing-pages"/>
@@ -115,21 +104,41 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- E-commerce -->
+  <!-- Landing Pages (servicios detalle) -->
   <url>
-    <loc>https://www.uxnicorp.com.ar/es/ecommerce</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/ecommerce"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/ecommerce"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/ecommerce"/>
+    <loc>https://www.uxnicorp.com.ar/es/servicios/landing-pages</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/landing-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.uxnicorp.com.ar/en/ecommerce</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/ecommerce"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/ecommerce"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/ecommerce"/>
+    <loc>https://www.uxnicorp.com.ar/en/servicios/landing-pages</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/landing-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages"/>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- E-commerce -->
+  <url>
+    <loc>https://www.uxnicorp.com.ar/es/servicios/ecommerce</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/ecommerce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce"/>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.uxnicorp.com.ar/en/servicios/ecommerce</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/ecommerce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -137,19 +146,19 @@
 
   <!-- Sistemas de Gestión -->
   <url>
-    <loc>https://www.uxnicorp.com.ar/es/sistemas-gestion</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/sistemas-gestion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/sistemas-gestion"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/sistemas-gestion"/>
+    <loc>https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/sistemas-gestion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.uxnicorp.com.ar/en/sistemas-gestion</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/sistemas-gestion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/sistemas-gestion"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/sistemas-gestion"/>
+    <loc>https://www.uxnicorp.com.ar/en/servicios/sistemas-gestion</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/sistemas-gestion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -157,19 +166,19 @@
 
   <!-- Paquetes -->
   <url>
-    <loc>https://www.uxnicorp.com.ar/es/paquetes</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/paquetes"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/paquetes"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/paquetes"/>
+    <loc>https://www.uxnicorp.com.ar/es/servicios/paquetes</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/paquetes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/paquetes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/paquetes"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.uxnicorp.com.ar/en/paquetes</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/paquetes"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/paquetes"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/paquetes"/>
+    <loc>https://www.uxnicorp.com.ar/en/servicios/paquetes</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/paquetes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/paquetes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/paquetes"/>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>

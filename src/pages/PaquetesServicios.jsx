@@ -98,7 +98,8 @@ const servicios = [
 
 function PaquetesServicios() {
   const navigate = useLangNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
   const serviciosItems = t('paginas.paquetes.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
     ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
@@ -132,7 +133,10 @@ function PaquetesServicios() {
         <title>Paquetes de Desarrollo Web Argentina | Soluciones Completas - UXnicorp</title>
         <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding), Auditoría Integral, Plan Evolución escalable. Ahorra tiempo." />
         <meta name="keywords" content="paquete desarrollo web argentina, landing mas branding, auditoría completa, plan desarrollo web, combo web argentina, paquete emprendedor argentina" />
-        <link rel="canonical" href="https://www.uxnicorp.com.ar/servicios/paquetes" />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/paquetes`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/paquetes" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/paquetes" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/paquetes" />
         <meta property="og:title" content="Paquetes Web Argentina - UXnicorp" />
         <meta property="og:description" content="Soluciones completas para emprendedores y empresas. Landing + Branding, Auditorías y planes escalables." />
         <meta property="og:locale" content="es_AR" />

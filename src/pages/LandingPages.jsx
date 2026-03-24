@@ -148,7 +148,8 @@ const cardVariants = {
 
 function LandingPages() {
   const [activeFAQ, setActiveFAQ] = useState(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'es';
 
   const serviciosItems = t('paginas.landingPages.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
@@ -176,7 +177,10 @@ function LandingPages() {
         <meta name="keywords" content={seoConfig.landingPages.keywords} />
         <meta property="og:title" content={seoConfig.landingPages.ogTitle} />
         <meta property="og:description" content={seoConfig.landingPages.ogDescription} />
-        <link rel="canonical" href={seoConfig.landingPages.canonical} />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/landing-pages`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/landing-pages" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/landing-pages" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/landing-pages" />
         <meta property="og:locale" content="es_AR" />
         
         <script type="application/ld+json">
