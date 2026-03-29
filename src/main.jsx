@@ -96,6 +96,7 @@ function AnimatedRoutes() {
         <Route path="landing-pages"               element={<LandingPagesLazy />} />
         <Route path="arquitectura"                element={<ArquitecturaLazy />} />
         <Route path="gastronomia"                 element={<GastronomiaLazy />} />
+        <Route path="*"                           element={<NotFound />} />
       </Route>
 
       {/* Redirecciones de rutas antiguas (sin prefijo) → /es/... */}

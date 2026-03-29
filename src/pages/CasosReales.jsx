@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { motion as Motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import { Helmet } from 'react-helmet-async';
 import { 
@@ -166,7 +166,8 @@ const cardVariants = {
 function CasosReales() {
   const navigate = useLangNavigate();
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
   const casosT = t('paginas.casosReales.casos', { returnObjects: true });
   const casosDataT = Array.isArray(casosT)
     ? casosData.map((c, i) => ({ ...c, ...casosT[i] }))
@@ -199,7 +200,7 @@ function CasosReales() {
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/casos-reales" />
         <meta property="og:title" content="Casos de Éxito Argentina | Proyectos Web Reales - UXnicorp" />
         <meta property="og:description" content="Proyectos reales de desarrollo web: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados." />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
       </Helmet>
       <LanguageToggle />
 

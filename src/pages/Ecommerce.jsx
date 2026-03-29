@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
@@ -76,7 +76,8 @@ const servicios = [
 function Ecommerce() {
   const navigate = useLangNavigate();
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
   const serviciosItems = t('paginas.ecommerce.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
     ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))

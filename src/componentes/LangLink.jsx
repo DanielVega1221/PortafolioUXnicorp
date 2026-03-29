@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 function LangLink({ to, children, ...props }) {
   const { i18n } = useTranslation();
   const lang = i18n.language?.slice(0, 2) || 'es';
-  const fullTo = typeof to === 'string' && to.startsWith('/') ? `/${lang}${to}` : to;
+  const fullTo = to === '/' ? `/${lang}` : (typeof to === 'string' && to.startsWith('/') ? `/${lang}${to}` : to);
 
   return (
     <Link to={fullTo} {...props}>

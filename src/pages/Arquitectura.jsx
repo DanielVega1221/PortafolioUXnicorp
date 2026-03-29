@@ -9,7 +9,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
@@ -57,7 +57,8 @@ function Arquitectura() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
-  const seo = getSeoData('arquitectura', i18n.language) || seoConfig.arquitectura;
+  const { lang: urlLang } = useParams();
+  const seo = getSeoData('arquitectura', urlLang || i18n.language?.slice(0, 2) || 'es') || seoConfig.arquitectura;
 
   return (
     <>

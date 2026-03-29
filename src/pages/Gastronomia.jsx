@@ -9,7 +9,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
@@ -65,7 +65,8 @@ function Gastronomia() {
     }, 500);
   };
 
-  const seo = getSeoData('gastronomia', i18n.language) || seoConfig.gastronomia;
+  const { lang: urlLang } = useParams();
+  const seo = getSeoData('gastronomia', urlLang || i18n.language?.slice(0, 2) || 'es') || seoConfig.gastronomia;
 
   return (
     <>

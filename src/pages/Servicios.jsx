@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
 import { motion as Motion } from 'framer-motion';
@@ -402,7 +402,8 @@ const GLOSARIO_DATA = [
 
 function Servicios() {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
   const categoriasTexto = t('paginas.servicios.categorias', { returnObjects: true });
   const categorias = [
     {
@@ -479,7 +480,7 @@ function Servicios() {
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios" />
         <meta property="og:title" content="Servicios de Desarrollo Web Argentina - UXnicorp" />
         <meta property="og:description" content="Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo." />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
       </Helmet>
       <LanguageToggle />
 

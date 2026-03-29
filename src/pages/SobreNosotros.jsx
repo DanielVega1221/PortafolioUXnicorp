@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import LangLink from '../componentes/LangLink';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Heart, Users, Target, Sparkles, Code, Zap, Coffee, Lightbulb } from 'lucide-react';
@@ -219,7 +219,8 @@ function HistoriaAccordion() {
 
 function SobreNosotros() {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
 
   return (
     <>
@@ -236,7 +237,7 @@ function SobreNosotros() {
         <meta property="og:description" content="Equipo especializado en desarrollo web. Transparencia, metodología ágil y entregas rápidas en Argentina." />
         <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/sobre-nosotros`} />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
       </Helmet>
       <LanguageToggle />
       

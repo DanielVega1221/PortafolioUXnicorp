@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import Navbar from './componentes/Navbar/Navbar';
 import Inicio from './componentes/Contenido/Inicio';
 import SobreNosotros from './componentes/Contenido/SobreNosotros';
@@ -23,7 +24,8 @@ const LoadingFallback = () => (
 
 function App() {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
   const [activeSection, setActiveSection] = useState('main');
   const [hideNavbar, setHideNavbar] = useState(false);
 

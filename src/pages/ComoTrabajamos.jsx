@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import LangLink from '../componentes/LangLink';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Sparkles, Zap, Heart, CheckCircle, ArrowDown } from 'lucide-react';
@@ -45,7 +45,8 @@ const LoadingFallback = () => (
 
 function ComoTrabajamos() {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
   return (
     <div>
       <motion.div

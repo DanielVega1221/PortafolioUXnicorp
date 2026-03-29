@@ -18,7 +18,9 @@
     { "source": "/casos-reales", "destination": "/es/casos-reales", "permanent": true },
     { "source": "/landing-pages", "destination": "/es/landing-pages", "permanent": true },
     { "source": "/arquitectura", "destination": "/es/arquitectura", "permanent": true },
-    { "source": "/gastronomia", "destination": "/es/gastronomia", "permanent": true }
+    { "source": "/gastronomia", "destination": "/es/gastronomia", "permanent": true },
+    { "source": "/es/paquetes", "destination": "/es/servicios/paquetes", "permanent": true },
+    { "source": "/en/paquetes", "destination": "/en/servicios/paquetes", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

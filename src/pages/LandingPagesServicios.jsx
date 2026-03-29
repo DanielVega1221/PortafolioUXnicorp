@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
@@ -148,7 +148,8 @@ function LandingPagesServicios() {
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
   const { t, i18n } = useTranslation();
-  const lang = i18n.language?.slice(0, 2) || 'es';
+  const { lang: urlLang } = useParams();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
 
   const abrirModal = (servicio) => {
     setServicioSeleccionado(servicio);
