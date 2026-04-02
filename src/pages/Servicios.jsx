@@ -24,6 +24,7 @@ import '../../src/section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import LanguageToggle from '../componentes/LanguageToggle';
 import { useTranslation } from 'react-i18next';
+import { seoConfig, getSeoData } from '../utils/seoConfig';
 
 // Lazy load de componentes pesados
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
@@ -406,6 +407,7 @@ function Servicios() {
   const { t, i18n } = useTranslation();
   const { lang: urlLang } = useParams();
   const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+  const seoData = getSeoData('servicios', lang) || seoConfig.servicios;
   const categoriasTexto = t('paginas.servicios.categorias', { returnObjects: true });
   const categorias = [
     {
@@ -437,17 +439,19 @@ function Servicios() {
       icon: Building2,
       color: '#C8DBF7',
       link: '/servicios/webs-profesionales',
-      titulo: 'Webs Profesionales',
-      descripcion: 'Sitios web institucionales de múltiples páginas y portfolios visuales de alto impacto. Para construir autoridad y credibilidad online.',
-      serviciosCount: '2 opciones + demos por sector',
-      highlights: ['Hasta 8 páginas', 'Blog integrado', 'SEO avanzado']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[2] : {
+        titulo: 'Webs Profesionales',
+        descripcion: 'Sitios web institucionales de múltiples páginas y portfolios visuales de alto impacto. Para construir autoridad y credibilidad online.',
+        serviciosCount: '2 opciones + demos por sector',
+        highlights: ['Hasta 8 páginas', 'Blog integrado', 'SEO avanzado']
+      })
     },
     {
       id: 'ecommerce',
       icon: ShoppingCart,
       color: '#e0a6d8',
       link: '/servicios/ecommerce',
-      ...(Array.isArray(categoriasTexto) ? categoriasTexto[2] : {
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[3] : {
         titulo: 'Tiendas Online',
         descripcion: 'Tiendas online con carrito y pagos integrados. Desde el emprendedor que empieza hasta el negocio con alto volumen de ventas.',
         serviciosCount: '2 opciones',
@@ -459,17 +463,19 @@ function Servicios() {
       icon: GraduationCap,
       color: '#D966B2',
       link: '/servicios/plataforma-educativa',
-      titulo: 'Plataforma Educativa',
-      descripcion: 'Tu propia academia online con cursos, alumnos, progreso, certificados y pagos integrados. Ingresos pasivos de tu conocimiento.',
-      serviciosCount: '1 solución completa',
-      highlights: ['Certificados automáticos', 'Pagos por membresía', 'Panel admin']
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[4] : {
+        titulo: 'Plataforma Educativa',
+        descripcion: 'Tu propia academia online con cursos, alumnos, progreso, certificados y pagos integrados. Ingresos pasivos de tu conocimiento.',
+        serviciosCount: '1 solución completa',
+        highlights: ['Certificados automáticos', 'Pagos por membresía', 'Panel admin']
+      })
     },
     {
       id: 'sistemas-gestion',
       icon: Settings,
       color: '#ffc107',
       link: '/servicios/sistemas-gestion',
-      ...(Array.isArray(categoriasTexto) ? categoriasTexto[3] : {
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[5] : {
         titulo: 'Automatización & Gestión',
         descripcion: 'CRM y ERP a medida para eliminar el caos operativo, y webs con sistema de turnos para que tus clientes reserven solos las 24hs.',
         serviciosCount: '2 soluciones',
@@ -481,7 +487,7 @@ function Servicios() {
       icon: Package,
       color: '#48b8e8',
       link: '/servicios/paquetes',
-      ...(Array.isArray(categoriasTexto) ? categoriasTexto[4] : {
+      ...(Array.isArray(categoriasTexto) ? categoriasTexto[6] : {
         titulo: 'Paquetes Completos',
         descripcion: 'Combinaciones de servicios: web + branding, web + SEO, soluciones enterprise completas. Todo en uno.',
         serviciosCount: '3 paquetes',
@@ -493,22 +499,22 @@ function Servicios() {
   return (
     <div className="servicios-page">
       <Helmet>
-        <title>Servicios Web Argentina | Landing Pages, E-commerce y ERP | UXnicorp</title>
-        <meta name="description" content="Desarrollo web completo: Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Soluciones integrales en Argentina." />
-        <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, agencia programacion argentina, desarrollo web buenos aires" />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoConfig.servicios.keywords} />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios" />
-        <meta property="og:title" content="Servicios Web Argentina - UXnicorp" />
-        <meta property="og:description" content="Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo." />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios`} />
         <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Servicios Web Argentina - UXnicorp" />
-        <meta name="twitter:description" content="Landing pages, E-commerce, ERP/CRM y Auditorías UX. Desarrollo web profesional en Argentina." />
+        <meta name="twitter:title" content={seoData.ogTitle} />
+        <meta name="twitter:description" content={seoData.ogDescription} />
         <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
       </Helmet>
       <LanguageToggle />

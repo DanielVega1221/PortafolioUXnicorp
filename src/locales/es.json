@@ -198,6 +198,10 @@
     "garantiaDesc": "Te contactamos en menos de 24 horas",
     "completarCampos": "Completa todos los campos correctamente",
     "corregirErrores": "Por favor, corrige los errores en el formulario",
+    "diagBannerTitle": "Diagnóstico completado",
+    "diagBannerSub": "Tu consulta ya viene pre-cargada con los resultados del diagnóstico",
+    "diagPreFillPrefix": "Diagnóstico digital completado:",
+    "diagPreFillSuffix": "Me gustaría recibir una propuesta para avanzar con esta solución.",
     "grupos": {
       "diagnosticos": "Diagnósticos",
       "auditorias": "Auditorías",
@@ -346,7 +350,11 @@
       "verDemoLive": "Ver demo live",
       "stack": "Stack:",
       "caracDestacadas": "Características destacadas:",
-      "solicitar": "Solicitar presupuesto"
+      "solicitar": "Solicitar presupuesto",
+      "modalQueEs": "\u00bfQu\u00e9 es?",
+      "modalParaque": "\u00bfPara qu\u00e9 sirve?",
+      "modalComoFunciona": "\u00bfC\u00f3mo funciona?",
+      "modalCuando": "\u00bfCu\u00e1ndo es recomendado?"
     },
 
     "comoTrabajamos": {
@@ -362,7 +370,7 @@
     },
 
     "servicios": {
-      "badge": "5 Categorías de Servicios",
+      "badge": "7 Categorías de Servicios",
       "h1": "¿Qué necesita tu negocio?",
       "descripcion": "Elegí la categoría que mejor se adapte a tu proyecto. Cada una tiene opciones específicas con detalles completos.",
       "verDetalles": "Ver todos los detalles",
@@ -383,10 +391,22 @@
           "highlights": ["Listas en 72-96hs", "Diseño responsive", "SEO incluido"]
         },
         {
+          "titulo": "Webs Profesionales",
+          "descripcion": "Sitios web institucionales de múltiples páginas y portfolios visuales de alto impacto. Para construir autoridad y credibilidad online.",
+          "serviciosCount": "2 opciones + demos por sector",
+          "highlights": ["Hasta 8 páginas", "Blog integrado", "SEO avanzado"]
+        },
+        {
           "titulo": "E-commerce",
           "descripcion": "Tiendas online completas con carrito, pasarela de pagos, gestión de productos y envíos. Todo lo que necesitás para vender online.",
           "serviciosCount": "2 opciones",
           "highlights": ["Mercado Pago integrado", "Panel admin", "Control de stock"]
+        },
+        {
+          "titulo": "Plataforma Educativa",
+          "descripcion": "Tu propia academia online con cursos, alumnos, progreso, certificados y pagos integrados. Ingresos pasivos de tu conocimiento.",
+          "serviciosCount": "1 solución completa",
+          "highlights": ["Certificados automáticos", "Pagos por membresía", "Panel admin"]
         },
         {
           "titulo": "Sistemas de Gestión",
@@ -594,7 +614,136 @@
       "heroDesc": "Páginas de aterrizaje diseñadas para convertir visitantes en clientes. Desde landing express lista en 3 días hasta soluciones premium 100% personalizadas.",
       "ctaTitulo": "¿No sabés qué tipo de landing necesitás?",
       "ctaDesc": "Contactanos y te ayudamos a elegir el paquete perfecto según tus objetivos y necesidades",
-      "ctaBoton": "Consultar ahora"
+      "ctaBoton": "Consultar ahora",
+      "items": [
+        {
+          "titulo": "Landing Express Basic",
+          "descripcion": "Página web de una sola página lista en 72 horas con lo esencial para arrancar.",
+          "duracion": "72 horas",
+          "incluye": ["1 página de aterrizaje (3-4 secciones)","Diseño responsive mobile-first","Formulario de contacto","Botón directo a WhatsApp","Dominio propio (.com.ar o .com)","Hosting por 1 año incluido","SSL certificado (https)","1 ronda de ajustes"],
+          "ideal": "Profesionales, freelancers, pequeños negocios que necesitan presencia digital rápida",
+          "queEs": "Es una landing page lista en 72 horas con lo esencial: hero, servicios/productos, contacto y WhatsApp directo.",
+          "paraque": "Sirve para tener presencia digital rápida sin complicaciones. Es perfecta cuando necesitás estar online YA.",
+          "comoFunciona": "Vos nos das tu contenido (textos e imágenes), nosotros armamos el diseño en base a templates probados y en 72 horas tenés tu página funcionando.",
+          "cuando": "Es ideal cuando arrancás, cuando necesitás algo rápido o cuando querés probar una idea sin invertir mucho tiempo ni dinero."
+        },
+        {
+          "titulo": "Landing Express Intermedia",
+          "descripcion": "Landing más completa y moderna con hasta 5 secciones y animaciones profesionales.",
+          "duracion": "5-10 días",
+          "incluye": ["1 página de aterrizaje (5-6 secciones)","Animaciones al scroll (Framer Motion)","Diseño UX/UI premium","Galería de imágenes optimizada","Formularios con validación","Integración con Google Analytics","SEO básico implementado","Hosting + dominio por 1 año","2 rondas de ajustes"],
+          "ideal": "Estudios profesionales, consultores, agencias que quieren destacarse",
+          "queEs": "Es una landing page moderna con hasta 5 secciones, animaciones suaves y diseño profesional premium.",
+          "paraque": "Sirve para destacarte de tu competencia con una web que se ve y funciona mejor. Ideal para generar más confianza y profesionalismo.",
+          "comoFunciona": "Diseñamos dentro de templates premium, agregamos animaciones al scroll, optimizamos imágenes y te entregamos una landing visualmente atractiva en 5-10 días.",
+          "cuando": "Es perfecta cuando querés algo más trabajado que lo básico, cuando tu competencia tiene webs mejores o cuando querés causar una primera impresión sólida."
+        },
+        {
+          "titulo": "Landing Express Full",
+          "descripcion": "Versión completa: landing de 6 secciones + 1 página adicional, optimizada para Google.",
+          "duracion": "1-2 semanas",
+          "incluye": ["Landing principal (6-7 secciones)","1 página adicional (Sobre nosotros / Portfolio)","SEO técnico completo","Optimización de velocidad (90+ en Google)","Estrategia de contenido incluida","Schema markup implementado","Blog básico (opcional)","Integración con CRM","Hosting + dominio por 1 año","3 rondas de ajustes","Capacitación de uso incluida"],
+          "ideal": "Empresas de servicios, clínicas, estudios jurídicos que van en serio",
+          "queEs": "Es una presencia digital completa: landing principal de 6 secciones + 1 página extra (como 'Nosotros' o 'Servicios') con SEO avanzado.",
+          "paraque": "Sirve para tener una web profesional optimizada para Google, lista para posicionar y generar leads de forma constante.",
+          "comoFunciona": "Trabajamos tu contenido con estrategia, optimizamos cada sección para SEO, agregamos schema markup y te entregamos una web lista para rankear en 1-2 semanas.",
+          "cuando": "Es ideal cuando tu negocio ya está funcionando y querés invertir en algo serio que te traiga clientes a largo plazo sin depender sólo de publicidad paga."
+        },
+        {
+          "titulo": "Landing Flyer Promo",
+          "descripcion": "Anuncio digital en formato web para promociones puntuales y campañas específicas.",
+          "duracion": "3-5 días",
+          "incluye": ["Página simple estilo flyer digital","Diseño enfocado en conversión","Botón directo a WhatsApp","PDF descargable de la promo","Contador regresivo (opcional)","Formulario de captura de leads","Hosting temporal 3 meses","Optimizado para compartir en redes"],
+          "ideal": "Promociones, Black Friday, lanzamientos, eventos temporales",
+          "queEs": "Es un anuncio digital en formato landing: una sola página tipo flyer premium con tu oferta, botón de WhatsApp y PDF descargable.",
+          "paraque": "Sirve para promociones puntuales, lanzamientos o eventos donde necesitás algo rápido, directo y enfocado 100% en la conversión.",
+          "comoFunciona": "Creamos un diseño tipo flyer adaptado a web, lo optimizamos para compartir en redes y te entregamos el PDF de la promo en 3-5 días.",
+          "cuando": "Es perfecto para Black Friday, lanzamientos de productos, eventos especiales o campañas con fecha límite donde necesitás algo rápido y efectivo."
+        },
+        {
+          "titulo": "Landing Premium a Medida",
+          "descripcion": "Desarrollo 100% personalizado con funcionalidades específicas según tu negocio.",
+          "duracion": "2-3 semanas",
+          "incluye": ["Diseño 100% personalizado","Funcionalidades específicas a medida","Integraciones con sistemas externos","Panel de administración","Animaciones avanzadas","SEO avanzado","Testing A/B incluido","Estrategia de marketing digital","Capacitación del equipo","Soporte prioritario 3 meses","Ajustes ilimitados durante desarrollo"],
+          "ideal": "Empresas grandes, startups con necesidades específicas, proyectos complejos",
+          "queEs": "Es una landing 100% personalizada, sin plantillas, diseñada específicamente para tu marca, tu estilo y tus objetivos de negocio.",
+          "paraque": "Sirve cuando querés algo único que refleje tu identidad, con funcionalidades específicas como integraciones, paneles admin o características avanzadas.",
+          "comoFunciona": "Diseñamos desde cero según tu brief, desarrollamos funcionalidades personalizadas, integramos con tus sistemas y te entregamos algo único en 2-3 semanas.",
+          "cuando": "Es ideal cuando necesitás algo que no existe en templates, cuando querés diferenciarte completamente de tu competencia o cuando tu marca requiere una experiencia única."
+        }
+      ]
+    },
+
+    "websProfesionales": {
+      "heroBadge": "Webs Profesionales",
+      "heroTitulo": "Tu presencia digital",
+      "heroTituloSpan": "completa y estratégica",
+      "heroDesc": "Más allá de una landing page. Sitios web de múltiples páginas y portfolios visuales de alto impacto para construir autoridad online.",
+      "sectorH2": "También hacemos webs especializadas",
+      "sectorDesc": "Industrias donde tenemos un proceso probado y demos en vivo para que veas el resultado.",
+      "verDemoCompleto": "Ver demo completo",
+      "ctaTitulo": "¿Necesitás una web que construya autoridad?",
+      "ctaDesc": "Contanos tu proyecto y te decimos qué tipo de web es la ideal para vos.",
+      "ctaBoton": "Consultar gratis",
+      "items": [
+        {
+          "titulo": "Web Institucional Completa",
+          "descripcion": "Sitio web profesional de múltiples páginas para negocios que quieren construir autoridad y credibilidad online.",
+          "duracion": "15-25 días",
+          "incluye": ["Hasta 8 páginas completas","Blog integrado","Sección de servicios y propuesta de valor","Equipo y quiénes somos","Múltiples formularios contextuales","SEO avanzado página por página","Google Analytics configurado","Schema markup implementado","Mapa y datos de contacto","Diseño responsive mobile-first","3 rondas de ajustes"],
+          "ideal": "Empresas de servicios, estudios profesionales y consultoras que quieren posicionarse con autoridad",
+          "queEs": "Es un sitio web completo de múltiples páginas que refleja quién sos, qué hacés y por qué elegirte. Va más allá de una landing: es tu presencia digital completa.",
+          "paraque": "Sirve para construir credibilidad, mejorar tu posicionamiento en Google y tener múltiples puntos de conversión para distintos servicios o productos.",
+          "comoFunciona": "Diseñamos y desarrollamos cada página con estrategia de contenido y SEO, integramos Analytics, configuramos formularios y te entregamos el sitio listo en 15-25 días.",
+          "cuando": "Es ideal cuando tu negocio ya tiene trayectoria y necesitás una presencia digital seria, cuando tenés varios servicios que comunicar o cuando querés rankear en Google."
+        },
+        {
+          "titulo": "Web Portfolio Profesional",
+          "descripcion": "Web de alto impacto visual diseñada para mostrar tu trabajo y generar confianza instantánea en clientes potenciales.",
+          "duracion": "10-20 días",
+          "incluye": ["Galería de proyectos con filtros","Ficha de proyecto detallada","Sección sobre el estudio o profesional","Formulario de consulta integrado","Integración con redes sociales","SEO orientado a búsquedas de servicio","Diseño visual de alta calidad","Carga optimizada de imágenes","2 rondas de ajustes"],
+          "ideal": "Arquitectos, diseñadores de interiores, fotógrafos, artistas, creativos y estudios de diseño",
+          "queEs": "Es una web diseñada para impactar visualmente y mostrar tu trabajo de forma que genere confianza y consultas espontáneas.",
+          "paraque": "Sirve para que tu trabajo hable por vos. Cuando los clientes ven proyectos reales y resultados concretos, la venta se da sola.",
+          "comoFunciona": "Diseñamos una web visual premium, organizamos tu portfolio con filtros por categoría, optimizamos imágenes y te damos un sitio que impresiona en 10-20 días.",
+          "cuando": "Es perfecta cuando tu trabajo es visual, cuando necesitás mostrar casos de éxito o cuando querés que los clientes lleguen con intención clara de contratarte."
+        }
+      ],
+      "sectorDemos": [
+        {
+          "titulo": "Gastronomía",
+          "descripcion": "Carta digital, pedidos online, eventos y SEO local para restaurantes, bares y cafés.",
+          "tag": "Demo en vivo disponible"
+        },
+        {
+          "titulo": "Estudios de Arquitectura",
+          "descripcion": "Portfolio visual de alto impacto para arquitectos. Proyectos, planos y contacto que pre-califica al cliente.",
+          "tag": "Demo en vivo disponible"
+        }
+      ]
+    },
+
+    "plataformaEducativa": {
+      "heroBadge": "Plataforma Educativa",
+      "heroTitulo": "Vendé tu conocimiento",
+      "heroTituloSpan": "en tu propia academia online",
+      "heroDesc": "Una plataforma educativa completa con cursos, alumnos, pagos y certificados. Todo tuyo, sin depender de Hotmart ni Udemy.",
+      "ctaTitulo": "¿Listo para lanzar tu academia online?",
+      "ctaDesc": "Contanos tu idea y te mostramos cómo construir tu plataforma educativa desde cero.",
+      "ctaBoton": "Quiero mi plataforma educativa",
+      "items": [
+        {
+          "titulo": "Plataforma Educativa",
+          "descripcion": "Plataforma completa para lanzar y gestionar cursos online con usuarios, progreso, videos y pagos integrados.",
+          "duracion": "30-60 días",
+          "incluye": ["Sistema de cursos y módulos","Login y perfil de alumnos","Reproductor de video integrado","Seguimiento de progreso","Certificados automáticos","Pagos y acceso por membresía","Panel de administración","Foro o comunidad interna (opcional)"],
+          "ideal": "Formadores, coaches, academias y profesionales que quieren vender su conocimiento online",
+          "queEs": "Es una plataforma educativa completa donde tus alumnos tienen su perfil, ven el progreso en los cursos y vos gestionás todo desde un panel simple.",
+          "paraque": "Sirve para convertir tu conocimiento en ingresos escalables. Una vez grabado el curso, puede venderse y consumirse sin que tengas que estar presente.",
+          "comoFunciona": "Desarrollamos la plataforma, cargamos tu primer curso, configuramos pagos y te damos un panel para gestionar alumnos, módulos y métricas en 30-60 días.",
+          "cuando": "Es ideal cuando querés generar ingresos pasivos, cuando tenés conocimiento que puede enseñarse online o cuando tu audiencia demanda una experiencia de aprendizaje estructurada."
+        }
+      ]
     },
 
     "casosReales": {
@@ -1021,6 +1170,56 @@
       { "termino": "Backup", "definicion": "Copia de seguridad de tu web o sistema. Si algo falla, se puede restaurar todo como estaba. Como tener un 'guardado' de tu juego favorito." },
       { "termino": "Escalable", "definicion": "Que puede crecer sin problemas. Un sistema escalable funciona bien si tenés 10 clientes o 10.000, sin necesidad de rehacer todo." },
       { "termino": "Pasarela de Pago", "definicion": "Sistema para cobrar online (como Mercado Pago, Stripe). Permite que tus clientes paguen con tarjeta de forma segura en tu web." }
+    ]
+  },
+
+  "diagnostico": {
+    "badge": "Diagnóstico gratuito · 3 minutos",
+    "heroTitlePre": "¿No sabés qué solución digital",
+    "heroHighlight": "necesita tu negocio",
+    "heroTitlePost": "?",
+    "heroDesc": "Contáme tu situación y te decimos exactamente qué necesitás, por qué, y cómo arrancar.",
+    "heroCta": "¿Te gustaría que te ayudemos?",
+    "rubrosTitle": "¿A qué rubro pertenece tu negocio?",
+    "rubrosSub": "Elegí el que más se acerca. Podés cambiarlo después.",
+    "volver": "Volver",
+    "atras": "Atrás",
+    "cambiarRubro": "Cambiar rubro",
+    "sobreTuNegocio": "Sobre tu negocio",
+    "cualDescribeMejor": "¿Cuál describe mejor tu caso?",
+    "porQuePregunto": "¿Por qué te pregunto esto?",
+    "verDiagnostico": "Ver mi diagnóstico",
+    "analizandoTitle": "Analizando tu situación...",
+    "analizandoSub": "Cruzando tu perfil con los casos más frecuentes",
+    "analizandoSteps": [
+      "Identificando tu tipo de negocio",
+      "Evaluando tu madurez digital",
+      "Detectando oportunidades clave",
+      "Generando recomendación personalizada"
+    ],
+    "resultadoBadge": "Diagnóstico personalizado listo",
+    "resultadoTitle": "Esto es lo que tu negocio necesita",
+    "resultadoIntro": "Analizamos tu situación y preparamos esta recomendación para vos.",
+    "porQueSolucion": "Por qué esta solución te conviene",
+    "analisisSituacion": "Análisis de tu situación",
+    "problemasDetectados": "Problemas detectados",
+    "oportunidadesId": "Oportunidades identificadas",
+    "loQueIncluye": "Lo que incluiría tu solución",
+    "estrategiaSugerida": "Estrategia sugerida",
+    "alternativas": "Alternativas a considerar",
+    "ctaTitle": "¿Querés que lo hagamos realidad?",
+    "ctaDesc": "Te armamos una propuesta personalizada en base a este diagnóstico. Sin compromiso, sin costo.",
+    "ctaBtnPrimary": "Quiero que lo hagamos",
+    "ctaBtnSecondary": "Ver más sobre esta solución",
+    "reiniciar": "Hacer nuevo diagnóstico",
+    "inicio": "Inicio",
+    "faqQuestions": [
+      "¿Qué tipo de web le conviene a mi negocio?",
+      "¿Vale la pena invertir en una página web propia?",
+      "¿Necesito un sistema de gestión o alcanza con una web?",
+      "¿Cuánto cuesta hacer una página web profesional?",
+      "¿Cómo sé si estoy listo para vender online?",
+      "¿Qué diferencia hay entre una landing page y un sitio web?"
     ]
   }
 }

@@ -198,6 +198,10 @@
     "garantiaDesc": "We will contact you within 24 hours",
     "completarCampos": "Please complete all fields correctly",
     "corregirErrores": "Please fix the errors in the form",
+    "diagBannerTitle": "Diagnosis complete",
+    "diagBannerSub": "Your inquiry is pre-filled with the results of your diagnosis",
+    "diagPreFillPrefix": "Digital diagnosis completed:",
+    "diagPreFillSuffix": "I would like to receive a proposal to move forward with this solution.",
     "grupos": {
       "diagnosticos": "Diagnostics",
       "auditorias": "Audits",
@@ -346,7 +350,11 @@
       "verDemoLive": "View live demo",
       "stack": "Stack:",
       "caracDestacadas": "Notable features:",
-      "solicitar": "Request a quote"
+      "solicitar": "Request a quote",
+      "modalQueEs": "What is it?",
+      "modalParaque": "What is it for?",
+      "modalComoFunciona": "How does it work?",
+      "modalCuando": "When is it recommended?"
     },
 
     "comoTrabajamos": {
@@ -362,7 +370,7 @@
     },
 
     "servicios": {
-      "badge": "5 Service Categories",
+      "badge": "7 Service Categories",
       "h1": "What does your business need?",
       "descripcion": "Choose the category that best fits your project. Each one has specific options with complete details.",
       "verDetalles": "View all details",
@@ -383,10 +391,22 @@
           "highlights": ["Ready in 72-96h", "Responsive design", "SEO included"]
         },
         {
+          "titulo": "Professional Websites",
+          "descripcion": "Multi-page institutional websites and high-impact visual portfolios. To build authority and credibility online.",
+          "serviciosCount": "2 options + sector demos",
+          "highlights": ["Up to 8 pages", "Integrated blog", "Advanced SEO"]
+        },
+        {
           "titulo": "E-commerce",
           "descripcion": "Complete online stores with cart, payment gateway, product management and shipping. Everything you need to sell online.",
           "serviciosCount": "2 options",
           "highlights": ["Payment gateway integrated", "Admin panel", "Stock control"]
+        },
+        {
+          "titulo": "Educational Platform",
+          "descripcion": "Your own online academy with courses, students, progress tracking, certificates and integrated payments. Passive income from your knowledge.",
+          "serviciosCount": "1 complete solution",
+          "highlights": ["Automatic certificates", "Membership payments", "Admin panel"]
         },
         {
           "titulo": "Management Systems",
@@ -498,6 +518,17 @@
           "paraque": "It helps you stop doing everything manually, organize information, manage clients, sales, inventory and have total control of your operation.",
           "comoFunciona": "We analyze your processes, design the system according to your exact needs, develop custom modules and train your team.",
           "cuando": "It's ideal when spreadsheets aren't enough, when you lose information, or when you want to scale your business without hiring more staff."
+        },
+        {
+          "titulo": "Website with Booking System",
+          "descripcion": "A website that lets your clients book, schedule or request appointments autonomously 24/7, without you needing to be present.",
+          "duracion": "15-30 days",
+          "incluye": ["Real-time availability calendar","Automatic booking confirmations","Email and WhatsApp notifications","Agenda management panel","Google Calendar integration","Automatic reminders for clients","Mobile-first responsive design","2 rounds of revisions"],
+          "ideal": "Healthcare professionals, wellness, spas, salons, personal trainers and any appointment-based business",
+          "queEs": "It's a website with an integrated booking system where your clients reserve on their own, receive instant confirmation and you see your entire agenda in one panel.",
+          "paraque": "It eliminates the chaos of WhatsApp and phone calls. Your clients book when they want, without bothering you, and you focus on delivering great service.",
+          "comoFunciona": "We develop the website with the scheduling system connected to your real availability, configure notifications and deliver a ready-to-use solution in 15-30 days.",
+          "cuando": "Ideal when you lose time managing appointments manually, when you get many 'when do you have availability?' messages, or when you want clients to be able to book any time."
         }
       ]
     },
@@ -596,7 +627,136 @@
       "heroDesc": "Landing pages designed to convert visitors into clients. From express landing ready in 3 days to 100% customized premium solutions.",
       "ctaTitulo": "Not sure what type of landing page you need?",
       "ctaDesc": "Contact us and we'll help you choose the perfect package based on your goals and needs",
-      "ctaBoton": "Inquire now"
+      "ctaBoton": "Inquire now",
+      "items": [
+        {
+          "titulo": "Landing Express Basic",
+          "descripcion": "One-page website ready in 72 hours with everything essential to get started.",
+          "duracion": "72 hours",
+          "incluye": ["1 landing page (3-4 sections)","Mobile-first responsive design","Contact form","Direct WhatsApp button","Custom domain (.com)","1-year hosting included","SSL certificate (https)","1 round of revisions"],
+          "ideal": "Freelancers, professionals and small businesses that need fast digital presence",
+          "queEs": "It's a landing page ready in 72 hours with the essentials: hero, services/products, contact and direct WhatsApp.",
+          "paraque": "It gets you online quickly without complications. Perfect when you need to be online NOW.",
+          "comoFunciona": "You provide the content (text and images), we set up the design based on proven templates and in 72 hours your page is live.",
+          "cuando": "Ideal when you're starting out, need something fast or want to test an idea without investing much time or money."
+        },
+        {
+          "titulo": "Landing Express Intermediate",
+          "descripcion": "More complete and modern landing with up to 5 sections and professional animations.",
+          "duracion": "5-10 days",
+          "incluye": ["1 landing page (5-6 sections)","Scroll animations (Framer Motion)","Premium UX/UI design","Optimized image gallery","Forms with validation","Google Analytics integration","Basic SEO implemented","Hosting + domain for 1 year","2 rounds of revisions"],
+          "ideal": "Professional studios, consultants and agencies that want to stand out",
+          "queEs": "It's a modern landing page with up to 5 sections, smooth animations and premium professional design.",
+          "paraque": "It helps you stand out from the competition with a website that looks and works better. Ideal for building more trust and professionalism.",
+          "comoFunciona": "We work with premium templates, add scroll animations, optimize images and deliver an attractive landing in 5-10 days.",
+          "cuando": "Perfect when you want something more polished than basic, when your competition has better websites, or when you want to make a strong first impression."
+        },
+        {
+          "titulo": "Landing Express Full",
+          "descripcion": "Complete version: 6-section landing + 1 additional page, optimized for Google.",
+          "duracion": "1-2 weeks",
+          "incluye": ["Main landing (6-7 sections)","1 additional page (About us / Portfolio)","Complete technical SEO","Speed optimization (90+ on Google)","Content strategy included","Schema markup implemented","Basic blog (optional)","CRM integration","Hosting + domain for 1 year","3 rounds of revisions","Usage training included"],
+          "ideal": "Service companies, clinics, law firms that are serious about growth",
+          "queEs": "It's a complete digital presence: 6-section main landing + 1 extra page (like 'About Us' or 'Services') with advanced SEO.",
+          "paraque": "It gives you a professional website optimized for Google, ready to rank and generate leads consistently.",
+          "comoFunciona": "We work your content strategically, optimize every section for SEO, add schema markup and deliver a website ready to rank in 1-2 weeks.",
+          "cuando": "Ideal when your business is up and running and you want to invest in something serious that brings clients long-term without depending only on paid ads."
+        },
+        {
+          "titulo": "Landing Flyer Promo",
+          "descripcion": "Digital ad in web format for specific promotions and campaigns.",
+          "duracion": "3-5 days",
+          "incluye": ["Simple digital flyer-style page","Conversion-focused design","Direct WhatsApp button","Downloadable promo PDF","Countdown timer (optional)","Lead capture form","3-month temporary hosting","Optimized for social media sharing"],
+          "ideal": "Promotions, Black Friday, product launches, temporary events",
+          "queEs": "It's a digital ad in landing format: a single premium flyer-style page with your offer, WhatsApp button and downloadable PDF.",
+          "paraque": "For one-off promotions, launches or events where you need something fast, direct and 100% conversion-focused.",
+          "comoFunciona": "We create a web-adapted flyer design, optimize it for social sharing and deliver the promo PDF in 3-5 days.",
+          "cuando": "Perfect for Black Friday, product launches, special events or deadline-driven campaigns where you need something fast and effective."
+        },
+        {
+          "titulo": "Premium Custom Landing",
+          "descripcion": "100% custom development with specific functionalities for your business.",
+          "duracion": "2-3 weeks",
+          "incluye": ["100% custom design","Specific custom functionalities","External systems integrations","Administration panel","Advanced animations","Advanced SEO","A/B testing included","Digital marketing strategy","Team training","Priority support 3 months","Unlimited revisions during development"],
+          "ideal": "Large companies, startups with specific needs, complex projects",
+          "queEs": "It's a 100% custom landing, without templates, designed specifically for your brand, your style and your business goals.",
+          "paraque": "For when you want something unique that reflects your identity, with specific functionalities like integrations, admin panels or advanced features.",
+          "comoFunciona": "We design from scratch based on your brief, develop custom functionalities, integrate with your systems and deliver something unique in 2-3 weeks.",
+          "cuando": "Ideal when you need something that doesn't exist in templates, when you want to completely differentiate from the competition or when your brand requires a unique experience."
+        }
+      ]
+    },
+
+    "websProfesionales": {
+      "heroBadge": "Professional Websites",
+      "heroTitulo": "Your digital presence",
+      "heroTituloSpan": "complete and strategic",
+      "heroDesc": "Beyond a landing page. Multi-page websites and high-impact visual portfolios to build authority online.",
+      "sectorH2": "We also build specialized websites",
+      "sectorDesc": "Industries where we have a proven process and live demos so you can see the results.",
+      "verDemoCompleto": "View full demo",
+      "ctaTitulo": "Need a website that builds authority?",
+      "ctaDesc": "Tell us about your project and we'll tell you which type of website is ideal for you.",
+      "ctaBoton": "Free consultation",
+      "items": [
+        {
+          "titulo": "Complete Institutional Website",
+          "descripcion": "Professional multi-page website for businesses that want to build authority and credibility online.",
+          "duracion": "15-25 days",
+          "incluye": ["Up to 8 complete pages","Integrated blog","Services and value proposition section","Team and about us","Multiple contextual forms","Advanced SEO page by page","Google Analytics configured","Schema markup implemented","Map and contact details","Mobile-first responsive design","3 rounds of revisions"],
+          "ideal": "Service businesses, professional studios and consultancies that want to position themselves with authority",
+          "queEs": "It's a complete multi-page website that reflects who you are, what you do and why to choose you. Goes beyond a landing: it's your complete digital presence.",
+          "paraque": "Helps you build credibility, improve your Google ranking and have multiple conversion points for different services or products.",
+          "comoFunciona": "We design and develop each page with content strategy and SEO, integrate Analytics, configure forms and deliver your finished site in 15-25 days.",
+          "cuando": "It's ideal when your business has a track record and you need a serious digital presence, when you have multiple services to communicate or when you want to rank on Google."
+        },
+        {
+          "titulo": "Professional Portfolio Website",
+          "descripcion": "High visual impact website designed to showcase your work and generate instant trust in potential clients.",
+          "duracion": "10-20 days",
+          "incluye": ["Portfolio gallery with filters","Detailed project pages","About the studio or professional section","Integrated inquiry form","Social media integration","SEO focused on service searches","High quality visual design","Optimized image loading","2 rounds of revisions"],
+          "ideal": "Architects, interior designers, photographers, artists, creatives and design studios",
+          "queEs": "It's a website designed to make a visual impact and showcase your work in a way that generates trust and spontaneous inquiries.",
+          "paraque": "It lets your work speak for itself. When clients see real projects and concrete results, the sale happens naturally.",
+          "comoFunciona": "We design a premium visual website, organize your portfolio with category filters, optimize images and give you a site that impresses in 10-20 days.",
+          "cuando": "It's perfect when your work is visual, when you need to showcase success stories or when you want clients to arrive with a clear intention to hire you."
+        }
+      ],
+      "sectorDemos": [
+        {
+          "titulo": "Gastronomy",
+          "descripcion": "Digital menu, online orders, events and local SEO for restaurants, bars and cafés.",
+          "tag": "Live demo available"
+        },
+        {
+          "titulo": "Architecture Studios",
+          "descripcion": "High-impact visual portfolio for architects. Projects, plans and contact that pre-qualifies the client.",
+          "tag": "Live demo available"
+        }
+      ]
+    },
+
+    "plataformaEducativa": {
+      "heroBadge": "Educational Platform",
+      "heroTitulo": "Sell your knowledge",
+      "heroTituloSpan": "on your own online academy",
+      "heroDesc": "A complete educational platform with courses, students, payments and certificates. All yours, without depending on Hotmart or Udemy.",
+      "ctaTitulo": "Ready to launch your online academy?",
+      "ctaDesc": "Tell us your idea and we'll show you how to build your educational platform from scratch.",
+      "ctaBoton": "I want my educational platform",
+      "items": [
+        {
+          "titulo": "Educational Platform",
+          "descripcion": "Complete platform to launch and manage online courses with users, progress tracking, videos and integrated payments.",
+          "duracion": "30-60 days",
+          "incluye": ["Course and module system","Student login and profile","Integrated video player","Progress tracking","Automatic certificates","Payments and membership access","Administration panel","Internal forum or community (optional)"],
+          "ideal": "Trainers, coaches, academies and professionals who want to sell their knowledge online",
+          "queEs": "It's a complete educational platform where your students have their own profile, track course progress and you manage everything from a simple panel.",
+          "paraque": "It turns your knowledge into scalable income. Once recorded, the course can be sold and consumed without you being present.",
+          "comoFunciona": "We develop the platform, load your first course, configure payments and give you a panel to manage students, modules and metrics in 30-60 days.",
+          "cuando": "Ideal when you want to generate passive income, when you have knowledge that can be taught online or when your audience demands a structured learning experience."
+        }
+      ]
     },
 
     "casosReales": {
@@ -1023,6 +1183,56 @@
       { "termino": "Backup", "definicion": "A copy of your website or system. If something fails, everything can be restored to how it was — like a save point in a game." },
       { "termino": "Scalable", "definicion": "Can grow without issues. A scalable system works fine whether you have 10 or 10,000 customers, without rebuilding everything." },
       { "termino": "Payment Gateway", "definicion": "System to collect payments online (like Stripe, PayPal). Lets your customers pay by card securely on your website." }
+    ]
+  },
+
+  "diagnostico": {
+    "badge": "Free diagnostic · 3 minutes",
+    "heroTitlePre": "Not sure what digital solution",
+    "heroHighlight": "your business needs",
+    "heroTitlePost": "?",
+    "heroDesc": "Tell us your situation and we'll tell you exactly what you need, why, and how to get started.",
+    "heroCta": "Would you like us to help you?",
+    "rubrosTitle": "What industry does your business belong to?",
+    "rubrosSub": "Choose the closest match. You can change it later.",
+    "volver": "Back",
+    "atras": "Back",
+    "cambiarRubro": "Change industry",
+    "sobreTuNegocio": "About your business",
+    "cualDescribeMejor": "Which best describes your situation?",
+    "porQuePregunto": "Why am I asking this?",
+    "verDiagnostico": "See my diagnosis",
+    "analizandoTitle": "Analyzing your situation...",
+    "analizandoSub": "Matching your profile with the most common cases",
+    "analizandoSteps": [
+      "Identifying your business type",
+      "Evaluating your digital maturity",
+      "Detecting key opportunities",
+      "Generating personalized recommendation"
+    ],
+    "resultadoBadge": "Personalized diagnosis ready",
+    "resultadoTitle": "This is what your business needs",
+    "resultadoIntro": "We analyzed your situation and prepared this recommendation for you.",
+    "porQueSolucion": "Why this solution is right for you",
+    "analisisSituacion": "Analysis of your situation",
+    "problemasDetectados": "Detected problems",
+    "oportunidadesId": "Identified opportunities",
+    "loQueIncluye": "What your solution would include",
+    "estrategiaSugerida": "Suggested strategy",
+    "alternativas": "Alternatives to consider",
+    "ctaTitle": "Want us to make it happen?",
+    "ctaDesc": "We'll put together a personalized proposal based on this diagnosis. No commitment, no cost.",
+    "ctaBtnPrimary": "I want you to make it happen",
+    "ctaBtnSecondary": "See more about this solution",
+    "reiniciar": "Start new diagnosis",
+    "inicio": "Home",
+    "faqQuestions": [
+      "What type of website is best for my business?",
+      "Is it worth investing in my own website?",
+      "Do I need a management system or is a website enough?",
+      "How much does a professional website cost?",
+      "How do I know if I'm ready to sell online?",
+      "What's the difference between a landing page and a website?"
     ]
   }
 }

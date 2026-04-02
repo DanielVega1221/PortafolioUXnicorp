@@ -1,8 +1,10 @@
 import React from 'react';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './ServicioModal.css';
 
 function ServicioModal({ isOpen, onClose, servicio }) {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   return (
@@ -15,22 +17,22 @@ function ServicioModal({ isOpen, onClose, servicio }) {
         <h2 className="modal-title">{servicio.titulo}</h2>
 
         <div className="modal-section">
-          <h3>¿Qué es?</h3>
+          <h3>{t('paginas.comun.modalQueEs')}</h3>
           <p>{servicio.queEs}</p>
         </div>
 
         <div className="modal-section">
-          <h3>¿Para qué sirve?</h3>
+          <h3>{t('paginas.comun.modalParaque')}</h3>
           <p>{servicio.paraque}</p>
         </div>
 
         <div className="modal-section">
-          <h3>¿Cómo funciona?</h3>
+          <h3>{t('paginas.comun.modalComoFunciona')}</h3>
           <p>{servicio.comoFunciona}</p>
         </div>
 
         <div className="modal-section">
-          <h3>¿Cuándo es recomendado?</h3>
+          <h3>{t('paginas.comun.modalCuando')}</h3>
           <p>{servicio.cuando}</p>
         </div>
       </div>

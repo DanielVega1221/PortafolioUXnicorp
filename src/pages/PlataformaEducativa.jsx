@@ -3,7 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
-import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import { seoConfig, createBreadcrumbSchema, getSeoData } from '../utils/seoConfig';
 import { ArrowLeft, GraduationCap, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
@@ -50,6 +50,11 @@ function PlataformaEducativa() {
   const { t, i18n } = useTranslation();
   const { lang: urlLang } = useParams();
   const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+  const seoData = getSeoData('plataformaEducativa', lang) || seoConfig.plataformaEducativa;
+  const serviciosItems = t('paginas.plataformaEducativa.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : servicios;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -82,28 +87,28 @@ function PlataformaEducativa() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>{seoConfig.plataformaEducativa.title}</title>
-        <meta name="description" content={seoConfig.plataformaEducativa.description} />
-        <meta name="keywords" content={seoConfig.plataformaEducativa.keywords} />
-        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/plataforma-educativa`} />
-        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa" />
-        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/plataforma-educativa" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa" />
-        <meta property="og:title" content={seoConfig.plataformaEducativa.ogTitle} />
-        <meta property="og:description" content={seoConfig.plataformaEducativa.ogDescription} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords} />
+        <link rel="canonical" href={seoData.canonical} />
+        <link rel="alternate" hrefLang="es" href={seoData.hreflangEs} />
+        <link rel="alternate" hrefLang="en" href={seoData.hreflangEn} />
+        <link rel="alternate" hrefLang="x-default" href={seoData.hreflangEs} />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/plataforma-educativa`} />
-        <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
-        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
+        <meta property="og:url" content={seoData.canonical} />
+        <meta property="og:image" content={seoData.ogImage} />
+        <meta property="og:locale" content={seoData.ogLocale} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoConfig.plataformaEducativa.ogTitle} />
-        <meta name="twitter:description" content={seoConfig.plataformaEducativa.ogDescription} />
-        <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
+        <meta name="twitter:title" content={seoData.ogTitle} />
+        <meta name="twitter:description" content={seoData.ogDescription} />
+        <meta name="twitter:image" content={seoData.ogImage} />
         <script type="application/ld+json">
-          {JSON.stringify(seoConfig.plataformaEducativa.schema)}
+          {JSON.stringify(seoData.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoConfig.plataformaEducativa.breadcrumb, lang))}
+          {JSON.stringify(createBreadcrumbSchema(seoData.breadcrumb, lang))}
         </script>
       </Helmet>
       <LanguageToggle />
@@ -119,14 +124,14 @@ function PlataformaEducativa() {
           <div>
             <span className="servicio-badge">
               <GraduationCap size={16} />
-              Plataforma Educativa
+              {t('paginas.plataformaEducativa.heroBadge')}
             </span>
             <h1 className="servicio-hero-title">
-              Vendé tu conocimiento<br />
-              <span style={{ color: '#D966B2' }}>en tu propia academia online</span>
+              {t('paginas.plataformaEducativa.heroTitulo')}<br />
+              <span style={{ color: '#D966B2' }}>{t('paginas.plataformaEducativa.heroTituloSpan')}</span>
             </h1>
             <p className="servicio-hero-description">
-              Una plataforma educativa completa con cursos, alumnos, pagos y certificados. Todo tuyo, sin depender de Hotmart ni Udemy.
+              {t('paginas.plataformaEducativa.heroDesc')}
             </p>
           </div>
         </div>
@@ -135,7 +140,7 @@ function PlataformaEducativa() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {servicios.map((servicio) => {
+          {serviciosT.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
               <article key={servicio.id} id={servicio.id} className="servicio-detalle-card">
@@ -226,9 +231,9 @@ function PlataformaEducativa() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection
-          titulo="¿Listo para lanzar tu academia online?"
-          descripcion="Contanos tu idea y te mostramos cómo construir tu plataforma educativa desde cero."
-          textoBoton="Quiero mi plataforma educativa"
+          titulo={t('paginas.plataformaEducativa.ctaTitulo')}
+          descripcion={t('paginas.plataformaEducativa.ctaDesc')}
+          textoBoton={t('paginas.plataformaEducativa.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

@@ -49,10 +49,10 @@ import { useTranslation } from 'react-i18next';
 import LangLink from '../componentes/LangLink';
 import LanguageToggle from '../componentes/LanguageToggle';
 import {
-  RUBROS,
+  getRUBROS,
   getPreguntasParaRubro,
   generateDiagnostico,
-  SOLUCIONES,
+  generateDiagnosticoLang,
 } from '../utils/diagnosticoEngine';
 import { getSeoData } from '../utils/seoConfig';
 import './Diagnostico.css';
@@ -94,13 +94,22 @@ const slideVariants = {
 const transition = { duration: 0.3, ease: 'easeInOut' };
 
 // ─── Preguntas frecuentes (landing hero) ────────────────────────────────────────────
-const FAQ_QUESTIONS = [
+const FAQ_QUESTIONS_ES = [
   '¿Qué tipo de web le conviene a mi negocio?',
   '¿Vale la pena invertir en una página web propia?',
   '¿Necesito un sistema de gestión o alcanza con una web?',
   '¿Cuánto cuesta hacer una página web profesional?',
   '¿Cómo sé si estoy listo para vender online?',
   '¿Qué diferencia hay entre una landing page y un sitio web?',
+];
+
+const FAQ_QUESTIONS_EN = [
+  'What type of website is best for my business?',
+  'Is it worth investing in my own website?',
+  'Do I need a management system or is a website enough?',
+  'How much does a professional website cost?',
+  'How do I know if I\'m ready to sell online?',
+  'What\'s the difference between a landing page and a website?',
 ];
 
 // Posiciones absolutas determinísticas para cada burbuja —
@@ -125,11 +134,18 @@ const FAQ_FLOAT = [
 ];
 
 // ─── Pasos del análisis (pantalla de carga) ──────────────────────────────
-const ANALYZING_STEPS = [
+const ANALYZING_STEPS_ES = [
   'Identificando tu tipo de negocio',
   'Evaluando tu madurez digital',
   'Detectando oportunidades clave',
   'Generando recomendación personalizada',
+];
+
+const ANALYZING_STEPS_EN = [
+  'Identifying your business type',
+  'Evaluating your digital maturity',
+  'Detecting key opportunities',
+  'Generating personalized recommendation',
 ];
 
 // ─── Mensajes conversacionales por paso ───────────────────────────────────────────
@@ -146,7 +162,12 @@ const AI_MESSAGES = [
 // ─── Componente principal ─────────────────────────────────────────────────
 function Diagnostico() {
   const { lang: urlLang } = useParams();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+
+  const RUBROS          = getRUBROS(lang);
+  const FAQ_QUESTIONS   = lang === 'en' ? FAQ_QUESTIONS_EN : FAQ_QUESTIONS_ES;
+  const ANALYZING_STEPS = lang === 'en' ? ANALYZING_STEPS_EN : ANALYZING_STEPS_ES;
 
   // ── Estado del flujo ──
   const [fase, setFase]             = useState(FASE.RUBRO);
@@ -173,7 +194,7 @@ function Diagnostico() {
   useEffect(() => { setShowTip(false); }, [stepIndex]);
 
   // Preguntas calculadas para el rubro elegido
-  const preguntas = rubroId ? getPreguntasParaRubro(rubroId) : [];
+  const preguntas = rubroId ? getPreguntasParaRubro(rubroId, lang) : [];
   const totalSteps = preguntas.length;
   const preguntaActual = preguntas[stepIndex] || null;
 
@@ -218,11 +239,13 @@ function Diagnostico() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     const captura = { ...respuestas };
     setTimeout(() => {
-      const result = generateDiagnostico(captura, rubroId, subtipoId);
+      const result = lang === 'en'
+        ? generateDiagnosticoLang(captura, rubroId, subtipoId, 'en')
+        : generateDiagnostico(captura, rubroId, subtipoId);
       setDiagnostico(result);
       irA(FASE.RESULTADO);
     }, 4500);
-  }, [respuestas, preguntaActual, rubroId, subtipoId, irA]);
+  }, [respuestas, preguntaActual, rubroId, subtipoId, irA, lang]);
 
   const handleAtras = () => {
     if (fase === FASE.SUBTIPO) {
@@ -262,7 +285,6 @@ function Diagnostico() {
     : (fase === FASE.RESULTADO || fase === FASE.ANALIZANDO) ? 100 : 0;
 
   // ─── Head ───────────────────────────────────────────────────────────────
-  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
   const seo  = getSeoData('diagnostico', lang) || {};
 
   return (
@@ -292,8 +314,13 @@ function Diagnostico() {
         {/* BOTÓN HOME FIJO */}
         <LangLink to="/" className="diag-home-btn">
           <ChevronLeft size={18} />
-          <span>Inicio</span>
+          <span>{t('diagnostico.inicio')}</span>
         </LangLink>
+
+        {/* LANGUAGE TOGGLE FIJO */}
+        <div className="diag-lang-toggle">
+          <LanguageToggle />
+        </div>
 
         {/* LÍNEA DE PROGRESO FIJA (sólo en fases activas) */}
         {(fase === FASE.PREGUNTAS || fase === FASE.ANALIZANDO || fase === FASE.RESULTADO) && (
@@ -351,7 +378,7 @@ function Diagnostico() {
                           transition={{ duration: 0.5, delay: 0.1 }}
                         >
                           <Sparkles size={14} />
-                          <span>Diagnóstico gratuito · 3 minutos</span>
+                          <span>{t('diagnostico.badge')}</span>
                         </Motion.div>
 
                         {/* Título principal */}
@@ -361,8 +388,9 @@ function Diagnostico() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                          ¿No sabés qué solución digital{' '}
-                          <span className="diag-highlight">necesita tu negocio?</span>
+                          {t('diagnostico.heroTitlePre')}{' '}
+                          <span className="diag-highlight">{t('diagnostico.heroHighlight')}</span>
+                          {t('diagnostico.heroTitlePost')}
                         </Motion.h1>
 
                         {/* Subtítulo */}
@@ -372,8 +400,7 @@ function Diagnostico() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.35 }}
                         >
-                          Contáme tu situación y te decimos exactamente qué necesitás,
-                          por qué, y cómo arrancar.
+                          {t('diagnostico.heroDesc')}
                         </Motion.p>
 
                         {/* CTA principal */}
@@ -384,7 +411,7 @@ function Diagnostico() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.55, duration: 0.45 }}
                         >
-                          <span>¿Te gustaría que te ayudemos?</span>
+                          <span>{t('diagnostico.heroCta')}</span>
                           <div className="diag-hero-cta-icon">
                             <ArrowRight size={18} />
                           </div>
@@ -409,8 +436,8 @@ function Diagnostico() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
                       >
-                        <h2 className="diag-rubros-title">¿A qué rubro pertenece tu negocio?</h2>
-                        <p className="diag-rubros-sub">Elegí el que más se acerca. Podés cambiarlo después.</p>
+                        <h2 className="diag-rubros-title">{t('diagnostico.rubrosTitle')}</h2>
+                        <p className="diag-rubros-sub">{t('diagnostico.rubrosSub')}</p>
                       </Motion.div>
 
                       <div className="diag-rubros-grid">
@@ -438,7 +465,7 @@ function Diagnostico() {
                         className="diag-back-btn diag-back-btn--center"
                         onClick={() => setShowRubros(false)}
                       >
-                        <ChevronLeft size={16} /> Volver
+                        <ChevronLeft size={16} /> {t('diagnostico.volver')}
                       </button>
                     </Motion.section>
                   )}
@@ -463,7 +490,7 @@ function Diagnostico() {
               >
                 <div className="diag-slide-header">
                   <button className="diag-back-btn" onClick={handleAtras}>
-                    <ChevronLeft size={16} /> Cambiar rubro
+                    <ChevronLeft size={16} /> {t('diagnostico.cambiarRubro')}
                   </button>
                   <span className="diag-rubro-chip" style={{ marginLeft: 'auto' }}>
                     <RubroIcon rubroId={rubroId} size={13} /> {rubroInfo.label}
@@ -477,7 +504,7 @@ function Diagnostico() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                   >
-                    Sobre tu negocio
+                    {t('diagnostico.sobreTuNegocio')}
                   </Motion.div>
 
                   <Motion.h2
@@ -486,7 +513,7 @@ function Diagnostico() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.18, duration: 0.5 }}
                   >
-                    ¿Cuál describe mejor tu caso?
+                    {t('diagnostico.cualDescribeMejor')}
                   </Motion.h2>
 
                   <div className="diag-subtipo-grid">
@@ -527,7 +554,7 @@ function Diagnostico() {
               >
                 <div className="diag-slide-header">
                   <button className="diag-back-btn" onClick={handleAtras}>
-                    <ChevronLeft size={18} /> Atrás
+                    <ChevronLeft size={18} /> {t('diagnostico.atras')}
                   </button>
                   <span className="diag-step-counter">{stepIndex + 1} / {totalSteps}</span>
                   <span className="diag-rubro-chip">
@@ -599,7 +626,7 @@ function Diagnostico() {
                         onClick={() => setShowTip(v => !v)}
                       >
                         <Lightbulb size={14} />
-                        <span>¿Por qué te pregunto esto?</span>
+                        <span>{t('diagnostico.porQuePregunto')}</span>
                         <Motion.div
                           animate={{ rotate: showTip ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
@@ -633,7 +660,7 @@ function Diagnostico() {
                         onClick={handleVerDiagnostico}
                         disabled={!respuestas[preguntaActual.id]}
                       >
-                        <Sparkles size={18} /> Ver mi diagnóstico
+                        <Sparkles size={18} /> {t('diagnostico.verDiagnostico')}
                       </button>
                     </div>
                   )}
@@ -666,9 +693,9 @@ function Diagnostico() {
                     <Bot size={62} strokeWidth={1.3} />
                   </Motion.div>
 
-                  <h2 className="diag-analyzing-title">Analizando tu situación...</h2>
+                  <h2 className="diag-analyzing-title">{t('diagnostico.analizandoTitle')}</h2>
                   <p className="diag-analyzing-sub">
-                    Cruzando tu perfil con los casos más frecuentes
+                    {t('diagnostico.analizandoSub')}
                   </p>
 
                   <div className="diag-analyzing-steps">
@@ -722,13 +749,13 @@ function Diagnostico() {
                 <div className="diag-resultado-header">
                   <div className="diag-resultado-badge">
                     <CheckCircle size={16} />
-                    Diagnóstico personalizado listo
+                    {t('diagnostico.resultadoBadge')}
                   </div>
                   <h2 className="diag-resultado-title">
-                    Esto es lo que tu negocio necesita
+                    {t('diagnostico.resultadoTitle')}
                   </h2>
                   <p className="diag-resultado-intro">
-                    Analizamos tu situación y preparamos esta recomendación para vos.
+                    {t('diagnostico.resultadoIntro')}
                   </p>
                   <div
                     className="diag-solucion-card"
@@ -749,7 +776,7 @@ function Diagnostico() {
                 <div className="diag-bloque diag-bloque--beneficios">
                   <div className="diag-bloque-header diag-bloque-header--success">
                     <Star size={18} />
-                    <span>Por qué esta solución te conviene</span>
+                    <span>{t('diagnostico.porQueSolucion')}</span>
                   </div>
                   <ul className="diag-beneficios-list">
                     {diagnostico.solucion.beneficios.map((b, i) => (
@@ -765,7 +792,7 @@ function Diagnostico() {
                 <div className="diag-bloque">
                   <div className="diag-bloque-header">
                     <Target size={18} />
-                    <span>Análisis de tu situación</span>
+                    <span>{t('diagnostico.analisisSituacion')}</span>
                   </div>
                   <p className="diag-narrativo">{diagnostico.diagnosticoNarrativo}</p>
                 </div>
@@ -775,7 +802,7 @@ function Diagnostico() {
                   <div className="diag-bloque">
                     <div className="diag-bloque-header diag-bloque-header--warning">
                       <AlertTriangle size={18} />
-                      <span>Problemas detectados</span>
+                      <span>{t('diagnostico.problemasDetectados')}</span>
                     </div>
                     <div className="diag-items-list">
                       {diagnostico.problemas.map((p) => (
@@ -796,7 +823,7 @@ function Diagnostico() {
                   <div className="diag-bloque">
                     <div className="diag-bloque-header diag-bloque-header--success">
                       <TrendingUp size={18} />
-                      <span>Oportunidades identificadas</span>
+                      <span>{t('diagnostico.oportunidadesId')}</span>
                     </div>
                     <div className="diag-items-list">
                       {diagnostico.oportunidades.map((o) => (
@@ -816,7 +843,7 @@ function Diagnostico() {
                 <div className="diag-bloque">
                   <div className="diag-bloque-header">
                     <CheckCircle size={18} />
-                    <span>Lo que incluiría tu solución</span>
+                    <span>{t('diagnostico.loQueIncluye')}</span>
                   </div>
                   <ul className="diag-features-list">
                     {diagnostico.solucion.funcionalidades.map((f, i) => (
@@ -832,7 +859,7 @@ function Diagnostico() {
                 <div className="diag-bloque">
                   <div className="diag-bloque-header diag-bloque-header--strategy">
                     <Lightbulb size={18} />
-                    <span>Estrategia sugerida</span>
+                    <span>{t('diagnostico.estrategiaSugerida')}</span>
                   </div>
                   <ol className="diag-strategy-list">
                     {diagnostico.estrategia.map((paso, i) => (
@@ -849,7 +876,7 @@ function Diagnostico() {
                   <div className="diag-bloque">
                     <div className="diag-bloque-header">
                       <ArrowRight size={18} />
-                      <span>Alternativas a considerar</span>
+                      <span>{t('diagnostico.alternativas')}</span>
                     </div>
                     <div className="diag-alternativas">
                       {diagnostico.alternativas.map((alt) => (
@@ -868,11 +895,10 @@ function Diagnostico() {
                 {/* ── CTA Principal ── */}
                 <div className="diag-cta-block">
                   <h3 className="diag-cta-title">
-                    ¿Querés que lo hagamos realidad?
+                    {t('diagnostico.ctaTitle')}
                   </h3>
                   <p className="diag-cta-desc">
-                    Te armamos una propuesta personalizada en base a este diagnóstico.
-                    Sin compromiso, sin costo.
+                    {t('diagnostico.ctaDesc')}
                   </p>
                   <div className="diag-cta-buttons">
                     <LangLink
@@ -885,13 +911,13 @@ function Diagnostico() {
                       className="diag-cta-btn-primary"
                     >
                       <MessageCircle size={18} />
-                      Quiero que lo hagamos
+                      {t('diagnostico.ctaBtnPrimary')}
                     </LangLink>
                     <LangLink
                       to={`/${diagnostico.solucion.slug_servicio}${diagnostico.solucion.item_id ? '#' + diagnostico.solucion.item_id : ''}`}
                       className="diag-cta-btn-secondary"
                     >
-                      Ver más sobre esta solución
+                      {t('diagnostico.ctaBtnSecondary')}
                       <ArrowRight size={16} />
                     </LangLink>
                   </div>
@@ -900,7 +926,7 @@ function Diagnostico() {
                 {/* ── Reiniciar ── */}
                 <div className="diag-reiniciar-row">
                   <button className="diag-reiniciar-btn" onClick={handleReiniciar}>
-                    <RotateCcw size={15} /> Hacer nuevo diagnóstico
+                    <RotateCcw size={15} /> {t('diagnostico.reiniciar')}
                   </button>
                 </div>
               </Motion.section>

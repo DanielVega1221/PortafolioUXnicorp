@@ -3,7 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
-import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import { seoConfig, createBreadcrumbSchema, getSeoData } from '../utils/seoConfig';
 import { ArrowLeft, Globe, Briefcase, CheckCircle, Clock, Info, HelpCircle, ExternalLink, Utensils, Building2 } from 'lucide-react';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
@@ -98,6 +98,15 @@ function WebsProfesionales() {
   const { t, i18n } = useTranslation();
   const { lang: urlLang } = useParams();
   const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+  const seoData = getSeoData('websProfesionales', lang) || seoConfig.websProfesionales;
+  const serviciosItems = t('paginas.websProfesionales.items', { returnObjects: true });
+  const serviciosT = Array.isArray(serviciosItems)
+    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
+    : servicios;
+  const sectorDemosItems = t('paginas.websProfesionales.sectorDemos', { returnObjects: true });
+  const sectorDemosT = Array.isArray(sectorDemosItems)
+    ? SECTOR_DEMOS.map((d, i) => ({ ...d, ...sectorDemosItems[i] }))
+    : SECTOR_DEMOS;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -130,28 +139,28 @@ function WebsProfesionales() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>{seoConfig.websProfesionales.title}</title>
-        <meta name="description" content={seoConfig.websProfesionales.description} />
-        <meta name="keywords" content={seoConfig.websProfesionales.keywords} />
-        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/webs-profesionales`} />
-        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/webs-profesionales" />
-        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/webs-profesionales" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/webs-profesionales" />
-        <meta property="og:title" content={seoConfig.websProfesionales.ogTitle} />
-        <meta property="og:description" content={seoConfig.websProfesionales.ogDescription} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords} />
+        <link rel="canonical" href={seoData.canonical} />
+        <link rel="alternate" hrefLang="es" href={seoData.hreflangEs} />
+        <link rel="alternate" hrefLang="en" href={seoData.hreflangEn} />
+        <link rel="alternate" hrefLang="x-default" href={seoData.hreflangEs} />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/webs-profesionales`} />
-        <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
-        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
+        <meta property="og:url" content={seoData.canonical} />
+        <meta property="og:image" content={seoData.ogImage} />
+        <meta property="og:locale" content={seoData.ogLocale} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoConfig.websProfesionales.ogTitle} />
-        <meta name="twitter:description" content={seoConfig.websProfesionales.ogDescription} />
-        <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
+        <meta name="twitter:title" content={seoData.ogTitle} />
+        <meta name="twitter:description" content={seoData.ogDescription} />
+        <meta name="twitter:image" content={seoData.ogImage} />
         <script type="application/ld+json">
-          {JSON.stringify(seoConfig.websProfesionales.schema)}
+          {JSON.stringify(seoData.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoConfig.websProfesionales.breadcrumb, lang))}
+          {JSON.stringify(createBreadcrumbSchema(seoData.breadcrumb, lang))}
         </script>
       </Helmet>
       <LanguageToggle />
@@ -167,14 +176,14 @@ function WebsProfesionales() {
           <div>
             <span className="servicio-badge">
               <Globe size={16} />
-              Webs Profesionales
+              {t('paginas.websProfesionales.heroBadge')}
             </span>
             <h1 className="servicio-hero-title">
-              Tu presencia digital<br />
-              <span style={{ color: '#C8DBF7' }}>completa y estratégica</span>
+              {t('paginas.websProfesionales.heroTitulo')}<br />
+              <span style={{ color: '#C8DBF7' }}>{t('paginas.websProfesionales.heroTituloSpan')}</span>
             </h1>
             <p className="servicio-hero-description">
-              Más allá de una landing page. Sitios web de múltiples páginas y portfolios visuales de alto impacto para construir autoridad online.
+              {t('paginas.websProfesionales.heroDesc')}
             </p>
           </div>
         </div>
@@ -183,7 +192,7 @@ function WebsProfesionales() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {servicios.map((servicio) => {
+          {serviciosT.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
               <article key={servicio.id} id={servicio.id} className="servicio-detalle-card">
@@ -269,13 +278,13 @@ function WebsProfesionales() {
       {/* Demos por sector */}
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '2rem 2rem 4rem' }}>
         <h2 style={{ textAlign: 'center', fontFamily: "'Source Code Pro', monospace", fontWeight: 900, fontSize: 'clamp(1.4rem, 3vw, 2rem)', marginBottom: '0.75rem' }}>
-          También hacemos webs especializadas
+          {t('paginas.websProfesionales.sectorH2')}
         </h2>
         <p style={{ textAlign: 'center', color: '#666', marginBottom: '2rem' }}>
-          Industrias donde tenemos un proceso probado y demos en vivo para que veas el resultado.
+          {t('paginas.websProfesionales.sectorDesc')}
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-          {SECTOR_DEMOS.map((demo) => {
+          {sectorDemosT.map((demo) => {
             const Icon = demo.icon;
             return (
               <LangLink
@@ -315,7 +324,7 @@ function WebsProfesionales() {
                   <p style={{ color: '#555', fontSize: '0.92rem', lineHeight: 1.55, margin: 0 }}>{demo.descripcion}</p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', color: demo.color, fontWeight: 600, fontSize: '0.88rem' }}>
                     <ExternalLink size={14} />
-                    Ver demo completo
+                    {t('paginas.websProfesionales.verDemoCompleto')}
                   </div>
                 </div>
               </LangLink>
@@ -332,9 +341,9 @@ function WebsProfesionales() {
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
         <CTASection
-          titulo="¿Necesitás una web que construya autoridad?"
-          descripcion="Contanos tu proyecto y te decimos qué tipo de web es la ideal para vos."
-          textoBoton="Consultar gratis"
+          titulo={t('paginas.websProfesionales.ctaTitulo')}
+          descripcion={t('paginas.websProfesionales.ctaDesc')}
+          textoBoton={t('paginas.websProfesionales.ctaBoton')}
           linkTo="/#contact"
         />
       </Suspense>

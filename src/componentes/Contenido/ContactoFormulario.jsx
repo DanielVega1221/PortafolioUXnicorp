@@ -83,11 +83,11 @@ function ContactoFormulario() {
         ...prev,
         ...(location.state.servicioInteres ? { servicio: location.state.servicioInteres } : {}),
         ...(location.state.diagnosticoResumen && !prev.consulta
-          ? { consulta: `Diagnóstico digital completado:\n${location.state.diagnosticoResumen}\n\nMe gustaría recibir una propuesta para avanzar con esta solución.` }
+          ? { consulta: `${t('contacto.diagPreFillPrefix')}\n${location.state.diagnosticoResumen}\n\n${t('contacto.diagPreFillSuffix')}` }
           : {}),
       }));
     }
-  }, [location.state]);
+  }, [location.state, t]);
 
   // Auto-scroll al formulario cuando se llega desde diagnóstico o desde una página de servicios
   useEffect(() => {
@@ -307,8 +307,8 @@ function ContactoFormulario() {
           <div className="contacto-diag-banner">
             <span className="contacto-diag-banner-icon">🎯</span>
             <div>
-              <strong>Diagnóstico completado</strong>
-              <span> · Tu consulta ya viene pre-cargada con los resultados del diagnóstico</span>
+              <strong>{t('contacto.diagBannerTitle')}</strong>
+              <span> · {t('contacto.diagBannerSub')}</span>
             </div>
           </div>
         )}
@@ -391,35 +391,35 @@ function ContactoFormulario() {
               >
                 <option value="">{t('contacto.servicioDefault')}</option>
                 <optgroup label={t('contacto.grupos.diagnosticos')}>
-                  <option value="Diagnóstico para estudio de Arquitectura">{t('contacto.opciones.diagArq')}</option>
-                  <option value="Diagnóstico para restaurante / gastronomía">{t('contacto.opciones.diagGastro')}</option>
+                  <option value={t('contacto.opciones.diagArq')}>{t('contacto.opciones.diagArq')}</option>
+                  <option value={t('contacto.opciones.diagGastro')}>{t('contacto.opciones.diagGastro')}</option>
                 </optgroup>
                 <optgroup label={t('contacto.grupos.auditorias')}>
-                  <option value="Auditoría UX/UI Profesional">{t('contacto.opciones.audUxUi')}</option>
-                  <option value="Optimización de Conversión (CRO)">{t('contacto.opciones.audCro')}</option>
-                  <option value="Revisión Técnica + Mini-Refactor">{t('contacto.opciones.audTecnica')}</option>
+                  <option value={t('contacto.opciones.audUxUi')}>{t('contacto.opciones.audUxUi')}</option>
+                  <option value={t('contacto.opciones.audCro')}>{t('contacto.opciones.audCro')}</option>
+                  <option value={t('contacto.opciones.audTecnica')}>{t('contacto.opciones.audTecnica')}</option>
                 </optgroup>
                 <optgroup label={t('contacto.grupos.paginasWeb')}>
-                  <option value="Landing Page de Captación">{t('contacto.opciones.landingCapt')}</option>
-                  <option value="Landing Express Basic">{t('contacto.opciones.landingBasic')}</option>
-                  <option value="Landing Express Intermedia">{t('contacto.opciones.landingMedia')}</option>
-                  <option value="Landing Express Full">{t('contacto.opciones.landingFull')}</option>
-                  <option value="Landing Flyer Promo">{t('contacto.opciones.landingFlyer')}</option>
-                  <option value="Landing Premium a Medida">{t('contacto.opciones.landingPremium')}</option>
-                  <option value="Web Institucional Completa">{t('contacto.opciones.webInstitucional')}</option>
-                  <option value="Web Portfolio Profesional">{t('contacto.opciones.webPortfolio')}</option>
-                  <option value="Web con Sistema de Turnos/Reservas">{t('contacto.opciones.webReservas')}</option>
-                  <option value="Tienda E-commerce">{t('contacto.opciones.ecommerce')}</option>
-                  <option value="Plataforma Educativa">{t('contacto.opciones.plataformaEdu')}</option>
-                  <option value="Sistema de Gestión a Medida">{t('contacto.opciones.sistemas')}</option>
-                  <option value="Web con Pedidos Online (Gastronomía)">{t('contacto.opciones.webPedidos')}</option>
+                  <option value={t('contacto.opciones.landingCapt')}>{t('contacto.opciones.landingCapt')}</option>
+                  <option value={t('contacto.opciones.landingBasic')}>{t('contacto.opciones.landingBasic')}</option>
+                  <option value={t('contacto.opciones.landingMedia')}>{t('contacto.opciones.landingMedia')}</option>
+                  <option value={t('contacto.opciones.landingFull')}>{t('contacto.opciones.landingFull')}</option>
+                  <option value={t('contacto.opciones.landingFlyer')}>{t('contacto.opciones.landingFlyer')}</option>
+                  <option value={t('contacto.opciones.landingPremium')}>{t('contacto.opciones.landingPremium')}</option>
+                  <option value={t('contacto.opciones.webInstitucional')}>{t('contacto.opciones.webInstitucional')}</option>
+                  <option value={t('contacto.opciones.webPortfolio')}>{t('contacto.opciones.webPortfolio')}</option>
+                  <option value={t('contacto.opciones.webReservas')}>{t('contacto.opciones.webReservas')}</option>
+                  <option value={t('contacto.opciones.ecommerce')}>{t('contacto.opciones.ecommerce')}</option>
+                  <option value={t('contacto.opciones.plataformaEdu')}>{t('contacto.opciones.plataformaEdu')}</option>
+                  <option value={t('contacto.opciones.sistemas')}>{t('contacto.opciones.sistemas')}</option>
+                  <option value={t('contacto.opciones.webPedidos')}>{t('contacto.opciones.webPedidos')}</option>
                 </optgroup>
                 <optgroup label={t('contacto.grupos.paquetes')}>
-                  <option value="Paquete Emprendedor">{t('contacto.opciones.paqEmprendedor')}</option>
-                  <option value="Paquete Auditoría Integral">{t('contacto.opciones.paqAuditoria')}</option>
-                  <option value="Plan Evolución">{t('contacto.opciones.planEvolucion')}</option>
+                  <option value={t('contacto.opciones.paqEmprendedor')}>{t('contacto.opciones.paqEmprendedor')}</option>
+                  <option value={t('contacto.opciones.paqAuditoria')}>{t('contacto.opciones.paqAuditoria')}</option>
+                  <option value={t('contacto.opciones.planEvolucion')}>{t('contacto.opciones.planEvolucion')}</option>
                 </optgroup>
-                <option value="Otra consulta">{t('contacto.opciones.otra')}</option>
+                <option value={t('contacto.opciones.otra')}>{t('contacto.opciones.otra')}</option>
               </select>
             </div>
 

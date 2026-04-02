@@ -8,7 +8,7 @@ import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
-import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import { seoConfig, createBreadcrumbSchema, getSeoData } from '../utils/seoConfig';
 import LanguageToggle from '../componentes/LanguageToggle';
 import { useTranslation } from 'react-i18next';
 
@@ -78,6 +78,7 @@ function Ecommerce() {
   const { t, i18n } = useTranslation();
   const { lang: urlLang } = useParams();
   const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+  const seoData = getSeoData('ecommerce', lang) || seoConfig.ecommerce;
   const serviciosItems = t('paginas.ecommerce.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
     ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
@@ -114,22 +115,22 @@ function Ecommerce() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>{seoConfig.ecommerce.title}</title>
-        <meta name="description" content={seoConfig.ecommerce.description} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
         <meta name="keywords" content={seoConfig.ecommerce.keywords} />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/ecommerce`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/ecommerce" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce" />
-        <meta property="og:title" content={seoConfig.ecommerce.ogTitle} />
-        <meta property="og:description" content={seoConfig.ecommerce.ogDescription} />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/ecommerce`} />
         <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoConfig.ecommerce.ogTitle} />
-        <meta name="twitter:description" content={seoConfig.ecommerce.ogDescription} />
+        <meta name="twitter:title" content={seoData.ogTitle} />
+        <meta name="twitter:description" content={seoData.ogDescription} />
         <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         
         <script type="application/ld+json">

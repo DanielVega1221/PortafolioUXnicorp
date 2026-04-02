@@ -79,6 +79,14 @@
   transform: translateX(-2px);
 }
 
+/* -- LANGUAGE TOGGLE ------------------------------------------- */
+.diag-lang-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 200;
+}
+
 /* -- PROGRESS LINE --------------------------------------------- */
 .diag-progress-line {
   position: fixed;

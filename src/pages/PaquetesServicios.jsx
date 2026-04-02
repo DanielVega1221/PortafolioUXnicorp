@@ -10,6 +10,7 @@ import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import LanguageToggle from '../componentes/LanguageToggle';
 import { useTranslation } from 'react-i18next';
 import ServicioModal from '../componentes/ServicioModal';
+import { seoConfig, createBreadcrumbSchema, getSeoData } from '../utils/seoConfig';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -101,6 +102,7 @@ function PaquetesServicios() {
   const { t, i18n } = useTranslation();
   const { lang: urlLang } = useParams();
   const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+  const seoData = getSeoData('paquetes', lang) || seoConfig.paquetes;
   const serviciosItems = t('paginas.paquetes.items', { returnObjects: true });
   const serviciosT = Array.isArray(serviciosItems)
     ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
@@ -131,16 +133,19 @@ function PaquetesServicios() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>Paquetes de Desarrollo Web Argentina | Soluciones Completas - UXnicorp</title>
-        <meta name="description" content="Paquetes web todo incluido en Argentina: Emprendedor (Landing+Branding), Auditoría Integral, Plan Evolución escalable. Ahorra tiempo." />
-        <meta name="keywords" content="paquete desarrollo web argentina, landing mas branding, auditoría completa, plan desarrollo web, combo web argentina, paquete emprendedor argentina" />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoConfig.paquetes.keywords} />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/paquetes`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/paquetes" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/paquetes" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/paquetes" />
-        <meta property="og:title" content="Paquetes Web Argentina - UXnicorp" />
-        <meta property="og:description" content="Soluciones completas para emprendedores y empresas. Landing + Branding, Auditorías y planes escalables." />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
+        <script type="application/ld+json">
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.paquetes.breadcrumb, lang))}
+        </script>
       </Helmet>
       <LanguageToggle />
 

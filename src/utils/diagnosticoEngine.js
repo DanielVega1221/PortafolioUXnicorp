@@ -1163,9 +1163,871 @@ export function generateDiagnostico(respuestas, rubroId, subtipoId) {
  * Retorna el array de preguntas que debe responder el usuario para un rubro dado.
  * Combina preguntas comunes + específicas del rubro.
  */
-export function getPreguntasParaRubro(rubroId) {
+export function getPreguntasParaRubro(rubroId, lang = 'es') {
+  if (lang === 'en') {
+    return [
+      ...PREGUNTAS_COMUNES_EN,
+      ...(PREGUNTAS_POR_RUBRO_EN[rubroId] || []),
+    ];
+  }
   return [
     ...PREGUNTAS_COMUNES,
     ...(PREGUNTAS_POR_RUBRO[rubroId] || []),
   ];
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 11. LANG-AWARE GETTERS
+// ─────────────────────────────────────────────────────────────────────────────
+
+export function getRUBROS(lang = 'es') {
+  return lang === 'en' ? RUBROS_EN : RUBROS;
+}
+
+export function getSOLUCIONES(lang = 'es') {
+  return lang === 'en' ? SOLUCIONES_EN : SOLUCIONES;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 12. DATOS EN INGLÉS — RUBROS
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const RUBROS_EN = [
+  {
+    id: 'servicios_profesionales',
+    label: 'Professional Services',
+    emoji: '💼',
+    descripcion: 'Architecture, lawyers, accountants, consultants, healthcare',
+    subtipos: [
+      { id: 'arquitectura',    label: 'Architecture / Interior Design' },
+      { id: 'legal',           label: 'Lawyers / Law firm' },
+      { id: 'contabilidad',    label: 'Accountants / Finance' },
+      { id: 'consultoria',     label: 'Consulting / Coaching' },
+      { id: 'salud',           label: 'Healthcare / Psychology / Nutrition' },
+      { id: 'otros_servicios', label: 'Other professional service' },
+    ],
+  },
+  {
+    id: 'gastronomia',
+    label: 'Food & Beverage',
+    emoji: '🍽️',
+    descripcion: 'Restaurants, deliveries, cafés, bars',
+    subtipos: [
+      { id: 'restaurante', label: 'Restaurant / Grill' },
+      { id: 'delivery',    label: 'Delivery / Dark kitchen' },
+      { id: 'cafeteria',   label: 'Café / Bar / Brewery' },
+      { id: 'catering',    label: 'Catering / Events' },
+    ],
+  },
+  {
+    id: 'comercio',
+    label: 'Commerce & Retail',
+    emoji: '🛒',
+    descripcion: 'Physical stores, physical or digital products',
+    subtipos: [
+      { id: 'tienda_fisica',     label: 'Physical store (clothing, accessories, etc.)' },
+      { id: 'productos_propios', label: 'Own products to sell online' },
+      { id: 'distribuidor',      label: 'Distributor / Wholesaler' },
+      { id: 'digital_products',  label: 'Digital products (ebooks, templates)' },
+    ],
+  },
+  {
+    id: 'educacion',
+    label: 'Education & Training',
+    emoji: '🎓',
+    descripcion: 'Courses, academies, coaches, training',
+    subtipos: [
+      { id: 'cursos_online',  label: 'Online courses / Educational platform' },
+      { id: 'academia',       label: 'Academy / In-person institute' },
+      { id: 'clases_part',    label: 'Private lessons / Tutoring' },
+      { id: 'capacitaciones', label: 'Corporate training (B2B)' },
+    ],
+  },
+  {
+    id: 'marca_personal',
+    label: 'Personal Brand',
+    emoji: '🌟',
+    descripcion: 'Influencers, creators, individual entrepreneurs',
+    subtipos: [
+      { id: 'creador_contenido', label: 'Content creator / Influencer' },
+      { id: 'coach',             label: 'Coach / Mentor' },
+      { id: 'freelance',         label: 'Freelancer (design, photo, dev, etc.)' },
+      { id: 'artista',           label: 'Artist / Musician / Photographer' },
+    ],
+  },
+  {
+    id: 'empresa_b2b',
+    label: 'Business / B2B',
+    emoji: '🏢',
+    descripcion: 'Mid/large companies, suppliers, industry',
+    subtipos: [
+      { id: 'pyme',         label: 'SME / Medium company' },
+      { id: 'industria',    label: 'Industry / Manufacturing' },
+      { id: 'tech',         label: 'Tech company / Software' },
+      { id: 'inmobiliaria', label: 'Real Estate' },
+    ],
+  },
+  {
+    id: 'turismo',
+    label: 'Tourism & Hospitality',
+    emoji: '✈️',
+    descripcion: 'Hotels, agencies, tour guides',
+    subtipos: [
+      { id: 'hotel',          label: 'Hotel / Hostel / Cabin' },
+      { id: 'agencia_viajes', label: 'Travel agency' },
+      { id: 'turismo_local',  label: 'Local tourism / Excursions' },
+    ],
+  },
+  {
+    id: 'bienestar',
+    label: 'Wellness & Fitness',
+    emoji: '🏋️',
+    descripcion: 'Gyms, spas, yoga, training',
+    subtipos: [
+      { id: 'gimnasio',    label: 'Gym / CrossFit / Box' },
+      { id: 'spa_belleza', label: 'Spa / Salon / Beauty center' },
+      { id: 'entrenador',  label: 'Personal trainer / Yoga / Pilates' },
+    ],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 13. DATOS EN INGLÉS — PREGUNTAS COMUNES
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const PREGUNTAS_COMUNES_EN = [
+  {
+    id: 'objetivo',
+    pregunta: 'What is your main goal?',
+    subtexto: 'Choose the one that best describes what you\'re looking for',
+    consejo: 'This shapes the entire recommendation. Don\'t worry if you have multiple goals — pick the most urgent one for now.',
+    tipo: 'single',
+    opciones: [
+      { id: 'conseguir_clientes', label: 'Get more clients',                                    score: { captacion: 3 } },
+      { id: 'vender_online',      label: 'Sell my products/services online',                    score: { ventas_online: 4 } },
+      { id: 'automatizar',        label: 'Automate and organize my internal processes',          score: { automatizacion: 4 } },
+      { id: 'imagen_marca',       label: 'Improve my brand image and presence',                 score: { captacion: 2 } },
+      { id: 'escalar',            label: 'Scale the business (I have operations but want to grow)', score: { automatizacion: 2, captacion: 2, complejidad: 2 } },
+      { id: 'todo',               label: 'All of the above (I have multiple goals)',             score: { captacion: 2, ventas_online: 2, automatizacion: 2, complejidad: 3 } },
+    ],
+  },
+  {
+    id: 'estado_negocio',
+    pregunta: 'What stage is your business at?',
+    subtexto: 'This greatly affects what kind of solution makes sense',
+    consejo: 'It doesn\'t matter if you\'re starting out or have been running for years. This helps me see how urgent each step is and where we start from.',
+    tipo: 'single',
+    opciones: [
+      { id: 'idea',        label: 'It\'s an idea, I haven\'t launched yet',    score: { captacion: 1 } },
+      { id: 'empezando',   label: 'I just started (less than 1 year)',          score: { captacion: 2 } },
+      { id: 'funcionando', label: 'It\'s running and I have clients',           score: { captacion: 1, automatizacion: 1 } },
+      { id: 'creciendo',   label: 'I\'m growing and need to scale',             score: { automatizacion: 2, complejidad: 2 } },
+    ],
+  },
+  {
+    id: 'presencia_digital',
+    pregunta: 'What does your digital presence look like today?',
+    subtexto: 'No judgment here — it helps us understand the starting point',
+    consejo: 'Knowing what you already have avoids recommending something that already exists or doesn\'t add real value yet. There\'s no wrong answer here.',
+    tipo: 'single',
+    opciones: [
+      { id: 'nada',          label: 'I have nothing yet',                                  score: { captacion: 2 } },
+      { id: 'solo_redes',    label: 'Only social media (Instagram, Facebook, etc.)',        score: { captacion: 2 } },
+      { id: 'web_basica',    label: 'I have a basic website that doesn\'t convert',         score: { captacion: 1 } },
+      { id: 'web_ok',        label: 'I have a website but want to improve it',               score: {} },
+      { id: 'algo_avanzado', label: 'I already have an advanced system/website',            score: { automatizacion: 1 } },
+    ],
+  },
+  {
+    id: 'gestion_actual',
+    pregunta: 'How do you run your business today?',
+    subtexto: 'Think about sales, clients, appointments, orders, inventory, etc.',
+    consejo: 'How you manage today defines what can be automated. Many businesses lose hours per week on tasks that a good system can handle in seconds.',
+    tipo: 'single',
+    opciones: [
+      { id: 'manual_todo',    label: 'Everything is manual or on paper',                      score: { automatizacion: 4 } },
+      { id: 'excel_wasap',    label: 'Excel + WhatsApp',                                     score: { automatizacion: 3 } },
+      { id: 'apps_sueltas',   label: 'I use separate apps (Sheets, Drive, Notion, etc.)',     score: { automatizacion: 2 } },
+      { id: 'sistema_basico', label: 'I have some basic system',                             score: { automatizacion: 1 } },
+      { id: 'sistema_ok',     label: 'I have a system that works well',                       score: {} },
+    ],
+  },
+  {
+    id: 'volumen',
+    pregunta: 'How many clients or transactions do you handle per month?',
+    subtexto: 'Approximate, no need to be exact',
+    consejo: 'Volume determines the scale of the solution. Serving 10 clients a month is very different from 300 — it affects technical complexity and the budget that makes sense.',
+    tipo: 'single',
+    opciones: [
+      { id: 'pocos',    label: 'Less than 20',          score: {} },
+      { id: 'medio',    label: 'Between 20 and 100',    score: { automatizacion: 1 } },
+      { id: 'alto',     label: 'More than 100',          score: { automatizacion: 3, complejidad: 2 } },
+      { id: 'muy_alto', label: 'More than 500 (high volume)', score: { automatizacion: 4, complejidad: 3 } },
+    ],
+  },
+  {
+    id: 'presupuesto',
+    pregunta: 'Do you have a budget in mind for investment?',
+    subtexto: 'This helps us recommend the most realistic option for your case',
+    consejo: 'There are good solutions at every budget. Being realistic here makes the recommendation concrete and actionable, not just aspirational.',
+    tipo: 'single',
+    opciones: [
+      { id: 'bajo',       label: 'Less than $200 USD',          score: { presupuesto_nivel: 1 } },
+      { id: 'medio',      label: 'Between $200 and $800 USD',   score: { presupuesto_nivel: 2 } },
+      { id: 'medio_alto', label: 'Between $800 and $2000 USD',  score: { presupuesto_nivel: 3 } },
+      { id: 'alto',       label: 'More than $2000 USD',         score: { presupuesto_nivel: 4 } },
+      { id: 'no_se',      label: 'I\'m not sure yet',           score: { presupuesto_nivel: 2 } },
+    ],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 14. DATOS EN INGLÉS — PREGUNTAS POR RUBRO
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const PREGUNTAS_POR_RUBRO_EN = {
+  servicios_profesionales: [
+    {
+      id: 'sp_muestra_portfolio',
+      pregunta: 'Do you need to showcase your work or success stories?',
+      subtexto: 'Projects, won cases, accounting studies, etc.',
+      consejo: 'Showing real work and concrete results builds trust automatically. In professional services, social proof is everything.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si',      label: 'Yes, that\'s key for me',                    score: { captacion: 2 } },
+        { id: 'no',      label: 'No, my service is more intangible',          score: {} },
+        { id: 'tal_vez', label: 'It could help but it\'s not the main thing', score: { captacion: 1 } },
+      ],
+    },
+    {
+      id: 'sp_turnos',
+      pregunta: 'Do your clients need to book appointments or schedule consultations?',
+      subtexto: 'Meetings, visits, consultations, advisory sessions',
+      consejo: 'Appointments are the #1 pain point in professional services. This answer could completely change what we recommend.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_clave',  label: 'Yes, and managing it takes up a lot of my time', score: { automatizacion: 3, captacion: 1 } },
+        { id: 'si_menor',  label: 'Yes, but it\'s not a problem today',             score: { automatizacion: 1 } },
+        { id: 'no',        label: 'No, I work on projects or contracts',             score: {} },
+      ],
+    },
+  ],
+
+  gastronomia: [
+    {
+      id: 'gas_pedidos',
+      pregunta: 'Do you receive orders from clients (takeaway or delivery)?',
+      subtexto: 'Beyond in-store service',
+      consejo: 'Online orders can multiply income for a well-optimized food business. But we need to evaluate if it\'s the right step now.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_mucho', label: 'Yes, it\'s an important part of the business',   score: { ventas_online: 3, automatizacion: 2 } },
+        { id: 'si_poco',  label: 'Yes, but little and in a disorganized way',       score: { ventas_online: 2, automatizacion: 3 } },
+        { id: 'no',       label: 'No, in-store service only',                       score: { captacion: 2 } },
+      ],
+    },
+    {
+      id: 'gas_reservas',
+      pregunta: 'Do you manage table reservations?',
+      consejo: 'Automating reservations eliminates calls, WhatsApp messages, and human errors. It frees up time to focus on serving guests already in the venue.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_manual',  label: 'Yes, but manually or via WhatsApp',        score: { automatizacion: 3 } },
+        { id: 'si_sistema', label: 'Yes, I already have a reservation system',  score: {} },
+        { id: 'no',         label: 'We don\'t take reservations',               score: {} },
+      ],
+    },
+  ],
+
+  comercio: [
+    {
+      id: 'com_stock',
+      pregunta: 'Do you need to manage product inventory?',
+      consejo: 'If you deal with inventory, everything changes. You need more than a website — you need a system that tracks it in real time so you don\'t sell what you don\'t have.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_muchos', label: 'Yes, I have many products and it\'s a mess', score: { automatizacion: 4, complejidad: 2 } },
+        { id: 'si_pocos',  label: 'Yes, but it\'s a small number of products',  score: { automatizacion: 2 } },
+        { id: 'no',        label: 'No physical inventory (digital products)',    score: { ventas_online: 2 } },
+      ],
+    },
+    {
+      id: 'com_pagos',
+      pregunta: 'Do you need to accept online payments?',
+      consejo: 'Online payments reduce purchase friction and enable sales while you sleep. They require integrations that add to the cost, but the return usually justifies it.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_urgente', label: 'Yes, it\'s essential',                     score: { ventas_online: 4 } },
+        { id: 'si_futuro',  label: 'In the future yes, not now',               score: { ventas_online: 2 } },
+        { id: 'no',         label: 'No, I just want to showcase products',      score: {} },
+      ],
+    },
+  ],
+
+  educacion: [
+    {
+      id: 'edu_cursos_grabados',
+      pregunta: 'Are your courses recorded or live?',
+      consejo: 'Recorded courses are income that works on its own. But they need a different platform than an institutional website. This answer determines almost everything.',
+      tipo: 'single',
+      opciones: [
+        { id: 'grabados',   label: 'Recorded (asynchronous)',      score: { ventas_online: 2, complejidad: 2 } },
+        { id: 'live',       label: 'Live (synchronous classes)',    score: { captacion: 2, automatizacion: 2 } },
+        { id: 'mixto',      label: 'Mixed',                        score: { complejidad: 3, ventas_online: 2 } },
+        { id: 'presencial', label: 'In-person',                    score: { captacion: 3 } },
+      ],
+    },
+    {
+      id: 'edu_pagos_recurrentes',
+      pregunta: 'Do you need to charge memberships or subscriptions?',
+      consejo: 'Recurring income is every educator\'s dream. But it involves greater technical complexity and a well-thought-out retention strategy.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si',      label: 'Yes, or I\'d like to',          score: { ventas_online: 3, complejidad: 3 } },
+        { id: 'no',      label: 'No, I charge per course or one-time package', score: { ventas_online: 2 } },
+        { id: 'tal_vez', label: 'Maybe in the future',            score: { ventas_online: 1, complejidad: 1 } },
+      ],
+    },
+  ],
+
+  marca_personal: [
+    {
+      id: 'mp_monetizacion',
+      pregunta: 'How do you monetize (or want to)?',
+      consejo: 'Each monetization model needs a different digital solution. This answer alone can completely change what we recommend.',
+      tipo: 'single',
+      opciones: [
+        { id: 'servicios',     label: 'Personal services or consulting',        score: { captacion: 3 } },
+        { id: 'productos_dig', label: 'Digital products (courses, ebooks)',     score: { ventas_online: 3 } },
+        { id: 'contenido',     label: 'Content / sponsorships / affiliates',    score: { captacion: 2 } },
+        { id: 'todo',          label: 'A mix of several',                       score: { captacion: 2, ventas_online: 2, complejidad: 2 } },
+      ],
+    },
+    {
+      id: 'mp_audiencia',
+      pregunta: 'Do you have an audience on social media?',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_grande',    label: 'Yes, quite large (+10k)',     score: { captacion: 1, ventas_online: 2 } },
+        { id: 'si_pequena',   label: 'Yes but small (less than 10k)', score: { captacion: 2 } },
+        { id: 'construyendo', label: 'I\'m building it',             score: { captacion: 3 } },
+        { id: 'no',           label: 'No, starting from scratch',   score: { captacion: 3 } },
+      ],
+    },
+  ],
+
+  empresa_b2b: [
+    {
+      id: 'b2b_empleados',
+      pregunta: 'How many internal users need access to the system?',
+      tipo: 'single',
+      opciones: [
+        { id: 'solo_yo', label: 'Just me',                score: {} },
+        { id: 'pocos',   label: 'A small team (2-10)',    score: { complejidad: 2 } },
+        { id: 'medio',   label: '10-50',                  score: { complejidad: 3, automatizacion: 2 } },
+        { id: 'grande',  label: 'More than 50',           score: { complejidad: 4, automatizacion: 3 } },
+      ],
+    },
+    {
+      id: 'b2b_crm',
+      pregunta: 'Do you need to manage your client portfolio (CRM)?',
+      consejo: 'In B2B, sales pipeline management is often the biggest bottleneck. It can cost you many clients without realizing why.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_urgente', label: 'Yes, it\'s a problem today', score: { automatizacion: 4, complejidad: 2 } },
+        { id: 'si_futuro',  label: 'In the future yes',          score: { automatizacion: 2 } },
+        { id: 'no',         label: 'I don\'t need a CRM',        score: {} },
+      ],
+    },
+  ],
+
+  turismo: [
+    {
+      id: 'tur_reservas',
+      pregunta: 'Do you need to manage reservations or packages?',
+      consejo: 'Online reservations eliminate calls, errors and misunderstandings. In tourism, the booking experience is part of the first impression.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_online', label: 'Yes, I want them to be bookable online', score: { ventas_online: 3, automatizacion: 2 } },
+        { id: 'si_manual', label: 'Yes, but I\'m doing it manually',         score: { automatizacion: 4 } },
+        { id: 'no',        label: 'No, I just want to showcase my services', score: { captacion: 2 } },
+      ],
+    },
+  ],
+
+  bienestar: [
+    {
+      id: 'bien_turnos',
+      pregunta: 'Does your business depend on appointments or classes?',
+      consejo: 'A well-managed schedule can free up hours of work per week and significantly improve your clients\' experience. It\'s where the difference shows the most.',
+      tipo: 'single',
+      opciones: [
+        { id: 'si_central', label: 'Yes, it\'s the core of my operation', score: { automatizacion: 4, captacion: 2 } },
+        { id: 'si_parcial', label: 'Partially',                           score: { automatizacion: 2 } },
+        { id: 'no',         label: 'No, it works differently',            score: { captacion: 2 } },
+      ],
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 15. DATOS EN INGLÉS — SOLUCIONES
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const SOLUCIONES_EN = {
+  landing_leads: {
+    id: 'landing_leads',
+    nombre: 'Lead Capture Landing Page',
+    nivel: 1,
+    etiqueta: 'Recommended for starting out',
+    color: '#4bb543',
+    descripcion: 'A page 100% focused on converting visitors into inquiries or potential clients. Quick to launch, high immediate impact.',
+    beneficios: [
+      'Generate inquiries from day one',
+      'Low initial investment, fast ROI',
+      'Scalable: you can grow from here',
+      'WhatsApp and form integration',
+    ],
+    funcionalidades: [
+      'High-impact hero with clear CTA',
+      'Well-communicated value proposition',
+      'Smart contact form',
+      'Direct WhatsApp button',
+      'Services / portfolio section',
+      'Testimonials and social proof',
+      'Basic SEO configured',
+      'Responsive mobile-first design',
+    ],
+    tiempo_estimado: '3-10 days',
+    slug_servicio: 'servicios/landing-pages',
+    item_id: 'landing-express-full',
+  },
+  web_institucional: {
+    id: 'web_institucional',
+    nombre: 'Complete Institutional Website',
+    nivel: 2,
+    etiqueta: 'To position yourself with authority',
+    color: '#C8DBF7',
+    descripcion: 'A professional multi-page website that reflects who you are, what you do and why to choose you. Ideal for building credibility.',
+    beneficios: [
+      'Professional and trustworthy presence',
+      'Better SEO positioning',
+      'Blog to generate content and authority',
+      'Multiple conversion points',
+    ],
+    funcionalidades: [
+      'Up to 8 complete pages',
+      'Integrated blog',
+      'Portfolio / success stories',
+      'Team and about us',
+      'Multiple contextual forms',
+      'Advanced SEO per page',
+      'Google Analytics configured',
+      'Map and contact details',
+    ],
+    tiempo_estimado: '15-25 days',
+    slug_servicio: 'servicios/webs-profesionales',
+    item_id: 'web-institucional',
+  },
+  web_portfolio: {
+    id: 'web_portfolio',
+    nombre: 'Professional Portfolio Website',
+    nivel: 2,
+    etiqueta: 'To showcase your work',
+    color: '#e8a848',
+    descripcion: 'A website designed to visually impress and showcase your work in a way that builds trust and generates spontaneous inquiries.',
+    beneficios: [
+      'Your work speaks for itself',
+      'Builds trust automatically',
+      'High-quality visual design',
+      'Clients arrive with intent',
+    ],
+    funcionalidades: [
+      'Project gallery with filters',
+      'Detailed project page',
+      'About the studio / personal',
+      'Inquiry form',
+      'Social media integration',
+      'SEO focused on service searches',
+    ],
+    tiempo_estimado: '10-20 days',
+    slug_servicio: 'servicios/webs-profesionales',
+    item_id: 'web-portfolio',
+  },
+  web_reservas: {
+    id: 'web_reservas',
+    nombre: 'Website with Booking System',
+    nivel: 2,
+    etiqueta: 'Automate your schedule',
+    color: '#48b8e8',
+    descripcion: 'A website that lets your clients book, schedule or make appointments autonomously 24/7, without you needing to be present.',
+    beneficios: [
+      'Eliminate the WhatsApp/calls chaos',
+      'Clients book themselves anytime',
+      'Less time on administration',
+      'More time for what matters',
+    ],
+    funcionalidades: [
+      'Real-time availability calendar',
+      'Automatic bookings and confirmations',
+      'Email/WhatsApp notifications',
+      'Schedule management panel',
+      'Google Calendar integration',
+      'Automatic reminders',
+    ],
+    tiempo_estimado: '15-30 days',
+    slug_servicio: 'servicios/sistemas-gestion',
+    item_id: 'web-reservas',
+  },
+  ecommerce: {
+    id: 'ecommerce',
+    nombre: 'E-commerce Store',
+    nivel: 3,
+    etiqueta: 'Sell online 24/7',
+    color: '#e84848',
+    descripcion: 'A complete online store with catalog, cart, payments and order management. Your business open 24 hours every day.',
+    beneficios: [
+      'Sell while you sleep',
+      'Reach beyond your local area',
+      'Integrated and secure payments',
+      'Centralized management of everything',
+    ],
+    funcionalidades: [
+      'Unlimited product catalog',
+      'Optimized shopping cart',
+      'Payments: local gateways, cards, bank transfer',
+      'Automatic stock management',
+      'Order history',
+      'Admin panel',
+      'Coupons and discounts',
+      'Shipping integration',
+    ],
+    tiempo_estimado: '20-45 days',
+    slug_servicio: 'servicios/ecommerce',
+    item_id: 'ecommerce-basico',
+  },
+  plataforma_educativa: {
+    id: 'plataforma_educativa',
+    nombre: 'Educational Platform',
+    nivel: 3,
+    etiqueta: 'Your online academy',
+    color: '#D966B2',
+    descripcion: 'A complete platform to launch and manage online courses with users, progress, videos and integrated payments.',
+    beneficios: [
+      'Scale with unlimited students',
+      'Passive income from your knowledge',
+      'Premium learning experience',
+      'Full control of your content',
+    ],
+    funcionalidades: [
+      'Course and module system',
+      'Student login and profile',
+      'Integrated video player',
+      'Progress and certificates',
+      'Payments and membership access',
+      'Forum or internal community',
+      'Admin panel',
+    ],
+    tiempo_estimado: '30-60 days',
+    slug_servicio: 'servicios/plataforma-educativa',
+    item_id: 'plataforma-educativa',
+  },
+  sistema_gestion: {
+    id: 'sistema_gestion',
+    nombre: 'Custom Management System',
+    nivel: 4,
+    etiqueta: 'Operations under control',
+    color: '#48e8b8',
+    descripcion: 'An internal system designed specifically for your business: client management, sales, inventory, reports and everything you need to operate without chaos.',
+    beneficios: [
+      'Eliminate operational chaos forever',
+      'Real-time information',
+      'Fewer human errors',
+      'Scale without hiring more staff',
+    ],
+    funcionalidades: [
+      'Client/CRM module',
+      'Sales and order management',
+      'Stock/inventory control',
+      'Billing and reports',
+      'Multi-user with roles',
+      'Dashboard with key metrics',
+      'Automatic notifications',
+      'Export to Excel/PDF',
+    ],
+    tiempo_estimado: '45-90 days',
+    slug_servicio: 'servicios/sistemas-gestion',
+    item_id: 'sistema-gestion-basico',
+  },
+  web_pedidos_gastronomia: {
+    id: 'web_pedidos_gastronomia',
+    nombre: 'Website with Online Orders (Food & Beverage)',
+    nivel: 2,
+    etiqueta: 'For restaurants and deliveries',
+    color: '#e87048',
+    descripcion: 'A food & beverage website with digital menu, online orders and reservation system. Your restaurant in your clients\' pocket.',
+    beneficios: [
+      'Direct orders without app commissions',
+      'Always up-to-date menu',
+      'Automatic reservations',
+      'Own brand image',
+    ],
+    funcionalidades: [
+      'Categorized digital menu',
+      'Takeaway/delivery orders',
+      'Integrated reservation system',
+      'WhatsApp integration for confirmations',
+      'Dish gallery',
+      'History / chef section',
+      'Map and hours',
+    ],
+    tiempo_estimado: '15-25 days',
+    slug_servicio: 'gastronomia',
+    item_id: null,
+  },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 16. GENERADORES EN INGLÉS — PROBLEMAS, OPORTUNIDADES, ESTRATEGIA, NARRATIVO
+// ─────────────────────────────────────────────────────────────────────────────
+
+export function generarProblemas_EN(scores, respuestas) {
+  const problemas = [];
+
+  if (respuestas.presencia_digital === 'nada' || respuestas.presencia_digital === 'solo_redes') {
+    problemas.push({
+      id: 'sin_presencia',
+      texto: 'You don\'t have your own controlled digital presence',
+      detalle: 'You depend on third-party platforms (Instagram, Facebook) whose algorithms can reduce your visibility overnight. If the rules change, you lose all accumulated work.',
+    });
+  }
+
+  if (respuestas.presencia_digital === 'solo_redes') {
+    problemas.push({
+      id: 'solo_redes',
+      texto: 'Social media alone isn\'t enough as an autonomous sales channel',
+      detalle: 'Without your own website, you can\'t capture client data, follow up, or rank on Google. DM inquiries are costly to manage and hard to convert.',
+    });
+  }
+
+  if (respuestas.gestion_actual === 'manual_todo' || respuestas.gestion_actual === 'excel_wasap') {
+    problemas.push({
+      id: 'gestion_manual',
+      texto: 'Manual management is stealing your time and causing errors',
+      detalle: 'Without automation, every new sale, appointment or order consumes valuable time. As volume grows, this becomes a bottleneck that stalls the business.',
+    });
+  }
+
+  if (respuestas.volumen === 'alto' || respuestas.volumen === 'muy_alto') {
+    if (respuestas.gestion_actual !== 'sistema_ok') {
+      problemas.push({
+        id: 'volumen_sin_sistema',
+        texto: 'High volume without a system is a ticking time bomb',
+        detalle: 'With more than 100 monthly transactions and no centralized system, the risk of errors, lost clients and team burnout grows exponentially.',
+      });
+    }
+  }
+
+  if (respuestas.presencia_digital === 'web_basica') {
+    problemas.push({
+      id: 'web_no_convierte',
+      texto: 'Your current website isn\'t converting visits into clients',
+      detalle: 'Having a website doesn\'t guarantee clients. Without a clear conversion strategy, most visitors leave without leaving their information or making contact.',
+    });
+  }
+
+  if (respuestas.sp_turnos === 'si_clave') {
+    if (respuestas.gestion_actual === 'excel_wasap' || respuestas.gestion_actual === 'manual_todo') {
+      problemas.push({
+        id: 'agenda_manual',
+        texto: 'Managing appointments/schedule via WhatsApp is inefficient and causes no-shows',
+        detalle: 'Without a booking system, you waste time coordinating, have higher no-show rates and the client experience feels unprofessional.',
+      });
+    }
+  }
+
+  return problemas.slice(0, 4);
+}
+
+export function generarOportunidades_EN(scores, respuestas, rubroId, solucionId) {
+  const ops = [];
+
+  const solucionesCaptan = ['landing_leads', 'web_portfolio', 'web_institucional', 'web_pedidos_gastronomia'];
+  if (solucionesCaptan.includes(solucionId) || respuestas.objetivo === 'conseguir_clientes') {
+    ops.push({
+      id: 'gen_leads',
+      texto: 'You can generate a constant and predictable flow of inquiries',
+      detalle: 'With the right digital strategy, the online channel can become your main source of clients, working 24/7 without you needing to be present.',
+    });
+  }
+
+  const solucionesAutomatizan = ['web_reservas', 'sistema_gestion', 'web_pedidos_gastronomia', 'ecommerce'];
+  if (
+    solucionesAutomatizan.includes(solucionId) &&
+    (respuestas.gestion_actual === 'excel_wasap' || respuestas.gestion_actual === 'manual_todo' || scores.automatizacion >= 3)
+  ) {
+    ops.push({
+      id: 'automatizar',
+      texto: 'You can reclaim hours of weekly work by automating key processes',
+      detalle: 'Appointments, confirmations, reminders, order management and inventory are processes that can run on their own with the right system.',
+    });
+  }
+
+  const solucionesVenden = ['ecommerce', 'plataforma_educativa', 'web_pedidos_gastronomia'];
+  if (solucionesVenden.includes(solucionId)) {
+    ops.push({
+      id: 'vender_24_7',
+      texto: 'You can sell online 24/7 without intermediaries or third-party commissions',
+      detalle: 'Your own sales channel frees you from delivery apps, marketplaces and social media, increasing your margin per sale.',
+    });
+  }
+
+  if (respuestas.estado_negocio === 'creciendo' || respuestas.objetivo === 'escalar') {
+    ops.push({
+      id: 'escalar',
+      texto: 'With the right digital foundation, you can scale without hiring more staff',
+      detalle: 'Automation and the right systems allow you to handle more clients and operations with the same team you have today.',
+    });
+  }
+
+  const rubrosAutoridad = ['servicios_profesionales', 'marca_personal', 'empresa_b2b', 'educacion'];
+  const solucionesAutoridad = ['web_portfolio', 'web_institucional', 'plataforma_educativa', 'landing_leads'];
+  if (rubrosAutoridad.includes(rubroId) && solucionesAutoridad.includes(solucionId)) {
+    ops.push({
+      id: 'autoridad',
+      texto: 'You can position yourself as a reference in your industry through digital content',
+      detalle: 'A blog, project portfolio and well-presented testimonials build authority and trust before the client has the first contact with you.',
+    });
+  }
+
+  return ops.slice(0, 4);
+}
+
+export function generarEstrategia_EN(solucionId) {
+  const estrategias = {
+    landing_leads: [
+      'Launch the landing focused on a single CTA (contact or inquiry)',
+      'Connect with WhatsApp Business for quick response',
+      'Use Instagram/Facebook to drive traffic to the landing',
+      'Once the model is validated, scale with Google Ads',
+    ],
+    web_portfolio: [
+      'Publish the best 5-8 documented projects or cases',
+      'Rank on Google with local and service-based SEO',
+      'Use LinkedIn to amplify the professional portfolio',
+      'Add contextual inquiry form by project type',
+    ],
+    web_institucional: [
+      'Start with the key pages: home, services, contact',
+      'Start a blog with content aimed at common industry questions',
+      'Local SEO to rank in your city or area',
+      'Measure and optimize the pages with the most traffic',
+    ],
+    web_reservas: [
+      'Migrate current schedule to the digital system gradually',
+      'Communicate the new booking system to existing clients',
+      'Activate automatic reminders to reduce no-shows',
+      'Use the website as the central hub for all communication channels',
+    ],
+    ecommerce: [
+      'Start with the 20 best-selling or most profitable products',
+      'Set up local payment gateways and alternative payment methods',
+      'Use social media with direct links to the shopping cart',
+      'Implement email marketing from the first order',
+    ],
+    plataforma_educativa: [
+      'Launch with a first course or mini-course to validate',
+      'Use a standalone sales landing page for each course',
+      'Build an email list before launching',
+      'Iterate content based on feedback from first students',
+    ],
+    sistema_gestion: [
+      'Map all current processes before digitalizing',
+      'Prioritize the most critical modules for the first launch',
+      'Train the team progressively on the new system',
+      'Track monthly time saved to calculate ROI',
+    ],
+    web_pedidos_gastronomia: [
+      'Migrate WhatsApp orders to the system gradually',
+      'Use the digital menu as a social media business card',
+      'Activate Google My Business with link to the website and menu',
+      'Promote direct orders vs. apps to increase margin',
+    ],
+  };
+
+  return estrategias[solucionId] || estrategias['landing_leads'];
+}
+
+// Modify generateDiagnostico to support lang
+const _generateDiagnosticoES = generateDiagnostico;
+
+/**
+ * Lang-aware version of generateDiagnostico.
+ * Pass lang='en' to get English output.
+ */
+export function generateDiagnosticoLang(respuestas, rubroId, subtipoId, lang = 'es') {
+  if (lang !== 'en') return generateDiagnostico(respuestas, rubroId, subtipoId);
+
+  // ── English path ──
+  const scores = { captacion: 0, ventas_online: 0, automatizacion: 0, complejidad: 0, presupuesto_nivel: 2 };
+
+  const todasLasPreguntas = [
+    ...PREGUNTAS_COMUNES_EN,
+    ...(PREGUNTAS_POR_RUBRO_EN[rubroId] || []),
+  ];
+
+  todasLasPreguntas.forEach(pregunta => {
+    const respuestaId = respuestas[pregunta.id];
+    if (!respuestaId) return;
+    const opcion = pregunta.opciones.find(o => o.id === respuestaId);
+    if (!opcion?.score) return;
+    Object.entries(opcion.score).forEach(([key, val]) => {
+      scores[key] = (scores[key] || 0) + val;
+    });
+  });
+
+  scores._respuestas = respuestas;
+
+  const solucionId  = resolverSolucion(scores, rubroId, subtipoId);
+  const solucion    = SOLUCIONES_EN[solucionId];
+  // Re-map alternativas to EN data
+  const alternativasEN = resolverAlternativas(solucionId, scores, rubroId, subtipoId)
+    .map(alt => SOLUCIONES_EN[alt.id])
+    .filter(Boolean);
+
+  const problemas     = generarProblemas_EN(scores, respuestas);
+  const oportunidades = generarOportunidades_EN(scores, respuestas, rubroId, solucionId);
+  const estrategia    = generarEstrategia_EN(solucionId);
+
+  const rubros    = RUBROS_EN;
+  const rubro     = rubros.find(r => r.id === rubroId);
+  const subtipo   = rubro?.subtipos.find(s => s.id === subtipoId);
+
+  const estadoLabels = {
+    idea: 'at the idea stage', empezando: 'just starting out',
+    funcionando: 'fully operational', creciendo: 'actively growing',
+  };
+  const objetivoLabels = {
+    conseguir_clientes: 'get more clients', vender_online: 'sell online',
+    automatizar: 'automate your processes', imagen_marca: 'improve your brand image',
+    escalar: 'scale the business', todo: 'grow on multiple fronts',
+  };
+
+  const problemasList    = problemas.map(p => `• ${p.texto}`).join('\n');
+  const oportunidadesList = oportunidades.map(o => `• ${o.texto}`).join('\n');
+
+  const diagnosticoNarrativo = `We analyzed your situation as ${subtipo?.label || rubro?.label || 'business'} which is ${estadoLabels[respuestas.estado_negocio] || 'operating'}, with the goal of ${objetivoLabels[respuestas.objetivo] || 'growing digitally'}. We identified ${problemas.length} areas for improvement and ${oportunidades.length} key opportunities you can capitalize on with the right solution.\n\nAreas for improvement:\n${problemasList}\n\nKey opportunities:\n${oportunidadesList}`;
+
+  return {
+    rubroId,
+    subtipoId,
+    scores,
+    solucion,
+    alternativas: alternativasEN,
+    problemas,
+    oportunidades,
+    estrategia,
+    diagnosticoNarrativo,
+    fechaGenerado: new Date().toISOString(),
+  };
 }
