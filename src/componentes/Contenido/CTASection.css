@@ -15,6 +15,42 @@
   background: linear-gradient(135deg, #c9def9 0%, #81ade7 50%, #5a9ee0 100%);
 }
 
+/* ── Diagnostico variant ── */
+.cta-section.cta-diagnostico .section-glass-card {
+  background: linear-gradient(135deg, #18111f 0%, #2a1535 55%, #1c1228 100%);
+  border-color: rgba(243, 122, 166, 0.25);
+  box-shadow:
+    0 24px 80px rgba(243, 122, 166, 0.15),
+    0 12px 32px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(243,122,166,0.2);
+}
+
+.cta-section.cta-diagnostico .section-glass-card::before {
+  background: linear-gradient(90deg, transparent, rgba(243,122,166,0.9), rgba(199,126,232,0.7), transparent);
+}
+
+.cta-section.cta-diagnostico .cta-titulo {
+  color: #ffffff;
+}
+
+.cta-section.cta-diagnostico .cta-descripcion {
+  color: rgba(255, 210, 230, 0.85);
+}
+
+.cta-section.cta-diagnostico .cta-boton {
+  background: linear-gradient(135deg, #f37aa6, #ff8cc8);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(243, 122, 166, 0.45);
+}
+
+.cta-section.cta-diagnostico .cta-boton:hover {
+  box-shadow: 0 14px 40px rgba(243, 122, 166, 0.6);
+}
+
+.cta-section.cta-diagnostico .cta-boton-icono {
+  color: rgba(255,255,255,0.9);
+}
+
 .cta-content {
   position: relative;
   z-index: 2;

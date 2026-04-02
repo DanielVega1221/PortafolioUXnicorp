@@ -160,6 +160,15 @@ function App() {
         <Inicio />
         <SobreNosotros />
         <Suspense fallback={<LoadingFallback />}>
+          <CTASection
+            titulo={t('cta.diagTitulo')}
+            descripcion={t('cta.diagDesc')}
+            textoBoton={t('cta.diagBoton')}
+            variant="diagnostico"
+            linkTo="/diagnostico"
+          />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
           <div id="servicios">
             <CTASection 
               titulo={t('cta.serviciosTitulo')}

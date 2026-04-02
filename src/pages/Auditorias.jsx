@@ -132,7 +132,14 @@ function Auditorias() {
         <link rel="alternate" hreflang="x-default" href={seoData.hreflangEs} />
         <meta property="og:title" content={seoData.ogTitle} />
         <meta property="og:description" content={seoData.ogDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seoData.canonical} />
+        <meta property="og:image" content={seoData.ogImage} />
         <meta property="og:locale" content={seoData.ogLocale} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoData.ogTitle} />
+        <meta name="twitter:description" content={seoData.ogDescription} />
+        <meta name="twitter:image" content={seoData.ogImage} />
         
         <script type="application/ld+json">
           {JSON.stringify(seoData.schema)}

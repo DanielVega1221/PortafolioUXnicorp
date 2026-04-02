@@ -22,6 +22,7 @@
     "seoHidden": "páginas web y ",
     "descripcion": "Somos <strong>UXnicorp</strong>, tu <strong>agencia de desarrollo web en Argentina</strong> que convierte proyectos en productos digitales funcionales, escalables y conectados con tu audiencia. Especializados en <strong>diseño web profesional</strong>, <strong>sistemas de gestión empresarial</strong> y <strong>aplicaciones web de alto rendimiento</strong>.",
     "cta": "Descubre cómo podemos ayudarte",
+    "diagCta": "¿No sabés qué web necesitás? Hacemós el diagnóstico gratis",
     "altLogo": "UXnicorp - Agencia de Desarrollo Web en Argentina"
   },
 
@@ -60,7 +61,10 @@
     "nosotrosBoton": "Sobre nosotros",
     "metodologiaTitulo": "¿Querés saber cómo trabajamos?",
     "metodologiaDesc": "Conocé nuestra metodología, cultura y proceso de trabajo",
-    "metodologiaBoton": "Descubrí cómo lo hacemos"
+    "metodologiaBoton": "Descubrí cómo lo hacemos",
+    "diagTitulo": "¿No sabés qué web necesitás?",
+    "diagDesc": "Respondé 10 preguntas cortas y te decimos exactamente qué solución digital se adapta a tu negocio, gratis y sin rodeos.",
+    "diagBoton": "Hacer el diagnóstico gratis"
   },
 
   "solucionesSector": {
@@ -206,13 +210,19 @@
       "audUxUi": "Auditoría UX/UI Profesional",
       "audCro": "Optimización de Conversión (CRO)",
       "audTecnica": "Revisión Técnica + Mini-Refactor",
+      "landingCapt": "Landing Page de Captación",
       "landingBasic": "Landing Express Basic (72hs)",
       "landingMedia": "Landing Express Intermedia",
       "landingFull": "Landing Express Full",
       "landingFlyer": "Landing Flyer Promo",
       "landingPremium": "Landing Premium a Medida",
-      "ecommerce": "E-commerce",
-      "sistemas": "Sistemas de Gestión a Medida",
+      "webInstitucional": "Web Institucional Completa",
+      "webPortfolio": "Web Portfolio Profesional",
+      "webReservas": "Web con Sistema de Turnos/Reservas",
+      "ecommerce": "Tienda E-commerce",
+      "plataformaEdu": "Plataforma Educativa",
+      "sistemas": "Sistema de Gestión a Medida",
+      "webPedidos": "Web con Pedidos Online (Gastronomía)",
       "paqEmprendedor": "Paquete Emprendedor - Presencia Rápida",
       "paqAuditoria": "Paquete Auditoría Integral",
       "planEvolucion": "Plan Evolución - Escalá tu Web",

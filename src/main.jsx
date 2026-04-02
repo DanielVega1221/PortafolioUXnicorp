@@ -28,11 +28,14 @@ const LandingPagesLazy          = React.lazy(() => import('./pages/LandingPages'
 const ServiciosLazy             = React.lazy(() => import('./pages/Servicios'));
 const AuditoriasLazy            = React.lazy(() => import('./pages/Auditorias'));
 const LandingPagesServiciosLazy = React.lazy(() => import('./pages/LandingPagesServicios'));
+const WebsProfesionalesLazy     = React.lazy(() => import('./pages/WebsProfesionales'));
 const EcommerceLazy             = React.lazy(() => import('./pages/Ecommerce'));
+const PlataformaEducativaLazy   = React.lazy(() => import('./pages/PlataformaEducativa'));
 const SistemasGestionLazy       = React.lazy(() => import('./pages/SistemasGestion'));
 const PaquetesServiciosLazy     = React.lazy(() => import('./pages/PaquetesServicios'));
 const ArquitecturaLazy          = React.lazy(() => import('./pages/Arquitectura'));
 const GastronomiaLazy           = React.lazy(() => import('./pages/Gastronomia'));
+const DiagnosticoLazy           = React.lazy(() => import('./pages/Diagnostico'));
 
 const SUPPORTED_LANGS = ['es', 'en'];
 
@@ -89,14 +92,15 @@ function AnimatedRoutes() {
         <Route path="servicios"                   element={<ServiciosLazy />} />
         <Route path="servicios/auditorias"        element={<AuditoriasLazy />} />
         <Route path="servicios/landing-pages"     element={<LandingPagesServiciosLazy />} />
+        <Route path="servicios/webs-profesionales" element={<WebsProfesionalesLazy />} />
         <Route path="servicios/ecommerce"         element={<EcommerceLazy />} />
+        <Route path="servicios/plataforma-educativa" element={<PlataformaEducativaLazy />} />
         <Route path="servicios/sistemas-gestion"  element={<SistemasGestionLazy />} />
         <Route path="servicios/paquetes"          element={<PaquetesServiciosLazy />} />
         <Route path="casos-reales"                element={<CasosRealesLazy />} />
         <Route path="landing-pages"               element={<LandingPagesLazy />} />
         <Route path="arquitectura"                element={<ArquitecturaLazy />} />
-        <Route path="gastronomia"                 element={<GastronomiaLazy />} />
-        <Route path="*"                           element={<NotFound />} />
+        <Route path="gastronomia"                 element={<GastronomiaLazy />} />        <Route path="diagnostico"                element={<DiagnosticoLazy />} />        <Route path="*"                           element={<NotFound />} />
       </Route>
 
       {/* Redirecciones de rutas antiguas (sin prefijo) → /es/... */}
@@ -105,13 +109,16 @@ function AnimatedRoutes() {
       <Route path="/servicios"                  element={<Navigate to="/es/servicios" replace />} />
       <Route path="/servicios/auditorias"       element={<Navigate to="/es/servicios/auditorias" replace />} />
       <Route path="/servicios/landing-pages"    element={<Navigate to="/es/servicios/landing-pages" replace />} />
+      <Route path="/servicios/webs-profesionales" element={<Navigate to="/es/servicios/webs-profesionales" replace />} />
       <Route path="/servicios/ecommerce"        element={<Navigate to="/es/servicios/ecommerce" replace />} />
+      <Route path="/servicios/plataforma-educativa" element={<Navigate to="/es/servicios/plataforma-educativa" replace />} />
       <Route path="/servicios/sistemas-gestion" element={<Navigate to="/es/servicios/sistemas-gestion" replace />} />
       <Route path="/servicios/paquetes"         element={<Navigate to="/es/servicios/paquetes" replace />} />
       <Route path="/casos-reales"               element={<Navigate to="/es/casos-reales" replace />} />
       <Route path="/landing-pages"              element={<Navigate to="/es/landing-pages" replace />} />
       <Route path="/arquitectura"               element={<Navigate to="/es/arquitectura" replace />} />
       <Route path="/gastronomia"                element={<Navigate to="/es/gastronomia" replace />} />
+      <Route path="/diagnostico"               element={<Navigate to="/es/diagnostico" replace />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

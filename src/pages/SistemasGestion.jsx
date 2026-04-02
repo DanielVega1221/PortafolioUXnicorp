@@ -1,9 +1,9 @@
-import React, { lazy, Suspense, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Settings, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
+import { ArrowLeft, Settings, CheckCircle, Clock, Info, HelpCircle, Calendar } from 'lucide-react';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
@@ -54,6 +54,29 @@ const servicios = [
     paraque: 'Sirve para dejar de hacer todo manual, organizar información, gestionar clientes, ventas, inventario y tener control total de tu operación en un solo lugar.',
     comoFunciona: 'Analizamos tus procesos, diseñamos el sistema según tus necesidades exactas, desarrollamos módulos personalizados, capacitamos a tu equipo y te dejamos con documentación completa.',
     cuando: 'Es ideal cuando Excel ya no alcanza, cuando perdés información, cuando necesitás que tu equipo trabaje ordenado o cuando querés escalar tu negocio sin contratar más gente.'
+  },
+  {
+    id: 'web-reservas',
+    titulo: 'Web con Sistema de Turnos y Reservas',
+    descripcion: 'Una web que permite a tus clientes reservar, agendar o sacar turnos de forma autónoma las 24hs, sin que vos tengas que estar presente.',
+    icon: Calendar,
+    duracion: '15-30 días',
+    incluye: [
+      'Calendario de disponibilidad en tiempo real',
+      'Reservas y confirmaciones automáticas',
+      'Notificaciones por email y WhatsApp',
+      'Panel de gestión de agenda',
+      'Integración con Google Calendar',
+      'Recordatorios automáticos para clientes',
+      'Diseño responsive mobile-first',
+      '2 rondas de ajustes',
+    ],
+    ideal: 'Profesionales de salud, bienestar, spas, peluquerías, entrenadores y cualquier negocio que funcione por turnos',
+    color: '#48b8e8',
+    queEs: 'Es una web con un sistema de turnos integrado donde tus clientes reservan solos, reciben confirmación instantánea y vos ves toda tu agenda en un panel.',
+    paraque: 'Sirve para eliminar el caos de WhatsApp y llamadas. Tus clientes reservan cuando quieren, sin molestarte, y vos te enfocás en atender bien.',
+    comoFunciona: 'Desarrollamos la web con el sistema de agenda conectado a tu disponibilidad real, configuramos notificaciones y te entregamos una solución lista en 15-30 días.',
+    cuando: 'Es ideal cuando perdés tiempo gestionando turnos manualmente, cuando tenés muchas consultas "¿cuándo tenés lugar?" o cuando querés que tus clientes puedan reservar a cualquier hora.'
   }
 ];
 
@@ -79,14 +102,20 @@ function SistemasGestion() {
     setServicioSeleccionado(null);
   };
 
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
+
   const handleConsultar = (servicio) => {
     navigate('/', { state: { servicioInteres: servicio.titulo } });
-    setTimeout(() => {
-      const contactElement = document.getElementById('contact');
-      if (contactElement) {
-        contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 500);
   };
 
   return (
@@ -101,13 +130,20 @@ function SistemasGestion() {
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion" />
         <meta property="og:title" content={seoConfig.sistemasGestion.ogTitle} />
         <meta property="og:description" content={seoConfig.sistemasGestion.ogDescription} />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/sistemas-gestion`} />
+        <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoConfig.sistemasGestion.ogTitle} />
+        <meta name="twitter:description" content={seoConfig.sistemasGestion.ogDescription} />
+        <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         
         <script type="application/ld+json">
           {JSON.stringify(seoConfig.sistemasGestion.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoConfig.sistemasGestion.breadcrumb))}
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.sistemasGestion.breadcrumb, lang))}
         </script>
       </Helmet>
       <LanguageToggle />
@@ -143,6 +179,7 @@ function SistemasGestion() {
             return (
               <article
                 key={servicio.id}
+                id={servicio.id}
                 className="servicio-detalle-card"
               >
                 <div className="servicio-detalle-header">

@@ -76,15 +76,30 @@ function ContactoFormulario() {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
 
-  // Pre-llenar el servicio si viene desde navegación
+  // Pre-llenar datos si viene desde navegación o desde el diagnóstico digital
   useEffect(() => {
-    if (location.state?.servicioInteres) {
+    if (location.state?.servicioInteres || location.state?.diagnosticoResumen) {
       setFormData(prev => ({
         ...prev,
-        servicio: location.state.servicioInteres
+        ...(location.state.servicioInteres ? { servicio: location.state.servicioInteres } : {}),
+        ...(location.state.diagnosticoResumen && !prev.consulta
+          ? { consulta: `Diagnóstico digital completado:\n${location.state.diagnosticoResumen}\n\nMe gustaría recibir una propuesta para avanzar con esta solución.` }
+          : {}),
       }));
     }
   }, [location.state]);
+
+  // Auto-scroll al formulario cuando se llega desde diagnóstico o desde una página de servicios
+  useEffect(() => {
+    if (location.state?.servicioInteres || location.state?.fromDiagnostico) {
+      const timer = setTimeout(() => {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const validateField = (name, value) => {
     let error = '';
@@ -288,6 +303,15 @@ function ContactoFormulario() {
   return (
     <section id="contact" className="contacto-section">
       <div className="section-glass-card">
+        {location.state?.fromDiagnostico && (
+          <div className="contacto-diag-banner">
+            <span className="contacto-diag-banner-icon">🎯</span>
+            <div>
+              <strong>Diagnóstico completado</strong>
+              <span> · Tu consulta ya viene pre-cargada con los resultados del diagnóstico</span>
+            </div>
+          </div>
+        )}
         <h2 className="contacto-titulo">
           {t('contacto.titulo')} <span className="contacto-highlight">{t('contacto.tituloDestacado')}</span>
         </h2>
@@ -376,13 +400,19 @@ function ContactoFormulario() {
                   <option value="Revisión Técnica + Mini-Refactor">{t('contacto.opciones.audTecnica')}</option>
                 </optgroup>
                 <optgroup label={t('contacto.grupos.paginasWeb')}>
+                  <option value="Landing Page de Captación">{t('contacto.opciones.landingCapt')}</option>
                   <option value="Landing Express Basic">{t('contacto.opciones.landingBasic')}</option>
                   <option value="Landing Express Intermedia">{t('contacto.opciones.landingMedia')}</option>
                   <option value="Landing Express Full">{t('contacto.opciones.landingFull')}</option>
                   <option value="Landing Flyer Promo">{t('contacto.opciones.landingFlyer')}</option>
                   <option value="Landing Premium a Medida">{t('contacto.opciones.landingPremium')}</option>
-                  <option value="E-commerce">{t('contacto.opciones.ecommerce')}</option>
-                  <option value="Sistemas de Gestión">{t('contacto.opciones.sistemas')}</option>
+                  <option value="Web Institucional Completa">{t('contacto.opciones.webInstitucional')}</option>
+                  <option value="Web Portfolio Profesional">{t('contacto.opciones.webPortfolio')}</option>
+                  <option value="Web con Sistema de Turnos/Reservas">{t('contacto.opciones.webReservas')}</option>
+                  <option value="Tienda E-commerce">{t('contacto.opciones.ecommerce')}</option>
+                  <option value="Plataforma Educativa">{t('contacto.opciones.plataformaEdu')}</option>
+                  <option value="Sistema de Gestión a Medida">{t('contacto.opciones.sistemas')}</option>
+                  <option value="Web con Pedidos Online (Gastronomía)">{t('contacto.opciones.webPedidos')}</option>
                 </optgroup>
                 <optgroup label={t('contacto.grupos.paquetes')}>
                   <option value="Paquete Emprendedor">{t('contacto.opciones.paqEmprendedor')}</option>

@@ -264,4 +264,64 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Webs Profesionales -->
+  <url>
+    <loc>https://www.uxnicorp.com.ar/es/servicios/webs-profesionales</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/webs-profesionales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/webs-profesionales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/webs-profesionales"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.uxnicorp.com.ar/en/servicios/webs-profesionales</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/webs-profesionales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/webs-profesionales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/webs-profesionales"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Plataforma Educativa -->
+  <url>
+    <loc>https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/plataforma-educativa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.uxnicorp.com.ar/en/servicios/plataforma-educativa</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/servicios/plataforma-educativa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Diagnóstico Digital -->
+  <url>
+    <loc>https://www.uxnicorp.com.ar/es/diagnostico</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/diagnostico"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/diagnostico"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/diagnostico"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.uxnicorp.com.ar/en/diagnostico</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.uxnicorp.com.ar/es/diagnostico"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.uxnicorp.com.ar/en/diagnostico"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.uxnicorp.com.ar/es/diagnostico"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>

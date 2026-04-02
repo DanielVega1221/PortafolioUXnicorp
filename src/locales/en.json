@@ -22,6 +22,7 @@
     "seoHidden": "websites and ",
     "descripcion": "We are <strong>UXnicorp</strong>, your <strong>web development agency</strong> that transforms projects into functional, scalable digital products connected with your audience. Specialized in <strong>professional web design</strong>, <strong>enterprise management systems</strong> and <strong>high-performance web applications</strong>.",
     "cta": "Discover how we can help you",
+    "diagCta": "Not sure what you need? Take the free diagnostic",
     "altLogo": "UXnicorp - Web Development Agency"
   },
 
@@ -60,7 +61,10 @@
     "nosotrosBoton": "About us",
     "metodologiaTitulo": "Want to know how we work?",
     "metodologiaDesc": "Learn about our methodology, culture and work process",
-    "metodologiaBoton": "Discover how we do it"
+    "metodologiaBoton": "Discover how we do it",
+    "diagTitulo": "Not sure what kind of website you need?",
+    "diagDesc": "Answer 10 short questions and we'll tell you exactly which digital solution fits your business \u2014 free, no fluff.",
+    "diagBoton": "Take the free diagnostic"
   },
 
   "solucionesSector": {
@@ -206,13 +210,19 @@
       "audUxUi": "Professional UX/UI Audit",
       "audCro": "Conversion Rate Optimization (CRO)",
       "audTecnica": "Technical Review + Mini-Refactor",
+      "landingCapt": "Lead Capture Landing Page",
       "landingBasic": "Landing Express Basic (72hrs)",
       "landingMedia": "Landing Express Intermediate",
       "landingFull": "Landing Express Full",
       "landingFlyer": "Promo Flyer Landing",
       "landingPremium": "Premium Custom Landing",
-      "ecommerce": "E-commerce",
-      "sistemas": "Custom Management Systems",
+      "webInstitucional": "Complete Institutional Website",
+      "webPortfolio": "Professional Portfolio Website",
+      "webReservas": "Website with Booking System",
+      "ecommerce": "E-commerce Store",
+      "plataformaEdu": "Educational Platform",
+      "sistemas": "Custom Management System",
+      "webPedidos": "Website with Online Orders (Food & Beverage)",
       "paqEmprendedor": "Startup Package - Quick Launch",
       "paqAuditoria": "Comprehensive Audit Package",
       "planEvolucion": "Growth Plan - Scale Your Web",

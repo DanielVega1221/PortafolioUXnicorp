@@ -57,7 +57,7 @@ function CTASection({
   };
 
   return (
-    <section className={`cta-section ${variant === 'primary' ? 'cta-primary' : 'cta-secondary'}`}>
+    <section className={`cta-section ${variant === 'primary' ? 'cta-primary' : variant === 'diagnostico' ? 'cta-diagnostico' : 'cta-secondary'}`}>
       <div className="section-glass-card">
         <div className="cta-content">
         <h2 className="cta-titulo">{titulo}</h2>

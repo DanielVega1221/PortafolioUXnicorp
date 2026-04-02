@@ -24,6 +24,10 @@ const routes = [
   '/en/servicios/landing-pages',
   '/es/servicios/ecommerce',
   '/en/servicios/ecommerce',
+  '/es/servicios/webs-profesionales',
+  '/en/servicios/webs-profesionales',
+  '/es/servicios/plataforma-educativa',
+  '/en/servicios/plataforma-educativa',
   '/es/servicios/sistemas-gestion',
   '/en/servicios/sistemas-gestion',
   '/es/servicios/paquetes',
@@ -36,6 +40,8 @@ const routes = [
   '/en/arquitectura',
   '/es/gastronomia',
   '/en/gastronomia',
+  '/es/diagnostico',
+  '/en/diagnostico',
 ];
 
 async function generateStaticPages() {

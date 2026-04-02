@@ -1,14 +1,14 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
-import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, ShoppingCart, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
+import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
+import { ArrowLeft, GraduationCap, CheckCircle, Clock, Info, HelpCircle } from 'lucide-react';
 import './ServicioCategoria.css';
 import '../section-glass-card.css';
 import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
-import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
 import LanguageToggle from '../componentes/LanguageToggle';
 import { useTranslation } from 'react-i18next';
 
@@ -21,67 +21,35 @@ const LoadingFallback = () => (
 
 const servicios = [
   {
-    id: 'ecommerce-basico',
-    titulo: 'E-commerce Simple',
-    descripcion: 'Tienda online funcional con carrito, pasarela de pagos y gestión de productos. La tienda ideal para emprendedores.',
-    icon: ShoppingCart,
-    duracion: '3 meses',
+    id: 'plataforma-educativa',
+    titulo: 'Plataforma Educativa',
+    descripcion: 'Plataforma completa para lanzar y gestionar cursos online con usuarios, progreso, videos y pagos integrados.',
+    icon: GraduationCap,
+    duracion: '30-60 días',
     incluye: [
-      'Catálogo de productos ilimitado',
-      'Carrito de compras funcional',
-      'Integración Mercado Pago',
-      'Gestión de stock',
-      'Sistema de envíos',
+      'Sistema de cursos y módulos',
+      'Login y perfil de alumnos',
+      'Reproductor de video integrado',
+      'Seguimiento de progreso',
+      'Certificados automáticos',
+      'Pagos y acceso por membresía',
       'Panel de administración',
-      'Diseño responsive',
-      'SEO básico para productos',
-      'Hosting por 1 año',
-      'Capacitación incluida'
+      'Foro o comunidad interna (opcional)',
     ],
-    ideal: 'Emprendedores y pequeños negocios que quieren empezar a vender online',
-    color: '#f37aa6',
-    queEs: 'Es una tienda online completa con carrito, Mercado Pago integrado, gestión de stock y panel admin para que vendas por internet.',
-    paraque: 'Sirve para empezar a vender online de forma profesional sin complicaciones técnicas. Todo listo para recibir pagos y gestionar tus productos.',
-    comoFunciona: 'Desarrollamos la tienda, cargamos tus primeros 20 productos, integramos Mercado Pago, configuramos envíos y te capacitamos para que lo uses solo en 3 meses.',
-    cuando: 'Es ideal cuando arrancas con e-commerce, cuando tenés un catálogo no muy grande o cuando querés probar vender online sin invertir fortunas.'
+    ideal: 'Formadores, coaches, academias y profesionales que quieren vender su conocimiento online',
+    color: '#D966B2',
+    queEs: 'Es una plataforma educativa completa donde tus alumnos tienen su perfil, ven el progreso en los cursos y vos gestionás todo desde un panel simple.',
+    paraque: 'Sirve para convertir tu conocimiento en ingresos escalables. Una vez grabado el curso, puede venderse y consumirse sin que tengas que estar presente.',
+    comoFunciona: 'Desarrollamos la plataforma, cargamos tu primer curso, configuramos pagos y te damos un panel para gestionar alumnos, módulos y métricas en 30-60 días.',
+    cuando: 'Es ideal cuando querés generar ingresos pasivos, cuando tenés conocimiento que puede enseñarse online o cuando tu audiencia demanda una experiencia de aprendizaje estructurada.',
   },
-  {
-    id: 'ecommerce-premium',
-    titulo: 'E-commerce Robusto',
-    descripcion: 'Tienda completa con funcionalidades avanzadas: cupones, seguimiento, filtros y emails automatizados. Para negocios con categorías y filtros avanzados.',
-    icon: ShoppingCart,
-    duracion: '3 meses',
-    incluye: [
-      'Todo lo de E-commerce Básico',
-      'Sistema de cupones y descuentos',
-      'Emails transaccionales automatizados',
-      'Seguimiento de pedidos en tiempo real',
-      'Sistema de reviews y calificaciones',
-      'Filtros avanzados de búsqueda',
-      'Múltiples métodos de pago',
-      'Panel de reportes y analítica',
-      'Integración con redes sociales',
-      'Marketing automation básico',
-      'Soporte prioritario 6 meses'
-    ],
-    ideal: 'Empresas establecidas, mayoristas, negocios con alto volumen de ventas',
-    color: '#e0a6d8',
-    queEs: 'Es una tienda online robusta con todas las funciones avanzadas: cupones, seguimiento en vivo, emails automatizados, filtros y sistema de reviews.',
-    paraque: 'Sirve para negocios que ya venden y necesitan escalar con herramientas profesionales de marketing, automatización y analítica.',
-    comoFunciona: 'Construimos una tienda completa con módulos avanzados, integramos sistemas de marketing, configuramos emails automáticos y te damos reportes en tiempo real en 3 meses.',
-    cuando: 'Es perfecto cuando ya tenés volumen de ventas, cuando necesitás filtros por categoría o cuando querés automatizar tu operación para vender más sin trabajar más.'
-  }
 ];
 
-function Ecommerce() {
+function PlataformaEducativa() {
   const navigate = useLangNavigate();
   const { t, i18n } = useTranslation();
   const { lang: urlLang } = useParams();
   const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
-  const serviciosItems = t('paginas.ecommerce.items', { returnObjects: true });
-  const serviciosT = Array.isArray(serviciosItems)
-    ? servicios.map((s, i) => ({ ...s, ...serviciosItems[i] }))
-    : servicios;
   const [modalAbierto, setModalAbierto] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
@@ -114,34 +82,33 @@ function Ecommerce() {
   return (
     <div className="servicio-categoria-page">
       <Helmet>
-        <title>{seoConfig.ecommerce.title}</title>
-        <meta name="description" content={seoConfig.ecommerce.description} />
-        <meta name="keywords" content={seoConfig.ecommerce.keywords} />
-        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/ecommerce`} />
-        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce" />
-        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/ecommerce" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/ecommerce" />
-        <meta property="og:title" content={seoConfig.ecommerce.ogTitle} />
-        <meta property="og:description" content={seoConfig.ecommerce.ogDescription} />
+        <title>{seoConfig.plataformaEducativa.title}</title>
+        <meta name="description" content={seoConfig.plataformaEducativa.description} />
+        <meta name="keywords" content={seoConfig.plataformaEducativa.keywords} />
+        <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios/plataforma-educativa`} />
+        <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa" />
+        <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios/plataforma-educativa" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa" />
+        <meta property="og:title" content={seoConfig.plataformaEducativa.ogTitle} />
+        <meta property="og:description" content={seoConfig.plataformaEducativa.ogDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/ecommerce`} />
+        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/plataforma-educativa`} />
         <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoConfig.ecommerce.ogTitle} />
-        <meta name="twitter:description" content={seoConfig.ecommerce.ogDescription} />
+        <meta name="twitter:title" content={seoConfig.plataformaEducativa.ogTitle} />
+        <meta name="twitter:description" content={seoConfig.plataformaEducativa.ogDescription} />
         <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
-        
         <script type="application/ld+json">
-          {JSON.stringify(seoConfig.ecommerce.schema)}
+          {JSON.stringify(seoConfig.plataformaEducativa.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoConfig.ecommerce.breadcrumb, lang))}
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.plataformaEducativa.breadcrumb, lang))}
         </script>
       </Helmet>
       <LanguageToggle />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="servicio-hero">
         <div className="servicio-hero-container">
           <LangLink to="/servicios" className="servicio-back-link">
@@ -151,14 +118,15 @@ function Ecommerce() {
 
           <div>
             <span className="servicio-badge">
-              <ShoppingCart size={16} />
-              {t('paginas.ecommerce.heroBadge')}
+              <GraduationCap size={16} />
+              Plataforma Educativa
             </span>
             <h1 className="servicio-hero-title">
-              {t('paginas.ecommerce.heroTitulo')}
+              Vendé tu conocimiento<br />
+              <span style={{ color: '#D966B2' }}>en tu propia academia online</span>
             </h1>
             <p className="servicio-hero-description">
-              {t('paginas.ecommerce.heroDesc')}
+              Una plataforma educativa completa con cursos, alumnos, pagos y certificados. Todo tuyo, sin depender de Hotmart ni Udemy.
             </p>
           </div>
         </div>
@@ -167,22 +135,21 @@ function Ecommerce() {
       {/* Servicios Grid */}
       <section className="servicios-detalle-section">
         <div className="servicios-detalle-container">
-          {serviciosT.map((servicio) => {
+          {servicios.map((servicio) => {
             const IconComponent = servicio.icon;
             return (
-              <article
-                key={servicio.id}
-                id={servicio.id}
-                className="servicio-detalle-card"
-              >
+              <article key={servicio.id} id={servicio.id} className="servicio-detalle-card">
                 <div className="servicio-detalle-header">
-                  <div className="servicio-detalle-icon" style={{ backgroundColor: `${servicio.color}20`, border: `2px solid ${servicio.color}40` }}>
+                  <div
+                    className="servicio-detalle-icon"
+                    style={{ backgroundColor: `${servicio.color}20`, border: `2px solid ${servicio.color}40` }}
+                  >
                     <IconComponent size={32} style={{ color: servicio.color }} />
                   </div>
                   <div style={{ flex: 1 }}>
                     <h2 className="servicio-detalle-titulo">{servicio.titulo}</h2>
                     <p className="servicio-detalle-descripcion">{servicio.descripcion}</p>
-                    <button 
+                    <button
                       onClick={() => abrirModal(servicio)}
                       style={{
                         background: `${servicio.color}15`,
@@ -197,7 +164,7 @@ function Ecommerce() {
                         fontSize: '0.9rem',
                         fontWeight: '600',
                         marginTop: '0.75rem',
-                        transition: 'all 0.2s ease'
+                        transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.background = servicio.color;
@@ -238,7 +205,11 @@ function Ecommerce() {
                   </ul>
                 </div>
 
-                <button onClick={() => handleConsultar(servicio)} className="servicio-detalle-cta" style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}>
+                <button
+                  onClick={() => handleConsultar(servicio)}
+                  className="servicio-detalle-cta"
+                  style={{ background: servicio.color, border: 'none', cursor: 'pointer', width: '100%', textAlign: 'center' }}
+                >
                   {t('paginas.comun.solicitar')}
                 </button>
               </article>
@@ -254,10 +225,10 @@ function Ecommerce() {
 
       {/* CTA */}
       <Suspense fallback={<LoadingFallback />}>
-        <CTASection 
-          titulo={t('paginas.ecommerce.ctaTitulo')}
-          descripcion={t('paginas.ecommerce.ctaDesc')}
-          textoBoton={t('paginas.ecommerce.ctaBoton')}
+        <CTASection
+          titulo="¿Listo para lanzar tu academia online?"
+          descripcion="Contanos tu idea y te mostramos cómo construir tu plataforma educativa desde cero."
+          textoBoton="Quiero mi plataforma educativa"
           linkTo="/#contact"
         />
       </Suspense>
@@ -268,7 +239,7 @@ function Ecommerce() {
 
       {/* Modal */}
       {servicioSeleccionado && (
-        <ServicioModal 
+        <ServicioModal
           isOpen={modalAbierto}
           onClose={cerrarModal}
           servicio={servicioSeleccionado}
@@ -278,4 +249,4 @@ function Ecommerce() {
   );
 }
 
-export default Ecommerce;
+export default PlataformaEducativa;

@@ -1,5 +1,5 @@
-import React, { lazy, Suspense, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useLangNavigate } from '../hooks/useLangNavigate';
 import LangLink from '../componentes/LangLink';
 import { Helmet } from 'react-helmet-async';
@@ -10,6 +10,7 @@ import GlosarioTecnico from '../componentes/Contenido/GlosarioTecnico';
 import ServicioModal from '../componentes/ServicioModal';
 import LanguageToggle from '../componentes/LanguageToggle';
 import { useTranslation } from 'react-i18next';
+import { seoConfig, createBreadcrumbSchema } from '../utils/seoConfig';
 
 const CTASection = lazy(() => import('../componentes/Contenido/CTASection'));
 const Footer = lazy(() => import('../componentes/Contenido/Footer'));
@@ -161,14 +162,20 @@ function LandingPagesServicios() {
     setServicioSeleccionado(null);
   };
 
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
+
   const handleConsultar = (servicio) => {
     navigate('/', { state: { servicioInteres: servicio.titulo } });
-    setTimeout(() => {
-      const contactElement = document.getElementById('contact');
-      if (contactElement) {
-        contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 500);
   };
 
   return (
@@ -183,7 +190,20 @@ function LandingPagesServicios() {
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios/landing-pages" />
         <meta property="og:title" content="Landing Pages Argentina - UXnicorp" />
         <meta property="og:description" content="Diseñamos tu landing page profesional en 72hs. Responsive y optimizada para conversiones." />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios/landing-pages`} />
+        <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Landing Pages Argentina - UXnicorp" />
+        <meta name="twitter:description" content="Diseñamos tu landing page profesional en 72hs. Responsive y optimizada para conversiones." />
+        <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify(seoConfig.landingPages.schema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.landingPages.breadcrumb, lang))}
+        </script>
       </Helmet>
       <LanguageToggle />
 
@@ -218,6 +238,7 @@ function LandingPagesServicios() {
             return (
               <article
                 key={servicio.id}
+                id={servicio.id}
                 className="servicio-detalle-card"
               >
                 <div className="servicio-detalle-header">

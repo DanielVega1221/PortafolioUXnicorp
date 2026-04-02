@@ -8,7 +8,7 @@ export const seoConfig = {
     title: 'UXnicorp | Desarrollo Web Argentina | Landing Pages, E-commerce y Sistemas',
     description: 'Desarrollo web profesional en Argentina. Landing pages express, Sistemas ERP/CRM personalizados, Auditorías UX/UI, E-commerce con Mercado Pago.',
     keywords: 'desarrollo web argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistemas personalizados argentina, auditoría ux argentina, diseño web buenos aires, programación web argentina',
-    canonical: 'https://www.uxnicorp.com.ar/',
+    canonical: 'https://www.uxnicorp.com.ar/es/',
     ogTitle: 'UXnicorp - Desarrollo Web Profesional Argentina',
     ogDescription: 'Transformamos ideas en productos web. Landing pages express, e-commerce completo, sistemas a medida.',
     h1: 'Desarrollo Web que Impulsa tu Negocio',
@@ -33,10 +33,10 @@ export const seoConfig = {
     }
   },
   auditorias: {
-    title: 'Auditoría UX/UI Argentina | Detecta Errores que Pierden Ventas | UXnicorp',
+    title: 'Auditoría UX/UI Argentina | Errores que Pierden Ventas | UXnicorp',
     description: 'Auditoría UX/UI en 5-15 días. Detectamos errores que pierden ventas. Reporte completo + plan de acción concreto. Mejora conversión en Argentina.',
     keywords: 'auditoría ux argentina, auditoría ui argentina, cro argentina, optimización conversión argentina, auditoría web argentina, auditoría ux buenos aires, auditoría caba, auditoría córdoba, auditoría santa fe, auditoría mendoza, auditoría tucumán, auditoría entre ríos, auditoría salta, auditoría misiones, auditoría chaco, auditoría corrientes, auditoría santiago del estero, auditoría san juan, auditoría jujuy, auditoría formosa, auditoría neuquén, auditoría chubut, auditoría río negro, auditoría santa cruz, auditoría tierra del fuego, auditoría la pampa, auditoría la rioja, auditoría catamarca, auditoría san luis, auditoría rosario, auditoría la plata, revisión técnica web argentina, usabilidad web argentina, auditoría web latam, auditoría de usabilidad',
-    canonical: 'https://www.uxnicorp.com.ar/servicios/auditorias',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/auditorias',
     slug: 'servicios/auditorias',
     en: {
       title: 'UX/UI Audit | Find the Errors Losing You Sales | UXnicorp',
@@ -73,7 +73,7 @@ export const seoConfig = {
       'serviceType': 'UX/UI Audit, CRO Optimization',
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/servicios/auditorias'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/auditorias'
       }
     }
   },
@@ -82,7 +82,7 @@ export const seoConfig = {
     title: 'Landing Pages Argentina ⚡ De Idea a Online en 72 Horas | UXnicorp',
     description: 'Landing pages que convierten en 72h. Diseño profesional mobile-first, integración con Analytics y formularios. Optimizadas para SEO y conversión.',
     keywords: 'landing page argentina, landing page buenos aires, landing page caba, landing page córdoba, landing page santa fe, landing page mendoza, landing page tucumán, landing page entre ríos, landing page salta, landing page misiones, landing page chaco, landing page corrientes, landing page santiago del estero, landing page san juan, landing page jujuy, landing page formosa, landing page neuquén, landing page chubut, landing page río negro, landing page santa cruz, landing page tierra del fuego, landing page la pampa, landing page la rioja, landing page catamarca, landing page san luis, desarrollo landing pages, crear landing page argentina, landing page responsiva, landing page ecommerce, landing page seo argentina, landing pages profesionales argentina, landing page rosario, landing page la plata, landing page mar del plata',
-    canonical: 'https://www.uxnicorp.com.ar/servicios/landing-pages',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/landing-pages',
     ogTitle: 'Landing Pages en 72 Horas - Diseño Profesional Argentina',
     ogDescription: 'De idea a web en tiempo récord. Diseño premium, SEO optimizado, Analytics incluido.',
     h1: 'Landing Pages Express: Desde Idea a Web en Días',
@@ -111,16 +111,16 @@ export const seoConfig = {
       'serviceType': 'Web Design, Landing Page Development',
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/servicios/landing-pages'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/landing-pages'
       }
     }
   },
 
   ecommerce: {
-    title: 'E-commerce Argentina | Tienda Online Profesional con Mercado Pago | UXnicorp',
+    title: 'E-commerce Argentina | Tienda Online con Mercado Pago | UXnicorp',
     description: 'E-commerce completo en Argentina: Mercado Pago integrado, gestión de envíos y stock automático. Diseño mobile-optimizado.',
     keywords: 'ecommerce argentina, tienda online argentina, ecommerce buenos aires, ecommerce caba, ecommerce córdoba, ecommerce santa fe, ecommerce mendoza, ecommerce tucumán, ecommerce entre ríos, ecommerce salta, ecommerce misiones, ecommerce chaco, ecommerce corrientes, ecommerce santiago del estero, ecommerce san juan, ecommerce jujuy, ecommerce formosa, ecommerce neuquén, ecommerce chubut, ecommerce río negro, ecommerce santa cruz, ecommerce tierra del fuego, ecommerce la pampa, ecommerce la rioja, ecommerce catamarca, ecommerce san luis, crear tienda online argentina, desarrollo ecommerce argentina, tienda virtual argentina, ecommerce mercadopago, ecommerce profesional, tienda online responsiva, carrito compras argentina, ecommerce rosario, ecommerce la plata, ecommerce mar del plata',
-    canonical: 'https://www.uxnicorp.com.ar/servicios/ecommerce',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/ecommerce',
     ogTitle: 'E-commerce Profesional Argentina - Mercado Pago + Envíos',
     ogDescription: 'Tienda online completa: carrito inteligente, Mercado Pago, gestión de stock y envíos. Todo en un solo lugar.',
     h1: 'E-Commerce Profesional: Vende Online sin Complicaciones',
@@ -149,16 +149,16 @@ export const seoConfig = {
       'serviceType': 'E-commerce Development, Web Store Creation',
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/servicios/ecommerce'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/ecommerce'
       }
     }
   },
 
   sistemasGestion: {
-    title: 'Sistemas Personalizados Argentina | ERP, CRM y Software a Medida | UXnicorp',
+    title: 'Sistemas ERP y CRM Argentina | Software a Medida | UXnicorp',
     description: 'Sistemas personalizados para tu empresa en Argentina. ERP, CRM y automatización a medida. Escalable, soporte continuo. Optimiza tu gestión hoy.',
     keywords: 'sistemas personalizados argentina, sistema erp argentina, crm argentina, sistema gestión argentina, software a medida argentina, erp buenos aires, erp caba, erp córdoba, erp santa fe, erp mendoza, erp tucumán, erp entre ríos, erp salta, erp misiones, erp chaco, erp corrientes, erp santiago del estero, erp san juan, erp jujuy, erp formosa, erp neuquén, erp chubut, erp río negro, erp santa cruz, erp tierra del fuego, erp la pampa, erp la rioja, erp catamarca, erp san luis, crm buenos aires, crm córdoba, crm santa fe, crm mendoza, sistema de facturación argentina, software gestión empresarial, desarrollo sistemas argentina, automatización procesos argentina, erp rosario, erp la plata, sistema gestión rosario',
-    canonical: 'https://www.uxnicorp.com.ar/servicios/sistemas-gestion',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion',
     ogTitle: 'Sistemas Personalizados - ERP y CRM a Medida Argentina',
     ogDescription: 'Software adaptado 100% a tu negocio. Automatiza procesos, gestiona clientes e inventario con tecnología escalable.',
     h1: 'Sistemas de Gestión: Automatiza tu Empresa',
@@ -188,7 +188,7 @@ export const seoConfig = {
       'serviceType': 'Custom Software Development, ERP/CRM Implementation',
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/servicios/sistemas-gestion'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/sistemas-gestion'
       }
     }
   },
@@ -197,7 +197,7 @@ export const seoConfig = {
     title: 'Paquetes Web Argentina | Soluciones Completas | UXnicorp',
     description: 'Paquetes integrales de desarrollo web en Argentina. Auditoría + Diseño + Desarrollo + Soporte. Soluciones a medida para emprendedores y empresas.',
     keywords: 'paquetes desarrollo web argentina, soluciones web argentina, paquetes servicios web, planes desarrollo web argentina, servicios web integrales argentina',
-    canonical: 'https://www.uxnicorp.com.ar/servicios/paquetes',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/paquetes',
     ogTitle: 'Paquetes de Servicios Web - UXnicorp',
     ogDescription: 'Soluciones integrales: auditoría, diseño, desarrollo y soporte en un solo paquete.',
     h1: 'Paquetes Integrales: Todo lo que Necesitas',
@@ -222,16 +222,16 @@ export const seoConfig = {
       'serviceType': 'Web Development Services Bundle',
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/servicios/paquetes'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/paquetes'
       }
     }
   },
 
   servicios: {
-    title: 'Servicios Desarrollo Web Argentina ⚡ Landing Pages en 72h, E-commerce y ERP | UXnicorp',
+    title: 'Servicios Web Argentina | Landing Pages, E-commerce y ERP | UXnicorp',
     description: 'Desarrollo web completo: Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Soluciones integrales en Argentina.',
     keywords: 'servicios desarrollo web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, agencia programacion argentina, desarrollo web buenos aires',
-    canonical: 'https://www.uxnicorp.com.ar/servicios',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios',
     ogTitle: 'Servicios Desarrollo Web Argentina - UXnicorp',
     ogDescription: 'Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo.',
     h1: 'Servicios de Desarrollo Web',
@@ -245,7 +245,7 @@ export const seoConfig = {
     title: 'Sobre UXnicorp | Agencia Desarrollo Web Argentina',
     description: 'Equipo de desarrollo web en Argentina especializado en Landing Pages, E-commerce y Sistemas ERP. Transparencia, entregas rápidas y metodología ágil.',
     keywords: 'equipo desarrollo web, agencia desarrollo argentina, sobre nosotros, equipo UXnicorp, desarrolladores argentina, filosofía desarrollo web, valores empresa tecnología, agencia web buenos aires',
-    canonical: 'https://www.uxnicorp.com.ar/sobre-nosotros',
+    canonical: 'https://www.uxnicorp.com.ar/es/sobre-nosotros',
     ogTitle: 'Sobre UXnicorp - Agencia Desarrollo Web Argentina',
     ogDescription: 'Equipo especializado en desarrollo web. Transparencia, metodología ágil y entregas rápidas en Argentina.',
     h1: 'Sobre Nosotros',
@@ -259,7 +259,7 @@ export const seoConfig = {
     title: 'Cómo Trabajamos | Proceso de Desarrollo Web Transparente | UXnicorp',
     description: 'Proceso de desarrollo web transparente: Reunión inicial, Propuesta clara, Desarrollo ágil, Entregas semanales, Soporte incluido. Metodología probada en Argentina.',
     keywords: 'metodología desarrollo web, proceso desarrollo software, metodología ágil argentina, clean code, testing software, agile development, scrum, desarrollo profesional argentina, arquitectura software, como trabajamos',
-    canonical: 'https://www.uxnicorp.com.ar/como-trabajamos',
+    canonical: 'https://www.uxnicorp.com.ar/es/como-trabajamos',
     ogTitle: 'Nuestro Proceso de Trabajo - Desarrollo Web Transparente',
     ogDescription: 'Metodología ágil, entregas semanales, comunicación constante. Proceso transparente.',
     h1: 'Cómo Trabajamos',
@@ -273,7 +273,7 @@ export const seoConfig = {
     title: 'Casos de Éxito Argentina | Proyectos Web Reales con Resultados - UXnicorp',
     description: 'Casos de éxito de desarrollo web en Argentina: Landing pages, E-commerce, ERPs y Fintech. Proyectos reales con resultados medibles.',
     keywords: 'casos éxito desarrollo web argentina, proyectos web argentina, portfolio web argentina, landing pages casos éxito, ecommerce argentina casos, ejemplos desarrollo web, proyectos reales web',
-    canonical: 'https://www.uxnicorp.com.ar/casos-reales',
+    canonical: 'https://www.uxnicorp.com.ar/es/casos-reales',
     ogTitle: 'Casos de Éxito - Proyectos Web con Resultados Reales',
     ogDescription: 'Proyectos reales: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados.',
     h1: 'Casos de Éxito',
@@ -284,10 +284,10 @@ export const seoConfig = {
   },
 
   arquitectura: {
-    title: 'Sitio Web para Estudios de Arquitectura | Portfolio Digital Profesional | UXnicorp',
+    title: 'Web para Estudios de Arquitectura | Portfolio Digital | UXnicorp',
     description: '¿Arquitecto sin presencia digital a la altura de tu trabajo? Creamos portfolios web para estudios de arquitectura que comunican proyectos con claridad y criterio. Diagnóstico sin costo.',
     keywords: 'sitio web estudio arquitectura, portfolio digital arquitectos, desarrollo web arquitectos argentina, web para architects, pagina web estudio arquitectura, portfolio arquitectonico online, presencia digital arquitectos, web arquitectos buenos aires, web arquitectos cordoba, web arquitectos rosario, web arquitectos mendoza, web arquitectos argentina, diseño web arquitectura, plataforma digital estudios arquitectura, crear portfolio arquitecto, web profesional arquitectura argentina, identidad digital arquitectos, portfolio proyectos arquitectura',
-    canonical: 'https://www.uxnicorp.com.ar/arquitectura',
+    canonical: 'https://www.uxnicorp.com.ar/es/arquitectura',
     slug: 'arquitectura',
     en: {
       title: 'Website for Architecture Studios | Professional Digital Portfolio | UXnicorp',
@@ -342,7 +342,7 @@ export const seoConfig = {
       },
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/arquitectura'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/arquitectura'
       }
     },
     faqSchema: {
@@ -386,10 +386,10 @@ export const seoConfig = {
   },
 
   gastronomia: {
-    title: 'Sitio Web para Restaurantes, Bares y Cafés | Presencia Digital Gastronómica | UXnicorp',
+    title: 'Web para Restaurantes y Bares | Presencia Digital | UXnicorp',
     description: '¿Tu restaurante no refleja online lo que vive dentro? Creamos presencias digitales para gastronomía que comunican la experiencia real: carta, eventos, ambiente e identidad en una sola plataforma. Diagnóstico sin costo.',
     keywords: 'sitio web restaurante argentina, web bar argentina, presencia digital gastronomía, carta digital restaurante, seo local gastronomia, web cafetería argentina, desarrollo web bares, agenda eventos restaurante, reservas online restaurante, identidad digital gastronómica, web para restaurantes buenos aires, web para bares córdoba, web para cafés argentina',
-    canonical: 'https://www.uxnicorp.com.ar/gastronomia',
+    canonical: 'https://www.uxnicorp.com.ar/es/gastronomia',
     slug: 'gastronomia',
     en: {
       title: 'Website for Restaurants, Bars & Cafes | Digital Gastronomy Presence | UXnicorp',
@@ -444,7 +444,7 @@ export const seoConfig = {
       },
       'availableChannel': {
         '@type': 'ServiceChannel',
-        'serviceUrl': 'https://www.uxnicorp.com.ar/gastronomia'
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/gastronomia'
       }
     },
     faqSchema: {
@@ -485,10 +485,144 @@ export const seoConfig = {
         }
       ]
     }
-  }
+  },
+
+  websProfesionales: {
+    title: 'Webs Profesionales Argentina | Web Institucional y Portfolio - UXnicorp',
+    description: 'Webs institucionales completas y portfolios de alto impacto visual para profesionales, estudios y empresas en Argentina. Diseño, SEO y múltiples páginas incluidas.',
+    keywords: 'web institucional argentina, portfolio profesional argentina, diseño web institucional, web multipágina argentina, web profesional argentina, portfolio arquitecto argentina, web estudio profesional, web institucional buenos aires, web institucional córdoba, web institucional rosario, web institucional mendoza, portfolio profesional buenos aires, portfolio diseñador argentina, portfolio fotógrafo argentina, web para empresa argentina, presencia digital empresa argentina',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/webs-profesionales',
+    slug: 'servicios/webs-profesionales',
+    en: {
+      title: 'Professional Websites Argentina | Institutional Web & Portfolio - UXnicorp',
+      description: 'Complete institutional websites and high-impact visual portfolios for professionals, studios and businesses in Argentina. Design, SEO and multiple pages included.',
+      ogTitle: 'Professional Websites Argentina - UXnicorp',
+      ogDescription: 'Institutional websites and visual portfolios for professionals and businesses in Argentina.',
+    },
+    ogTitle: 'Webs Profesionales Argentina - UXnicorp',
+    ogDescription: 'Webs institucionales y portfolios visuales para profesionales y empresas en Argentina.',
+    h1: 'Webs Profesionales: Presencia Digital de Alto Impacto',
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Servicios', url: '/servicios' },
+      { name: 'Webs Profesionales', url: '/servicios/webs-profesionales' }
+    ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      'name': 'Webs Profesionales e Institucionales',
+      'description': 'Diseño y desarrollo de sitios web institucionales y portfolios profesionales de alto impacto visual para empresas, estudios y profesionales independientes.',
+      'provider': {
+        '@type': 'LocalBusiness',
+        'name': 'UXnicorp',
+        'url': 'https://www.uxnicorp.com.ar'
+      },
+      'areaServed': [
+        { '@type': 'City', 'name': 'Buenos Aires' },
+        { '@type': 'City', 'name': 'Córdoba' },
+        { '@type': 'City', 'name': 'Mendoza' },
+        { '@type': 'City', 'name': 'Rosario' },
+        { '@type': 'City', 'name': 'La Plata' },
+        { '@type': 'Country', 'name': 'Argentina' }
+      ],
+      'serviceType': 'Web Institucional, Portfolio Digital, Diseño Web',
+      'availableChannel': {
+        '@type': 'ServiceChannel',
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/webs-profesionales'
+      }
+    }
+  },
+
+  plataformaEducativa: {
+    title: 'Plataforma Educativa Argentina | Academia Online | UXnicorp',
+    description: 'Desarrollamos plataformas educativas completas para Argentina: cursos, alumnos, progreso, certificados y pagos integrados. Para formadores, coaches y academias.',
+    keywords: 'plataforma educativa argentina, academia online argentina, cursos online argentina, plataforma cursos argentina, lms argentina, plataforma e-learning argentina, crear academia online, vender cursos online argentina, plataforma formación online, sistema cursos online, cursos digitales argentina, membresía educativa argentina, plataforma aprendizaje argentina',
+    canonical: 'https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa',
+    slug: 'servicios/plataforma-educativa',
+    en: {
+      title: 'Educational Platform Argentina | Online Academy & Digital Courses | UXnicorp',
+      description: 'We build complete educational platforms in Argentina: courses, students, progress tracking, certificates and integrated payments for coaches, trainers and academies.',
+      ogTitle: 'Educational Platform Argentina - UXnicorp',
+      ogDescription: 'Turn your knowledge into scalable income. Courses, students, payments and certificates in one platform.',
+    },
+    ogTitle: 'Plataforma Educativa Argentina — Academia Online Profesional',
+    ogDescription: 'Convertí tu conocimiento en ingresos escalables. Cursos, alumnos, pagos y certificados en una sola plataforma.',
+    h1: 'Plataforma Educativa: Vendé Tu Conocimiento Online',
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Servicios', url: '/servicios' },
+      { name: 'Plataforma Educativa', url: '/servicios/plataforma-educativa' }
+    ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      'name': 'Plataforma Educativa Online',
+      'description': 'Desarrollo de plataformas educativas completas con sistema de cursos, alumnos, progreso, certificados automáticos y pagos integrados para formadores y academias en Argentina.',
+      'provider': {
+        '@type': 'LocalBusiness',
+        'name': 'UXnicorp',
+        'url': 'https://www.uxnicorp.com.ar'
+      },
+      'areaServed': [
+        { '@type': 'City', 'name': 'Buenos Aires' },
+        { '@type': 'City', 'name': 'Córdoba' },
+        { '@type': 'City', 'name': 'Mendoza' },
+        { '@type': 'City', 'name': 'Rosario' },
+        { '@type': 'City', 'name': 'La Plata' },
+        { '@type': 'Country', 'name': 'Argentina' }
+      ],
+      'serviceType': 'Plataforma Educativa, LMS, Academia Online',
+      'availableChannel': {
+        '@type': 'ServiceChannel',
+        'serviceUrl': 'https://www.uxnicorp.com.ar/es/servicios/plataforma-educativa'
+      }
+    }
+  },
+
+  diagnostico: {
+    title: 'Diagnóstico Digital Gratuito | ¿Qué web necesita tu negocio? | UXnicorp',
+    description: 'Descubrí en 3 minutos qué solución digital es la ideal para tu negocio. Diagnóstico personalizado gratuito: landing page, e-commerce, sistema de gestión o plataforma educativa. UXnicorp Argentina.',
+    keywords: 'diagnóstico digital gratuito, qué página web necesito, asesoramiento web gratis, qué necesita mi negocio online, consultoría web argentina, qué tipo de web necesito, quiz página web, selector solución digital',
+    canonical: 'https://www.uxnicorp.com.ar/es/diagnostico',
+    slug: 'diagnostico',
+    ogTitle: 'Diagnóstico Digital Gratuito — Sabé exactamente qué necesita tu negocio',
+    ogDescription: 'Respondé 5 preguntas y recibís una recomendación personalizada con problemas detectados, oportunidades y estrategia digital. Gratis.',
+    ogImage: 'https://www.uxnicorp.com.ar/og-image.jpg',
+    h1: 'Diagnóstico Digital: Descubrí Qué Necesita Tu Negocio Online',
+    en: {
+      title: 'Free Digital Diagnosis | What Website Does Your Business Need? | UXnicorp',
+      description: 'Discover in 3 minutes the ideal digital solution for your business. Free personalized diagnosis: landing page, e-commerce, management system. UXnicorp Argentina.',
+      ogTitle: 'Free Digital Diagnosis — Find Out Exactly What Your Business Needs',
+      ogDescription: 'Answer 5 questions and get a personalized recommendation with detected problems, opportunities and digital strategy. Free.',
+    },
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Diagnóstico Digital', url: '/diagnostico' }
+    ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      'name': 'Diagnóstico Digital UXnicorp',
+      'description': 'Herramienta interactiva de diagnóstico digital para determinar qué tipo de solución web necesita un negocio.',
+      'url': 'https://www.uxnicorp.com.ar/es/diagnostico',
+      'applicationCategory': 'BusinessApplication',
+      'operatingSystem': 'Web',
+      'offers': {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'ARS',
+        'description': 'Diagnóstico digital completamente gratuito'
+      },
+      'provider': {
+        '@type': 'Organization',
+        'name': 'UXnicorp',
+        'url': 'https://www.uxnicorp.com.ar'
+      }
+    }
+  },
 };
 
-export const createBreadcrumbSchema = (breadcrumb) => {
+export const createBreadcrumbSchema = (breadcrumb, lang = 'es') => {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -496,7 +630,9 @@ export const createBreadcrumbSchema = (breadcrumb) => {
       '@type': 'ListItem',
       'position': index + 1,
       'name': item.name,
-      'item': `https://www.uxnicorp.com.ar${item.url}`
+      'item': index === 0
+        ? `https://www.uxnicorp.com.ar/${lang}`
+        : `https://www.uxnicorp.com.ar/${lang}${item.url}`
     }))
   };
 };

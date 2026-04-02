@@ -15,7 +15,9 @@ import {
   CheckCircle,
   Info,
   HelpCircle,
-  Clock
+  Clock,
+  Building2,
+  GraduationCap
 } from 'lucide-react';
 import './Servicios.css';
 import '../../src/section-glass-card.css';
@@ -425,10 +427,20 @@ function Servicios() {
       link: '/servicios/landing-pages',
       ...(Array.isArray(categoriasTexto) ? categoriasTexto[1] : {
         titulo: 'Landing Pages',
-        descripcion: 'Páginas de aterrizaje diseñadas para convertir. Desde landing express en 72hs hasta soluciones premium a medida.',
-        serviciosCount: '5 paquetes disponibles',
-        highlights: ['Listas en 72-96hs', 'Diseño responsive', 'SEO incluido']
+        descripcion: 'Páginas de conversión listas en 72hs. Desde una página básica hasta una landing premium 100% a medida con funcionalidades avanzadas.',
+        serviciosCount: '5 opciones disponibles',
+        highlights: ['Lista en 72hs', 'Diseño responsive', 'SEO incluido']
       })
+    },
+    {
+      id: 'webs-profesionales',
+      icon: Building2,
+      color: '#C8DBF7',
+      link: '/servicios/webs-profesionales',
+      titulo: 'Webs Profesionales',
+      descripcion: 'Sitios web institucionales de múltiples páginas y portfolios visuales de alto impacto. Para construir autoridad y credibilidad online.',
+      serviciosCount: '2 opciones + demos por sector',
+      highlights: ['Hasta 8 páginas', 'Blog integrado', 'SEO avanzado']
     },
     {
       id: 'ecommerce',
@@ -436,11 +448,21 @@ function Servicios() {
       color: '#e0a6d8',
       link: '/servicios/ecommerce',
       ...(Array.isArray(categoriasTexto) ? categoriasTexto[2] : {
-        titulo: 'E-commerce',
-        descripcion: 'Tiendas online completas con carrito, pasarela de pagos, gestión de productos y envíos. Todo lo que necesitás para vender online.',
+        titulo: 'Tiendas Online',
+        descripcion: 'Tiendas online con carrito y pagos integrados. Desde el emprendedor que empieza hasta el negocio con alto volumen de ventas.',
         serviciosCount: '2 opciones',
-        highlights: ['Mercado Pago integrado', 'Panel admin', 'Control de stock']
+        highlights: ['Mercado Pago integrado', 'Panel admin', 'Gestión de stock']
       })
+    },
+    {
+      id: 'plataforma-educativa',
+      icon: GraduationCap,
+      color: '#D966B2',
+      link: '/servicios/plataforma-educativa',
+      titulo: 'Plataforma Educativa',
+      descripcion: 'Tu propia academia online con cursos, alumnos, progreso, certificados y pagos integrados. Ingresos pasivos de tu conocimiento.',
+      serviciosCount: '1 solución completa',
+      highlights: ['Certificados automáticos', 'Pagos por membresía', 'Panel admin']
     },
     {
       id: 'sistemas-gestion',
@@ -448,16 +470,16 @@ function Servicios() {
       color: '#ffc107',
       link: '/servicios/sistemas-gestion',
       ...(Array.isArray(categoriasTexto) ? categoriasTexto[3] : {
-        titulo: 'Sistemas de Gestión',
-        descripcion: 'CRM y ERP personalizados para administrar clientes, ventas, inventario y toda tu operación.',
-        serviciosCount: 'A medida',
-        highlights: ['Dashboard personalizado', 'Módulos escalables', 'Propuesta a medida']
+        titulo: 'Automatización & Gestión',
+        descripcion: 'CRM y ERP a medida para eliminar el caos operativo, y webs con sistema de turnos para que tus clientes reserven solos las 24hs.',
+        serviciosCount: '2 soluciones',
+        highlights: ['Dashboard personalizado', 'Turnos automáticos', 'Escalable']
       })
     },
     {
       id: 'paquetes',
       icon: Package,
-      color: '#81ade7',
+      color: '#48b8e8',
       link: '/servicios/paquetes',
       ...(Array.isArray(categoriasTexto) ? categoriasTexto[4] : {
         titulo: 'Paquetes Completos',
@@ -471,16 +493,23 @@ function Servicios() {
   return (
     <div className="servicios-page">
       <Helmet>
-        <title>Servicios Desarrollo Web Argentina ⚡ Landing Pages en 72h, E-commerce y ERP | UXnicorp</title>
+        <title>Servicios Web Argentina | Landing Pages, E-commerce y ERP | UXnicorp</title>
         <meta name="description" content="Desarrollo web completo: Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Soluciones integrales en Argentina." />
         <meta name="keywords" content="servicios desarrollo web argentina, landing page argentina, ecommerce argentina, sistema gestión argentina, auditoría ux argentina, erp argentina, agencia programacion argentina, desarrollo web buenos aires" />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/servicios`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/servicios" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/servicios" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/servicios" />
-        <meta property="og:title" content="Servicios de Desarrollo Web Argentina - UXnicorp" />
+        <meta property="og:title" content="Servicios Web Argentina - UXnicorp" />
         <meta property="og:description" content="Landing pages express, Sistemas ERP/CRM a medida, Auditorías UX/UI, E-commerce profesional. Desarrollo completo." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/servicios`} />
+        <meta property="og:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
         <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Servicios Web Argentina - UXnicorp" />
+        <meta name="twitter:description" content="Landing pages, E-commerce, ERP/CRM y Auditorías UX. Desarrollo web profesional en Argentina." />
+        <meta name="twitter:image" content="https://www.uxnicorp.com.ar/og-image.jpg" />
       </Helmet>
       <LanguageToggle />
 

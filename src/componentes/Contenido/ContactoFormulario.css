@@ -10,6 +10,33 @@
   align-items: center;
 }
 
+/* Banner de diagnóstico completado */
+.contacto-diag-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(121, 72, 232, 0.07), rgba(243, 122, 166, 0.07));
+  border: 1.5px solid rgba(121, 72, 232, 0.25);
+  border-radius: 14px;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.88rem;
+  color: #4a4a7a;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contacto-diag-banner-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contacto-diag-banner strong {
+  color: #F37AA6;
+  font-weight: 700;
+}
+
 .contacto-titulo {
   font-family: 'Source Code Pro', monospace;
   font-size: 2.8rem;
