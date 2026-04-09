@@ -361,7 +361,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px 20px 20px 140px;
+  padding: 20px 150px 20px 140px;
   background: rgba(254,254,254,0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1205,14 +1205,34 @@
   .diag-rubro-icon  { width: 28px; height: 28px; min-width: 28px; border-radius: 8px; }
   .diag-rubro-label { font-size: 0.78rem; }
 
-  /* Slide header: reduce left padding now that button is icon-only (~38px) */
-  .diag-slide-header { padding: 16px 16px 16px 60px; gap: 8px; }
-  .diag-rubro-chip   { font-size: 0.68rem; padding: 3px 8px; gap: 4px; }
-
-  /* Slide: allow full scroll so no content gets clipped */
-  .diag-slide      { overflow-y: auto; overflow-x: hidden; }
+  /* Slide header: two-row layout on mobile
+     Row 1: back button (left) — right side free for the language toggle
+     Row 2: rubro chip + step counter below                            */
+  .diag-slide-header {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 14px 14px 8px 60px;
+    gap: 4px 8px;
+    row-gap: 0;
+  }
+  .diag-step-counter {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    padding: 4px 0 8px;
+    font-size: 0.7rem;
+  }
+  .diag-rubro-chip {
+    order: 2;
+    width: 100%;
+    margin-left: 0 !important;
+    padding: 4px 0 0;
+    background: none;
+    font-size: 0.68rem;
+  }
+  /* Body: taller top padding to clear the two-row header (~80px) */
   .diag-slide-body {
-    padding: 86px 16px 24px;
+    padding: 100px 16px 24px;
     gap: 10px;
     overflow: visible;
   }
@@ -1270,7 +1290,7 @@
   .diag-hero-desc    { font-size: 0.93rem; }
   .diag-rubro-chip   { display: none; }
   .diag-step-counter { font-size: 0.72rem; }
-  .diag-slide-header { padding-left: 52px; }
+  .diag-slide-header { padding-left: 52px; padding-right: 14px; }
   .diag-cta-block    { padding: 28px 16px; }
   .diag-cta-title    { font-size: 1.2rem; }
 }
