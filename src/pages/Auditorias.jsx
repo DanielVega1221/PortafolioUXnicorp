@@ -145,7 +145,7 @@ function Auditorias() {
           {JSON.stringify(seoData.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoData.breadcrumb))}
+          {JSON.stringify(createBreadcrumbSchema(seoData.breadcrumb, lang))}
         </script>
       </Helmet>
       <LanguageToggle />

@@ -8,7 +8,7 @@ export const seoConfig = {
     title: 'UXnicorp | Desarrollo Web Argentina | Landing Pages, E-commerce y Sistemas',
     description: 'Desarrollo web profesional en Argentina. Landing pages express, Sistemas ERP/CRM personalizados, Auditorías UX/UI, E-commerce con Mercado Pago.',
     keywords: 'desarrollo web argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistemas personalizados argentina, auditoría ux argentina, diseño web buenos aires, programación web argentina',
-    canonical: 'https://www.uxnicorp.com.ar/es/',
+    canonical: 'https://www.uxnicorp.com.ar/es',
     ogTitle: 'UXnicorp - Desarrollo Web Profesional Argentina',
     ogDescription: 'Transformamos ideas en productos web. Landing pages express, e-commerce completo, sistemas a medida.',
     h1: 'Desarrollo Web que Impulsa tu Negocio',

@@ -188,7 +188,7 @@ function LandingPages() {
           {JSON.stringify(seoConfig.landingPages.schema)}
         </script>
         <script type="application/ld+json">
-          {JSON.stringify(createBreadcrumbSchema(seoConfig.landingPages.breadcrumb))}
+          {JSON.stringify(createBreadcrumbSchema(seoConfig.landingPages.breadcrumb, lang))}
         </script>
       </Helmet>
       <LanguageToggle />

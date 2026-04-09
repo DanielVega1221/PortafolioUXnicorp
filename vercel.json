@@ -5,6 +5,7 @@
   "framework": null,
   "outputDirectory": "dist",
   "redirects": [
+    { "source": "/", "destination": "/es", "permanent": true },
     { "source": "/es/", "destination": "/es", "permanent": true },
     { "source": "/en/", "destination": "/en", "permanent": true },
     { "source": "/sobre-nosotros", "destination": "/es/sobre-nosotros", "permanent": true },
