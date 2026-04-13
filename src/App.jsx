@@ -125,8 +125,8 @@ function App() {
             "@type": "ProfessionalService",
             "name": "UXnicorp - Agencia de Desarrollo Web",
             "alternateName": "UXnicorp Programadores",
-            "url": "https://www.uxnicorp.com.ar",
-            "logo": "https://www.uxnicorp.com.ar/logo.png",
+            "url": `https://www.uxnicorp.com.ar/${lang}`,
+            "logo": "https://www.uxnicorp.com.ar/Logo1.png",
             "image": "https://www.uxnicorp.com.ar/og-image.jpg",
             "description": "Agencia de desarrollo web en Argentina especializada en landing pages, e-commerce, sistemas ERP/CRM y auditorías UX. Trabajo remoto en toda Argentina.",
             "address": {

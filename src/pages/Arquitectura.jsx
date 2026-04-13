@@ -25,7 +25,7 @@ import {
   BarChart3
 } from 'lucide-react';
 import { Layout, Layers, Users, Search, Zap, TrendingUp } from 'lucide-react';
-import { seoConfig, getSeoData } from '../utils/seoConfig';
+import { seoConfig, getSeoData, createBreadcrumbSchema } from '../utils/seoConfig';
 import LanguageToggle from '../componentes/LanguageToggle';
 import { useTranslation } from 'react-i18next';
 import fondoARQ from '../assets/ARQ/fondoARQ.webp';
@@ -58,7 +58,8 @@ function Arquitectura() {
   };
 
   const { lang: urlLang } = useParams();
-  const seo = getSeoData('arquitectura', urlLang || i18n.language?.slice(0, 2) || 'es') || seoConfig.arquitectura;
+  const lang = urlLang || i18n.language?.slice(0, 2) || 'es';
+  const seo = getSeoData('arquitectura', lang) || seoConfig.arquitectura;
 
   return (
     <>
@@ -103,16 +104,7 @@ function Arquitectura() {
         {/* Schema Breadcrumb */}
         {seo.breadcrumb && (
           <script type="application/ld+json">
-            {JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BreadcrumbList',
-              'itemListElement': seo.breadcrumb.map((item, i) => ({
-                '@type': 'ListItem',
-                'position': i + 1,
-                'name': item.name,
-                'item': `https://www.uxnicorp.com.ar${item.url}`
-              }))
-            })}
+            {JSON.stringify(createBreadcrumbSchema(seo.breadcrumb, lang))}
           </script>
         )}
       </Helmet>

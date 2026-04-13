@@ -56,19 +56,19 @@ function ComoTrabajamos() {
         variants={pageVariants}
       >
       <Helmet>
-        <title>Cómo Trabajamos | Proceso de Desarrollo Web Transparente | UXnicorp</title>
-        <meta name="description" content="Proceso de desarrollo web transparente: Reunión inicial, Propuesta clara, Desarrollo ágil, Entregas semanales, Soporte incluido. Metodología probada en Argentina." />
+        <title>{lang === 'en' ? 'How We Work | Transparent Web Development Process | UXnicorp' : 'Cómo Trabajamos | Proceso de Desarrollo Web Transparente | UXnicorp'}</title>
+        <meta name="description" content={lang === 'en' ? 'Transparent web development process: initial meeting, clear proposal, agile development, weekly deliveries, support included. Proven methodology in Argentina.' : 'Proceso de desarrollo web transparente: Reunión inicial, Propuesta clara, Desarrollo ágil, Entregas semanales, Soporte incluido. Metodología probada en Argentina.'} />
         <meta name="keywords" content="metodología desarrollo web, proceso desarrollo software, metodología ágil argentina, clean code, testing software, agile development, scrum, desarrollo profesional argentina, arquitectura software, como trabajamos" />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/como-trabajamos`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/como-trabajamos" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/como-trabajamos" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/como-trabajamos" />
         
-        <meta property="og:title" content="Proceso de Desarrollo Web | Metodología Ágil - UXnicorp" />
-        <meta property="og:description" content="Metodología de desarrollo ágil: código limpio, testing exhaustivo y entregas continuas. Transparencia total." />
+        <meta property="og:title" content={lang === 'en' ? 'How We Work - Transparent Web Development Process' : 'Proceso de Desarrollo Web | Metodología Ágil - UXnicorp'} />
+        <meta property="og:description" content={lang === 'en' ? 'Agile methodology, weekly deliveries, constant communication. Fully transparent process.' : 'Metodología de desarrollo ágil: código limpio, testing exhaustivo y entregas continuas. Transparencia total.'} />
         <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/como-trabajamos`} />
         <meta property="og:type" content="article" />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
       </Helmet>
       <LanguageToggle />
       

@@ -9,6 +9,10 @@ export const seoConfig = {
     description: 'Desarrollo web profesional en Argentina. Landing pages express, Sistemas ERP/CRM personalizados, Auditorías UX/UI, E-commerce con Mercado Pago.',
     keywords: 'desarrollo web argentina, agencia web argentina, landing page argentina, ecommerce argentina, sistemas personalizados argentina, auditoría ux argentina, diseño web buenos aires, programación web argentina',
     canonical: 'https://www.uxnicorp.com.ar/es',
+    en: {
+      title: 'UXnicorp | Web Development Argentina | Landing Pages, E-commerce & Systems',
+      description: 'Professional web development in Argentina. Express landing pages, custom ERP/CRM systems, UX/UI Audits, E-commerce with payment integration.',
+    },
     ogTitle: 'UXnicorp - Desarrollo Web Profesional Argentina',
     ogDescription: 'Transformamos ideas en productos web. Landing pages express, e-commerce completo, sistemas a medida.',
     h1: 'Desarrollo Web que Impulsa tu Negocio',
@@ -20,7 +24,7 @@ export const seoConfig = {
       '@type': 'Organization',
       'name': 'UXnicorp',
       'url': 'https://www.uxnicorp.com.ar',
-      'logo': 'https://www.uxnicorp.com.ar/logo.png',
+      'logo': 'https://www.uxnicorp.com.ar/Logo1.png',
       'description': 'Agencia de desarrollo web especializada en landing pages, e-commerce y sistemas de gestión personalizados en Argentina.',
       'address': {
         '@type': 'PostalAddress',
@@ -281,6 +285,11 @@ export const seoConfig = {
     description: 'Equipo de desarrollo web en Argentina especializado en Landing Pages, E-commerce y Sistemas ERP. Transparencia, entregas rápidas y metodología ágil.',
     keywords: 'equipo desarrollo web, agencia desarrollo argentina, sobre nosotros, equipo UXnicorp, desarrolladores argentina, filosofía desarrollo web, valores empresa tecnología, agencia web buenos aires',
     canonical: 'https://www.uxnicorp.com.ar/es/sobre-nosotros',
+    slug: 'sobre-nosotros',
+    en: {
+      title: 'About UXnicorp | Web Development Agency Argentina',
+      description: 'Web development team in Argentina specialized in Landing Pages, E-commerce and ERP Systems. Transparency, fast delivery and agile methodology.',
+    },
     ogTitle: 'Sobre UXnicorp - Agencia Desarrollo Web Argentina',
     ogDescription: 'Equipo especializado en desarrollo web. Transparencia, metodología ágil y entregas rápidas en Argentina.',
     h1: 'Sobre Nosotros',
@@ -295,6 +304,11 @@ export const seoConfig = {
     description: 'Proceso de desarrollo web transparente: Reunión inicial, Propuesta clara, Desarrollo ágil, Entregas semanales, Soporte incluido. Metodología probada en Argentina.',
     keywords: 'metodología desarrollo web, proceso desarrollo software, metodología ágil argentina, clean code, testing software, agile development, scrum, desarrollo profesional argentina, arquitectura software, como trabajamos',
     canonical: 'https://www.uxnicorp.com.ar/es/como-trabajamos',
+    slug: 'como-trabajamos',
+    en: {
+      title: 'How We Work | Transparent Web Development Process | UXnicorp',
+      description: 'Transparent web development process: initial meeting, clear proposal, agile development, weekly deliveries, support included. Proven methodology in Argentina.',
+    },
     ogTitle: 'Nuestro Proceso de Trabajo - Desarrollo Web Transparente',
     ogDescription: 'Metodología ágil, entregas semanales, comunicación constante. Proceso transparente.',
     h1: 'Cómo Trabajamos',
@@ -309,6 +323,11 @@ export const seoConfig = {
     description: 'Casos de éxito de desarrollo web en Argentina: Landing pages, E-commerce, ERPs y Fintech. Proyectos reales con resultados medibles.',
     keywords: 'casos éxito desarrollo web argentina, proyectos web argentina, portfolio web argentina, landing pages casos éxito, ecommerce argentina casos, ejemplos desarrollo web, proyectos reales web',
     canonical: 'https://www.uxnicorp.com.ar/es/casos-reales',
+    slug: 'casos-reales',
+    en: {
+      title: 'Success Stories Argentina | Real Web Projects with Results - UXnicorp',
+      description: 'Web development success stories in Argentina: Landing pages, E-commerce, ERPs and Fintech. Real projects with measurable results.',
+    },
     ogTitle: 'Casos de Éxito - Proyectos Web con Resultados Reales',
     ogDescription: 'Proyectos reales: Landing pages, E-commerce, Sistemas de Gestión y Fintech con resultados comprobados.',
     h1: 'Casos de Éxito',
@@ -316,6 +335,24 @@ export const seoConfig = {
       { name: 'Inicio', url: '/' },
       { name: 'Casos Reales', url: '/casos-reales' }
     ]
+  },
+
+  landingPagesHub: {
+    title: 'Desarrollo de Landing Pages Argentina | Paquetes y Precios | UXnicorp',
+    description: 'Paquetes de landing pages profesionales en Argentina: Express Basic, Intermedia, Premium y personalizado. Diseño mobile-first, SEO incluido, entrega en 72h.',
+    slug: 'landing-pages',
+    en: {
+      title: 'Landing Page Development Argentina | Packages & Pricing | UXnicorp',
+      description: 'Professional landing page packages in Argentina: Express Basic, Intermediate, Premium and custom. Mobile-first design, SEO included, 72h delivery.',
+      ogTitle: 'Landing Page Packages Argentina — From 72h',
+      ogDescription: 'Choose the right package: Basic, Intermediate, Premium or custom. Professional design, SEO optimized.',
+    },
+    ogTitle: 'Paquetes de Landing Pages en Argentina — Desde 72 hs',
+    ogDescription: 'Elegí el paquete que necesitás: Basic, Intermedia, Premium o personalizado. Diseño profesional, SEO optimizado.',
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Landing Pages', url: '/landing-pages' }
+    ],
   },
 
   arquitectura: {

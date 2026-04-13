@@ -225,16 +225,16 @@ function SobreNosotros() {
   return (
     <>
       <Helmet>
-        <title>Sobre UXnicorp | Agencia Desarrollo Web Argentina</title>
-        <meta name="description" content="Equipo de desarrollo web en Argentina especializado en Landing Pages, E-commerce y Sistemas ERP. Transparencia, entregas rápidas y metodología ágil." />
+        <title>{lang === 'en' ? 'About UXnicorp | Web Development Agency Argentina' : 'Sobre UXnicorp | Agencia Desarrollo Web Argentina'}</title>
+        <meta name="description" content={lang === 'en' ? 'Web development team in Argentina specialized in Landing Pages, E-commerce and ERP Systems. Transparency, fast delivery and agile methodology.' : 'Equipo de desarrollo web en Argentina especializado en Landing Pages, E-commerce y Sistemas ERP. Transparencia, entregas rápidas y metodología ágil.'} />
         <meta name="keywords" content="equipo desarrollo web, agencia desarrollo argentina, sobre nosotros, equipo UXnicorp, desarrolladores argentina, filosofía desarrollo web, valores empresa tecnología, agencia web buenos aires" />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/sobre-nosotros`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/sobre-nosotros" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/sobre-nosotros" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/sobre-nosotros" />
         
-        <meta property="og:title" content="Sobre Nosotros | Equipo de Desarrollo Web - UXnicorp" />
-        <meta property="og:description" content="Equipo especializado en desarrollo web. Transparencia, metodología ágil y entregas rápidas en Argentina." />
+        <meta property="og:title" content={lang === 'en' ? 'About UXnicorp | Web Development Agency Argentina' : 'Sobre Nosotros | Equipo de Desarrollo Web - UXnicorp'} />
+        <meta property="og:description" content={lang === 'en' ? 'Specialized web development team. Transparency, agile methodology and fast deliveries in Argentina.' : 'Equipo especializado en desarrollo web. Transparencia, metodología ágil y entregas rápidas en Argentina.'} />
         <meta property="og:url" content={`https://www.uxnicorp.com.ar/${lang}/sobre-nosotros`} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />

@@ -170,19 +170,19 @@ function LandingPages() {
   return (
     <div className="landing-pages-page">
       <Helmet>
-        <title>{seoConfig.landingPages.title}</title>
+        <title>{lang === 'en' ? seoConfig.landingPages.en.title : seoConfig.landingPages.title}</title>
         <meta 
           name="description" 
-          content={seoConfig.landingPages.description}
+          content={lang === 'en' ? seoConfig.landingPages.en.description : seoConfig.landingPages.description}
         />
         <meta name="keywords" content={seoConfig.landingPages.keywords} />
-        <meta property="og:title" content={seoConfig.landingPages.ogTitle} />
-        <meta property="og:description" content={seoConfig.landingPages.ogDescription} />
+        <meta property="og:title" content={lang === 'en' ? seoConfig.landingPages.en.ogTitle : seoConfig.landingPages.ogTitle} />
+        <meta property="og:description" content={lang === 'en' ? seoConfig.landingPages.en.ogDescription : seoConfig.landingPages.ogDescription} />
         <link rel="canonical" href={`https://www.uxnicorp.com.ar/${lang}/landing-pages`} />
         <link rel="alternate" hrefLang="es" href="https://www.uxnicorp.com.ar/es/landing-pages" />
         <link rel="alternate" hrefLang="en" href="https://www.uxnicorp.com.ar/en/landing-pages" />
         <link rel="alternate" hrefLang="x-default" href="https://www.uxnicorp.com.ar/es/landing-pages" />
-        <meta property="og:locale" content="es_AR" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
         
         <script type="application/ld+json">
           {JSON.stringify(seoConfig.landingPages.schema)}

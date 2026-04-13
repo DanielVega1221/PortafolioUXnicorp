@@ -94,22 +94,22 @@ function Footer() {
         <div className="footer-section footer-nav-section">
           <h4 className="footer-section-title">{t('footer.navTitulo')}</h4>
           <nav className="footer-nav-modern" aria-label="Navegación del sitio">
-            <button onClick={() => handleSectionClick('main')} className="footer-nav-item" type="button" aria-label={t('footer.nav.inicio')}>
+            <a href={`/${lang}`} onClick={(e) => { e.preventDefault(); handleSectionClick('main'); }} className="footer-nav-item" aria-label={t('footer.nav.inicio')}>
               <span className="footer-nav-icon"><FaHome /></span>
               <span>{t('footer.nav.inicio')}</span>
-            </button>
-            <button onClick={() => handleSectionClick('servicios')} className="footer-nav-item" type="button" aria-label={t('footer.nav.servicios')}>
+            </a>
+            <a href={`/${lang}#servicios`} onClick={(e) => { e.preventDefault(); handleSectionClick('servicios'); }} className="footer-nav-item" aria-label={t('footer.nav.servicios')}>
               <span className="footer-nav-icon"><FaBullseye /></span>
               <span>{t('footer.nav.servicios')}</span>
-            </button>
-            <button onClick={() => handleSectionClick('proyectos')} className="footer-nav-item" type="button" aria-label={t('footer.nav.proyectos')}>
+            </a>
+            <a href={`/${lang}#proyectos`} onClick={(e) => { e.preventDefault(); handleSectionClick('proyectos'); }} className="footer-nav-item" aria-label={t('footer.nav.proyectos')}>
               <span className="footer-nav-icon"><FaBriefcase /></span>
               <span>{t('footer.nav.proyectos')}</span>
-            </button>
-            <button onClick={() => handleSectionClick('tecnologias')} className="footer-nav-item" type="button" aria-label={t('footer.nav.tecnologias')}>
+            </a>
+            <a href={`/${lang}#tecnologias`} onClick={(e) => { e.preventDefault(); handleSectionClick('tecnologias'); }} className="footer-nav-item" aria-label={t('footer.nav.tecnologias')}>
               <span className="footer-nav-icon"><FaLaptopCode /></span>
               <span>{t('footer.nav.tecnologias')}</span>
-            </button>
+            </a>
             <Link to={`/${lang}/sobre-nosotros`} className="footer-nav-item" aria-label={t('footer.nav.sobreNosotros')}>
               <span className="footer-nav-icon"><FaInfoCircle /></span>
               <span>{t('footer.nav.sobreNosotros')}</span>

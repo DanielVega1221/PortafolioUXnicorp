@@ -55,8 +55,9 @@ function Navbar({ activeSection, onNavClick, hidden }) {
           const isSectionActive = activeSection === item.id;
           const isItemHovered = hoveredItem === item.id;
           return (
-            <button
+            <a
               key={item.id}
+              href={item.id === 'main' ? `/${lang}` : `/${lang}#${item.id}`}
               className={`navbar-button ${isSectionActive ? 'active' : ''}`}
               style={{
                 backgroundColor: isSectionActive
@@ -66,14 +67,14 @@ function Navbar({ activeSection, onNavClick, hidden }) {
                   ? `0 0 16px 4px ${item.color}66`
                   : 'none'
               }}
-              onClick={() => handleItemClick(item.id)}
+              onClick={(e) => { e.preventDefault(); handleItemClick(item.id); }}
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
               <span className={`navbar-tooltip${isItemHovered ? ' visible' : ''}${isSectionActive && isItemHovered ? ' active-section' : ''}`}>
                 {t(item.labelKey)}
               </span>
-            </button>
+            </a>
           );
         })}
       </div>
