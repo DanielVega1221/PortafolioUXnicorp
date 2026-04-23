@@ -7,7 +7,7 @@ export default function LanguageSwitcher() {
   const isEnglish = pathname.startsWith("/en");
 
   const esPath = isEnglish ? pathname.slice(3) || "/" : pathname;
-  const enPath = isEnglish ? pathname : `/en${pathname}`;
+  const enPath = isEnglish ? pathname : pathname === "/" ? "/en" : `/en${pathname}`;
 
   return (
     <div
