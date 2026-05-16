@@ -188,7 +188,7 @@ export default function Footer({ locale = "es" }: FooterProps) {
         </div>
 
         <div
-          className="mt-10 flex flex-col items-center gap-1 border-t pt-6 text-center md:flex-row md:justify-between"
+          className="mt-10 flex flex-col items-center gap-1 border-t pt-6 text-center md:flex-row md:justify-between md:pr-16"
           style={{ borderColor: "rgba(0,0,0,0.07)" }}
         >
           <span className="text-xs text-gray-400">
