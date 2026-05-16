@@ -1,7 +1,9 @@
 import React from "react";
-import TransitionLink from "@/components/TransitionLink";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { CASOS, getCasoLocalized } from "@/app/casos/data";
+import CasesPageHeader from "@/components/cases/CasesPageHeader";
+import CasesFooterCta from "@/components/cases/CasesFooterCta";
 
 export const metadata: Metadata = {
   title: "Real Projects — Landing Pages, Online Stores & Web Systems | UXnicorp",
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
     languages: {
       es: "https://www.uxnicorp.com.ar/casos",
       en: "https://www.uxnicorp.com.ar/en/casos",
+      "x-default": "https://www.uxnicorp.com.ar/casos",
     },
   },
   openGraph: {
@@ -129,45 +132,16 @@ export default function CasosEnPage() {
         minHeight: "100vh",
       }}
     >
-      <script
+      <Script
+        id="casos-jsonld-en"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <div className="mx-auto max-w-[1220px] px-6 py-20 md:px-8 md:py-28">
 
-        {/* Back */}
-        <TransitionLink
-          href="/en"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.4rem",
-            fontSize: "0.82rem",
-            fontWeight: 600,
-            color: "#F37AA6",
-            textDecoration: "none",
-            marginBottom: "2.5rem",
-          }}
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M9 2.5L5 7l4 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Back
-        </TransitionLink>
+        <CasesPageHeader locale="en" />
 
-        {/* Header */}
-        <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">Real cases</p>
-          <h1 className="mt-4 max-w-2xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
-            Projects that<br />solved something real.
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-500">
-            We don&apos;t show mockups or demos. Every case here was a real problem someone had — and what we did to solve it.
-          </p>
-        </div>
-
-        {/* Cards — one per row */}
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "3rem" }}>
           {CASOS.map((caso) => {
             const t = getCasoLocalized(caso, "en");
@@ -184,12 +158,10 @@ export default function CasosEnPage() {
                 flexDirection: "row",
               }}
             >
-              {/* Image — left column */}
               <div style={{ width: "380px", flexShrink: 0, alignSelf: "stretch", minHeight: "280px" }}>
                 <ImageZone src={caso.imagen} alt={caso.cliente} />
               </div>
 
-              {/* Content — 2 columns */}
               <div
                 style={{
                   padding: "1.75rem 2rem",
@@ -201,7 +173,6 @@ export default function CasosEnPage() {
                   borderLeft: "1px solid rgba(255,255,255,0.5)",
                 }}
               >
-                {/* Col 1: title + problema + pills + link */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                   <div style={{ display: "flex", gap: "0.45rem", flexWrap: "wrap" }}>
                     <span
@@ -272,7 +243,6 @@ export default function CasosEnPage() {
                   )}
                 </div>
 
-                {/* Col 2: what we did + result */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                   <div>
                     <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", margin: "0 0 0.75rem 0" }}>
@@ -319,51 +289,7 @@ export default function CasosEnPage() {
           })}
         </div>
 
-        {/* CTA */}
-        <div
-          style={{
-            borderRadius: "1.5rem",
-            padding: "2rem 2.25rem",
-            background: "linear-gradient(135deg, #F37AA6 0%, #E0A6D8 100%)",
-            boxShadow: "0 8px 40px rgba(243,122,166,0.22)",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "1.5rem",
-          }}
-        >
-          <div>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>
-              Could your project be next?
-            </h3>
-            <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", margin: 0 }}>
-              Tell us what you have in mind. We start with a free analysis.
-            </p>
-          </div>
-          <a
-            href="/en#contacto"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.45rem",
-              padding: "0.7rem 1.5rem",
-              borderRadius: "0.875rem",
-              background: "#fff",
-              color: "#e0608a",
-              fontWeight: 700,
-              fontSize: "0.875rem",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
-            }}
-          >
-            Let&apos;s talk
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-              <path d="M2 6.5h9M8 3.5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        </div>
+        <CasesFooterCta locale="en" />
 
       </div>
     </main>

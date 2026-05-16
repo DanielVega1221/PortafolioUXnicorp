@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       es: "https://www.uxnicorp.com.ar/politica-de-privacidad",
       en: "https://www.uxnicorp.com.ar/en/privacy-policy",
+      "x-default": "https://www.uxnicorp.com.ar/politica-de-privacidad",
     },
   },
 };
@@ -57,7 +58,6 @@ const sections = [
 export default function PoliticaPrivacidadPage() {
   return (
     <main className="mx-auto max-w-[780px] px-6 py-20 md:px-8 md:py-28">
-      {/* Header */}
       <div className="mb-12">
         <Link
           href="/"
@@ -80,7 +80,6 @@ export default function PoliticaPrivacidadPage() {
         </p>
       </div>
 
-      {/* Sections */}
       <div className="flex flex-col gap-10">
         {sections.map((s) => (
           <div
@@ -100,7 +99,6 @@ export default function PoliticaPrivacidadPage() {
         ))}
       </div>
 
-      {/* Contact */}
       <div
         className="mt-12 rounded-2xl px-7 py-6"
         style={{
@@ -120,7 +118,6 @@ export default function PoliticaPrivacidadPage() {
         </p>
       </div>
 
-      {/* Language switch */}
       <div className="mt-8 text-center">
         <Link
           href="/en/privacy-policy"

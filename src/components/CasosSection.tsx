@@ -1,11 +1,11 @@
 import TransitionLink from "@/components/TransitionLink";
+import Image from "next/image";
 
 export default function CasosSection() {
   return (
     <section id="casos" className="relative overflow-hidden px-6 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-[1220px]">
 
-        {/* Header */}
         <div className="mb-14 flex flex-col items-start">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
             Casos reales
@@ -17,15 +17,12 @@ export default function CasosSection() {
           </h2>
         </div>
 
-        {/* Caso destacado */}
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-stretch">
 
-          {/* Left — contexto del caso */}
           <div
             className="flex flex-col justify-between rounded-[28px] p-8 md:p-10"
             style={{ background: "rgba(255,255,255,0.72)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
-            {/* Tag */}
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#FEE0D6] px-3 py-1">
                 <div className="h-1.5 w-1.5 rounded-full bg-[#F37AA6]" />
@@ -34,7 +31,6 @@ export default function CasosSection() {
                 </span>
               </div>
 
-              {/* Problema */}
               <div className="mb-6">
                 <p className="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-400">
                   El problema
@@ -44,7 +40,6 @@ export default function CasosSection() {
                 </p>
               </div>
 
-              {/* Qué hicimos */}
               <div className="mb-6">
                 <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-400">
                   Qué hicimos
@@ -64,7 +59,6 @@ export default function CasosSection() {
               </div>
             </div>
 
-            {/* Resultado */}
             <div
               className="rounded-2xl p-5"
               style={{ background: "rgba(243,122,166,0.07)", border: "1px solid rgba(243,122,166,0.15)" }}
@@ -78,10 +72,8 @@ export default function CasosSection() {
             </div>
           </div>
 
-          {/* Right — stack técnico + CTA */}
           <div className="flex flex-col gap-6">
 
-            {/* Tech stack */}
             <div
               className="rounded-[28px] p-8"
               style={{ background: "rgba(255,255,255,0.72)", border: "1px solid rgba(0,0,0,0.06)" }}
@@ -90,16 +82,17 @@ export default function CasosSection() {
                 El resultado
               </p>
               <div className="overflow-hidden rounded-2xl">
-                <img
+                <Image
                   src="/works/GlamAtNails.png"
                   alt="Glam at Nails — landing page"
-                  className="w-full object-cover object-top"
+                  width={1200}
+                  height={800}
+                  className="h-auto w-full object-cover object-top"
                   style={{ maxHeight: "220px" }}
                 />
               </div>
             </div>
 
-            {/* CTA a casos */}
             <TransitionLink
               href="/casos"
               className="group flex flex-col justify-between rounded-[28px] p-8 transition-all duration-300 hover:scale-[1.01] min-h-[160px] md:min-h-0"

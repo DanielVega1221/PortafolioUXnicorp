@@ -12,6 +12,7 @@ import {
 } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
 
 const CLOSE_MS = 720;
 const OPEN_MS  = 680;
@@ -38,7 +39,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
   const phaseRef    = useRef<Phase>("idle");
   const pathnameRef = useRef(pathname);
 
-  // Keep pathnameRef current without adding pathname to navigate's dep array
   useEffect(() => { pathnameRef.current = pathname; }, [pathname]);
 
   const topControls = useAnimation();
@@ -55,28 +55,20 @@ export default function TransitionProvider({ children }: { children: ReactNode }
       topControls.start({ y: "-100%", transition: { duration: OPEN_MS / 1000, ease: EASE } }),
       botControls.start({ y:  "100%", transition: { duration: OPEN_MS / 1000, ease: EASE } }),
     ]);
-    // Only finalize if we weren't interrupted by a new navigate()
     if (phaseRef.current === "opening") {
       setPhaseSync("idle");
     }
   }, [topControls, botControls, setPhaseSync]);
 
-  // PRIMARY trigger: when the URL changes while curtains are closing,
-  // the new page has loaded — open the curtains.
-  // Using phaseRef as the guard means no extra refs or safety timers needed.
   useEffect(() => {
     if (phaseRef.current !== "closing") return;
     openCurtains();
-  // pathname is the only thing that should retrigger this
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const navigate = useCallback(
     (href: string) => {
-      // If already on this page, do nothing — router.push would be a no-op
-      // and the pathname effect would never fire, leaving the curtain stuck.
       if (href === pathnameRef.current) return;
-      // Block only while closing (route push pending).
       if (phaseRef.current === "closing") return;
 
       setPhaseSync("closing");
@@ -85,7 +77,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
         sessionStorage.setItem("uxn-intro", "1");
       }
 
-      // If mid-open, start() interrupts the open animation immediately.
       Promise.all([
         topControls.start({ y: "0%", transition: { duration: CLOSE_MS / 1000, ease: EASE } }),
         botControls.start({ y: "0%", transition: { duration: CLOSE_MS / 1000, ease: EASE } }),
@@ -96,7 +87,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
     [router, topControls, botControls, setPhaseSync]
   );
 
-  // Kept for template.tsx compatibility — pathname effect is primary now
   const onPageReady = useCallback(() => {}, []);
 
   const ctxValue = useMemo(
@@ -108,7 +98,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
     <Ctx.Provider value={ctxValue}>
       {children}
 
-      {/* ── Transition overlay (always mounted) ── */}
       <div
         style={{
           position: "fixed",
@@ -118,7 +107,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
           background: phase !== "idle" ? "#fce8f0" : "transparent",
         }}
       >
-        {/* Top curtain – driven by imperative controls */}
         <motion.div
           initial={{ y: "-100%" }}
           animate={topControls}
@@ -132,7 +120,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
           }}
         />
 
-        {/* Bottom curtain – driven by imperative controls */}
         <motion.div
           initial={{ y: "100%" }}
           animate={botControls}
@@ -146,7 +133,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
           }}
         />
 
-        {/* Logo – fades in once curtains are closed, fades out as they open */}
         <motion.div
           animate={{
             opacity: phase === "idle" ? 0 : 1,
@@ -169,10 +155,11 @@ export default function TransitionProvider({ children }: { children: ReactNode }
             gap: "0.65rem",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/logo.png"
+          <Image
+            src="/brand/logo-sm.png"
             alt=""
+            width={51}
+            height={56}
             style={{ height: "56px", width: "auto" }}
           />
           <span

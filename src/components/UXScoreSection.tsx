@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { QUESTIONS_EN } from "@/components/uxscore/questions-en";
 
 type QuestionOption = {
   id: string;
@@ -150,132 +151,6 @@ const QUESTIONS: Question[] = [
   },
 ];
 
-const QUESTIONS_EN: Question[] = [
-  {
-    id: "speed",
-    eyebrow: "01 · Speed",
-    prompt: "How fast does your website load?",
-    helper: "If you haven't measured it, pick the feeling closest to your experience today.",
-    whyItMatters:
-      "Speed conditions attention even before the user reads your message. If the first screen takes too long, the friction has already started.",
-    tip: "Think about real mobile conditions—mobile data, not just desktop Wi-Fi.",
-    options: [
-      {
-        id: "under-2",
-        label: "Under 2 seconds",
-        detail: "Feels fast and responds almost instantly.",
-        score: 95,
-        areaLabel: "Solid speed",
-        recommendation: "Keep images, scripts and above-the-fold weight under control.",
-        target: "Current goal met",
-      },
-      {
-        id: "between-2-4",
-        label: "Between 2 and 4 seconds",
-        detail: "Still usable, but it already adds friction on mobile.",
-        score: 62,
-        areaLabel: "Speed with friction",
-        recommendation: "Reduce visual weight, review images and eliminate unnecessary above-the-fold scripts.",
-        target: "Get under 2 seconds",
-      },
-      {
-        id: "over-4",
-        label: "Over 4 seconds",
-        detail: "You're probably losing attention before the main message.",
-        score: 24,
-        areaLabel: "Critical speed",
-        recommendation: "Prioritize performance before adding more design: asset optimization, layout and initial load.",
-        target: "Cut more than 50% of load time",
-      },
-    ],
-  },
-  {
-    id: "clarity",
-    eyebrow: "02 · Clarity",
-    prompt: "Is it clear what the visitor should do?",
-    helper: "We're looking for one obvious primary action — not multiple options competing with each other.",
-    whyItMatters:
-      "A website can look good and still fail if it doesn't guide. When the primary action isn't obvious, attention scatters and conversion drops.",
-    tip: "If your visitor doesn't understand what to do in 5 seconds, there's a clear improvement opportunity.",
-    options: [
-      {
-        id: "very-clear",
-        label: "Yes, very clear",
-        detail: "The primary action is defined and visible.",
-        score: 92,
-        areaLabel: "Clear message",
-        recommendation: "Refine copy and visual hierarchy to sustain that clarity on both mobile and desktop.",
-        target: "Keep one dominant CTA",
-      },
-      {
-        id: "somewhat-clear",
-        label: "Sort of",
-        detail: "There's intent, but it's diluted by too many things at once.",
-        score: 56,
-        areaLabel: "Ambiguous message",
-        recommendation: "Simplify the headline, reduce distractions and leave one primary action per screen.",
-        target: "Visitor understands what to do in 5 seconds",
-      },
-      {
-        id: "not-clear",
-        label: "Not really",
-        detail: "Right now the website probably informs, but doesn't guide.",
-        score: 20,
-        areaLabel: "Weak message",
-        recommendation: "Define the proposition, primary CTA and reading order before designing more sections.",
-        target: "One central message and a single action priority",
-      },
-    ],
-  },
-  {
-    id: "goal",
-    eyebrow: "03 · Goal",
-    prompt: "Does your website have a clear objective?",
-    helper: "Capturing leads is not the same as selling or informing.",
-    whyItMatters:
-      "Without a clear primary objective, the structure loses direction. The problem then isn't just design — it's about decisions.",
-    tip: "Choosing one priority helps organize content, CTAs, metrics and the user journey.",
-    options: [
-      {
-        id: "leads",
-        label: "Generate leads",
-        detail: "You want inquiries, meetings or qualified contacts.",
-        score: 90,
-        areaLabel: "Defined commercial goal",
-        recommendation: "Align forms, CTAs and social proof to increase contact intent.",
-        target: "Measure visits → inquiries",
-      },
-      {
-        id: "sales",
-        label: "Sell",
-        detail: "The website has to push toward purchase or booking.",
-        score: 86,
-        areaLabel: "Defined transactional goal",
-        recommendation: "Work on trust, load times and reducing steps before checkout or booking.",
-        target: "Measure visits → sales",
-      },
-      {
-        id: "inform",
-        label: "Inform",
-        detail: "You want to educate or present, but without a strong primary conversion.",
-        score: 68,
-        areaLabel: "Informational goal",
-        recommendation: "Define a useful secondary conversion: contact, demo, download or consultation.",
-        target: "Add one measurable secondary action",
-      },
-      {
-        id: "unclear-goal",
-        label: "I'm not sure",
-        detail: "That usually shows up immediately in the website structure.",
-        score: 22,
-        areaLabel: "Undefined goal",
-        recommendation: "Define first what the website exists for. Without that, design and development lose direction.",
-        target: "Choose one primary goal before redesigning",
-      },
-    ],
-  },
-];
-
 function findOption(questions: Question[], questionId: string, optionId: string | undefined) {
   const question = questions.find((item) => item.id === questionId);
   return question?.options.find((option) => option.id === optionId);
@@ -370,6 +245,9 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
     ? 100
     : Math.max((completionCount / activeQuestions.length) * 100, (step / activeQuestions.length) * 100);
 
+  const partialRingBg = useMemo(() => scoreRingBackground(partialScore), [partialScore]);
+  const resultRingBg = useMemo(() => scoreRingBackground(result?.score ?? 0), [result?.score]);
+
   const handleSelect = (questionId: string, optionId: string) => {
     setCopied(false);
     setAnswers((current) => ({ ...current, [questionId]: optionId }));
@@ -441,7 +319,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
-          <div className="rounded-[32px] border border-white/70 bg-white/80 p-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-7">
+          <div className="rounded-[32px] border border-white/70 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] md:p-7">
             <div className="mb-6 border-b border-black/6 pb-5">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
@@ -595,7 +473,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                     type="button"
                     onClick={handleNext}
                     disabled={!canAdvance}
-                    className="rounded-full bg-[#F37AA6] px-5 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#e0658f] disabled:cursor-not-allowed disabled:opacity-40"
+                    className="rounded-full bg-[#F37AA6] px-5 py-3 text-sm font-semibold text-gray-900 shadow-md transition-colors hover:bg-[#e0658f] disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     {step === activeQuestions.length - 1 ? (isEN ? "See result" : "Ver resultado") : (isEN ? "Next phase" : "Siguiente fase")}
                   </button>
@@ -638,7 +516,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
 
           <aside
             aria-live="polite"
-            className="rounded-[32px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,252,0.92))] p-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-7"
+            className="rounded-[32px] border border-white/70 bg-[linear-gradient(180deg,#ffffff,#faf7fc)] p-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] md:p-7"
           >
             <div className="flex items-center justify-between gap-4 border-b border-black/6 pb-5">
               <div>
@@ -663,7 +541,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                 <div className="flex items-center gap-5 rounded-[28px] border border-black/6 bg-white/80 p-5">
                   <div
                     className="grid h-[110px] w-[110px] place-items-center rounded-full"
-                    style={{ background: scoreRingBackground(partialScore) }}
+                    style={{ background: partialRingBg }}
                   >
                     <div className="grid h-[84px] w-[84px] place-items-center rounded-full bg-white text-center shadow-inner">
                       <div>
@@ -724,7 +602,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                 <div className="flex items-center gap-5 rounded-[28px] border border-black/6 bg-white/80 p-5">
                   <div
                     className="grid h-[110px] w-[110px] place-items-center rounded-full"
-                    style={{ background: scoreRingBackground(result.score) }}
+                    style={{ background: resultRingBg }}
                   >
                     <div className="grid h-[84px] w-[84px] place-items-center rounded-full bg-white text-center shadow-inner">
                       <div>
@@ -757,7 +635,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                   <button
                     type="button"
                     onClick={handleCopy}
-                    className="rounded-full bg-[#F37AA6] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#e0658f]"
+                    className="rounded-full bg-[#F37AA6] px-5 py-3 text-sm font-semibold text-gray-900 shadow-md transition-all hover:bg-[#e0658f]"
                   >
                     {copied ? (isEN ? "Diagnosis copied" : "Diagnóstico copiado") : (isEN ? "Copy diagnosis" : "Copiar diagnóstico")}
                   </button>

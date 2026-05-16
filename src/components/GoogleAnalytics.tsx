@@ -3,11 +3,10 @@
 import { useEffect } from "react";
 import Script from "next/script";
 
-const GA_ID = "G-W66QC955GW";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function GoogleAnalytics() {
   useEffect(() => {
-    // Grant consent immediately if user already accepted in a previous session
     if (localStorage.getItem("uxnicorp_cookie_consent") === "accepted") {
       grantConsent();
     }
@@ -45,6 +44,8 @@ export default function GoogleAnalytics() {
       window.removeEventListener("cookieConsentRejected", revokeConsent);
     };
   }, []);
+
+  if (!GA_ID) return null;
 
   return (
     <>

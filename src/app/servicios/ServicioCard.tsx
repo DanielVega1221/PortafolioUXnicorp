@@ -94,6 +94,18 @@ export function ServicioCard({ s }: { s: Servicio }) {
           >
             {s.tiempo}
           </span>
+          <span
+            style={{
+              padding: "0.3rem 0.85rem",
+              borderRadius: "0.5rem",
+              background: "rgba(255,255,255,0.5)",
+              fontSize: "0.75rem",
+              fontWeight: 600,
+              color: "#9ca3af",
+            }}
+          >
+            {s.cuotas}
+          </span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#9ca3af" }}>
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

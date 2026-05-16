@@ -12,7 +12,11 @@ node_modules
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+
+# lighthouse ci
+/.lighthouseci/
 
 # debug
 npm-debug.log*

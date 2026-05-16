@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/conceptos/gastronomia",
+    languages: {
+      es: "https://www.uxnicorp.com.ar/conceptos/gastronomia",
+      en: "https://www.uxnicorp.com.ar/en/conceptos/gastronomia",
+      "x-default": "https://www.uxnicorp.com.ar/conceptos/gastronomia",
+    },
   },
   openGraph: {
     title: "Concepto Web para Gastronomía | UXnicorp",

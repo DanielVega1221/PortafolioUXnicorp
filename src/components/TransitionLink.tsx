@@ -22,9 +22,7 @@ export default function TransitionLink({
 
   function handleClick(e: MouseEvent<HTMLAnchorElement>) {
     if (onClick) onClick(e);
-    // Let browser handle modifier-key clicks (new tab, etc.)
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    // Only intercept internal links
     if (!href.startsWith("/")) return;
     e.preventDefault();
     navigate(href);

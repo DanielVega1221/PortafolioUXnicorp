@@ -3,6 +3,7 @@
 import React from "react";
 import { Mail } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const EMAIL = "uxnicorp@gmail.com";
 const GONZALO_WA = "5493834368748";
@@ -43,6 +44,8 @@ export default function Footer({ locale = "es" }: FooterProps) {
         : "Diseño que convierte. Código que dura.",
     contactTitle:
       locale === "en" ? "Contact" : "Contacto",
+    pagesTitle:
+      locale === "en" ? "Pages" : "Páginas",
     whatsapp:
       locale === "en" ? "Chat on WhatsApp" : "Escribinos por WhatsApp",
     rights:
@@ -53,6 +56,18 @@ export default function Footer({ locale = "es" }: FooterProps) {
       locale === "en" ? "Privacy policy" : "Política de privacidad",
     privacyHref:
       locale === "en" ? "/en/privacy-policy" : "/politica-de-privacidad",
+    navLinks:
+      locale === "en"
+        ? [
+            { label: "Services", href: "/en/servicios" },
+            { label: "Cases", href: "/en/casos" },
+            { label: "About", href: "/en/about" },
+          ]
+        : [
+            { label: "Servicios", href: "/servicios" },
+            { label: "Casos", href: "/casos" },
+            { label: "Nosotros", href: "/nosotros" },
+          ],
   };
 
   return (
@@ -65,18 +80,16 @@ export default function Footer({ locale = "es" }: FooterProps) {
       className="w-full px-6 pb-8 pt-12 md:px-12 lg:px-20"
     >
       <div className="mx-auto max-w-[1200px]">
-        {/* Top row */}
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          {/* Brand */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5">
-              <img
-                src="/brand/logo.png"
-                alt="UXnicorp logo"
-                width={36}
-                height={36}
-                style={{ display: "block" }}
-              />
+                  <Image
+                    src="/brand/logo.png"
+                    alt="UXnicorp logo"
+                    width={36}
+                    height={36}
+                    style={{ display: "block", width: "auto", height: "auto" }}
+                  />
               <span
                 className="text-2xl font-black tracking-[-0.04em] text-gray-900"
                 style={{ letterSpacing: "-0.04em" }}
@@ -89,7 +102,26 @@ export default function Footer({ locale = "es" }: FooterProps) {
             </p>
           </div>
 
-          {/* Contact */}
+          <div className="flex flex-col gap-3">
+            <span
+              className="text-[0.65rem] font-bold uppercase tracking-widest"
+              style={{ color: "rgba(0,0,0,0.35)" }}
+            >
+              {t.pagesTitle}
+            </span>
+            <div className="flex flex-col gap-2">
+              {t.navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-gray-600 transition-colors hover:text-gray-900"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="flex flex-col gap-3">
             <span
               className="text-[0.65rem] font-bold uppercase tracking-widest"
@@ -115,7 +147,6 @@ export default function Footer({ locale = "es" }: FooterProps) {
             </a>
           </div>
 
-          {/* Social */}
           <div className="flex flex-col gap-3">
             <span
               className="text-[0.65rem] font-bold uppercase tracking-widest"
@@ -156,7 +187,6 @@ export default function Footer({ locale = "es" }: FooterProps) {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div
           className="mt-10 flex flex-col items-center gap-1 border-t pt-6 text-center md:flex-row md:justify-between"
           style={{ borderColor: "rgba(0,0,0,0.07)" }}
@@ -171,7 +201,9 @@ export default function Footer({ locale = "es" }: FooterProps) {
             >
               {t.privacyLabel}
             </Link>
-            <span className="text-xs text-gray-400">🇦🇷 Hecho en Argentina</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#74acdf]/40 bg-[#74acdf]/10 px-2.5 py-0.5 text-xs font-medium text-[#2a5f9e]">
+              🇦🇷 Hecho en Argentina
+            </span>
           </div>
         </div>
       </div>

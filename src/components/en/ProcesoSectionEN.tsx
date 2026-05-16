@@ -71,7 +71,7 @@ const pasos = [
   {
     num: "05",
     titulo: "Launch and follow-up",
-    texto: "Deploy, config and analytics. And after launch we keep monitoring — we don't vanish when we deliver.",
+    texto: "Deploy, config and analytics. We keep monitoring after launch: the project handoff is the start of the ongoing support, not the end.",
     featured: false,
     bg: "rgba(219,201,201,0.5)",
     textColor: "#1a1a1a",

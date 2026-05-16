@@ -11,7 +11,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
     const scrollTo = sessionStorage.getItem('uxn-scroll-to');
     if (scrollTo) {
       sessionStorage.removeItem('uxn-scroll-to');
-      // Instant scroll before curtain opens — user sees form right away
       const el = document.getElementById(scrollTo);
       if (el) el.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'start' });
     }

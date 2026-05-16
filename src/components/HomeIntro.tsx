@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
 const SHOW_MS = 2200;
@@ -13,10 +13,17 @@ export default function HomeIntro() {
   const progress = useMotionValue(0);
   const counter = useTransform(progress, (v) => `${Math.round(v * 100)}`);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (localStorage.getItem("uxn-intro")) return;
     if (window.matchMedia("(max-width: 1023px)").matches) return;
-    setVisible(true);
+
+    const rafId = requestAnimationFrame(() => setVisible(true));
+
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!visible) return;
     const anim = animate(progress, 1, { duration: SHOW_MS / 1000, ease: "linear" });
     const t1 = setTimeout(() => setExiting(true), SHOW_MS);
     const t2 = setTimeout(() => {
@@ -24,7 +31,7 @@ export default function HomeIntro() {
       localStorage.setItem("uxn-intro", "1");
     }, SHOW_MS + EXIT_MS);
     return () => { anim.stop(); clearTimeout(t1); clearTimeout(t2); };
-  }, []);
+  }, [progress, visible]);
 
   if (!visible) return null;
 
@@ -37,7 +44,6 @@ export default function HomeIntro() {
         pointerEvents: exiting ? "none" : "all",
       }}
     >
-      {/* ── Top curtain panel ── */}
       <motion.div
         animate={{ y: exiting ? "-100%" : "0%" }}
         transition={{ duration: EXIT_MS / 1000, ease: EASE }}
@@ -49,7 +55,6 @@ export default function HomeIntro() {
         }}
       />
 
-      {/* ── Bottom curtain panel ── */}
       <motion.div
         animate={{ y: exiting ? "100%" : "0%" }}
         transition={{ duration: EXIT_MS / 1000, ease: EASE }}
@@ -61,7 +66,6 @@ export default function HomeIntro() {
         }}
       />
 
-      {/* ── Center glow blob ── */}
       <div
         style={{
           position: "absolute",
@@ -84,7 +88,6 @@ export default function HomeIntro() {
         />
       </div>
 
-      {/* ── Main content ── */}
       <motion.div
         animate={{ opacity: exiting ? 0 : 1, scale: exiting ? 1.07 : 1 }}
         transition={{ duration: 0.28, ease: "easeIn" }}
@@ -99,7 +102,6 @@ export default function HomeIntro() {
           pointerEvents: "none",
         }}
       >
-        {/* Logo mark */}
         <motion.img
           src="/brand/logo.png"
           alt=""
@@ -114,7 +116,6 @@ export default function HomeIntro() {
           }}
         />
 
-        {/* Wordmark */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -129,7 +130,6 @@ export default function HomeIntro() {
             overflow: "hidden",
           }}
         >
-          {/* "UXnicorp" slides up from below */}
           <div style={{ overflow: "hidden", lineHeight: 1 }}>
             <motion.span
               initial={{ y: "110%" }}
@@ -148,7 +148,6 @@ export default function HomeIntro() {
             </motion.span>
           </div>
 
-          {/* Divider line grows from center */}
           <motion.span
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -162,7 +161,6 @@ export default function HomeIntro() {
             }}
           />
 
-          {/* Tagline fades + slides up */}
           <motion.span
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -180,7 +178,6 @@ export default function HomeIntro() {
         </motion.div>
       </motion.div>
 
-      {/* ── Counter (bottom-left) ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -219,7 +216,6 @@ export default function HomeIntro() {
         </span>
       </motion.div>
 
-      {/* ── Progress bar ── */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}

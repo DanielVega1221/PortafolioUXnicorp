@@ -17,7 +17,7 @@ export function HeroVisual({ badges }: HeroVisualProps) {
   return (
     <div className="relative hidden h-[372px] -translate-y-10 items-start justify-center pt-1 md:flex">
       <div className="relative mt-[-26px] h-[392px] w-[392px]">
-        <div className="absolute inset-[42px] flex items-center justify-center rounded-full border border-white/60 bg-white/12 shadow-[0_20px_64px_rgba(227,166,216,0.26)] backdrop-blur-sm">
+        <div className="absolute inset-[42px] flex items-center justify-center rounded-full border border-white/60 bg-white/12 shadow-[0_20px_64px_rgba(227,166,216,0.26)] backdrop-blur-sm" style={{ contain: "layout style paint" }}>
           <div className="hero-orb-layer hero-orb-layer-a" />
           <div className="hero-orb-layer hero-orb-layer-b" />
           <div className="hero-orb-layer hero-orb-layer-c" />
@@ -49,7 +49,7 @@ export function HeroVisual({ badges }: HeroVisualProps) {
                   className="hero-orbit-counter"
                   style={{ "--orbit-duration": badge.duration } as CSSProperties}
                 >
-                  <div className="flex items-center gap-2 rounded-full border border-white bg-white/90 px-4 py-2 text-xs font-semibold text-gray-700 shadow-md backdrop-blur-sm">
+                  <div className="flex items-center gap-2 rounded-full border border-white bg-white/90 px-4 py-2 text-xs font-semibold text-gray-700 shadow-md">
                     <span className="h-2 w-2 rounded-full bg-[#F37AA6]" />
                     {badge.label}
                   </div>

@@ -1,13 +1,8 @@
 'use client';
 
-/**
- * PAGE: Gastronomy (EN)
- *
- * English version of the Gastronomy demo page.
- * Shares CSS with the ES version.
- */
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import TransitionLink from '@/components/TransitionLink';
 import { usePageTransition } from '@/components/TransitionProvider';
 import { motion as Motion } from 'framer-motion';
@@ -27,7 +22,6 @@ import {
 } from 'lucide-react';
 import '../../../conceptos/gastronomia/Gastronomia.css';
 
-/* ─── Image paths ─── */
 const fondoRestaurante = '/conceptos/gastronomia/fondo.webp';
 const kitchenImage     = '/conceptos/gastronomia/kitchen.webp';
 const musicImage       = '/conceptos/gastronomia/music.webp';
@@ -39,7 +33,6 @@ const tiramisuImg      = '/conceptos/gastronomia/tiramisu.webp';
 
 const MAREA_DEMO_URL = 'https://marea-nine.vercel.app/';
 
-/* ─── EN content ─── */
 const texto = {
   hero: {
     eyebrow: 'The decision to visit a restaurant is usually made before leaving home. It almost always starts with a search.',
@@ -175,12 +168,10 @@ export default function GastronomiaEN() {
 
   return (
     <div className="gastronomia-page">
-      {/* Floating back button */}
       <TransitionLink href="/en" className="btn-home-gastro" aria-label="Back to home">
         <Home size={20} strokeWidth={2} />
       </TransitionLink>
 
-      {/* ── 01/07 HERO ── */}
       <Motion.section
         className="hero-gastro"
         initial={{ opacity: 0 }}
@@ -247,7 +238,6 @@ export default function GastronomiaEN() {
 
       <div className="gastro-separator" />
 
-      {/* ── 02/07 REALITY ── */}
       <section className="realidad-section" aria-label="The industry reality">
         <div className="section-tag">02 / 07</div>
         <div className="realidad-card">
@@ -288,7 +278,6 @@ export default function GastronomiaEN() {
 
       <div className="gastro-separator" />
 
-      {/* ── 03/07 MISE EN PLACE ── */}
       <section className="mep-section gastro-section" aria-label="Before designing — prior analysis">
         <div className="section-tag">03 / 07</div>
         <span className="section-folio" aria-hidden="true">03</span>
@@ -314,7 +303,6 @@ export default function GastronomiaEN() {
 
       <div className="gastro-separator" />
 
-      {/* ── 04/07 MAREA (case study) ── */}
       <section id="marea" className="marea-section" aria-label="Case study: MAREA">
         <div className="section-tag section-tag-light">04 / 07</div>
 
@@ -325,28 +313,25 @@ export default function GastronomiaEN() {
           <p className="marea-lead">{texto.marea.lead}</p>
         </div>
 
-        {/* Visual mosaic */}
         <div className="marea-mosaic" aria-hidden="true">
           <div className="mosaic-item mosaic-tall" data-label="CAFÉ">
-            <img src={espressoImg} alt="Espresso — Marea café" loading="lazy" decoding="async" />
+            <Image src={espressoImg} alt="Espresso — Marea café" width={900} height={1200} loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-a" data-label="BAR">
-            <img src={negroniImg} alt="Classic Negroni — Marea bar" loading="lazy" decoding="async" />
+            <Image src={negroniImg} alt="Classic Negroni — Marea bar" width={900} height={900} loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-b" data-label="KITCHEN">
-            <img src={cevicheImg} alt="Ceviche — Marea kitchen" loading="lazy" decoding="async" />
+            <Image src={cevicheImg} alt="Ceviche — Marea kitchen" width={900} height={900} loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-c" data-label="EVENTS">
-            <img src={eventImage} alt="Events at Marea" loading="lazy" decoding="async" />
+            <Image src={eventImage} alt="Events at Marea" width={900} height={900} loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-d" data-label="DESSERTS">
-            <img src={tiramisuImg} alt="Tiramisu — Marea desserts" loading="lazy" decoding="async" />
+            <Image src={tiramisuImg} alt="Tiramisu — Marea desserts" width={900} height={900} loading="lazy" decoding="async" />
           </div>
         </div>
 
-        {/* Phases */}
         <div className="marea-fases">
-          {/* Phase 01 */}
           <div className="marea-fase">
             <div className="fase-header">
               <span className="gastro-label-light">{texto.marea.investigacion.label}</span>
@@ -364,7 +349,6 @@ export default function GastronomiaEN() {
             </div>
           </div>
 
-          {/* Phase 02 */}
           <div className="marea-fase">
             <div className="fase-header">
               <span className="gastro-label-light">{texto.marea.decisiones.label}</span>
@@ -384,7 +368,6 @@ export default function GastronomiaEN() {
             </div>
           </div>
 
-          {/* Phase 03 */}
           <div className="marea-fase">
             <div className="fase-header">
               <span className="gastro-label-light">{texto.marea.estructura.label}</span>
@@ -404,7 +387,6 @@ export default function GastronomiaEN() {
           </div>
         </div>
 
-        {/* CTA inside case study */}
         <div className="marea-cta-block">
           <div className="marea-cta-header">
             <span className="gastro-label-light">{texto.marea.cta.label}</span>
@@ -449,7 +431,6 @@ export default function GastronomiaEN() {
         </p>
       </section>
 
-      {/* ── 05/07 DIGITAL MENU ── */}
       <section className="menu-digital-section gastro-section" aria-label="What we develop">
         <div className="section-tag">05 / 07</div>
         <span className="section-folio" aria-hidden="true">05</span>
@@ -477,7 +458,6 @@ export default function GastronomiaEN() {
 
       <div className="gastro-separator" />
 
-      {/* ── 06/07 WHAT CHANGES ── */}
       <section
         className="cambios-section"
         style={{
@@ -511,7 +491,6 @@ export default function GastronomiaEN() {
 
       <div className="gastro-separator" />
 
-      {/* ── 07/07 CLOSING ── */}
       <section className="cierre-section gastro-section" aria-label="Closing">
         <div className="section-tag section-tag-light">07 / 07</div>
 

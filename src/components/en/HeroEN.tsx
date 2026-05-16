@@ -8,12 +8,13 @@ import { SelectionHighlight } from "@/components/hero/SelectionHighlight";
 const NAV_LINKS = [
   { label: "Services", href: "/en/servicios" },
   { label: "Cases", href: "/en/casos" },
+  { label: "About", href: "/en/about" },
 ];
 
 const HERO_POINTS = [
-  "We analyze your website (free)",
-  "We understand the business before designing",
-  "Fixed price, no surprises",
+  "Clear budgets from the start",
+  "You talk directly to the people who build it",
+  "Every site built around your business and real goals",
 ];
 
 const VISUAL_BADGES = [
@@ -37,21 +38,22 @@ export default function HeroEN() {
         />
       </div>
 
-      <section className="relative overflow-hidden pt-[96px] md:pt-[112px]">
-        <div className="relative z-10 mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 px-6 pb-4 pt-4 md:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.8fr)] md:gap-8 md:px-8 md:pb-4 md:pt-2">
-          <div className="flex max-w-[38rem] flex-col justify-center gap-4 md:gap-4.5">
-            <h1 className="text-[2.65rem] font-extrabold leading-[0.94] tracking-[-0.06em] text-gray-900 md:text-[3.85rem] lg:text-[4.1rem]">
-              Your website can
+      <section className="relative overflow-hidden pt-[96px] md:pt-[96px] min-h-[100svh] md:min-h-0 flex flex-col md:block">
+        <div className="relative z-10 mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 px-6 pb-16 pt-8 flex-1 md:flex-none md:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.8fr)] md:gap-8 md:px-8 md:pb-4 md:pt-2">
+          <div className="flex max-w-[38rem] flex-col justify-center gap-4 md:gap-3.5">
+            <div className="inline-flex w-fit items-center rounded-full border border-[#F37AA6]/30 bg-[#F37AA6]/8 px-3.5 py-1.5 text-[0.76rem] font-medium tracking-wide text-gray-600">
+              Design that converts. Code that lasts.
+            </div>
+            <h1 className="text-[2.65rem] font-extrabold leading-[0.94] tracking-[-0.06em] text-gray-900 md:text-[3.85rem]">
+              We design and build
               <br />
-              <SelectionHighlight color="#F37AA6">work better.</SelectionHighlight>
+              websites around
               <br />
-              We&apos;ll show you how.
+              <SelectionHighlight color="#F37AA6">the business behind them.</SelectionHighlight>
             </h1>
 
             <p className="max-w-[31rem] text-[0.98rem] leading-relaxed text-gray-500 md:text-[1.02rem]">
-              We&apos;re a team of three. Design, code and strategy — all in-house, no outsourcing.
-              <br />
-              <span className="font-medium text-gray-700">You talk directly to the people doing the work.</span>
+              We get involved from day one: we understand your industry, propose real solutions and build thinking about your business.
             </p>
 
             <ul className="grid gap-1.5 text-[0.9rem] text-gray-600">
@@ -65,10 +67,10 @@ export default function HeroEN() {
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href="#ux-score"
-                className="rounded-full bg-[#F37AA6] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#e0658f]"
+                href="#contacto"
+                className="rounded-full bg-[#F37AA6] px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-md transition-colors hover:bg-[#e0658f]"
               >
-                Analyze my site
+                Let&apos;s talk about your project
               </a>
               <a
                 href="#casos"
@@ -85,9 +87,9 @@ export default function HeroEN() {
                 ))}
               </span>
               <p className="text-[0.78rem] leading-tight text-gray-600">
-                <span className="font-semibold text-gray-800">Team of 3 from Argentina.</span>
+                <span className="font-semibold text-gray-800">You talk directly to the people who build it.</span>
                 <br />
-                You talk directly to the developer.
+                Argentina · 100% remote
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 type BrandMarkProps = {
   size?: number;
@@ -9,9 +10,9 @@ export function BrandMark({ size = 24 }: BrandMarkProps) {
 
   if (!imageMissing) {
     return (
-      <img
+      <Image
         src="/brand/logo.png"
-        alt="UXnicorp"
+        alt=""
         width={size}
         height={size}
         className="object-contain"

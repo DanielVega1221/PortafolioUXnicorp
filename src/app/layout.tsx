@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import LenisProvider from "@/components/LenisProvider";
 import TransitionProvider from "@/components/TransitionProvider";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Script from "next/script";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700", "900"],
+  display: "swap",
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.uxnicorp.com.ar"),
@@ -13,22 +22,19 @@ export const metadata: Metadata = {
     default: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
   },
   description:
-    "Desarrollo web en Argentina: landing pages, tiendas online, sistemas de gestión (ERP, CRM) y webs institucionales. Análisis, diseño y código limpio.",
+    "Diseñamos y desarrollamos webs pensadas para el negocio detrás. Diseño, código y estrategia con foco real en lo que necesita tu negocio. Argentina.",
   keywords: [
-    // Landing pages
     "landing page argentina",
     "landing page a medida argentina",
     "desarrollo de landing page en argentina",
     "precio landing page argentina",
     "cuanto sale una landing page argentina",
     "landing page para negocio",
-    // E-commerce
     "tienda online argentina",
     "desarrollo ecommerce argentina",
     "tienda online a medida",
     "crear tienda online argentina",
     "ecommerce personalizado argentina",
-    // Sistemas de gestión
     "sistema de gestión argentina",
     "sistema erp argentina",
     "sistema erp web",
@@ -40,12 +46,10 @@ export const metadata: Metadata = {
     "software a medida argentina",
     "sistema de gestión pyme",
     "aplicación web a medida",
-    // Web institucional
     "pagina institucional argentina",
     "sitio web corporativo argentina",
     "diseño web institucional",
     "web para empresa argentina",
-    // Agencia
     "agencia de programación web",
     "agencia ux ui argentina",
     "servicios de desarrollo web en argentina",
@@ -75,7 +79,7 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     title: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
     description:
-      "Landing pages, tiendas online, sistemas de gestión y webs institucionales. Proyectos reales, resultados medibles.",
+      "Diseño y desarrollo web con criterio. Entendemos tu negocio antes de diseñar. Presupuesto claro, comunicación directa, sin intermediarios.",
     images: [
       {
         url: "/og-image.png",
@@ -89,7 +93,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
     description:
-      "Landing pages, tiendas online, sistemas de gestión y webs institucionales. Proyectos reales, resultados medibles.",
+      "Diseño y desarrollo web con criterio. Entendemos tu negocio antes de diseñar. Presupuesto claro, comunicación directa, sin intermediarios.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -98,6 +102,7 @@ export const metadata: Metadata = {
       "es-AR": "https://www.uxnicorp.com.ar",
       "es": "https://www.uxnicorp.com.ar",
       "en": "https://www.uxnicorp.com.ar/en",
+      "x-default": "https://www.uxnicorp.com.ar",
     },
   },
 };
@@ -108,13 +113,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={roboto.className}>
       <head>
         <meta name="google-site-verification" content="siC-CWVYr84oI1ktEEacAFXJA-8_t2YAxGanTzpisnw" />
-        {/* Consent Mode v2 — must run BEFORE gtag.js loads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id="consent-mode-bootstrap" strategy="beforeInteractive">
+          {`
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
@@ -128,10 +131,10 @@ gtag('consent', 'default', {
 });
 gtag('set', 'ads_data_redaction', true);
 gtag('set', 'url_passthrough', true);
-            `,
-          }}
-        />
-        <script
+          `}
+        </Script>
+        <Script
+          id="organization-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify([
@@ -140,9 +143,9 @@ gtag('set', 'url_passthrough', true);
                 "@type": "Organization",
                 name: "UXnicorp",
                 url: "https://www.uxnicorp.com.ar",
-                logo: "https://www.uxnicorp.com.ar/logo.png",
+                logo: "https://www.uxnicorp.com.ar/brand/logo.png",
                 description:
-                  "Estudio de desarrollo web en Argentina. Construimos landing pages, tiendas online, sistemas de gestión y webs institucionales.",
+                  "Estudio de desarrollo web en Argentina. Pensamos el negocio antes de abrir el editor. Diseño, código y estrategia en un solo equipo.",
                 address: {
                   "@type": "PostalAddress",
                   addressCountry: "AR",

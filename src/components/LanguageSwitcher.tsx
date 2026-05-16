@@ -2,12 +2,26 @@
 import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
 
+const ES_TO_EN: Record<string, string> = {
+  "/nosotros": "/en/about",
+  "/politica-de-privacidad": "/en/privacy-policy",
+};
+const EN_TO_ES: Record<string, string> = {
+  "/en/about": "/nosotros",
+  "/en/privacy-policy": "/politica-de-privacidad",
+};
+
 export default function LanguageSwitcher() {
   const pathname = usePathname();
   const isEnglish = pathname.startsWith("/en");
 
-  const esPath = isEnglish ? pathname.slice(3) || "/" : pathname;
-  const enPath = isEnglish ? pathname : pathname === "/" ? "/en" : `/en${pathname}`;
+  const esPath = isEnglish
+    ? (EN_TO_ES[pathname] ?? (pathname.slice(3) || "/"))
+    : pathname;
+
+  const enPath = isEnglish
+    ? pathname
+    : (ES_TO_EN[pathname] ?? (pathname === "/" ? "/en" : `/en${pathname}`));
 
   return (
     <div

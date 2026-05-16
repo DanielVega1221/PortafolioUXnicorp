@@ -9,7 +9,10 @@ const STORAGE_KEY = "uxnicorp_cookie_consent";
 export type ConsentValue = "accepted" | "rejected" | null;
 
 export default function CookieBanner() {
-  const [consent, setConsent] = useState<ConsentValue>(null);
+  const [consent, setConsent] = useState<ConsentValue>(() => {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem(STORAGE_KEY) as ConsentValue;
+  });
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
 
@@ -26,14 +29,11 @@ export default function CookieBanner() {
   };
 
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY) as ConsentValue;
-    if (!stored) {
-      // Small delay so the page loads before the banner appears
+    if (consent === null) {
       const timer = setTimeout(() => setVisible(true), 1200);
       return () => clearTimeout(timer);
     }
-    setConsent(stored);
-  }, []);
+  }, [consent]);
 
   function handleAccept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
@@ -79,7 +79,6 @@ export default function CookieBanner() {
         }}
       >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-          {/* Text */}
           <p className="flex-1 text-[0.8rem] leading-relaxed text-gray-600">
             {t.text}{" "}
             <Link
@@ -91,7 +90,6 @@ export default function CookieBanner() {
             .
           </p>
 
-          {/* Buttons */}
           <div className="flex shrink-0 gap-2">
             <button
               onClick={handleReject}

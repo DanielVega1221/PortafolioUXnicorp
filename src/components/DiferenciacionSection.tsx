@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import React from "react";
-import { Users, MessageCircle, Code, ScanSearch, Heart } from "lucide-react";
+import { Users, MessageCircle, Tag, Hammer, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -24,39 +24,39 @@ const itemVariants = {
 const items = [
   {
     icon: Users,
-    acento: "La velocidad",
-    titulo: "Respondemos en horas, no en días.",
-    texto: "Cuando tenés una duda o un cambio urgente, no esperás una semana. Te contestamos el mismo día.",
+    acento: "El criterio",
+    titulo: "Pensamos el negocio antes de abrir el editor.",
+    texto: "Antes de diseñar, entendemos qué vendés, a quién y qué necesita mejorar. Lo que construimos tiene sentido para tu negocio, no para nuestro portafolio.",
     cardBg: "rgba(253,232,242,0.65)",
     iconBg: "rgba(243,122,166,0.15)",
     iconColor: "#e0608a",
     acentoColor: "#e0608a",
   },
   {
-    icon: MessageCircle,
-    acento: "La honestidad",
-    titulo: "Si no tiene sentido, te lo decimos.",
-    texto: "Antes de cobrar. Antes de empezar. Si vemos que el proyecto no va a funcionar, lo decimos.",
-    cardBg: "rgba(202,222,249,0.55)",
-    iconBg: "rgba(100,160,240,0.15)",
-    iconColor: "#3a7cc4",
-    acentoColor: "#3a7cc4",
-  },
-  {
-    icon: Code,
-    acento: "La propiedad",
-    titulo: "El código es tuyo.",
-    texto: "Sin licencias raras ni plataformas propietarias. Lo que construimos podés llevarlo a donde quieras.",
+    icon: Tag,
+    acento: "La transparencia",
+    titulo: "Precio cerrado antes de empezar.",
+    texto: "Te decimos cuánto cuesta, lo ponemos por escrito y eso es lo que pagás. Sin hora extra, sin presupuesto que crece.",
     cardBg: "rgba(224,166,216,0.45)",
     iconBg: "rgba(180,100,220,0.15)",
     iconColor: "#9040b0",
     acentoColor: "#9040b0",
   },
   {
-    icon: ScanSearch,
-    acento: "El proceso",
-    titulo: "Primero entendemos. Después diseñamos.",
-    texto: "No abrimos Figma hasta tener claro el problema. El diseño es consecuencia, no el punto de partida.",
+    icon: MessageCircle,
+    acento: "La honestidad",
+    titulo: "Primera reunión sin costo ni compromiso.",
+    texto: "Si no venís con un proyecto claro, no hay problema — por eso arrancamos con una charla gratuita. Si después de hablar no ves que tiene sentido, sin compromiso. No sobredimensionamos el proyecto para justificar el precio.",
+    cardBg: "rgba(202,222,249,0.55)",
+    iconBg: "rgba(100,160,240,0.15)",
+    iconColor: "#3a7cc4",
+    acentoColor: "#3a7cc4",
+  },
+  {
+    icon: Hammer,
+    acento: "El trabajo",
+    titulo: "Construido desde cero para tu problema específico.",
+    texto: "Sin plantillas. Cada proyecto empieza en blanco porque tu situación es única, y la solución también tiene que serlo.",
     cardBg: "rgba(254,224,214,0.65)",
     iconBg: "rgba(220,130,60,0.15)",
     iconColor: "#b06020",
@@ -64,9 +64,9 @@ const items = [
   },
   {
     icon: Heart,
-    acento: "El compromiso",
-    titulo: "Después de entregar, seguimos.",
-    texto: "Los 30 días post-lanzamiento también son nuestros. No desaparecemos cuando entregamos.",
+    acento: "El acompañamiento",
+    titulo: "Estamos en todo el proceso. También después.",
+    texto: "Te mostramos avances en cada etapa. Los 30 días post-lanzamiento también son parte del trabajo: monitoreamos, ajustamos y estamos disponibles.",
     cardBg: "rgba(219,201,201,0.5)",
     iconBg: "rgba(180,130,120,0.15)",
     iconColor: "#8a5050",
@@ -86,20 +86,18 @@ export default function DiferenciacionSection() {
     >
       <div className="mx-auto max-w-[1220px]">
 
-        {/* Header */}
         <div className="mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
-            Por qué somos distintos
+            Cómo trabajamos
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
-            Así somos.
+            Claridad, criterio y acompañamiento.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-gray-500">
-            Sin frases de agencia. Lo que ves es lo que hay.
+            Lo que define cómo construimos cada proyecto, desde el primer día hasta después del lanzamiento.
           </p>
         </div>
 
-        {/* Cards verticales */}
         <motion.div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }} variants={listVariants}>
           {items.map((item, i) => {
             const Icon = item.icon;
@@ -119,7 +117,6 @@ export default function DiferenciacionSection() {
                   alignItems: "center",
                 }}
               >
-                {/* Ícono */}
                 <div
                   style={{
                     width: "4rem",
@@ -136,7 +133,6 @@ export default function DiferenciacionSection() {
                   <Icon size={20} style={{ color: item.iconColor, strokeWidth: 1.75 }} />
                 </div>
 
-                {/* Texto */}
                 <div>
                   <span
                     style={{

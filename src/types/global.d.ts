@@ -1,5 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type GtagArg = string | number | boolean | null | undefined | Record<string, unknown>;
+
 interface Window {
-  gtag: (...args: any[]) => void;
+  gtag: (...args: GtagArg[]) => void;
   dataLayer: Record<string, unknown>[];
 }

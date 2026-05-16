@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Users, MessageCircle, Code, ScanSearch, Heart } from "lucide-react";
+import { Users, MessageCircle, Tag, Hammer, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -24,39 +24,39 @@ const itemVariants = {
 const items = [
   {
     icon: Users,
-    acento: "The speed",
-    titulo: "We reply in hours, not days.",
-    texto: "When you have a question or an urgent change, you don't wait a week. We get back to you the same day.",
+    acento: "Thinking first",
+    titulo: "We understand the business before opening the editor.",
+    texto: "Before designing, we understand what you sell, who you sell it to, and what needs to improve. What we build makes sense for your business, not for our portfolio.",
     cardBg: "rgba(253,232,242,0.65)",
     iconBg: "rgba(243,122,166,0.15)",
     iconColor: "#e0608a",
     acentoColor: "#e0608a",
   },
   {
-    icon: MessageCircle,
-    acento: "Honesty",
-    titulo: "If it doesn't make sense, we tell you.",
-    texto: "Before charging. Before starting. If we see the project won't work, we say so.",
-    cardBg: "rgba(202,222,249,0.55)",
-    iconBg: "rgba(100,160,240,0.15)",
-    iconColor: "#3a7cc4",
-    acentoColor: "#3a7cc4",
-  },
-  {
-    icon: Code,
-    acento: "Ownership",
-    titulo: "The code is yours.",
-    texto: "No weird licenses or proprietary platforms. What we build you can take anywhere.",
+    icon: Tag,
+    acento: "Transparent pricing",
+    titulo: "Agreed price before we start.",
+    texto: "We tell you the cost, put it in writing, and that\u2019s what you pay. No extra hours, no budget creep.",
     cardBg: "rgba(224,166,216,0.45)",
     iconBg: "rgba(180,100,220,0.15)",
     iconColor: "#9040b0",
     acentoColor: "#9040b0",
   },
   {
-    icon: ScanSearch,
-    acento: "The process",
-    titulo: "We understand first. Then we design.",
-    texto: "We don't open Figma until we understand the problem. Design is a consequence, not the starting point.",
+    icon: MessageCircle,
+    acento: "Honesty",
+    titulo: "First meeting — no cost, no commitment.",
+    texto: "If you don’t have a clear project yet, no problem — that’s exactly why we start with a free call. If after talking you don’t see the value, no obligation. We never over-scope a project to justify a higher price.",
+    cardBg: "rgba(202,222,249,0.55)",
+    iconBg: "rgba(100,160,240,0.15)",
+    iconColor: "#3a7cc4",
+    acentoColor: "#3a7cc4",
+  },
+  {
+    icon: Hammer,
+    acento: "The build",
+    titulo: "Built from scratch for your specific problem.",
+    texto: "No templates. Every project starts blank because your situation is unique \u2014 and the solution has to be too.",
     cardBg: "rgba(254,224,214,0.65)",
     iconBg: "rgba(220,130,60,0.15)",
     iconColor: "#b06020",
@@ -65,8 +65,8 @@ const items = [
   {
     icon: Heart,
     acento: "Commitment",
-    titulo: "After delivery, we stay.",
-    texto: "The 30 days post-launch are ours too. We don't disappear when we hand it over.",
+    titulo: "With you through the whole process. And after.",
+    texto: "We show you real progress at every stage. The 30 days after launch are also part of the work: we monitor, adjust and stay available.",
     cardBg: "rgba(219,201,201,0.5)",
     iconBg: "rgba(180,130,120,0.15)",
     iconColor: "#8a5050",
@@ -88,13 +88,13 @@ export default function DiferenciacionSectionEN() {
 
         <div className="mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
-            Why we&apos;re different
+            How we work
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
-            This is who we are.
+            Clarity, purpose and commitment.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-gray-500">
-            No agency fluff. What you see is what you get.
+            What shapes how we build every project, from day one through post-launch.
           </p>
         </div>
 

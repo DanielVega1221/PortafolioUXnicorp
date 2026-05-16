@@ -5,6 +5,7 @@ export type ServicioEN = {
   precioUSD: string;
   precioARS: string;
   tiempo: string;
+  cuotas: string;
   descripcion: string;
   acento: string;
   bg: string;
@@ -25,6 +26,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     precioUSD: "$500 – $800 USD",
     precioARS: "$300,000 – $500,000 ARS",
     tiempo: "2 – 3 weeks",
+    cuotas: "2 or 3 installments",
     descripcion:
       "We don't do templates. We analyze your business, define the structure, write the copy and build from scratch with the right technology for the project. Fast loading, good SEO and built to convert.",
     acento: "#e0608a",
@@ -82,6 +84,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     precioUSD: "$900 – $1,500 USD",
     precioARS: "$600,000 – $1,000,000 ARS",
     tiempo: "6 – 10 weeks",
+    cuotas: "2 or 3 installments",
     descripcion:
       "Complete store with catalog, payments and your own admin panel. No Shopify, no per-sale commissions. The business is yours.",
     acento: "#3a7cc4",
@@ -140,6 +143,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     precioUSD: "from $1,000 USD",
     precioARS: "from $1,200,000 ARS",
     tiempo: "8 – 16 weeks",
+    cuotas: "up to 6 installments",
     descripcion:
       "ERP, CRM, inventory, invoicing, dashboards, internal platforms. We understand the problem first. Then we write code.",
     acento: "#9040b0",

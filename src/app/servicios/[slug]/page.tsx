@@ -24,6 +24,11 @@ export async function generateMetadata({
     description: servicio.seo.description,
     alternates: {
       canonical: canonicalUrl,
+      languages: {
+        "es": canonicalUrl,
+        "en": `https://www.uxnicorp.com.ar/en/servicios/${slug}`,
+        "x-default": canonicalUrl,
+      },
     },
     openGraph: {
       title: servicio.seo.title,
@@ -87,7 +92,6 @@ export default async function ServicioPage({
     >
       <div className="mx-auto max-w-[1220px] px-6 py-20 md:px-8 md:py-28">
 
-        {/* Breadcrumb + toggle */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "2.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
@@ -107,7 +111,6 @@ export default async function ServicioPage({
           <CurrencyToggle />
         </div>
 
-        {/* Hero del servicio */}
         <div
           style={{
             borderRadius: "1.5rem",
@@ -141,14 +144,13 @@ export default async function ServicioPage({
             precioARS={s.precioARS}
             tiempo={s.tiempo}
             acento={s.acento}
+            cuotas={s.cuotas}
           />
         </div>
 
-        {/* Proceso + Incluye */}
         <div
           className="mb-8 grid grid-cols-1 gap-5 md:grid-cols-2"
         >
-          {/* Proceso */}
           <div
             style={{
               borderRadius: "1.25rem",
@@ -192,7 +194,6 @@ export default async function ServicioPage({
             </div>
           </div>
 
-          {/* Incluye / No incluye */}
           <div
             style={{
               borderRadius: "1.25rem",
@@ -229,7 +230,74 @@ export default async function ServicioPage({
           </div>
         </div>
 
-        {/* CTA */}
+        <div
+          style={{
+            borderRadius: "1.5rem",
+            padding: "2rem 2.25rem",
+            background: "rgba(219,201,201,0.35)",
+            border: "1px solid rgba(255,255,255,0.65)",
+            boxShadow: "0 2px 16px rgba(0,0,0,0.04)",
+            backdropFilter: "blur(8px)",
+            marginBottom: "2rem",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "1.25rem" }}>
+            <div>
+              <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8a5050", margin: "0 0 0.4rem 0" }}>
+                Mantenimiento mensual
+              </p>
+              <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#111", margin: "0 0 0.5rem 0", letterSpacing: "-0.03em" }}>
+                Plan Cuidado
+              </h3>
+              <p style={{ fontSize: "0.84rem", color: "#4a5568", lineHeight: 1.55, margin: 0, maxWidth: "480px" }}>
+                Actualizaciones, backups y soporte técnico continuo para mantener tu sitio funcionando al 100% mes a mes.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.2rem" }}>
+              <span style={{ padding: "0.35rem 0.9rem", borderRadius: "0.6rem", background: "rgba(138,80,80,0.12)", fontSize: "0.95rem", fontWeight: 800, color: "#8a5050" }}>
+                $30.000 ARS/mes
+              </span>
+              <span style={{ fontSize: "0.72rem", color: "#9ca3af" }}>aprox. 20 USD/mes</span>
+              {s.slug === "sistemas-apps" && (
+                <span style={{ fontSize: "0.68rem", color: "#b06060", marginTop: "0.15rem" }}>
+                  * El precio puede variar según el alcance del sistema.
+                </span>
+              )}
+            </div>
+          </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.25rem 0", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+            {["Actualizaciones de contenido", "Backups automáticos", "Soporte técnico prioritario"].map((item) => (
+              <li key={item} style={{ display: "flex", alignItems: "center", gap: "0.45rem", fontSize: "0.82rem", color: "#374151" }}>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle cx="6.5" cy="6.5" r="5.5" fill="rgba(138,80,80,0.12)" />
+                  <path d="M4 6.5l1.75 1.75L9 4.5" stroke="#8a5050" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <TransitionLink
+            href="/#contacto"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              padding: "0.55rem 1.1rem",
+              borderRadius: "0.75rem",
+              background: "rgba(138,80,80,0.1)",
+              fontSize: "0.84rem",
+              fontWeight: 700,
+              color: "#8a5050",
+              textDecoration: "none",
+            }}
+          >
+            Consultanos sobre este plan
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </TransitionLink>
+        </div>
+
         <div
           style={{
             borderRadius: "1.5rem",
@@ -252,7 +320,7 @@ export default async function ServicioPage({
               Contanos tu proyecto y te respondemos con un presupuesto.
             </p>
           </div>
-          <a
+          <TransitionLink
             href="/#contacto"
             style={{
               display: "inline-flex",
@@ -273,10 +341,9 @@ export default async function ServicioPage({
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
               <path d="M2 6.5h9M8 3.5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </TransitionLink>
         </div>
 
-        {/* Otros servicios */}
         {siblings.length > 0 && (
           <div>
             <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.875rem" }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -28,11 +29,11 @@ const MANIFESTO = [
   {
     index: "02",
     belief: "Real code. No shortcuts.",
-    sub: "Every project is built from scratch. No templates, no patches.",
+    sub: "Every project is built from scratch. No templates, no patches — ever.",
   },
   {
     index: "03",
-    belief: "You talk to the people doing the work.",
+    belief: "You talk directly to the people building it.",
     sub: "No middlemen. The designer and the developer are both on the call.",
   },
 ];
@@ -66,9 +67,8 @@ export default function SobreNosotrosSectionEN() {
               <span className="text-[#F37AA6]">And actually work.</span>
             </h2>
             <p className="mt-5 max-w-[30rem] text-[1.01rem] leading-relaxed text-gray-500">
-              We don&apos;t promise to transform your vision. We analyze what you have,
-              detect where the friction is, and solve it with data,
-              purposeful design, and custom development.
+              We start by understanding your business: what you sell, who you sell it to, and where the friction is. Then we design and build the most direct solution
+              — with purpose, without over-engineering.
             </p>
             <div className="mt-8 flex items-center gap-3">
               <span className="h-px w-10 bg-gray-300" />
@@ -112,8 +112,7 @@ export default function SobreNosotrosSectionEN() {
               </div>
 
               <div className="mt-6 flex items-center justify-between border-t border-black/6 pt-5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/logo.png" alt="UXnicorp" className="h-7 w-auto opacity-70" />
+                <Image src="/brand/logo-sm.png" alt="UXnicorp" width={25} height={28} sizes="28px" className="h-7 w-auto opacity-70" />
                 <p className="text-[0.72rem] text-gray-400">
                   ARG · Buenos Aires · Córdoba · Catamarca
                 </p>

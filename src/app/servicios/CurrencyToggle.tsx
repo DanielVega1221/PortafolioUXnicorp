@@ -4,7 +4,6 @@ import { useCurrency } from "./CurrencyProvider";
 
 export function CurrencyToggle() {
   const { currency, toggle } = useCurrency();
-  const isARS = currency === "ARS";
 
   return (
     <button

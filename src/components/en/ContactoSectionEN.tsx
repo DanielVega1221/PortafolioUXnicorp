@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Mail } from "lucide-react";
 
 const GONZALO_WA = "5493834368748";
@@ -8,6 +9,14 @@ const AILIN_WA = "5491123504530";
 const EMAIL = "uxnicorp@gmail.com";
 
 const TIPOS_EN = ["Landing Page", "E-commerce", "System / App", "Not sure yet"];
+
+function LinkedInIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
 
 function WhatsAppIcon({ size = 16 }: { size?: number }) {
   return (
@@ -44,26 +53,36 @@ const labelStyle: React.CSSProperties = {
 const team = [
   {
     name: "Gonzalo",
-    initial: "G",
-    tagline: "I'll reply within 24 hours.",
+    foto: "/Fotos/Daniel.jpg",
+    tagline: "Write to me, I'll reply the same day.",
     wa: GONZALO_WA,
-    bg: "rgba(254,224,214,0.65)",
-    avatarBg: "linear-gradient(135deg, #F37AA6, #e0608a)",
-    avatarColor: "#fff",
+    linkedin: "https://www.linkedin.com/in/gonzalo-daniel-vega/",
+    bg: "linear-gradient(135deg, rgba(254,220,210,0.9) 0%, rgba(248,200,220,0.8) 100%)",
+    ring: "rgba(243,122,166,0.55)",
   },
   {
     name: "Ailin",
-    initial: "A",
-    tagline: "Reach out if you have questions about the visual.",
+    foto: "/Fotos/Ailin.jpg",
+    tagline: "Tell me about your project.",
     wa: AILIN_WA,
-    bg: "rgba(224,166,216,0.45)",
-    avatarBg: "linear-gradient(135deg, #E0A6D8, #b060a0)",
-    avatarColor: "#fff",
+    linkedin: "https://www.linkedin.com/in/ailin-torrente-299994374/",
+    bg: "linear-gradient(135deg, rgba(242,212,252,0.85) 0%, rgba(224,188,242,0.8) 100%)",
+    ring: "rgba(176,96,160,0.5)",
+  },
+  {
+    name: "Sol",
+    foto: "/Fotos/Sol.jpg",
+    tagline: "Got questions? I'm here.",
+    wa: null,
+    linkedin: "https://www.linkedin.com/in/solandriani/",
+    bg: "linear-gradient(135deg, rgba(210,236,255,0.9) 0%, rgba(188,216,250,0.8) 100%)",
+    ring: "rgba(10,102,194,0.45)",
   },
 ];
 
 export default function ContactoSectionEN() {
   const [form, setForm] = useState({ nombre: "", email: "", tipo: "", mensaje: "" });
+  const [sendMode, setSendMode] = useState<"whatsapp" | "email">("whatsapp");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -73,14 +92,25 @@ export default function ContactoSectionEN() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const text = `Hi UXNICORP!\nI'm ${form.nombre} (${form.email})\n\nProject: ${
-      form.tipo || "Not specified"
-    }\n\n${form.mensaje}`;
-    window.open(
-      `https://wa.me/${GONZALO_WA}?text=${encodeURIComponent(text)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    if (sendMode === "whatsapp") {
+      const text = `Hi UXNICORP!\nI'm ${form.nombre} (${form.email})\n\nProject: ${
+        form.tipo || "Not specified"
+      }\n\n${form.mensaje}`;
+      window.open(
+        `https://wa.me/${GONZALO_WA}?text=${encodeURIComponent(text)}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    } else {
+      const subject = `Inquiry from ${form.nombre} — ${form.tipo || "Project"}`;
+      const body = `Name: ${form.nombre}\nEmail: ${form.email}\n\nProject type: ${
+        form.tipo || "Not specified"
+      }\n\nMessage:\n${form.mensaje}`;
+      window.open(
+        `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+        "_self"
+      );
+    }
   }
 
   return (
@@ -92,88 +122,109 @@ export default function ContactoSectionEN() {
             Contact
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
-            Let&apos;s talk.
+            Let&apos;s talk about your project.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-gray-500">
-            Tell us what you need. We reply directly, no filters.
+            Tell us what your business needs. We listen, ask the right questions, and answer clearly.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
 
-          {/* LEFT — team + email */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             {team.map((p) => (
               <div
                 key={p.name}
                 style={{
                   borderRadius: "1.5rem",
-                  padding: "1.75rem 2rem",
+                  padding: "1.4rem 1.75rem",
                   background: p.bg,
-                  border: "1px solid rgba(255,255,255,0.6)",
-                  boxShadow: "0 2px 16px rgba(0,0,0,0.04)",
+                  border: "1px solid rgba(255,255,255,0.7)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.85)",
                   display: "flex",
                   alignItems: "center",
                   gap: "1.25rem",
                 }}
               >
-                {/* Avatar */}
                 <div
                   style={{
-                    width: "3.5rem",
-                    height: "3.5rem",
-                    borderRadius: "1rem",
-                    background: p.avatarBg,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    width: "3.75rem",
+                    height: "3.75rem",
+                    borderRadius: "50%",
+                    overflow: "hidden",
                     flexShrink: 0,
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
+                    boxShadow: `0 0 0 3px ${p.ring}, 0 4px 16px rgba(0,0,0,0.10)`,
                   }}
                 >
-                  <span style={{ fontSize: "1.4rem", fontWeight: 900, color: p.avatarColor, lineHeight: 1 }}>
-                    {p.initial}
-                  </span>
+                  <Image
+                    src={p.foto}
+                    alt={p.name}
+                    width={60}
+                    height={60}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
                 </div>
 
-                {/* Info */}
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <p style={{ fontWeight: 800, fontSize: "1rem", color: "#111", margin: "0 0 0.35rem 0" }}>
+                  <p style={{ fontWeight: 800, fontSize: "1.05rem", color: "#111", margin: "0 0 0.3rem 0", letterSpacing: "-0.02em" }}>
                     {p.name}
                   </p>
-                  <p style={{ fontSize: "0.75rem", color: "rgba(0,0,0,0.42)", margin: 0, fontStyle: "italic" }}>
+                  <p style={{ fontSize: "0.73rem", color: "rgba(0,0,0,0.45)", margin: 0 }}>
                     {p.tagline}
                   </p>
                 </div>
 
-                {/* WA button */}
-                <a
-                  href={`https://wa.me/${p.wa}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.4rem",
-                    padding: "0.5rem 1.1rem",
-                    borderRadius: "0.65rem",
-                    background: "rgba(56,154,112,0.12)",
-                    color: "#287a54",
-                    fontSize: "0.78rem",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    border: "1px solid rgba(56,154,112,0.22)",
-                    whiteSpace: "nowrap",
-                    flexShrink: 0,
-                  }}
-                >
-                  <WhatsAppIcon size={14} />
-                  WhatsApp
-                </a>
+                <div style={{ display: "flex", flexDirection: "row", gap: "0.4rem", flexShrink: 0 }}>
+                  {p.wa && (
+                    <a
+                      href={`https://wa.me/${p.wa}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.3rem",
+                        padding: "0.45rem 0.85rem",
+                        borderRadius: "2rem",
+                        background: "rgba(56,154,112,0.14)",
+                        color: "#1e7a4a",
+                        fontSize: "0.72rem",
+                        fontWeight: 700,
+                        textDecoration: "none",
+                        border: "1px solid rgba(56,154,112,0.28)",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      <WhatsAppIcon size={13} />
+                      Whatsapp
+                    </a>
+                  )}
+                  <a
+                    href={p.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.3rem",
+                      padding: "0.45rem 0.85rem",
+                      borderRadius: "2rem",
+                      background: "rgba(10,102,194,0.10)",
+                      color: "#0a66c2",
+                      fontSize: "0.72rem",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      border: "1px solid rgba(10,102,194,0.22)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <LinkedInIcon size={13} />
+                    LinkedIn
+                  </a>
+                </div>
               </div>
             ))}
 
-            {/* Email */}
             <div
               style={{
                 borderRadius: "1.5rem",
@@ -214,7 +265,6 @@ export default function ContactoSectionEN() {
             </div>
           </div>
 
-          {/* RIGHT — form */}
           <form
             onSubmit={handleSubmit}
             style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}
@@ -247,8 +297,9 @@ export default function ContactoSectionEN() {
             </div>
 
             <div>
-              <label style={labelStyle}>Project type</label>
+              <label htmlFor="tipo" style={labelStyle}>Project type</label>
               <select
+                id="tipo"
                 name="tipo"
                 value={form.tipo}
                 onChange={handleChange}
@@ -274,6 +325,66 @@ export default function ContactoSectionEN() {
               />
             </div>
 
+            <div
+              style={{
+                display: "flex",
+                background: "rgba(0,0,0,0.05)",
+                borderRadius: "0.75rem",
+                padding: "0.25rem",
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setSendMode("whatsapp")}
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.4rem",
+                  padding: "0.55rem 1rem",
+                  borderRadius: "0.55rem",
+                  border: "none",
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  background: sendMode === "whatsapp" ? "#fff" : "transparent",
+                  color: sendMode === "whatsapp" ? "#1e7a4a" : "rgba(0,0,0,0.38)",
+                  boxShadow: sendMode === "whatsapp" ? "0 1px 6px rgba(0,0,0,0.10)" : "none",
+                  transition: "all 0.18s",
+                }}
+              >
+                <WhatsAppIcon size={14} />
+                WhatsApp
+              </button>
+              <button
+                type="button"
+                onClick={() => setSendMode("email")}
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.4rem",
+                  padding: "0.55rem 1rem",
+                  borderRadius: "0.55rem",
+                  border: "none",
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  background: sendMode === "email" ? "#fff" : "transparent",
+                  color: sendMode === "email" ? "#0a66c2" : "rgba(0,0,0,0.38)",
+                  boxShadow: sendMode === "email" ? "0 1px 6px rgba(0,0,0,0.10)" : "none",
+                  transition: "all 0.18s",
+                }}
+              >
+                <Mail size={14} />
+                Email
+              </button>
+            </div>
+
             <button
               type="submit"
               style={{
@@ -283,23 +394,33 @@ export default function ContactoSectionEN() {
                 gap: "0.55rem",
                 padding: "0.9rem 2rem",
                 borderRadius: "0.875rem",
-                background: "linear-gradient(135deg, #389a70 0%, #287a54 100%)",
+                background: sendMode === "whatsapp"
+                  ? "linear-gradient(135deg, #389a70 0%, #287a54 100%)"
+                  : "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
                 color: "#fff",
                 fontWeight: 700,
                 fontSize: "0.95rem",
                 border: "none",
                 cursor: "pointer",
-                boxShadow: "0 4px 20px rgba(56,154,112,0.28)",
+                boxShadow: sendMode === "whatsapp"
+                  ? "0 4px 20px rgba(56,154,112,0.28)"
+                  : "0 4px 20px rgba(37,99,235,0.28)",
                 letterSpacing: "-0.01em",
                 fontFamily: "inherit",
+                transition: "all 0.18s",
               }}
             >
-              <WhatsAppIcon size={18} />
-              Send via WhatsApp
+              {sendMode === "whatsapp" ? (
+                <><WhatsAppIcon size={18} /> Send via WhatsApp</>
+              ) : (
+                <><Mail size={18} /> Send via Email</>
+              )}
             </button>
 
             <p style={{ fontSize: "0.72rem", color: "rgba(0,0,0,0.32)", margin: 0, textAlign: "center" }}>
-              Your message arrives directly. No middlemen.
+              {sendMode === "whatsapp"
+                ? "Your message arrives directly. No middlemen."
+                : "We'll reply to your email within 24 hours."}
             </p>
           </form>
 

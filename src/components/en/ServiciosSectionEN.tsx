@@ -62,12 +62,12 @@ export default function ServiciosSectionEN() {
             Services
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
-            We don&apos;t make pages.
+            Every project starts with your business,
             <br />
-            We make products.
+            not the design.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-gray-500">
-            Every project starts with analysis and strategy before opening the editor. Design, development and copy included — no outsourcing.
+            Before designing, we understand what your business needs. Design, development and copy in one team — no outsourcing.
           </p>
           <TransitionLink href="/en/servicios" className="mt-4 inline-block text-sm font-medium text-[#F37AA6] underline underline-offset-4 hover:text-[#e0608a]">
             See pricing, timelines and what&apos;s included

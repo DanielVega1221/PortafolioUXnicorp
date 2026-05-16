@@ -76,7 +76,7 @@ const pasos = [
     num: "05",
     titulo: "Lanzamiento y seguimiento",
     texto:
-      "Deploy, configuración y analíticas. Y después del lanzamiento seguimos monitoreando — no desaparecemos cuando entregamos.",
+      "Deploy, configuración y analíticas. Seguimos monitoreando después del lanzamiento: el cierre del proyecto es el inicio del acompañamiento, no el final.",
     featured: false,
     bg: "rgba(219,201,201,0.5)",
     textColor: "#1a1a1a",
@@ -99,7 +99,6 @@ export default function ProcesoSection() {
     >
       <div className="mx-auto max-w-[1220px]">
 
-        {/* Header */}
         <div className="mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
             Cómo trabajamos
@@ -112,7 +111,6 @@ export default function ProcesoSection() {
           </p>
         </div>
 
-        {/* Grid de cards */}
         <motion.div
           className="grid grid-cols-1 gap-5 md:grid-cols-2"
           variants={listVariants}
@@ -138,7 +136,6 @@ export default function ProcesoSection() {
                   : "0 2px 16px rgba(0,0,0,0.04)",
               }}
             >
-              {/* Número decorativo de fondo */}
               <span
                 aria-hidden="true"
                 style={{
@@ -157,7 +154,6 @@ export default function ProcesoSection() {
                 {paso.num}
               </span>
 
-              {/* Top: tag de paso */}
               <span
                 style={{
                   display: "inline-block",
@@ -177,7 +173,6 @@ export default function ProcesoSection() {
                 Paso {paso.num}
               </span>
 
-              {/* Contenido */}
               <div style={{ position: "relative", zIndex: 1 }}>
                 <h3
                   style={{
@@ -206,7 +201,6 @@ export default function ProcesoSection() {
           ))}
         </motion.div>
 
-        {/* Nota al pie */}
         <p className="mt-8 text-[0.78rem] text-gray-400">
           * La primera reunión es siempre sin costo. Si después de hablar no tiene sentido avanzar, no hay ningún problema.
         </p>

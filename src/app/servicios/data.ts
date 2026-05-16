@@ -5,6 +5,7 @@ export type Servicio = {
   precioUSD: string;
   precioARS: string;
   tiempo: string;
+  cuotas: string;
   descripcion: string;
   acento: string;
   bg: string;
@@ -25,6 +26,7 @@ export const SERVICIOS: Servicio[] = [
     precioUSD: "$500 – $800 USD",
     precioARS: "$300.000 – $500.000 ARS",
     tiempo: "2 – 3 semanas",
+    cuotas: "2 o 3 cuotas",
     descripcion:
       "No hacemos templates. Analizamos tu negocio, definimos la estructura, escribimos el copy y construimos desde cero con la tecnología que mejor le queda al proyecto. Una landing que carga rápido, se posiciona y convierte.",
     acento: "#e0608a",
@@ -85,6 +87,7 @@ export const SERVICIOS: Servicio[] = [
     precioUSD: "$900 – $1.500 USD",
     precioARS: "$600.000 – $1.000.000 ARS",
     tiempo: "6 – 10 semanas",
+    cuotas: "2 o 3 cuotas",
     descripcion:
       "Tienda completa con catálogo, pagos y panel de administración propio. Sin Shopify, sin comisiones por venta. El negocio es tuyo.",
     acento: "#3a7cc4",
@@ -146,6 +149,7 @@ export const SERVICIOS: Servicio[] = [
     precioUSD: "desde $1.000 USD",
     precioARS: "desde $1.200.000 ARS",
     tiempo: "8 – 16 semanas",
+    cuotas: "hasta 6 cuotas",
     descripcion:
       "Sistemas a medida, dashboards, plataformas internas, aplicaciones web. Primero entendemos el problema. Después escribimos código.",
     acento: "#9040b0",

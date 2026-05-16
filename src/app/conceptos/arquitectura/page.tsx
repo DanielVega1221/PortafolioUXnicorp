@@ -1,13 +1,8 @@
 'use client';
 
-/**
- * PÁGINA: Arquitectura
- *
- * Migrada de React + React Router + i18n → Next.js 15 App Router
- * CSS 100% aislado — clases preservadas tal como estaban en el original
- */
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import TransitionLink from '@/components/TransitionLink';
 import { useRouter } from 'next/navigation';
 import { usePageTransition } from '@/components/TransitionProvider';
@@ -30,13 +25,11 @@ import {
 } from 'lucide-react';
 import './Arquitectura.css';
 
-/* ─── Rutas de imágenes (movidas a /public) ─── */
 const fondoARQ       = '/conceptos/arq/fondoARQ.webp';
 const BRUNNdemo      = '/conceptos/arq/BRUNNdemo.webp';
 const fondoCardARQ   = '/conceptos/arq/fondocardarq.webp';
 const fondoCardPlano = '/conceptos/arq/fondocardplano.webp';
 
-/* ─── Contenido (del es.json original) ─── */
 const texto = {
   hero: {
     titulo: 'Desarrollo digital estratégico',
@@ -214,12 +207,10 @@ export default function Arquitectura() {
 
   return (
     <div className="arquitectura-page">
-      {/* Botón flotante volver a Home */}
       <TransitionLink href="/" className="btn-home-float" aria-label="Volver al inicio">
         <Home size={20} strokeWidth={2} />
       </TransitionLink>
 
-      {/* ── 01/08 HERO ── */}
       <Motion.section
         id="hero"
         className="hero-arquitectura arquitectura-section"
@@ -278,7 +269,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 02/08 VALIDACIÓN ── */}
       <section id="validacion" className="validacion-section arquitectura-section section-bg-alt">
         <div className="section-number">02/08</div>
         <div className="section-card validacion-card">
@@ -313,7 +303,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 03/08 MÉTODO ── */}
       <section id="metodo" className="metodo-section arquitectura-section">
         <div className="section-number">03/08</div>
         <div className="section-card metodo-card">
@@ -350,7 +339,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 04/08 DEMO ── */}
       <section id="demo" className="demo-completo-section arquitectura-section section-bg-alt">
         <div className="section-number">04/08</div>
 
@@ -362,9 +350,11 @@ export default function Arquitectura() {
 
         <div className="demo-preview">
           <div className="demo-preview-image">
-            <img
+            <Image
               src={BRUNNdemo}
               alt="BRÜNN STUDIO - Demo Portfolio Digital"
+              width={1600}
+              height={900}
               className="demo-screenshot"
               loading="lazy"
               decoding="async"
@@ -372,7 +362,6 @@ export default function Arquitectura() {
           </div>
         </div>
 
-        {/* Investigación */}
         <div className="demo-research">
           <div className="research-header">
             <span className="metodo-col-label">{texto.demo.investigacion.label}</span>
@@ -391,7 +380,6 @@ export default function Arquitectura() {
           </div>
         </div>
 
-        {/* Decisiones de diseño */}
         <div className="demo-decisions">
           <div className="research-header">
             <span className="metodo-col-label">{texto.demo.decisiones.label}</span>
@@ -412,7 +400,6 @@ export default function Arquitectura() {
           </div>
         </div>
 
-        {/* Estructura */}
         <div className="demo-structure">
           <div className="research-header">
             <span className="metodo-col-label">{texto.demo.estructura.label}</span>
@@ -432,7 +419,6 @@ export default function Arquitectura() {
           </div>
         </div>
 
-        {/* CTA resultado */}
         <div className="demo-result">
           <span className="metodo-col-label">{texto.demo.resultado.label}</span>
           <div className="demo-result-layout">
@@ -473,7 +459,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 05/08 CAPACIDADES ── */}
       <section id="capacidades" className="capacidades-section arquitectura-section">
         <div className="section-number">05/08</div>
         <div className="section-card">
@@ -502,7 +487,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 06/08 PROCESO ── */}
       <section id="proceso" className="proceso-section arquitectura-section section-bg-alt">
         <div className="section-card">
           <div className="capacidades-header">
@@ -538,7 +522,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 07/08 BENEFICIOS ── */}
       <section id="beneficios" className="beneficios-section arquitectura-section">
         <div className="section-card">
           <div className="capacidades-header">
@@ -563,7 +546,6 @@ export default function Arquitectura() {
 
       <div className="section-separator" />
 
-      {/* ── 08/08 CTA FINAL ── */}
       <section id="cta" className="cta-final arquitectura-section section-bg-alt">
         <div className="cta-inner section-card">
           <div className="cta-col-title">

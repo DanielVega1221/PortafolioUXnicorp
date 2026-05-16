@@ -11,7 +11,6 @@ export default function ConceptosSection() {
         margin: '0 auto',
       }}
     >
-      {/* Header */}
       <div style={{ marginBottom: '3.5rem' }}>
         <span
           style={{
@@ -64,7 +63,6 @@ export default function ConceptosSection() {
         </p>
       </div>
 
-      {/* Cards */}
       <div
         style={{
           display: 'grid',
@@ -72,7 +70,6 @@ export default function ConceptosSection() {
           gap: '1.5rem',
         }}
       >
-        {/* Card: Arquitectura */}
         <TransitionLink
           href="/conceptos/arquitectura"
           style={{ textDecoration: 'none' }}
@@ -100,7 +97,6 @@ export default function ConceptosSection() {
               (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
             }}
           >
-            {/* Fondo imagen */}
             <div
               style={{
                 position: 'absolute',
@@ -111,7 +107,6 @@ export default function ConceptosSection() {
                 opacity: 0.45,
               }}
             />
-            {/* Gradient overlay */}
             <div
               style={{
                 position: 'absolute',
@@ -120,7 +115,6 @@ export default function ConceptosSection() {
               }}
             />
 
-            {/* Tag */}
             <span
               style={{
                 position: 'absolute',
@@ -140,7 +134,6 @@ export default function ConceptosSection() {
               Portfolio + Identidad digital
             </span>
 
-            {/* Contenido */}
             <div style={{ position: 'relative', zIndex: 1 }}>
               <h3
                 style={{
@@ -179,7 +172,6 @@ export default function ConceptosSection() {
           </div>
         </TransitionLink>
 
-        {/* Card: Gastronomía */}
         <TransitionLink
           href="/conceptos/gastronomia"
           style={{ textDecoration: 'none' }}
@@ -207,7 +199,6 @@ export default function ConceptosSection() {
               (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
             }}
           >
-            {/* Fondo imagen */}
             <div
               style={{
                 position: 'absolute',
@@ -218,7 +209,6 @@ export default function ConceptosSection() {
                 opacity: 0.45,
               }}
             />
-            {/* Gradient overlay */}
             <div
               style={{
                 position: 'absolute',
@@ -227,7 +217,6 @@ export default function ConceptosSection() {
               }}
             />
 
-            {/* Tag */}
             <span
               style={{
                 position: 'absolute',
@@ -247,7 +236,6 @@ export default function ConceptosSection() {
               Presencia digital + SEO local
             </span>
 
-            {/* Contenido */}
             <div style={{ position: 'relative', zIndex: 1 }}>
               <h3
                 style={{

@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/conceptos/arquitectura",
+    languages: {
+      es: "https://www.uxnicorp.com.ar/conceptos/arquitectura",
+      en: "https://www.uxnicorp.com.ar/en/conceptos/arquitectura",
+      "x-default": "https://www.uxnicorp.com.ar/conceptos/arquitectura",
+    },
   },
   openGraph: {
     title: "Concepto Web para Arquitectura | UXnicorp",
