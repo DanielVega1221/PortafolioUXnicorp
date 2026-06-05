@@ -25,6 +25,7 @@ export const metadata: Metadata = {
       "Demo de concepto web para estudios de arquitectura. Branding, tipografía, paleta de color y estructura UX antes de diseñar.",
     url: "https://www.uxnicorp.com.ar/conceptos/arquitectura",
     type: "website",
+    locale: "es_AR",
     siteName: "UXnicorp",
     images: [
       {

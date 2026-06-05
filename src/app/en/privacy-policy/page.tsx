@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import TransitionLink from "@/components/TransitionLink";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -85,12 +85,12 @@ export default function PrivacyPolicyPage() {
     <>
     <main className="mx-auto max-w-[780px] px-6 py-20 md:px-8 md:py-28">
       <div className="mb-12">
-        <Link
+        <TransitionLink
           href="/en"
           className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 transition-colors hover:text-gray-700"
         >
           ← UXnicorp
-        </Link>
+        </TransitionLink>
         <h1
           className="mt-6 text-[2.4rem] font-black leading-tight tracking-[-0.04em] text-gray-900 md:text-[3rem]"
         >
@@ -142,12 +142,12 @@ export default function PrivacyPolicyPage() {
       </div>
 
       <div className="mt-8 text-center">
-        <Link
+        <TransitionLink
           href="/politica-de-privacidad"
           className="text-xs text-gray-400 underline-offset-2 hover:underline"
         >
           Leer en Español →
-        </Link>
+        </TransitionLink>
       </div>
     </main>
     <Footer locale="en" />

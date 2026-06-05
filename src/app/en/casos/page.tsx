@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 import { CASOS, getCasoLocalized } from "@/app/casos/data";
 import CasesPageHeader from "@/components/cases/CasesPageHeader";
 import CasesFooterCta from "@/components/cases/CasesFooterCta";
@@ -67,11 +68,12 @@ function CheckIcon({ color }: { color: string }) {
 function ImageZone({ src, alt }: { src?: string; alt: string }) {
   if (src) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
+      <Image
         src={src}
         alt={alt}
-        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        style={{ objectFit: "cover", objectPosition: "center top" }}
       />
     );
   }

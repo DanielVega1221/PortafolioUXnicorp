@@ -115,7 +115,7 @@ export default async function EnServicioPage({
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://www.uxnicorp.com.ar/en" },
         { "@type": "ListItem", position: 2, name: "Services", item: "https://www.uxnicorp.com.ar/en/servicios" },
-        { "@type": "ListItem", position: 3, name: s.nombre },
+        { "@type": "ListItem", position: 3, name: s.nombre, item: `https://www.uxnicorp.com.ar/en/servicios/${s.slug}` },
       ],
     },
   ];
@@ -370,7 +370,7 @@ export default async function EnServicioPage({
               Tell us about your project and we&apos;ll get back to you with a quote.
             </p>
           </div>
-          <a
+          <TransitionLink
             href="/en#contacto"
             style={{
               display: "inline-flex",
@@ -391,7 +391,7 @@ export default async function EnServicioPage({
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
               <path d="M2 6.5h9M8 3.5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </TransitionLink>
         </div>
 
         {siblings.length > 0 && (
@@ -424,6 +424,133 @@ export default async function EnServicioPage({
                   </svg>
                 </TransitionLink>
               ))}
+            </div>
+          </div>
+        )}
+
+        {s.slug === "sistemas-apps" && (
+          <div style={{ marginTop: "1.5rem" }}>
+            <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", marginBottom: "1rem" }}>
+              Industry solutions
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <TransitionLink href="/en/servicios/management-systems/restaurants" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Restaurants</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Reservations, digital menu, inventory, billing</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/construction" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Construction</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Project tracking, budgets, suppliers, documentation</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/clinics" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Clinics</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Appointments, medical records, billing, patients</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/real-estate" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Real Estate</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Property listings, contracts, clients, billing</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/gyms" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Gyms</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Memberships, classes, attendance, billing</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/veterinary" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Veterinary</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Appointments, pets, vaccines, history</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/auto-repair" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Auto Repair</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Work orders, vehicles, parts, quotes</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/dental" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Dental</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Appointments, treatments, x-rays, billing</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/hotels" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Hotels</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Bookings, rooms, check-in/out, billing</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/nutritionists" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Nutritionists</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Patients, plans, progress, consultations</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/law-firms" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Law Firms</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Cases, clients, deadlines, documents</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/hardware-stores" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Hardware Stores</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Stock, suppliers, sales, alerts</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
+              <TransitionLink href="/en/servicios/management-systems/car-dealerships" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1.1rem 1.5rem", borderRadius: "1rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.6)", textDecoration: "none" }}>
+                <div>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Car Dealerships</span>
+                  <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Units, sales, clients, financing</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </TransitionLink>
             </div>
           </div>
         )}

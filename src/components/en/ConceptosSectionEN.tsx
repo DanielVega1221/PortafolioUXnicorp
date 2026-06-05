@@ -1,5 +1,3 @@
-'use client';
-
 import TransitionLink from '@/components/TransitionLink';
 
 export default function ConceptosSectionEN() {

@@ -5,10 +5,36 @@ import TransitionLink from "@/components/TransitionLink";
 const ES_TO_EN: Record<string, string> = {
   "/nosotros": "/en/about",
   "/politica-de-privacidad": "/en/privacy-policy",
+  "/servicios/sistemas-gestion/restaurantes": "/en/servicios/management-systems/restaurants",
+  "/servicios/sistemas-gestion/construccion": "/en/servicios/management-systems/construction",
+  "/servicios/sistemas-gestion/clinicas": "/en/servicios/management-systems/clinics",
+  "/servicios/sistemas-gestion/inmobiliarias": "/en/servicios/management-systems/real-estate",
+  "/servicios/sistemas-gestion/gimnasios": "/en/servicios/management-systems/gyms",
+  "/servicios/sistemas-gestion/veterinarias": "/en/servicios/management-systems/veterinary",
+  "/servicios/sistemas-gestion/talleres": "/en/servicios/management-systems/auto-repair",
+  "/servicios/sistemas-gestion/dentistas": "/en/servicios/management-systems/dental",
+  "/servicios/sistemas-gestion/hoteles": "/en/servicios/management-systems/hotels",
+  "/servicios/sistemas-gestion/nutricionistas": "/en/servicios/management-systems/nutritionists",
+  "/servicios/sistemas-gestion/estudios-juridicos": "/en/servicios/management-systems/law-firms",
+  "/servicios/sistemas-gestion/ferreterias": "/en/servicios/management-systems/hardware-stores",
+  "/servicios/sistemas-gestion/concesionarias": "/en/servicios/management-systems/car-dealerships",
 };
 const EN_TO_ES: Record<string, string> = {
   "/en/about": "/nosotros",
   "/en/privacy-policy": "/politica-de-privacidad",
+  "/en/servicios/management-systems/restaurants": "/servicios/sistemas-gestion/restaurantes",
+  "/en/servicios/management-systems/construction": "/servicios/sistemas-gestion/construccion",
+  "/en/servicios/management-systems/clinics": "/servicios/sistemas-gestion/clinicas",
+  "/en/servicios/management-systems/real-estate": "/servicios/sistemas-gestion/inmobiliarias",
+  "/en/servicios/management-systems/gyms": "/servicios/sistemas-gestion/gimnasios",
+  "/en/servicios/management-systems/veterinary": "/servicios/sistemas-gestion/veterinarias",
+  "/en/servicios/management-systems/auto-repair": "/servicios/sistemas-gestion/talleres",
+  "/en/servicios/management-systems/dental": "/servicios/sistemas-gestion/dentistas",
+  "/en/servicios/management-systems/hotels": "/servicios/sistemas-gestion/hoteles",
+  "/en/servicios/management-systems/nutritionists": "/servicios/sistemas-gestion/nutricionistas",
+  "/en/servicios/management-systems/law-firms": "/servicios/sistemas-gestion/estudios-juridicos",
+  "/en/servicios/management-systems/hardware-stores": "/servicios/sistemas-gestion/ferreterias",
+  "/en/servicios/management-systems/car-dealerships": "/servicios/sistemas-gestion/concesionarias",
 };
 
 export default function LanguageSwitcher() {

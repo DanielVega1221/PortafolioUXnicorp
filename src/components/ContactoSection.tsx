@@ -8,7 +8,7 @@ const GONZALO_WA = "5493834368748";
 const AILIN_WA = "5491123504530";
 const EMAIL = "uxnicorp@gmail.com";
 
-const TIPOS = ["Landing Page", "E-commerce", "Sistema / App", "No se todavia"];
+const TIPOS = ["Landing Page", "E-commerce", "Sistema / App", "No sé todavía"];
 
 function LinkedInIcon({ size = 14 }: { size?: number }) {
   return (

@@ -34,7 +34,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     seo: {
       title: "Landing Page & Institutional Website Design",
       description:
-        "Custom landing pages and institutional websites. UX design, copy and development included. Fast loading, technical SEO from day one.",
+        "Conversion landing pages and institutional websites. UX design, copy and development included. Fast loading, technical SEO from day one.",
     },
     etapas: [
       {
@@ -151,7 +151,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     seo: {
       title: "ERP, CRM & Custom Web Systems in Argentina",
       description:
-        "Custom management systems for businesses in Argentina: ERP, CRM, inventory and invoicing web applications. No generic templates — fully built from scratch.",
+        "Modular ERP solutions and custom integration platforms for businesses in Argentina: CRM, inventory, invoicing and more. No generic templates — fully built from scratch.",
     },
     etapas: [
       {

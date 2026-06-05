@@ -34,7 +34,7 @@ export const SERVICIOS: Servicio[] = [
     seo: {
       title: "Landing Page y Web Institucional a medida",
       description:
-        "Landing pages y webs institucionales para negocios en Argentina. Diseño, copy y desarrollo incluidos. Carga rápida, SEO técnico desde el día uno.",
+        "Landing pages de conversión y webs institucionales para negocios en Argentina. Diseño, copy y desarrollo incluidos. Carga rápida, SEO técnico desde el día uno.",
     },
     etapas: [
       {
@@ -157,7 +157,7 @@ export const SERVICIOS: Servicio[] = [
     seo: {
       title: "Sistemas ERP, CRM y gestión web a medida",
       description:
-        "Sistemas de gestión web a medida: ERP, CRM, control de stock y facturación. Para empresas en Argentina que necesitan software propio, sin plantillas genéricas.",
+        "Soluciones ERP modulares y plataformas de integración a medida: CRM, control de stock, facturación y más. Para empresas en Argentina que necesitan software propio, sin plantillas genéricas.",
     },
     etapas: [
       {

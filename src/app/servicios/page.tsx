@@ -9,9 +9,9 @@ import ServiciosExtrasSection from "@/components/services/ServiciosExtrasSection
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Servicios de diseño y desarrollo web",
+  title: "Desarrollo de Landing Pages, E-commerce y ERP en Argentina",
   description:
-    "Landing pages, e-commerce y sistemas a medida. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
+    "Landing pages de conversión, tiendas online y soluciones ERP modulares. Diseño, desarrollo y estrategia en un solo equipo.",
   keywords: [
     "servicios desarrollo web argentina",
     "landing page a medida argentina",
@@ -37,11 +37,12 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Servicios de diseño y desarrollo web | UXnicorp",
+    title: "Desarrollo de Landing Pages, E-commerce y ERP en Argentina | UXnicorp",
     description:
-      "Landing pages, e-commerce y sistemas a medida. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
+      "Landing pages de conversión, tiendas online y soluciones ERP modulares. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
     url: "https://www.uxnicorp.com.ar/servicios",
     type: "website",
+    locale: "es_AR",
     siteName: "UXnicorp",
     images: [
       {
@@ -54,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Servicios de diseño y desarrollo web | UXnicorp",
+    title: "Desarrollo de Landing Pages, E-commerce y ERP en Argentina | UXnicorp",
     description:
-      "Landing pages, e-commerce y sistemas a medida. Diseño, desarrollo y estrategia en un solo equipo. Sin intermediarios ni costos ocultos.",
+      "Landing pages de conversión, tiendas online y soluciones ERP modulares. Diseño, desarrollo y estrategia en un solo equipo. Sin intermediarios ni costos ocultos.",
     images: ["/og-image.png"],
   },
 };

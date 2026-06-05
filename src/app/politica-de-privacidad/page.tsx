@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import TransitionLink from "@/components/TransitionLink";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
       "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales, el uso de cookies y tus derechos como usuario en nuestro sitio web.",
     url: "https://www.uxnicorp.com.ar/politica-de-privacidad",
     type: "website",
+    locale: "es_AR",
     siteName: "UXnicorp",
     images: [
       {
@@ -84,12 +85,12 @@ export default function PoliticaPrivacidadPage() {
     <>
     <main className="mx-auto max-w-[780px] px-6 py-20 md:px-8 md:py-28">
       <div className="mb-12">
-        <Link
+        <TransitionLink
           href="/"
           className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 transition-colors hover:text-gray-700"
         >
           ← UXnicorp
-        </Link>
+        </TransitionLink>
         <h1
           className="mt-6 text-[2.4rem] font-black leading-tight tracking-[-0.04em] text-gray-900 md:text-[3rem]"
         >
@@ -144,12 +145,12 @@ export default function PoliticaPrivacidadPage() {
       </div>
 
       <div className="mt-8 text-center">
-        <Link
+        <TransitionLink
           href="/en/privacy-policy"
           className="text-xs text-gray-400 underline-offset-2 hover:underline"
         >
           Read in English →
-        </Link>
+        </TransitionLink>
       </div>
     </main>
     <Footer locale="es" />

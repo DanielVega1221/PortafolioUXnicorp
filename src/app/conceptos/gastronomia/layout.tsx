@@ -26,6 +26,7 @@ export const metadata: Metadata = {
       "Demo de concepto web para restaurantes y negocios gastronómicos. Branding, menú digital, reservas y estructura UX antes de diseñar.",
     url: "https://www.uxnicorp.com.ar/conceptos/gastronomia",
     type: "website",
+    locale: "es_AR",
     siteName: "UXnicorp",
     images: [
       {

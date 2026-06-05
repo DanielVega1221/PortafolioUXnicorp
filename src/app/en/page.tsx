@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import HeroEN from "@/components/en/HeroEN";
 import SobreNosotrosSectionEN from "@/components/en/SobreNosotrosSectionEN";
 import AnimateIn from "@/components/AnimateIn";
@@ -13,6 +14,36 @@ const DiferenciacionSectionEN = dynamic(() => import("@/components/en/Diferencia
 const ServiciosSectionEN = dynamic(() => import("@/components/en/ServiciosSectionEN"));
 const FAQSectionEN = dynamic(() => import("@/components/en/FAQSectionEN"));
 const ContactoSectionEN = dynamic(() => import("@/components/en/ContactoSectionEN"));
+
+export const metadata: Metadata = {
+  description:
+    "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
+  alternates: {
+    canonical: "https://www.uxnicorp.com.ar/en",
+    languages: {
+      es: "https://www.uxnicorp.com.ar",
+      en: "https://www.uxnicorp.com.ar/en",
+      "x-default": "https://www.uxnicorp.com.ar",
+    },
+  },
+  openGraph: {
+    title: "UXnicorp — Web Development & UX Agency in Argentina",
+    description:
+      "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
+    url: "https://www.uxnicorp.com.ar/en",
+    siteName: "UXnicorp",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "UXnicorp — Web Development Agency" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UXnicorp — Web Development & UX Agency in Argentina",
+    description:
+      "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
+    images: ["/og-image.png"],
+  },
+};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -136,6 +167,30 @@ const faqJsonLd = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "That's the opposite of what we aim for. We want every client to understand how their project works and have full clarity over what they're using. We believe in transparency and avoiding unnecessary dependency.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does a landing page cost in Argentina?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Starting from USD $500. Depends on scope: number of sections, integrations, custom design. We always quote before starting, with clear pricing and no hidden costs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a modular ERP solution?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A modular ERP is built piece by piece: you only pay for what you need. If you need to add a billing, CRM, or inventory module later, it integrates without restarting the project. More flexible and affordable than traditional ERP systems.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What's included in custom software development?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Requirements analysis, technical documentation, UX/UI design, full-stack development, testing & QA, deployment, training and 30 days post-delivery support. No generic templates — everything built from scratch for your business.",
       },
     },
   ],
