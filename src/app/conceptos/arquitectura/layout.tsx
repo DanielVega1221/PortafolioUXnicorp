@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Concepto Web para Arquitectura | UXnicorp",
+  title: "Concepto Web para Arquitectura",
   description:
     "Demo de concepto web para estudios de arquitectura: branding, tipografía, paleta de color y estructura UX. Un ejemplo de cómo pensamos antes de diseñar.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Concepto Web para Arquitectura | UXnicorp",
     description:
-      "Demo de concepto web para estudios de arquitectura. Branding, tipografía y estructura UX antes de diseñar.",
+      "Demo de concepto web para estudios de arquitectura. Branding, tipografía, paleta de color y estructura UX antes de diseñar.",
     url: "https://www.uxnicorp.com.ar/conceptos/arquitectura",
     type: "website",
     siteName: "UXnicorp",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Concepto Web para Arquitectura | UXnicorp",
     description:
-      "Demo de concepto web para estudios de arquitectura. Branding y estructura UX.",
+      "Demo de concepto web para estudios de arquitectura: branding, tipografía, paleta de color, estructura UX y diseño antes de desarrollar.",
     images: ["/conceptos/arq/fondoARQ.webp"],
   },
 };

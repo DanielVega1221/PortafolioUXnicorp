@@ -32,7 +32,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     acento: "#e0608a",
     bg: "rgba(253,232,242,0.65)",
     seo: {
-      title: "Landing Page & Institutional Website Design | UXnicorp",
+      title: "Landing Page & Institutional Website Design",
       description:
         "Custom landing pages and institutional websites. UX design, copy and development included. Fast loading, technical SEO from day one.",
     },
@@ -90,9 +90,9 @@ export const SERVICIOS_EN: ServicioEN[] = [
     acento: "#3a7cc4",
     bg: "rgba(202,222,249,0.55)",
     seo: {
-      title: "Custom Online Store Development | UXnicorp",
+      title: "Custom Online Store Development in Argentina",
       description:
-        "Custom e-commerce for businesses. No Shopify or third-party commissions. Catalog, payments and admin panel included.",
+        "Custom e-commerce for businesses in Argentina. No Shopify or third-party commissions. Catalog, payments and admin panel included. Fully built from scratch.",
     },
     etapas: [
       {
@@ -149,9 +149,9 @@ export const SERVICIOS_EN: ServicioEN[] = [
     acento: "#9040b0",
     bg: "rgba(224,166,216,0.45)",
     seo: {
-      title: "ERP, CRM & Custom Web Systems | UXnicorp",
+      title: "ERP, CRM & Custom Web Systems in Argentina",
       description:
-        "Custom management systems for businesses: ERP, CRM, inventory and invoicing web apps. No generic templates — built from scratch.",
+        "Custom management systems for businesses in Argentina: ERP, CRM, inventory and invoicing web applications. No generic templates — fully built from scratch.",
     },
     etapas: [
       {

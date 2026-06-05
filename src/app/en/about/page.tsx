@@ -8,7 +8,7 @@ import NosotrosCta from "@/components/nosotros/NosotrosCta";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Our Story | UXnicorp — Web Development Argentina",
+  title: "Our Story",
   description:
     "Learn how UXnicorp was born, the philosophy behind our work and why we chose to work with honesty and closeness alongside every client.",
   keywords: [
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Our Story | UXnicorp — Web Development Argentina",
+  title: "Our Story | UXnicorp",
     description:
-      "How UXnicorp was born, the philosophy behind our work and why we chose honesty and closeness.",
+      "Learn how UXnicorp was born, the philosophy behind our work and why we chose to work with honesty and closeness alongside every client.",
     url: "https://www.uxnicorp.com.ar/en/about",
     type: "website",
     locale: "en_US",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Story | UXnicorp",
     description:
-      "How UXnicorp was born and the philosophy behind every project.",
+      "Learn how UXnicorp was born, the philosophy behind our work and why we chose honesty and closeness alongside every client.",
     images: ["/og-image.png"],
   },
 };

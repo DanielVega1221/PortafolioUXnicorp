@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
   description:
-    "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales y el uso de cookies en nuestro sitio.",
+    "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales, el uso de cookies y tus derechos como usuario en nuestro sitio web.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/politica-de-privacidad",
@@ -13,6 +14,29 @@ export const metadata: Metadata = {
       en: "https://www.uxnicorp.com.ar/en/privacy-policy",
       "x-default": "https://www.uxnicorp.com.ar/politica-de-privacidad",
     },
+  },
+  openGraph: {
+    title: "Política de Privacidad | UXnicorp",
+    description:
+      "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales, el uso de cookies y tus derechos como usuario en nuestro sitio web.",
+    url: "https://www.uxnicorp.com.ar/politica-de-privacidad",
+    type: "website",
+    siteName: "UXnicorp",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "UXnicorp — Política de Privacidad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Política de Privacidad | UXnicorp",
+    description:
+      "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales, el uso de cookies y tus derechos como usuario en nuestro sitio web.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -57,6 +81,7 @@ const sections = [
 
 export default function PoliticaPrivacidadPage() {
   return (
+    <>
     <main className="mx-auto max-w-[780px] px-6 py-20 md:px-8 md:py-28">
       <div className="mb-12">
         <Link
@@ -127,5 +152,7 @@ export default function PoliticaPrivacidadPage() {
         </Link>
       </div>
     </main>
+    <Footer locale="es" />
+    </>
   );
 }

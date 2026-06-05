@@ -4,9 +4,10 @@ import Script from "next/script";
 import { CASOS, getCasoLocalized } from "@/app/casos/data";
 import CasesPageHeader from "@/components/cases/CasesPageHeader";
 import CasesFooterCta from "@/components/cases/CasesFooterCta";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Real Projects — Landing Pages, Online Stores & Web Systems | UXnicorp",
+  title: "Real Projects — Web Development from Argentina",
   description:
     "6 web development projects from Argentina: landing pages, online stores, management systems and corporate websites. No mockups, no demos.",
   keywords: [
@@ -29,9 +30,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Real Projects | UXnicorp — Web Development Argentina",
+    title: "Real Projects — Web Development from Argentina | UXnicorp",
     description:
-      "6 projects: landing pages, online stores, management systems and corporate websites. No mockups, no demos.",
+      "6 real web development projects from Argentina: landing pages, online stores, management systems and corporate websites. No mockups, no demos.",
     url: "https://www.uxnicorp.com.ar/en/casos",
     type: "website",
     locale: "en_US",
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Projects | UXnicorp — Web Development Argentina",
+    title: "Real Projects — Web Development from Argentina | UXnicorp",
     description:
-      "6 projects: landing pages, online stores, management systems and corporate websites.",
+      "6 real web development projects from Argentina: landing pages, online stores, management systems and corporate websites. Verifiable results.",
     images: ["/og-image.png"],
   },
 };
@@ -292,6 +293,9 @@ export default function CasosEnPage() {
         <CasesFooterCta locale="en" />
 
       </div>
+
+      <Footer locale="en" />
+
     </main>
   );
 }

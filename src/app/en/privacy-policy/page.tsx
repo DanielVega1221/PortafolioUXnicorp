@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "UXnicorp privacy policy. Learn how we handle your personal data and the use of cookies on our website.",
+    "UXnicorp privacy policy. Learn how we handle your personal data, the use of cookies and your rights as a user on our website.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/privacy-policy",
@@ -13,6 +14,30 @@ export const metadata: Metadata = {
       es: "https://www.uxnicorp.com.ar/politica-de-privacidad",
       "x-default": "https://www.uxnicorp.com.ar/politica-de-privacidad",
     },
+  },
+  openGraph: {
+    title: "Privacy Policy | UXnicorp",
+    description:
+      "UXnicorp privacy policy. Learn how we handle your personal data, the use of cookies and your rights as a user on our website.",
+    url: "https://www.uxnicorp.com.ar/en/privacy-policy",
+    type: "website",
+    locale: "en_US",
+    siteName: "UXnicorp",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "UXnicorp — Privacy Policy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | UXnicorp",
+    description:
+      "UXnicorp privacy policy. Learn how we handle your personal data, the use of cookies and your rights as a user on our website.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -57,6 +82,7 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
+    <>
     <main className="mx-auto max-w-[780px] px-6 py-20 md:px-8 md:py-28">
       <div className="mb-12">
         <Link
@@ -124,5 +150,7 @@ export default function PrivacyPolicyPage() {
         </Link>
       </div>
     </main>
+    <Footer locale="en" />
+    </>
   );
 }

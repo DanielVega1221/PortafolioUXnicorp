@@ -4,6 +4,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import TransitionLink from '@/components/TransitionLink';
+import Footer from '@/components/Footer';
 import { usePageTransition } from '@/components/TransitionProvider';
 import { motion as Motion } from 'framer-motion';
 import {
@@ -167,6 +168,7 @@ export default function Gastronomia() {
   };
 
   return (
+    <>
     <div className="gastronomia-page">
       <TransitionLink href="/" className="btn-home-gastro" aria-label="Volver al inicio">
         <Home size={20} strokeWidth={2} />
@@ -522,5 +524,7 @@ export default function Gastronomia() {
         </div>
       </section>
     </div>
+    <Footer locale="es" />
+    </>
   );
 }

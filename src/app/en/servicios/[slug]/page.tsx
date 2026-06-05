@@ -1,10 +1,12 @@
 import React from "react";
+import Script from "next/script";
 import TransitionLink from "@/components/TransitionLink";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SERVICIOS_EN, getServicioEN } from "../data";
 import { PriceDisplay } from "@/app/servicios/[slug]/PriceDisplay";
 import { CurrencyToggle } from "@/app/servicios/CurrencyToggle";
+import Footer from "@/components/Footer";
 
 export function generateStaticParams() {
   return SERVICIOS_EN.map((s) => ({ slug: s.slug }));
@@ -27,11 +29,11 @@ export async function generateMetadata({
       languages: {
         es: `https://www.uxnicorp.com.ar/servicios/${slug}`,
         en: canonicalUrl,
-        "x-default": canonicalUrl,
+        "x-default": `https://www.uxnicorp.com.ar/servicios/${slug}`,
       },
     },
     openGraph: {
-      title: s.seo.title,
+      title: s.seo.title + " | UXnicorp",
       description: s.seo.description,
       url: canonicalUrl,
       type: "website",
@@ -48,7 +50,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: s.seo.title,
+      title: s.seo.title + " | UXnicorp",
       description: s.seo.description,
       images: ["/og-image.png"],
     },
@@ -83,7 +85,43 @@ export default async function EnServicioPage({
 
   const siblings = SERVICIOS_EN.filter((x) => x.slug !== s.slug);
 
+  const priceMatch = s.precioUSD.match(/[\d.]+/g);
+  const lowPrice = priceMatch?.[0]?.replace(/\./g, "") ?? "";
+  const highPrice = priceMatch?.[1]?.replace(/\./g, "") ?? priceMatch?.[0]?.replace(/\./g, "") ?? "";
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: s.nombre,
+      description: s.descripcion,
+      url: `https://www.uxnicorp.com.ar/en/servicios/${s.slug}`,
+      provider: { "@type": "Organization", name: "UXnicorp" },
+      areaServed: { "@type": "Country", name: "Argentina" },
+      category: "Web Development",
+      offers: {
+        "@type": "Offer",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          lowPrice,
+          highPrice,
+          priceCurrency: "USD",
+        },
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.uxnicorp.com.ar/en" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://www.uxnicorp.com.ar/en/servicios" },
+        { "@type": "ListItem", position: 3, name: s.nombre },
+      ],
+    },
+  ];
+
   return (
+    <>
     <main
       style={{
         background:
@@ -91,6 +129,11 @@ export default async function EnServicioPage({
         minHeight: "100vh",
       }}
     >
+      <Script
+        id={`service-jsonld-en-${s.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-[1220px] px-6 py-20 md:px-8 md:py-28">
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "2.5rem" }}>
@@ -387,5 +430,7 @@ export default async function EnServicioPage({
 
       </div>
     </main>
+    <Footer locale="en" />
+    </>
   );
 }

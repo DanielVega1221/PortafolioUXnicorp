@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Concepto Web para Gastronomía | UXnicorp",
+  title: "Concepto Web para Gastronomía",
   description:
     "Demo de concepto web para restaurantes y negocios gastronómicos: branding, menú digital, reservas y estructura UX. Un ejemplo de cómo pensamos antes de diseñar.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Concepto Web para Gastronomía | UXnicorp",
     description:
-      "Demo de concepto web para restaurantes. Branding, menú digital y estructura UX antes de diseñar.",
+      "Demo de concepto web para restaurantes y negocios gastronómicos. Branding, menú digital, reservas y estructura UX antes de diseñar.",
     url: "https://www.uxnicorp.com.ar/conceptos/gastronomia",
     type: "website",
     siteName: "UXnicorp",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Concepto Web para Gastronomía | UXnicorp",
     description:
-      "Demo de concepto web para restaurantes. Branding y estructura UX.",
+      "Demo de concepto web para restaurantes y negocios gastronómicos: branding, menú digital, reservas, estructura UX y diseño antes de desarrollar.",
     images: ["/conceptos/gastronomia/fondo.webp"],
   },
 };

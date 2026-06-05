@@ -95,6 +95,72 @@ const nextConfig: NextConfig = {
         destination: "/en",
         permanent: true,
       },
+      {
+        source: "/servicios/landing-pages",
+        destination: "/servicios/landing-page",
+        permanent: true,
+      },
+      {
+        source: "/sobre-nosotros",
+        destination: "/nosotros",
+        permanent: true,
+      },
+      {
+        source: "/en/paquetes",
+        destination: "/en/servicios",
+        permanent: true,
+      },
+      {
+        source: "/es/casos-reales",
+        destination: "/casos",
+        permanent: true,
+      },
+      {
+        source: "/servicios/sistemas-gestion",
+        destination: "/servicios/sistemas-apps",
+        permanent: true,
+      },
+      {
+        source: "/servicios/paquetes",
+        destination: "/servicios",
+        permanent: true,
+      },
+      {
+        source: "/servicios/auditorias",
+        destination: "/servicios",
+        permanent: true,
+      },
+      {
+        source: "/en/servicios/paquetes",
+        destination: "/en/servicios",
+        permanent: true,
+      },
+      {
+        source: "/casos-reales",
+        destination: "/casos",
+        permanent: true,
+      },
+      {
+        source: "/en/servicios/landing-pages",
+        destination: "/en/servicios/landing-page",
+        permanent: true,
+      },
+      {
+        source: "/es/landing-pages",
+        destination: "/servicios/landing-page",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "query",
+            key: "s",
+          },
+        ],
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };

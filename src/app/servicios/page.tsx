@@ -6,9 +6,10 @@ import { ServicioCard } from "./ServicioCard";
 import ServicesFooterCta from "@/components/services/ServicesFooterCta";
 import ServicesPageHeader from "@/components/services/ServicesPageHeader";
 import ServiciosExtrasSection from "@/components/services/ServiciosExtrasSection";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Servicios de diseño y desarrollo web | UXnicorp",
+  title: "Servicios de diseño y desarrollo web",
   description:
     "Landing pages, e-commerce y sistemas a medida. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
   keywords: [
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Servicios de diseño y desarrollo web | UXnicorp",
     description:
-      "Landing pages, e-commerce y sistemas a medida. Precios claros, tiempos reales, equipo local.",
+      "Landing pages, e-commerce y sistemas a medida. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
     url: "https://www.uxnicorp.com.ar/servicios",
     type: "website",
     siteName: "UXnicorp",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Servicios de diseño y desarrollo web | UXnicorp",
     description:
-      "Landing pages, e-commerce y sistemas a medida. Precios claros, tiempos reales.",
+      "Landing pages, e-commerce y sistemas a medida. Diseño, desarrollo y estrategia en un solo equipo. Sin intermediarios ni costos ocultos.",
     images: ["/og-image.png"],
   },
 };
@@ -108,9 +109,10 @@ export default function ServiciosPage() {
 
         <ServicesFooterCta locale="es" />
 
-       
-
       </div>
+
+      <Footer locale="es" />
+
     </main>
   );
 }

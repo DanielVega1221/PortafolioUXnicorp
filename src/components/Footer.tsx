@@ -77,9 +77,9 @@ export default function Footer({ locale = "es" }: FooterProps) {
           "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(243,122,166,0.08) 40%, rgba(202,222,249,0.12) 100%)",
         borderTop: "1px solid rgba(0,0,0,0.06)",
       }}
-      className="w-full px-6 pb-8 pt-12 md:px-12 lg:px-20"
+      className="w-full pt-12 pb-8"
     >
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-12 lg:px-20">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5">

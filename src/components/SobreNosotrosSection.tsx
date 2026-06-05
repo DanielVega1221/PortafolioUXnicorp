@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import TransitionLink from "@/components/TransitionLink";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -100,6 +101,13 @@ export default function SobreNosotrosSection() {
                 Argentina · 100% remoto 
               </p>
             </div>
+
+            <TransitionLink
+              href="/nosotros"
+              className="mt-6 inline-block text-sm font-medium text-[#F37AA6] underline underline-offset-4 hover:text-[#e0608a]"
+            >
+              Conocé más sobre nosotros →
+            </TransitionLink>
           </motion.div>
 
           <motion.div className="w-full" variants={colVariants}>

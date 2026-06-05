@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import LenisProvider from "@/components/LenisProvider";
@@ -97,23 +98,26 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.uxnicorp.com.ar",
+    canonical: "https://www.uxnicorp.com.ar/",
     languages: {
-      "es-AR": "https://www.uxnicorp.com.ar",
-      "es": "https://www.uxnicorp.com.ar",
+      "es-AR": "https://www.uxnicorp.com.ar/",
+      "es": "https://www.uxnicorp.com.ar/",
       "en": "https://www.uxnicorp.com.ar/en",
-      "x-default": "https://www.uxnicorp.com.ar",
+      "x-default": "https://www.uxnicorp.com.ar/",
     },
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const h = await headers();
+  const locale = h.get("x-locale") || "es";
+
   return (
-    <html lang="es" className={roboto.className}>
+    <html lang={locale} className={roboto.className}>
       <head>
         <meta name="google-site-verification" content="siC-CWVYr84oI1ktEEacAFXJA-8_t2YAxGanTzpisnw" />
         <Script id="consent-mode-bootstrap" strategy="beforeInteractive">
@@ -151,12 +155,17 @@ gtag('set', 'url_passthrough', true);
                   addressCountry: "AR",
                   addressRegion: "Buenos Aires",
                 },
-                contactPoint: {
-                  "@type": "ContactPoint",
-                  contactType: "customer service",
-                  availableLanguage: ["Spanish", "English"],
-                },
-                sameAs: [],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        availableLanguage: ["Spanish", "English"],
+        email: "uxnicorp@gmail.com",
+        telephone: "+54-9-3834-368748",
+      },
+                sameAs: [
+                  "https://www.instagram.com/uxnicorp/",
+                  "https://www.linkedin.com/company/uxnicorp",
+                ],
                 serviceArea: {
                   "@type": "Place",
                   name: "Argentina, América Latina, España",

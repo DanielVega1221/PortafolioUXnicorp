@@ -18,6 +18,10 @@ const contentByLocale = {
     whyTitle: "¿Por qué existimos?",
     whyText:
       "Veíamos clientes confundidos, presupuestos inflados y mucho lenguaje técnico innecesario. La mayoría no necesitaba más complejidad, necesitaba más claridad. Eso fue lo que nos hizo decir \"hagámoslo nosotros\".",
+    navLinks: [
+      { label: "Servicios", href: "/servicios" },
+      { label: "Casos", href: "/casos" },
+    ],
   },
   en: {
     backHref: "/en",
@@ -30,6 +34,10 @@ const contentByLocale = {
     whyTitle: "Why do we exist?",
     whyText:
       "We saw confused clients, inflated budgets and a lot of unnecessary technical jargon. Most people didn't need more complexity, they needed more clarity. That's what made us say \"let's do this ourselves\".",
+    navLinks: [
+      { label: "Services", href: "/en/servicios" },
+      { label: "Cases", href: "/en/casos" },
+    ],
   },
 } as const;
 
@@ -38,18 +46,27 @@ export default function NosotrosPageHeader({ locale }: NosotrosPageHeaderProps) 
 
   return (
     <>
-      <TransitionLink href={c.backHref} className="brand-back-link">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path
-            d="M9 2.5L5 7l4 4.5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        {c.backLabel}
-      </TransitionLink>
+      <div className="mb-6 flex items-center justify-between">
+        <TransitionLink href={c.backHref} className="brand-back-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M9 2.5L5 7l4 4.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          {c.backLabel}
+        </TransitionLink>
+        <nav className="hidden items-center gap-5 text-[0.8rem] font-medium text-gray-400 md:flex">
+          {c.navLinks.map((link) => (
+            <TransitionLink key={link.href} href={link.href} className="transition-colors hover:text-gray-700">
+              {link.label}
+            </TransitionLink>
+          ))}
+        </nav>
+      </div>
 
       <div className="mb-16">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">

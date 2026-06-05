@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Web Concept for Architecture Studios | UXnicorp",
+  title: "Web Concept for Architecture Studios",
   description:
     "A web concept demo for architecture studios: branding, typography, color palette and UX structure. An example of how we think before we design.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Web Concept for Architecture Studios | UXnicorp",
     description:
-      "A web concept demo for architecture studios. Branding, typography and UX structure before design.",
+      "A web concept demo for architecture studios: branding, typography, color palette, UX structure and design before development.",
     url: "https://www.uxnicorp.com.ar/en/conceptos/arquitectura",
     type: "website",
     locale: "en_US",
@@ -36,6 +36,13 @@ export const metadata: Metadata = {
         alt: "Web concept for architecture studio — UXnicorp",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Concept for Architecture Studios | UXnicorp",
+    description:
+      "A web concept demo for architecture studios: branding, typography, color palette, UX structure and design before development.",
+    images: ["/conceptos/arq/fondoARQ.webp"],
   },
 };
 

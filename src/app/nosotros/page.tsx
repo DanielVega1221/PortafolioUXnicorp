@@ -8,7 +8,7 @@ import NosotrosCta from "@/components/nosotros/NosotrosCta";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Nuestra Historia | UXnicorp — Desarrollo Web Argentina",
+  title: "Nuestra Historia",
   description:
     "Conocé cómo nació UXnicorp, la filosofía que nos mueve y por qué elegimos trabajar con honestidad y cercanía junto a cada cliente.",
   keywords: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Nuestra Historia | UXnicorp — Desarrollo Web Argentina",
+  title: "Nuestra Historia | UXnicorp",
     description:
-      "Cómo nació UXnicorp, la filosofía que nos mueve y por qué elegimos trabajar con honestidad y cercanía.",
+      "Conocé cómo nació UXnicorp, la filosofía que nos mueve y por qué elegimos trabajar con honestidad y cercanía junto a cada cliente.",
     url: "https://www.uxnicorp.com.ar/nosotros",
     type: "website",
     locale: "es_AR",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nuestra Historia | UXnicorp",
     description:
-      "Cómo nació UXnicorp y la filosofía detrás de cada proyecto.",
+      "Cómo nació UXnicorp, la filosofía que nos mueve y por qué elegimos trabajar con honestidad y cercanía junto a cada cliente.",
     images: ["/og-image.png"],
   },
 };

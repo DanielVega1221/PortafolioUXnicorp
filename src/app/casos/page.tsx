@@ -4,9 +4,10 @@ import Script from "next/script";
 import { CASOS, getCasoLocalized } from "./data";
 import CasesPageHeader from "@/components/cases/CasesPageHeader";
 import CasesFooterCta from "@/components/cases/CasesFooterCta";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Proyectos reales — Landing Pages, Tiendas Online y Sistemas Web",
+  title: "Proyectos reales de desarrollo web",
   description:
     "6 proyectos de desarrollo web en Argentina: landing pages, tiendas online, sistemas de gestión y webs institucionales. Sin mockups, sin demos.",
   keywords: [
@@ -29,9 +30,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Proyectos reales | UXnicorp — Desarrollo Web Argentina",
+    title: "Proyectos reales de desarrollo web | UXnicorp",
     description:
-      "6 proyectos: landing pages, tiendas online, sistemas de gestión y webs institucionales. Sin mockups, sin demos.",
+      "6 proyectos reales de desarrollo web: landing pages, tiendas online, sistemas de gestión y webs institucionales. Sin mockups, sin demos.",
     url: "https://www.uxnicorp.com.ar/casos",
     type: "website",
     locale: "es_AR",
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Proyectos reales | UXnicorp — Desarrollo Web Argentina",
+    title: "Proyectos reales de desarrollo web | UXnicorp",
     description:
-      "6 proyectos: landing pages, tiendas online, sistemas de gestión y webs institucionales.",
+      "6 proyectos reales de desarrollo web: landing pages, tiendas online, sistemas de gestión y webs institucionales. Resultados verificables.",
     images: ["/og-image.png"],
   },
 };
@@ -282,6 +283,9 @@ export default function CasosPage() {
         <CasesFooterCta locale="es" />
 
       </div>
+
+      <Footer locale="es" />
+
     </main>
   );
 }

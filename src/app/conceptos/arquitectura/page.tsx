@@ -4,6 +4,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import TransitionLink from '@/components/TransitionLink';
+import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
 import { usePageTransition } from '@/components/TransitionProvider';
 import { motion as Motion } from 'framer-motion';
@@ -206,6 +207,7 @@ export default function Arquitectura() {
   const capIcons      = [Layout, Layers, Users, Search, Zap, TrendingUp];
 
   return (
+    <>
     <div className="arquitectura-page">
       <TransitionLink href="/" className="btn-home-float" aria-label="Volver al inicio">
         <Home size={20} strokeWidth={2} />
@@ -569,5 +571,7 @@ export default function Arquitectura() {
         <div className="section-number">08/08</div>
       </section>
     </div>
+    <Footer locale="es" />
+    </>
   );
 }

@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback, memo, useRef, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
+import TransitionLink from "@/components/TransitionLink";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -285,6 +286,18 @@ export default function FAQSection() {
               </div>
             ))}
           </motion.div>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-[860px] text-center">
+          <p className="text-sm text-gray-500">
+            ¿Tenés más preguntas?{" "}
+            <TransitionLink
+              href="/servicios"
+              className="font-medium text-[#F37AA6] underline underline-offset-4 hover:text-[#e0608a]"
+            >
+              Conocé nuestros servicios →
+            </TransitionLink>
+          </p>
         </div>
 
       </div>

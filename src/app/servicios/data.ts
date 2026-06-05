@@ -32,7 +32,7 @@ export const SERVICIOS: Servicio[] = [
     acento: "#e0608a",
     bg: "rgba(253,232,242,0.65)",
     seo: {
-      title: "Landing Page y Web Institucional a medida | UXnicorp",
+      title: "Landing Page y Web Institucional a medida",
       description:
         "Landing pages y webs institucionales para negocios en Argentina. Diseño, copy y desarrollo incluidos. Carga rápida, SEO técnico desde el día uno.",
     },
@@ -93,7 +93,7 @@ export const SERVICIOS: Servicio[] = [
     acento: "#3a7cc4",
     bg: "rgba(202,222,249,0.55)",
     seo: {
-      title: "Tiendas online a medida sin comisiones | UXnicorp",
+      title: "Tiendas online a medida sin comisiones",
       description:
         "Tiendas online para negocios en Argentina. Sin Shopify ni comisiones de terceros. Catálogo, pagos y panel de administración propio incluidos.",
     },
@@ -155,7 +155,7 @@ export const SERVICIOS: Servicio[] = [
     acento: "#9040b0",
     bg: "rgba(224,166,216,0.45)",
     seo: {
-      title: "Sistemas ERP, CRM y gestión web a medida | UXnicorp",
+      title: "Sistemas ERP, CRM y gestión web a medida",
       description:
         "Sistemas de gestión web a medida: ERP, CRM, control de stock y facturación. Para empresas en Argentina que necesitan software propio, sin plantillas genéricas.",
     },

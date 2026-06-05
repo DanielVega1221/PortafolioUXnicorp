@@ -1,5 +1,4 @@
 import React from "react";
-import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,9 +35,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en",
     languages: {
-      es: "https://www.uxnicorp.com.ar",
+      es: "https://www.uxnicorp.com.ar/",
       en: "https://www.uxnicorp.com.ar/en",
-      "x-default": "https://www.uxnicorp.com.ar",
+      "x-default": "https://www.uxnicorp.com.ar/",
     },
   },
   openGraph: {
@@ -69,83 +68,5 @@ export const metadata: Metadata = {
 };
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Script
-        id="organization-jsonld-en"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "UXnicorp",
-              url: "https://www.uxnicorp.com.ar",
-              logo: "https://www.uxnicorp.com.ar/brand/logo.png",
-              description:
-                "Web development studio from Argentina. We understand the business before opening the editor. Design, code and strategy in one team.",
-              address: {
-                "@type": "PostalAddress",
-                addressCountry: "AR",
-                addressRegion: "Buenos Aires",
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer service",
-                availableLanguage: ["Spanish", "English"],
-              },
-              sameAs: [],
-              serviceArea: {
-                "@type": "Place",
-                name: "Argentina, Latin America, Spain",
-              },
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Web Development Services",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Landing Page",
-                      description:
-                        "Custom landing pages and corporate websites for businesses. UX design, copywriting and development included.",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "E-commerce",
-                      description:
-                        "Custom online stores without Shopify or third-party commissions. Catalog, payments and your own admin panel.",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Management System",
-                      description:
-                        "ERP, CRM, inventory control and web invoicing systems for businesses. Custom software, no generic templates.",
-                    },
-                  },
-                ],
-              },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "UXnicorp",
-              url: "https://www.uxnicorp.com.ar",
-              inLanguage: ["es", "en"],
-              description:
-                "Web development in Argentina: landing pages, online stores, management systems and corporate websites.",
-            },
-          ]),
-        }}
-      />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
