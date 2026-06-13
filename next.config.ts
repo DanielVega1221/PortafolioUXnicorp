@@ -151,6 +151,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/es/servicios/sistemas-gestion",
+        destination: "/servicios/sistemas-apps",
+        permanent: true,
+      },
+      {
+        source: "/en/servicios/sistemas-gestion",
+        destination: "/en/servicios/sistemas-apps",
+        permanent: true,
+      },
+      {
+        source: "/en/landing-pages",
+        destination: "/en/servicios/landing-page",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [
           {
