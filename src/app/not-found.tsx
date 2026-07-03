@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "404 - Pagina no encontrada",
   description:
     "La ruta que buscabas no existe o fue movida. Volve al inicio de UXnicorp para seguir navegando.",
+  alternates: {
+    canonical: "https://www.uxnicorp.com.ar",
+  },
   robots: {
     index: false,
     follow: false,

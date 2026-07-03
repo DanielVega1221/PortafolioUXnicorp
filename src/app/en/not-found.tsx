@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "404 - Page not found",
   description:
     "The page you requested does not exist or has moved. Return to the UXnicorp homepage to continue.",
+  alternates: {
+    canonical: "https://www.uxnicorp.com.ar/en",
+  },
   robots: {
     index: false,
     follow: false,

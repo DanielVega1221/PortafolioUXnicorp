@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Concepto Web para Arquitectura",
   description:
-    "Demo de concepto web para estudios de arquitectura: branding, tipografía, paleta de color y estructura UX. Un ejemplo de cómo pensamos antes de diseñar.",
+    "Demo de concepto web para estudios de arquitectura: branding, tipografia, paleta de color y estructura UX. Como pensamos antes de diseñar.",
   keywords: [
     "web para arquitectos argentina",
     "diseño web estudio de arquitectura",
@@ -50,5 +51,23 @@ export default function ArquitecturaLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <Script
+        id="breadcrumb-arquitectura"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.uxnicorp.com.ar" },
+              { "@type": "ListItem", position: 2, name: "Concepto Web para Arquitectura" },
+            ],
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }

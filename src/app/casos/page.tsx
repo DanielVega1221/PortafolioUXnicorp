@@ -155,7 +155,7 @@ export default function CasosPage() {
                 flexDirection: "row",
               }}
             >
-              <div style={{ width: "380px", flexShrink: 0, alignSelf: "stretch", minHeight: "280px" }}>
+              <div style={{ width: "380px", flexShrink: 0, alignSelf: "stretch", minHeight: "280px", position: "relative" }}>
                 <ImageZone src={caso.imagen} alt={caso.cliente} />
               </div>
 

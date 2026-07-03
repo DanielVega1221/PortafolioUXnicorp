@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    alternateLocale: ["en_US", "es_ES", "es_MX"],
+    alternateLocale: ["en_US"],
     url: "https://www.uxnicorp.com.ar",
     siteName: "UXnicorp",
     title: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
@@ -98,12 +98,11 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.uxnicorp.com.ar/",
+    canonical: "https://www.uxnicorp.com.ar",
     languages: {
-      "es-AR": "https://www.uxnicorp.com.ar/",
-      "es": "https://www.uxnicorp.com.ar/",
+      "es": "https://www.uxnicorp.com.ar",
       "en": "https://www.uxnicorp.com.ar/en",
-      "x-default": "https://www.uxnicorp.com.ar/",
+      "x-default": "https://www.uxnicorp.com.ar",
     },
   },
 };

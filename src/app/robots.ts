@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/*?s=", "/*?s*"],
       },
     ],
     sitemap: "https://www.uxnicorp.com.ar/sitemap.xml",

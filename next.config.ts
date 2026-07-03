@@ -166,7 +166,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/:path*",
+        source: "/",
         has: [
           {
             type: "query",

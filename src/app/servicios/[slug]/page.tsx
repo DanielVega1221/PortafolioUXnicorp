@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const servicio = getServicio(slug);
-  if (!servicio) return {};
+  if (!servicio) return { robots: { index: false, follow: false } };
   const canonicalUrl = `https://www.uxnicorp.com.ar/servicios/${slug}`;
   return {
     title: servicio.seo.title,

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Web Concept for Architecture Studios",
@@ -47,5 +48,23 @@ export const metadata: Metadata = {
 };
 
 export default function ArquitecturaENLayout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <Script
+        id="breadcrumb-arquitectura-en"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.uxnicorp.com.ar/en" },
+              { "@type": "ListItem", position: 2, name: "Web Concept for Architecture" },
+            ],
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }
