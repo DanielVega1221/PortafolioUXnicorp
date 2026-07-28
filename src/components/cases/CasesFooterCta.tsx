@@ -27,7 +27,7 @@ export default function CasesFooterCta({ locale }: CasesFooterCtaProps) {
   return (
     <div className="brand-cta-card">
       <div>
-        <h3 className="brand-cta-card__title">{content.title}</h3>
+        <h2 className="brand-cta-card__title">{content.title}</h2>
         <p className="brand-cta-card__desc">{content.description}</p>
       </div>
       <TransitionLink href={content.href} className="brand-cta-card__btn">

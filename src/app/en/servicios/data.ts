@@ -151,7 +151,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     seo: {
       title: "ERP, CRM & Custom Web Systems in Argentina",
       description:
-        "Modular ERP solutions and custom integration platforms for businesses in Argentina: CRM, inventory, invoicing and more. No generic templates — fully built from scratch.",
+        "Modular ERP solutions: CRM, inventory, invoicing and more. Custom platforms for businesses in Argentina, no generic templates.",
     },
     etapas: [
       {

@@ -157,7 +157,7 @@ export const SERVICIOS: Servicio[] = [
     seo: {
       title: "Sistemas ERP, CRM y gestión web a medida",
       description:
-        "Soluciones ERP modulares y plataformas de integración a medida: CRM, control de stock, facturación y más. Para empresas en Argentina que necesitan software propio, sin plantillas genéricas.",
+        "Soluciones ERP modulares: CRM, control de stock, facturacion y mas. Software a medida para empresas en Argentina, sin plantillas genericas.",
     },
     etapas: [
       {

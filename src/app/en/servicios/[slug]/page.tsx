@@ -296,9 +296,9 @@ export default async function EnServicioPage({
               <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8a5050", margin: "0 0 0.4rem 0" }}>
                 Monthly maintenance
               </p>
-              <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#111", margin: "0 0 0.5rem 0", letterSpacing: "-0.03em" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#111", margin: "0 0 0.5rem 0", letterSpacing: "-0.03em" }}>
                 Care Plan
-              </h3>
+              </h2>
               <p style={{ fontSize: "0.84rem", color: "#4a5568", lineHeight: 1.55, margin: 0, maxWidth: "480px" }}>
                 Updates, backups and ongoing technical support to keep your site running at 100% every month.
               </p>
@@ -363,9 +363,9 @@ export default async function EnServicioPage({
           }}
         >
           <div>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>
+            <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>
               Interested in this service?
-            </h3>
+            </h2>
             <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", margin: 0 }}>
               Tell us about your project and we&apos;ll get back to you with a quote.
             </p>

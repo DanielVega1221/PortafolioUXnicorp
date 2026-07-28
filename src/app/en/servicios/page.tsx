@@ -9,7 +9,7 @@ import ServiciosExtrasSection from "@/components/services/ServiciosExtrasSection
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Landing Pages, E-commerce & ERP Development in Argentina",
+  title: "Landing Pages, E-commerce & ERP Development",
   description:
     "Conversion landing pages, online stores and modular ERP solutions. Clear pricing, real timelines, no outsourcing. See what's included in each service.",
   keywords: [

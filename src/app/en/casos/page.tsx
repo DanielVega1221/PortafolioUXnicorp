@@ -207,7 +207,7 @@ export default function CasosEnPage() {
                       {t.industria}
                     </span>
                   </div>
-                  <h3
+                  <h2
                     style={{
                       fontSize: "1.2rem",
                       fontWeight: 800,
@@ -218,7 +218,7 @@ export default function CasosEnPage() {
                     }}
                   >
                     {caso.cliente}
-                  </h3>
+                  </h2>
                   <p style={{ fontSize: "0.84rem", lineHeight: 1.65, color: "#4a5568", margin: 0 }}>
                     {t.problema}
                   </p>

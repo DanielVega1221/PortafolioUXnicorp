@@ -290,9 +290,9 @@ export default async function ServicioPage({
               <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8a5050", margin: "0 0 0.4rem 0" }}>
                 Mantenimiento mensual
               </p>
-              <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#111", margin: "0 0 0.5rem 0", letterSpacing: "-0.03em" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#111", margin: "0 0 0.5rem 0", letterSpacing: "-0.03em" }}>
                 Plan Cuidado
-              </h3>
+              </h2>
               <p style={{ fontSize: "0.84rem", color: "#4a5568", lineHeight: 1.55, margin: 0, maxWidth: "480px" }}>
                 Actualizaciones, backups y soporte técnico continuo para mantener tu sitio funcionando al 100% mes a mes.
               </p>
@@ -357,9 +357,9 @@ export default async function ServicioPage({
           }}
         >
           <div>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>
+            <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>
               ¿Te interesa este servicio?
-            </h3>
+            </h2>
             <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", margin: 0 }}>
               Contanos tu proyecto y te respondemos con un presupuesto.
             </p>

@@ -145,7 +145,7 @@ export default function HardwareStoresPageEN() {
 
         <div style={{ borderRadius: "1.5rem", padding: "2rem 2.25rem", background: "linear-gradient(135deg, #9040b0 0%, #E0A6D8 100%)", boxShadow: "0 8px 40px rgba(144,64,176,0.22)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1.5rem", marginBottom: "2.5rem" }}>
           <div>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>Have a hardware store and want to organize it?</h3>
+            <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", margin: "0 0 0.3rem 0", letterSpacing: "-0.03em" }}>Have a hardware store and want to organize it?</h2>
             <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", margin: 0 }}>Tell us about your operation and we&apos;ll build a custom proposal.</p>
           </div>
           <TransitionLink href="/en#contacto" style={{ display: "inline-flex", alignItems: "center", gap: "0.45rem", padding: "0.7rem 1.5rem", borderRadius: "0.875rem", background: "#fff", color: "#9040b0", fontWeight: 700, fontSize: "0.875rem", textDecoration: "none", whiteSpace: "nowrap", boxShadow: "0 2px 12px rgba(0,0,0,0.1)" }}>

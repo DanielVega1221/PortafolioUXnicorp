@@ -374,7 +374,7 @@ export default function ArquitecturaEN() {
             {texto.demo.investigacion.insights.map((insight, i) => (
               <div className="demo-insight-card" key={i}>
                 <span className="insight-number">{String(i + 1).padStart(2, '0')}</span>
-                <h4 className="insight-title">{insight.titulo}</h4>
+                <h3 className="insight-title">{insight.titulo}</h3>
                 <p className="insight-finding">{insight.finding}</p>
                 <p className="insight-body">{insight.body}</p>
               </div>
@@ -394,7 +394,7 @@ export default function ArquitecturaEN() {
               return (
                 <div className="demo-decision-card" key={i}>
                   <Icon className="demo-decision-icon" size={32} strokeWidth={1.5} />
-                  <h4>{item.titulo}</h4>
+                  <h3>{item.titulo}</h3>
                   <p>{item.desc}</p>
                 </div>
               );
@@ -413,7 +413,7 @@ export default function ArquitecturaEN() {
               <div className="demo-structure-item" key={i}>
                 <div className="demo-structure-marker">{String(i + 1).padStart(2, '0')}</div>
                 <div className="demo-structure-content">
-                  <h4>{item.titulo}</h4>
+                  <h3>{item.titulo}</h3>
                   <p>{item.desc}</p>
                 </div>
               </div>

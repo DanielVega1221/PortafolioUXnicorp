@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     template: "%s | UXnicorp",
-    default: "UXnicorp — Web Development & UX Agency from Argentina",
+    default: "UXnicorp — Web Dev & UX Agency from Argentina",
   },
   description:
     "We design and build websites around the business behind them. Design, code and strategy with a real focus on what your business needs.",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     alternateLocale: ["es_AR"],
     url: "https://www.uxnicorp.com.ar/en",
     siteName: "UXnicorp",
-    title: "UXnicorp — Web Development & UX Agency from Argentina",
+    title: "UXnicorp — Web Dev & UX Agency from Argentina",
     description:
       "Web design and development with purpose. We understand your business before designing. Clear pricing, direct communication, no middlemen.",
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UXnicorp — Web Development & UX Agency from Argentina",
+    title: "UXnicorp — Web Dev & UX Agency from Argentina",
     description:
       "Web design and development with purpose. We understand your business before designing. Clear pricing, direct communication, no middlemen.",
     images: ["/og-image.png"],

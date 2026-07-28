@@ -166,6 +166,31 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/en/casos-reales",
+        destination: "/en/casos",
+        permanent: true,
+      },
+      {
+        source: "/es/como-trabajamos",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/en/como-trabajamos",
+        destination: "/en",
+        permanent: true,
+      },
+      {
+        source: "/es/arquitectura",
+        destination: "/conceptos/arquitectura",
+        permanent: true,
+      },
+      {
+        source: "/en/arquitectura",
+        destination: "/en/conceptos/arquitectura",
+        permanent: true,
+      },
+      {
         source: "/",
         has: [
           {

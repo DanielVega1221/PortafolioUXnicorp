@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "UXnicorp — Web Development & UX Agency in Argentina",
+    title: "UXnicorp — Web Dev & UX Agency in Argentina",
     description:
       "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
     url: "https://www.uxnicorp.com.ar/en",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UXnicorp — Web Development & UX Agency in Argentina",
+    title: "UXnicorp — Web Dev & UX Agency in Argentina",
     description:
       "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
     images: ["/og-image.png"],
