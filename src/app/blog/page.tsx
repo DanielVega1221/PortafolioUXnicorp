@@ -81,6 +81,22 @@ export default function BlogPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <div className="mx-auto max-w-[860px] px-6 py-20 md:px-8 md:py-28">
+          <nav aria-label="Breadcrumb" style={{ marginBottom: "2.5rem" }}>
+            <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0 }}>
+              <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+                  Inicio
+                </TransitionLink>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M4 2.5l4 3.5-4 3.5" stroke="#d1d5db" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </li>
+              <li>
+                <span style={{ fontSize: "0.8rem", color: "#6b7280" }}>Blog</span>
+              </li>
+            </ol>
+          </nav>
+
           <div style={{ marginBottom: "2.5rem" }}>
             <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#F37AA6", marginBottom: "0.75rem" }}>
               Blog
