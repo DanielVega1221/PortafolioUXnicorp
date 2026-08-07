@@ -1,6 +1,8 @@
-import React from "react";
-import { Mail } from "lucide-react";
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import Image from "next/image";
 
 const EMAIL = "uxnicorp@gmail.com";
@@ -35,6 +37,10 @@ interface FooterProps {
 }
 
 export default function Footer({ locale = "es" }: FooterProps) {
+  const pathname = usePathname();
+  const homeHref = locale === "en" ? "/en" : "/";
+  const isHome = pathname === "/" || pathname === "/en";
+
   const t = {
     tagline:
       locale === "en"
@@ -80,21 +86,25 @@ export default function Footer({ locale = "es" }: FooterProps) {
       <div className="mx-auto max-w-[1200px] px-6 md:px-12 lg:px-20">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2.5">
-                  <Image
-                    src="/brand/logo.png"
-                    alt="UXnicorp logo"
-                    width={36}
-                    height={36}
-                    style={{ display: "block", width: "auto", height: "auto" }}
-                  />
+            <Link
+              href={homeHref}
+              onClick={isHome ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined}
+              className="flex items-center gap-2.5"
+            >
+              <Image
+                src="/brand/logo.png"
+                alt="UXnicorp logo"
+                width={36}
+                height={36}
+                style={{ display: "block", width: "auto", height: "auto" }}
+              />
               <span
                 className="text-2xl font-black tracking-[-0.04em] text-gray-900"
                 style={{ letterSpacing: "-0.04em" }}
               >
                 UXNICORP
               </span>
-            </div>
+            </Link>
             <p className="max-w-[240px] text-sm leading-relaxed text-gray-500">
               {t.tagline}
             </p>

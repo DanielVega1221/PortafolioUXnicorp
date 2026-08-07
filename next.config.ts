@@ -147,6 +147,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/es/servicios/landing-pages",
+        destination: "/servicios/landing-page",
+        permanent: true,
+      },
+      {
         source: "/es/landing-pages",
         destination: "/servicios/landing-page",
         permanent: true,

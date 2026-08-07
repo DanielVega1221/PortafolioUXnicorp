@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
 import { BrandMark } from "@/components/hero/BrandMark";
 
@@ -22,11 +23,17 @@ export function HeroNavbar({
   onCloseMenu,
   contactLabel = "Contacto",
 }: HeroNavbarProps) {
+  const pathname = usePathname();
+  const isEn = pathname.startsWith("/en");
+  const homeHref = isEn ? "/en" : "/";
+  const isHome = pathname === "/" || pathname === "/en";
+
   return (
     <div className="mx-auto max-w-[1280px] rounded-[28px] border border-white/60 bg-white/72 shadow-[0_10px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl">
       <nav className="relative z-20 flex items-center justify-between px-5 py-4 md:px-8 md:py-5">
         <TransitionLink
-          href="/"
+          href={homeHref}
+          onClick={isHome ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined}
           className="flex items-center gap-3 font-bold tracking-tight text-gray-900"
         >
           <BrandMark size={26} />

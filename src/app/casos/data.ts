@@ -174,7 +174,7 @@ export const CASOS: Caso[] = [
     bg: "rgba(254,224,214,0.55)",
     imagen: "/works/ElectroPower.webp",
     contexto:
-      "ElectroPower tiene más de 6 años trabajando en electricidad, refrigeración y construcción en Buenos Aires, con proyectos junto a Edenor y Edesur y capacidad para baja, media y alta tensión. Un portfolio enorme de obras reales, sin presencia digital que lo respaldara.",
+      "ElectroPower tiene varios años trabajando en electricidad, refrigeración y construcción en Buenos Aires, con proyectos junto a Edenor y Edesur y capacidad para baja, media y alta tensión. Un portfolio enorme de obras reales, sin presencia digital que lo respaldara.",
     problema:
       "La empresa competía por licitaciones y proyectos industriales donde la primera impresión digital importa. Sin web, cada cotización empezaba explicando quiénes eran. La trayectoria no se veía; la escala del trabajo, tampoco.",
     queAnalizamos:
@@ -193,7 +193,7 @@ export const CASOS: Caso[] = [
     linkSitio: "https://www.electropowerok.com.ar/",
     en: {
       contexto:
-        "ElectroPower has over 6 years of experience in electrical work, refrigeration, and construction across Buenos Aires, with projects alongside Edenor and Edesur and capacity for low, medium, and high voltage. A massive portfolio of real projects, with no digital presence to back it up.",
+        "ElectroPower has several years of experience in electrical work, refrigeration, and construction across Buenos Aires, with projects alongside Edenor and Edesur and capacity for low, medium, and high voltage. A massive portfolio of real projects, with no digital presence to back it up.",
       tipo: "Corporate Website",
       industria: "Electrical / Construction",
       problema:
