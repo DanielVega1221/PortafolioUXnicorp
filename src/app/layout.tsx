@@ -75,7 +75,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    alternateLocale: ["en_US"],
     url: "https://www.uxnicorp.com.ar",
     siteName: "UXnicorp",
     title: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
@@ -152,22 +151,21 @@ gtag('set', 'url_passthrough', true);
                 address: {
                   "@type": "PostalAddress",
                   addressCountry: "AR",
-                  addressRegion: "Buenos Aires",
                 },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer service",
-        availableLanguage: ["Spanish", "English"],
-        email: "uxnicorp@gmail.com",
-        telephone: "+54-9-3834-368748",
-      },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  contactType: "customer service",
+                  availableLanguage: ["Spanish", "English"],
+                  email: "uxnicorp@gmail.com",
+                  telephone: "+54-9-3834-368748",
+                },
                 sameAs: [
                   "https://www.instagram.com/uxnicorp/",
                   "https://www.linkedin.com/company/uxnicorp",
                 ],
-                serviceArea: {
-                  "@type": "Place",
-                  name: "Argentina, América Latina, España",
+                areaServed: {
+                  "@type": "Country",
+                  "name": "Argentina",
                 },
                 hasOfferCatalog: {
                   "@type": "OfferCatalog",

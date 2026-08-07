@@ -149,6 +149,7 @@ a {
   will-change: transform;
 }
 
+@media (prefers-reduced-motion: no-preference) {
 @keyframes heroBlobFloatA {
   0%,
   100% {
@@ -202,5 +203,86 @@ a {
 
   to {
     transform: rotate(-360deg);
+  }
+}
+}
+
+.caso-mockup {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.caso-mockup-lid {
+  background: #2d2d2d;
+  border-radius: 0.75rem 0.75rem 0.3rem 0.3rem;
+  padding: 0.4rem;
+  width: 100%;
+}
+
+.caso-mockup-bezel {
+  border-radius: 0.35rem;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.caso-mockup-screen {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+}
+
+.caso-mockup-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caso-mockup-base {
+  width: 50%;
+  height: 8px;
+  background: #3a3a3a;
+  border-radius: 0 0 0.5rem 0.5rem;
+  position: relative;
+}
+
+.caso-mockup-notch {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+}
+
+@media (max-width: 767px) {
+  .caso-card {
+    flex-direction: column !important;
+  }
+  .caso-mockup {
+    width: 100%;
+    padding: 0.8rem 0.8rem 0;
+  }
+  .caso-mockup-lid {
+    border-radius: 0.5rem 0.5rem 0.2rem 0.2rem;
+    padding: 0.3rem;
+  }
+  .caso-mockup-base {
+    height: 5px;
+  }
+  .caso-mockup-notch {
+    width: 24px;
+    height: 2px;
+    top: 1px;
+  }
+  .caso-card-content {
+    grid-template-columns: 1fr;
   }
 }

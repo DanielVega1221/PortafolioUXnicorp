@@ -1,7 +1,9 @@
 ﻿export type CasoTranslation = {
   tipo?: string;
   industria?: string;
+  contexto?: string;
   problema: string;
+  queAnalizamos?: string;
   queHicimos: string[];
   resultado: string;
 };
@@ -11,7 +13,6 @@ export type Caso = {
   cliente: string;
   tipo: string;
   industria: string;
-  tagColor: string;
   acento: string;
   bg: string;
   imagen?: string;
@@ -32,7 +33,6 @@ export const CASOS: Caso[] = [
     cliente: "SmartHome Solutions",
     tipo: "Landing Page",
     industria: "Tecnología / Hogar",
-    tagColor: "#3a7cc4",
     acento: "#3a7cc4",
     bg: "rgba(202,222,249,0.55)",
     imagen: "/works/SmartHome.png",
@@ -55,9 +55,13 @@ export const CASOS: Caso[] = [
     stack: ["React", "Next.js", "SEO Local", "WhatsApp API"],
     linkSitio: "https://smarth-home.vercel.app/",
     en: {
+      contexto:
+        "SmartHome approached us with an Instagram full of real projects but no website. Their potential clients searched on Google and couldn't find them. Inquiries kept coming, but there was nothing backing the brand outside of social media.",
       industria: "Technology / Smart Home",
       problema:
-        "The business was real, the reputation too — but without a website, every new client started from zero: Who are they? What exactly do they do? Are they reliable? All of that had to be answered manually over WhatsApp, for every single lead.",
+        "The business was real, the reputation too, but without a website, every new client started from zero: Who are they? What exactly do they do? Are they reliable? All of that had to be answered manually over WhatsApp, for every single lead.",
+      queAnalizamos:
+        "We analyzed their local search positioning: there was real search volume for 'automatic gates Santiago del Estero' and 'home automation' but zero competition with a well-built website. A clear opportunity.",
       queHicimos: [
         "Full website covering automatic gates, home security, and smart home automation",
         "Product packages with clear descriptions so clients understand without needing to ask",
@@ -66,7 +70,7 @@ export const CASOS: Caso[] = [
         "Local SEO optimization for Santiago del Estero, Argentina",
       ],
       resultado:
-        "They went from 'the Instagram guys' to having a professional presence that backs the brand 24/7. Inquiries now arrive with context — the client already browsed the packages, read the testimonials, and knows exactly what they want.",
+        "They went from 'the Instagram guys' to having a professional presence that backs the brand 24/7. Inquiries now arrive with context: the client already browsed the packages, read the testimonials, and knows exactly what they want.",
     },
   },
   {
@@ -74,7 +78,6 @@ export const CASOS: Caso[] = [
     cliente: "Comercial Río Hondo",
     tipo: "Web Corporativa",
     industria: "Construcción / Áridos",
-    tagColor: "#8b6914",
     acento: "#a07820",
     bg: "rgba(254,240,190,0.55)",
     imagen: "/works/ComercialRioHondo.png",
@@ -84,7 +87,7 @@ export const CASOS: Caso[] = [
     problema:
       "El rubro construcción tiene ciclos de compra largos: alguien busca proveedores semanas antes de arrancar la obra. Sin presencia online, Comercial Río Hondo dependía del boca a boca en un radio muy limitado.",
     queAnalizamos:
-      "El cliente real no es el particular que necesita arena — es el jefe de obra, el ingeniero, la constructora. Esa persona busca en Google, compara, y necesita saber disponibilidad, tipos de material y cómo contactar. Diseñamos para eso.",
+      "El cliente real no es el particular que necesita arena: es el jefe de obra, el ingeniero, la constructora. Esa persona busca en Google, compara, y necesita saber disponibilidad, tipos de material y cómo contactar. Diseñamos para eso.",
     queHicimos: [
       "Sitio institucional con identidad visual sólida y seria",
       "Ficha técnica de cada producto (Piedra 19/38, Base 0/32, Arena 0/6, etc.) con aplicaciones reales",
@@ -97,10 +100,14 @@ export const CASOS: Caso[] = [
     stack: ["Next.js", "SEO Local", "WhatsApp API"],
     linkSitio: "https://www.comercialriohondo.com.ar/",
     en: {
+      contexto:
+        "A company with over 10 years in the aggregates and crushed stone market. They supply civil works, roads, and infrastructure projects across Santiago del Estero. No website meant no way for engineers or construction firms to find them online.",
       tipo: "Corporate Website",
       industria: "Construction / Materials",
       problema:
         "Construction has long buying cycles: project managers search for suppliers weeks before breaking ground. Without an online presence, Comercial Río Hondo relied entirely on word-of-mouth within a very limited radius.",
+      queAnalizamos:
+        "The real client isn't the individual looking for sand: it's the project manager, the engineer, the contractor. These decision-makers search on Google, compare suppliers, and need to know material availability, types, and how to get in touch. We designed for that.",
       queHicimos: [
         "Corporate website with a solid, professional visual identity",
         "Technical spec sheet for each product (Crushed Stone, Base Course, Sand, etc.) with real-world applications",
@@ -117,14 +124,13 @@ export const CASOS: Caso[] = [
     cliente: "Glam at Nails",
     tipo: "Landing Page",
     industria: "Belleza / Estética",
-    tagColor: "#e0608a",
     acento: "#e0608a",
     bg: "rgba(253,232,242,0.65)",
     imagen: "/works/GlamAtNails.png",
     contexto:
-      "Ailín tiene un homestudio en Boedo con más de 300 clientas y años de trabajo real detrás. Sus diseños circulaban en Instagram, las recomendaciones llegaban solas — pero todo dependía de un solo canal y de responder consultas una por una.",
+      "Ailín tiene un homestudio en Boedo con más de 300 clientas y años de trabajo real detrás. Sus diseños circulaban en Instagram, las recomendaciones llegaban solas, pero todo dependía de un solo canal y de responder consultas una por una.",
     problema:
-      "Cada consulta llegaba desde cero por WhatsApp: ¿qué servicios hacés? ¿cuánto sale? ¿en qué zona estás? Preguntas que se respondían a mano, sin estructura. El tiempo más valioso de Ailín —el de hacer uñas— lo perdía respondiendo siempre lo mismo.",
+      "Cada consulta llegaba desde cero por WhatsApp: ¿qué servicios hacés? ¿cuánto sale? ¿en qué zona estás? Preguntas que se respondían a mano, sin estructura. El tiempo más valioso de Ailín, el de hacer uñas, lo perdía respondiendo siempre lo mismo.",
     queAnalizamos:
       "El problema no era falta de clientes, era falta de filtro previo. Quien llegara al sitio tenía que entender el servicio, ver trabajos reales y llegar a WhatsApp con la consulta ya formada. Así el turno empieza antes de que empiece.",
     queHicimos: [
@@ -140,9 +146,13 @@ export const CASOS: Caso[] = [
     stack: ["React", "Bootstrap", "SEO Local", "WhatsApp API"],
     linkSitio: "https://glamatnails.com.ar/",
     en: {
+      contexto:
+        "Ailín runs a home studio in Boedo with over 300 clients and years of real experience behind her. Her designs circulated on Instagram and recommendations came naturally, but everything depended on a single channel and answering inquiries one by one.",
       industria: "Beauty / Nail Studio",
       problema:
-        "Every inquiry arrived from scratch on WhatsApp: What services do you offer? How much does it cost? Where are you located? Questions answered by hand, over and over. The most valuable time — actually doing nails — was being spent replying to the same messages.",
+        "Every inquiry arrived from scratch on WhatsApp: What services do you offer? How much does it cost? Where are you located? Questions answered by hand, over and over. The most valuable time, actually doing nails, was being spent replying to the same messages.",
+      queAnalizamos:
+        "The problem wasn't a lack of clients: it was the lack of a pre-filter. Anyone landing on the site had to understand the service, see real work, and arrive at WhatsApp with a formed inquiry. That way the appointment starts before it starts.",
       queHicimos: [
         "Real work gallery as the centerpiece: nail extensions, overlay, gel polish, custom nail art",
         "Service menu with estimated duration and recommendations by nail type",
@@ -152,7 +162,7 @@ export const CASOS: Caso[] = [
         "Local SEO optimized for nail searches in Boedo and Buenos Aires",
       ],
       resultado:
-        "Inquiries now arrive with context. The client already browsed the work, chose a service, and read the testimonials. Ailín closes the appointment — the page does the introduction.",
+        "Inquiries now arrive with context. The client already browsed the work, chose a service, and read the testimonials. Ailín closes the appointment: the page does the introduction.",
     },
   },
   {
@@ -160,16 +170,15 @@ export const CASOS: Caso[] = [
     cliente: "ElectroPower",
     tipo: "Web Corporativa",
     industria: "Electricidad / Construcción",
-    tagColor: "#c47a3a",
     acento: "#c47a3a",
     bg: "rgba(254,224,214,0.55)",
     imagen: "/works/ElectroPower.webp",
     contexto:
-      "ElectroPower tiene más de 6 años trabajando en electricidad, refrigeración y construcción en Buenos Aires — con proyectos junto a Edenor y Edesur y capacidad para baja, media y alta tensión. Un portfolio enorme de obras reales, sin presencia digital que lo respaldara.",
+      "ElectroPower tiene más de 6 años trabajando en electricidad, refrigeración y construcción en Buenos Aires, con proyectos junto a Edenor y Edesur y capacidad para baja, media y alta tensión. Un portfolio enorme de obras reales, sin presencia digital que lo respaldara.",
     problema:
       "La empresa competía por licitaciones y proyectos industriales donde la primera impresión digital importa. Sin web, cada cotización empezaba explicando quiénes eran. La trayectoria no se veía; la escala del trabajo, tampoco.",
     queAnalizamos:
-      "El cliente de ElectroPower no busca un electricista de guardia — busca un socio técnico para un proyecto. Alguien que evalúa experiencia, certificaciones y capacidad operativa. Había que mostrar eso de forma clara y creíble para hogares, comercios e industrias.",
+      "El cliente de ElectroPower no busca un electricista de guardia: busca un socio técnico para un proyecto. Alguien que evalúa experiencia, certificaciones y capacidad operativa. Había que mostrar eso de forma clara y creíble para hogares, comercios e industrias.",
     queHicimos: [
       "Sitio corporativo con identidad visual que transmite solidez técnica y confianza profesional",
       "Galería de obras: industriales, residenciales, tableros eléctricos, instalaciones en altura",
@@ -179,14 +188,18 @@ export const CASOS: Caso[] = [
       "Sección de atención de urgencias 24hs destacada visualmente",
     ],
     resultado:
-      "La empresa tiene ahora una presencia que respalda la trayectoria. El formulario segmenta el tipo de proyecto desde el primer contacto — industria, comercio, residencial. Menos tiempo explicando quiénes son, más tiempo cotizando.",
+      "La empresa tiene ahora una presencia que respalda la trayectoria. El formulario segmenta el tipo de proyecto desde el primer contacto: industria, comercio, residencial. Menos tiempo explicando quiénes son, más tiempo cotizando.",
     stack: ["React", "Node.js", "Maps API", "SEO Local"],
     linkSitio: "https://www.electropowerok.com.ar/",
     en: {
+      contexto:
+        "ElectroPower has over 6 years of experience in electrical work, refrigeration, and construction across Buenos Aires, with projects alongside Edenor and Edesur and capacity for low, medium, and high voltage. A massive portfolio of real projects, with no digital presence to back it up.",
       tipo: "Corporate Website",
       industria: "Electrical / Construction",
       problema:
-        "The company competed for tenders and industrial contracts where the digital first impression matters. Without a website, every quote started with explaining who they were. Their track record was invisible — and so was the scale of their work.",
+        "The company competed for tenders and industrial contracts where the digital first impression matters. Without a website, every quote started with explaining who they were. Their track record was invisible, and so was the scale of their work.",
+      queAnalizamos:
+        "ElectroPower's client isn't looking for an on-call electrician: they're looking for a technical partner for a project. Someone evaluating experience, certifications, and operational capacity. We needed to present that clearly and credibly for residential, commercial, and industrial clients.",
       queHicimos: [
         "Corporate website with a visual identity that conveys technical credibility and professional trust",
         "Project gallery: industrial facilities, residential, electrical panels, high-altitude installations",
@@ -196,7 +209,7 @@ export const CASOS: Caso[] = [
         "Visually highlighted 24/7 emergency response section",
       ],
       resultado:
-        "The company now has a presence that backs their track record. The quote form segments project type from first contact — industrial, commercial, residential. Less time explaining who they are, more time quoting.",
+        "The company now has a presence that backs their track record. The quote form segments project type from first contact: industrial, commercial, residential. Less time explaining who they are, more time quoting.",
     },
   },
   {
@@ -204,16 +217,15 @@ export const CASOS: Caso[] = [
     cliente: "ComunidadAhorro",
     tipo: "Sistema Web",
     industria: "Finanzas / Planes de Ahorro",
-    tagColor: "#9040b0",
     acento: "#9040b0",
     bg: "rgba(224,166,216,0.45)",
     imagen: "/works/ComunidadAhorro.webp",
     contexto:
-      "Una empresa que comercializa planes de ahorro y gestiona préstamos en cuotas. Vendedores en campo, cobradores, administración central — todos coordinando por WhatsApp y planillas de Excel. Crecieron y el sistema improvisado ya no daba.",
+      "Una empresa que comercializa planes de ahorro y gestiona préstamos en cuotas. Vendedores en campo, cobradores, administración central, todos coordinando por WhatsApp y planillas de Excel. Crecieron y el sistema improvisado ya no daba.",
     problema:
       "Sin sistema centralizado, cada pago de cuota era una operación manual. Saber qué planes estaban activos, cuánto debía cada cliente, cuáles estaban en mora, o qué vendedor había cerrado qué operación requería revisar decenas de archivos distintos. Escalar así era imposible.",
     queAnalizamos:
-      "Antes de diseñar una pantalla, mapeamos todos los flujos reales: cómo se asignaba un plan, cómo se registraba un pago, cómo se detectaba una mora, cómo gerencia veía el estado de la cartera. El sistema tenía que calzar con la forma en que trabajaba el equipo — no al revés.",
+      "Antes de diseñar una pantalla, mapeamos todos los flujos reales: cómo se asignaba un plan, cómo se registraba un pago, cómo se detectaba una mora, cómo gerencia veía el estado de la cartera. El sistema tenía que calzar con la forma en que trabajaba el equipo, no al revés.",
     queHicimos: [
       "Dashboard central con estado de cartera en tiempo real: planes activos, cuotas cobradas, alertas de morosidad",
       "Módulo completo de planes de ahorro: alta de plan, cronograma de cuotas, vencimientos y recordatorios automáticos",
@@ -223,13 +235,17 @@ export const CASOS: Caso[] = [
       "Sistema de roles y permisos diferenciados: administración, vendedores y cobranza operan en vistas distintas",
     ],
     resultado:
-      "El equipo abandonó las planillas. La administración dejó de depender de llamadas para saber el estado de la cartera. Cada operación — desde la venta hasta el último pago — queda registrada y trazable en un solo lugar.",
+      "El equipo abandonó las planillas. La administración dejó de depender de llamadas para saber el estado de la cartera. Cada operación, desde la venta hasta el último pago, queda registrada y trazable en un solo lugar.",
     stack: ["React", "MongoDB", "Express", "AWS"],
     en: {
+      contexto:
+        "A company that sells savings plans and manages installment-based loans. Field salespeople, collections agents, central administration, all coordinating through WhatsApp and Excel spreadsheets. They grew and the improvised system couldn't keep up.",
       tipo: "Web System",
       industria: "Finance / Savings Plans",
       problema:
         "Without a centralized system, every installment payment was a manual operation. Knowing which plans were active, how much each client owed, which accounts were overdue, or which salesperson closed what deal meant going through dozens of different files. Scaling like that was impossible.",
+      queAnalizamos:
+        "Before designing a single screen, we mapped every real workflow: how a plan was assigned, how a payment was recorded, how overdue accounts were flagged, how management viewed portfolio status. The system had to fit how the team actually worked, not the other way around.",
       queHicimos: [
         "Central dashboard with real-time portfolio view: active plans, collected installments, overdue alerts",
         "Full savings plan module: plan creation, payment schedules, due dates, and automatic reminders",
@@ -239,7 +255,7 @@ export const CASOS: Caso[] = [
         "Role and permission system: admin, sales, and collections teams each see their own view",
       ],
       resultado:
-        "The team abandoned spreadsheets entirely. Management stopped relying on phone calls to know portfolio status. Every operation — from sale to final payment — is logged and traceable in one place.",
+        "The team abandoned spreadsheets entirely. Management stopped relying on phone calls to know portfolio status. Every operation, from sale to final payment, is logged and traceable in one place.",
     },
   },
   {
@@ -247,14 +263,13 @@ export const CASOS: Caso[] = [
     cliente: "Fintech MVP",
     tipo: "Plataforma Web",
     industria: "Fintech / Inversiones",
-    tagColor: "#1a6b52",
     acento: "#1a6b52",
     bg: "rgba(180,230,210,0.45)",
     imagen: "/works/fintech-mvp.webp",
     contexto:
       "Una startup de inversiones con idea clara y equipo técnico propio, pero sin producto para mostrar. Necesitaban un MVP funcional para validar con usuarios reales y presentar a inversores.",
     problema:
-      "Tenían el modelo de negocio, tenían el pitch deck, pero no tenían nada que demostrar. En fintech, la confianza se construye con producto — no con slides.",
+      "Tenían el modelo de negocio, tenían el pitch deck, pero no tenían nada que demostrar. En fintech, la confianza se construye con producto, no con slides.",
     queAnalizamos:
       "Un MVP de fintech no puede verse como prototipo. Tiene que transmitir seguridad desde el primer click. Trabajamos los flujos de autenticación, visualización de datos y simuladores pensando en el usuario que está poniendo plata real.",
     queHicimos: [
@@ -265,13 +280,17 @@ export const CASOS: Caso[] = [
       "Historial de transacciones con filtros y exportación",
     ],
     resultado:
-      "El MVP les permitió validar con usuarios reales y tener algo concreto para mostrar en rondas de inversión. No era solo un demo — era un producto funcional desde el día uno.",
+      "El MVP les permitió validar con usuarios reales y tener algo concreto para mostrar en rondas de inversión. No era solo un demo: era un producto funcional desde el día uno.",
     stack: ["TypeScript", "PostgreSQL", "Docker", "Redis"],
     en: {
+      contexto:
+        "An investment startup with a clear idea and its own technical team, but no product to show. They needed a functional MVP to validate with real users and present to investors.",
       tipo: "Web Platform",
       industria: "Fintech / Investments",
       problema:
-        "They had the business model, the pitch deck, but nothing to demonstrate. In fintech, trust is built with product — not slides.",
+        "They had the business model, the pitch deck, but nothing to demonstrate. In fintech, trust is built with product, not slides.",
+      queAnalizamos:
+        "A fintech MVP can't look like a prototype. It has to convey security from the first click. We worked through the authentication flows, data visualization, and simulators with the mindset of a user putting in real money.",
       queHicimos: [
         "Persuasive landing page with a clear value proposition",
         "Dashboard with secure authentication (OAuth 2.0)",
@@ -280,7 +299,7 @@ export const CASOS: Caso[] = [
         "Transaction history with filters and CSV export",
       ],
       resultado:
-        "The MVP let them validate with real users and have something concrete for investment rounds. It wasn't just a demo — it was a functional product from day one.",
+        "The MVP let them validate with real users and have something concrete for investment rounds. It wasn't just a demo: it was a functional product from day one.",
     },
   },
 ];
@@ -295,7 +314,9 @@ export function getCasoLocalized(
 ): {
   tipo: string;
   industria: string;
+  contexto: string;
   problema: string;
+  queAnalizamos: string;
   queHicimos: string[];
   resultado: string;
 } {
@@ -303,7 +324,9 @@ export function getCasoLocalized(
     return {
       tipo: caso.en.tipo ?? caso.tipo,
       industria: caso.en.industria ?? caso.industria,
+      contexto: caso.en.contexto ?? caso.contexto,
       problema: caso.en.problema,
+      queAnalizamos: caso.en.queAnalizamos ?? caso.queAnalizamos,
       queHicimos: caso.en.queHicimos,
       resultado: caso.en.resultado,
     };
@@ -311,7 +334,9 @@ export function getCasoLocalized(
   return {
     tipo: caso.tipo,
     industria: caso.industria,
+    contexto: caso.contexto,
     problema: caso.problema,
+    queAnalizamos: caso.queAnalizamos,
     queHicimos: caso.queHicimos,
     resultado: caso.resultado,
   };

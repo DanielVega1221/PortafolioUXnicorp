@@ -1,10 +1,11 @@
-﻿import React from "react";
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Script from "next/script";
-import Image from "next/image";
+import TransitionLink from "@/components/TransitionLink";
 import { CASOS, getCasoLocalized } from "./data";
 import CasesPageHeader from "@/components/cases/CasesPageHeader";
 import CasesFooterCta from "@/components/cases/CasesFooterCta";
+import CaseMockup from "@/components/cases/CaseMockup";
+import CheckIcon from "@/components/cases/CheckIcon";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Proyectos UXnicorp — Desarrollo web Argentina",
+        alt: "Proyectos UXnicorp: Desarrollo web Argentina",
       },
     ],
   },
@@ -56,57 +57,11 @@ export const metadata: Metadata = {
   },
 };
 
-function CheckIcon({ color }: { color: string }) {
-  return (
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0, marginTop: "0.15rem" }}>
-      <circle cx="7" cy="7" r="6" fill={color} fillOpacity="0.15" />
-      <path d="M4.5 7l1.75 1.75L9.5 5.5" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function ImageZone({ src, alt }: { src?: string; alt: string }) {
-  if (src) {
-    return (
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        style={{ objectFit: "cover", objectPosition: "center top" }}
-      />
-    );
-  }
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        background: "rgba(255,255,255,0.35)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "0.5rem",
-        color: "rgba(0,0,0,0.18)",
-      }}
-    >
-      <svg width="28" height="28" viewBox="0 0 30 30" fill="none">
-        <rect x="2" y="6" width="26" height="19" rx="3.5" stroke="currentColor" strokeWidth="1.4" />
-        <circle cx="15" cy="15.5" r="5" stroke="currentColor" strokeWidth="1.4" />
-        <path d="M10 6l1.5-3h7L20 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        <circle cx="24" cy="10" r="1.5" fill="currentColor" />
-      </svg>
-      <span style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.06em" }}>Screenshot del proyecto</span>
-    </div>
-  );
-}
-
 export default function CasosPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Casos de éxito — UXnicorp",
+    name: "Casos de éxito: UXnicorp",
     description: "Proyectos reales de desarrollo web y UX: landing pages, sistemas ERP, plataformas web y sitios corporativos en Argentina.",
     url: "https://www.uxnicorp.com.ar/casos",
     numberOfItems: CASOS.length,
@@ -117,7 +72,7 @@ export default function CasosPage() {
         "@type": "CreativeWork",
         name: caso.cliente,
         description: caso.problema,
-        url: caso.linkSitio ?? `https://www.uxnicorp.com.ar/casos#${caso.slug}`,
+          url: `https://www.uxnicorp.com.ar/casos/${caso.slug}`,
       },
     })),
   };
@@ -140,11 +95,13 @@ export default function CasosPage() {
         <CasesPageHeader locale="es" />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "3rem" }}>
-          {CASOS.map((caso) => {
+          {CASOS.map((caso, i) => {
             const t = getCasoLocalized(caso, "es");
             return (
-            <div
+            <TransitionLink
               key={caso.slug}
+              href={`/casos/${caso.slug}`}
+              className="caso-card"
               style={{
                 borderRadius: "1.5rem",
                 background: caso.bg,
@@ -153,28 +110,28 @@ export default function CasosPage() {
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "row",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "inherit",
               }}
             >
-              <div style={{ width: "380px", flexShrink: 0, alignSelf: "stretch", minHeight: "280px", position: "relative" }}>
-                <ImageZone src={caso.imagen} alt={caso.cliente} />
-              </div>
+              <CaseMockup src={caso.imagen} alt={caso.cliente} priority={i === 0} />
 
               <div
+                className="caso-card-content"
                 style={{
                   padding: "1.75rem 2rem",
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
                   gap: "1.75rem",
                   alignItems: "start",
                   flex: 1,
-                  borderLeft: "1px solid rgba(255,255,255,0.5)",
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                   <div style={{ display: "flex", gap: "0.45rem", flexWrap: "wrap" }}>
                     <span
                       style={{
-                        fontSize: "0.6rem",
+                        fontSize: "0.69rem",
                         fontWeight: 700,
                         letterSpacing: "0.16em",
                         textTransform: "uppercase",
@@ -188,7 +145,7 @@ export default function CasosPage() {
                     </span>
                     <span
                       style={{
-                        fontSize: "0.6rem",
+                        fontSize: "0.69rem",
                         fontWeight: 700,
                         letterSpacing: "0.16em",
                         textTransform: "uppercase",
@@ -216,33 +173,11 @@ export default function CasosPage() {
                   <p style={{ fontSize: "0.84rem", lineHeight: 1.65, color: "#4a5568", margin: 0 }}>
                     {t.problema}
                   </p>
-                  {caso.linkSitio && (
-                    <a
-                      href={caso.linkSitio}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.3rem",
-                        fontSize: "0.78rem",
-                        fontWeight: 700,
-                        color: caso.acento,
-                        textDecoration: "none",
-                        marginTop: "0.25rem",
-                      }}
-                    >
-                      Ver sitio
-                      <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                        <path d="M2 6h8M6.5 2.5l3.5 3.5-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </a>
-                  )}
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                   <div>
-                    <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", margin: "0 0 0.75rem 0" }}>
+                    <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", margin: "0 0 0.75rem 0" }}>
                       Qué hicimos
                     </p>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -272,7 +207,7 @@ export default function CasosPage() {
                       border: "1px solid rgba(255,255,255,0.8)",
                     }}
                   >
-                    <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: caso.acento, margin: "0 0 0.45rem 0" }}>
+                    <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: caso.acento, margin: "0 0 0.45rem 0" }}>
                       Resultado
                     </p>
                     <p style={{ fontSize: "0.875rem", fontWeight: 600, lineHeight: 1.6, color: "#111", margin: 0 }}>
@@ -281,7 +216,7 @@ export default function CasosPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </TransitionLink>
             );
           })}
         </div>

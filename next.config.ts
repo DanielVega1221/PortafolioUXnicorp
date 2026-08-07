@@ -32,6 +32,7 @@ const devCsp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
   async headers() {
     const contentSecurityPolicy = process.env.NODE_ENV === "development" ? devCsp : prodCsp;
@@ -188,6 +189,11 @@ const nextConfig: NextConfig = {
       {
         source: "/en/arquitectura",
         destination: "/en/conceptos/arquitectura",
+        permanent: true,
+      },
+      {
+        source: "/es/:path*",
+        destination: "/:path*",
         permanent: true,
       },
       {
