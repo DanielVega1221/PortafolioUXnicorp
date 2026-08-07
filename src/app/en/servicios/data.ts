@@ -82,7 +82,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     nombre: "E-commerce",
     tagline: "Your own store. No third-party commissions.",
     precioUSD: "$900 – $1,500 USD",
-    precioARS: "$600,000 – $1,000,000 ARS",
+    precioARS: "$800,000 – $1,400,000 ARS",
     tiempo: "6 – 10 weeks",
     cuotas: "2 or 3 installments",
     descripcion:
@@ -141,7 +141,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     nombre: "System / App",
     tagline: "Custom software for real problems.",
     precioUSD: "from $1,000 USD",
-    precioARS: "from $1,200,000 ARS",
+    precioARS: "from $1,500,000 ARS",
     tiempo: "8 – 16 weeks",
     cuotas: "up to 6 installments",
     descripcion:

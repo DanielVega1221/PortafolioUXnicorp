@@ -6,6 +6,8 @@ import AnimateIn from "@/components/AnimateIn";
 import HomeIntro from "@/components/HomeIntro";
 import Footer from "@/components/Footer";
 import LazyUXScoreSection from "@/components/LazyUXScoreSection";
+import TransitionLink from "@/components/TransitionLink";
+import { BLOG_POSTS } from "@/app/blog/data";
 
 const CasosSectionEN = dynamic(() => import("@/components/en/CasosSectionEN"));
 const ConceptosSectionEN = dynamic(() => import("@/components/en/ConceptosSectionEN"));
@@ -18,6 +20,15 @@ const ContactoSectionEN = dynamic(() => import("@/components/en/ContactoSectionE
 export const metadata: Metadata = {
   description:
     "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
+  keywords: [
+    "web development agency argentina",
+    "web design argentina",
+    "custom web development argentina",
+    "ux ui agency argentina",
+    "landing page development argentina",
+    "web development outsourcing argentina",
+    "UXnicorp",
+  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en",
     languages: {
@@ -215,6 +226,59 @@ export default function EnHomePage() {
       <ServiciosSectionEN />
       <AnimateIn><FAQSectionEN /></AnimateIn>
       <AnimateIn><ContactoSectionEN /></AnimateIn>
+      <AnimateIn>
+        <section className="mx-auto max-w-[1220px] px-6 md:px-8" style={{ paddingBottom: "3rem" }}>
+          <div
+            style={{
+              borderRadius: "1.5rem",
+              padding: "2.5rem 2.75rem",
+              background: "linear-gradient(135deg, rgba(243,122,166,0.08) 0%, rgba(202,222,249,0.12) 100%)",
+              border: "1px solid rgba(0,0,0,0.05)",
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "1.5rem",
+            }}
+          >
+            <div>
+              <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#F37AA6", marginBottom: "0.5rem" }}>
+                Blog
+              </p>
+              <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#111", margin: "0 0 0.35rem 0", letterSpacing: "-0.03em" }}>
+                {BLOG_POSTS.length > 0 ? "Latest from the blog" : "Web development, no fluff"}
+              </h2>
+              <p style={{ fontSize: "0.9rem", lineHeight: 1.6, color: "#4a5568", maxWidth: "440px", margin: 0 }}>
+                {BLOG_POSTS.length > 0
+                  ? `Articles with real data from projects. ${BLOG_POSTS.length} posts and counting.`
+                  : "Coming soon: articles on real pricing, honest SEO, and technical decisions backed by actual project data."}
+              </p>
+            </div>
+            <TransitionLink
+              href="/blog"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.45rem",
+                padding: "0.7rem 1.5rem",
+                borderRadius: "0.875rem",
+                background: "#111",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: "0.875rem",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
+              }}
+            >
+              {BLOG_POSTS.length > 0 ? "Read posts" : "Visit blog"}
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                <path d="M2 6.5h9M8 3.5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </TransitionLink>
+          </div>
+        </section>
+      </AnimateIn>
     </main>
     <Footer locale="en" />
     </>

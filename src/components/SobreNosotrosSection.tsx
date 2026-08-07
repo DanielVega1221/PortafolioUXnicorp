@@ -158,7 +158,7 @@ export default function SobreNosotrosSection() {
                   width={25}
                   height={28}
                   sizes="28px"
-                  className="h-7 w-auto opacity-70"
+                  style={{ opacity: 0.7 }}
                 />
                 <p className="text-[0.72rem] text-gray-400">
                   ARG · Buenos Aires · Córdoba · Catamarca

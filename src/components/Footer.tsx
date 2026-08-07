@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Mail } from "lucide-react";
@@ -38,8 +39,25 @@ interface FooterProps {
 
 export default function Footer({ locale = "es" }: FooterProps) {
   const pathname = usePathname();
-  const homeHref = locale === "en" ? "/en" : "/";
-  const isHome = pathname === "/" || pathname === "/en";
+  const isBlog = pathname.startsWith("/blog");
+  const isHomePage = pathname === "/" || pathname === "/en";
+
+  const [homeHref, setHomeHref] = useState(() => {
+    if (isBlog && typeof document !== "undefined") {
+      const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
+      if (match?.[1] === "en") return "/en";
+    }
+    return locale === "en" ? "/en" : "/";
+  });
+
+  useEffect(() => {
+    if (isBlog && typeof document !== "undefined") {
+      const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
+      setHomeHref(match?.[1] === "en" ? "/en" : "/");
+      return;
+    }
+    setHomeHref(locale === "en" ? "/en" : "/");
+  }, [pathname, locale, isBlog]);
 
   const t = {
     tagline:
@@ -88,7 +106,7 @@ export default function Footer({ locale = "es" }: FooterProps) {
           <div className="flex flex-col gap-3">
             <Link
               href={homeHref}
-              onClick={isHome ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined}
+              onClick={isHomePage ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined}
               className="flex items-center gap-2.5"
             >
               <Image
@@ -96,7 +114,6 @@ export default function Footer({ locale = "es" }: FooterProps) {
                 alt="UXnicorp logo"
                 width={36}
                 height={36}
-                style={{ display: "block", width: "auto", height: "auto" }}
               />
               <span
                 className="text-2xl font-black tracking-[-0.04em] text-gray-900"

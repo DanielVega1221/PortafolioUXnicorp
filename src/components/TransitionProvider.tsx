@@ -160,7 +160,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
             alt=""
             width={51}
             height={56}
-            style={{ height: "56px", width: "auto" }}
+            priority
           />
           <span
             style={{

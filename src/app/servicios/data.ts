@@ -85,7 +85,7 @@ export const SERVICIOS: Servicio[] = [
     nombre: "E-commerce",
     tagline: "Tienda propia. Sin comisiones de terceros.",
     precioUSD: "$900 – $1.500 USD",
-    precioARS: "$600.000 – $1.000.000 ARS",
+    precioARS: "$800.000 – $1.400.000 ARS",
     tiempo: "6 – 10 semanas",
     cuotas: "2 o 3 cuotas",
     descripcion:
@@ -147,7 +147,7 @@ export const SERVICIOS: Servicio[] = [
     nombre: "Sistema / App",
     tagline: "Software a medida para problemas reales.",
     precioUSD: "desde $1.000 USD",
-    precioARS: "desde $1.200.000 ARS",
+    precioARS: "desde $1.500.000 ARS",
     tiempo: "8 – 16 semanas",
     cuotas: "hasta 6 cuotas",
     descripcion:

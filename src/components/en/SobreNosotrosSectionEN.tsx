@@ -112,7 +112,7 @@ export default function SobreNosotrosSectionEN() {
               </div>
 
               <div className="mt-6 flex items-center justify-between border-t border-black/6 pt-5">
-                <Image src="/brand/logo-sm.png" alt="UXnicorp" width={25} height={28} sizes="28px" className="h-7 w-auto opacity-70" />
+                <Image src="/brand/logo-sm.png" alt="UXnicorp" width={25} height={28} sizes="28px" style={{ opacity: 0.7 }} />
                 <p className="text-[0.72rem] text-gray-400">
                   ARG · Buenos Aires · Córdoba · Catamarca
                 </p>

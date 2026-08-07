@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
 import { BrandMark } from "@/components/hero/BrandMark";
@@ -24,9 +25,26 @@ export function HeroNavbar({
   contactLabel = "Contacto",
 }: HeroNavbarProps) {
   const pathname = usePathname();
+  const isBlog = pathname.startsWith("/blog");
   const isEn = pathname.startsWith("/en");
-  const homeHref = isEn ? "/en" : "/";
   const isHome = pathname === "/" || pathname === "/en";
+
+  const [homeHref, setHomeHref] = useState(() => {
+    if (isBlog && typeof document !== "undefined") {
+      const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
+      if (match?.[1] === "en") return "/en";
+    }
+    return isEn ? "/en" : "/";
+  });
+
+  useEffect(() => {
+    if (isBlog && typeof document !== "undefined") {
+      const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
+      setHomeHref(match?.[1] === "en" ? "/en" : "/");
+      return;
+    }
+    setHomeHref(isEn ? "/en" : "/");
+  }, [pathname, isEn, isBlog]);
 
   return (
     <div className="mx-auto max-w-[1280px] rounded-[28px] border border-white/60 bg-white/72 shadow-[0_10px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl">

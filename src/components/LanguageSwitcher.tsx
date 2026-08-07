@@ -1,4 +1,5 @@
 "use client";
+import { useCallback } from "react";
 import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
 
@@ -39,7 +40,10 @@ const EN_TO_ES: Record<string, string> = {
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
+  const isBlog = pathname.startsWith("/blog");
   const isEnglish = pathname.startsWith("/en");
+
+  if (isBlog) return null;
 
   const esPath = isEnglish
     ? (EN_TO_ES[pathname] ?? (pathname.slice(3) || "/"))
@@ -48,6 +52,12 @@ export default function LanguageSwitcher() {
   const enPath = isEnglish
     ? pathname
     : (ES_TO_EN[pathname] ?? (pathname === "/" ? "/en" : `/en${pathname}`));
+
+  const setLocaleCookie = useCallback((locale: string) => {
+    if (typeof document !== "undefined") {
+      document.cookie = `user-locale=${locale}; path=/; max-age=31536000; SameSite=Lax`;
+    }
+  }, []);
 
   return (
     <div
@@ -68,6 +78,7 @@ export default function LanguageSwitcher() {
     >
       <TransitionLink
         href={esPath}
+        onClick={() => setLocaleCookie("es")}
         style={{
           padding: "0.42rem 0.85rem",
           fontSize: "0.72rem",
@@ -84,6 +95,7 @@ export default function LanguageSwitcher() {
       <div style={{ width: "1px", background: "rgba(0,0,0,0.07)", margin: "0.35rem 0" }} />
       <TransitionLink
         href={enPath}
+        onClick={() => setLocaleCookie("en")}
         style={{
           padding: "0.42rem 0.85rem",
           fontSize: "0.72rem",
