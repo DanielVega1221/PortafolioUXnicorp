@@ -83,7 +83,7 @@ export const CASOS: Caso[] = [
     imagen: "/works/ComercialRioHondo.png",
     featured: true,
     contexto:
-      "Una empresa con más de 10 años en el mercado de áridos y triturados. Proveedores de obras civiles, caminos y vialidad en Santiago del Estero. Sin web, sin forma de que los ingenieros o constructoras los encontraran online.",
+      "Una empresa con varios años en el mercado de áridos y triturados. Proveedores de obras civiles, caminos y vialidad en Santiago del Estero. Sin web, sin forma de que los ingenieros o constructoras los encontraran online.",
     problema:
       "El rubro construcción tiene ciclos de compra largos: alguien busca proveedores semanas antes de arrancar la obra. Sin presencia online, Comercial Río Hondo dependía del boca a boca en un radio muy limitado.",
     queAnalizamos:
