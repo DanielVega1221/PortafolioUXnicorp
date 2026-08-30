@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Concepto Web para Arquitectura",
   description:
-    "Demo de concepto web para estudios de arquitectura: branding, tipografia, paleta de color y estructura UX. Como pensamos antes de diseñar.",
+    "Demo de concepto web para estudios de arquitectura: branding, tipografía, paleta de color y estructura UX. Como pensamos antes de diseñar.",
   keywords: [
     "web para arquitectos argentina",
     "diseño web estudio de arquitectura",

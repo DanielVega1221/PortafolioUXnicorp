@@ -1,4 +1,4 @@
-import React from "react";
+
 import Script from "next/script";
 import TransitionLink from "@/components/TransitionLink";
 import { notFound } from "next/navigation";
@@ -41,9 +41,9 @@ export async function generateMetadata({
       siteName: "UXnicorp",
       images: [
         {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
+          url: "/og-image.jpg",
+          width: 1343,
+          height: 633,
           alt: `${s.nombre} — UXnicorp`,
         },
       ],
@@ -52,7 +52,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: s.seo.title + " | UXnicorp",
       description: s.seo.description,
-      images: ["/og-image.png"],
+      images: ["/og-image.jpg"],
     },
   };
 }
@@ -86,8 +86,8 @@ export default async function EnServicioPage({
   const siblings = SERVICIOS_EN.filter((x) => x.slug !== s.slug);
 
   const priceMatch = s.precioUSD.match(/[\d.]+/g);
-  const lowPrice = priceMatch?.[0]?.replace(/\./g, "") ?? "";
-  const highPrice = priceMatch?.[1]?.replace(/\./g, "") ?? priceMatch?.[0]?.replace(/\./g, "") ?? "";
+  const minPrice = priceMatch?.[0]?.replace(/\./g, "") ?? "";
+  const maxPrice = priceMatch?.[1]?.replace(/\./g, "") ?? priceMatch?.[0]?.replace(/\./g, "") ?? "";
 
   const jsonLd = [
     {
@@ -103,8 +103,8 @@ export default async function EnServicioPage({
         "@type": "Offer",
         priceSpecification: {
           "@type": "PriceSpecification",
-          lowPrice,
-          highPrice,
+          minPrice,
+          maxPrice,
           priceCurrency: "USD",
         },
       },
@@ -138,13 +138,13 @@ export default async function EnServicioPage({
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "2.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <TransitionLink href="/en" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+            <TransitionLink href="/en" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
               Home
             </TransitionLink>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M4 2.5l4 3.5-4 3.5" stroke="#d1d5db" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <TransitionLink href="/en/servicios" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+            <TransitionLink href="/en/servicios" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
               Services
             </TransitionLink>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -193,13 +193,7 @@ export default async function EnServicioPage({
         </div>
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "1.25rem",
-            marginBottom: "2rem",
-          }}
-          className="grid-cols-1 md:grid-cols-2"
+          className="mb-8 grid grid-cols-1 gap-5 lg:grid-cols-2"
         >
           <div
             style={{
@@ -307,7 +301,7 @@ export default async function EnServicioPage({
               <span style={{ padding: "0.35rem 0.9rem", borderRadius: "0.6rem", background: "rgba(138,80,80,0.12)", fontSize: "0.95rem", fontWeight: 800, color: "#8a5050" }}>
                 $20 USD/month
               </span>
-              <span style={{ fontSize: "0.72rem", color: "#9ca3af" }}>approx. $30,000 ARS/month</span>
+              <span style={{ fontSize: "0.72rem", color: "#6b7280" }}>approx. $30,000 ARS/month</span>
               {s.slug === "sistemas-apps" && (
                 <span style={{ fontSize: "0.68rem", color: "#b06060", marginTop: "0.15rem" }}>
                   * Price may vary depending on system scope.
@@ -379,7 +373,7 @@ export default async function EnServicioPage({
               padding: "0.7rem 1.5rem",
               borderRadius: "0.875rem",
               background: "#fff",
-              color: "#e0608a",
+              color: "#974c67",
               fontWeight: 700,
               fontSize: "0.875rem",
               textDecoration: "none",
@@ -419,7 +413,7 @@ export default async function EnServicioPage({
                     <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>{sib.nombre}</span>
                     <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>{sib.tagline}</span>
                   </div>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                     <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </TransitionLink>
@@ -439,7 +433,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Restaurants</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Reservations, digital menu, inventory, billing</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -448,7 +442,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Construction</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Project tracking, budgets, suppliers, documentation</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -457,7 +451,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Clinics</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Appointments, medical records, billing, patients</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -466,7 +460,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Real Estate</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Property listings, contracts, clients, billing</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -475,7 +469,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Gyms</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Memberships, classes, attendance, billing</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -484,7 +478,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Veterinary</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Appointments, pets, vaccines, history</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -493,7 +487,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Auto Repair</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Work orders, vehicles, parts, quotes</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -502,7 +496,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Dental</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Appointments, treatments, x-rays, billing</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -511,7 +505,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Hotels</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Bookings, rooms, check-in/out, billing</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -520,7 +514,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Nutritionists</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Patients, plans, progress, consultations</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -529,7 +523,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Law Firms</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Cases, clients, deadlines, documents</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -538,7 +532,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Hardware Stores</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Stock, suppliers, sales, alerts</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>
@@ -547,7 +541,7 @@ export default async function EnServicioPage({
                   <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111" }}>Car Dealerships</span>
                   <span style={{ fontSize: "0.8rem", color: "#6b7280", marginLeft: "0.75rem" }}>Units, sales, clients, financing</span>
                 </div>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#9ca3af", flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "#6b7280", flexShrink: 0 }}>
                   <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </TransitionLink>

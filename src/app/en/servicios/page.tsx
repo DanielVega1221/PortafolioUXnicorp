@@ -1,4 +1,4 @@
-import React from "react";
+
 import Script from "next/script";
 import type { Metadata } from "next";
 import { SERVICIOS_EN } from "./data";
@@ -9,9 +9,9 @@ import ServiciosExtrasSection from "@/components/services/ServiciosExtrasSection
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Landing Pages, E-commerce & ERP Development",
+  title: "Landing Pages, E-commerce & Management Systems",
   description:
-    "Conversion landing pages, online stores and modular ERP solutions. Clear pricing, real timelines, no outsourcing. See what's included in each service.",
+    "Conversion landing pages, online stores and custom management systems. Clear pricing, real timelines, no outsourcing. See what's included in each service.",
   keywords: [
     "web development services argentina",
     "landing page price",
@@ -34,28 +34,28 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Landing Pages, E-commerce & ERP Development in Argentina | UXnicorp",
+    title: "Landing Pages, E-commerce & Management Systems | UXnicorp",
     description:
-      "Conversion landing pages, online stores and modular ERP solutions. Clear pricing, real timelines, no outsourcing. See what's included in each service.",
+      "Conversion landing pages, online stores and custom management systems. Clear pricing, real timelines, no outsourcing. See what's included in each service.",
     url: "https://www.uxnicorp.com.ar/en/servicios",
     type: "website",
     locale: "en_US",
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp Services — Web Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Landing Pages, E-commerce & ERP Development in Argentina | UXnicorp",
+    title: "Landing Pages, E-commerce & Management Systems | UXnicorp",
     description:
-      "Conversion landing pages, online stores and modular ERP solutions. Clear pricing, real timelines, no outsourcing or hidden fees.",
-    images: ["/og-image.png"],
+      "Conversion landing pages, online stores and custom management systems. Clear pricing, real timelines, no outsourcing or hidden fees.",
+    images: ["/og-image.jpg"],
   },
 };
 

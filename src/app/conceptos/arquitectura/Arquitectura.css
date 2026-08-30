@@ -26,6 +26,7 @@
   /* Acentos UXnicorp */
   --color-rosa-primary: #f37aa6;
   --color-rosa-hover: #e55d8f;
+  --color-rosa-ink: #974c67;
   --color-rosa-light: rgba(243, 122, 166, 0.12);
   --color-rosa-subtle: rgba(243, 122, 166, 0.08);
   
@@ -196,16 +197,14 @@
   right: 5vw;
   font-family: 'Source Code Pro', monospace;
   font-size: 0.875rem;
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
   letter-spacing: 0.15em;
   font-weight: 600;
-  opacity: 0.4;
   transition: all 0.3s ease;
   z-index: 10;
 }
 
 .arquitectura-section:hover .section-number {
-  opacity: 0.8;
   transform: translateX(-4px);
 }
 
@@ -532,7 +531,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
   margin-bottom: 0.75rem;
 }
 
@@ -596,7 +595,7 @@
   font-family: 'Source Code Pro', monospace;
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
   padding-top: 0.2em;
   letter-spacing: 0.05em;
   flex-shrink: 0;
@@ -740,7 +739,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
   display: block;
   margin-bottom: 0.25rem;
 }
@@ -760,7 +759,6 @@
   line-height: 1.4;
   color: var(--color-negro-soft);
   margin: 0;
-  opacity: 0.6;
 }
 
 .insight-body {
@@ -862,7 +860,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
   padding-top: 0.35rem;
 }
 
@@ -1392,7 +1390,7 @@
 .beneficio-num {
   font-family: 'Source Code Pro', monospace;
   font-size: 0.75rem;
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
   font-weight: 600;
   letter-spacing: 0.1em;
   padding-top: 0.3em;
@@ -1576,7 +1574,7 @@
 .btn-arq-secondary {
   background: transparent;
   border-color: var(--color-rosa-primary);
-  color: var(--color-rosa-primary);
+  color: var(--color-rosa-ink);
 }
 
 .btn-arq-secondary:hover {

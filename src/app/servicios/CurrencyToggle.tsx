@@ -20,7 +20,6 @@ export function CurrencyToggle() {
         cursor: "pointer",
         gap: 0,
       }}
-      aria-label="Cambiar moneda"
     >
       {(["USD", "ARS"] as const).map((opt) => {
         const active = currency === opt;
@@ -36,8 +35,8 @@ export function CurrencyToggle() {
               fontSize: "0.78rem",
               fontWeight: 700,
               transition: "background 0.18s, color 0.18s",
-              background: active ? "#F37AA6" : "transparent",
-              color: active ? "#fff" : "#9ca3af",
+              background: active ? "#E0608A" : "transparent",
+              color: active ? "#1a1a1a" : "#6b7280",
             }}
           >
             {opt === "USD" ? "🌎 Internacional" : "🇦🇷 Argentina"}

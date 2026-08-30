@@ -317,19 +317,19 @@ export default function GastronomiaEN() {
 
         <div className="marea-mosaic" aria-hidden="true">
           <div className="mosaic-item mosaic-tall" data-label="CAFÉ">
-            <Image src={espressoImg} alt="Espresso — Marea café" width={900} height={1200} loading="lazy" decoding="async" />
+            <Image src={espressoImg} alt="Espresso — Marea café" width={900} height={1200} sizes="(max-width: 900px) 50vw, 360px" loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-a" data-label="BAR">
-            <Image src={negroniImg} alt="Classic Negroni — Marea bar" width={900} height={900} loading="lazy" decoding="async" />
+            <Image src={negroniImg} alt="Classic Negroni — Marea bar" width={900} height={900} sizes="(max-width: 900px) 50vw, 360px" loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-b" data-label="KITCHEN">
-            <Image src={cevicheImg} alt="Ceviche — Marea kitchen" width={900} height={900} loading="lazy" decoding="async" />
+            <Image src={cevicheImg} alt="Ceviche — Marea kitchen" width={900} height={900} sizes="(max-width: 900px) 50vw, 360px" loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-c" data-label="EVENTS">
-            <Image src={eventImage} alt="Events at Marea" width={900} height={900} loading="lazy" decoding="async" />
+            <Image src={eventImage} alt="Events at Marea" width={900} height={900} sizes="(max-width: 900px) 50vw, 360px" loading="lazy" decoding="async" />
           </div>
           <div className="mosaic-item mosaic-d" data-label="DESSERTS">
-            <Image src={tiramisuImg} alt="Tiramisu — Marea desserts" width={900} height={900} loading="lazy" decoding="async" />
+            <Image src={tiramisuImg} alt="Tiramisu — Marea desserts" width={900} height={900} sizes="(max-width: 900px) 50vw, 360px" loading="lazy" decoding="async" />
           </div>
         </div>
 

@@ -66,7 +66,7 @@ export default function Hero() {
               <br />
               webs pensadas
               <br />
-              <SelectionHighlight color="#F37AA6">para el negocio detrás.</SelectionHighlight>
+              <SelectionHighlight color="#E0608A">para el negocio detrás.</SelectionHighlight>
             </h1>
 
             <p className="max-w-[31rem] text-[0.98rem] leading-relaxed text-gray-500 md:text-[1.02rem]">

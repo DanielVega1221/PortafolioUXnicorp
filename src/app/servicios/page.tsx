@@ -1,4 +1,4 @@
-﻿import React from "react";
+
 import Script from "next/script";
 import type { Metadata } from "next";
 import { SERVICIOS } from "./data";
@@ -9,9 +9,9 @@ import ServiciosExtrasSection from "@/components/services/ServiciosExtrasSection
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Landing Pages, E-commerce y Sistemas ERP",
+  title: "Landing Pages, E-commerce y Sistemas de Gestión",
   description:
-    "Landing pages de conversión, tiendas online y soluciones ERP modulares. Diseño, desarrollo y estrategia en un solo equipo.",
+    "Landing pages de conversión, tiendas online y sistemas de gestión a medida. Diseño, desarrollo y estrategia en un solo equipo.",
   keywords: [
     "servicios desarrollo web argentina",
     "landing page a medida argentina",
@@ -37,28 +37,28 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Desarrollo de Landing Pages, E-commerce y ERP en Argentina | UXnicorp",
+    title: "Landing Pages, E-commerce y Sistemas de Gestión | UXnicorp",
     description:
-      "Landing pages de conversión, tiendas online y soluciones ERP modulares. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
+      "Landing pages de conversión, tiendas online y sistemas de gestión a medida. Diseño, desarrollo y estrategia en un solo equipo. Conocé precios, tiempos y qué incluye cada servicio.",
     url: "https://www.uxnicorp.com.ar/servicios",
     type: "website",
     locale: "es_AR",
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "Servicios UXnicorp — Desarrollo Web Argentina",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Desarrollo de Landing Pages, E-commerce y ERP en Argentina | UXnicorp",
+    title: "Landing Pages, E-commerce y Sistemas de Gestión | UXnicorp",
     description:
-      "Landing pages de conversión, tiendas online y soluciones ERP modulares. Diseño, desarrollo y estrategia en un solo equipo. Sin intermediarios ni costos ocultos.",
-    images: ["/og-image.png"],
+      "Landing pages de conversión, tiendas online y sistemas de gestión a medida. Diseño, desarrollo y estrategia en un solo equipo. Sin intermediarios ni costos ocultos.",
+    images: ["/og-image.jpg"],
   },
 };
 

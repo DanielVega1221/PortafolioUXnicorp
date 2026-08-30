@@ -4,14 +4,16 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: "cuanto-cuesta-una-web-argentina-2026",
     title: "Cuánto cuesta una web en Argentina en 2026",
+    summary:
+      "Rangos reales en Argentina 2026: landing page $500–$800 USD, e-commerce $900–$1.500 USD y sistema de gestión desde $1.000 USD. Precios claros y el criterio detrás de cada número.",
     description:
       "Rangos de precio reales para landing pages, ecommerce y sistemas de gestión en Argentina, explicados con el criterio detrás de cada número.",
     author: "Gonzalo Daniel Vega",
     category: "Precios",
-    datePublished: "2026-08-07",
-    dateModified: "2026-08-07",
+    datePublished: "2026-07-10",
+    dateModified: "2026-08-29",
     tags: ["precios", "landing-page", "ecommerce", "sistemas-apps"],
-    ogImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&auto=format",
+    ogImage: "/blog/og/cuanto-cuesta-una-web-argentina-2026.webp",
     ctaText: "¿Tenés un proyecto en mente y no sabés en qué categoría cae?",
     ctaHref: "/#contacto",
     sections: [
@@ -80,14 +82,16 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: "comercial-rio-hondo-entender-antes-de-hacer",
     title: "Por qué la web de una empresa de áridos no se piensa para el que compra arena",
+    summary:
+      "La web de un proveedor de áridos se diseña para el jefe de obra y la constructora que comparan proveedores, no para el particular que compra arena. Así lo resolvimos con Comercial Río Hondo.",
     description:
       "El caso real de Comercial Río Hondo: cómo identificamos quién era el comprador de verdad antes de diseñar una sola pantalla.",
     author: "Gonzalo Daniel Vega",
     category: "Casos reales",
-    datePublished: "2026-08-07",
-    dateModified: "2026-08-07",
+    datePublished: "2026-07-22",
+    dateModified: "2026-08-29",
     tags: ["casos-reales", "web-corporativa"],
-    ogImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&auto=format",
+    ogImage: "/blog/og/comercial-rio-hondo-entender-antes-de-hacer.webp",
     ctaText: "¿Tu negocio depende de que un comprador técnico confíe antes de contactarte?",
     ctaHref: "/#contacto",
     sections: [
@@ -174,14 +178,16 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: "wix-tiendanube-o-desarrollo-a-medida",
     title: "Wix, Tienda Nube o desarrollo a medida: cuándo conviene cada uno",
+    summary:
+      "Un builder (Wix, Tienda Nube) alcanza si estás validando o tu operación es simple. El desarrollo a medida gana cuando tenés lógica propia, flujos manuales o performance crítica.",
     description:
       "Comparativa honesta entre builders genéricos y desarrollo a medida, incluyendo cuándo un builder alcanza y no hace falta pagar de más.",
     author: "Gonzalo Daniel Vega",
     category: "Comparativas",
-    datePublished: "2026-08-07",
-    dateModified: "2026-08-07",
+    datePublished: "2026-08-05",
+    dateModified: "2026-08-29",
     tags: ["comparativas", "landing-page", "ecommerce"],
-    ogImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop&auto=format",
+    ogImage: "/blog/og/wix-tiendanube-o-desarrollo-a-medida.webp",
     ctaText: "¿No estás seguro de en qué categoría cae tu negocio?",
     ctaHref: "/#contacto",
     sections: [
@@ -246,14 +252,16 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
   {
     slug: "sistemas-gestion-pymes-noa",
     title: "Los 5 sistemas de gestión que más piden las pymes del NOA (y cuál necesita tu negocio)",
+    summary:
+      "Talleres, clínicas, gimnasios, veterinarias y restaurantes: los cinco rubros del NOA que más necesitan un sistema de gestión a medida. Todos comparten el mismo dolor: un proceso que hoy vive en papel, WhatsApp o Excel.",
     description:
       "Talleres, clínicas, gimnasios, veterinarias y restaurantes: los cinco rubros del norte argentino que más necesitan un sistema de gestión a medida. Con ejemplos reales y precios.",
     author: "Gonzalo Daniel Vega",
     category: "Sistemas de gestión",
-    datePublished: "2026-08-07",
-    dateModified: "2026-08-07",
+    datePublished: "2026-08-14",
+    dateModified: "2026-08-29",
     tags: ["sistemas-apps", "software-a-medida", "pymes", "erp", "gestion-empresarial"],
-    ogImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&auto=format",
+    ogImage: "/blog/og/sistemas-gestion-pymes-noa.webp",
     ctaText: "¿Tu negocio todavía depende de un cuaderno o un Excel para funcionar?",
     ctaHref: "/#contacto",
     sections: [

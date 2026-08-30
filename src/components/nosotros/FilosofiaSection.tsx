@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Lightbulb, MessageSquare, Heart, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -74,8 +73,8 @@ const itemsByLocale = {
         "Acompañamos, proponemos ideas y ayudamos incluso en cosas que muchas veces no forman parte del proyecto. Porque nos importa que les funcione.",
       cardBg: "rgba(253,232,242,0.65)",
       iconBg: "rgba(243,122,166,0.12)",
-      iconColor: "#e0608a",
-      acentoColor: "#e0608a",
+      iconColor: "#E0608A",
+      acentoColor: "#E0608A",
     },
     {
       icon: Users,
@@ -120,8 +119,8 @@ const itemsByLocale = {
         "We accompany, suggest ideas and help even with things that often aren't part of the project. Because we care that it actually works for you.",
       cardBg: "rgba(253,232,242,0.65)",
       iconBg: "rgba(243,122,166,0.12)",
-      iconColor: "#e0608a",
-      acentoColor: "#e0608a",
+      iconColor: "#E0608A",
+      acentoColor: "#E0608A",
     },
     {
       icon: Users,
@@ -151,7 +150,7 @@ export default function FilosofiaSection({ locale }: FilosofiaSectionProps) {
     >
       <div className="mx-auto max-w-[1220px]">
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             {h.eyebrow}
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -163,7 +162,7 @@ export default function FilosofiaSection({ locale }: FilosofiaSectionProps) {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 gap-3 md:grid-cols-2"
+          className="grid grid-cols-1 gap-3 lg:grid-cols-2"
           variants={listVariants}
         >
           {items.map((item, i) => {

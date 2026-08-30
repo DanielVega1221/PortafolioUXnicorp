@@ -19,7 +19,7 @@ export default function ConceptosSection() {
             fontWeight: 700,
             letterSpacing: '0.22em',
             textTransform: 'uppercase',
-            color: '#F37AA6',
+            color: '#974c67',
             marginBottom: '0.75rem',
           }}
         >
@@ -39,7 +39,7 @@ export default function ConceptosSection() {
           Creamos{' '}
           <span
             style={{
-              color: '#F37AA6',
+              color: '#974c67',
               textDecoration: 'underline',
               textDecorationColor: 'rgba(243,122,166,0.4)',
               textUnderlineOffset: '6px',
@@ -122,7 +122,7 @@ export default function ConceptosSection() {
                 right: '1.5rem',
                 background: 'rgba(243,122,166,0.15)',
                 border: '1px solid rgba(243,122,166,0.35)',
-                color: '#F37AA6',
+                color: '#ffd9e8',
                 fontSize: '0.72rem',
                 fontWeight: 600,
                 letterSpacing: '0.1em',
@@ -163,7 +163,7 @@ export default function ConceptosSection() {
                   gap: '0.4rem',
                   fontSize: '0.88rem',
                   fontWeight: 600,
-                  color: '#F37AA6',
+                  color: '#974c67',
                 }}
               >
                 Ver enfoque completo →
@@ -224,7 +224,7 @@ export default function ConceptosSection() {
                 right: '1.5rem',
                 background: 'rgba(243,122,166,0.15)',
                 border: '1px solid rgba(243,122,166,0.35)',
-                color: '#F37AA6',
+                color: '#ffd9e8',
                 fontSize: '0.72rem',
                 fontWeight: 600,
                 letterSpacing: '0.1em',
@@ -265,7 +265,7 @@ export default function ConceptosSection() {
                   gap: '0.4rem',
                   fontSize: '0.88rem',
                   fontWeight: 600,
-                  color: '#F37AA6',
+                  color: '#974c67',
                 }}
               >
                 Ver enfoque completo →

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Política de Privacidad",
   description:
     "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales, el uso de cookies y tus derechos como usuario en nuestro sitio web.",
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/politica-de-privacidad",
     languages: {
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp — Política de Privacidad",
       },
     ],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Política de Privacidad | UXnicorp",
     description:
       "Política de privacidad de UXnicorp. Conocé cómo tratamos tus datos personales, el uso de cookies y tus derechos como usuario en nuestro sitio web.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -87,7 +87,7 @@ export default function PoliticaPrivacidadPage() {
       <div className="mb-12">
         <TransitionLink
           href="/"
-          className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 transition-colors hover:text-gray-700"
+          className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-500 transition-colors hover:text-gray-700"
         >
           ← UXnicorp
         </TransitionLink>
@@ -96,7 +96,7 @@ export default function PoliticaPrivacidadPage() {
         >
           Política de Privacidad
         </h1>
-        <p className="mt-3 text-sm text-gray-400">
+        <p className="mt-3 text-sm text-gray-500">
           Última actualización: abril de 2026
         </p>
         <p className="mt-5 text-base leading-relaxed text-gray-600">
@@ -137,7 +137,7 @@ export default function PoliticaPrivacidadPage() {
           ¿Tenés alguna consulta sobre esta política?{" "}
           <a
             href="mailto:uxnicorp@gmail.com"
-            className="font-semibold text-[#e0608a] underline-offset-2 hover:underline"
+            className="font-semibold text-[#974c67] underline-offset-2 hover:underline"
           >
             uxnicorp@gmail.com
           </a>
@@ -147,7 +147,7 @@ export default function PoliticaPrivacidadPage() {
       <div className="mt-8 text-center">
         <TransitionLink
           href="/en/privacy-policy"
-          className="text-xs text-gray-400 underline-offset-2 hover:underline"
+          className="text-xs text-gray-500 underline-offset-2 hover:underline"
         >
           Read in English →
         </TransitionLink>

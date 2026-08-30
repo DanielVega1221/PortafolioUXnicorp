@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     locale: "es_AR",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "UXnicorp — Agencia de Desarrollo Web" }],
+    images: [{ url: "/og-image.jpg", width: 1343, height: 633, alt: "UXnicorp — Agencia de Desarrollo Web" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
     description:
       "Diseñamos y desarrollamos webs pensadas para el negocio detrás. Diseño, código y estrategia con foco real en lo que necesita tu negocio. Argentina.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -181,31 +181,7 @@ const faqJsonLd = {
         text: "La idea es todo lo contrario. Intentamos que cada cliente entienda cómo funciona su proyecto y pueda manejarlo con claridad. Trabajamos desde la transparencia y evitamos generar dependencia innecesaria.",
       },
     },
-    {
-      "@type": "Question",
-      name: "¿Cuánto sale una landing page en Argentina?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Desde USD $500. Depende del alcance: cantidad de secciones, integraciones, diseño personalizado. Siempre presupuestamos antes de arrancar, con precios claros y sin costos ocultos.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Qué es un ERP modular y por qué elegirlo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Un ERP modular es un sistema que se arma por partes: solo pagás por lo que necesitás. Si mañana necesitás agregar un módulo de facturación, CRM o control de stock, se integra sin reiniciar el proyecto. Es más flexible y económico que un ERP tradicional.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Qué incluye el desarrollo de software a medida?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Análisis de requerimientos, documentación técnica, diseño UX/UI, desarrollo full-stack, testing y QA, despliegue, capacitación y 30 días de soporte post-entrega. Sin plantillas genéricas, todo construido desde cero para tu negocio.",
-      },
-    },
-  ],
+    ],
 };
 
 export default function Home() {
@@ -243,7 +219,7 @@ export default function Home() {
             }}
           >
             <div>
-              <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#F37AA6", marginBottom: "0.5rem" }}>
+              <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#974c67", marginBottom: "0.5rem" }}>
                 Blog
               </p>
               <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#111", margin: "0 0 0.35rem 0", letterSpacing: "-0.03em" }}>

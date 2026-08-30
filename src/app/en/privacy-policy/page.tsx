@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "UXnicorp privacy policy. Learn how we handle your personal data, the use of cookies and your rights as a user on our website.",
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/privacy-policy",
     languages: {
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp — Privacy Policy",
       },
     ],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | UXnicorp",
     description:
       "UXnicorp privacy policy. Learn how we handle your personal data, the use of cookies and your rights as a user on our website.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
       <div className="mb-12">
         <TransitionLink
           href="/en"
-          className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-400 transition-colors hover:text-gray-700"
+          className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-gray-500 transition-colors hover:text-gray-700"
         >
           ← UXnicorp
         </TransitionLink>
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
         >
           Privacy Policy
         </h1>
-        <p className="mt-3 text-sm text-gray-400">Last updated: April 2026</p>
+        <p className="mt-3 text-sm text-gray-500">Last updated: April 2026</p>
         <p className="mt-5 text-base leading-relaxed text-gray-600">
           At UXnicorp we take the privacy of our visitors seriously. This policy
           explains what data we collect, how we use it, and what your rights are.
@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
           Any questions about this policy?{" "}
           <a
             href="mailto:uxnicorp@gmail.com"
-            className="font-semibold text-[#e0608a] underline-offset-2 hover:underline"
+            className="font-semibold text-[#974c67] underline-offset-2 hover:underline"
           >
             uxnicorp@gmail.com
           </a>
@@ -144,7 +144,7 @@ export default function PrivacyPolicyPage() {
       <div className="mt-8 text-center">
         <TransitionLink
           href="/politica-de-privacidad"
-          className="text-xs text-gray-400 underline-offset-2 hover:underline"
+          className="text-xs text-gray-500 underline-offset-2 hover:underline"
         >
           Leer en Español →
         </TransitionLink>

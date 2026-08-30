@@ -59,7 +59,7 @@ export default function NosotrosPageHeader({ locale }: NosotrosPageHeaderProps) 
           </svg>
           {c.backLabel}
         </TransitionLink>
-        <nav className="hidden items-center gap-5 text-[0.8rem] font-medium text-gray-400 md:flex">
+        <nav className="hidden items-center gap-5 text-[0.8rem] font-medium text-gray-500 md:flex">
           {c.navLinks.map((link) => (
             <TransitionLink key={link.href} href={link.href} className="transition-colors hover:text-gray-700">
               {link.label}
@@ -69,7 +69,7 @@ export default function NosotrosPageHeader({ locale }: NosotrosPageHeaderProps) 
       </div>
 
       <div className="mb-16">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
           {c.eyebrow}
         </p>
         <h1 className="mt-4 max-w-2xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -90,7 +90,7 @@ export default function NosotrosPageHeader({ locale }: NosotrosPageHeaderProps) 
         >
           <p
             className="mb-2 text-[0.72rem] font-bold uppercase tracking-[0.22em]"
-            style={{ color: "#e0608a" }}
+            style={{ color: "#974c67" }}
           >
             {c.whyTitle}
           </p>

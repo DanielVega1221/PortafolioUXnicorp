@@ -8,7 +8,7 @@ const GONZALO_WA = "5493834368748";
 const AILIN_WA = "5491123504530";
 const EMAIL = "uxnicorp@gmail.com";
 
-const TIPOS_EN = ["Landing Page", "E-commerce", "System / App", "Not sure yet"];
+const TIPOS_EN = ["Landing Page", "E-commerce", "Management System", "Not sure yet"];
 
 function LinkedInIcon({ size = 14 }: { size?: number }) {
   return (
@@ -81,7 +81,7 @@ const team = [
 ];
 
 export default function ContactoSectionEN() {
-  const [form, setForm] = useState({ nombre: "", email: "", tipo: "", mensaje: "" });
+  const [form, setForm] = useState({ nombre: "", email: "", tipo: "", mensaje: "", website: "" });
   const [sendMode, setSendMode] = useState<"whatsapp" | "email">("whatsapp");
 
   function handleChange(
@@ -92,6 +92,7 @@ export default function ContactoSectionEN() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (form.website) return;
     if (sendMode === "whatsapp") {
       const text = `Hi UXNICORP!\nI'm ${form.nombre} (${form.email})\n\nProject: ${
         form.tipo || "Not specified"
@@ -118,7 +119,7 @@ export default function ContactoSectionEN() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             Contact
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -135,18 +136,17 @@ export default function ContactoSectionEN() {
             {team.map((p) => (
               <div
                 key={p.name}
+                className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5"
                 style={{
                   borderRadius: "1.5rem",
                   padding: "1.4rem 1.75rem",
                   background: p.bg,
                   border: "1px solid rgba(255,255,255,0.7)",
                   boxShadow: "0 4px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.85)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1.25rem",
                 }}
               >
-                <div
+                <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", flex: 1, minWidth: 0 }}>
+                  <div
                   style={{
                     width: "3.75rem",
                     height: "3.75rem",
@@ -156,11 +156,12 @@ export default function ContactoSectionEN() {
                     boxShadow: `0 0 0 3px ${p.ring}, 0 4px 16px rgba(0,0,0,0.10)`,
                   }}
                 >
-                  <Image
+<Image
                     src={p.foto}
                     alt={p.name}
                     width={60}
                     height={60}
+                    sizes="60px"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
@@ -170,8 +171,9 @@ export default function ContactoSectionEN() {
                     {p.name}
                   </p>
                   <p style={{ fontSize: "0.73rem", color: "rgba(0,0,0,0.45)", margin: 0 }}>
-                    {p.tagline}
-                  </p>
+{p.tagline}
+                    </p>
+                  </div>
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "row", gap: "0.4rem", flexShrink: 0 }}>
@@ -196,7 +198,7 @@ export default function ContactoSectionEN() {
                       }}
                     >
                       <WhatsAppIcon size={13} />
-                      Whatsapp
+                      WhatsApp
                     </a>
                   )}
                   <a
@@ -269,10 +271,33 @@ export default function ContactoSectionEN() {
             onSubmit={handleSubmit}
             style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}
           >
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                left: "-9999px",
+                top: "-9999px",
+                width: "1px",
+                height: "1px",
+                overflow: "hidden",
+              }}
+            >
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <label style={labelStyle}>Name</label>
+                <label htmlFor="nombre" style={labelStyle}>Name</label>
                 <input
+                  id="nombre"
                   type="text"
                   name="nombre"
                   value={form.nombre}
@@ -283,8 +308,9 @@ export default function ContactoSectionEN() {
                 />
               </div>
               <div>
-                <label style={labelStyle}>Email</label>
+                <label htmlFor="email" style={labelStyle}>Email</label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   value={form.email}
@@ -313,8 +339,9 @@ export default function ContactoSectionEN() {
             </div>
 
             <div>
-              <label style={labelStyle}>Message</label>
+              <label htmlFor="mensaje" style={labelStyle}>Message</label>
               <textarea
+                id="mensaje"
                 name="mensaje"
                 value={form.mensaje}
                 onChange={handleChange}

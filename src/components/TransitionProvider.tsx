@@ -160,6 +160,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
             alt=""
             width={51}
             height={56}
+            sizes="56px"
             priority
           />
           <span
@@ -168,7 +169,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
               fontWeight: 600,
               letterSpacing: "0.34em",
               textTransform: "uppercase",
-              color: "#e0608a",
+              color: "#974c67",
             }}
           >
             UXnicorp

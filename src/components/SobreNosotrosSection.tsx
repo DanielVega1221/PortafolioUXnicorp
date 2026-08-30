@@ -78,7 +78,7 @@ export default function SobreNosotrosSection() {
           <motion.div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1fr] md:gap-10 lg:gap-14" variants={colListVariants}>
 
           <motion.div className="flex flex-col" variants={colVariants}>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
               Sobre Nosotros
             </p>
 
@@ -87,7 +87,7 @@ export default function SobreNosotrosSection() {
               <br />
               tienen sentido.
               <br />
-              <span className="text-[#F37AA6]">Y funcionan.</span>
+              <span className="text-[#E0608A]">Y funcionan.</span>
             </h2>
 
             <p className="mt-5 max-w-[30rem] text-[1.01rem] leading-relaxed text-gray-500">
@@ -97,14 +97,14 @@ export default function SobreNosotrosSection() {
 
             <div className="mt-8 flex items-center gap-3">
               <span className="h-px w-10 bg-gray-300" />
-              <p className="text-[0.82rem] text-gray-400">
+              <p className="text-[0.82rem] text-gray-500">
                 Argentina · 100% remoto 
               </p>
             </div>
 
             <TransitionLink
               href="/nosotros"
-              className="mt-6 inline-block text-sm font-medium text-[#F37AA6] underline underline-offset-4 hover:text-[#e0608a]"
+              className="mt-6 inline-block text-sm font-medium text-[#974c67] underline underline-offset-4 hover:text-[#974c67]"
             >
               Conocé más sobre nosotros →
             </TransitionLink>
@@ -118,7 +118,7 @@ export default function SobreNosotrosSection() {
                   "linear-gradient(155deg, rgba(255,255,255,0.92) 0%, rgba(254,224,214,0.18) 45%, rgba(224,166,216,0.14) 100%)",
               }}
             >
-              <p className="mb-6 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-gray-400">
+              <p className="mb-6 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-gray-500">
                 Así trabajamos
               </p>
 
@@ -160,8 +160,8 @@ export default function SobreNosotrosSection() {
                   sizes="28px"
                   style={{ opacity: 0.7 }}
                 />
-                <p className="text-[0.72rem] text-gray-400">
-                  ARG · Buenos Aires · Córdoba · Catamarca
+                <p className="text-[0.72rem] text-gray-500">
+                  Equipo en Argentina · Buenos Aires · Córdoba · Catamarca
                 </p>
               </div>
             </div>

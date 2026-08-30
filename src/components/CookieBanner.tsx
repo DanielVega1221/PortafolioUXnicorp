@@ -20,7 +20,7 @@ export default function CookieBanner() {
 
   const t = {
     text: isEN
-      ? "We use cookies to analyse traffic via Google Analytics. No personal data is sold or shared."
+      ? "We use cookies to analyze traffic via Google Analytics. No personal data is sold or shared."
       : "Usamos cookies para analizar el tráfico con Google Analytics. No vendemos ni compartimos datos personales.",
     accept: isEN ? "Accept" : "Aceptar",
     reject: isEN ? "Reject" : "Rechazar",
@@ -83,7 +83,7 @@ export default function CookieBanner() {
             {t.text}{" "}
             <Link
               href={t.policyHref}
-              className="font-semibold text-[#e0608a] underline-offset-2 hover:underline"
+              className="font-semibold text-[#974c67] underline-offset-2 hover:underline"
             >
               {t.policy}
             </Link>

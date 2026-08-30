@@ -8,7 +8,7 @@ const GONZALO_WA = "5493834368748";
 const AILIN_WA = "5491123504530";
 const EMAIL = "uxnicorp@gmail.com";
 
-const TIPOS = ["Landing Page", "E-commerce", "Sistema / App", "No sé todavía"];
+const TIPOS = ["Landing Page", "E-commerce", "Sistema de Gestión", "No sé todavía"];
 
 function LinkedInIcon({ size = 14 }: { size?: number }) {
   return (
@@ -81,7 +81,7 @@ const equipo = [
 ];
 
 export default function ContactoSection() {
-  const [form, setForm] = useState({ nombre: "", email: "", tipo: "", mensaje: "" });
+  const [form, setForm] = useState({ nombre: "", email: "", tipo: "", mensaje: "", website: "" });
   const [sendMode, setSendMode] = useState<"whatsapp" | "email">("whatsapp");
 
   function handleChange(
@@ -92,6 +92,7 @@ export default function ContactoSection() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (form.website) return;
     if (sendMode === "whatsapp") {
       const texto = `Hola UXNICORP!\nSoy ${form.nombre} (${form.email})\n\nProyecto: ${
         form.tipo || "Sin especificar"
@@ -118,7 +119,7 @@ export default function ContactoSection() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             Contacto
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -135,18 +136,17 @@ export default function ContactoSection() {
             {equipo.map((p) => (
               <div
                 key={p.nombre}
+                className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5"
                 style={{
                   borderRadius: "1.5rem",
                   padding: "1.4rem 1.75rem",
                   background: p.bg,
                   border: "1px solid rgba(255,255,255,0.7)",
                   boxShadow: "0 4px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.85)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1.25rem",
                 }}
               >
-                <div
+                <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", flex: 1, minWidth: 0 }}>
+                  <div
                   style={{
                     width: "3.75rem",
                     height: "3.75rem",
@@ -161,6 +161,7 @@ export default function ContactoSection() {
                     alt={p.nombre}
                     width={60}
                     height={60}
+                    sizes="60px"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
@@ -170,8 +171,9 @@ export default function ContactoSection() {
                     {p.nombre}
                   </p>
                   <p style={{ fontSize: "0.73rem", color: "rgba(0,0,0,0.45)", margin: 0 }}>
-                    {p.tagline}
-                  </p>
+{p.tagline}
+                    </p>
+                  </div>
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "row", gap: "0.4rem", flexShrink: 0 }}>
@@ -196,7 +198,7 @@ export default function ContactoSection() {
                       }}
                     >
                       <WhatsAppIcon size={13} />
-                      Whatsapp
+                      WhatsApp
                     </a>
                   )}
                   <a
@@ -269,10 +271,33 @@ export default function ContactoSection() {
             onSubmit={handleSubmit}
             style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}
           >
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                left: "-9999px",
+                top: "-9999px",
+                width: "1px",
+                height: "1px",
+                overflow: "hidden",
+              }}
+            >
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <label style={labelStyle}>Nombre</label>
+                <label htmlFor="nombre" style={labelStyle}>Nombre</label>
                 <input
+                  id="nombre"
                   type="text"
                   name="nombre"
                   value={form.nombre}
@@ -283,8 +308,9 @@ export default function ContactoSection() {
                 />
               </div>
               <div>
-                <label style={labelStyle}>Email</label>
+                <label htmlFor="email" style={labelStyle}>Email</label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   value={form.email}
@@ -305,7 +331,7 @@ export default function ContactoSection() {
                 onChange={handleChange}
                 style={{ ...inputStyle, cursor: "pointer" }}
               >
-                <option value="">Elegi una opcion</option>
+                <option value="">Elegí una opción</option>
                 {TIPOS.map((t) => (
                   <option key={t} value={t}>{t}</option>
                 ))}
@@ -313,14 +339,15 @@ export default function ContactoSection() {
             </div>
 
             <div>
-              <label style={labelStyle}>Mensaje</label>
+              <label htmlFor="mensaje" style={labelStyle}>Mensaje</label>
               <textarea
+                id="mensaje"
                 name="mensaje"
                 value={form.mensaje}
                 onChange={handleChange}
                 required
                 rows={5}
-                placeholder="Contanos que necesitas..."
+                placeholder="Contanos qué necesitás…"
                 style={{ ...inputStyle, resize: "vertical", minHeight: "130px" }}
               />
             </div>
@@ -420,7 +447,7 @@ export default function ContactoSection() {
             <p style={{ fontSize: "0.72rem", color: "rgba(0,0,0,0.32)", margin: 0, textAlign: "center" }}>
               {sendMode === "whatsapp"
                 ? "Tu mensaje llega directo. Sin intermediarios."
-                : "Te respondemos a tu email en menos de 24 hs."}
+                : "Te respondemos a tu email en menos de 24 horas."}
             </p>
           </form>
 

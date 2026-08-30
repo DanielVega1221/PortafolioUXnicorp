@@ -7,7 +7,7 @@ import HomeIntro from "@/components/HomeIntro";
 import Footer from "@/components/Footer";
 import LazyUXScoreSection from "@/components/LazyUXScoreSection";
 import TransitionLink from "@/components/TransitionLink";
-import { BLOG_POSTS } from "@/app/blog/data";
+import { BLOG_POSTS_EN } from "./blog/data";
 
 const CasosSectionEN = dynamic(() => import("@/components/en/CasosSectionEN"));
 const ConceptosSectionEN = dynamic(() => import("@/components/en/ConceptosSectionEN"));
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "UXnicorp — Web Development Agency" }],
+    images: [{ url: "/og-image.jpg", width: 1343, height: 633, alt: "UXnicorp — Web Development Agency" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "UXnicorp — Web Dev & UX Agency in Argentina",
     description:
       "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -180,31 +180,7 @@ const faqJsonLd = {
         text: "That's the opposite of what we aim for. We want every client to understand how their project works and have full clarity over what they're using. We believe in transparency and avoiding unnecessary dependency.",
       },
     },
-    {
-      "@type": "Question",
-      name: "How much does a landing page cost in Argentina?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Starting from USD $500. Depends on scope: number of sections, integrations, custom design. We always quote before starting, with clear pricing and no hidden costs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is a modular ERP solution?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A modular ERP is built piece by piece: you only pay for what you need. If you need to add a billing, CRM, or inventory module later, it integrates without restarting the project. More flexible and affordable than traditional ERP systems.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What's included in custom software development?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Requirements analysis, technical documentation, UX/UI design, full-stack development, testing & QA, deployment, training and 30 days post-delivery support. No generic templates — everything built from scratch for your business.",
-      },
-    },
-  ],
+    ],
 };
 
 export default function EnHomePage() {
@@ -242,20 +218,20 @@ export default function EnHomePage() {
             }}
           >
             <div>
-              <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#F37AA6", marginBottom: "0.5rem" }}>
+              <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#974c67", marginBottom: "0.5rem" }}>
                 Blog
               </p>
               <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#111", margin: "0 0 0.35rem 0", letterSpacing: "-0.03em" }}>
-                {BLOG_POSTS.length > 0 ? "Latest from the blog" : "Web development, no fluff"}
+                {BLOG_POSTS_EN.length > 0 ? "Latest from the blog" : "Web development, no fluff"}
               </h2>
               <p style={{ fontSize: "0.9rem", lineHeight: 1.6, color: "#4a5568", maxWidth: "440px", margin: 0 }}>
-                {BLOG_POSTS.length > 0
-                  ? `Articles with real data from projects. ${BLOG_POSTS.length} posts and counting.`
+                {BLOG_POSTS_EN.length > 0
+                  ? `Articles with real data from projects. ${BLOG_POSTS_EN.length} posts and counting.`
                   : "Coming soon: articles on real pricing, honest SEO, and technical decisions backed by actual project data."}
               </p>
             </div>
             <TransitionLink
-              href="/blog"
+              href="/en/blog"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -271,7 +247,7 @@ export default function EnHomePage() {
                 boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
               }}
             >
-              {BLOG_POSTS.length > 0 ? "Read posts" : "Visit blog"}
+              {BLOG_POSTS_EN.length > 0 ? "Read posts" : "Visit blog"}
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
                 <path d="M2 6.5h9M8 3.5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

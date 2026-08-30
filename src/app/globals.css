@@ -4,6 +4,7 @@
 
 :root {
   --color-pink:    #F37AA6;
+  --color-pink-ink: #974c67;
   --color-blue:    #CADEF9;
   --color-purple:  #E0A6D8;
   --color-peach:   #FEE0D6;
@@ -46,7 +47,7 @@ a {
     gap: 0.4rem;
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--color-pink);
+    color: var(--color-pink-ink);
     text-decoration: none;
     margin-bottom: 2.5rem;
   }
@@ -85,7 +86,7 @@ a {
     padding: 0.7rem 1.5rem;
     border-radius: 0.875rem;
     background: #fff;
-    color: #e0608a;
+    color: var(--color-pink-ink);
     font-weight: 700;
     font-size: 0.875rem;
     text-decoration: none;

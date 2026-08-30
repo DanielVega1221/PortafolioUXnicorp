@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { headers } from "next/headers";
 import "./globals.css";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import LenisProvider from "@/components/LenisProvider";
@@ -11,7 +10,7 @@ import Script from "next/script";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+  weight: ["400", "500", "700", "900"],
   display: "swap",
   variable: "--font-roboto",
 });
@@ -56,9 +55,9 @@ export const metadata: Metadata = {
       "Diseño y desarrollo web con criterio. Entendemos tu negocio antes de diseñar. Presupuesto claro, comunicación directa, sin intermediarios.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp — Agencia de Desarrollo Web Argentina",
       },
     ],
@@ -68,7 +67,7 @@ export const metadata: Metadata = {
     title: "UXnicorp — Agencia de Desarrollo Web y UX en Argentina",
     description:
       "Diseño y desarrollo web con criterio. Entendemos tu negocio antes de diseñar. Presupuesto claro, comunicación directa, sin intermediarios.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: "https://www.uxnicorp.com.ar",
@@ -80,17 +79,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const h = await headers();
-  const locale = h.get("x-locale") || "es";
-
   return (
-    <html lang={locale} className={roboto.className}>
+    <html lang="es" suppressHydrationWarning className={roboto.className}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang = location.pathname.startsWith('/en') ? 'en' : 'es';`,
+          }}
+        />
         <meta name="google-site-verification" content="siC-CWVYr84oI1ktEEacAFXJA-8_t2YAxGanTzpisnw" />
         <Script id="consent-mode-bootstrap" strategy="beforeInteractive">
           {`
@@ -101,9 +102,6 @@ gtag('consent', 'default', {
   ad_personalization: 'denied', analytics_storage: 'denied',
   functionality_storage: 'denied', personalization_storage: 'denied',
   wait_for_update: 500,
-  region: ['AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GR',
-           'HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO',
-           'PL','PT','RO','SE','SI','SK','GB']
 });
 gtag('set', 'ads_data_redaction', true);
 gtag('set', 'url_passthrough', true);
@@ -113,10 +111,11 @@ gtag('set', 'url_passthrough', true);
           id="organization-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
+__html: JSON.stringify([
               {
                 "@context": "https://schema.org",
-                "@type": "Organization",
+                "@type": ["Organization", "ProfessionalService"],
+                "@id": "https://www.uxnicorp.com.ar/#organization",
                 name: "UXnicorp",
                 url: "https://www.uxnicorp.com.ar",
                 logo: "https://www.uxnicorp.com.ar/brand/logo.png",
@@ -126,6 +125,38 @@ gtag('set', 'url_passthrough', true);
                   "@type": "PostalAddress",
                   addressCountry: "AR",
                 },
+                areaServed: [
+                  { "@type": "AdministrativeArea", name: "Ciudad Autónoma de Buenos Aires" },
+                  { "@type": "AdministrativeArea", name: "Provincia de Buenos Aires" },
+                  { "@type": "AdministrativeArea", name: "Córdoba" },
+                  { "@type": "AdministrativeArea", name: "Santa Fe" },
+                  { "@type": "AdministrativeArea", name: "Mendoza" },
+                  { "@type": "AdministrativeArea", name: "Tucumán" },
+                  { "@type": "AdministrativeArea", name: "Salta" },
+                  { "@type": "AdministrativeArea", name: "Neuquén" },
+                  { "@type": "AdministrativeArea", name: "Río Negro" },
+                  { "@type": "AdministrativeArea", name: "La Pampa" },
+                  { "@type": "AdministrativeArea", name: "Santa Cruz" },
+                  { "@type": "AdministrativeArea", name: "Tierra del Fuego" },
+                ],
+                priceRange: "$$",
+                founder: { "@id": "https://www.uxnicorp.com.ar/#gonzalo" },
+                employee: [
+                  {
+                    "@type": "Person",
+                    "@id": "https://www.uxnicorp.com.ar/#ailin",
+                    name: "Ailín Torrente",
+                    worksFor: { "@id": "https://www.uxnicorp.com.ar/#organization" },
+                    sameAs: "https://www.linkedin.com/in/ailin-torrente-299994374/",
+                  },
+                  {
+                    "@type": "Person",
+                    "@id": "https://www.uxnicorp.com.ar/#sol",
+                    name: "Sol Andriani",
+                    worksFor: { "@id": "https://www.uxnicorp.com.ar/#organization" },
+                    sameAs: "https://www.linkedin.com/in/solandriani/",
+                  },
+                ],
                 contactPoint: {
                   "@type": "ContactPoint",
                   contactType: "customer service",
@@ -137,10 +168,6 @@ gtag('set', 'url_passthrough', true);
                   "https://www.instagram.com/uxnicorp/",
                   "https://www.linkedin.com/company/uxnicorp",
                 ],
-                areaServed: {
-                  "@type": "Country",
-                  "name": "Argentina",
-                },
                 hasOfferCatalog: {
                   "@type": "OfferCatalog",
                   name: "Servicios de Desarrollo Web",
@@ -169,7 +196,7 @@ gtag('set', 'url_passthrough', true);
                         "@type": "Service",
                         name: "Sistema de Gestión Web",
                         description:
-                          "Sistemas ERP, CRM, control de stock y facturación web para empresas. Software a medida, sin plantillas genéricas.",
+                          "Sistemas de gestión a medida, CRM y software de control de stock y facturación web para empresas. Sin plantillas genéricas.",
                       },
                     },
                   ],
@@ -177,7 +204,21 @@ gtag('set', 'url_passthrough', true);
               },
               {
                 "@context": "https://schema.org",
+                "@type": "Person",
+                "@id": "https://www.uxnicorp.com.ar/#gonzalo",
+                name: "Gonzalo Daniel Vega",
+                url: "https://www.uxnicorp.com.ar",
+                jobTitle: "Fundador",
+                description:
+                  "Fundador de UXnicorp. Diseña y desarrolla webs y software a medida pensados para el negocio detrás.",
+                worksFor: { "@id": "https://www.uxnicorp.com.ar/#organization" },
+                sameAs: ["https://www.linkedin.com/in/gonzalo-daniel-vega/"],
+                knowsAbout: ["Desarrollo web", "UX", "Software a medida", "SEO"],
+              },
+              {
+                "@context": "https://schema.org",
                 "@type": "WebSite",
+                "@id": "https://www.uxnicorp.com.ar/#website",
                 name: "UXnicorp",
                 url: "https://www.uxnicorp.com.ar",
                 inLanguage: ["es", "en"],

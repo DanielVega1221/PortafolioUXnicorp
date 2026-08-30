@@ -40,10 +40,16 @@ const EN_TO_ES: Record<string, string> = {
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
-  const isBlog = pathname.startsWith("/blog");
+  const isDevWeb = pathname.startsWith("/desarrollo-web");
   const isEnglish = pathname.startsWith("/en");
 
-  if (isBlog) return null;
+  const setLocaleCookie = useCallback((locale: string) => {
+    if (typeof document !== "undefined") {
+      document.cookie = `user-locale=${locale}; path=/; max-age=31536000; SameSite=Lax`;
+    }
+  }, []);
+
+  if (isDevWeb) return null;
 
   const esPath = isEnglish
     ? (EN_TO_ES[pathname] ?? (pathname.slice(3) || "/"))
@@ -52,12 +58,6 @@ export default function LanguageSwitcher() {
   const enPath = isEnglish
     ? pathname
     : (ES_TO_EN[pathname] ?? (pathname === "/" ? "/en" : `/en${pathname}`));
-
-  const setLocaleCookie = useCallback((locale: string) => {
-    if (typeof document !== "undefined") {
-      document.cookie = `user-locale=${locale}; path=/; max-age=31536000; SameSite=Lax`;
-    }
-  }, []);
 
   return (
     <div
@@ -83,7 +83,7 @@ export default function LanguageSwitcher() {
           padding: "0.42rem 0.85rem",
           fontSize: "0.72rem",
           fontWeight: !isEnglish ? 800 : 500,
-          color: !isEnglish ? "#F37AA6" : "#9ca3af",
+          color: !isEnglish ? "#974c67" : "#6b7280",
           textDecoration: "none",
           background: !isEnglish ? "rgba(243,122,166,0.10)" : "transparent",
           transition: "all 0.15s",
@@ -100,7 +100,7 @@ export default function LanguageSwitcher() {
           padding: "0.42rem 0.85rem",
           fontSize: "0.72rem",
           fontWeight: isEnglish ? 800 : 500,
-          color: isEnglish ? "#F37AA6" : "#9ca3af",
+          color: isEnglish ? "#974c67" : "#6b7280",
           textDecoration: "none",
           background: isEnglish ? "rgba(243,122,166,0.10)" : "transparent",
           transition: "all 0.15s",

@@ -357,6 +357,7 @@ export default function Arquitectura() {
               alt="BRÜNN STUDIO - Demo Portfolio Digital"
               width={1600}
               height={900}
+              sizes="(max-width: 1024px) 100vw, 1440px"
               className="demo-screenshot"
               loading="lazy"
               decoding="async"

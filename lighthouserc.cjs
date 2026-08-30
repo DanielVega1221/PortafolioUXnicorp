@@ -1,19 +1,33 @@
 module.exports = {
   ci: {
-    collect: {
-      url: [
-        "http://127.0.0.1:3000/",
-        "http://127.0.0.1:3000/servicios",
-        "http://127.0.0.1:3000/casos",
-      ],
-      numberOfRuns: 1,
-      settings: {
-        // Simulate a mid-range mobile device (Lighthouse default)
-        preset: "desktop",
-        // Skip PWA audits — not relevant for this site
-        skipAudits: ["installable-manifest", "service-worker", "splash-screen", "themed-omnibox", "maskable-icon"],
+    collect: [
+      {
+        url: [
+          "http://127.0.0.1:3000/",
+          "http://127.0.0.1:3000/servicios",
+          "http://127.0.0.1:3000/casos",
+        ],
+        numberOfRuns: 1,
+        settings: {
+          preset: "desktop",
+          // Skip PWA audits — not relevant for this site
+          skipAudits: ["installable-manifest", "service-worker", "splash-screen", "themed-omnibox", "maskable-icon"],
+        },
       },
-    },
+      {
+        url: [
+          "http://127.0.0.1:3000/",
+          "http://127.0.0.1:3000/servicios",
+          "http://127.0.0.1:3000/casos",
+        ],
+        numberOfRuns: 1,
+        settings: {
+          preset: "mobile-balanced",
+          // Skip PWA audits — not relevant for this site
+          skipAudits: ["installable-manifest", "service-worker", "splash-screen", "themed-omnibox", "maskable-icon"],
+        },
+      },
+    ],
     assert: {
       assertions: {
         "categories:performance":     ["warn",  { minScore: 0.8  }],

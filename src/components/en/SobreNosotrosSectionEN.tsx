@@ -56,7 +56,7 @@ export default function SobreNosotrosSectionEN() {
         <motion.div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1fr] md:gap-10 lg:gap-14" variants={colListVariants}>
 
           <motion.div className="flex flex-col" variants={colVariants}>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
               About Us
             </p>
             <h2 className="mt-4 text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -64,7 +64,7 @@ export default function SobreNosotrosSectionEN() {
               <br />
               make sense.
               <br />
-              <span className="text-[#F37AA6]">And actually work.</span>
+              <span className="text-[#E0608A]">And actually work.</span>
             </h2>
             <p className="mt-5 max-w-[30rem] text-[1.01rem] leading-relaxed text-gray-500">
               We start by understanding your business: what you sell, who you sell it to, and where the friction is. Then we design and build the most direct solution
@@ -72,7 +72,7 @@ export default function SobreNosotrosSectionEN() {
             </p>
             <div className="mt-8 flex items-center gap-3">
               <span className="h-px w-10 bg-gray-300" />
-              <p className="text-[0.82rem] text-gray-400">
+              <p className="text-[0.82rem] text-gray-500">
                 Argentina · 100% remote
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function SobreNosotrosSectionEN() {
               className="relative w-full overflow-hidden rounded-[36px] border border-white/80 p-7 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-8"
               style={{ background: "linear-gradient(155deg, rgba(255,255,255,0.92) 0%, rgba(254,224,214,0.18) 45%, rgba(224,166,216,0.14) 100%)" }}
             >
-              <p className="mb-6 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-gray-400">
+              <p className="mb-6 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-gray-500">
                 How we work
               </p>
 
@@ -113,8 +113,8 @@ export default function SobreNosotrosSectionEN() {
 
               <div className="mt-6 flex items-center justify-between border-t border-black/6 pt-5">
                 <Image src="/brand/logo-sm.png" alt="UXnicorp" width={25} height={28} sizes="28px" style={{ opacity: 0.7 }} />
-                <p className="text-[0.72rem] text-gray-400">
-                  ARG · Buenos Aires · Córdoba · Catamarca
+                <p className="text-[0.72rem] text-gray-500">
+                  Team in Argentina · Buenos Aires · Córdoba · Catamarca
                 </p>
               </div>
             </div>

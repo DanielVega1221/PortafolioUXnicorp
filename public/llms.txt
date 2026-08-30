@@ -1,0 +1,62 @@
+# UXnicorp
+
+> UXnicorp es un estudio de desarrollo web y UX en Argentina. Pensamos el negocio antes de abrir el editor: diseño, código y estrategia en un solo equipo. Desarrollamos landing pages, tiendas online, sistemas de gestión a medida y webs institucionales para negocios en Argentina.
+
+- [Inicio](https://www.uxnicorp.com.ar): Agencia de Desarrollo Web y UX en Argentina
+- [Servicios](https://www.uxnicorp.com.ar/servicios): Landing pages, e-commerce y sistemas de gestión web a medida
+- [Sistemas de gestión por industria](https://www.uxnicorp.com.ar/servicios/sistemas-apps): Software a medida para restaurantes, clínicas, inmobiliarias, gimnasios y más
+- [Casos](https://www.uxnicorp.com.ar/casos): Casos reales de clientes con resultados
+- [Blog](https://www.uxnicorp.com.ar/blog): Artículos sobre desarrollo web, UX y negocios digitales
+- [Contacto](https://www.uxnicorp.com.ar/#contacto): Presupuestos y consultas
+
+## Servicios
+
+- [Landing pages y webs institucionales](https://www.uxnicorp.com.ar/servicios/landing-page): Diseño UX, copy y desarrollo incluidos
+- [E-commerce](https://www.uxnicorp.com.ar/servicios/ecommerce): Tiendas online a medida, catálogo, pagos y panel propio
+- [Sistemas de gestión](https://www.uxnicorp.com.ar/servicios/sistemas-apps): ERP, CRM, stock y facturación web a medida
+
+## Desarrollo web por provincia
+
+- [Desarrollo web en CABA](https://www.uxnicorp.com.ar/desarrollo-web/caba): Landing pages, e-commerce y software a medida para estudios jurídicos, inmobiliarias, clínicas, restaurantes y hoteles porteños
+- [Desarrollo web en Provincia de Buenos Aires](https://www.uxnicorp.com.ar/desarrollo-web/buenos-aires): Webs y sistemas para restaurantes, clínicas, gimnasios, ferreterías y concesionarias bonaerenses
+- [Desarrollo web en Córdoba](https://www.uxnicorp.com.ar/desarrollo-web/cordoba): Landing pages, tiendas online y sistemas de gestión para restaurantes, inmobiliarias, clínicas, talleres y constructoras
+- [Desarrollo web en Mendoza](https://www.uxnicorp.com.ar/desarrollo-web/mendoza): Webs y software para hoteles, restaurantes, constructoras, inmobiliarias y viñedos mendocinos
+- [Desarrollo web en Neuquén](https://www.uxnicorp.com.ar/desarrollo-web/neuquen): Sistemas de gestión y webs para constructoras, clínicas, concesionarias, hoteles y talleres neuquinos
+- [Desarrollo web en Santa Fe](https://www.uxnicorp.com.ar/desarrollo-web/santa-fe): Webs y software para constructoras, inmobiliarias, restaurantes, gimnasios y ferreterías santafesinas
+- [Desarrollo web en Salta](https://www.uxnicorp.com.ar/desarrollo-web/salta): Webs para hoteles, restaurantes, clínicas, inmobiliarias y gimnasios del norte argentino
+- [Desarrollo web en Tucumán](https://www.uxnicorp.com.ar/desarrollo-web/tucuman): Landing pages, e-commerce y software a medida para restaurantes, clínicas, inmobiliarias, gimnasios y constructoras
+
+## Casos y conceptos
+
+- [Casos](https://www.uxnicorp.com.ar/casos): Casos reales de clientes con resultados
+- [Concepto: Web para Arquitectura](https://www.uxnicorp.com.ar/conceptos/arquitectura): Cómo pensamos un sitio para despachos y estudios de arquitectura
+- [Concepto: Web para Gastronomía](https://www.uxnicorp.com.ar/conceptos/gastronomia): Cómo pensamos un sitio para restaurantes y bares
+- [Cases (EN)](https://www.uxnicorp.com.ar/en/casos): Real client cases with results
+- [Concept: Architecture websites](https://www.uxnicorp.com.ar/en/conceptos/arquitectura): How we approach architecture studio sites
+- [Concept: Restaurant websites](https://www.uxnicorp.com.ar/en/conceptos/gastronomia): How we approach restaurant and bar sites
+
+## Blog
+
+- [Cuánto cuesta una web en Argentina en 2026](https://www.uxnicorp.com.ar/blog/cuanto-cuesta-una-web-argentina-2026)
+- [Por qué la web de una empresa de áridos no se piensa para el que compra arena](https://www.uxnicorp.com.ar/blog/comercial-rio-hondo-entender-antes-de-hacer)
+- [Wix, Tienda Nube o desarrollo a medida: cuándo conviene cada uno](https://www.uxnicorp.com.ar/blog/wix-tiendanube-o-desarrollo-a-medida)
+- [Los 5 sistemas de gestión que más piden las pymes del NOA (y cuál necesita tu negocio)](https://www.uxnicorp.com.ar/blog/sistemas-gestion-pymes-noa)
+- [How much does a website cost in Argentina in 2026](https://www.uxnicorp.com.ar/en/blog/cuanto-cuesta-una-web-argentina-2026): Custom web development cost analysis with real project data
+- [Why an aggregates company's website isn't built for the person buying sand](https://www.uxnicorp.com.ar/en/blog/comercial-rio-hondo-entender-antes-de-hacer): Understanding the business behind a project before building the site
+- [Wix, hosted store builders or custom development: when each one makes sense](https://www.uxnicorp.com.ar/en/blog/wix-tiendanube-o-desarrollo-a-medida): Choosing the right stack based on your goal
+- [The 5 management systems most requested by SMEs in northern Argentina](https://www.uxnicorp.com.ar/en/blog/sistemas-gestion-pymes-noa): Custom software needs for SMEs in the NOA region
+
+## Presencia
+
+- Email: uxnicorp@gmail.com
+- Teléfono / WhatsApp: +54 9 3834 368748
+- Instagram: https://www.instagram.com/uxnicorp/
+- LinkedIn: https://www.linkedin.com/company/uxnicorp
+
+## English
+
+UXnicorp is a web design & development studio from Argentina, helping businesses with custom landing pages, e-commerce and management systems.
+
+- [Home (EN)](https://www.uxnicorp.com.ar/en): Web design & development agency in Argentina
+- [Services (EN)](https://www.uxnicorp.com.ar/en/servicios): Landing pages, e-commerce, custom software
+- [Blog (EN)](https://www.uxnicorp.com.ar/en/blog): Articles on web development, UX and digital business

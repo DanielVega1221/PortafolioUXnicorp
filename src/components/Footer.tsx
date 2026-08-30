@@ -1,10 +1,6 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import Image from "next/image";
+import { FooterLogo } from "@/components/FooterLogo";
 
 const EMAIL = "uxnicorp@gmail.com";
 const GONZALO_WA = "5493834368748";
@@ -38,27 +34,6 @@ interface FooterProps {
 }
 
 export default function Footer({ locale = "es" }: FooterProps) {
-  const pathname = usePathname();
-  const isBlog = pathname.startsWith("/blog");
-  const isHomePage = pathname === "/" || pathname === "/en";
-
-  const [homeHref, setHomeHref] = useState(() => {
-    if (isBlog && typeof document !== "undefined") {
-      const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
-      if (match?.[1] === "en") return "/en";
-    }
-    return locale === "en" ? "/en" : "/";
-  });
-
-  useEffect(() => {
-    if (isBlog && typeof document !== "undefined") {
-      const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
-      setHomeHref(match?.[1] === "en" ? "/en" : "/");
-      return;
-    }
-    setHomeHref(locale === "en" ? "/en" : "/");
-  }, [pathname, locale, isBlog]);
-
   const t = {
     tagline:
       locale === "en"
@@ -87,6 +62,7 @@ export default function Footer({ locale = "es" }: FooterProps) {
           ]
         : [
             { label: "Servicios", href: "/servicios" },
+            { label: "Desarrollo web", href: "/desarrollo-web" },
             { label: "Casos", href: "/casos" },
             { label: "Nosotros", href: "/nosotros" },
           ],
@@ -104,24 +80,7 @@ export default function Footer({ locale = "es" }: FooterProps) {
       <div className="mx-auto max-w-[1200px] px-6 md:px-12 lg:px-20">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-3">
-            <Link
-              href={homeHref}
-              onClick={isHomePage ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined}
-              className="flex items-center gap-2.5"
-            >
-              <Image
-                src="/brand/logo.png"
-                alt="UXnicorp logo"
-                width={36}
-                height={36}
-              />
-              <span
-                className="text-2xl font-black tracking-[-0.04em] text-gray-900"
-                style={{ letterSpacing: "-0.04em" }}
-              >
-                UXNICORP
-              </span>
-            </Link>
+            <FooterLogo locale={locale} />
             <p className="max-w-[240px] text-sm leading-relaxed text-gray-500">
               {t.tagline}
             </p>

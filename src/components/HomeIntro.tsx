@@ -170,7 +170,7 @@ export default function HomeIntro() {
               fontWeight: 600,
               letterSpacing: "0.34em",
               textTransform: "uppercase",
-              color: "#e0608a",
+              color: "#974c67",
             }}
           >
             Diseño · Desarrollo · Estrategia
@@ -198,7 +198,7 @@ export default function HomeIntro() {
             fontSize: "0.95rem",
             fontWeight: 700,
             fontFamily: "monospace",
-            color: "rgba(30,10,18,0.2)",
+            color: "#974c67",
             letterSpacing: "-0.02em",
           }}
         >
@@ -208,7 +208,7 @@ export default function HomeIntro() {
           style={{
             fontSize: "0.55rem",
             fontWeight: 600,
-            color: "rgba(30,10,18,0.15)",
+            color: "#974c67",
             letterSpacing: "0.1em",
           }}
         >

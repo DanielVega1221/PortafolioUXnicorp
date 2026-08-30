@@ -1,4 +1,4 @@
-import React from "react";
+
 import Script from "next/script";
 import TransitionLink from "@/components/TransitionLink";
 import { notFound } from "next/navigation";
@@ -7,6 +7,7 @@ import { SERVICIOS, getServicio } from "../data";
 import { PriceDisplay } from "./PriceDisplay";
 import { CurrencyToggle } from "../CurrencyToggle";
 import Footer from "@/components/Footer";
+import FaqBlock from "@/components/FaqBlock";
 
 export function generateStaticParams() {
   return SERVICIOS.map((s) => ({ slug: s.slug }));
@@ -41,9 +42,9 @@ export async function generateMetadata({
       siteName: "UXnicorp",
       images: [
         {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
+          url: "/og-image.jpg",
+          width: 1343,
+          height: 633,
           alt: `${servicio.nombre} — UXnicorp`,
         },
       ],
@@ -52,7 +53,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: servicio.seo.title + " | UXnicorp",
       description: servicio.seo.description,
-      images: ["/og-image.png"],
+      images: ["/og-image.jpg"],
     },
   };
 }
@@ -86,8 +87,8 @@ export default async function ServicioPage({
   const siblings = SERVICIOS.filter((x) => x.slug !== s.slug);
 
   const priceMatch = s.precioUSD.match(/[\d.]+/g);
-  const lowPrice = priceMatch?.[0]?.replace(/\./g, "") ?? "";
-  const highPrice = priceMatch?.[1]?.replace(/\./g, "") ?? priceMatch?.[0]?.replace(/\./g, "") ?? "";
+  const minPrice = priceMatch?.[0]?.replace(/\./g, "") ?? "";
+  const maxPrice = priceMatch?.[1]?.replace(/\./g, "") ?? priceMatch?.[0]?.replace(/\./g, "") ?? "";
 
   const jsonLd = [
     {
@@ -103,8 +104,8 @@ export default async function ServicioPage({
         "@type": "Offer",
         priceSpecification: {
           "@type": "PriceSpecification",
-          lowPrice,
-          highPrice,
+          minPrice,
+          maxPrice,
           priceCurrency: "USD",
         },
       },
@@ -138,13 +139,13 @@ export default async function ServicioPage({
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "2.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+          <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
             Inicio
           </TransitionLink>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M4 2.5l4 3.5-4 3.5" stroke="#d1d5db" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <TransitionLink href="/servicios" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+          <TransitionLink href="/servicios" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
             Servicios
           </TransitionLink>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -193,7 +194,7 @@ export default async function ServicioPage({
         </div>
 
         <div
-          className="mb-8 grid grid-cols-1 gap-5 md:grid-cols-2"
+          className="mb-8 grid grid-cols-1 gap-5 lg:grid-cols-2"
         >
           <div
             style={{
@@ -301,7 +302,7 @@ export default async function ServicioPage({
               <span style={{ padding: "0.35rem 0.9rem", borderRadius: "0.6rem", background: "rgba(138,80,80,0.12)", fontSize: "0.95rem", fontWeight: 800, color: "#8a5050" }}>
                 $30.000 ARS/mes
               </span>
-              <span style={{ fontSize: "0.72rem", color: "#9ca3af" }}>aprox. 20 USD/mes</span>
+              <span style={{ fontSize: "0.72rem", color: "#6b7280" }}>aprox. 20 USD/mes</span>
               {s.slug === "sistemas-apps" && (
                 <span style={{ fontSize: "0.68rem", color: "#b06060", marginTop: "0.15rem" }}>
                   * El precio puede variar según el alcance del sistema.
@@ -373,7 +374,7 @@ export default async function ServicioPage({
               padding: "0.7rem 1.5rem",
               borderRadius: "0.875rem",
               background: "#fff",
-              color: "#e0608a",
+              color: "#974c67",
               fontWeight: 700,
               fontSize: "0.875rem",
               textDecoration: "none",
@@ -390,7 +391,7 @@ export default async function ServicioPage({
 
         {siblings.length > 0 && (
           <div>
-            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.875rem" }}>
+            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.875rem" }}>
               También ofrecemos
             </p>
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -424,7 +425,7 @@ export default async function ServicioPage({
 
         {s.slug === "sistemas-apps" && (
           <div style={{ marginTop: "1.5rem" }}>
-            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.875rem" }}>
+            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.875rem" }}>
               Soluciones por industria
             </p>
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -484,7 +485,9 @@ export default async function ServicioPage({
           </div>
         )}
 
-        <p className="mt-8 text-[0.75rem] text-gray-400">
+        <FaqBlock items={s.faq} accent={s.acento} />
+
+        <p className="mt-8 text-[0.75rem] text-gray-500">
           * Los precios son en USD y varían según el alcance. Siempre presupuestamos antes de arrancar.
         </p>
 

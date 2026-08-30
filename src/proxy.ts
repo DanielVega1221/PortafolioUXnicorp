@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const locale = pathname.startsWith("/en") ? "en" : "es";
   const host = request.headers.get("host") || "";
@@ -17,5 +17,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon.ico|og-image.png|brand).*)"],
+  matcher: ["/((?!_next|api|favicon.ico|og-image.jpg|brand).*)"],
 };

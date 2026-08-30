@@ -3,6 +3,8 @@ import { SERVICIOS } from "./servicios/data";
 import { SERVICIOS_EN } from "./en/servicios/data";
 import { CASOS } from "./casos/data";
 import { BLOG_POSTS } from "./blog/data";
+import { BLOG_POSTS_EN } from "./en/blog/data";
+import { PROVINCIAS } from "./desarrollo-web/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.uxnicorp.com.ar";
@@ -46,15 +48,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const blogEnUrls = BLOG_POSTS_EN.map((p) => ({
+    url: `${base}/en/blog/${p.slug}`,
+    lastModified: new Date(p.dateModified),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const provinciaUrls = PROVINCIAS.map((p) => ({
+    url: `${base}/desarrollo-web/${p.slug}`,
+    lastModified: recent,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     { url: base, lastModified: today, changeFrequency: "monthly", priority: 1 },
     { url: `${base}/casos`, lastModified: today, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/servicios`, lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/desarrollo-web`, lastModified: recent, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/nosotros`, lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`, lastModified: today, changeFrequency: "weekly", priority: 0.8 },
     ...servicioUrls,
     ...casoUrls,
     ...blogUrls,
+    ...provinciaUrls,
     { url: `${base}/servicios/sistemas-gestion/restaurantes`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/servicios/sistemas-gestion/construccion`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/servicios/sistemas-gestion/clinicas`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
@@ -74,8 +92,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/en/casos`, lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/en/servicios`, lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/en/about`, lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/en/blog`, lastModified: today, changeFrequency: "weekly", priority: 0.8 },
     ...servicioEnUrls,
     ...casoEnUrls,
+    ...blogEnUrls,
     { url: `${base}/en/servicios/management-systems/restaurants`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/en/servicios/management-systems/construction`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/en/servicios/management-systems/clinics`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
@@ -91,7 +111,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/en/servicios/management-systems/car-dealerships`, lastModified: recent, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/en/conceptos/arquitectura`, lastModified: older, changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/en/conceptos/gastronomia`, lastModified: older, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${base}/politica-de-privacidad`, lastModified: older, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/en/privacy-policy`, lastModified: older, changeFrequency: "yearly", priority: 0.2 },
   ];
 }

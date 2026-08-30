@@ -352,11 +352,12 @@ export default function ArquitecturaEN() {
 
         <div className="demo-preview">
           <div className="demo-preview-image">
-            <Image
+<Image
               src={BRUNNdemo}
-              alt="BRÜNN STUDIO - Architecture Digital Portfolio Demo"
+              alt="BRÜNN STUDIO - Demo Portfolio Digital"
               width={1600}
               height={900}
+              sizes="(max-width: 1024px) 100vw, 1440px"
               className="demo-screenshot"
               loading="lazy"
               decoding="async"

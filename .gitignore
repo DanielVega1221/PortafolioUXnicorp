@@ -18,14 +18,18 @@ Thumbs.db
 # lighthouse ci
 /.lighthouseci/
 
+# image compression artifacts
+public/_compressed/
+*.tmp.webp
+
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # env files
-.env*.local
-.env
+.env*
+!.env.example
 
 # vercel
 .vercel
@@ -33,3 +37,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# opencode local session files
+/.opencode/

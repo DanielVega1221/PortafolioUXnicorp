@@ -15,6 +15,7 @@ export function BrandMark({ size = 24 }: BrandMarkProps) {
         alt=""
         width={size}
         height={size}
+        sizes={`${size}px`}
         className="object-contain"
         onError={() => setImageMissing(true)}
       />

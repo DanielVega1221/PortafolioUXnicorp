@@ -16,6 +16,9 @@ export type Caso = {
   acento: string;
   bg: string;
   imagen?: string;
+  ogWidth?: number;
+  ogHeight?: number;
+  fecha: string;
   contexto: string;
   problema: string;
   queAnalizamos: string;
@@ -35,7 +38,10 @@ export const CASOS: Caso[] = [
     industria: "Tecnología / Hogar",
     acento: "#3a7cc4",
     bg: "rgba(202,222,249,0.55)",
-    imagen: "/works/SmartHome.png",
+    imagen: "/works/SmartHome.webp",
+    ogWidth: 1344,
+    ogHeight: 630,
+    fecha: "2025-12-17",
     featured: true,
     contexto:
       "SmartHome llegó con un Instagram lleno de trabajos reales pero sin página web. Sus clientes buscaban en Google y no los encontraban. Las consultas llegaban, pero no había nada que respaldara la marca fuera de las redes.",
@@ -80,7 +86,10 @@ export const CASOS: Caso[] = [
     industria: "Construcción / Áridos",
     acento: "#a07820",
     bg: "rgba(254,240,190,0.55)",
-    imagen: "/works/ComercialRioHondo.png",
+    imagen: "/works/ComercialRioHondo.webp",
+    ogWidth: 1267,
+    ogHeight: 568,
+    fecha: "2026-02-20",
     featured: true,
     contexto:
       "Una empresa con varios años en el mercado de áridos y triturados. Proveedores de obras civiles, caminos y vialidad en Santiago del Estero. Sin web, sin forma de que los ingenieros o constructoras los encontraran online.",
@@ -124,9 +133,12 @@ export const CASOS: Caso[] = [
     cliente: "Glam at Nails",
     tipo: "Landing Page",
     industria: "Belleza / Estética",
-    acento: "#e0608a",
+    acento: "#aa5574",
     bg: "rgba(253,232,242,0.65)",
-    imagen: "/works/GlamAtNails.png",
+    imagen: "/works/GlamAtNails.webp",
+    ogWidth: 1344,
+    ogHeight: 630,
+    fecha: "2025-05-08",
     contexto:
       "Ailín tiene un homestudio en Boedo con más de 300 clientas y años de trabajo real detrás. Sus diseños circulaban en Instagram, las recomendaciones llegaban solas, pero todo dependía de un solo canal y de responder consultas una por una.",
     problema:
@@ -173,6 +185,9 @@ export const CASOS: Caso[] = [
     acento: "#c47a3a",
     bg: "rgba(254,224,214,0.55)",
     imagen: "/works/ElectroPower.webp",
+    ogWidth: 1200,
+    ogHeight: 559,
+    fecha: "2025-11-15",
     contexto:
       "ElectroPower tiene varios años trabajando en electricidad, refrigeración y construcción en Buenos Aires, con proyectos junto a Edenor y Edesur y capacidad para baja, media y alta tensión. Un portfolio enorme de obras reales, sin presencia digital que lo respaldara.",
     problema:
@@ -220,6 +235,9 @@ export const CASOS: Caso[] = [
     acento: "#9040b0",
     bg: "rgba(224,166,216,0.45)",
     imagen: "/works/ComunidadAhorro.webp",
+    ogWidth: 1200,
+    ogHeight: 573,
+    fecha: "2025-01-18",
     contexto:
       "Una empresa que comercializa planes de ahorro y gestiona préstamos en cuotas. Vendedores en campo, cobradores, administración central, todos coordinando por WhatsApp y planillas de Excel. Crecieron y el sistema improvisado ya no daba.",
     problema:
@@ -266,6 +284,9 @@ export const CASOS: Caso[] = [
     acento: "#1a6b52",
     bg: "rgba(180,230,210,0.45)",
     imagen: "/works/fintech-mvp.webp",
+    ogWidth: 1200,
+    ogHeight: 601,
+    fecha: "2026-01-14",
     contexto:
       "Una startup de inversiones con idea clara y equipo técnico propio, pero sin producto para mostrar. Necesitaban un MVP funcional para validar con usuarios reales y presentar a inversores.",
     problema:

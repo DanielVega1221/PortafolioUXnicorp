@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 export type Currency = "USD" | "ARS";
 
@@ -12,11 +12,15 @@ interface CurrencyCtx {
 const CurrencyContext = createContext<CurrencyCtx>({ currency: "USD", toggle: () => {} });
 
 export function CurrencyProvider({ children }: { children: ReactNode }) {
-  const [currency, setCurrency] = useState<Currency>(() => {
-    if (typeof window === "undefined") return "USD";
+  const [currency, setCurrency] = useState<Currency>("USD");
+
+  useEffect(() => {
     const saved = localStorage.getItem("uxnicorp-currency") as Currency | null;
-    return saved === "ARS" || saved === "USD" ? saved : "USD";
-  });
+    if (saved === "ARS" || saved === "USD") {
+      const id = setTimeout(() => setCurrency(saved), 0);
+      return () => clearTimeout(id);
+    }
+  }, []);
 
   const toggle = () => {
     setCurrency((c) => {

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     template: "%s | UXnicorp",
-    default: "UXnicorp — Web Dev & UX Agency from Argentina",
+    default: "UXnicorp — Web Dev & UX Agency in Argentina",
   },
   description:
     "We design and build websites around the business behind them. Design, code and strategy with a real focus on what your business needs.",
@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     "landing page development argentina",
     "landing page design agency",
     "landing page for business",
-    "affordable landing page development",
+    "custom landing page design",
     "ecommerce development argentina",
     "custom online store development",
     "ecommerce without shopify",
     "online store no commissions",
-    "erp system development argentina",
+    "custom management system development",
     "crm development agency",
     "custom inventory system",
     "invoicing system web",
@@ -46,24 +46,24 @@ export const metadata: Metadata = {
     alternateLocale: ["es_AR"],
     url: "https://www.uxnicorp.com.ar/en",
     siteName: "UXnicorp",
-    title: "UXnicorp — Web Dev & UX Agency from Argentina",
+    title: "UXnicorp — Web Dev & UX Agency in Argentina",
     description:
       "Web design and development with purpose. We understand your business before designing. Clear pricing, direct communication, no middlemen.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp — Web Development Agency Argentina",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "UXnicorp — Web Dev & UX Agency from Argentina",
+    title: "UXnicorp — Web Dev & UX Agency in Argentina",
     description:
       "Web design and development with purpose. We understand your business before designing. Clear pricing, direct communication, no middlemen.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

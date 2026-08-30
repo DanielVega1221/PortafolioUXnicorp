@@ -305,7 +305,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
     <section id="ux-score" className="relative px-6 pb-24 pt-12 md:px-8 md:pb-28 md:pt-16">
       <div className="relative z-10 mx-auto max-w-[1220px]">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">UX Score</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">UX Score</p>
           <h2 className="mt-4 text-[2.25rem] font-extrabold leading-[0.98] tracking-[-0.05em] text-gray-900 md:text-[3.4rem]">
             {isEN ? "Phase-by-phase diagnosis." : "Diagnóstico por fases."}
             <br />
@@ -334,13 +334,13 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                       : (isEN ? "Answer one thing at a time. You can go back and change any answer." : "Respondé una sola cosa a la vez. Vas a poder volver y cambiar cualquier respuesta.")}
                   </p>
                 </div>
-                <div className="rounded-full border border-[#F37AA6]/20 bg-[#F37AA6]/10 px-4 py-2 text-sm font-semibold text-[#cc5d86]">
+                <div className="rounded-full border border-[#F37AA6]/20 bg-[#F37AA6]/10 px-4 py-2 text-sm font-semibold text-[#974c67]">
                   {completionCount}/{activeQuestions.length} {isEN ? "answered" : "completadas"}
                 </div>
               </div>
 
               <div className="mt-5" aria-label="Progreso del UX Score">
-                <div className="flex items-center justify-between gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-gray-400">
+                <div className="flex items-center justify-between gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-gray-500">
                   <span>{isEN ? "Overall progress" : "Progreso general"}</span>
                   <span>{Math.round(progressValue)}%</span>
                 </div>
@@ -374,7 +374,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                         }`}
                       >
                         <div className="flex items-center justify-between gap-3">
-                          <span className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-gray-400">
+                          <span className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-gray-500">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <span
@@ -382,8 +382,8 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                               answered
                                 ? "bg-emerald-100 text-emerald-700"
                                 : active
-                                  ? "bg-[#F37AA6]/12 text-[#cc5d86]"
-                                  : "bg-black/5 text-gray-500"
+                                  ? "bg-[#F37AA6]/12 text-[#974c67]"
+                                  : "bg-black/5 text-gray-600"
                             }`}
                           >
                             {stateLabel}
@@ -403,7 +403,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
               <div>
                 <fieldset className="border-0">
                   <legend className="w-full">
-                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gray-400">{currentQuestion.eyebrow}</p>
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gray-500">{currentQuestion.eyebrow}</p>
                     <h4 className="mt-2 text-[1.6rem] font-bold leading-tight tracking-[-0.04em] text-gray-900 md:text-[1.85rem]">
                       {currentQuestion.prompt}
                     </h4>
@@ -447,9 +447,9 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                 </fieldset>
 
                 <div className="mt-6 rounded-[26px] border border-black/6 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,252,0.92))] p-5">
-                  <h5 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">{isEN ? "Why this question matters" : "Qué estamos mirando acá"}</h5>
+                  <h5 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">{isEN ? "Why this question matters" : "Qué estamos mirando acá"}</h5>
                   <p className="mt-3 text-sm leading-relaxed text-gray-600">{currentQuestion.whyItMatters}</p>
-                  <p className="mt-3 text-sm font-medium leading-relaxed text-[#cc5d86]">{currentQuestion.tip}</p>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-[#974c67]">{currentQuestion.tip}</p>
 
                   {currentAnswer ? (
                     <div className="mt-4 rounded-[20px] border border-[#F37AA6]/18 bg-white p-4">
@@ -486,7 +486,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
 
                   return (
                     <article key={question.id} className="rounded-[24px] border border-black/6 bg-white/85 p-5">
-                      <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gray-400">{question.eyebrow}</p>
+                      <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gray-500">{question.eyebrow}</p>
                       <h4 className="mt-2 text-lg font-bold tracking-[-0.03em] text-gray-900">{question.prompt}</h4>
                       <p className="mt-3 text-sm leading-relaxed text-gray-600">{selected?.label ?? (isEN ? "Without answer" : "Sin responder")}</p>
                       {selected ? <p className="mt-2 text-sm leading-relaxed text-gray-500">{selected.detail}</p> : null}
@@ -520,7 +520,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
           >
             <div className="flex items-center justify-between gap-4 border-b border-black/6 pb-5">
               <div>
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gray-400">
+                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gray-500">
                   {isResultStep ? (isEN ? "Result" : "Resultado") : (isEN ? "Current progress" : "Lectura guiada")}
                 </p>
                 <h3 className="mt-2 text-xl font-bold tracking-[-0.03em] text-gray-900">
@@ -546,13 +546,13 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                     <div className="grid h-[84px] w-[84px] place-items-center rounded-full bg-white text-center shadow-inner">
                       <div>
                         <div className="text-[1.65rem] font-extrabold leading-none text-gray-900">{completionCount}</div>
-                        <div className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gray-400">de 3</div>
+                        <div className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gray-500">de 3</div>
                       </div>
                     </div>
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#cc5d86]">{isEN ? "Current progress" : "Progreso actual"}</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#974c67]">{isEN ? "Current progress" : "Progreso actual"}</p>
                     <p className="mt-3 text-sm leading-relaxed text-gray-600">
                       {completionCount === 0
                         ? (isEN ? "No reading yet. Start with the first phase and we'll build the diagnosis together." : "Todavía no hay lectura. Empezá por la primera fase y vamos construyendo el diagnóstico juntos.")
@@ -563,7 +563,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
 
                 {currentQuestion ? (
                   <div className="rounded-[28px] border border-black/6 bg-white/72 p-5">
-                    <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">{isEN ? "Why this question matters" : "Por qué esta pregunta importa"}</h4>
+                    <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">{isEN ? "Why this question matters" : "Por qué esta pregunta importa"}</h4>
                     <p className="mt-4 text-sm leading-relaxed text-gray-600">{currentQuestion.whyItMatters}</p>
                     <p className="mt-4 rounded-[18px] border border-[#F37AA6]/16 bg-[#F37AA6]/8 px-4 py-3 text-sm leading-relaxed text-gray-700">
                       {currentQuestion.tip}
@@ -572,7 +572,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                 ) : null}
 
                 <div className="rounded-[28px] border border-black/6 bg-white/72 p-5">
-                  <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">{isEN ? "What's being evaluated overall" : "Qué se evalúa en total"}</h4>
+                  <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">{isEN ? "What's being evaluated overall" : "Qué se evalúa en total"}</h4>
                   <div className="mt-4 grid gap-3">
                     {activeQuestions.map((question) => {
                       const answered = Boolean(answers[question.id]);
@@ -607,7 +607,7 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                     <div className="grid h-[84px] w-[84px] place-items-center rounded-full bg-white text-center shadow-inner">
                       <div>
                         <div className="text-[1.65rem] font-extrabold leading-none text-gray-900">{result.score}</div>
-                        <div className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gray-400">score</div>
+                        <div className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gray-500">score</div>
                       </div>
                     </div>
                   </div>
@@ -619,13 +619,13 @@ export default function UXScoreSection({ locale = 'es' }: { locale?: 'es' | 'en'
                 </div>
 
                 <div className="mt-5 rounded-[28px] border border-black/6 bg-white/72 p-5">
-                  <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">{isEN ? "Suggested priorities" : "Prioridades sugeridas"}</h4>
+                  <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">{isEN ? "Suggested priorities" : "Prioridades sugeridas"}</h4>
                   <div className="mt-4 grid gap-3">
                     {result.priorities.map((item) => (
                       <div key={item.title} className="rounded-[20px] border border-black/6 bg-white p-4">
                         <p className="font-semibold text-gray-900">{item.title}</p>
                         <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.recommendation}</p>
-                        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#cc5d86]">{item.target}</p>
+                        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#974c67]">{item.target}</p>
                       </div>
                     ))}
                   </div>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Concepto Web para Gastronomia",
+  title: "Concepto Web para Gastronomía",
   description:
-    "Demo de concepto web para restaurantes y negocios gastronomicos: branding, menu digital, reservas y estructura UX. Como pensamos antes de diseñar.",
+    "Demo de concepto web para restaurantes y negocios gastronómicos: branding, menú digital, reservas y estructura UX. Como pensamos antes de diseñar.",
   keywords: [
     "web para restaurantes argentina",
     "diseño web gastronomía",
@@ -63,7 +63,7 @@ export default function GastronomiaLayout({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.uxnicorp.com.ar" },
-              { "@type": "ListItem", position: 2, name: "Concepto Web para Gastronomia" },
+              { "@type": "ListItem", position: 2, name: "Concepto Web para Gastronomía" },
             ],
           }),
         }}

@@ -23,13 +23,13 @@ export const SERVICIOS_EN: ServicioEN[] = [
     slug: "landing-page",
     nombre: "Landing Page",
     tagline: "Your online presence that actually converts.",
-    precioUSD: "$500 – $800 USD",
+    precioUSD: "USD 500 – 800",
     precioARS: "$300,000 – $500,000 ARS",
     tiempo: "2 – 3 weeks",
     cuotas: "2 or 3 installments",
     descripcion:
       "We don't do templates. We analyze your business, define the structure, write the copy and build from scratch with the right technology for the project. Fast loading, good SEO and built to convert.",
-    acento: "#e0608a",
+    acento: "#aa5574",
     bg: "rgba(253,232,242,0.65)",
     seo: {
       title: "Landing Page & Institutional Website Design",
@@ -81,7 +81,7 @@ export const SERVICIOS_EN: ServicioEN[] = [
     slug: "ecommerce",
     nombre: "E-commerce",
     tagline: "Your own store. No third-party commissions.",
-    precioUSD: "$900 – $1,500 USD",
+    precioUSD: "USD 900 – 1,500",
     precioARS: "$800,000 – $1,400,000 ARS",
     tiempo: "6 – 10 weeks",
     cuotas: "2 or 3 installments",
@@ -138,20 +138,20 @@ export const SERVICIOS_EN: ServicioEN[] = [
   },
   {
     slug: "sistemas-apps",
-    nombre: "System / App",
+    nombre: "Management System",
     tagline: "Custom software for real problems.",
-    precioUSD: "from $1,000 USD",
+    precioUSD: "from USD 1,000",
     precioARS: "from $1,500,000 ARS",
     tiempo: "8 – 16 weeks",
     cuotas: "up to 6 installments",
     descripcion:
-      "ERP, CRM, inventory, invoicing, dashboards, internal platforms. We understand the problem first. Then we write code.",
+      "Management systems, dashboards, internal platforms, web applications. We understand the problem first. Then we write code.",
     acento: "#9040b0",
     bg: "rgba(224,166,216,0.45)",
     seo: {
-      title: "ERP, CRM & Custom Web Systems in Argentina",
+      title: "Custom Management System Development in Argentina",
       description:
-        "Modular ERP solutions: CRM, inventory, invoicing and more. Custom platforms for businesses in Argentina, no generic templates.",
+        "Management systems built to measure: CRM, inventory, invoicing and more. Custom software for businesses in Argentina, no generic templates.",
     },
     etapas: [
       {

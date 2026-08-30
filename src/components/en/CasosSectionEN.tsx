@@ -1,4 +1,5 @@
 import TransitionLink from "@/components/TransitionLink";
+import Image from "next/image";
 
 export default function CasosSectionEN() {
   return (
@@ -6,7 +7,7 @@ export default function CasosSectionEN() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14 flex flex-col items-start">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             Real cases
           </p>
           <h2 className="mt-4 max-w-2xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -25,13 +26,13 @@ export default function CasosSectionEN() {
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#FEE0D6] px-3 py-1">
                 <div className="h-1.5 w-1.5 rounded-full bg-[#F37AA6]" />
-                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[#F37AA6]">
+                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[#974c67]">
                   Glam at Nails
                 </span>
               </div>
 
               <div className="mb-6">
-                <p className="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-400">
+                <p className="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-500">
                   The problem
                 </p>
                 <p className="text-[1rem] leading-relaxed text-gray-700">
@@ -40,7 +41,7 @@ export default function CasosSectionEN() {
               </div>
 
               <div className="mb-6">
-                <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-400">
+                <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-500">
                   What we did
                 </p>
                 <ul className="space-y-2">
@@ -62,7 +63,7 @@ export default function CasosSectionEN() {
               className="rounded-2xl p-5"
               style={{ background: "rgba(243,122,166,0.07)", border: "1px solid rgba(243,122,166,0.15)" }}
             >
-              <p className="mb-1 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#F37AA6]">
+              <p className="mb-1 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#974c67]">
                 Result
               </p>
               <p className="text-[0.95rem] font-semibold leading-snug text-gray-800">
@@ -76,15 +77,17 @@ export default function CasosSectionEN() {
               className="rounded-[28px] p-8"
               style={{ background: "rgba(255,255,255,0.72)", border: "1px solid rgba(0,0,0,0.06)" }}
             >
-              <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-400">
+              <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gray-500">
                 The result
               </p>
               <div className="overflow-hidden rounded-2xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/works/GlamAtNails.png"
+                <Image
+                  src="/works/GlamAtNails.webp"
                   alt="Glam at Nails — landing page"
-                  className="w-full object-cover object-top"
+                  width={1200}
+                  height={800}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  className="h-auto w-full object-cover object-top"
                   style={{ maxHeight: "220px" }}
                 />
               </div>

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Script from "next/script";
 import TransitionLink from "@/components/TransitionLink";
 import { CASOS, getCasoLocalized } from "./data";
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "Proyectos UXnicorp: Desarrollo web Argentina",
       },
     ],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Proyectos reales de desarrollo web | UXnicorp",
     description:
       "6 proyectos reales de desarrollo web: landing pages, tiendas online, sistemas de gestión y webs institucionales. Resultados verificables.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -62,7 +62,7 @@ export default function CasosPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Casos de éxito: UXnicorp",
-    description: "Proyectos reales de desarrollo web y UX: landing pages, sistemas ERP, plataformas web y sitios corporativos en Argentina.",
+    description: "Proyectos reales de desarrollo web y UX: landing pages, sistemas de gestión, plataformas web y sitios corporativos en Argentina.",
     url: "https://www.uxnicorp.com.ar/casos",
     numberOfItems: CASOS.length,
     itemListElement: CASOS.map((caso, i) => ({
@@ -152,7 +152,7 @@ export default function CasosPage() {
                         padding: "0.22rem 0.65rem",
                         borderRadius: "99px",
                         background: "rgba(255,255,255,0.65)",
-                        color: "#9ca3af",
+                        color: "#6b7280",
                       }}
                     >
                       {t.industria}

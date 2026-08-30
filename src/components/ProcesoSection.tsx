@@ -100,7 +100,7 @@ export default function ProcesoSection() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             Cómo trabajamos
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -112,14 +112,14 @@ export default function ProcesoSection() {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 gap-5 md:grid-cols-2"
+          className="grid grid-cols-1 gap-5 lg:grid-cols-2"
           variants={listVariants}
         >
           {pasos.map((paso, i) => (
             <motion.div
               key={paso.num}
               variants={itemVariants}
-              className={i === 0 ? "md:col-span-2" : ""}
+              className={i === 0 ? "lg:col-span-2" : ""}
               style={{
                 position: "relative",
                 borderRadius: "1.5rem",
@@ -201,7 +201,7 @@ export default function ProcesoSection() {
           ))}
         </motion.div>
 
-        <p className="mt-8 text-[0.78rem] text-gray-400">
+        <p className="mt-8 text-[0.78rem] text-gray-500">
           * La primera reunión es siempre sin costo. Si después de hablar no tiene sentido avanzar, no hay ningún problema.
         </p>
 

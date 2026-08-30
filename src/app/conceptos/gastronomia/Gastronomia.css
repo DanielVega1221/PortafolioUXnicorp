@@ -118,7 +118,7 @@
   font-weight: 600;
   letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: var(--g-tostado);
+  color: var(--g-cacao);
   margin-bottom: 0.75rem;
 }
 
@@ -143,13 +143,12 @@
   font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.12em;
-  color: var(--g-tostado);
-  opacity: 0.6;
+  color: var(--g-cacao);
   z-index: 10;
 }
 
 .section-tag-light {
-  color: rgba(255, 253, 249, 0.35);
+  color: rgba(255, 253, 249, 0.62);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -184,8 +183,8 @@
   right: calc(var(--g-gap) - 0.5rem);
   font-size: clamp(8rem, 16vw, 14rem);
   font-weight: 900;
-  color: var(--g-tostado);
-  opacity: 0.022;
+  color: var(--g-cacao);
+  opacity: 0.8;
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -220,7 +219,7 @@
 
 .btn-home-gastro:hover {
   background: var(--g-rosa);
-  color: white;
+  color: var(--g-espresso);
   border-color: var(--g-rosa);
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(243, 122, 166, 0.3);
@@ -253,7 +252,7 @@
 
 .btn-gastro-primary {
   background: var(--g-rosa);
-  color: white;
+  color: var(--g-espresso);
 }
 
 .btn-gastro-primary:hover {
@@ -582,8 +581,8 @@
 .mep-numero {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--g-tostado);
-  opacity: 0.28;
+  color: var(--g-cacao);
+  opacity: 0.8;
   min-width: 2.5rem;
   line-height: 1;
   flex-shrink: 0;
@@ -774,7 +773,7 @@
 
 .fase-intro {
   font-size: 0.9rem;
-  color: rgba(255, 253, 249, 0.42);
+  color: rgba(255, 253, 249, 0.62);
   max-width: 580px;
   line-height: 1.7;
 }
@@ -844,7 +843,7 @@
 
 .insight-card p:last-child {
   font-size: 0.845rem;
-  color: rgba(255, 253, 249, 0.38);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.7;
   transition: color 0.35s ease;
 }
@@ -910,7 +909,7 @@
 
 .decision-card p {
   font-size: 0.845rem;
-  color: rgba(255, 253, 249, 0.4);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.65;
 }
 
@@ -984,7 +983,7 @@
 
 .timeline-body p {
   font-size: 0.825rem;
-  color: rgba(255, 253, 249, 0.38);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.7;
   transition: color 0.35s ease;
 }
@@ -1040,7 +1039,7 @@
   gap: 0.6rem;
   font-size: 0.82rem;
   font-weight: 500;
-  color: rgba(255, 253, 249, 0.42);
+  color: rgba(255, 253, 249, 0.62);
   letter-spacing: 0.02em;
   padding: 0 2rem;
   position: relative;
@@ -1077,7 +1076,7 @@
   max-width: var(--g-max-width);
   margin: 2.5rem auto 0;
   font-size: 0.78rem;
-  color: rgba(255, 253, 249, 0.25);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.5;
 }
 
@@ -1264,7 +1263,7 @@
 
 .cierre-sub {
   font-size: clamp(1rem, 1.4vw, 1.125rem);
-  color: rgba(255, 253, 249, 0.45);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.75;
   max-width: 520px;
 }
@@ -1314,7 +1313,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--g-rosa);
-  opacity: 0.55;
+  opacity: 0.8;
 }
 
 .cierre-card strong {
@@ -1327,7 +1326,7 @@
 
 .cierre-card p {
   font-size: 0.88rem;
-  color: rgba(255, 253, 249, 0.45);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.7;
   font-weight: 300;
 }
@@ -1346,7 +1345,7 @@
 
 .cierre-cta-copy {
   font-size: clamp(0.9rem, 1.3vw, 1rem);
-  color: rgba(255, 253, 249, 0.4);
+  color: rgba(255, 253, 249, 0.62);
   line-height: 1.8;
 }
 

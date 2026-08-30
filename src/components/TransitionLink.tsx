@@ -1,14 +1,11 @@
 "use client";
 
-import { ReactNode, CSSProperties, MouseEvent } from "react";
+import { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
 import { usePageTransition } from "./TransitionProvider";
 
-interface Props {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   children: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export default function TransitionLink({
@@ -17,6 +14,7 @@ export default function TransitionLink({
   className,
   style,
   onClick,
+  ...rest
 }: Props) {
   const { navigate } = usePageTransition();
 
@@ -29,7 +27,7 @@ export default function TransitionLink({
   }
 
   return (
-    <a href={href} className={className} style={style} onClick={handleClick}>
+    <a href={href} className={className} style={style} onClick={handleClick} {...rest}>
       {children}
     </a>
   );

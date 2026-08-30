@@ -38,7 +38,7 @@ const SERVICIOS = [
   },
   {
     icon: LayoutDashboard,
-    titulo: "System / App",
+    titulo: "Management System",
     desc: "Custom software for real problems.",
     color: "#3a7cc4",
     bg: "rgba(202,222,249,0.3)",
@@ -58,7 +58,7 @@ export default function ServiciosSectionEN() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             Services
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -69,7 +69,7 @@ export default function ServiciosSectionEN() {
           <p className="mt-4 max-w-lg text-base leading-relaxed text-gray-500">
             Before designing, we understand what your business needs. Design, development and copy in one team — no outsourcing.
           </p>
-          <TransitionLink href="/en/servicios" className="mt-4 inline-block text-sm font-medium text-[#F37AA6] underline underline-offset-4 hover:text-[#e0608a]">
+          <TransitionLink href="/en/servicios" className="mt-4 inline-block text-sm font-medium text-[#974c67] underline underline-offset-4 hover:text-[#974c67]">
             See pricing, timelines and what&apos;s included
           </TransitionLink>
         </div>

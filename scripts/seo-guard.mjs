@@ -5,9 +5,22 @@ const routes200 = [
   "/casos",
   "/servicios",
   "/nosotros",
-  "/politica-de-privacidad",
   "/conceptos/arquitectura",
   "/conceptos/gastronomia",
+  "/blog",
+  "/blog/cuanto-cuesta-una-web-argentina-2026",
+  "/blog/comercial-rio-hondo-entender-antes-de-hacer",
+  "/blog/wix-tiendanube-o-desarrollo-a-medida",
+  "/blog/sistemas-gestion-pymes-noa",
+  "/desarrollo-web",
+  "/desarrollo-web/caba",
+  "/desarrollo-web/buenos-aires",
+  "/desarrollo-web/cordoba",
+  "/desarrollo-web/mendoza",
+  "/desarrollo-web/neuquen",
+  "/desarrollo-web/santa-fe",
+  "/desarrollo-web/salta",
+  "/desarrollo-web/tucuman",
   "/servicios/sistemas-gestion/restaurantes",
   "/servicios/sistemas-gestion/construccion",
   "/servicios/sistemas-gestion/clinicas",
@@ -25,7 +38,11 @@ const routes200 = [
   "/en/casos",
   "/en/servicios",
   "/en/about",
-  "/en/privacy-policy",
+  "/en/blog",
+  "/en/blog/cuanto-cuesta-una-web-argentina-2026",
+  "/en/blog/comercial-rio-hondo-entender-antes-de-hacer",
+  "/en/blog/wix-tiendanube-o-desarrollo-a-medida",
+  "/en/blog/sistemas-gestion-pymes-noa",
   "/en/conceptos/arquitectura",
   "/en/conceptos/gastronomia",
   "/en/servicios/management-systems/restaurants",
@@ -43,6 +60,11 @@ const routes200 = [
   "/en/servicios/management-systems/car-dealerships",
   "/robots.txt",
   "/sitemap.xml",
+];
+
+const noindexRoutes = [
+  "/politica-de-privacidad",
+  "/en/privacy-policy",
 ];
 
 const notFoundRoute = "/this-route-should-not-exist";
@@ -99,6 +121,16 @@ async function checkStatusAndMeta() {
     );
   }
 
+  for (const route of noindexRoutes) {
+    const { response, text } = await fetchText(route);
+    assert(response.status === 200, `Expected 200 on ${route}, got ${response.status}`);
+    assert(/<title>[^<]+<\/title>/i.test(text), `Missing <title> on ${route}`);
+    assert(
+      /<meta\s+name=["']robots["'][^>]*noindex/i.test(text),
+      `Expected noindex robots meta on ${route}`
+    );
+  }
+
   const notFound = await fetchText(notFoundRoute);
   assert(notFound.response.status === 404, `Expected 404 on ${notFoundRoute}, got ${notFound.response.status}`);
   assert(
@@ -112,15 +144,16 @@ async function checkSitemapAndRobots() {
   assert(/Sitemap:\s*https:\/\/www\.uxnicorp\.com\.ar\/sitemap\.xml/i.test(robots), "robots.txt missing sitemap reference");
 
   const { text: sitemap } = await fetchText("/sitemap.xml");
+  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/gi)].map((m) => stripTrailingSlash(m[1].trim()));
   const requiredUrls = [
-    "https://www.uxnicorp.com.ar/",
+    "https://www.uxnicorp.com.ar",
     "https://www.uxnicorp.com.ar/servicios",
     "https://www.uxnicorp.com.ar/casos",
     "https://www.uxnicorp.com.ar/en",
   ];
 
   for (const url of requiredUrls) {
-    assert(sitemap.includes(url), `sitemap.xml missing required URL: ${url}`);
+    assert(locs.includes(url), `sitemap.xml missing required URL: ${url}`);
   }
 }
 
@@ -165,6 +198,12 @@ const bilingualRoutes = [
 
 const siteOrigin = "https://www.uxnicorp.com.ar";
 
+// Treat trailing slash as equivalent: Next.js with trailingSlash off serves the
+// root URL without a trailing slash (canonical, hreflang and sitemap loc).
+function stripTrailingSlash(url) {
+  return url.replace(/\/+$/, "");
+}
+
 function extractCanonical(html) {
   const m = html.match(/<link\s+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)
     || html.match(/<link\s+href=["']([^"']+)["'][^>]*rel=["']canonical["']/i);
@@ -172,24 +211,22 @@ function extractCanonical(html) {
 }
 
 function hasAlternate(html, lang, href) {
-  // Match either attribute order: rel first or hreflang first
+  // Root is served without a trailing slash by Next.js, so accept both forms.
+  const anySlash = href.endsWith("/") ? `${href}|${stripTrailingSlash(href)}` : href;
+  const pattern = anySlash.replace(/\//g, "\\/");
   const re1 = new RegExp(
-    `<link\\s+rel=["']alternate["'][^>]*hreflang=["']${lang}["'][^>]*href=["']${href.replace(/\//g, "\\/")}["']`,
+    `<link\\s+rel=["']alternate["'][^>]*hreflang=["']${lang}["'][^>]*href=["'](?:${pattern})["']`,
     "i"
   );
   const re2 = new RegExp(
-    `<link\\s+hreflang=["']${lang}["'][^>]*rel=["']alternate["'][^>]*href=["']${href.replace(/\//g, "\\/")}["']`,
+    `<link\\s+rel=["']alternate["'][^>]*href=["'](?:${pattern})["'][^>]*hreflang=["']${lang}["']`,
     "i"
   );
   const re3 = new RegExp(
-    `<link\\s+rel=["']alternate["'][^>]*href=["']${href.replace(/\//g, "\\/")}["'][^>]*hreflang=["']${lang}["']`,
+    `<link\\s+href=["'](?:${pattern})["'][^>]*hreflang=["']${lang}["']`,
     "i"
   );
-  const re4 = new RegExp(
-    `<link\\s+href=["']${href.replace(/\//g, "\\/")}["'][^>]*hreflang=["']${lang}["']`,
-    "i"
-  );
-  return re1.test(html) || re2.test(html) || re3.test(html) || re4.test(html);
+  return re1.test(html) || re2.test(html) || re3.test(html);
 }
 
 async function checkCanonicalAndHreflang() {
@@ -200,12 +237,14 @@ async function checkCanonicalAndHreflang() {
     const { text: esHtml } = await fetchText(es);
     const { text: enHtml } = await fetchText(en);
 
-    // Check canonicals point to themselves
+    // Check canonicals point to themselves (trailing slash insensitive)
     const esCanonical = extractCanonical(esHtml);
-    assert(esCanonical === esUrl, `Missing or wrong canonical on ${es}: got "${esCanonical}", expected "${esUrl}"`);
+    assert(esCanonical && stripTrailingSlash(esCanonical) === stripTrailingSlash(esUrl),
+      `Missing or wrong canonical on ${es}: got "${esCanonical}", expected "${esUrl}"`);
 
     const enCanonical = extractCanonical(enHtml);
-    assert(enCanonical === enUrl, `Missing or wrong canonical on ${en}: got "${enCanonical}", expected "${enUrl}"`);
+    assert(enCanonical && stripTrailingSlash(enCanonical) === stripTrailingSlash(enUrl),
+      `Missing or wrong canonical on ${en}: got "${enCanonical}", expected "${enUrl}"`);
 
     // Check hreflang alternates on ES page
     assert(

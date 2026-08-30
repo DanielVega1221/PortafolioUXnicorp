@@ -42,9 +42,9 @@ export async function generateMetadata({
       siteName: "UXnicorp",
       images: [
         {
-          url: caso.imagen || "/og-image.png",
-          width: 1200,
-          height: 630,
+          url: caso.imagen || "/og-image.jpg",
+          width: caso.ogWidth ?? 1200,
+          height: caso.ogHeight ?? 630,
           alt: `${caso.cliente}: UXnicorp case study`,
         },
       ],
@@ -53,7 +53,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${caso.cliente}: ${tipo} | UXnicorp`,
       description: truncate(en?.problema ?? caso.problema, 157),
-      images: [caso.imagen || "/og-image.png"],
+      images: [caso.imagen || "/og-image.jpg"],
     },
   };
 }
@@ -78,6 +78,8 @@ export default async function CasoEnPage({
       headline: `${caso.cliente}: ${loc.tipo}`,
       description: loc.problema,
       url: `https://www.uxnicorp.com.ar/en/casos/${caso.slug}`,
+      datePublished: caso.fecha,
+      image: [caso.imagen || "/og-image.jpg"],
       author: { "@type": "Organization", name: "UXnicorp" },
       publisher: { "@type": "Organization", name: "UXnicorp" },
       about: { "@type": "Thing", name: loc.industria },
@@ -113,7 +115,7 @@ export default async function CasoEnPage({
           <nav aria-label="Breadcrumb" style={{ marginBottom: "2.5rem" }}>
             <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <TransitionLink href="/en" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+                <TransitionLink href="/en" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
                   Home
                 </TransitionLink>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -121,7 +123,7 @@ export default async function CasoEnPage({
                 </svg>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <TransitionLink href="/en/casos" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+                <TransitionLink href="/en/casos" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
                   Case Studies
                 </TransitionLink>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -184,6 +186,7 @@ export default async function CasoEnPage({
                 alt={`${caso.cliente} project`}
                 width={860}
                 height={490}
+                sizes="(max-width: 1024px) 100vw, 860px"
                 priority
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
@@ -299,7 +302,7 @@ export default async function CasoEnPage({
           </section>
 
           <div style={{ marginBottom: "2rem" }}>
-            <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.75rem" }}>
+            <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.75rem" }}>
               Stack
             </p>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -345,7 +348,7 @@ export default async function CasoEnPage({
               </p>
             </div>
             <TransitionLink
-              href="/en#contact"
+              href="/en#contacto"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -353,7 +356,7 @@ export default async function CasoEnPage({
                 padding: "0.7rem 1.5rem",
                 borderRadius: "0.875rem",
                 background: "#fff",
-                color: "#e0608a",
+                color: "#974c67",
                 fontWeight: 700,
                 fontSize: "0.875rem",
                 textDecoration: "none",
@@ -370,7 +373,7 @@ export default async function CasoEnPage({
 
           {otherCases.length > 0 && (
             <div>
-              <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.875rem" }}>
+              <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.875rem" }}>
                 Other Case Studies
               </p>
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import TransitionLink from "@/components/TransitionLink";
 
 export const metadata: Metadata = {
-  title: "404 - Pagina no encontrada",
+  title: "404 - Página no encontrada",
   description:
-    "La ruta que buscabas no existe o fue movida. Volve al inicio de UXnicorp para seguir navegando.",
+    "La ruta que buscabas no existe o fue movida. Volvé al inicio de UXnicorp para seguir navegando.",
   alternates: {
     canonical: "https://www.uxnicorp.com.ar",
   },
@@ -66,7 +66,7 @@ export default function NotFound() {
             marginBottom: "0.9rem",
           }}
         >
-          Esta pagina no existe.
+          Esta página no existe.
         </h1>
 
         <p
@@ -78,7 +78,7 @@ export default function NotFound() {
             marginBottom: "1.7rem",
           }}
         >
-          Puede que el enlace este roto o que la URL haya cambiado. Te llevamos de
+          Puede que el enlace esté roto o que la URL haya cambiado. Te llevamos de
           vuelta al inicio para que sigas explorando nuestros servicios y casos.
         </p>
 

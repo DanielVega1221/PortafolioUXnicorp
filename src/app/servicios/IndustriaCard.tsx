@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import TransitionLink from "@/components/TransitionLink";
 
 interface IndustriaCardProps {
@@ -53,7 +52,7 @@ export function IndustriaCard({ href, nombre, tagline, precio, tiempo }: Industr
           <span style={{ padding: "0.3rem 0.85rem", borderRadius: "0.5rem", background: "rgba(255,255,255,0.5)", fontSize: "0.8rem", fontWeight: 600, color: "#4a5568" }}>
             {tiempo}
           </span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#9ca3af" }}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#6b7280" }}>
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { Metadata } from "next";
 import Script from "next/script";
 import NosotrosPageHeader from "@/components/nosotros/NosotrosPageHeader";
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp — Our Story",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Our Story | UXnicorp",
     description:
       "Learn how UXnicorp was born, the philosophy behind our work and why we chose honesty and closeness alongside every client.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

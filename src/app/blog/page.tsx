@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     canonical: "https://www.uxnicorp.com.ar/blog",
     languages: {
       es: "https://www.uxnicorp.com.ar/blog",
+      en: "https://www.uxnicorp.com.ar/en/blog",
       "x-default": "https://www.uxnicorp.com.ar/blog",
     },
   },
@@ -31,14 +32,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     siteName: "UXnicorp",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Blog UXnicorp" }],
+    images: [{ url: "/og-image.jpg", width: 1343, height: 633, alt: "Blog UXnicorp" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog de desarrollo web y UX | UXnicorp",
     description:
       "Artículos sobre desarrollo web, SEO, UX y estrategia digital. Sin humo, con datos reales.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -84,7 +85,7 @@ export default function BlogPage() {
           <nav aria-label="Breadcrumb" style={{ marginBottom: "2.5rem" }}>
             <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+                <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
                   Inicio
                 </TransitionLink>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -98,7 +99,7 @@ export default function BlogPage() {
           </nav>
 
           <div style={{ marginBottom: "2.5rem" }}>
-            <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#F37AA6", marginBottom: "0.75rem" }}>
+            <p style={{ fontSize: "0.69rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#974c67", marginBottom: "0.75rem" }}>
               Blog
             </p>
             <h1
@@ -114,7 +115,7 @@ export default function BlogPage() {
               Desarrollo web sin humo
             </h1>
             <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#4a5568", maxWidth: "560px", margin: 0 }}>
-              Artículos con datos reales de proyectos en Argentina. Sin fórmulas mágicas, sin "10 tips que van a cambiar tu vida".
+              Artículos con datos reales de proyectos en Argentina. Sin fórmulas mágicas, sin “10 tips que van a cambiar tu vida”.
             </p>
           </div>
 
@@ -132,9 +133,9 @@ export default function BlogPage() {
               <p style={{ fontSize: "1rem", color: "#6b7280", margin: "0 0 0.5rem 0" }}>
                 Estamos preparando los primeros artículos.
               </p>
-              <p style={{ fontSize: "0.88rem", color: "#9ca3af", margin: 0 }}>
+              <p style={{ fontSize: "0.88rem", color: "#6b7280", margin: 0 }}>
                 Volvé en unos días. Mientras tanto, podés ver nuestros{" "}
-                <TransitionLink href="/casos" style={{ color: "#F37AA6", fontWeight: 600, textDecoration: "none" }}>
+                <TransitionLink href="/casos" style={{ color: "#974c67", fontWeight: 600, textDecoration: "none" }}>
                   casos reales
                 </TransitionLink>
                 .
@@ -170,10 +171,10 @@ function BlogCard({ post }: { post: BlogPost }) {
       }}
     >
       <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap", marginBottom: "0.75rem" }}>
-        <span style={{ fontSize: "0.69rem", fontWeight: 700, color: "#F37AA6", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+        <span style={{ fontSize: "0.69rem", fontWeight: 700, color: "#974c67", textTransform: "uppercase", letterSpacing: "0.08em" }}>
           {post.category}
         </span>
-        <span style={{ fontSize: "0.69rem", fontWeight: 600, color: "#9ca3af" }}>
+        <span style={{ fontSize: "0.69rem", fontWeight: 600, color: "#6b7280" }}>
           {new Date(post.datePublished).toLocaleDateString("es-AR", { year: "numeric", month: "long", day: "numeric" })}
         </span>
       </div>
@@ -193,7 +194,7 @@ function BlogCard({ post }: { post: BlogPost }) {
               padding: "0.2rem 0.6rem",
               borderRadius: "99px",
               background: "rgba(243,122,166,0.1)",
-              color: "#F37AA6",
+              color: "#974c67",
             }}
           >
             {tag}

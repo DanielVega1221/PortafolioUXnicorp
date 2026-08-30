@@ -51,7 +51,7 @@ export default function LaParteHumanaSection({ locale }: LaParteHumanaSectionPro
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_1.2fr] md:gap-20">
 
           <div className="flex flex-col justify-between gap-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
               {c.eyebrow}
             </p>
             <blockquote

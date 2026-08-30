@@ -1,4 +1,4 @@
-import React from "react";
+
 import TransitionLink from "@/components/TransitionLink";
 
 type Locale = "es" | "en";
@@ -77,7 +77,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
           fontWeight: 700,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: "#9ca3af",
+          color: "#6b7280",
           marginBottom: "1rem",
         }}
       >
@@ -114,7 +114,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
           >
             {c.planCuidado.label}
           </p>
-          <h3
+          <h2
             style={{
               fontSize: "1.1rem",
               fontWeight: 800,
@@ -124,7 +124,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
             }}
           >
             {c.planCuidado.title}
-          </h3>
+          </h2>
           <p style={{ fontSize: "0.82rem", color: "#4a5568", lineHeight: 1.55, margin: "0 0 1rem 0" }}>
             {c.planCuidado.desc}
           </p>
@@ -153,7 +153,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
           </ul>
           <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginBottom: "1.25rem", marginTop: "auto" }}>
             <span style={{ fontSize: "1rem", fontWeight: 800, color: "#8a5050" }}>{c.planCuidado.price}</span>
-            <span style={{ fontSize: "0.72rem", color: "#9ca3af" }}>{c.planCuidado.priceNote}</span>
+            <span style={{ fontSize: "0.72rem", color: "#6b7280" }}>{c.planCuidado.priceNote}</span>
           </div>
           <TransitionLink
             href={c.planCuidado.href}
@@ -201,7 +201,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
           >
             {c.referidos.label}
           </p>
-          <h3
+          <h2
             style={{
               fontSize: "1.1rem",
               fontWeight: 800,
@@ -211,7 +211,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
             }}
           >
             {c.referidos.title}
-          </h3>
+          </h2>
           <p style={{ fontSize: "0.82rem", color: "#4a5568", lineHeight: 1.55, margin: "0 0 1rem 0" }}>
             {c.referidos.desc}
           </p>
@@ -238,7 +238,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
-          <p style={{ fontSize: "0.72rem", color: "#9ca3af", margin: "0 0 1.25rem 0", marginTop: "auto" }}>
+          <p style={{ fontSize: "0.72rem", color: "#6b7280", margin: "0 0 1.25rem 0", marginTop: "auto" }}>
             {c.referidos.note}
           </p>
           <TransitionLink
@@ -282,7 +282,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#e0608a",
+                color: "#974c67",
                 margin: 0,
               }}
             >
@@ -295,7 +295,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
                 background: "rgba(224,96,138,0.12)",
                 fontSize: "0.58rem",
                 fontWeight: 800,
-                color: "#e0608a",
+                color: "#974c67",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
               }}
@@ -303,7 +303,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
               {c.garantia.badge}
             </span>
           </div>
-          <h3
+          <h2
             style={{
               fontSize: "1.1rem",
               fontWeight: 800,
@@ -314,7 +314,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
             }}
           >
             {c.garantia.title}
-          </h3>
+          </h2>
           <p
             style={{
               fontSize: "0.82rem",
@@ -338,7 +338,7 @@ export default function ServiciosExtrasSection({ locale }: { locale: Locale }) {
               background: "rgba(224,96,138,0.1)",
               fontSize: "0.82rem",
               fontWeight: 700,
-              color: "#e0608a",
+              color: "#974c67",
               textDecoration: "none",
               alignSelf: "flex-start",
             }}

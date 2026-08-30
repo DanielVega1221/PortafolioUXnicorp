@@ -1,8 +1,10 @@
-import React from "react";
+
 import Script from "next/script";
 import TransitionLink from "@/components/TransitionLink";
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import FaqBlock from "@/components/FaqBlock";
+import { INDUSTRIA_FAQS } from "../../industria-faqs";
 
 export const metadata: Metadata = {
   title: "Software para Constructoras y Obras",
@@ -29,13 +31,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     siteName: "UXnicorp",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Software para Constructoras — UXnicorp" }],
+    images: [{ url: "/og-image.jpg", width: 1343, height: 633, alt: "Software para Constructoras — UXnicorp" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Software para Constructoras y Obras | UXnicorp",
     description: "Sistema de gestión para constructoras: control de obras, presupuestos, proveedores y documentación. Desarrollado a medida en Argentina.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -89,9 +91,9 @@ export default function ConstruccionPage() {
       <div className="mx-auto max-w-[1220px] px-6 py-20 md:px-8 md:py-28">
 
         <nav style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
-          <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>Inicio</TransitionLink>
+          <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>Inicio</TransitionLink>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2.5l4 3.5-4 3.5" stroke="#d1d5db" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          <TransitionLink href="/servicios" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>Servicios</TransitionLink>
+          <TransitionLink href="/servicios" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>Servicios</TransitionLink>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2.5l4 3.5-4 3.5" stroke="#d1d5db" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
           <span style={{ fontSize: "0.8rem", color: "#6b7280" }}>Construcción</span>
         </nav>
@@ -163,7 +165,7 @@ export default function ConstruccionPage() {
         </div>
 
         <div style={{ marginBottom: "2rem" }}>
-          <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.875rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.875rem" }}>
             También ofrecemos
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -180,7 +182,9 @@ export default function ConstruccionPage() {
           </div>
         </div>
 
-        <p className="mt-8 text-[0.75rem] text-gray-400">
+        <FaqBlock items={INDUSTRIA_FAQS.construccion} accent="#9040b0" />
+
+        <p className="mt-8 text-[0.75rem] text-gray-500">
           * Cada constructora es distinta. Siempre hacemos una primera charla gratuita para entender qué necesita tu negocio antes de presupuestar.
         </p>
 

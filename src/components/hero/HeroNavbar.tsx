@@ -38,13 +38,22 @@ export function HeroNavbar({
   });
 
   useEffect(() => {
+    let target = isEn ? "/en" : "/";
     if (isBlog && typeof document !== "undefined") {
       const match = document.cookie.match(/(?:^|;\s*)user-locale=([^;]*)/);
-      setHomeHref(match?.[1] === "en" ? "/en" : "/");
-      return;
+      if (match?.[1] === "en") target = "/en";
     }
-    setHomeHref(isEn ? "/en" : "/");
+    window.setTimeout(() => setHomeHref(target), 0);
   }, [pathname, isEn, isBlog]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onCloseMenu();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [menuOpen, onCloseMenu]);
 
   return (
     <div className="mx-auto max-w-[1280px] rounded-[28px] border border-white/60 bg-white/72 shadow-[0_10px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl">
@@ -85,7 +94,16 @@ export function HeroNavbar({
         <button
           className="rounded-lg p-2 transition hover:bg-black/5 md:hidden"
           onClick={onToggleMenu}
-          aria-label="Abrir menú"
+          aria-label={
+            menuOpen
+              ? isEn
+                ? "Close menu"
+                : "Cerrar menú"
+              : isEn
+                ? "Open menu"
+                : "Abrir menú"
+          }
+          aria-controls="mobile-menu"
           aria-expanded={menuOpen}
         >
           <span
@@ -104,9 +122,9 @@ export function HeroNavbar({
       </nav>
 
       <div
+        id="mobile-menu"
         className="grid overflow-hidden border-black/5 transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden"
         style={{ gridTemplateRows: menuOpen ? "1fr" : "0fr" }}
-        aria-hidden={!menuOpen}
       >
         <div className="min-h-0 overflow-hidden">
           {menuOpen && (

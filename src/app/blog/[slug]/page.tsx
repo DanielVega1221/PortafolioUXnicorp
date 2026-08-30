@@ -22,12 +22,13 @@ export async function generateMetadata({
   const canonicalUrl = `https://www.uxnicorp.com.ar/blog/${slug}`;
   return {
     title: post.title,
-    description: truncate(post.description, 157),
+    description: truncate(post.summary, 157),
     keywords: post.tags,
     alternates: {
       canonical: canonicalUrl,
       languages: {
         es: canonicalUrl,
+        en: `https://www.uxnicorp.com.ar/en/blog/${slug}`,
         "x-default": canonicalUrl,
       },
     },
@@ -84,15 +85,15 @@ export default async function BlogPostPage({
       },
       datePublished: post.datePublished,
       dateModified: post.dateModified,
-      author: { "@type": "Person", name: post.author },
+      author: { "@id": "https://www.uxnicorp.com.ar/#gonzalo", name: post.author },
       publisher: {
         "@type": "Organization",
         name: "UXnicorp",
         logo: {
           "@type": "ImageObject",
           url: "https://www.uxnicorp.com.ar/brand/logo.png",
-          width: 512,
-          height: 512,
+          width: 759,
+          height: 840,
         },
       },
       keywords: post.tags.join(", "),
@@ -127,7 +128,7 @@ export default async function BlogPostPage({
           <nav aria-label="Breadcrumb" style={{ marginBottom: "2.5rem" }}>
             <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+                <TransitionLink href="/" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
                   Inicio
                 </TransitionLink>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -135,7 +136,7 @@ export default async function BlogPostPage({
                 </svg>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <TransitionLink href="/blog" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#F37AA6", textDecoration: "none" }}>
+                <TransitionLink href="/blog" style={{ fontSize: "0.8rem", fontWeight: 600, color: "#974c67", textDecoration: "none" }}>
                   Blog
                 </TransitionLink>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -162,7 +163,7 @@ export default async function BlogPostPage({
                       padding: "0.25rem 0.7rem",
                       borderRadius: "99px",
                       background: "rgba(243,122,166,0.1)",
-                      color: "#F37AA6",
+                      color: "#974c67",
                     }}
                   >
                     {tag}
@@ -185,13 +186,29 @@ export default async function BlogPostPage({
                 <span style={{ fontSize: "0.88rem", fontWeight: 600, color: "#111" }}>
                   {post.author}
                 </span>
-                <span style={{ fontSize: "0.88rem", color: "#9ca3af" }}>
+                <span style={{ fontSize: "0.88rem", color: "#6b7280" }}>
                   {new Date(post.datePublished).toLocaleDateString("es-AR", { year: "numeric", month: "long", day: "numeric" })}
                 </span>
               </div>
               <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#4a5568", maxWidth: "640px", margin: 0 }}>
                 {post.description}
               </p>
+              <div
+                style={{
+                  marginTop: "1.25rem",
+                  borderRadius: "1rem",
+                  padding: "1.1rem 1.4rem",
+                  background: "rgba(243,122,166,0.07)",
+                  border: "1px solid rgba(243,122,166,0.18)",
+                }}
+              >
+                <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#974c67", margin: "0 0 0.35rem 0" }}>
+                  Respuesta corta
+                </p>
+                <p style={{ fontSize: "0.92rem", lineHeight: 1.6, color: "#374151", margin: 0 }}>
+                  {post.summary}
+                </p>
+              </div>
             </div>
 
             {post.ogImage && (
@@ -201,6 +218,7 @@ export default async function BlogPostPage({
                   alt={post.title}
                   width={860}
                   height={450}
+                  sizes="(max-width: 1024px) 100vw, 860px"
                   priority
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -209,13 +227,13 @@ export default async function BlogPostPage({
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginBottom: "2rem" }}>
               {post.sections.map((section, i) => (
-                <BlogSection key={i} section={section} slug={post.slug} />
+                <BlogSection key={i} section={section} />
               ))}
             </div>
 
             {related.length > 0 && (
               <div>
-                <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.875rem" }}>
+                <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.875rem" }}>
                   Artículos relacionados
                 </p>
                 <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -254,7 +272,7 @@ export default async function BlogPostPage({
   );
 }
 
-function BlogSection({ section, slug }: { section: import("../data").BlogSection; slug: string }) {
+function BlogSection({ section }: { section: import("../data").BlogSection }) {
 
   switch (section.type) {
     case "heading":
@@ -291,6 +309,7 @@ function BlogSection({ section, slug }: { section: import("../data").BlogSection
             alt={section.alt || ""}
             width={860}
             height={450}
+            sizes="(max-width: 1024px) 100vw, 860px"
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
@@ -316,7 +335,7 @@ function BlogSection({ section, slug }: { section: import("../data").BlogSection
               gap: "0.35rem",
               fontSize: "0.84rem",
               fontWeight: 700,
-              color: "#F37AA6",
+              color: "#974c67",
               textDecoration: "none",
             }}
           >

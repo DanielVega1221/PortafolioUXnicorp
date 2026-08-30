@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import TransitionLink from "@/components/TransitionLink";
 import type { Servicio } from "./data";
 import { useCurrency } from "./CurrencyProvider";
@@ -101,12 +100,12 @@ export function ServicioCard({ s }: { s: Servicio }) {
               background: "rgba(255,255,255,0.5)",
               fontSize: "0.75rem",
               fontWeight: 600,
-              color: "#9ca3af",
+              color: "#6b7280",
             }}
           >
             {s.cuotas}
           </span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#9ca3af" }}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#6b7280" }}>
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>

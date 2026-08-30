@@ -47,13 +47,13 @@ export default function HeroEN() {
             <h1 className="text-[2.65rem] font-extrabold leading-[0.94] tracking-[-0.06em] text-gray-900 md:text-[3.85rem]">
               We design and build
               <br />
-              websites around
+              websites focused on
               <br />
-              <SelectionHighlight color="#F37AA6">the business behind them.</SelectionHighlight>
+              <SelectionHighlight color="#E0608A">the business behind them.</SelectionHighlight>
             </h1>
 
             <p className="max-w-[31rem] text-[0.98rem] leading-relaxed text-gray-500 md:text-[1.02rem]">
-              We get involved from day one: we understand your industry, propose real solutions and build thinking about your business.
+              We get involved from day one: we understand your industry, propose real solutions and build with your business in mind.
             </p>
 
             <ul className="grid gap-1.5 text-[0.9rem] text-gray-600">

@@ -6,7 +6,7 @@ type SelectionHighlightProps = {
 };
 
 export function SelectionHighlight({ children, color }: SelectionHighlightProps) {
-  const corner = "absolute h-[7px] w-[7px] border-[2px] hidden md:block";
+  const corner = "absolute h-[7px] w-[7px] border-[2px] block";
 
   return (
     <span
@@ -16,7 +16,7 @@ export function SelectionHighlight({ children, color }: SelectionHighlightProps)
       {children}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 hidden md:block"
+        className="pointer-events-none absolute inset-0 block"
         style={{ border: `2px solid ${color}` }}
       />
       <span aria-hidden className={`${corner} left-[-3px] top-[-3px]`} style={{ borderColor: color, background: "#fff" }} />

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback, memo, useRef, useLayoutEffect } from "react";
+import { useState, useCallback, memo, useRef, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -36,7 +36,7 @@ type Category = {
 const categories: Category[] = [
   {
     label: "Costs & Budget",
-    color: "#e0608a",
+    color: "#974c67",
     bgColor: "rgba(243,122,166,0.07)",
     borderColor: "rgba(243,122,166,0.55)",
     items: [
@@ -178,10 +178,10 @@ const FAQItemRow = memo(function FAQItemRow({
           {item.q}
         </span>
         <span
-          className="flex-shrink-0 text-xl font-light leading-none"
+          className="flex-shrink-0 text-xl font-normal leading-none"
           style={{
             display: "inline-block",
-            color: isOpen ? color : "#9ca3af",
+            color: isOpen ? color : "#6b7280",
             transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
             transition: "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease",
           }}
@@ -238,7 +238,7 @@ export default function FAQSectionEN() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             FAQ
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">

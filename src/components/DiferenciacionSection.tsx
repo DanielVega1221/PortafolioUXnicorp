@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import React from "react";
 import { Users, MessageCircle, Tag, Hammer, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -29,8 +28,8 @@ const items = [
     texto: "Antes de diseñar, entendemos qué vendés, a quién y qué necesita mejorar. Lo que construimos tiene sentido para tu negocio, no para nuestro portafolio.",
     cardBg: "rgba(253,232,242,0.65)",
     iconBg: "rgba(243,122,166,0.15)",
-    iconColor: "#e0608a",
-    acentoColor: "#e0608a",
+    iconColor: "#E0608A",
+    acentoColor: "#E0608A",
   },
   {
     icon: Tag,
@@ -87,7 +86,7 @@ export default function DiferenciacionSection() {
       <div className="mx-auto max-w-[1220px]">
 
         <div className="mb-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#F37AA6]">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#974c67]">
             Cómo trabajamos
           </p>
           <h2 className="mt-4 max-w-xl text-[2.1rem] font-extrabold leading-[0.97] tracking-[-0.05em] text-gray-900 md:text-[2.8rem] lg:text-[3.1rem]">
@@ -105,16 +104,13 @@ export default function DiferenciacionSection() {
               <motion.div
                 key={i}
                 variants={itemVariants}
+                className="grid gap-y-4 lg:grid-cols-[4rem_1fr] lg:items-center lg:gap-x-8 lg:gap-y-0"
                 style={{
                   borderRadius: "1.5rem",
                   padding: "2rem 2.5rem",
                   background: item.cardBg,
                   border: "1px solid rgba(255,255,255,0.6)",
                   boxShadow: "0 2px 16px rgba(0,0,0,0.04)",
-                  display: "grid",
-                  gridTemplateColumns: "4rem 1fr",
-                  gap: "0 2rem",
-                  alignItems: "center",
                 }}
               >
                 <div

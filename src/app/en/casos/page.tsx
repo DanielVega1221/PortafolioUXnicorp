@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: "UXnicorp",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/og-image.jpg",
+        width: 1343,
+        height: 633,
         alt: "UXnicorp: Real web development projects",
       },
     ],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Real Projects: Web Development from Argentina | UXnicorp",
     description:
       "6 real web development projects from Argentina: landing pages, online stores, management systems and corporate websites. Verifiable results.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -63,7 +63,7 @@ export default function CasosEnPage() {
     "@type": "ItemList",
     name: "Case Studies: UXnicorp",
     description:
-      "Real web development projects: landing pages, ERP systems, fintech platforms, and corporate websites from Argentina.",
+      "Real web development projects: landing pages, management systems, fintech platforms, and corporate websites from Argentina.",
     url: "https://www.uxnicorp.com.ar/en/casos",
     numberOfItems: CASOS.length,
     inLanguage: "en",
@@ -158,7 +158,7 @@ export default function CasosEnPage() {
                         padding: "0.22rem 0.65rem",
                         borderRadius: "99px",
                         background: "rgba(255,255,255,0.65)",
-                        color: "#9ca3af",
+                        color: "#6b7280",
                       }}
                     >
                       {t.industria}
