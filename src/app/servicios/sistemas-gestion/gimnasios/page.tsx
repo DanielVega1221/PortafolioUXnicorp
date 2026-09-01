@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Gimnasios",
   description:
     "Sistema de gestión para gimnasios: socios, pagos, turnos, clases, rutinas y control de asistencia. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para gimnasios",
-    "sistema de gestión gimnasio",
-    "software para socios",
-    "sistema fitness argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/gimnasios",
     languages: {

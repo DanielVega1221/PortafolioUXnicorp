@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Auto Repair Shop Management Software",
   description:
     "Custom auto repair management software: work orders, parts, clients and quotes. Built from scratch in Argentina.",
-  keywords: [
-    "auto repair shop software",
-    "garage management system",
-    "auto repair argentina",
-    "parts inventory management",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/auto-repair",
     languages: {

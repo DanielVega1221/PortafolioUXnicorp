@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Nutritionist Practice Management Software",
   description:
     "Custom nutritionist software: appointments, meal plans, patients and follow-up. Built from scratch in Argentina.",
-  keywords: [
-    "nutritionist practice management software",
-    "nutrition software argentina",
-    "meal plan software",
-    "patient follow-up system",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/nutritionists",
     languages: {

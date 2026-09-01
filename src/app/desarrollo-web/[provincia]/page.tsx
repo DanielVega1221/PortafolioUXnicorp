@@ -23,14 +23,6 @@ export async function generateMetadata({
   return {
     title: p.seoTitle,
     description: p.seoDescription,
-    keywords: [
-      `desarrollo web ${p.nombre}`,
-      `página web ${p.slug === "buenos-aires" ? "provincia de buenos aires" : p.slug}`,
-      `agencia web ${p.nombre}`,
-      `ecommerce ${p.nombre}`,
-      "desarrollo web argentina",
-      "UXnicorp",
-    ],
     alternates: {
       canonical: canonicalUrl,
       languages: {

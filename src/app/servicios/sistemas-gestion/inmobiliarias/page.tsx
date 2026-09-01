@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Inmobiliarias",
   description:
     "Sistema de gestión para inmobiliarias: alquileres, ventas, propiedades, clientes y contratos. Desarrollado a medida en Argentina, sin licencias genéricas.",
-  keywords: [
-    "software para inmobiliarias",
-    "sistema de gestión inmobiliaria",
-    "software para alquileres",
-    "sistema inmobiliario argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/inmobiliarias",
     languages: {

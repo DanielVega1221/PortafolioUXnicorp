@@ -20,15 +20,6 @@ const ContactoSectionEN = dynamic(() => import("@/components/en/ContactoSectionE
 export const metadata: Metadata = {
   description:
     "We design and build websites focused on the business behind them. Design, code, and strategy with real focus on what your business needs. Argentina.",
-  keywords: [
-    "web development agency argentina",
-    "web design argentina",
-    "custom web development argentina",
-    "ux ui agency argentina",
-    "landing page development argentina",
-    "web development outsourcing argentina",
-    "UXnicorp",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en",
     languages: {

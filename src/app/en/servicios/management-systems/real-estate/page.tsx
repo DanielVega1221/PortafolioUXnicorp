@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Real Estate Management Software",
   description:
     "Custom real estate management software: properties, rentals, sales, clients and contracts. Built from scratch in Argentina, no generic licenses.",
-  keywords: [
-    "real estate management software",
-    "software for real estate agencies",
-    "rental management software",
-    "property management argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/real-estate",
     languages: {

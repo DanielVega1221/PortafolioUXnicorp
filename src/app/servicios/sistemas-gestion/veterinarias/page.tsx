@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Veterinarias",
   description:
     "Sistema de gestión para veterinarias: turnos, historial de mascotas, stock de productos y facturación. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para veterinarias",
-    "sistema para veterinarios",
-    "sistema veterinario argentina",
-    "historial mascotas software",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/veterinarias",
     languages: {

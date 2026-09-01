@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Law Firm Management Software",
   description:
     "Custom law firm management software: cases, deadlines, clients and billing. Built from scratch in Argentina.",
-  keywords: [
-    "law firm management software",
-    "software for lawyers",
-    "legal practice management argentina",
-    "case management system",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/law-firms",
     languages: {

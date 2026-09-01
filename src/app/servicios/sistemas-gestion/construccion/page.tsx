@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Constructoras y Obras",
   description:
     "Sistema de gestión para constructoras: control de obras, presupuestos, proveedores y documentación. Desarrollado a medida en Argentina, sin licencias genéricas.",
-  keywords: [
-    "software para constructoras",
-    "sistema de gestión de obras",
-    "erp para construcción",
-    "control de obras argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/construccion",
     languages: {

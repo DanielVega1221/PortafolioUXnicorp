@@ -18,9 +18,10 @@ export type BlogPost = {
   datePublished: string;
   dateModified: string;
   tags: string[];
-  ogImage: string;
+  ogImage?: string;
   ctaText: string;
   ctaHref: string;
+  ctaLabel: string;
   sections: BlogSection[];
 };
 

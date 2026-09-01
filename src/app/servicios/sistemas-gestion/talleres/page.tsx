@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Talleres Mecánicos",
   description:
     "Sistema de gestión para talleres mecánicos: órdenes de trabajo, repuestos, clientes y presupuestos. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para talleres mecánicos",
-    "sistema para taller automotor",
-    "software taller argentina",
-    "gestión de repuestos",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/talleres",
     languages: {

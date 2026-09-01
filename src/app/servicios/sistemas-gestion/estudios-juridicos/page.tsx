@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Estudios Jurídicos",
   description:
     "Sistema de gestión para abogados: expedientes, plazos, clientes, facturación y documentación legal. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para abogados",
-    "sistema para estudios jurídicos",
-    "software jurídico argentina",
-    "gestión de expedientes",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/estudios-juridicos",
     languages: {

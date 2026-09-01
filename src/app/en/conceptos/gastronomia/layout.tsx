@@ -6,14 +6,6 @@ export const metadata: Metadata = {
   title: "Web Concept for Restaurants & Food Businesses",
   description:
     "A web concept demo for restaurants and food businesses: branding, digital menu, reservations and UX structure. An example of how we think before we design.",
-  keywords: [
-    "restaurant website design",
-    "web design food business",
-    "restaurant landing page",
-    "digital menu restaurant",
-    "bar website design",
-    "ux ui gastronomy",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/conceptos/gastronomia",
     languages: {

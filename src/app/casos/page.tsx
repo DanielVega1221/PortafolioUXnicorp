@@ -12,17 +12,6 @@ export const metadata: Metadata = {
   title: "Proyectos reales de desarrollo web",
   description:
     "6 proyectos de desarrollo web en Argentina: landing pages, tiendas online, sistemas de gestión y webs institucionales. Sin mockups, sin demos.",
-  keywords: [
-    "proyectos desarrollo web argentina",
-    "landing page argentina ejemplos",
-    "tienda online a medida argentina",
-    "sistema de gestión a medida argentina",
-    "sistema erp argentina caso de uso",
-    "web institucional argentina",
-    "sitio corporativo argentina",
-    "sistema crm a medida",
-    "desarrollo web portfolio argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/casos",
     languages: {

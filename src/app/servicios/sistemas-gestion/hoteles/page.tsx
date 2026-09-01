@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Hoteles",
   description:
     "Sistema de gestión para hoteles: reservaciones, huéspedes, habitaciones y facturación. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para hoteles",
-    "sistema de gestión hotelera",
-    "software hotelero argentina",
-    "reservaciones hotel",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/hoteles",
     languages: {

@@ -20,16 +20,6 @@ const ContactoSection = dynamic(() => import("@/components/ContactoSection"));
 export const metadata: Metadata = {
   description:
     "Diseñamos y desarrollamos webs pensadas para el negocio detrás. Diseño, código y estrategia con foco real en lo que necesita tu negocio. Argentina.",
-  keywords: [
-    "agencia de desarrollo web argentina",
-    "diseño web argentina",
-    "desarrollo web argentina",
-    "desarrollo web a medida argentina",
-    "agencia ux ui argentina",
-    "desarrollo landing page argentina",
-    "agencia web argentina",
-    "UXnicorp",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar",
     languages: {

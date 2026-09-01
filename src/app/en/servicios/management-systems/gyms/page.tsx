@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Gym Management Software",
   description:
     "Custom gym management software: members, payments, classes, schedules and workouts. Built from scratch in Argentina.",
-  keywords: [
-    "gym management software",
-    "software for gyms",
-    "member management system",
-    "fitness software argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/gyms",
     languages: {

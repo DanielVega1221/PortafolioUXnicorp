@@ -6,13 +6,6 @@ export const metadata: Metadata = {
   title: "Web Concept for Architecture Studios",
   description:
     "A web concept demo for architecture studios: branding, typography, color palette and UX structure. An example of how we think before we design.",
-  keywords: [
-    "website for architects",
-    "web design architecture studio",
-    "architecture landing page",
-    "architect website",
-    "ux ui architecture",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/conceptos/arquitectura",
     languages: {

@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Sistema de Gestión para Restaurantes",
   description:
     "Software de gestión para restaurantes: control de stock, reservas, facturación y menú digital. Desarrollado a medida en Argentina, sin comisiones ni plantillas.",
-  keywords: [
-    "sistema de gestión para restaurantes",
-    "software para restaurantes",
-    "sistema de reservas restaurante",
-    "control de stock restaurante",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/restaurantes",
     languages: {

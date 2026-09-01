@@ -10,7 +10,7 @@ const prodCsp = [
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
-  "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://images.unsplash.com",
+  "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com",
   "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com",
   "frame-src 'self'",
   "manifest-src 'self'",
@@ -25,7 +25,7 @@ const devCsp = [
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
-  "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://images.unsplash.com",
+  "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com",
   "connect-src 'self' http://127.0.0.1:3000 http://localhost:3000 https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com",
   "frame-src 'self'",
   "manifest-src 'self'",
@@ -35,9 +35,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-    ],
+    remotePatterns: [],
   },
   async headers() {
     const contentSecurityPolicy = process.env.NODE_ENV === "development" ? devCsp : prodCsp;

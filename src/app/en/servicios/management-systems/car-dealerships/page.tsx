@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Car Dealership Management Software",
   description:
     "Custom car dealership management software: vehicle inventory, clients, financing and sales. Built from scratch in Argentina.",
-  keywords: [
-    "car dealership management software",
-    "automotive dealer software",
-    "car dealership argentina",
-    "vehicle inventory management",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/car-dealerships",
     languages: {

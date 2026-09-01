@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Clinic & Medical Practice Management System",
   description:
     "Custom clinic management system: appointments, medical records, billing and patient tracking. Built from scratch in Argentina.",
-  keywords: [
-    "clinic management system",
-    "medical practice software",
-    "online appointment scheduling",
-    "digital medical records",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/clinics",
     languages: {

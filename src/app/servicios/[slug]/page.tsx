@@ -8,6 +8,7 @@ import { PriceDisplay } from "./PriceDisplay";
 import { CurrencyToggle } from "../CurrencyToggle";
 import Footer from "@/components/Footer";
 import FaqBlock from "@/components/FaqBlock";
+import IndustriaLinks from "@/components/services/IndustriaLinks";
 
 export function generateStaticParams() {
   return SERVICIOS.map((s) => ({ slug: s.slug }));
@@ -423,67 +424,7 @@ export default async function ServicioPage({
           </div>
         )}
 
-        {s.slug === "sistemas-apps" && (
-          <div style={{ marginTop: "1.5rem" }}>
-            <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#6b7280", marginBottom: "0.875rem" }}>
-              Soluciones por industria
-            </p>
-            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              <TransitionLink href="/servicios/sistemas-gestion/restaurantes" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Restaurantes
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/construccion" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Construcción
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/clinicas" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Clínicas
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/inmobiliarias" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Inmobiliarias
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/gimnasios" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Gimnasios
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/veterinarias" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Veterinarias
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/talleres" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Talleres
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/dentistas" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Dentistas
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/hoteles" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Hoteles
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/nutricionistas" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Nutricionistas
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/estudios-juridicos" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Estudios Jurídicos
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/ferreterias" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Ferreterías
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-              <TransitionLink href="/servicios/sistemas-gestion/concesionarias" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.55rem 1.1rem", borderRadius: "0.75rem", background: "rgba(224,166,216,0.45)", border: "1px solid rgba(255,255,255,0.65)", fontSize: "0.84rem", fontWeight: 600, color: "#111", textDecoration: "none" }}>
-                Concesionarias
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="#9040b0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </TransitionLink>
-            </div>
-          </div>
-        )}
+        {s.slug === "sistemas-apps" && <IndustriaLinks locale="es" />}
 
         <FaqBlock items={s.faq} accent={s.acento} />
 

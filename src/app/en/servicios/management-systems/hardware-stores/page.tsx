@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Hardware Store Management Software",
   description:
     "Custom hardware store management software: inventory, suppliers, sales and clients. Built from scratch in Argentina.",
-  keywords: [
-    "hardware store management software",
-    "inventory management for hardware stores",
-    "hardware store argentina",
-    "stock management",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/hardware-stores",
     languages: {

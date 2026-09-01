@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Sistema de Gestión para Clínicas y Consultorios",
   description:
     "Software de gestión para clínicas: agenda de turnos, historias clínicas, facturación y pacientes. Desarrollado a medida en Argentina, sin licencias caras.",
-  keywords: [
-    "sistema de gestión para clínicas",
-    "software para consultorios médicos",
-    "agenda médica online",
-    "historia clínica digital",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/clinicas",
     languages: {

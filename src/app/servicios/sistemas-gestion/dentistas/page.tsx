@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Odontología",
   description:
     "Sistema de gestión para odontólogos: agenda de turnos, historial dental, pacientes y facturación. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para odontología",
-    "sistema para dentistas",
-    "software odontológico argentina",
-    "agenda dental",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/dentistas",
     languages: {

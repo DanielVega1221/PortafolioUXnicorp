@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Veterinary Practice Management Software",
   description:
     "Custom veterinary management software: appointments, pet records, product inventory and billing. Built from scratch in Argentina.",
-  keywords: [
-    "veterinary practice management software",
-    "software for veterinarians",
-    "veterinary system argentina",
-    "pet records software",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/veterinary",
     languages: {

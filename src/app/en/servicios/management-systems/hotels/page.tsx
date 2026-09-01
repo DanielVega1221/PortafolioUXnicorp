@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Hotel Management Software",
   description:
     "Custom hotel management software: reservations, guests, rooms and billing. Built from scratch in Argentina.",
-  keywords: [
-    "hotel management software",
-    "hotel reservation system",
-    "hotel software argentina",
-    "room management",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/hotels",
     languages: {

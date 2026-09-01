@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Restaurant Management System",
   description:
     "Custom restaurant management software: inventory control, reservations, billing and digital menu. Built from scratch in Argentina, no commissions or templates.",
-  keywords: [
-    "restaurant management system",
-    "software for restaurants",
-    "restaurant reservation system",
-    "restaurant inventory control",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/restaurants",
     languages: {

@@ -341,4 +341,148 @@ export const PROVINCIAS: Provincia[] = [
       },
     ],
   },
+  {
+    slug: "catamarca",
+    nombre: "Catamarca",
+    seoTitle: "Desarrollo web en Catamarca",
+    seoDescription:
+      "Desarrollo web y software a medida en Catamarca para industrias y negocios del NOA: landing pages, tiendas online y sistemas de gestión. Remoto, con precios claros y SEO incluido.",
+    intro:
+      "Construimos webs y software a medida para los negocios de Catamarca: landing pages desde USD 500, tiendas online desde USD 900 y sistemas de gestión a medida desde USD 1.000. Somos un equipo con raíces en el noroeste argentino y coordinamos todo 100% remoto, con precios claros y sin costos por distancia.",
+    mainSectors:
+      "hoteles, restaurantes, clínicas, inmobiliarias y comercios",
+    localInsight:
+      "En Catamarca y en el interior del NOA la oferta de servicios digitales es escasa y muchas pymes todavía venden solo por redes o de boca en boca. Una web propia, rápida y bien posicionada le gana visibilidad a cualquier ficha de Instagram, sobre todo en turismo, gastronomía y comercio de cercanía, donde la competencia va a seguir creciendo.",
+    industrias: ["hoteles", "restaurantes", "clinicas", "gimnasios", "inmobiliarias"],
+    faq: [
+      {
+        q: "¿Cuánto cuesta una página web en Catamarca?",
+        a: "Una landing page arranca en USD 500, una tienda online en USD 900 y un sistema de gestión a medida desde USD 1.000. El presupuesto, cerrado y por escrito, llega después de una charla de diagnóstico gratuita.",
+      },
+      {
+        q: "¿Trabajan remoto con negocios de Catamarca?",
+        a: "Sí. Todo el proceso es remoto por videollamada y WhatsApp, con avances semanales y comunicación directa con el equipo que desarrolla. No hace falta que viajes y el costo no cambia por la distancia.",
+      },
+      {
+        q: "¿Desarrollan para mi rubro en Catamarca?",
+        a: "Sí. Trabajamos con hoteles, restaurantes, clínicas, gimnasios, inmobiliarias y comercios del interior. Antes de hablar de tecnología entendemos cómo se maneja tu negocio hoy.",
+      },
+      {
+        q: "¿Puedo arrancar con una landing y crecer después?",
+        a: "Sí. Muchos clientes empiezan con una landing o web institucional y suman después el e-commerce o el sistema de gestión cuando el negocio lo pide. Todo queda bajo tu dominio, sin depender de plantillas.",
+      },
+      {
+        q: "¿Qué incluye el desarrollo y el soporte?",
+        a: "Diseño UX, copy, desarrollo, SEO técnico, Analytics y 30 días de soporte post-lanzamiento por WhatsApp. También te capacitamos para editar el contenido vos mismo.",
+      },
+    ],
+  },
+  {
+    slug: "entre-rios",
+    nombre: "Entre Ríos",
+    seoTitle: "Desarrollo web en Entre Ríos",
+    seoDescription:
+      "Desarrollo web en Entre Ríos para negocios e industrias: landing pages, tiendas online y sistemas de gestión a medida. Turismo termal, agro y comercio, con proceso 100% remoto.",
+    intro:
+      "Desarrollamos webs y software a medida para los negocios de Entre Ríos: landing pages desde USD 500, tiendas online desde USD 900 y sistemas de gestión a medida desde USD 1.000. Trabajamos remoto con todo el litoral —Paraná, Gualeguaychú, Concordia, Colón— con avances semanales y presupuesto cerrado.",
+    mainSectors:
+      "hoteles, restaurantes, inmobiliarias, clínicas y ferreterías",
+    localInsight:
+      "Entre el turismo termal y de fin de semana largo y una economía agroindustrial fuerte, los negocios entrerrianos venden cada vez más por Google: el cliente busca alojamiento, reservas y productos antes de llamar. Una landing enfocada a tu rubro convierte esa búsqueda en consultas concretas por WhatsApp las 24 horas.",
+    industrias: ["hoteles", "restaurantes", "inmobiliarias", "clinicas", "ferreterias"],
+    faq: [
+      {
+        q: "¿Cuánto cuesta una página web en Entre Ríos?",
+        a: "Una landing page arranca en USD 500 (aprox. $300.000 ARS), un e-commerce en USD 900 y un sistema a medida desde USD 1.000. El presupuesto es cerrado y surge de una charla gratuita previa.",
+      },
+      {
+        q: "¿Trabajan con clientes de Entre Ríos de forma remota?",
+        a: "Sí. El proceso es 100% remoto por videollamada y WhatsApp, con coordinación semanal. No hay costo extra por distancia y trabajamos con negocios de todas las ciudades de la provincia.",
+      },
+      {
+        q: "¿Desarrollan para mi rubro en Entre Ríos?",
+        a: "Sí. Trabajamos con hoteles y cabañas, restaurantes, inmobiliarias, clínicas y ferreterías. Cada proyecto se arma sobre cómo funciona tu negocio, no sobre plantillas genéricas.",
+      },
+      {
+        q: "¿Puedo tomar reservas o turnos desde la web?",
+        a: "Sí. Según el rubro integramos reservas de alojamiento, turnos, pedidos y pagos con MercadoPago o Stripe, todo administrable desde un panel simple sin saber programar.",
+      },
+      {
+        q: "¿Cuánto tarda un proyecto?",
+        a: "Una landing page tarda 2 a 3 semanas y una tienda online entre 6 y 10 semanas. Siempre te damos plazos claros antes de arrancar e incluimos 30 días de soporte post-lanzamiento.",
+      },
+    ],
+  },
+  {
+    slug: "chaco",
+    nombre: "Chaco",
+    seoTitle: "Desarrollo web en Chaco",
+    seoDescription:
+      "Desarrollo web y software a medida en Chaco para industrias y negocios: landing pages, tiendas online y sistemas de gestión. Remoto, con precios claros y SEO técnico.",
+    intro:
+      "Ayudamos a los negocios del Chaco a construirse una presencia digital seria y a ordenar su operación: landing pages desde USD 500, tiendas online desde USD 900 y sistemas de gestión a medida desde USD 1.000. Desde Resistencia y todo el interior del Chaco, con un proceso 100% remoto y comunicación directa.",
+    mainSectors:
+      "gimnasios, clínicas, concesionarias, ferreterías y restaurantes",
+    localInsight:
+      "El Chaco tiene una economía agroganadera, forestal y comercial en la que muchas pymes del interior todavía resuelven todo en papel o planillas. Un sistema de gestión a medida o una tienda online te devuelve horas reales de operación cada semana, y una web bien posicionada te vuelve la opción seria cuando te están buscando.",
+    industrias: ["gimnasios", "clinicas", "concesionarias", "ferreterias", "restaurantes"],
+    faq: [
+      {
+        q: "¿Cuánto cuesta una página web en Chaco?",
+        a: "Una landing page desde USD 500, un e-commerce desde USD 900 y un sistema de gestión a medida desde USD 1.000. Siempre presupuestamos después de entender el alcance real de tu proyecto.",
+      },
+      {
+        q: "¿Trabajan remoto con negocios del Chaco?",
+        a: "Sí, todo el proyecto se coordina por videollamada y WhatsApp con avances semanales. La distancia no afecta el presupuesto ni los plazos.",
+      },
+      {
+        q: "¿Para qué rubros desarrollan en el Chaco?",
+        a: "Trabajamos con gimnasios, clínicas, concesionarias, ferreterías, restaurantes y otros rubros de servicio. Primero entendemos tu operación y después proponemos la solución.",
+      },
+      {
+        q: "¿El sistema de gestión queda en manos del negocio?",
+        a: "Sí. El software a medida es tuyo, sin licencias mensuales ni costo por usuario. Te capacitamos para usarlo y no generamos dependencia si después querés manejarte solo.",
+      },
+      {
+        q: "¿Puedo editar la web yo mismo?",
+        a: "Sí. Te enseñamos a modificar textos, precios y productos desde un panel simple, sin programar, e incluimos 30 días de soporte post-lanzamiento por WhatsApp.",
+      },
+    ],
+  },
+  {
+    slug: "misiones",
+    nombre: "Misiones",
+    seoTitle: "Desarrollo web en Misiones",
+    seoDescription:
+      "Desarrollo web en Misiones para negocios del turismo y la región: landing pages, tiendas online y sistemas de gestión a medida. Posadas e Iguazú, con proceso 100% remoto.",
+    intro:
+      "Desarrollamos webs y software a medida para los negocios de Misiones: landing pages desde USD 500, tiendas online desde USD 900 y sistemas de gestión a medida desde USD 1.000. Trabajamos con Posadas, Puerto Iguazú, Oberá y todo el interior, 100% remoto y coordinado por semana.",
+    mainSectors:
+      "hoteles, restaurantes, clínicas, inmobiliarias y gimnasios",
+    localInsight:
+      "Misiones vive del turismo —las cataratas del Iguazú mueven visitantes todo el año— y de la producción de yerba, té y madera. Los negocios que reciben turistas o venden a distancia necesitan una web seria: reservas online, menú digital y presencia en Google son lo que separa a un lugar que llena las mesas de uno que solo aparece en Instagram.",
+    industrias: ["hoteles", "restaurantes", "clinicas", "inmobiliarias", "gimnasios"],
+    faq: [
+      {
+        q: "¿Cuánto cuesta una página web en Misiones?",
+        a: "Una landing page desde USD 500, una tienda online desde USD 900 y un sistema a medida desde USD 1.000. El presupuesto es cerrado y surge de una charla de diagnóstico gratuita antes de cotizar.",
+      },
+      {
+        q: "¿Trabajan remoto con negocios de Misiones?",
+        a: "Sí. Coordinamos todo por videollamada y WhatsApp, con avances semanales. No hace falta que recibas a nadie y no hay costo extra por distancia.",
+      },
+      {
+        q: "¿Desarrollan para mi rubro en Misiones?",
+        a: "Sí. Tenemos experiencia con hoteles y cabañas, restaurantes, agencias de turismo, clínicas, inmobiliarias, gimnasios y comercios de la región.",
+      },
+      {
+        q: "¿Puedo tomar reservas desde la web?",
+        a: "Sí. Para alojamiento y gastronomía integramos reservas, menú digital y pagos con MercadoPago o Stripe, todo administrable desde un panel simple.",
+      },
+      {
+        q: "¿Incluye SEO para que me encuentren en Google?",
+        a: "Sí, desde el día uno: SEO técnico, estructura de datos y Google Analytics 4 configurado para que sepas cuántos clientes te llegan desde Google o desde los buscadores de IA. Además 30 días de soporte post-lanzamiento.",
+      },
+    ],
+  },
 ];

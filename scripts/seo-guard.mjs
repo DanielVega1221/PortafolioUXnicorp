@@ -12,6 +12,9 @@ const routes200 = [
   "/blog/comercial-rio-hondo-entender-antes-de-hacer",
   "/blog/wix-tiendanube-o-desarrollo-a-medida",
   "/blog/sistemas-gestion-pymes-noa",
+  "/blog/erp-a-medida-vs-sistema-enlatado-pymes",
+  "/blog/cuanto-cuesta-sistema-ferreteria-argentina-2026",
+  "/blog/landing-page-vs-sitio-institucional-2026",
   "/desarrollo-web",
   "/desarrollo-web/caba",
   "/desarrollo-web/buenos-aires",
@@ -21,6 +24,10 @@ const routes200 = [
   "/desarrollo-web/santa-fe",
   "/desarrollo-web/salta",
   "/desarrollo-web/tucuman",
+  "/desarrollo-web/catamarca",
+  "/desarrollo-web/entre-rios",
+  "/desarrollo-web/chaco",
+  "/desarrollo-web/misiones",
   "/servicios/sistemas-gestion/restaurantes",
   "/servicios/sistemas-gestion/construccion",
   "/servicios/sistemas-gestion/clinicas",
@@ -43,6 +50,9 @@ const routes200 = [
   "/en/blog/comercial-rio-hondo-entender-antes-de-hacer",
   "/en/blog/wix-tiendanube-o-desarrollo-a-medida",
   "/en/blog/sistemas-gestion-pymes-noa",
+  "/en/blog/erp-a-medida-vs-sistema-enlatado-pymes",
+  "/en/blog/cuanto-cuesta-sistema-ferreteria-argentina-2026",
+  "/en/blog/landing-page-vs-sitio-institucional-2026",
   "/en/conceptos/arquitectura",
   "/en/conceptos/gastronomia",
   "/en/servicios/management-systems/restaurants",
@@ -158,7 +168,24 @@ async function checkSitemapAndRobots() {
 }
 
 async function checkInternalLinks() {
-  const pages = ["/", "/en"];
+  const pages = [
+    "/", "/en", "/servicios", "/en/servicios",
+    "/blog", "/en/blog", "/casos", "/en/casos",
+    "/blog/cuanto-cuesta-una-web-argentina-2026",
+    "/blog/comercial-rio-hondo-entender-antes-de-hacer",
+    "/blog/wix-tiendanube-o-desarrollo-a-medida",
+    "/blog/sistemas-gestion-pymes-noa",
+    "/blog/erp-a-medida-vs-sistema-enlatado-pymes",
+    "/blog/cuanto-cuesta-sistema-ferreteria-argentina-2026",
+    "/blog/landing-page-vs-sitio-institucional-2026",
+    "/en/blog/cuanto-cuesta-una-web-argentina-2026",
+    "/en/blog/comercial-rio-hondo-entender-antes-de-hacer",
+    "/en/blog/wix-tiendanube-o-desarrollo-a-medida",
+    "/en/blog/sistemas-gestion-pymes-noa",
+    "/en/blog/erp-a-medida-vs-sistema-enlatado-pymes",
+    "/en/blog/cuanto-cuesta-sistema-ferreteria-argentina-2026",
+    "/en/blog/landing-page-vs-sitio-institucional-2026",
+  ];
 
   for (const page of pages) {
     const { text } = await fetchText(page);
@@ -194,6 +221,9 @@ const bilingualRoutes = [
   { es: "/servicios/sistemas-gestion/estudios-juridicos", en: "/en/servicios/management-systems/law-firms" },
   { es: "/servicios/sistemas-gestion/ferreterias", en: "/en/servicios/management-systems/hardware-stores" },
   { es: "/servicios/sistemas-gestion/concesionarias", en: "/en/servicios/management-systems/car-dealerships" },
+  { es: "/blog/erp-a-medida-vs-sistema-enlatado-pymes", en: "/en/blog/erp-a-medida-vs-sistema-enlatado-pymes" },
+  { es: "/blog/cuanto-cuesta-sistema-ferreteria-argentina-2026", en: "/en/blog/cuanto-cuesta-sistema-ferreteria-argentina-2026" },
+  { es: "/blog/landing-page-vs-sitio-institucional-2026", en: "/en/blog/landing-page-vs-sitio-institucional-2026" },
 ];
 
 const siteOrigin = "https://www.uxnicorp.com.ar";

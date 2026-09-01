@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Concesionarias",
   description:
     "Sistema de gestión para concesionarias: stock de vehículos, clientes, financiación y ventas. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para concesionarias",
-    "sistema de gestión concesionaria",
-    "software automotor argentina",
-    "gestión de vehículos software",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/concesionarias",
     languages: {

@@ -80,7 +80,6 @@ export default async function CasoPage({
       author: { "@id": "https://www.uxnicorp.com.ar/#organization", name: "UXnicorp" },
       publisher: { "@id": "https://www.uxnicorp.com.ar/#organization", name: "UXnicorp" },
       about: { "@type": "Thing", name: caso.industria },
-      keywords: caso.stack.join(", "),
     },
     {
       "@context": "https://schema.org",

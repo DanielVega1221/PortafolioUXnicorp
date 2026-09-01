@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Software para Nutricionistas",
   description:
     "Sistema de gestión para nutricionistas: turnos, planes alimentarios, pacientes y seguimiento. Desarrollado a medida en Argentina.",
-  keywords: [
-    "software para nutricionistas",
-    "sistema para nutrición",
-    "software nutricional argentina",
-    "planes alimentarios software",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/nutricionistas",
     languages: {

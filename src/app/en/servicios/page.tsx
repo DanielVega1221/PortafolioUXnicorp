@@ -6,25 +6,13 @@ import { ServicioCardEN } from "./ServicioCardEN";
 import ServicesFooterCta from "@/components/services/ServicesFooterCta";
 import ServicesPageHeader from "@/components/services/ServicesPageHeader";
 import ServiciosExtrasSection from "@/components/services/ServiciosExtrasSection";
+import IndustriaLinks from "@/components/services/IndustriaLinks";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Landing Pages, E-commerce & Management Systems",
   description:
     "Conversion landing pages, online stores and custom management systems. Clear pricing, real timelines, no outsourcing. See what's included in each service.",
-  keywords: [
-    "web development services argentina",
-    "landing page price",
-    "online store development",
-    "ecommerce development agency",
-    "erp system development",
-    "crm development",
-    "inventory system web",
-    "invoicing system web",
-    "corporate website development",
-    "custom software argentina",
-    "web development pricing",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios",
     languages: {
@@ -102,6 +90,8 @@ export default function EnServiciosPage() {
             <ServicioCardEN key={s.slug} s={s} />
           ))}
         </div>
+
+        <IndustriaLinks locale="en" />
 
         <ServiciosExtrasSection locale="en" />
 

@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Sistema para Ferreterías",
   description:
     "Sistema de gestión para ferreterías: inventario, proveedores, ventas, clientes y control de stock. Desarrollado a medida en Argentina.",
-  keywords: [
-    "sistema para ferreterías",
-    "software para ferretería",
-    "inventario ferretería argentina",
-    "gestión de stock ferretería",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/servicios/sistemas-gestion/ferreterias",
     languages: {

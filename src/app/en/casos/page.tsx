@@ -12,17 +12,6 @@ export const metadata: Metadata = {
   title: "Real Projects: Web Development from Argentina",
   description:
     "6 web development projects from Argentina: landing pages, online stores, management systems and corporate websites. No mockups, no demos.",
-  keywords: [
-    "web development projects argentina",
-    "landing page examples argentina",
-    "online store development argentina",
-    "erp system argentina",
-    "crm development examples",
-    "management system argentina",
-    "corporate website argentina",
-    "institutional website examples",
-    "web development portfolio argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/casos",
     languages: {

@@ -11,13 +11,6 @@ export const metadata: Metadata = {
   title: "Our Story",
   description:
     "Learn how UXnicorp was born, the philosophy behind our work and why we chose to work with honesty and closeness alongside every client.",
-  keywords: [
-    "uxnicorp our story",
-    "web development agency argentina philosophy",
-    "about uxnicorp",
-    "honest web development argentina",
-    "web development team argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/about",
     languages: {

@@ -5,14 +5,6 @@ export const metadata: Metadata = {
   title: "Concepto Web para Gastronomía",
   description:
     "Demo de concepto web para restaurantes y negocios gastronómicos: branding, menú digital, reservas y estructura UX. Como pensamos antes de diseñar.",
-  keywords: [
-    "web para restaurantes argentina",
-    "diseño web gastronomía",
-    "landing page restaurante",
-    "menú digital restaurante",
-    "sitio web bar argentina",
-    "ux ui gastronomía",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/conceptos/gastronomia",
     languages: {

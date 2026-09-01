@@ -9,16 +9,6 @@ export const metadata: Metadata = {
   title: "Desarrollo web por provincia en Argentina",
   description:
     "Desarrollo web y software a medida en las principales provincias de Argentina: landing pages, e-commerce y sistemas de gestión para industrias y negocios.",
-  keywords: [
-    "desarrollo web argentina",
-    "desarrollo web por provincia",
-    "agencia web argentina",
-    "desarrollo web buenos aires",
-    "desarrollo web cordoba",
-    "desarrollo web mendoza",
-    "desarrollo web neuquen",
-    "UXnicorp",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/desarrollo-web",
     languages: {

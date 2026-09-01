@@ -83,7 +83,6 @@ export default async function CasoEnPage({
       author: { "@type": "Organization", name: "UXnicorp" },
       publisher: { "@type": "Organization", name: "UXnicorp" },
       about: { "@type": "Thing", name: loc.industria },
-      keywords: caso.stack.join(", "),
     },
     {
       "@context": "https://schema.org",

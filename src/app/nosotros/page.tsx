@@ -11,14 +11,6 @@ export const metadata: Metadata = {
   title: "Nuestra Historia",
   description:
     "Conocé cómo nació UXnicorp, la filosofía que nos mueve y por qué elegimos trabajar con honestidad y cercanía junto a cada cliente.",
-  keywords: [
-    "uxnicorp historia",
-    "agencia desarrollo web argentina filosofia",
-    "quienes somos uxnicorp",
-    "desarrollo web honesto argentina",
-    "filosofia trabajo freelance argentina",
-    "equipo desarrollo web argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/nosotros",
     languages: {

@@ -36,7 +36,7 @@ module.exports = {
         "categories:seo":             ["error", { minScore: 0.9  }],
         // Core Web Vitals budgets
         "first-contentful-paint":     ["warn",  { maxNumericValue: 2000 }],
-        "largest-contentful-paint":   ["warn",  { maxNumericValue: 3500 }],
+        "largest-contentful-paint":   ["warn",  { maxNumericValue: 2500 }],
         "total-blocking-time":        ["warn",  { maxNumericValue: 300  }],
         "cumulative-layout-shift":    ["warn",  { maxNumericValue: 0.1  }],
         "interactive":                ["warn",  { maxNumericValue: 4000 }],

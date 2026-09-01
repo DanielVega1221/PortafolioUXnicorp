@@ -9,14 +9,6 @@ export const metadata: Metadata = {
   title: "Web development and UX blog",
   description:
     "Articles about web development, SEO, UX and digital strategy for businesses in Argentina. No fluff, backed by real project data.",
-  keywords: [
-    "web development blog",
-    "how much does a landing page cost argentina",
-    "web development argentina",
-    "seo argentina",
-    "ux ui argentina",
-    "management systems argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/blog",
     languages: {

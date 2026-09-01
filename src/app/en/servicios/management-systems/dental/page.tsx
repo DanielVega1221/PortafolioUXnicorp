@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Dental Practice Management Software",
   description:
     "Custom dental practice software: appointment scheduling, dental records, patients and billing. Built from scratch in Argentina.",
-  keywords: [
-    "dental practice management software",
-    "software for dentists",
-    "dental software argentina",
-    "dental appointment scheduling",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/dental",
     languages: {

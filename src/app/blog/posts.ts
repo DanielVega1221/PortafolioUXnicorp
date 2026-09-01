@@ -15,7 +15,8 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
     tags: ["precios", "landing-page", "ecommerce", "sistemas-apps"],
     ogImage: "/blog/og/cuanto-cuesta-una-web-argentina-2026.webp",
     ctaText: "¿Tenés un proyecto en mente y no sabés en qué categoría cae?",
-    ctaHref: "/#contacto",
+    ctaHref: "/servicios/landing-page",
+    ctaLabel: "Ver landing pages a medida",
     sections: [
       {
         type: "text",
@@ -29,7 +30,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Una landing page resuelve un problema puntual: alguien te encuentra en Google o Instagram y necesita entender en 10 segundos qué hacés y cómo contactarte. No hay backend, no hay panel de administración, no hay lógica de negocio. El costo está en el diseño y en que el copy convierta, no en la complejidad técnica. Tiempo estimado: 2 a 3 semanas. Se paga en 2 o 3 cuotas.",
+          "Una [landing page](/servicios/landing-page) resuelve un problema puntual: alguien te encuentra en Google o Instagram y necesita entender en 10 segundos qué hacés y cómo contactarte. No hay backend, no hay panel de administración, no hay lógica de negocio. El costo está en el diseño y en que el copy convierta, no en la complejidad técnica. Tiempo estimado: 2 a 3 semanas. Se paga en 2 o 3 cuotas.",
       },
       {
         type: "text",
@@ -43,7 +44,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Acá el precio sube porque el objetivo cambia. No es \"que se vea bien\", es transmitir escala y seriedad a un comprador que compara proveedores antes de decidir. Con Comercial Río Hondo el cliente real no era el particular que necesita una bolsa de arena, era el jefe de obra que busca proveedor semanas antes de arrancar. Eso implica fichas técnicas de producto, galería de proceso, formulario que pre-carga la consulta con el material específico. Más contenido estructurado, más tiempo de research antes de tocar el editor. Tiempo estimado: 6 a 10 semanas. Se paga en 2 o 3 cuotas.",
+          "Acá el precio sube porque el objetivo cambia. No es \"que se vea bien\", es transmitir escala y seriedad a un comprador que compara proveedores antes de decidir. Con [Comercial Río Hondo](/casos/comercial-rio-hondo) el cliente real no era el particular que necesita una bolsa de arena, era el jefe de obra que busca proveedor semanas antes de arrancar. Eso implica fichas técnicas de producto, galería de proceso, formulario que pre-carga la consulta con el material específico. Más contenido estructurado, más tiempo de research antes de tocar el editor. Tiempo estimado: 6 a 10 semanas. Se paga en 2 o 3 cuotas.",
       },
       {
         type: "heading",
@@ -52,7 +53,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Acá ya no hablamos de una web, hablamos de software. Un ERP, un CRM, un sistema de turnos o de control de stock. El precio depende de cuántos módulos, cuántos roles de usuario, si hay integraciones con pagos o con sistemas existentes. Antes de cotizar esto, siempre mapeo el flujo real de trabajo del cliente. No tiene sentido poner un número sin entender qué tan grande es el problema que hay que resolver. Tiempo estimado: 8 a 16 semanas. Se puede pagar en hasta 6 cuotas.",
+          "Acá ya no hablamos de una web, hablamos de [software de gestión a medida](/servicios/sistemas-apps). Un ERP, un CRM, un sistema de turnos o de control de stock. El precio depende de cuántos módulos, cuántos roles de usuario, si hay integraciones con pagos o con sistemas existentes. Antes de cotizar esto, siempre mapeo el flujo real de trabajo del cliente. No tiene sentido poner un número sin entender qué tan grande es el problema que hay que resolver. Tiempo estimado: 8 a 16 semanas. Se puede pagar en hasta 6 cuotas.",
       },
       {
         type: "heading",
@@ -93,12 +94,13 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
     tags: ["casos-reales", "web-corporativa"],
     ogImage: "/blog/og/comercial-rio-hondo-entender-antes-de-hacer.webp",
     ctaText: "¿Tu negocio depende de que un comprador técnico confíe antes de contactarte?",
-    ctaHref: "/#contacto",
+    ctaHref: "/casos/comercial-rio-hondo",
+    ctaLabel: "Ver el caso completo",
     sections: [
       {
         type: "text",
         content:
-          "Entender antes de hacer. Es el primer principio que aplico en cualquier proyecto, y este caso lo muestra bien.",
+          "Entender antes de hacer. Es el primer principio que aplico en cualquier proyecto, y este [caso](/casos/comercial-rio-hondo) lo muestra bien.",
       },
       {
         type: "heading",
@@ -166,7 +168,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Cualquier negocio B2B que arranca a pensar su web debería hacerse la misma pregunta antes que ninguna otra. No \"¿qué quiero mostrar?\", sino \"¿quién es el que decide, y qué necesita ver para confiar?\". El diseño viene después. Primero hay que entender a quién le estás hablando.",
+          "Cualquier negocio B2B que arranca a pensar su [web](/servicios/landing-page) debería hacerse la misma pregunta antes que ninguna otra. No \"¿qué quiero mostrar?\", sino \"¿quién es el que decide, y qué necesita ver para confiar?\". El diseño viene después. Primero hay que entender a quién le estás hablando.",
       },
       {
         type: "cta",
@@ -189,7 +191,8 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
     tags: ["comparativas", "landing-page", "ecommerce"],
     ogImage: "/blog/og/wix-tiendanube-o-desarrollo-a-medida.webp",
     ctaText: "¿No estás seguro de en qué categoría cae tu negocio?",
-    ctaHref: "/#contacto",
+    ctaHref: "/servicios/ecommerce",
+    ctaLabel: "Ver e-commerce a medida",
     sections: [
       {
         type: "text",
@@ -203,7 +206,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Si estás arrancando, no tenés equipo, y necesitás algo funcionando esta semana, Wix o Tienda Nube resuelven eso bien. Si tu producto se vende prácticamente solo con fotos y precio, sin necesitar lógica especial, un template ya armado te ahorra tiempo y plata.",
+          "Si estás arrancando, no tenés equipo, y necesitás algo funcionando esta semana, Wix o Tienda Nube resuelven eso bien. Si tu [e-commerce](/servicios/ecommerce) se vende prácticamente solo con fotos y precio, sin necesitar lógica especial, un template ya armado te ahorra tiempo y plata.",
       },
       {
         type: "text",
@@ -217,7 +220,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "El techo aparece cuando tu negocio tiene una lógica propia que el template no contempla. Un sistema de turnos con reglas específicas. Un catálogo técnico con fichas de producto que necesitan estructura propia. Un flujo de WhatsApp pre-cargado según lo que el cliente eligió en la web, en vez de un botón genérico de contacto.",
+          "El techo aparece cuando tu negocio tiene una lógica propia que el template no contempla. Un sistema de turnos con reglas específicas. Un catálogo técnico con fichas de producto que necesitan estructura propia. Un flujo de WhatsApp pre-cargado según lo que el cliente eligió en la [web](/servicios/landing-page), en vez de un botón genérico de contacto.",
       },
       {
         type: "text",
@@ -231,7 +234,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "No es blanco o negro. Podés arrancar con un builder y migrar cuando el negocio lo pida. Lo que no conviene es invertir en desarrollo a medida cuando todavía no sabés bien qué necesita tu negocio, ni quedarte cinco años en un template cuando ya sentís el techo todos los días.",
+          "No es blanco o negro. Podés arrancar con un builder y migrar al [desarrollo a medida](/servicios/sistemas-apps) cuando el negocio lo pida. Lo que no conviene es invertir en desarrollo a medida cuando todavía no sabés bien qué necesita tu negocio, ni quedarte cinco años en un template cuando ya sentís el techo todos los días.",
       },
       {
         type: "heading",
@@ -263,7 +266,8 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
     tags: ["sistemas-apps", "software-a-medida", "pymes", "erp", "gestion-empresarial"],
     ogImage: "/blog/og/sistemas-gestion-pymes-noa.webp",
     ctaText: "¿Tu negocio todavía depende de un cuaderno o un Excel para funcionar?",
-    ctaHref: "/#contacto",
+    ctaHref: "/servicios/sistemas-apps",
+    ctaLabel: "Ver sistemas a medida",
     sections: [
       {
         type: "text",
@@ -282,7 +286,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "El cuaderno en el mostrador. Ahí vive todo: qué auto entró, qué repuesto se pidió, cuándo se entrega, cuánto se cobró. Si el dueño no está, nadie sabe nada. Si el cuaderno se moja, se pierden semanas de registro. Un sistema de gestión para taller resuelve esto de raíz.",
+          "El cuaderno en el mostrador. Ahí vive todo: qué auto entró, qué repuesto se pidió, cuándo se entrega, cuánto se cobró. Si el dueño no está, nadie sabe nada. Si el cuaderno se moja, se pierden semanas de registro. Un [sistema de gestión para taller](/servicios/sistemas-gestion/talleres) resuelve esto de raíz.",
       },
       {
         type: "text",
@@ -301,7 +305,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Turnos que se pisan porque la secretaria anota en una agenda de papel. Pacientes que llaman para confirmar porque no hay recordatorio automático. Historias clínicas en carpetas que se mezclan. Facturación por un lado, fichas médicas por otro. Un sistema de gestión para clínica resuelve todo en un solo lugar: agenda de turnos con confirmación automática por WhatsApp, historia clínica digital por paciente, control de obra social y facturación integrada. El médico entra, ve quién tiene turno, accede a la ficha clínica y registra la consulta. Sin papel, sin llamadas, sin errores.",
+          "Turnos que se pisan porque la secretaria anota en una agenda de papel. Pacientes que llaman para confirmar porque no hay recordatorio automático. Historias clínicas en carpetas que se mezclan. Facturación por un lado, fichas médicas por otro. Un [sistema de gestión para clínica](/servicios/sistemas-gestion/clinicas) resuelve todo en un solo lugar: agenda de turnos con confirmación automática por WhatsApp, historia clínica digital por paciente, control de obra social y facturación integrada. El médico entra, ve quién tiene turno, accede a la ficha clínica y registra la consulta. Sin papel, sin llamadas, sin errores.",
       },
       {
         type: "heading",
@@ -310,7 +314,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "El clásico: planilla de Excel con los socios, cuotas cobradas en una columna aparte que se actualiza \"cuando me acuerdo\". El resultado es que nunca sabés cuántos socios están al día, cuántos dejaron de pagar hace dos meses y quiénes están por vencer. Un sistema de gestión para gimnasio elimina eso.",
+          "El clásico: planilla de Excel con los socios, cuotas cobradas en una columna aparte que se actualiza \"cuando me acuerdo\". El resultado es que nunca sabés cuántos socios están al día, cuántos dejaron de pagar hace dos meses y quiénes están por vencer. Un [sistema de gestión para gimnasio](/servicios/sistemas-gestion/gimnasios) elimina eso.",
       },
       {
         type: "text",
@@ -329,7 +333,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "Un sistema a medida para veterinaria no solo ordena la clínica: fideliza al cliente. Cuando le llega un WhatsApp automático diciendo \"Chicho tiene que venir a control en 5 días\", el cliente siente que lo están cuidando. Y vuelve.",
+          "Un [sistema a medida para veterinaria](/servicios/sistemas-gestion/veterinarias) no solo ordena la clínica: fideliza al cliente. Cuando le llega un WhatsApp automático diciendo \"Chicho tiene que venir a control en 5 días\", el cliente siente que lo están cuidando. Y vuelve.",
       },
       {
         type: "heading",
@@ -338,7 +342,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
       {
         type: "text",
         content:
-          "El pedido que más se repite es simple de explicar y complicado de resolver: que las comandas no se pierdan entre la mesa, la cocina y la caja. Y que el control de stock de insumos avise antes de que falte harina un viernes a las nueve de la noche. Un sistema de gestión para restaurante conecta esas tres puntas.",
+          "El pedido que más se repite es simple de explicar y complicado de resolver: que las comandas no se pierdan entre la mesa, la cocina y la caja. Y que el control de stock de insumos avise antes de que falte harina un viernes a las nueve de la noche. Un [sistema de gestión para restaurante](/servicios/sistemas-gestion/restaurantes) conecta esas tres puntas.",
       },
       {
         type: "text",
@@ -368,6 +372,270 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
         type: "cta",
         content:
           "¿Cuánto tiempo perdés por semana en tareas que un sistema podría hacer solo? Contame cómo trabaja tu negocio hoy y te digo si tiene sentido automatizarlo.",
+      },
+    ],
+  },
+  {
+    slug: "erp-a-medida-vs-sistema-enlatado-pymes",
+    title: "Software ERP a medida vs. sistema enlatado: cuál conviene para tu pyme",
+    summary:
+      "Un sistema enlatado te hace arrancar rápido y barato, pero topa cuando tu operación tiene reglas propias. Un software ERP a medida cubre eso. El criterio para decidir sin pagar de más.",
+    description:
+      "ERP enlatado vs. software ERP a medida para pymes: costo total, límites de cada opción y el criterio concreto para elegir sin equivocarte.",
+    author: "Gonzalo Daniel Vega",
+    category: "Sistemas de gestión",
+    datePublished: "2026-08-18",
+    dateModified: "2026-08-18",
+    tags: ["erp", "software-a-medida", "pymes", "sistemas-apps", "comparativas"],
+    ctaText: "¿Estás evaluando un sistema de gestión y no sabés si te alcanza con uno enlatado?",
+    ctaHref: "/servicios/sistemas-apps",
+    ctaLabel: "Ver sistemas a medida",
+    sections: [
+      {
+        type: "text",
+        content:
+          "La pregunta me llega casi a diario: \"¿me conviene un sistema enlatado o un software ERP a medida?\". Y la respuesta honesta no es ni una ni otra. Es \"depende de tu operación\". Pero decir eso sin explicar de qué depende es no decir nada, así que voy a explicarlo.",
+      },
+      {
+        type: "heading",
+        content: "Qué es un sistema enlatado y por qué parece la opción obvia",
+      },
+      {
+        type: "text",
+        content:
+          "Un ERP enlatado (Tango, Gestión o similar) es un software pensado para mil negocios a la vez. Por eso es estándar: instalás, configurás lo que se puede configurar y listo. Parece barato porque el costo de entrada es bajo y no requiere desarrollo.",
+      },
+      {
+        type: "text",
+        content:
+          "El problema es que fue diseñado para el negocio promedio, y tu negocio no es promedio. Tiene su modo de facturar, su plan de cuentas, su flujo de ventas. Cuando tu operación no calza en ese molde, lo que pagás no es el precio de licencia: es la plata que perdés adaptando tu negocio al sistema, en vez del sistema a tu negocio.",
+      },
+      {
+        type: "heading",
+        content: "Cuando el enlatado es la respuesta correcta",
+      },
+      {
+        type: "list",
+        items: [
+          "Estás arrancando, validás un modelo y necesitás algo funcionando rápido y barato.",
+          "Tu proceso es completamente estándar: compra, venta y stock sin reglas raras.",
+          "No hay integraciones exigentes (pagos, AFIP, portales de proveedores) ni roles complejos.",
+          "El margen no justifica todavía el desarrollo de un sistema propio.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "Cuando el enlatado empieza a quedarte corto",
+      },
+      {
+        type: "text",
+        content:
+          "Hay un momento en el que el techo aparece. Vendés por mayor y menor con precios distintos según cliente. Cargás stock por lote con vencimiento. Necesitás que la factura salga con un texto que el sistema no contempla. Tenés tres sucursales con control separado. Ahí empezás a trabajar alrededor del sistema: planillas auxiliares, dobles cargas, gente haciendo \"el truco\" que todos conocemos para que cierre la caja.",
+      },
+      {
+        type: "text",
+        content:
+          "Ese es el punto exacto donde un [software ERP a medida](/servicios/sistemas-apps) deja de ser un lujo. Se construye a partir de tu flujo real: cómo vende tu gente, cómo entran y salen los productos, qué reportes necesitás mirar para decidir. No al revés.",
+      },
+      {
+        type: "heading",
+        content: "El costo total, no solo el precio de entrada",
+      },
+      {
+        type: "list",
+        items: [
+          "Enlatado: licencia inicial + mensualidad por usuario o por vendedor. Se suman todos los meses, por años.",
+          "Enlatado: horas de tu gente cargando dos veces, y de vos parcheando procesos que no calzan.",
+          "A medida: una inversión inicial, el sistema es 100% tuyo, sin mensualidad ni costo por vendedor.",
+          "A medida: mantenimiento solo si querés agregar módulos o integraciones nuevas.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "Criterios concretos para decidir",
+      },
+      {
+        type: "list",
+        items: [
+          "¿Cuánto de tu operación hoy se resuelve \"a mano\" (planilla, papel, WhatsApp)? Si es poco, el enlatado alcanza.",
+          "¿Tu negocio tiene reglas que un sistema genérico no conoce? Precios especiales, stock por lote, comisiones, turnos.",
+          "¿Vas a crecer? Un cambio de sistema después es siempre más caro que empezar con el correcto.",
+          "¿Cuánto vas a pagar de mensualidad en 3 años? Comparalo con el costo total del desarrollo.",
+        ],
+      },
+      {
+        type: "text",
+        content:
+          "No hace falta adivinar: si todavía no sabés qué parte de tu operación calza en qué lado, [los cinco sistemas de gestión que más piden las pymes del NOA](/blog/sistemas-gestion-pymes-noa) te dan un panorama real de proyectos parecidos al tuyo.",
+      },
+      {
+        type: "cta",
+        content:
+          "Si estás en esa encrucijada, contame cómo trabaja hoy tu negocio: qué se hace a mano y qué te molesta. Te digo derecho si te alcanza con un enlatado o si tiene sentido un software a medida.",
+      },
+    ],
+  },
+  {
+    slug: "cuanto-cuesta-sistema-ferreteria-argentina-2026",
+    title: "Cuánto cuesta un sistema de gestión para una ferretería en Argentina (guía 2026)",
+    summary:
+      "Un sistema de gestión a medida para una ferretería arranca desde USD 1.000 (desde $1.500.000 ARS), según productos, sucursales e integraciones. Qué incluye y de qué depende el precio.",
+    description:
+      "Precio real de un sistema para ferreterías en Argentina en 2026: desglose por módulos, de qué depende el costo y qué incluye desde USD 1.000.",
+    author: "Gonzalo Daniel Vega",
+    category: "Precios",
+    datePublished: "2026-08-24",
+    dateModified: "2026-08-24",
+    tags: ["precios", "ferreterias", "inventario", "gestion", "guia-2026"],
+    ctaText: "¿Querés saber cuánto sale un sistema para tu ferretería puntual?",
+    ctaHref: "/servicios/sistemas-gestion/ferreterias",
+    ctaLabel: "Ver sistema para ferreterías",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Si buscás \"cuánto cuesta un sistema para ferretería\" en Argentina, lo que encontrás son formularios y promesas de cotización, pero ningún número. Yo te doy el número y el criterio detrás, como hago con las [webs en Argentina en 2026](/blog/cuanto-cuesta-una-web-argentina-2026).",
+      },
+      {
+        type: "heading",
+        content: "El precio: desde USD 1.000 (desde $1.500.000 ARS)",
+      },
+      {
+        type: "text",
+        content:
+          "Un sistema de gestión para ferreterías a medida arranca desde USD 1.000, unos $1.500.000 ARS. El precio final depende de tres cosas puntuales: la cantidad de productos que manejás, cuántas sucursales tenés y qué integraciones necesitás (facturación electrónica, medios de pago, portales de proveedores).",
+      },
+      {
+        type: "text",
+        content:
+          "No tiene sentido poner un precio único, porque una ferretería de 2.000 productos en un solo local no es lo mismo que una cadena con cinco sucursales y venta mayorista y minorista. Pero el punto de partida es ese: USD 1.000.",
+      },
+      {
+        type: "heading",
+        content: "Qué incluye un sistema para ferreterías",
+      },
+      {
+        type: "list",
+        items: [
+          "Control de inventario: stock en tiempo real con alertas de reposición, códigos de barras y categorías.",
+          "Gestión de proveedores: historial de compras, precios y tiempos de entrega.",
+          "Ventas y facturación: punto de venta con facturación electrónica y control de caja.",
+          "Clientes y crédito: fichas con historial, cuentas corrientes y control de crédito.",
+          "Reportes de rotación: los productos más vendidos, rotación de stock y márgenes.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "Las alternativas y sus límites",
+      },
+      {
+        type: "text",
+        content:
+          "La planilla de Excel sale gratis, pero es el problema en sí: no sabés qué falta, qué sobra ni cuánto vendés por categoría, y cada movimiento hay que cargarlo a mano. Los sistemas enlatados de mensualidad arrancan más barato por mes, pero se acumulan todos los meses y obligan a ajustar tu forma de trabajar.",
+      },
+      {
+        type: "text",
+        content:
+          "Con un [sistema para ferreterías](/servicios/sistemas-gestion/ferreterias) a medida el sistema es 100% tuyo: no pagás mensualidad ni costo por cajero o por punto de venta. La inversión se hace una vez, y el software queda calzado a cómo trabaja tu ferretería, no al revés.",
+      },
+      {
+        type: "heading",
+        content: "Señales de que lo necesitás",
+      },
+      {
+        type: "list",
+        items: [
+          "No sabés de memoria (ni en papel) qué productos están por quedarse en stock.",
+          "Las ventas se registran tarde o en una planilla que nadie actualiza.",
+          "No podés saber al cierre cuánto vendiste hoy por categoría.",
+          "Cada cliente con crédito es una cuenta que perseguís de memoria.",
+          "El inventario de productos sin código de barras se controla contando a mano.",
+        ],
+      },
+      {
+        type: "cta",
+        content:
+          "Si reconocés dos o tres de esas señales, contame cómo está armada hoy tu ferretería: productos, sucursales y facturación. Con eso te tiro el rango real antes de hablar de nada.",
+      },
+    ],
+  },
+  {
+    slug: "landing-page-vs-sitio-institucional-2026",
+    title: "Landing page vs. sitio institucional: cuál necesita tu negocio en 2026",
+    summary:
+      "Una landing page resuelve una conversión puntual y sale $500–$800 USD; un sitio institucional presenta toda la empresa. Cuál necesitás primero depende de tu objetivo, no de tu presupuesto.",
+    description:
+      "Landing page vs. sitio institucional: objetivo, alcance e inversión de cada uno, y cómo decidir cuál necesita tu negocio primero en 2026.",
+    author: "Gonzalo Daniel Vega",
+    category: "Comparativas",
+    datePublished: "2026-08-28",
+    dateModified: "2026-08-28",
+    tags: ["comparativas", "landing-page", "web-corporativa"],
+    ctaText: "¿No sabés si tu proyecto es una landing o algo más grande?",
+    ctaHref: "/servicios/landing-page",
+    ctaLabel: "Ver landing pages a medida",
+    sections: [
+      {
+        type: "text",
+        content:
+          "La mayoría de los negocios chicos que me escriben piden \"una página web\" sin saber si necesitan una landing page o un sitio institucional. Y no es lo mismo: cada una resuelve un problema distinto. Elegir mal es pagar de más o quedarse corto.",
+      },
+      {
+        type: "heading",
+        content: "Qué resuelve cada una",
+      },
+      {
+        type: "list",
+        items: [
+          "Landing page: una sola misión. Que quien te encuentra en Google o Instagram entienda en 10 segundos qué hacés y cómo contactarte, y que haga esa única acción (llamar, escribir, pedir precio).",
+          "Sitio institucional: presentar toda la empresa. Servicios, equipo, casos, trayectoria. Varias audiencias y varios caminos a la vez.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "Cuándo te alcanza una landing",
+      },
+      {
+        type: "text",
+        content:
+          "Lanzás un servicio nuevo y necesitás que esa campaña convierta. Vendés por Instagram o WhatsApp y tu problema es que cada cliente arranca de cero preguntándote qué hacés. Validás una idea y querés probar si hay demanda sin invertir de más. En todos esos casos, una [landing page](/servicios/landing-page) es la herramienta correcta.",
+      },
+      {
+        type: "text",
+        content:
+          "Es también el arranque dominado: sale $500–$800 USD, se hace en 2 a 3 semanas y ataca un solo problema con un solo mensaje. Menos superficie para que el visitante se distraiga de la acción que querés que haga.",
+      },
+      {
+        type: "heading",
+        content: "Cuándo necesitás un sitio institucional",
+      },
+      {
+        type: "list",
+        items: [
+          "Tu negocio tiene varias líneas de servicio que necesitan explicarse por separado.",
+          "Quien te evalúa compara: necesita ver equipo, trayectoria, casos y proceso antes de confiar.",
+          "Tenés marca consolidada y la web es la puerta de toda tu oferta, no de una campaña.",
+          "Necesitás estructura que crece: blog, buscador, varios idiomas o secciones nuevas.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "La inversión y el orden",
+      },
+      {
+        type: "text",
+        content:
+          "La diferencia de precio entre una landing ($500–$800 USD) y un sitio institucional más amplio se explica por alcance, no por capricho: más secciones, más contenido estructurado, más tiempo de definición antes de tocar el editor. Por eso el orden recomendado es casi siempre arrancar con una [landing](/servicios/landing-page) y pasar a algo más grande cuando el objetivo lo pida.",
+      },
+      {
+        type: "text",
+        content:
+          "Es la misma lógica que expliqué comparando [Wix, Tienda Nube o desarrollo a medida](/blog/wix-tiendanube-o-desarrollo-a-medida): no se trata de lo más grande, sino de la herramienta que calza con lo que necesitás hoy.",
+      },
+      {
+        type: "cta",
+        content:
+          "Si no sabés en qué categoría cae tu proyecto, contame qué querés lograr con la web. Con eso te digo si una landing resuelve o si necesita algo más grande.",
       },
     ],
   },

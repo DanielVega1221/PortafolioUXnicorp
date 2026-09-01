@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   title: "Construction Management Software",
   description:
     "Custom construction management software: project tracking, budgets, suppliers and documentation. Built from scratch in Argentina, no generic licenses.",
-  keywords: [
-    "construction management software",
-    "construction project management",
-    "erp for construction",
-    "construction tracking argentina",
-  ],
   alternates: {
     canonical: "https://www.uxnicorp.com.ar/en/servicios/management-systems/construction",
     languages: {

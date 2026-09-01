@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { BLOG_POSTS, getPost } from "../data";
 import { truncate } from "@/lib/truncate";
+import { renderInlineLinks } from "@/components/blog/InlineLinks";
 import Footer from "@/components/Footer";
 
 export function generateStaticParams() {
@@ -20,10 +21,10 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return { robots: { index: false, follow: false } };
   const canonicalUrl = `https://www.uxnicorp.com.ar/blog/${slug}`;
+  const ogImage = post.ogImage || "/og-image.jpg";
   return {
     title: post.title,
     description: truncate(post.summary, 157),
-    keywords: post.tags,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -43,13 +44,15 @@ export async function generateMetadata({
       modifiedTime: post.dateModified,
       authors: [post.author],
       tags: post.tags,
-      images: [{ url: post.ogImage, width: 1200, height: 630, alt: post.title }],
+      images: post.ogImage
+        ? [{ url: post.ogImage, width: 1200, height: 630, alt: post.title }]
+        : [{ url: ogImage, width: 1343, height: 633, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | UXnicorp`,
       description: post.description,
-      images: [post.ogImage],
+      images: [ogImage],
     },
   };
 }
@@ -69,6 +72,8 @@ export default async function BlogPostPage({
 
   const canonicalUrl = `https://www.uxnicorp.com.ar/blog/${slug}`;
 
+  const ogImage = post.ogImage || "/og-image.jpg";
+
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -79,9 +84,9 @@ export default async function BlogPostPage({
       description: post.description,
       image: {
         "@type": "ImageObject",
-        url: post.ogImage.startsWith("http") ? post.ogImage : `https://www.uxnicorp.com.ar${post.ogImage}`,
-        width: 1200,
-        height: 630,
+        url: ogImage.startsWith("http") ? ogImage : `https://www.uxnicorp.com.ar${ogImage}`,
+        width: post.ogImage ? 1200 : 1343,
+        height: post.ogImage ? 630 : 633,
       },
       datePublished: post.datePublished,
       dateModified: post.dateModified,
@@ -96,7 +101,6 @@ export default async function BlogPostPage({
           height: 840,
         },
       },
-      keywords: post.tags.join(", "),
       url: canonicalUrl,
     },
     {
@@ -227,7 +231,7 @@ export default async function BlogPostPage({
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginBottom: "2rem" }}>
               {post.sections.map((section, i) => (
-                <BlogSection key={i} section={section} />
+                <BlogSection key={i} section={section} ctaHref={post.ctaHref} ctaLabel={post.ctaLabel} />
               ))}
             </div>
 
@@ -272,7 +276,7 @@ export default async function BlogPostPage({
   );
 }
 
-function BlogSection({ section }: { section: import("../data").BlogSection }) {
+function BlogSection({ section, ctaHref, ctaLabel }: { section: import("../data").BlogSection; ctaHref: string; ctaLabel: string }) {
 
   switch (section.type) {
     case "heading":
@@ -284,7 +288,7 @@ function BlogSection({ section }: { section: import("../data").BlogSection }) {
     case "text":
       return (
         <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: "#374151", margin: 0 }}>
-          {section.content}
+          {renderInlineLinks(section.content)}
         </p>
       );
     case "list":
@@ -328,7 +332,7 @@ function BlogSection({ section }: { section: import("../data").BlogSection }) {
             {section.content}
           </p>
           <TransitionLink
-            href="/#contacto"
+            href={ctaHref}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -339,7 +343,7 @@ function BlogSection({ section }: { section: import("../data").BlogSection }) {
               textDecoration: "none",
             }}
           >
-            Contactanos
+            {ctaLabel}
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
               <path d="M2 5.5h7M6 3l2.5 2.5L6 8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
